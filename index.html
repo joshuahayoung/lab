@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* 1. 기본 설정 및 폰트 가늘게 조정 */
+    /* 1. 기본 설정 */
     html, body {
       margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
       font-family: 'Montserrat', sans-serif;
@@ -28,7 +28,7 @@
     }
     .top-bar {
       background-color: #5a4a08; color: white; text-align: center;
-      padding: 10px 0; font-size: 12px;
+      padding: 10px 0; font-size: 11px;
       font-family: 'Oswald', sans-serif; letter-spacing: 1.5px;
       font-weight: 400;
     }
@@ -37,22 +37,19 @@
       padding: 0 5%; height: 70px;
     }
 
+    /* 로고 배경 이질감 줄이기 필터 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-    .logo-img { height: 40px; width: auto; margin-right: 12px; }
+    .logo-img { height: 40px; width: auto; margin-right: 12px; filter: contrast(1.1) brightness(1.05); }
     
     .logo-text { 
       font-family: 'Oswald', sans-serif;
-      font-weight: 500; font-size: 18px; display: inline-block; 
+      font-weight: 500; font-size: 17px; display: inline-block; 
       text-transform: uppercase; letter-spacing: 1px;
     }
 
     /* [PC 메뉴] */
     .nav-links { display: flex; gap: 25px; }
-    
-    /* 모바일 전용 로고 (PC에선 숨김) */
-    .mobile-menu-logo { display: none; }
-    /* 모바일 전용 하단 문구 (PC에선 숨김) */
-    .mobile-menu-footer { display: none; }
+    .mobile-menu-logo, .insta-section { display: none; }
 
     .nav-links a { 
       text-decoration: none; color: #666; font-size: 13px; 
@@ -64,50 +61,47 @@
     .nav-links a:hover { color: #F15A22; }
 
     .menu-toggle {
-      display: none; font-size: 26px; cursor: pointer;
+      display: none; font-size: 24px; cursor: pointer;
       background: none; border: none; padding: 0; margin-right: 15px;
     }
 
-    /* [TOP 버튼] */
-    #fixedTopBtn {
-      position: fixed !important; bottom: 25px !important; right: 20px !important;
-      width: 45px !important; height: 45px !important;
-      background-color: #F15A22 !important; 
-      color: #ffffff !important; border: none !important; border-radius: 50% !important;
-      font-weight: 400 !important; font-size: 11px !important;
-      z-index: 9999 !important; cursor: pointer !important;
-      display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
+    /* [모바일 반응형] */
     @media (max-width: 768px) {
       .header-wrapper { justify-content: flex-start; }
       .menu-toggle { display: block; }
       .logo-text { display: none; } 
 
       .nav-links {
-        position: fixed; top: 0; left: -100%; width: 280px; height: 100vh;
-        background: #fff; flex-direction: column; padding: 40px 30px;
+        position: fixed; top: 0; left: -100%; 
+        width: 200px; /* 부모님 의견 반영: 너비 축소 */
+        height: 100vh;
+        background: #fff; flex-direction: column; padding: 30px 20px;
         transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-        display: flex; /* 모바일에서 정렬을 위해 필요 */
       }
       .nav-links.active { left: 0; }
       
-      /* 모바일 메뉴 내 로고 디자인 */
       .mobile-menu-logo { 
-        display: block; margin-bottom: 40px; text-align: center;
-        border-bottom: 1px solid #eee; padding-bottom: 20px;
+        display: block; margin-bottom: 30px; text-align: left;
+        border-bottom: 1px solid #eee; padding-bottom: 15px;
       }
-      .mobile-menu-logo img { height: 50px; width: auto; }
+      .mobile-menu-logo img { height: 35px; width: auto; filter: contrast(1.1) brightness(1.05); }
 
-      /* 모바일 메뉴 하단 문구 디자인 */
-      .mobile-menu-footer {
-        display: block; margin-top: auto; padding-bottom: 40px;
-        font-size: 12px; color: #999; line-height: 1.8;
+      /* 인스타그램 섹션 디자인 */
+      .insta-section {
+        display: block; margin-top: 30px; padding-top: 20px;
+        border-top: 1px dotted #eee;
       }
-      .mobile-menu-footer strong { color: #F15A22; font-family: 'Oswald', sans-serif; }
+      .insta-text { font-size: 10px; color: #999; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+      .insta-btn {
+        display: inline-flex; align-items: center;
+        text-decoration: none; color: #333; font-size: 11px; font-weight: 500;
+        font-family: 'Oswald', sans-serif; border: 1px solid #333;
+        padding: 8px 12px; transition: 0.3s;
+      }
+      .insta-btn:hover { background: #333; color: #fff; }
 
-      .close-menu { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; color: #999; }
-      .nav-links a { width: 100%; font-size: 15px; padding: 15px 0; border-bottom: 1px solid #f9f9f9; }
+      .close-menu { position: absolute; top: 15px; right: 15px; font-size: 20px; cursor: pointer; color: #ccc; }
+      .nav-links a { width: 100%; font-size: 14px; padding: 12px 0; border-bottom: 1px solid #f9f9f9; }
     }
   </style>
 </head>
@@ -137,34 +131,15 @@
         <a href="reference-links.html">Links</a>
         <a href="junior-career.html">Junior Career</a>
 
-        <div class="mobile-menu-footer">
-            <strong>Team FIRST</strong><br>
-            Trust, Integrity, Respect, <br>Self-discipline, Teamwork
+        <div class="insta-section">
+            <span class="insta-text">INSIDE JOSHUA'S GOLF</span>
+            <a href="https://www.instagram.com/joshuahong_golf/" target="_blank" class="insta-btn">
+               FOLLOW ON INSTAGRAM
+            </a>
         </div>
       </nav>
     </header>
   </div>
-
-  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    window.addEventListener('scroll', function() {
-      const btn = document.getElementById('fixedTopBtn');
-      if (window.pageYOffset > 100) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
   
 
   
