@@ -1,5 +1,21 @@
-<style>
-    /* 1. 기본 설정 및 헤더 스타일 (기존과 동일) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H1JW8YBDZ8');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Joshua Hong Golf</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* 1. 기본 설정 */
     html, body {
       margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
       font-family: 'Montserrat', sans-serif;
@@ -7,6 +23,7 @@
     }
     * { box-sizing: border-box; }
 
+    /* [상단 고정 헤더] */
     .sticky-top {
       position: sticky; top: 0; z-index: 1000; width: 100%;
       background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -22,26 +39,36 @@
       padding: 0 5%; height: 70px;
     }
 
+    /* 로고 필터 완전 제거 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 40px; width: auto; margin-right: 12px; }
-    .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 17px; text-transform: uppercase; }
+    
+    .logo-text { 
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500; font-size: 17px; display: inline-block; 
+      text-transform: uppercase; letter-spacing: 1px;
+    }
 
     /* [PC 메뉴] */
     .nav-links { display: flex; gap: 25px; }
+    .mobile-menu-logo, .insta-section { display: none; }
+
     .nav-links a { 
-      text-decoration: none; color: #666; font-size: 13px; font-weight: 400; 
+      text-decoration: none; color: #666; font-size: 13px; 
+      font-weight: 400; 
       text-transform: uppercase; font-family: 'Oswald', sans-serif;
       letter-spacing: 1px; transition: 0.3s;
     }
     .nav-links a.active { color: #F15A22; border-bottom: 1px solid #F15A22; }
+    .nav-links a:hover { color: #F15A22; }
 
-    /* [긴급 수정] 버튼을 가장 앞으로 보냄 */
+    /* [주황색 버튼 해결] z-index를 높이고 위치를 고정함 */
     .menu-toggle {
-      display: none; font-size: 30px; cursor: pointer;
+      display: none; font-size: 28px; cursor: pointer;
       background: none; border: none; padding: 10px; 
       color: #F15A22; 
-      position: relative; /* 위치 기준 설정 */
-      z-index: 3000 !important; /* 메뉴 상자(2000)보다 훨씬 높게 설정 */
+      z-index: 3000; /* 메뉴창보다 높게 설정 */
+      position: relative;
     }
 
     @media (max-width: 768px) {
@@ -51,27 +78,86 @@
 
       .nav-links {
         position: fixed; top: 0; left: -100%; 
-        width: 200px; height: 100vh;
-        background: #fff; flex-direction: column; padding: 60px 20px;
-        transition: 0.3s; 
-        z-index: 2000; /* 버튼보다 낮게 설정 */
-        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        width: 200px; /* 너비 40% 정도로 축소 */
+        height: 100vh;
+        background: #fff; flex-direction: column; padding: 60px 20px 30px 20px;
+        transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        display: flex;
       }
       .nav-links.active { left: 0; }
       
-      .mobile-menu-logo { display: block; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-      .mobile-menu-logo img { height: 35px; }
-
-      .insta-section { display: block; margin-top: auto; padding-top: 20px; border-top: 1px dotted #eee; }
-      .insta-btn {
-        display: inline-flex; text-decoration: none; color: #333; font-size: 11px; 
-        font-family: 'Oswald', sans-serif; border: 1px solid #333; padding: 8px 12px;
+      .mobile-menu-logo { 
+        display: block; margin-bottom: 25px; text-align: left;
+        border-bottom: 1px solid #eee; padding-bottom: 15px;
       }
+      .mobile-menu-logo img { height: 35px; width: auto; }
+
+      /* 인스타그램 섹션 위치 올림 */
+      .insta-section {
+        display: block; 
+        margin-top: 30px; /* auto에서 변경하여 위로 올림 */
+        padding-top: 20px;
+        border-top: 1px dotted #eee;
+      }
+      .insta-text { font-size: 10px; color: #999; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+      .insta-btn {
+        display: inline-flex; align-items: center;
+        text-decoration: none; color: #333; font-size: 11px; font-weight: 500;
+        font-family: 'Oswald', sans-serif; border: 1px solid #333;
+        padding: 8px 12px; transition: 0.3s;
+      }
+      .insta-btn:hover { background: #333; color: #fff; }
 
       .close-menu { position: absolute; top: 15px; right: 15px; font-size: 20px; cursor: pointer; color: #ccc; }
       .nav-links a { width: 100%; font-size: 14px; padding: 12px 0; border-bottom: 1px solid #f9f9f9; }
     }
-</style>
+  </style>
+</head>
+
+<body>
+
+  <div class="sticky-top">
+    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA GOLF</div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
+      <a href="index.html" class="logo-area">
+        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+        <span class="logo-text">Joshua Hong Golf</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        
+        <div class="mobile-menu-logo">
+            <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
+        </div>
+
+        <a href="index.html" class="active">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html">News & Media</a>
+        <a href="reference-links.html">Links</a>
+        <a href="junior-career.html">Junior Career</a>
+
+        <div class="insta-section">
+            <span class="insta-text">INSIDE JOSHUA'S GOLF</span>
+            <a href="https://www.instagram.com/joshuahong_golf/" target="_blank" class="insta-btn">
+                FOLLOW ON INSTAGRAM
+            </a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
 
 
   
