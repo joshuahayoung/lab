@@ -37,9 +37,9 @@
       padding: 0 5%; height: 70px;
     }
 
-    /* 로고 배경 이질감 줄이기 필터 */
+    /* 로고 필터 제거: 원본 그대로 나오게 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-    .logo-img { height: 40px; width: auto; margin-right: 12px; filter: contrast(1.1) brightness(1.05); }
+    .logo-img { height: 40px; width: auto; margin-right: 12px; }
     
     .logo-text { 
       font-family: 'Oswald', sans-serif;
@@ -60,12 +60,14 @@
     .nav-links a.active { color: #F15A22; border-bottom: 1px solid #F15A22; }
     .nav-links a:hover { color: #F15A22; }
 
+    /* [메뉴 버튼 수정] UTSA 주황색 적용 및 클릭 영역 확보 */
     .menu-toggle {
-      display: none; font-size: 24px; cursor: pointer;
-      background: none; border: none; padding: 0; margin-right: 15px;
+      display: none; font-size: 28px; cursor: pointer;
+      background: none; border: none; padding: 5px; 
+      color: #F15A22; /* UTSA Orange */
+      z-index: 1001;
     }
 
-    /* [모바일 반응형] */
     @media (max-width: 768px) {
       .header-wrapper { justify-content: flex-start; }
       .menu-toggle { display: block; }
@@ -73,22 +75,22 @@
 
       .nav-links {
         position: fixed; top: 0; left: -100%; 
-        width: 200px; /* 부모님 의견 반영: 너비 축소 */
+        width: 200px; 
         height: 100vh;
-        background: #fff; flex-direction: column; padding: 30px 20px;
+        background: #fff; flex-direction: column; padding: 60px 20px 30px 20px;
         transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        display: flex; /* 요소 정렬을 위해 추가 */
       }
       .nav-links.active { left: 0; }
       
       .mobile-menu-logo { 
-        display: block; margin-bottom: 30px; text-align: left;
+        display: block; margin-bottom: 25px; text-align: left;
         border-bottom: 1px solid #eee; padding-bottom: 15px;
       }
-      .mobile-menu-logo img { height: 35px; width: auto; filter: contrast(1.1) brightness(1.05); }
+      .mobile-menu-logo img { height: 35px; width: auto; }
 
-      /* 인스타그램 섹션 디자인 */
       .insta-section {
-        display: block; margin-top: 30px; padding-top: 20px;
+        display: block; margin-top: auto; padding-top: 20px;
         border-top: 1px dotted #eee;
       }
       .insta-text { font-size: 10px; color: #999; letter-spacing: 1px; margin-bottom: 10px; display: block; }
