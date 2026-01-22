@@ -1,0 +1,269 @@
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1JW8YBDZ8');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Reference & Links | Joshua Hong Official</title>
+
+  <style>
+    /* 1. 좌우 흔들림 방지 및 기본 설정 */
+    html, body {
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+
+    /* [상단 고정 헤더] */
+    .sticky-top {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .top-bar {
+      background-color: #705b0a; color: white; text-align: center;
+      padding: 10px 0; font-size: 13px;
+    }
+    .header-wrapper {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5%; height: 60px;
+    }
+
+    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
+    .logo-img { height: 35px; width: auto; margin-right: 10px; }
+    
+    /* [PC 전용] 로고 텍스트 */
+    .logo-text { font-weight: 800; font-size: 17px; display: inline-block; }
+
+    /* [PC 메뉴] */
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { 
+      text-decoration: none; color: #555; font-size: 13px; font-weight: 600; 
+      text-transform: uppercase;
+    }
+    /* 현재 페이지(Reference & Links) 활성화 스타일 */
+    .nav-links a.active { color: #0c2340; border-bottom: 2px solid #0c2340; }
+
+    .menu-toggle {
+      display: none; font-size: 26px; cursor: pointer;
+      background: none; border: none; padding: 0; margin-right: 15px;
+    }
+
+    /* [TOP 버튼] UTSA 오렌지색 적용 */
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; 
+      color: #ffffff !important; border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* [모바일 반응형 - 768px 이하] */
+    @media (max-width: 768px) {
+      .header-wrapper { justify-content: flex-start; } 
+      .menu-toggle { display: block; }
+      
+      /* 모바일에서 텍스트 숨기기 */
+      .logo-text { display: none; } 
+
+      .nav-links {
+        position: fixed; top: 0; left: -100%; width: 260px; height: 100vh;
+        background: #fff; flex-direction: column; padding: 80px 30px;
+        transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+      }
+      .nav-links.active { left: 0; }
+      .close-menu { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; }
+      .nav-links a { width: 100%; font-size: 16px; padding: 10px 0; border-bottom: 1px solid #eee; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sticky-top">
+    <div class="top-bar">Official Website of Joshua Hong | UTSA</div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
+<a href="index.html" class="logo-area">
+  <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+  <span class="logo-text">Joshua Hong Golf</span>
+</a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <a href="index.html">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html">News & Media</a>
+        <a href="reference-links.html" class="active">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+      </nav>
+    </header>
+  </div>
+
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      // 100px만 내려가도 버튼 등장
+      if (window.pageYOffset > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 0 10px;">
+  <div style="text-align: center; margin-bottom: 25px; padding-top: 40px;">
+    <h1 style="font-size: 48px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase;">REFERENCE & LINKS</h1>
+    <p style="font-size: 16px; color: #666; margin: 5px 0 0 0; font-weight: 500; letter-spacing: 1px;">
+      Verified Records 
+    </p>
+  </div>
+</div>
+
+<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 900px; width: 100%; margin: auto; padding: 20px; background-color: #ffffff; color: #333; line-height: 1.6; box-sizing: border-box;">
+
+  <div style="text-align: center; margin-bottom: 50px;">
+    <h2 style="font-size: 28px; color: #0c2340; border-bottom: 3px solid #0c2340; padding-bottom: 15px; display: inline-block; text-transform: uppercase; letter-spacing: 2px;">
+      References & Career Data Credentials
+    </h2>
+    <p style="color: #666; font-size: 14px; margin-top: 10px;">Comprehensive archive of official tournament results, rankings, and media reports.</p>
+  </div>
+
+  <div style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+    <div style="background-color: #ff5a00; color: white; padding: 15px 20px; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
+      <span style="margin-right: 10px;">🎓</span> NCAA DI Career (University of Texas at San Antonio)
+    </div>
+    <div style="padding: 25px; background-color: #fcfcfc;">
+      <div style="margin-bottom: 20px;">
+        <b style="color: #0c2340;">⭐ High-Level Collegiate Events:</b><br>
+        <a href="https://www.golfgenius.com/pages/5776911" target="_blank" style="color: #1565c0; font-size: 14px; font-weight: bold; text-decoration: none; border-bottom: 1px solid #1565c0;">Patriot All-America Invitational (Leaderboard)</a> |  
+        <a href="https://patriotallamerica.com/players/patriot_players-men/" target="_blank" style="color: #1565c0; font-size: 14px; text-decoration: none; border-bottom: 1px solid #1565c0;">Official Profile</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; font-size: 13px;">
+        <div>
+          <p><b style="color: #0c2340;">• UTSA Official News:</b><br>
+            <span style="display: block; margin-top: 8px;">- <a href="https://goutsa.com/news/2024/11/14/utsa-inks-joshua-hong" target="_blank" style="color: #1565c0; text-decoration: none;">Joshua Hong Signing</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://goutsa.com/news/2025/09/8/hong-posts-second-straight-70-at-argent-financial-classic" target="_blank" style="color: #1565c0; text-decoration: none;">Argent Financial Classic 70</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" style="color: #1565c0; text-decoration: none;">Highlands Invitational Success</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://goutsa.com/news/2025/09/22/hong-zurn-lead-utsa-on-day-one-of-badger-invitational" target="_blank" style="color: #1565c0; text-decoration: none;">Badger Invitational Lead</a></span>
+          </p>
+        </div>
+        <div>
+          <p><b style="color: #0c2340;">• NCAA Scoreboards (Clippd/Scoreboard):</b><br>
+            <span style="display: block; margin-top: 8px;">- <a href="https://scoreboard.clippd.com/tournaments/239222/scoring/player" target="_blank" style="color: #1565c0; text-decoration: none;">Argent Financial Scorecard</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://scoreboard.clippd.com/tournaments/239590/scoring/player" target="_blank" style="color: #1565c0; text-decoration: none;">Highlands Invitational Results</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://scoreboard.clippd.com/tournaments/236150/scoring/player" target="_blank" style="color: #1565c0; text-decoration: none;">Badger Invitational Results</a></span>
+            <span style="display: block; margin-top: 5px;">- <a href="https://scoreboard.clippd.com/tournaments/239449/scoring/player" target="_blank" style="color: #1565c0; text-decoration: none;">Trinity Forest Invitational Results</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+    <div style="background-color: #0c2340; color: white; padding: 15px 20px; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
+      <span style="margin-right: 10px;">🌎</span> International Championships (National Team)
+    </div>
+    <div style="padding: 25px; background-color: #fcfcfc;">
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dotted #ccc;">
+          <b style="color: #0c2340;">1) Toyota Junior Golf World Cup 2025 (Japan)</b><br>
+          <a href="https://wjgtc.org/english/team/boy.html" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Official Participants Roster</a> |  
+          <a href="https://results.golfstat.com/public/leaderboards/gsnav.cfm?pg=player&tid=29433" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Golfstat Official Leaderboard</a>
+        </li>
+        <li style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dotted #ccc;">
+          <b style="color: #0c2340;">2) Junior Americas Cup 2025 & 2024</b><br>
+          <a href="https://www.junioramericascup.com/wp-content/uploads/2025/07/Player-Roster_2025_Boys-Junior-Americas-Cup_-Final.pdf" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2025 Player Roster (PDF)</a> |  
+          <a href="https://www.golfgenius.com/pages/11588475233379596235" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2025 Leaderboard</a> |  
+          <a href="https://ujga.bluegolf.com/bluegolf/ujga24/event/ujga2463/contest/1/leaderboard.htm" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2024 Official Leaderboard</a>
+        </li>
+        <li style="margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dotted #ccc;">
+          <b style="color: #0c2340;">3) South American Major Events (Argentina)</b><br>
+          <a href="https://www.aagscoring.com/golf/MuestraResultados.php?TorneoID=2343&c=914" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Campeonato Nacional por Golpes 2024 (AAG)</a> |  
+          <a href="https://copatailhade.com/" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Copa Juan Carlos Tailhade Official</a> |  
+          <a href="https://www.wagr.com/events/torneo-internacional-copa-juan-carlos-tailhade-236714" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">WAGR Leaderboard</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+    <div style="background-color: #1b5e20; color: white; padding: 15px 20px; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
+      <span style="margin-right: 10px;">🏆</span> National Junior Tournaments (FMG/WAGR)
+    </div>
+    <div style="padding: 25px; background-color: #fcfcfc; font-size: 13px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        
+        <div>
+          <p><b style="color: #1b5e20;">• INTERZONAS 2025:</b> <a href="https://fmg-lxivcampeonatonacionalinterzonaslor1.golfgenius.com/pages/5354531" target="_blank" style="color: #1565c0; text-decoration: none;">Official Page</a></p>
+          <p><b style="color: #1b5e20;">• Copa Sur 2025:</b> <a href="https://www.wagr.com/events/ii-copa-sur-257142" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Result</a></p>
+          <p><b style="color: #1b5e20;">• Copa Centro 2024 (Record 62):</b> <a href="https://www.wagr.com/events/xiv-copa-zona-centro-236017" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a> | <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="color: #1565c0; text-decoration: none;">News</a></p>
+          <p><b style="color: #1b5e20;">• Copa Pacífico 2024:</b> <a href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4746623/results" target="_blank" style="color: #1565c0; text-decoration: none;">Live Scoring</a></p>
+          <p><b style="color: #1b5e20;">• National GAR WAGR 2023:</b> <a href="https://www.wagr.com/events/gar-wagr-occidente-etapa-1-251484" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Stage 1</a></p>
+          <p><b style="color: #1b5e20;">• GIRA GADO Mazatlán:</b> <a href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4205246/results" target="_blank" style="color: #1565c0; text-decoration: none;">Results</a></p>
+        </div>
+
+        <div>
+          <p><b style="color: #1b5e20;">• Tour Zona Centro 2024-2025:</b><br>
+            <span style="display: block; margin-top: 5px;">- 6th Stage: <a href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/" target="_blank" style="color: #1565c0; text-decoration: none;">Official</a> | <a href="https://www.wagr.com/events/etapa-final-tour-zona-centro-263230" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a></span>
+            <span style="display: block; margin-top: 3px;">- 5th Stage: <a href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/" target="_blank" style="color: #1565c0; text-decoration: none;">Official</a> | <a href="https://www.wagr.com/events/quinta-etapa-tour-zona-centro-263229" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a></span>
+            <span style="display: block; margin-top: 3px;">- 4th Stage: <a href="http://www.zonacentro.org/assets/res324.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF</a></span>
+            <span style="display: block; margin-top: 3px;">- 3rd Stage: <a href="https://www.wagr.com/events/third-stage-tour-zona-centro-254011" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a></span>
+            <span style="display: block; margin-top: 3px;">- 2nd Stage: <a href="http://www.zonacentro.org/assets/res293.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF</a> | <a href="https://www.wagr.com/events/second-stage-tour-zona-centro-254012" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a></span>
+            <span style="display: block; margin-top: 3px;">- 1st Stage: <a href="http://www.zonacentro.org/assets/res287.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF</a></span>
+          </p>
+          <p style="margin-top: 15px;"><b style="color: #1b5e20;">• USA (JGANC):</b> <a href="https://jganc.bluegolf.com/bluegolf/jganc23/event/jganc2321/contest/5/leaderboard.htm" target="_blank" style="color: #1565c0; text-decoration: none;">Bumgardner Jr. Memorial (16-18)</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+    <div style="background-color: #555; color: white; padding: 15px 20px; font-weight: bold; font-size: 18px; display: flex; align-items: center;">
+      <span style="margin-right: 10px;">📊</span> Official Rankings & Profile Archive
+    </div>
+    <div style="padding: 25px; background-color: #fcfcfc; font-size: 13px;">
+      <p><b style="color: #333;">• WAGR (World Amateur Golf Ranking):</b> <a href="https://www.wagr.com/playerprofile/joshua-hong-40704" target="_blank" style="color: #1565c0; font-weight: bold; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Official Joshua Hong Profile</a></p>
+      
+      <p style="margin-top: 15px;"><b style="color: #333;">• FMG Ranking (Federación Mexicana de Golf):</b> <a href="https://fmg.org.mx/ranking-cij-historicos/" target="_blank" style="color: #1565c0; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Historical Ranking Page</a></p>
+      
+      <p style="margin-top: 15px;"><b style="color: #333;">• FMG Champion Mentions:</b><br>
+        <span style="display: block; margin-top: 8px;">- <a href="https://fmg.org.mx/todo-listo-para-el-arranque-de-la-xv-copa-centro-en-san-luis-potosi/" target="_blank" style="color: #1565c0; text-decoration: none;">2024-2025 Junior Champion Mention</a></span>
+        <span style="display: block; margin-top: 5px;">- <a href="https://fmg.org.mx/gran-nivel-de-golf-dejo-el-inicio-de-la-copa-centro/" target="_blank" style="color: #1565c0; text-decoration: none;">2023-2024 Junior Champion Mention</a></span>
+        <span style="display: block; margin-top: 5px;">- <a href="https://fmg.org.mx/mexico-esta-listo-para-la-junior-americas-cup/" target="_blank" style="color: #1565c0; text-decoration: none;">Mexican National Team (Junior Americas Cup)</a></span>
+      </p>
+      
+      <p style="margin-top: 15px; border-top: 1px dotted #ccc; padding-top: 15px;">
+        <b style="color: #333;">• JGS (Junior Golf Scoreboard):</b> Verified as of Aug 12, 2025 (Official Record Archived)
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding-top: 40px; border-top: 1px solid #f0f0f0; margin-top: 40px;">
+    <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
+      Verified Portfolio Data<br>
+      Official Source Repository • Joshua Hong
+    </p>
+  </div>
+
+</div> 
+</body>
+</html>

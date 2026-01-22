@@ -1,0 +1,368 @@
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1JW8YBDZ8');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>News & Media | Joshua Hong Official</title>
+
+  <style>
+    /* 1. 좌우 흔들림 방지 및 기본 설정 */
+    html, body {
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+
+    /* [상단 고정 헤더] */
+    .sticky-top {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .top-bar {
+      background-color: #705b0a; color: white; text-align: center;
+      padding: 10px 0; font-size: 13px;
+    }
+    .header-wrapper {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5%; height: 60px;
+    }
+
+    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
+    .logo-img { height: 35px; width: auto; margin-right: 10px; }
+    
+    /* [PC 전용] 로고 텍스트 */
+    .logo-text { font-weight: 800; font-size: 17px; display: inline-block; }
+
+    /* [PC 메뉴] */
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { 
+      text-decoration: none; color: #555; font-size: 13px; font-weight: 600; 
+      text-transform: uppercase;
+    }
+    /* 현재 페이지(News & Media) 활성화 스타일 */
+    .nav-links a.active { color: #0c2340; border-bottom: 2px solid #0c2340; }
+
+    .menu-toggle {
+      display: none; font-size: 26px; cursor: pointer;
+      background: none; border: none; padding: 0; margin-right: 15px;
+    }
+
+    /* [TOP 버튼] UTSA 오렌지색 적용 */
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; 
+      color: #ffffff !important; border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* [모바일 반응형 - 768px 이하] */
+    @media (max-width: 768px) {
+      .header-wrapper { justify-content: flex-start; } 
+      .menu-toggle { display: block; }
+      
+      /* 모바일에서 텍스트 숨기기 */
+      .logo-text { display: none; } 
+
+      .nav-links {
+        position: fixed; top: 0; left: -100%; width: 260px; height: 100vh;
+        background: #fff; flex-direction: column; padding: 80px 30px;
+        transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+      }
+      .nav-links.active { left: 0; }
+      .close-menu { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; }
+      .nav-links a { width: 100%; font-size: 16px; padding: 10px 0; border-bottom: 1px solid #eee; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sticky-top">
+    <div class="top-bar">Official Website of Joshua Hong | UTSA</div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
+<a href="index.html" class="logo-area">
+  <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+  <span class="logo-text">Joshua Hong Golf</span>
+</a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <a href="index.html">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html" class="active">News & Media</a>
+        <a href="reference-links.html">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+      </nav>
+    </header>
+  </div>
+
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      // 100px 스크롤 시 바로 표시
+      if (window.pageYOffset > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  
+<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 0 10px;">
+  <div style="text-align: center; margin-bottom: 25px; padding-top: 40px;">
+    <h1 style="font-size: 48px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase;">NEWS & MEDIA</h1>
+    <p style="font-size: 16px; color: #666; margin: 5px 0 0 0; font-weight: 500; letter-spacing: 1px;">
+      Official News and Interviews
+    </p>
+  </div>
+</div>
+
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 850px; width: 100%; margin: auto; padding: 20px; color: #333; background-color: #ffffff; box-sizing: border-box;">
+
+  <div style="border-bottom: 3px solid #0c2340; padding-bottom: 15px; margin-bottom: 40px;">
+    <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px;">📰 MEDIA COVERAGE & INTERVIEWS</h2>
+    <p style="margin: 10px 0 0; color: #666; font-size: 15px;">Featured Interviews, Official News, and Video Highlights</p>
+  </div>
+
+  <div style="margin-bottom: 50px;">
+    <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center;">
+      <span style="margin-right: 10px;">🌟</span> Main Featured Interview
+    </h3>
+    <a href="https://cgnplus.com/2025/11/24/cgn-player-highlight-and-interview-joshua-hongs-freshman-launch-at-the-university-of-texas-at-san-antonio/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #0c2340; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s;">
+        <div style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;">
+          
+          <div style="flex: 1; background: #f8f8f8; min-width: 300px; width: 100%; display: flex; align-items: center; justify-content: center;">
+            <img src="https://lh3.googleusercontent.com/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" 
+                 alt="Joshua Hong CGN Highlight" 
+                 style="width: 100%; height: auto; max-height: 450px; object-fit: contain; display: block;">
+          </div>
+
+          <div style="flex: 1.2; padding: 30px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
+            <div style="font-size: 12px; color: #ff5a00; font-weight: bold; margin-bottom: 10px; letter-spacing: 1px;">CGN PLAYER HIGHLIGHT</div>
+            <div style="font-size: 22px; font-weight: 800; color: #0c2340; line-height: 1.3; margin-bottom: 15px;">
+              Joshua Hong’s Freshman Launch at UTSA
+            </div>
+            <p style="font-size: 15px; color: #555; line-height: 1.6; margin: 0 0 20px 0;">
+              An exclusive deep-dive interview covering Joshua's transition to NCAA Division I, his early successes, and his vision for the road ahead with the UTSA Roadrunners.
+            </p>
+            <div style="display: inline-block; color: #0c2340; font-weight: bold; font-size: 14px; text-decoration: underline;">
+              Read Full Article →
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center;">
+    <span style="margin-right: 10px;">🎥</span> Featured Video Highlights
+  </h3>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px;">
+    
+    <a href="https://www.youtube.com/watch?v=kLHtDp1yi2Q" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #f9f9f9; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <div style="position: relative; background: #000; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="https://img.youtube.com/vi/kLHtDp1yi2Q/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          <div style="position: absolute; width: 50px; height: 35px; background: rgba(255,0,0,0.9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">▶</div>
+        </div>
+        <div style="padding: 15px;">
+          <div style="font-size: 12px; color: #ff5a00; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;">CGN PLAYER HIGHLIGHT</div>
+          <div style="font-size: 15px; font-weight: bold; color: #0c2340; line-height: 1.4;">Freshman Launch at UTSA: Joshua Hong Interview</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=z78Cf5i3bf4" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #f9f9f9; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+        <div style="position: relative; background: #000; height: 180px; display: flex; align-items: center; justify-content: center;">
+          <img src="https://img.youtube.com/vi/z78Cf5i3bf4/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+          <div style="position: absolute; width: 50px; height: 35px; background: rgba(255,0,0,0.9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">▶</div>
+        </div>
+        <div style="padding: 15px;">
+          <div style="font-size: 12px; color: #1b5e20; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px;">INFOGOLF TV</div>
+          <div style="font-size: 15px; font-weight: bold; color: #0c2340; line-height: 1.4;">Victoria en Copa Sur FMG: Joshua Hong</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <h3 style="color: #0c2340; font-size: 18px; margin-top: 40px; margin-bottom: 20px; display: flex; align-items: center;">
+    <span style="margin-right: 10px;">📄</span> Official News & Press Articles
+  </h3>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px;">
+    
+    <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; border-radius: 4px;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong Posts Second Straight Top-15 Finish at Highlands</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="font-size: 20px; margin-right: 15px;">🇲🇽</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">FMG OFFICIAL</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Joshua Hong y Regina Roldán triunfan en la II Copa Sur en Puebla</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="font-size: 20px; margin-right: 15px;">🇲🇽</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">FMG OFFICIAL</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Joshua Hong destaca en el Toyota Junior Golf World Cup</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="font-size: 20px; margin-right: 15px;">🏆</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">FMG OFFICIAL</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong y Lavalle se coronan en el Nacional de Parejas</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="font-size: 20px; margin-right: 15px;">🇲🇽</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">FMG OFFICIAL</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Joshua Hong y Regina Roldán triunfan en la Copa Pacífico</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="font-size: 20px; margin-right: 15px;">🏅</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">FMG OFFICIAL</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Éxito rotundo en el cierre de la Copa Centro</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=golf.com.mx" style="width: 100%;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">GOLF.COM.MX</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Copa Centro: Gran nivel de golf de Joshua Hong</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=golf.com.mx" style="width: 100%;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">GOLF.COM.MX</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Joshua Hong gana la Copa Sur de la FMG</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=golf.com.mx" style="width: 100%;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #1b5e20; font-weight: bold;">GOLF.COM.MX</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">México varonil triunfa en calificación del Toyota Junior Golf World Cup</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golfshot.mx/2024/09/30/ellos-son-los-ganadores-de-la-copa-centro-del-mexico-junior-golf-tour/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=golfshot.mx" style="width: 100%;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #0c2340; font-weight: bold;">GOLFSHOT.MX</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Ganadores de la Copa Centro del Mexico Junior Golf Tour</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd;">
+        <div style="margin-right: 15px; width: 24px; height: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=golfshot.mx" style="width: 100%;"></div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #0c2340; font-weight: bold;">GOLFSHOT.MX</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Ellos son los campeones de la II Copa Sur en Puebla</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.cronica.com.mx/deportes/2025/01/20/joshua-hong-recibe-el-billy-dettlaff-sportsmanship-award.html" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="display: flex; align-items: center; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fff4f4; border-left: 5px solid #d32f2f;">
+        <div style="font-size: 20px; margin-right: 15px;">🏅</div>
+        <div style="flex-grow: 1;">
+          <div style="font-size: 10px; color: #d32f2f; font-weight: bold;">SPECIAL AWARD | LA CRÓNICA DE HOY</div>
+          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Billy Dettlaff Sportsmanship Award: Honoring Integrity</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
+    
+    <a href="https://www.google.com/search?q=JOSHUA+HONG+GOLF" target="_blank" style="text-decoration: none;">
+      <div style="background-color: #0c2340; color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: bold; transition: 0.3s; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(12, 35, 64, 0.2);">
+        <span style="margin-right: 10px;">🔍</span> Latest News on Google
+      </div>
+    </a>
+    
+    <a href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong#related" target="_blank" style="text-decoration: none;">
+      <div style="background-color: #ff5a00; color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: bold; transition: 0.3s; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 90, 0, 0.2);">
+        <span style="background: white; color: #ff5a00; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; margin-right: 10px;">UTSA</span>
+        Official Joshua News
+      </div>
+    </a>
+  </div>
+
+</div> <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 20px;">
+  <div style="text-align: center; border-top: 1px solid #eee; padding-top: 20px; margin-top: 40px;">
+    <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
+      Verified News Highlights<br>
+      Official Media Repository • Joshua Hong
+    </p>
+  </div>
+</div>
+</body>
+</html>

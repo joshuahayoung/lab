@@ -1,0 +1,594 @@
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1JW8YBDZ8');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Joshua Hong Golf</title>
+
+  <style>
+    /* 1. 좌우 흔들림 방지 및 기본 설정 */
+    html, body {
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+
+    /* [상단 고정 헤더] */
+    .sticky-top {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .top-bar {
+      background-color: #705b0a; color: white; text-align: center;
+      padding: 10px 0; font-size: 13px;
+    }
+    .header-wrapper {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5%; height: 60px;
+    }
+
+    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
+    .logo-img { height: 35px; width: auto; margin-right: 10px; }
+    
+    /* [수정] 기본적으로 로고 텍스트 보임 (PC) */
+    .logo-text { font-weight: 800; font-size: 17px; display: inline-block; }
+
+    /* [PC 메뉴] */
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { 
+      text-decoration: none; color: #555; font-size: 13px; font-weight: 600; 
+      text-transform: uppercase;
+    }
+    .nav-links a.active { color: #0c2340; border-bottom: 2px solid #0c2340; }
+
+    .menu-toggle {
+      display: none; font-size: 26px; cursor: pointer;
+      background: none; border: none; padding: 0; margin-right: 15px;
+    }
+
+    /* [TOP 버튼] UTSA 오렌지색 강력 적용 */
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; /* UTSA Orange */
+      color: #ffffff !important; border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* [모바일 반응형 - 768px 이하] */
+    @media (max-width: 768px) {
+      .header-wrapper { justify-content: flex-start; } /* 메뉴-로고 왼쪽 밀착 */
+      .menu-toggle { display: block; }
+      
+      /* [수정] 모바일에서 텍스트 숨기기 */
+      .logo-text { display: none; } 
+
+      .nav-links {
+        position: fixed; top: 0; left: -100%; width: 260px; height: 100vh;
+        background: #fff; flex-direction: column; padding: 80px 30px;
+        transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+      }
+      .nav-links.active { left: 0; }
+      .close-menu { position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; }
+      .nav-links a { width: 100%; font-size: 16px; padding: 10px 0; border-bottom: 1px solid #eee; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sticky-top">
+    <div class="top-bar">Official Website of Joshua Hong | UTSA</div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
+<a href="index.html" class="logo-area">
+  <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+  <span class="logo-text">Joshua Hong Golf</span>
+</a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <a href="index.html" class="active">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html">News & Media</a>
+        <a href="reference-links.html">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+      </nav>
+    </header>
+  </div>
+
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      if (window.pageYOffset > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
+
+  
+
+<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+    <h1 style="font-size: clamp(32px, 8vw, 48px); font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+      JOSHUA HONG
+    </h1>
+    <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+      UTSA MEN'S GOLF
+    </p>
+  </div>
+
+<div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background-color: #f8f8f8; position: relative;">
+    <a href="https://drive.google.com/uc?export=view&id=1laJtS3I1EaKcYR5U1Hk0KM-2lG1tRdfI" target="_blank" style="display:block; text-decoration: none;">
+      <img src="https://drive.google.com/thumbnail?id=1laJtS3I1EaKcYR5U1Hk0KM-2lG1tRdfI&sz=w1200" 
+           style="width: 100%; display: block; object-fit: cover; aspect-ratio: 16 / 9; object-position: center 20%;" 
+           alt="Joshua Hong Performance">
+      
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(to top, rgba(0,0,0,0.2), transparent); pointer-events: none;"></div>
+    </a>
+</div>
+
+<div class="schedule-section" style="max-width: 900px; margin: 40px auto; padding: 0 15px; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="position: relative; text-align: center; margin-bottom: 40px; padding: 20px 0; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
+      ELITE PERFORMANCE
+    </div>
+    
+    <div style="position: relative; z-index: 2;">
+      <span style="display: block; font-size: 13px; color: #c98a2e; font-weight: 800; letter-spacing: 4px; margin-bottom: 8px; text-transform: uppercase;">
+        Joshua Hong Status
+      </span>
+      <h2 style="font-size: clamp(28px, 5vw, 36px); color: #0c2340; margin: 0; font-weight: 800; display: inline-block;">
+        Schedule <span style="font-weight: 300; color: #777;">&</span> Results
+      </h2>
+      <span style="display: block; width: 80px; height: 4px; background: #c98a2e; margin: 12px auto 0; border-radius: 2px;"></span>
+    </div>
+  </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%;">
+    
+    <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/participants" target="_blank" style="text-decoration: none; display: block; transition: transform 0.3s ease;">
+      <div style="background: #ffffff; padding: 30px 25px; border-radius: 24px; border: 1px solid #e1e8ed; box-shadow: 0 15px 35px rgba(0,0,0,0.06); position: relative; overflow: hidden; border-top: 6px solid #c98a2e; height: 100%; box-sizing: border-box;">
+        <div style="background: #c98a2e; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-size: 11px; font-weight: 800; position: absolute; top: 0; left: 25px; letter-spacing: 1px; box-shadow: 0 2px 5px rgba(201,138,46,0.2);">UPCOMING</div>
+        
+        <h3 style="font-size: 22px; margin: 20px 0 8px 0; color: #0c2340; font-weight: 800; line-height: 1.2;">Compadres Collegiate</h3>
+        <p style="margin: 0; font-weight: 700; color: #c98a2e; font-size: 15px;">Spring Season Opener</p>
+        
+        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #eee; color: #444; font-size: 14px; line-height: 1.8;">
+          <div style="margin-bottom: 8px;">📍 <b>Iberostar Playa Paraiso GC</b></div>
+          <div style="margin-bottom: 8px;">🏝️ Cancun, Mexico</div>
+          <div style="margin-bottom: 8px;">📅 <b>Feb 1 - Feb 3, 2026</b></div>
+          <div style="font-size: 12px; color: #999; margin-top: 10px;">*UTSA Team Event (NCAA DI)</div>
+        </div>
+        
+        <div style="margin-top: 20px; font-size: 13px; color: #c98a2e; font-weight: 800; text-align: right; text-transform: uppercase; letter-spacing: 0.5px;">
+          View Participants <span style="font-size: 16px; margin-left: 3px;">↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.golfgenius.com/pages/5776911" target="_blank" style="text-decoration: none; display: block; transition: transform 0.3s ease;">
+      <div style="background: #ffffff; padding: 30px 25px; border-radius: 24px; border: 1px solid #e1e8ed; box-shadow: 0 15px 35px rgba(0,0,0,0.06); position: relative; overflow: hidden; border-top: 6px solid #2c3e50; height: 100%; box-sizing: border-box;">
+        <div style="background: #2c3e50; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-size: 11px; font-weight: 800; position: absolute; top: 0; left: 25px; letter-spacing: 1px; box-shadow: 0 2px 5px rgba(44,62,80,0.2);">RECENT</div>
+        
+        <h3 style="font-size: 22px; margin: 20px 0 8px 0; color: #0c2340; font-weight: 800; line-height: 1.2;">Patriot All-America</h3>
+        <p style="margin: 0; font-weight: 800; font-size: 16px; color: #333; background: #f8f9fa; display: inline-block; padding: 2px 8px; border-radius: 6px;">Score: 71-73-72 (+6) | T38</p>
+        
+        <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #eee; color: #444; font-size: 14px; line-height: 1.8;">
+          <div style="margin-bottom: 8px;">📍 <b>The Wigwam (Gold Course)</b></div>
+          <div style="margin-bottom: 8px;">🌵 Litchfield Park, AZ</div>
+          <div style="margin-bottom: 8px;">📅 <b>Dec 29 - Dec 31, 2025</b></div>
+          <div style="font-size: 12px; color: #999; margin-top: 10px;">*NCAA ELITE INVITATIONAL CHAMPIONSHIP</div>
+        </div>
+        
+        <div style="margin-top: 20px; font-size: 13px; color: #2c3e50; font-weight: 800; text-align: right; text-transform: uppercase; letter-spacing: 0.5px;">
+          View Leaderboard <span style="font-size: 16px; margin-left: 3px;">↗</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+    <div class="insight-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="background: #111; border-radius: 25px; padding: 40px 30px; color: white; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3); overflow: hidden;">
+    
+    <div style="position: absolute; bottom: -20px; right: -10px; font-size: 120px; color: rgba(201,138,46,0.05); pointer-events: none; transform: rotate(-15deg);">
+      <i class="fas fa-chart-line"></i>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-bottom: 25px; position: relative; z-index: 2;">
+      <div style="background: rgba(201,138,46,0.15); width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-right: 18px; border: 1px solid rgba(201,138,46,0.4);">
+        <span style="font-size: 24px;">📊</span>
+      </div>
+      <h3 style="font-size: 24px; color: #c98a2e; margin: 0; font-weight: 800; letter-spacing: -0.5px;">Beyond the Scorecard</h3>
+    </div>
+
+    <div style="font-size: 16px; line-height: 1.8; color: #efefef; position: relative; z-index: 2;">
+      <div style="font-style: italic; border-left: 4px solid #c98a2e; padding-left: 25px; color: #fff; text-align: justify; word-break: keep-all;">
+        <p style="margin: 0 0 20px 0; color: #c98a2e; font-weight: 700; font-style: normal; font-size: 18px; letter-spacing: 0.5px;">Performance Review & Strategic Focus</p>
+        
+        <p style="margin-bottom: 20px;">
+          The Patriot All-America provided a clear benchmark against one of the strongest amateur fields in the country. Following the event, Joshua conducted a technical review, which identified <strong>long-iron precision</strong> as a key area requiring immediate improvement to compete consistently at the NCAA level.
+        </p>
+
+        <p style="margin-bottom: 20px;">
+          In coordination with the UTSA coaching staff, a short-term adjustment was approved to prioritize an <strong>intensive training block during January</strong>. This decision was made with a single objective: to return fully prepared for qualifying rounds and contribute more effectively to the team’s performance during the Spring season.
+        </p>
+
+        <p style="margin-bottom: 0;">
+          Joshua is grateful to the UTSA staff for their trust and collaboration, and he remains fully committed to translating this focused work into measurable results that elevate the team’s standing.
+        </p>
+      </div>
+    </div>
+
+    <div style="text-align: right; margin-top: 35px; font-size: 12px; color: #555; letter-spacing: 1.5px; font-weight: 700; position: relative; z-index: 2;">
+      LAST UPDATED: JAN 2026
+    </div>
+  </div>
+</div>
+
+    <div class="intro-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="background-color: #f8faff; padding: 40px 30px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.02); margin-bottom: 40px; box-sizing: border-box;">
+    
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+      <div style="width: 6px; height: 32px; background-color: #0c2340; border-radius: 10px;"></div>
+      <h2 style="font-size: 26px; color: #0c2340; margin: 0; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Introduction</h2>
+    </div>
+
+    <div style="text-align: justify; word-break: keep-all;">
+      <p style="font-size: 18px; margin-bottom: 20px; line-height: 1.8; color: #2d3748;">
+        <span style="font-weight: 900; font-size: 22px; color: #0c2340; border-bottom: 3px solid #cbd5e0; padding-bottom: 2px;">Joshua Hong</span> (b. 2007) is a <b>Mexican–Korean</b> golfer currently competing for the <b>University of Texas at San Antonio (UTSA)</b> in <b>NCAA Division I</b>.
+      </p>
+      
+      <p style="font-size: 16.5px; margin-bottom: 20px; line-height: 1.8; color: #4a5568;">
+        Since joining the collegiate ranks in 2025, Joshua has focused on adapting his game to the demands of elite NCAA competition, working closely with his coaches and performance advisors to build consistency across all areas of his game.
+      </p>
+
+      <div style="background: white; padding: 25px; border-radius: 15px; border-left: 5px solid #3182ce; margin-top: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); box-sizing: border-box;">
+        <p style="font-size: 16.5px; line-height: 1.8; color: #2d3748; margin: 0;">
+          His development is reflected in steady competitive output, including a 
+          <span style="color: #2b6cb0; font-weight: 800; font-size: 18px; background: rgba(43, 108, 176, 0.05); padding: 2px 6px; border-radius: 4px;">71.5 Adj. Scoring Average</span> 
+          across 4 Fall Season events. Combined with an 
+          <span style="color: #10b981; font-weight: 800; font-size: 18px; background: rgba(16, 185, 129, 0.05); padding: 2px 6px; border-radius: 4px;">Academic GPA of 3.4</span>, 
+          he continues to prioritize long-term growth as a dependable student-athlete at the national level.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-summary-section" style="box-sizing: border-box;">
+    <div style="display: flex; align-items: stretch; gap: 30px; flex-wrap: wrap-reverse; justify-content: center;">
+      
+      <div style="width: 280px; height: 350px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e1e8ed; flex-shrink: 0; margin: 0;">
+        <img src="https://lh3.googleusercontent.com/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" 
+             style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+             alt="Joshua Hong Profile">
+      </div>
+
+      <div style="flex: 1; min-width: 280px; max-width: 100%; background: #f4f7f9; padding: 30px; border-radius: 25px; border: 1px solid #e1e8ed; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+        
+        <h3 style="font-size: 20px; color: #0c2340; margin: 0 0 20px 0; border-bottom: 2px solid #d1d9e0; padding-bottom: 12px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+          <span style="color: #1a73e8;">🟦</span> Profile Summary
+        </h3>
+        
+        <table style="width: 100%; font-size: 15px; border-collapse: collapse; table-layout: fixed;">
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600; width: 40%;">Full Name</td>
+            <td style="padding: 12px 0; text-align: right; font-weight: 800; color: #0c2340; word-break: break-word;">Joshua Hong</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Born</td>
+            <td style="padding: 12px 0; text-align: right; color: #2d3748; word-break: break-word;">2007, Guadalajara, Mexico</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Nationality</td>
+            <td style="padding: 12px 0; text-align: right; font-weight: 800; color: #1a73e8;">Mexican–Korean (Dual)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Languages</td>
+            <td style="padding: 12px 0; text-align: right; color: #2d3748;">Spanish, Korean, English</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">University</td>
+            <td style="padding: 12px 0; text-align: right; font-weight: 800; color: #0c2340;">UTSA, NCAA Division I</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Height</td>
+            <td style="padding: 12px 0; text-align: right; color: #2d3748;">1.78 m</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Prior Sports</td>
+            <td style="padding: 12px 0; text-align: right; color: #2d3748;">Tennis, Baseball</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    <div class="heritage-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="background-color: #f9fbf9; padding: 40px 30px; border-radius: 25px; border: 1px solid #e1e8e1; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+    
+    <h2 style="font-size: clamp(22px, 4vw, 26px); color: #1b5e20; border-left: 6px solid #1b5e20; padding-left: 20px; margin: 0 0 25px 0; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase;">
+      Early Years & Heritage
+    </h2>
+    
+    <div style="text-align: justify; word-break: keep-all;">
+      <p style="font-size: 16.5px; line-height: 1.8; color: #333; margin-bottom: 25px;">
+        Joshua was born in <b>Guadalajara, Jalisco</b>, to a deeply united Korean family. Outside the home, his life was vibrantly Mexican; however, inside, <b>strict Korean discipline</b> prevailed—speaking exclusively Korean and following a rigid work ethic characterized by high responsibility.
+      </p>
+      
+      <div style="background: rgba(27, 94, 32, 0.03); padding: 25px; border-radius: 15px; border-left: 4px solid #2e7d32; position: relative;">
+        <span style="position: absolute; top: 10px; left: 10px; font-size: 40px; color: rgba(46, 125, 50, 0.1); font-family: Georgia, serif;">"</span>
+        
+        <p style="font-size: 16px; line-height: 1.8; font-style: italic; color: #2e7d32; margin: 0; position: relative; z-index: 1;">
+          "I love Mexico deeply. Representing my country is one of the greatest honors of my life. Wherever I compete, I carry the Mexican flag with pride. I also carry my Korean heritage in my heart, cherishing the unique strength and values I’ve gained from both cultures."
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top: 25px; display: flex; gap: 10px; justify-content: flex-end; opacity: 0.6;">
+      <span style="font-size: 12px; color: #1b5e20; font-weight: 700;">🇲🇽 MEXICO</span>
+      <span style="font-size: 12px; color: #1b5e20; font-weight: 700;">🇰🇷 KOREA</span>
+    </div>
+  </div>
+</div>
+
+      
+<div class="performance-path-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="background: #ffffff; padding: 35px 25px; border-radius: 30px; border: 1px solid #e2e8f0; box-shadow: 0 15px 35px rgba(0,0,0,0.06); box-sizing: border-box;">
+    
+    <div style="background: #fdfcf9; padding: 30px; border-radius: 20px; border-top: 5px solid #c98a2e; border-bottom: 5px solid #c98a2e; margin-bottom: 30px; box-sizing: border-box;">
+      <h3 style="font-size: 22px; color: #0c2340; margin-top: 0; margin-bottom: 20px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+        🚀 <span style="letter-spacing: -0.5px;">From Late Starter to Elite Performer</span>
+      </h3>
+      <div style="font-size: 16.5px; line-height: 1.8; color: #2d3748; text-align: justify; word-break: keep-all;">
+        <p style="margin-bottom: 15px;">
+          Joshua began playing golf at <b>age 12</b>, later than many of his peers. This background has shaped a development path grounded in <b>structure, repetition, and disciplined work habits</b>.
+        </p>
+        <p style="margin: 0;">
+          Rather than relying on early exposure, his progress has been driven by <b>deliberate training plans</b>, multi-sport athletic foundations, and consistent feedback from coaches. Today, he applies that same professional approach as a key member of the <b>UTSA men’s golf program</b>.
+        </p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+      
+      <div style="background: #ffffff; padding: 25px; border-radius: 20px; border: 1px solid #e1e8e1; box-sizing: border-box; transition: all 0.3s ease;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <span style="font-size: 20px;">👨‍👩‍👧‍👦</span>
+          <b style="color: #0c2340; font-size: 16px; font-weight: 800; text-transform: uppercase;">Family Support</b>
+        </div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #444; margin: 0;">
+          Raised with the support of his parents and grandmother, Joshua has two older siblings—both <b>medical students</b>. His family environment has emphasized <b>discipline, responsibility, and long-term commitment</b> throughout his development.
+        </p>
+      </div>
+
+      <div style="background: #f4f7f9; padding: 25px; border-radius: 20px; border: 1px solid #d1d9e0; box-sizing: border-box; transition: all 0.3s ease;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <span style="font-size: 20px;">🎾</span>
+          <b style="color: #0c2340; font-size: 16px; font-weight: 800; text-transform: uppercase;">Multi-Sport Background</b>
+        </div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #444; margin: 0;">
+          Before golf, he competed in <b>High-Performance Tennis</b> (from age 7) and <b>Baseball</b> (ages 11–12), building the exceptional coordination and athleticism that fueled his rapid rise in the golf world.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <div class="stats-honor-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="margin-bottom: 50px; background-color: #f8f9fa; border-radius: 25px; padding: 35px 25px; border: 1px solid #edf2f7; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+    <h2 style="font-size: 24px; color: #0c2340; margin-top: 0; margin-bottom: 25px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+      🏌️‍♂️ Playing Style & Strategy
+    </h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+      <div style="background: white; padding: 20px 15px; border-radius: 18px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+        <div style="font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Total Distance</div>
+        <div style="font-size: 28px; font-weight: 900; color: #d32f2f;">320 <span style="font-size: 14px; font-weight: 600;">yds</span></div>
+      </div>
+      <div style="background: white; padding: 20px 15px; border-radius: 18px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+        <div style="font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Greens in Reg.</div>
+        <div style="font-size: 28px; font-weight: 900; color: #2d3748;">13</div>
+      </div>
+      <div style="background: white; padding: 20px 15px; border-radius: 18px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+        <div style="font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Putting Avg.</div>
+        <div style="font-size: 28px; font-weight: 900; color: #2b6cb0;">31</div>
+      </div>
+      <div style="background: white; padding: 20px 15px; border-radius: 18px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+        <div style="font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Scoring Avg.</div>
+        <div style="font-size: 28px; font-weight: 900; color: #0c2340;">71.5</div>
+      </div>
+    </div>
+  </div>
+
+      <div style="text-align: center;">
+    <div style="margin-bottom: 35px;">
+      <h2 style="font-size: clamp(20px, 5vw, 26px); color: #0c2340; font-weight: 900; margin: 0; line-height: 1.3;">
+        Billy Dettlaff Sportsmanship Award
+      </h2>
+      <p style="font-size: 18px; color: #c98a2e; margin: 8px 0 0 0; font-weight: 600;">
+        at The Junior Players Championship (TPC Sawgrass)
+      </p>
+      <div style="width: 60px; height: 3px; background: #c98a2e; margin: 15px auto 0;"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-content: center;">
+      <div style="width: 100%; max-width: 320px; margin: 0 auto;">
+        <div style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; border: 4px solid #c98a2e; overflow: hidden; position: relative; margin-bottom: 18px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+          <img src="https://lh3.googleusercontent.com/d/1OGsiHtOY3dFr9yJsjWb5UEgxQKdVtbFy" style="width: 100%; height: 100%; object-fit: cover;" alt="Sportsmanship Award">
+          <div style="position: absolute; top: 15px; left: 15px; background: #c98a2e; color: white; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">HONOR</div>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500;">
+          Recognizing Joshua's <b>exceptional character, integrity</b>, and profound respect for the game of golf.
+        </p>
+      </div>
+
+      <div style="width: 100%; max-width: 320px; margin: 0 auto;">
+        <div style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; border: 4px solid #0c2340; overflow: hidden; position: relative; margin-bottom: 18px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+          <img src="https://lh3.googleusercontent.com/d/1GP046f-FyrCVwL6HhlYtGmr0E2IT1efY" style="width: 100%; height: 100%; object-fit: cover;" alt="TPC Sawgrass Competition">
+          <div style="position: absolute; top: 15px; left: 15px; background: #0c2340; color: white; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">THE JR. PLAYERS</div>
+        </div>
+        <p style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500;">
+          An elite-level invitation to <b>TPC Sawgrass</b>, competing among the world's most promising junior golfers.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="partnership-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+<div style="background: #ffffff; border-radius: 30px; border: 1px solid #e1e8ed; padding: 40px 25px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); margin-bottom: 40px; box-sizing: border-box; overflow: hidden;">
+    
+    <div style="margin-bottom: 10px; min-height: 50px; display: flex; align-items: center; justify-content: center;">
+      <img src="https://lh3.googleusercontent.com/d/1hxNkppI9R10P9NKPKQsf_9ahKehshOuM" style="width: 160px; height: auto; display: block; filter: brightness(0);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div style="display: none; font-family: 'Times New Roman', Times, serif; font-size: 36px; font-weight: bold; color: #000; letter-spacing: -2px; font-style: italic;">Titleist</div>
+    </div>
+
+    <div style="max-width: 720px; margin: 0 auto;">
+      <h3 style="font-size: 14px; color: #c98a2e; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 15px; font-weight: 800;">Performance-Based Equipment Support</h3>
+      
+<p style="font-size: 16.5px; color: #333; line-height: 1.8; margin-bottom: 20px; word-break: keep-all;">
+  Since his junior career, Joshua has worked closely with <b>Titleist</b> through performance-based equipment support. Based on competitive performance and availability, he has received full equipment support, allowing him to compete at the collegiate and international amateur levels.
+</p>
+
+
+<div style="background: #fdfcf9; border-left: 4px solid #c98a2e; padding: 15px 20px; text-align: left; margin-bottom: 25px; display: inline-block; width: 100%; box-sizing: border-box;">
+  <p style="font-size: 13.5px; color: #666; line-height: 1.6; font-style: italic; margin: 0;">
+    This equipment support relationship is managed in accordance with NCAA regulations and university guidelines, and does not involve promotional obligations, commercial deliverables, or sales-based activity.
+  </p>
+</div>
+
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; border-top: 1px solid #f1f1f1; padding-top: 25px; margin-bottom: 30px;">
+        <span style="background: #000; padding: 6px 14px; border-radius: 20px; font-size: 11px; color: #fff; font-weight: 700; letter-spacing: 0.5px;">#ProV1x</span>
+        <span style="background: #f8f9fa; padding: 6px 14px; border-radius: 20px; font-size: 11px; color: #718096; font-weight: 700; border: 1px solid #edf2f7;">#VokeyDesign</span>
+        <span style="background: #f8f9fa; padding: 6px 14px; border-radius: 20px; font-size: 11px; color: #718096; font-weight: 700; border: 1px solid #edf2f7;">#ScottyCameron</span>
+        <span style="background: #f8f9fa; padding: 6px 14px; border-radius: 20px; font-size: 11px; color: #718096; font-weight: 700; border: 1px solid #edf2f7;">#TeamTitleist</span>
+      </div>
+
+<div style="width: 100%; display: flex; justify-content: center;">
+        <img src="https://lh3.googleusercontent.com/d/1FEbq8jCEyvezb15Bv2rem1ychykxThrI" alt="Joshua Titleist Athlete" style="width: 100%; max-width: 300px; height: auto; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="max-width: 800px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="background: #0c2340; padding: 35px 25px; border-radius: 25px; text-align: center; color: white; box-shadow: 0 12px 30px rgba(12, 35, 64, 0.2);">
+    <h2 style="margin: 0 0 12px 0; font-size: 20px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;">NIL & Brand Collaboration</h2>
+    <p style="font-size: 15.5px; color: rgba(255,255,255,0.9); line-height: 1.6; margin-bottom: 25px; max-width: 550px; margin-left: auto; margin-right: auto; word-break: keep-all;">
+      Joshua is committed to building long-term, value-driven relationships with brands that share his spirit of <b>excellence, discipline, and integrity</b>.
+    </p>
+    
+<a href="javascript:void(0);" 
+   onclick="const u='joshuahayoung'; const d='hotmail.com'; window.location.href='mailto:'+u+'@'+d;" 
+   style="display: inline-block; padding: 15px 35px; background: #c98a2e; color: #ffffff; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 800; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(201,138,46,0.3); border: none; cursor: pointer;">
+    ✉️ Explore Partnership Opportunities
+</a>
+
+    <div style="background: rgba(255,255,255,0.06); padding: 20px; border-radius: 12px; text-align: left; margin-top: 30px; border: 1px solid rgba(255,255,255,0.1);">
+      <p style="font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.6; margin: 0;">
+        <b style="color: #c98a2e; display: block; margin-bottom: 4px; font-size: 13px;">⚠️ Compliance Note:</b>
+        As an international student-athlete on an F-1 visa, Joshua strictly adheres to NCAA and U.S. federal compliance guidelines. We specifically welcome inquiries from <b>international brands</b> (Mexico, South Korea) or opportunities structured as <b>licensing/passive income</b>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="footer-section" style="max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <div style="padding: 30px 25px; background: #ffffff; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.04); box-sizing: border-box; margin-bottom: 40px;">
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <span style="background: #4285F4; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 14px; color: white; box-shadow: 0 4px 10px rgba(66,133,244,0.3);">🤖</span>
+      <h3 style="margin: 0; color: #5f6368; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">AI-Powered Profile Overview</h3>
+    </div>
+    
+    <div style="font-size: 16px; color: #3c4043; line-height: 1.8; border-left: 5px solid #0c2340; padding: 25px; background-color: #f8fafc; border-radius: 0 15px 15px 0; text-align: justify; word-break: keep-all;">
+      "Joshua Hong is a <b>Two-Time National Junior Champion</b> and a strategic asset for the UTSA program. His unique <b>Korean-Mexican heritage</b>, combined with an elite work ethic and a transition from high-performance sports to golf dominance, <b>positions him as a reliable and disciplined student-athlete within a structured collegiate environment.</b>"
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 30px;">
+      <a href="https://www.wagr.com/playerprofile/joshua-hong-40704" target="_blank" style="text-decoration: none; background: #1a73e8; color: white; padding: 14px 5px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px; transition: opacity 0.2s;">
+        <span>🔗</span> WAGR-Stats
+      </a>
+      <a href="https://scoreboard.clippd.com/players/38903?season=2026" target="_blank" style="text-decoration: none; background: #34a853; color: white; padding: 14px 5px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        <span>📊</span> SCRBD-Stats
+      </a>
+      <a href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong" target="_blank" style="text-decoration: none; background: #ff5a00; color: white; padding: 14px 5px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 18px; height: 18px; border-radius: 2px;"> UTSA-Roster
+      </a>
+      <a href="https://goutsa.com/utsa-roadrunners-mens-golf-statistics" target="_blank" style="text-decoration: none; background: #777; color: white; padding: 14px 5px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 18px; height: 18px; border-radius: 2px;"> UTSA-Stats
+      </a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 60px 0;">
+    <p style="color: #666; font-size: 14px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 400; text-transform: uppercase;">Inside Joshua's Golf</p>
+    <a href="https://www.instagram.com/joshuahayoung/" target="_blank" 
+       style="display: inline-flex; align-items: center; gap: 12px; padding: 16px 40px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(188, 24, 136, 0.3); transition: transform 0.2s ease;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      FOLLOW ON INSTAGRAM
+    </a>
+  </div>
+
+  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 0 60px 0;">
+    <p style="font-size: 12px; color: #bbb; text-transform: uppercase; letter-spacing: 3px; margin: 0;">
+      Career Overview • Official Profile • Joshua Hong
+    </p>
+    <p style="font-size: 11px; color: #ccc; margin-top: 10px;">
+      © 2026 Joshua Hong. All Rights Reserved.
+    </p>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
