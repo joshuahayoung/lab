@@ -352,38 +352,50 @@
 <div class="archives-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-    /* 1. 기본 설정 (PC용) */
-    .mobile-only-data { display: none; }
+    /* 테이블 기본 구조 */
+    .res-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; }
+    .res-table th { background: #f8f9fa; font-size: 11px; color: #666; text-transform: uppercase; padding: 15px 10px; border-bottom: 1px solid #eee; }
+    .res-table td { padding: 15px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
     
-    /* 2. 모바일 설정 (화면 폭 768px 이하) */
+    /* 모바일 최적화 (768px 이하) */
     @media (max-width: 768px) {
-      .responsive-table thead { display: none !important; }
-      .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td { 
-        display: block !important; 
-        width: 100% !important; 
-      }
-      .responsive-table tr { 
-        margin-bottom: 20px !important; 
-        border: 1px solid #eee !important; 
-        border-radius: 15px !important; 
-        padding: 15px !important; 
-        background: #ffffff !important;
-      }
-      /* PC용 셀 숨기기 (중복 방지 핵심) */
-      .pc-only-cell { display: none !important; }
+      .res-table thead { display: none; } /* 헤더 숨김 */
+      .res-table, .res-table tbody, .res-table tr, .res-table td { display: block; width: 100%; box-sizing: border-box; }
       
-      /* 모바일 전용 데이터 보이기 */
-      .mobile-only-data { 
-        display: flex !important; 
-        justify-content: space-between; 
-        align-items: center; 
-        margin-top: 15px; 
-        padding-top: 12px; 
-        border-top: 1px dashed #eee; 
+      .res-table tr { 
+        margin-bottom: 20px; 
+        border: 1px solid #eee !important; 
+        border-radius: 15px; 
+        padding: 15px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       }
-      .score-box { text-align: center; flex: 1; }
-      .label-text { display: block; font-size: 9px; color: #999; margin-bottom: 3px; font-weight: 700; }
-      .value-text { font-size: 13px; font-weight: 700; color: #333; }
+      
+      .res-table td { border: none; padding: 0; text-align: left; overflow: visible; }
+      
+      /* PC용 점수 칸들을 모바일에서는 숨김 */
+      .hide-on-mobile { display: none !important; }
+      
+      /* 모바일 전용 한 줄 스코어 바 */
+      .mobile-score-bar { 
+        display: flex !important; 
+        background: #fcfcfc;
+        border-radius: 8px;
+        margin-top: 15px;
+        padding: 10px 5px;
+        border: 1px solid #f0f0f0;
+      }
+      .m-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+      .m-item:last-child { border-right: none; }
+      .m-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .m-value { display: block; font-size: 13px; font-weight: 800; color: #333; }
+    }
+    
+    /* PC 전용 설정 */
+    @media (min-width: 769px) {
+      .mobile-score-bar { display: none !important; }
+      .col-tour { width: 45%; }
+      .col-score { width: 20%; }
+      .col-val { width: 11%; }
     }
   </style>
 
@@ -398,35 +410,34 @@
       <h4 style="margin: 0; color: #c98a2e; font-size: 20px; font-weight: 800;">Off-Season / Special Invitational</h4>
     </div>
     
-    <div style="border-radius: 15px; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden;">
-      <table class="responsive-table" style="width: 100%; border-collapse: collapse; font-size: 14px; background: white;">
-        <thead style="background: #f8f9fa; font-size: 11px; color: #666; text-transform: uppercase;">
+    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden;">
+      <table class="res-table">
+        <thead>
           <tr>
-            <th style="padding: 15px; text-align: left;">Date / Tournament</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">R1-R2-R3</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Total</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Par</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Finish</th>
+            <th class="col-tour">Date / Tournament</th>
+            <th class="col-score">R1-R2-R3</th>
+            <th class="col-val">Total</th>
+            <th class="col-val">Par</th>
+            <th class="col-val">Finish</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="padding: 20px 15px;">
-              <div style="color: #888; font-weight: 600; font-size: 11px;">Dec 2025</div>
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px; margin: 3px 0;">Patriot All-America Invitational</div>
-              <div style="font-size: 10px; color: #c98a2e; font-weight: 700; background: #fdfcf9; display: inline-block; padding: 2px 8px; border-radius: 4px; border: 1px solid #f2e6d5;">WAGR Power: 806.3420 / Pts: 6.1052</div>
-              
-              <div class="mobile-only-data">
-                <div class="score-box"><span class="label-text">R1-R2-R3</span><span class="value-text">71-73-72</span></div>
-                <div class="score-box"><span class="label-text">TOTAL</span><span class="value-text">216</span></div>
-                <div class="score-box"><span class="label-text">PAR</span><span class="value-text">+6</span></div>
-                <div class="score-box"><span class="label-text">FINISH</span><span class="value-text" style="color:#0c2340;">T38</span></div>
+            <td>
+              <div style="color: #999; font-weight: 700; font-size: 11px;">Dec 2025</div>
+              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Patriot All-America Invitational</div>
+              <div style="font-size: 11px; color: #c98a2e; font-weight: 700; letter-spacing: -0.2px;">WAGR Power: 806.3420 / Pts: 6.1052</div>
+              <div class="mobile-score-bar">
+                <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">71-73-72</span></div>
+                <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">216</span></div>
+                <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+6</span></div>
+                <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T38</span></div>
               </div>
             </td>
-            <td class="pc-only-cell" style="text-align: center; color: #2d3436;">71-73-72</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 600;">216</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 800;">+6</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 800; color: #0c2340;">T38</td>
+            <td class="hide-on-mobile" style="text-align: center;">71-73-72</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">216</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 800;">+6</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 800; color: #0c2340;">T38</td>
           </tr>
         </tbody>
       </table>
@@ -435,88 +446,88 @@
 
   <div style="margin-bottom: 40px;">
     <div style="display: flex; align-items: center; margin-bottom: 20px; border-left: 6px solid #0c2340; padding-left: 15px;">
-      <h4 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 800;">2025 NCAA Fall Season <span style="font-weight: 400; color: #7f8c8d; font-size: 15px;">(4 Events)</span></h4>
+      <h4 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 800;">2025 NCAA Fall Season</h4>
     </div>
     
-    <div style="border-radius: 15px; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.05); overflow: hidden;">
-      <table class="responsive-table" style="width: 100%; border-collapse: collapse; font-size: 14px; background: white;">
-        <thead style="background: #f8f9fa; font-size: 11px; color: #666; text-transform: uppercase;">
+    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden;">
+      <table class="res-table">
+        <thead>
           <tr>
-            <th style="padding: 15px; text-align: left;">Date / Tournament</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">R1-R2-R3</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Total</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Par</th>
-            <th class="pc-only-cell" style="padding: 15px; text-align: center;">Finish</th>
+            <th class="col-tour">Date / Tournament</th>
+            <th class="col-score">R1-R2-R3</th>
+            <th class="col-val">Total</th>
+            <th class="col-val">Par</th>
+            <th class="col-val">Finish</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 20px 15px;">
-              <div style="color: #888; font-weight: 600; font-size: 11px;">Oct 2025</div>
-              <div style="font-weight: 700; color: #2d3436; margin: 3px 0;">Trinity Forest Invitational</div>
-              <div style="font-size: 10px; color: #777; font-weight: 700;">WAGR Power: 360.1597 / Pts: 3.1971</div>
-              <div class="mobile-only-data">
-                <div class="score-box"><span class="label-text">R1-R2-R3</span><span class="value-text">75-73-74</span></div>
-                <div class="score-box"><span class="label-text">TOTAL</span><span class="value-text">222</span></div>
-                <div class="score-box"><span class="label-text">PAR</span><span class="value-text">+6</span></div>
-                <div class="score-box"><span class="label-text">FINISH</span><span class="value-text">T55</span></div>
+          <tr>
+            <td>
+              <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
+              <div style="font-weight: 700; color: #333; font-size: 15px;">Trinity Forest Invitational</div>
+              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Power: 360.1597 / Pts: 3.1971</div>
+              <div class="mobile-score-bar">
+                <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">75-73-74</span></div>
+                <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">222</span></div>
+                <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+6</span></div>
+                <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T55</span></div>
               </div>
             </td>
-            <td class="pc-only-cell" style="text-align: center;">75-73-74</td>
-            <td class="pc-only-cell" style="text-align: center;">222</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 700;">+6</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 700;">T55</td>
+            <td class="hide-on-mobile" style="text-align: center;">75-73-74</td>
+            <td class="hide-on-mobile" style="text-align: center;">222</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">+6</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">T55</td>
           </tr>
-          <tr style="border-bottom: 1px solid #eee; background-color: #fcfdfe;">
-            <td style="padding: 20px 15px;">
-              <div style="color: #888; font-weight: 600; font-size: 11px;">Oct 2025</div>
-              <div style="font-weight: 700; color: #2d3436; margin: 3px 0;">Badger Invitational</div>
-              <div style="font-size: 10px; color: #777; font-weight: 700;">WAGR Power: 129.0694 / Pts: 3.3178</div>
-              <div class="mobile-only-data">
-                <div class="score-box"><span class="label-text">R1-R2-R3</span><span class="value-text"><span style="color:#e53935;">71</span>-71-76</span></div>
-                <div class="score-box"><span class="label-text">TOTAL</span><span class="value-text">218</span></div>
-                <div class="score-box"><span class="label-text">PAR</span><span class="value-text">+2</span></div>
-                <div class="score-box"><span class="label-text">FINISH</span><span class="value-text">T24</span></div>
+          <tr style="background: #fcfdfe;">
+            <td>
+              <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
+              <div style="font-weight: 700; color: #333; font-size: 15px;">Badger Invitational</div>
+              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Power: 129.0694 / Pts: 3.3178</div>
+              <div class="mobile-score-bar">
+                <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value"><span style="color:#e53935;">71</span>-71-76</span></div>
+                <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">218</span></div>
+                <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+2</span></div>
+                <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T24</span></div>
               </div>
             </td>
-            <td class="pc-only-cell" style="text-align: center;"><span style="color:#e53935;font-weight:800;">71</span>-71-76</td>
-            <td class="pc-only-cell" style="text-align: center;">218</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 700;">+2</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 700;">T24</td>
+            <td class="hide-on-mobile" style="text-align: center;"><span style="color:#e53935;font-weight:800;">71</span>-71-76</td>
+            <td class="hide-on-mobile" style="text-align: center;">218</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">+2</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">T24</td>
           </tr>
-          <tr style="border-bottom: 1px solid #eee;">
-            <td style="padding: 20px 15px;">
-              <div style="color: #888; font-weight: 600; font-size: 11px;">Sep 2025</div>
-              <div style="font-weight: 700; color: #2d3436; margin: 3px 0;">Highlands Invitational</div>
-              <div style="font-size: 10px; color: #777; font-weight: 700;">WAGR Power: 232.6656 / Pts: 4.9097</div>
-              <div class="mobile-only-data">
-                <div class="score-box"><span class="label-text">R1-R2-R3</span><span class="value-text">74-<span style="color:#e53935;">71</span>-70</span></div>
-                <div class="score-box"><span class="label-text">TOTAL</span><span class="score-value">215</span></div>
-                <div class="score-box"><span class="label-text">PAR</span><span class="value-text" style="color:#e53935;">-1</span></div>
-                <div class="score-box"><span class="label-text">FINISH</span><span class="value-text">T12</span></div>
+          <tr>
+            <td>
+              <div style="color: #999; font-weight: 700; font-size: 11px;">Sep 2025</div>
+              <div style="font-weight: 700; color: #333; font-size: 15px;">Highlands Invitational</div>
+              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Power: 232.6656 / Pts: 4.9097</div>
+              <div class="mobile-score-bar">
+                <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">74-<span style="color:#e53935;">71</span>-70</span></div>
+                <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">215</span></div>
+                <div class="m-item"><span class="m-label">PAR</span><span class="m-value" style="color:#e53935;">-1</span></div>
+                <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T12</span></div>
               </div>
             </td>
-            <td class="pc-only-cell" style="text-align: center;">74-<span style="color:#e53935;font-weight:800;">71</span>-70</td>
-            <td class="pc-only-cell" style="text-align: center;">215</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 900; color:#e53935;">-1</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 800;">T12</td>
+            <td class="hide-on-mobile" style="text-align: center;">74-<span style="color:#e53935;font-weight:800;">71</span>-70</td>
+            <td class="hide-on-mobile" style="text-align: center;">215</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">-1</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 800;">T12</td>
           </tr>
-          <tr style="background: rgba(12, 35, 64, 0.03);">
-            <td style="padding: 20px 15px;">
+          <tr style="background: rgba(12, 35, 64, 0.04);">
+            <td>
               <div style="color: #0c2340; font-weight: 700; font-size: 11px;">Sep 2025</div>
-              <div style="font-weight: 800; color: #0c2340; margin: 3px 0;">Argent Financial Invitational</div>
-              <div style="font-size: 10px; color: #777; font-weight: 700;">WAGR Power: 230.8799 / Pts: 5.3735</div>
-              <div class="mobile-only-data">
-                <div class="score-box"><span class="label-text">R1-R2-R3</span><span class="value-text" style="color:#e53935;">70-70-69</span></div>
-                <div class="score-box"><span class="label-text">TOTAL</span><span class="value-text" style="color:#e53935;">209</span></div>
-                <div class="score-box"><span class="label-text">PAR</span><span class="value-text" style="color:#e53935;">-7</span></div>
-                <div class="score-box"><span class="label-text">FINISH</span><span class="value-text" style="color:#0c2340;">T9</span></div>
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Argent Financial Invitational</div>
+              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Power: 230.8799 / Pts: 5.3735</div>
+              <div class="mobile-score-bar">
+                <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value" style="color:#e53935;">70-70-69</span></div>
+                <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value" style="color:#e53935;">209</span></div>
+                <div class="m-item"><span class="m-label">PAR</span><span class="m-value" style="color:#e53935;">-7</span></div>
+                <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T9</span></div>
               </div>
             </td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 900; color:#e53935;">70-70-69</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 900; color:#e53935;">209</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 900; color:#e53935;">-7</td>
-            <td class="pc-only-cell" style="text-align: center; font-weight: 900; color: #0c2340;">T9</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">70-70-69</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">209</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">-7</td>
+            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color: #0c2340;">T9</td>
           </tr>
         </tbody>
       </table>
