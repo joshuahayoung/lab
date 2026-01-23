@@ -33,13 +33,13 @@
       font-weight: 400;
     }
 
-    /* 헤더 래퍼: 데스크탑/모바일 공용 */
+    /* 헤더 래퍼 */
     .header-wrapper {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 80px;
     }
 
-    /* 로고 영역: 데스크탑에서는 왼쪽 정렬 */
+    /* 로고 영역 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 50px; width: auto; display: block; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
@@ -51,16 +51,16 @@
       font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
-    .nav-links a.active { background-color: #F15A22; color: #fff; } /* 선택된 버튼 효과 */
-    .mobile-menu-logo, .close-menu, .menu-footer { display: none; } /* 데스크탑에선 숨김 */
+    .nav-links a.active { background-color: #F15A22; color: #fff; } 
+    .mobile-menu-logo, .close-menu, .menu-footer { display: none; } 
 
-    /* 세줄 버튼: 기본적으로 숨김 */
+    /* 세줄 버튼 */
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
       background: none; border: none; color: #F15A22;
     }
 
-    /* [TOP 버튼 디자인 추가] */
+    /* [TOP 버튼 디자인] */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
@@ -74,9 +74,9 @@
     /* [모바일 스타일 - 1024px 이하] */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; } /* 버튼을 맨 앞으로 */
-      .logo-area { order: 2; margin-left: 0; } /* 로고를 버튼 바로 옆으로 (왼쪽 정렬) */
-      .logo-text { display: none; } /* 모바일에서 텍스트 숨김 */
+      .menu-toggle { display: block; order: 1; } 
+      .logo-area { order: 2; margin-left: 0; } 
+      .logo-text { display: none; } 
       .logo-img { height: 40px; }
 
       .nav-links {
@@ -90,15 +90,14 @@
       .nav-links.active { left: 0; }
       
       .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
-      .nav-links a.active { background-color: #F15A22; color: #fff; } /* 모바일도 주황색 버튼 효과 */
+      .nav-links a.active { background-color: #F15A22; color: #fff; } 
 
-      .mobile-menu-logo { display: block; margin-bottom: 30px; } /* 로고 밑 주황색 줄 삭제 */
+      .mobile-menu-logo { display: block; margin-bottom: 30px; } 
       .mobile-menu-logo img { height: 35px; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; }
       
-      /* 메뉴 하단 텍스트 위치 더 아래로 조정 */
       .menu-footer {
-        display: block; margin-top: 60px; /* 위치를 더 밑으로 내림 */
+        display: block; margin-top: 60px; 
         padding-top: 20px; border-top: 1px solid #eee; width: 100%;
       }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
@@ -153,20 +152,21 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // [TOP 버튼 동작 스크립트 추가]
-    window.onscroll = function() {
+    // 잘 작동하는 Reference 페이지의 스크립트 방식을 적용
+    window.addEventListener('scroll', function() {
       const btn = document.getElementById('fixedTopBtn');
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
+      if (window.pageYOffset > 100) {
+        btn.style.display = 'block';
       } else {
-        btn.style.display = "none";
+        btn.style.display = 'none';
       }
-    };
+    });
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+</body>
 
 
 
