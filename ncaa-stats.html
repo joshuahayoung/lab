@@ -339,58 +339,41 @@
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-    /* 테이블 기본 구조 */
-    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; }
-    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 18px 10px; border-bottom: 2px solid #2e7d32; }
-    .log-table td { padding: 18px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; }
+    /* 테이블 기본 구조 (데스크탑) */
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    .log-table th { background: #f8f9fa; font-size: 12px; color: #0c2340; text-transform: uppercase; padding: 15px 10px; border-bottom: 2px solid #2e7d32; text-align: center; }
+    .log-table th.col-left { text-align: left; padding-left: 20px; }
+    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td.col-left { text-align: left; padding-left: 20px; }
     
+    /* 강조 스타일 */
+    .under-par { color: #e74c3c !important; font-weight: 800 !important; }
+    .scheduled-text { font-size: 11px; color: #95a5a6; font-weight: 600; }
+
     /* 모바일 최적화 (768px 이하) */
     @media (max-width: 768px) {
       .log-table thead { display: none; }
       .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
-      
-      .log-table tr { 
-        margin-bottom: 20px; 
-        border: 1px solid #e2e8f0 !important; 
-        border-radius: 15px; 
-        padding: 15px; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      }
-      
-      .log-table td { border: none; padding: 0; text-align: left; }
-      .hide-log-mobile { display: none !important; }
-      
-      /* 모바일 전용 한 줄 스코어 바 */
-      .mobile-status-bar { 
-        display: flex !important; 
-        background: #fcfcfc;
-        border-radius: 8px;
-        margin-top: 15px;
-        padding: 10px 5px;
-        border: 1px dashed #e2e8f0;
-      }
+      .log-table tr { margin-bottom: 20px; border: 1px solid #e2e8f0 !important; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
+      .hide-mobile { display: none !important; }
+      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 15px; padding: 10px 5px; border: 1px dashed #e2e8f0; }
       .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
       .ms-item:last-child { border-right: none; }
       .ms-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
       .ms-value { display: block; font-size: 13px; font-weight: 800; color: #bdc3c7; }
     }
     
-    /* PC 전용 너비 설정 */
+    /* PC 전용 너비 */
     @media (min-width: 769px) {
       .mobile-status-bar { display: none !important; }
-      .col-date { width: 15%; }
-      .col-course { width: 45%; }
+      .col-info { width: 50%; }
+      .col-rounds { width: 15%; }
+      .col-total { width: 10%; }
+      .col-par { width: 10%; }
+      .col-finish { width: 15%; }
     }
   </style>
-
-  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
-    <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
-      JOSHUA HONG : PERFORMANCE LOG
-    </h1>
-    <p style="margin: 8px 0 0; color: #7f8c8d; font-size: 14px; font-weight: 500; letter-spacing: 1px;">
-      Official Tournament Schedule
-    </p>
-  </div>
 
   <div style="margin-bottom: 50px;">
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
@@ -406,21 +389,20 @@
       <table class="log-table">
         <thead>
           <tr>
-            <th class="col-date">Date</th>
-            <th class="col-course">Tournament / Course</th>
-            <th style="text-align: center;">R1-R2-R3</th>
-            <th style="text-align: center;">Total</th>
-            <th style="text-align: center;">Par</th>
-            <th style="text-align: center;">Finish</th>
+            <th class="col-info col-left">Tournament / Course</th>
+            <th class="col-rounds">R1-R2-R3</th>
+            <th class="col-total">Total</th>
+            <th class="col-par">Par</th>
+            <th class="col-finish">Finish</th>
           </tr>
         </thead>
         <tbody style="color: #2d3436;">
           
           <tr>
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Feb 2-4</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Feb 2-4, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Compadres Collegiate (UTRGV)</div>
-              <div style="font-size: 13px; color: #7f8c8d;">Iberostar Playa Paraiso - Playa Del Carmen, MX</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Iberostar Playa Paraiso - MX</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -428,17 +410,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr style="background-color: #fcfdfe;">
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Feb 23-24</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Feb 23-24, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Lone Star Collegiate (UTSA)</div>
-              <div style="font-size: 13px; color: #7f8c8d;">TPC San Antonio Canyons - San Antonio, TX</div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio Canyons - TX</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -446,17 +428,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr>
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Mar 2-3</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Mar 2-3, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Golden Nugget Inv. (Lamar)</div>
-              <div style="font-size: 13px; color: #7f8c8d;">The CC at Golden Nugget - Lake Charles, LA</div>
+              <div style="font-size: 12px; color: #7f8c8d;">The CC at Golden Nugget - LA</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -464,17 +446,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr style="background-color: #fcfdfe;">
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Mar 16-17</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Mar 16-17, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Arizona Thunderbirds Intercollegiate</div>
-              <div style="font-size: 13px; color: #7f8c8d;">Tucson CC - Tucson, AZ</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Tucson CC - AZ</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -482,17 +464,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr>
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Mar 23-24</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Mar 23-24, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Bell Bank "Pay it Forward" Collegiate</div>
-              <div style="font-size: 13px; color: #7f8c8d;">Wigwam GC - Litchfield Park, AZ</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Wigwam GC - AZ</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -500,17 +482,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr style="background-color: #fcfdfe;">
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">Apr 6-7</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">Apr 6-7, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Tiger Intercollegiate (Missouri)</div>
-              <div style="font-size: 13px; color: #7f8c8d;">The Club at Old Hawthorne - Columbia, MO</div>
+              <div style="font-size: 12px; color: #7f8c8d;">The Club at Old Hawthorne - MO</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -518,17 +500,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
-          <tr style="border-bottom: 1px solid #edf2f7; background: rgba(201, 138, 46, 0.03);">
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px; color: #c98a2e;">Apr 27-29</div>
+          <tr style="background: rgba(201, 138, 46, 0.03);">
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px; color: #c98a2e;">Apr 27-29, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">American Conference Championship</div>
-              <div style="font-size: 13px; color: #7f8c8d;">Ritz Carlton Members Club - Sarasota, FL</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Ritz Carlton Members Club - FL</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -536,17 +518,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr>
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px;">May 18-20</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px;">May 18-20, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">NCAA Regional</div>
-              <div style="font-size: 13px; color: #7f8c8d;">TBD - Location to be Announced</div>
+              <div style="font-size: 12px; color: #7f8c8d;">TBD - Location to be Announced</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -554,17 +536,17 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
 
           <tr style="background: rgba(12, 35, 64, 0.05);">
-            <td>
-              <div style="font-weight: 600; font-size: 14.5px; color: #0c2340;">May 29 - Jun 3</div>
+            <td class="col-left">
+              <div style="font-weight: 600; font-size: 13px; color: #0c2340;">May 29 - Jun 3, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">NCAA Championship</div>
-              <div style="font-size: 13px; color: #7f8c8d;">Omni La Costa - Carlsbad, CA</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Omni La Costa - Carlsbad, CA</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
@@ -572,11 +554,12 @@
                 <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">-</span></div>
               </div>
             </td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
-            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
+
         </tbody>
       </table>
     </div>
