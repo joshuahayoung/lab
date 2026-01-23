@@ -198,29 +198,40 @@
 
 
   
+  
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-    /* 기본 테이블 스타일 (데스크탑) */
-    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 40px; border: none; }
+    /* 기본 테이블 스타일 */
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
     .log-table th { background: #f8f9fa; font-size: 12px; color: #0c2340; text-transform: uppercase; padding: 15px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
     .log-table th.col-left { text-align: left; padding-left: 20px; }
     .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
     .log-table td.col-left { text-align: left; padding-left: 20px; }
     
-    /* 언더파 강조 공통 클래스 */
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
     .scheduled-text { font-size: 11px; color: #95a5a6; font-weight: 600; }
     .today-text { font-size: 12px; font-weight: 800; color: #e74c3c; }
 
-    /* 모바일 대응 (768px 이하) */
+    /* 현재 진행 중인 섹션을 위한 라이브 카드 스타일 */
+    .live-event-card {
+      background: #ffffff;
+      border: 2px solid #0c2340;
+      border-radius: 20px;
+      padding: 5px;
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    /* 모바일 대응 */
     @media (max-width: 768px) {
       .log-table thead { display: none; }
       .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
-      .log-table tr { margin-bottom: 20px; border: 1px solid #e2e8f0 !important; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+      .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
       .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
       .hide-mobile { display: none !important; }
-      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 15px; padding: 10px 5px; border: 1px dashed #e2e8f0; }
+      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 12px; padding: 10px 5px; border: 1px dashed #e2e8f0; }
       .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
       .ms-item:last-child { border-right: none; }
       .ms-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
@@ -241,20 +252,21 @@
     <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
       JOSHUA HONG : PERFORMANCE LOG
     </h1>
-    <p style="margin: 8px 0 0; color: #7f8c8d; font-size: 14px; font-weight: 500; letter-spacing: 1px;">
-      Official Tournament Schedule
-    </p>
   </div>
 
-  <div style="margin-bottom: 50px;">
-    <h2 style="color: #0c2340; border-left: 6px solid #e74c3c; padding-left: 15px; font-size: 22px; margin: 0 0 20px; font-weight: 800;">
-      Cancun Collegiate Qualifying <span style="font-weight: 400; font-size: 16px; color: #e74c3c;">(In Progress)</span>
-    </h2>
+  <div class="live-event-card">
+    <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 1px; animation: pulse 2s infinite;">● LIVE</span>
+        <h2 style="color: #0c2340; margin: 0; font-size: 22px; font-weight: 800;">Cancun Collegiate Qualifying</h2>
+      </div>
+      <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Tournament In Progress</div>
+    </div>
 
-    <div style="border-radius: 15px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 30px rgba(231, 76, 60, 0.08);">
-      <table class="log-table" style="margin-bottom: 0;">
+    <div style="border-radius: 0 0 15px 15px; overflow: hidden; border-top: 1px solid #edf2f7;">
+      <table class="log-table">
         <thead>
-          <tr style="border-bottom: 2px solid #e74c3c;">
+          <tr>
             <th class="col-info col-left">Tournament Details</th>
             <th class="col-score">Score</th>
             <th class="col-par">Par</th>
@@ -328,7 +340,30 @@
         </tbody>
       </table>
     </div>
+
+    <div style="background: #0c2340; padding: 15px 25px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Tournament Standings</div>
+      <div style="display: flex; gap: 30px;">
+        <div style="text-align: right;">
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">TOTAL SCORE</span>
+          <span style="color: #ffffff; font-size: 20px; font-weight: 900;">68</span>
+        </div>
+        <div style="text-align: right;">
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">OVERALL PAR</span>
+          <span style="color: #e74c3c; font-size: 20px; font-weight: 900;">-4</span>
+        </div>
+      </div>
+    </div>
   </div>
+  </div>
+
+<style>
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+</style>
 
 
 
