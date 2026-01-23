@@ -213,7 +213,7 @@
     .scheduled-text { font-size: 11px; color: #95a5a6; font-weight: 600; }
     .today-text { font-size: 12px; font-weight: 800; color: #e74c3c; }
 
-    /* 현재 진행 중인 섹션을 위한 라이브 카드 스타일 */
+    /* In Progress 카드 스타일 */
     .live-event-card {
       background: #ffffff;
       border: 2px solid #0c2340;
@@ -223,6 +223,22 @@
       margin-bottom: 50px;
       position: relative;
     }
+
+    /* 스코어카드 버튼 스타일 */
+    .card-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      background: #f1f3f5;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      border: 1px solid #dee2e6;
+      transition: all 0.2s;
+    }
+    .card-link:hover { background: #e9ecef; border-color: #ced4da; }
 
     /* 모바일 대응 */
     @media (max-width: 768px) {
@@ -257,10 +273,10 @@
   <div class="live-event-card">
     <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="background: #e74c3c; color: white; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 1px; animation: pulse 2s infinite;">● LIVE</span>
+        <span style="background: #e74c3c; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; animation: pulse 2.5s infinite;">IN PROGRESS</span>
         <h2 style="color: #0c2340; margin: 0; font-size: 22px; font-weight: 800;">Cancun Collegiate Qualifying</h2>
       </div>
-      <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Tournament In Progress</div>
+      <div style="font-size: 12px; color: #95a5a6; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Jan 2026 Season</div>
     </div>
 
     <div style="border-radius: 0 0 15px 15px; overflow: hidden; border-top: 1px solid #edf2f7;">
@@ -280,6 +296,9 @@
               <div style="font-weight: 600; font-size: 13px; color: #e74c3c;">Jan 22, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 1: The Canyons Course</div>
               <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio (Par 72)</div>
+              <a href="https://github.com/joshuahayoung/lab/blob/main/images/qualify%201%20cancun.jpg" target="_blank" class="card-link">
+                📄 View Scorecard
+              </a>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">68</span></div>
                 <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-4</span></div>
@@ -296,7 +315,7 @@
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Jan 23, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 2: The Oaks Course</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio (Par 72)</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">-</span></div>
                 <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
@@ -313,7 +332,7 @@
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Jan 26, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 3: The Canyons Course</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio (Par 72)</div>
               <div class="mobile-status-bar">
                 <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value scheduled-text">Scheduled</span></div>
               </div>
@@ -327,7 +346,7 @@
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Jan 27, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 4: The Oaks Course</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio (Par 72)</div>
               <div class="mobile-status-bar">
                 <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value scheduled-text">Scheduled</span></div>
               </div>
@@ -342,25 +361,25 @@
     </div>
 
     <div style="background: #0c2340; padding: 15px 25px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Tournament Standings</div>
+      <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Standings</div>
       <div style="display: flex; gap: 30px;">
         <div style="text-align: right;">
-          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">TOTAL SCORE</span>
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">TOTAL</span>
           <span style="color: #ffffff; font-size: 20px; font-weight: 900;">68</span>
         </div>
         <div style="text-align: right;">
-          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">OVERALL PAR</span>
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">PAR</span>
           <span style="color: #e74c3c; font-size: 20px; font-weight: 900;">-4</span>
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 <style>
   @keyframes pulse {
     0% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.6; }
     100% { opacity: 1; }
   }
 </style>
