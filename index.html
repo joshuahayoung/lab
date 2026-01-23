@@ -60,6 +60,17 @@
       background: none; border: none; color: #F15A22;
     }
 
+    /* [TOP 버튼 디자인 추가] */
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; color: #fff !important;
+      border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
     /* [모바일 스타일 - 1024px 이하] */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
@@ -94,7 +105,7 @@
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
 
-    /* [가로 모드 해결] 가로일 때도 사이드 메뉴가 아닌 상단 메뉴 유지 (선택사항) */
+    /* [가로 모드 해결] */
     @media (orientation: landscape) and (max-height: 500px) {
       .header-wrapper { height: 55px; }
       .logo-img { height: 35px !important; }
@@ -135,9 +146,25 @@
     </header>
   </div>
 
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+
   <script>
     function toggleMenu() {
       document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // [TOP 버튼 동작 스크립트 추가]
+    window.onscroll = function() {
+      const btn = document.getElementById('fixedTopBtn');
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
