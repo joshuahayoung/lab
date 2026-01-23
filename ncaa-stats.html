@@ -204,7 +204,7 @@
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-    /* 기본 테이블 스타일 */
+    /* 현재 진행중인 시합 기본 테이블 스타일 */
     .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
     .log-table th { background: #f8f9fa; font-size: 12px; color: #0c2340; text-transform: uppercase; padding: 15px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
     .log-table th.col-left { text-align: left; padding-left: 20px; }
@@ -310,13 +310,10 @@
 <div id="scorecard-modal" 
      onclick="this.style.display='none'" 
      style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-  
   <div style="position: relative; max-width: 100%; max-height: 90%;">
     <div style="color: white; text-align: right; font-size: 12px; margin-bottom: 10px; font-weight: 600;">CLOSE [X]</div>
-    
     <img src="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/qualify%201%20cancun.jpg" 
          style="max-width: 100%; max-height: 80vh; border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.5); border: 3px solid white;">
-    
     <div style="color: white; text-align: center; margin-top: 15px; font-size: 14px; font-weight: 700;">
       Cancun Collegiate Qualifying - Round 1 Scorecard
     </div>
@@ -383,16 +380,20 @@
       </table>
     </div>
 
-    <div style="background: #0c2340; padding: 15px 25px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: center;">
+    <div style="background: #0c2340; padding: 15px 25px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
       <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Stats</div>
-      <div style="display: flex; gap: 30px;">
-        <div style="text-align: right;">
+      <div style="display: flex; gap: 25px; align-items: center;">
+        <div style="text-align: right; padding-right: 20px; border-right: 1px solid rgba(255,255,255,0.1);">
           <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">TOTAL</span>
           <span style="color: #ffffff; font-size: 20px; font-weight: 900;">68</span>
         </div>
-        <div style="text-align: right;">
+        <div style="text-align: right; padding-right: 20px; border-right: 1px solid rgba(255,255,255,0.1);">
           <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">PAR</span>
           <span style="color: #e74c3c; font-size: 20px; font-weight: 900;">-4</span>
+        </div>
+        <div style="text-align: right;">
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">RANK</span>
+          <span style="color: #ffffff; font-size: 20px; font-weight: 900;">T1</span>
         </div>
       </div>
     </div>
@@ -400,7 +401,6 @@
 </div>
 
 <style>
-  /* 불빛만 깜빡이게 만드는 애니메이션 정의 */
   @keyframes pulse {
     0% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.2; transform: scale(0.8); }
