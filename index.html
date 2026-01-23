@@ -33,72 +33,78 @@
       font-weight: 400;
     }
     .header-wrapper {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 5%; height: 75px; /* 높이 약간 조절 */
+      display: flex; align-items: center;
+      padding: 0 20px; height: 70px;
     }
 
-    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-    .logo-img { height: 45px; width: auto; margin-right: 12px; } /* 로고 기본 크기 확대 */
-    .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+    /* 로고 영역: 버튼과 겹치지 않게 flex 구조 고정 */
+    .logo-area { 
+      display: flex; align-items: center; text-decoration: none; color: #333;
+      flex-shrink: 1; min-width: 0; 
+    }
+    .logo-img { height: 45px; width: auto; max-width: 100%; object-fit: contain; }
+    .logo-text { 
+      font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; 
+      text-transform: uppercase; letter-spacing: 1px; margin-left: 12px;
+    }
 
-    /* [메뉴 버튼] */
+    /* [세줄 메뉴 버튼] 자기 자리를 확실히 차지하게 설정 */
     .menu-toggle {
-      display: none; font-size: 30px; cursor: pointer;
-      background: none; border: none; padding: 10px; 
-      color: #F15A22; z-index: 3000; position: relative;
+      display: none; font-size: 28px; cursor: pointer;
+      background: none; border: none; padding: 10px 15px 10px 0; 
+      color: #F15A22; z-index: 3000; flex-shrink: 0;
     }
 
-    @media (max-width: 768px) {
-      /* 로고와 버튼 겹침 방지: 간격과 배치 수정 */
-      .header-wrapper { justify-content: flex-start; gap: 20px; } 
-      .menu-toggle { display: block; flex-shrink: 0; margin-left: -10px; }
-      .logo-area { display: flex; align-items: center; flex-grow: 1; }
-      .logo-text { display: none; } 
-      .logo-img { height: 42px; } /* 모바일에서 로고 크기 확실히 키움 */
-
+    @media (max-width: 1024px) {
+      .menu-toggle { display: block; }
+      .logo-text { display: none; } /* 모바일선 텍스트 숨김 */
+      
       .nav-links {
         position: fixed; top: 0; left: -100%; 
-        width: 230px; height: 100vh;
-        background: #ffffff !important; /* 절대 투명하지 않은 순백색 */
-        flex-direction: column; padding: 40px 25px;
+        width: 220px; height: 100vh;
+        background: #ffffff !important; 
+        flex-direction: column; padding: 30px 20px;
         transition: 0.3s ease-in-out; z-index: 2000; 
         box-shadow: 10px 0 20px rgba(0,0,0,0.1);
         display: flex;
       }
       .nav-links.active { left: 0; }
-      
-      .mobile-menu-logo { 
-        display: block; margin-bottom: 20px; border-bottom: 2px solid #F15A22; padding-bottom: 15px;
-      }
-      .mobile-menu-logo img { height: 35px; }
 
-      /* 메뉴 항목 간격 및 폰트 */
+      .mobile-menu-logo { 
+        display: block; margin-bottom: 20px; border-bottom: 1px solid #F15A22; padding-bottom: 15px;
+      }
+      .mobile-menu-logo img { height: 30px; }
+
       .nav-links a { 
-        width: 100%; font-size: 14px; padding: 12px 0;
+        width: 100%; font-size: 13px; padding: 10px 0;
         border-bottom: 1px solid #f2f2f2; text-decoration: none; color: #444;
         font-family: 'Oswald', sans-serif; text-transform: uppercase;
-        letter-spacing: 1px;
       }
-      .nav-links a.active { color: #F15A22; font-weight: 500; }
-
-      /* 하단 텍스트 섹션 (인스타 대신 삽입) */
+      
+      /* 정보 섹션 위치 조정 (위로 올림) */
       .menu-footer {
-        margin-top: auto; /* 메뉴 하단으로 밀기 */
-        padding-top: 20px;
-        border-top: 1px solid #eee;
+        margin-top: 30px; /* margin-top: auto 대신 고정값으로 위로 올림 */
+        padding-top: 15px;
       }
       .footer-name {
         display: block; font-family: 'Oswald', sans-serif;
-        font-size: 16px; font-weight: 500; color: #333;
-        letter-spacing: 1px; margin-bottom: 4px;
+        font-size: 15px; font-weight: 500; color: #333; margin-bottom: 2px;
       }
       .footer-team {
         display: block; font-family: 'Oswald', sans-serif;
-        font-size: 12px; font-weight: 400; color: #F15A22; /* UTSA 오렌지 포인트 */
-        letter-spacing: 1.5px;
+        font-size: 11px; color: #F15A22; font-weight: 400; letter-spacing: 1px;
       }
 
-      .close-menu { position: absolute; top: 20px; right: 20px; font-size: 22px; cursor: pointer; color: #999; }
+      .close-menu { position: absolute; top: 15px; right: 15px; font-size: 20px; color: #ccc; cursor: pointer; }
+    }
+
+    /* [서프라이즈! 가로 모드 해결] */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .header-wrapper { height: 50px; } /* 헤더 높이 축소 */
+      .logo-img { height: 30px; } /* 로고가 화면을 가리지 않게 작게 조정 */
+      .top-bar { padding: 5px 0; font-size: 10px; } /* 탑바 축소 */
+      .nav-links { padding: 20px; overflow-y: auto; } /* 메뉴창 내부 스크롤 허용 */
+      .menu-footer { margin-top: 20px; }
     }
   </style>
 </head>
@@ -108,6 +114,7 @@
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA GOLF</div>
     <header class="header-wrapper">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
       <a href="index.html" class="logo-area">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
         <span class="logo-text">Joshua Hong Golf</span>
