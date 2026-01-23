@@ -202,6 +202,52 @@
 
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
+  <style>
+    /* 테이블 기본 구조 */
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; }
+    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 18px 10px; border-bottom: 2px solid #2e7d32; }
+    .log-table td { padding: 18px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; }
+    
+    /* 모바일 최적화 (768px 이하) */
+    @media (max-width: 768px) {
+      .log-table thead { display: none; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+      
+      .log-table tr { 
+        margin-bottom: 20px; 
+        border: 1px solid #e2e8f0 !important; 
+        border-radius: 15px; 
+        padding: 15px; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      }
+      
+      .log-table td { border: none; padding: 0; text-align: left; }
+      .hide-log-mobile { display: none !important; }
+      
+      /* 모바일 전용 한 줄 스코어 바 */
+      .mobile-status-bar { 
+        display: flex !important; 
+        background: #fcfcfc;
+        border-radius: 8px;
+        margin-top: 15px;
+        padding: 10px 5px;
+        border: 1px dashed #e2e8f0;
+      }
+      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+      .ms-item:last-child { border-right: none; }
+      .ms-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .ms-value { display: block; font-size: 13px; font-weight: 800; color: #bdc3c7; } /* 예정 경기는 연하게 처리 */
+    }
+    
+    /* PC 전용 너비 설정 */
+    @media (min-width: 769px) {
+      .mobile-status-bar { display: none !important; }
+      .col-date { width: 15%; }
+      .col-course { width: 45%; }
+      .col-stat { width: 10%; }
+    }
+  </style>
+
   <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
     <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
       JOSHUA HONG : PERFORMANCE LOG
@@ -216,127 +262,105 @@
       <h2 style="color: #0c2340; border-left: 6px solid #2e7d32; padding-left: 15px; font-size: 22px; margin: 0; font-weight: 800;">
         2026 NCAA Spring Season <span style="font-weight: 400; font-size: 16px; color: #2e7d32;">(Scheduled)</span>
       </h2>
-      <div style="font-size: 12px; color: #95a5a6; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+      <div style="font-size: 11px; color: #95a5a6; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
         Last Updated: Jan 2026
       </div>
     </div>
 
-    <div style="overflow-x: auto; border-radius: 15px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white;">
-      <table style="width: 100%; border-collapse: collapse; min-width: 700px; font-size: 14.5px;">
+    <div style="border-radius: 15px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+      <table class="log-table">
         <thead>
-          <tr style="background-color: #f8f9fa; border-bottom: 2px solid #2e7d32;">
-            <th style="padding: 18px 15px; text-align: left; color: #0c2340; font-weight: 800; width: 15%;">Date</th>
-            <th style="padding: 18px 15px; text-align: left; color: #0c2340; font-weight: 800; width: 45%;">Tournament / Course</th>
-            <th style="padding: 18px 15px; text-align: center; color: #0c2340; font-weight: 800;">R1-R2-R3</th>
-            <th style="padding: 18px 15px; text-align: center; color: #0c2340; font-weight: 800;">Total</th>
-            <th style="padding: 18px 15px; text-align: center; color: #0c2340; font-weight: 800;">Par</th>
-            <th style="padding: 18px 15px; text-align: center; color: #0c2340; font-weight: 800;">Finish</th>
+          <tr>
+            <th class="col-date">Date</th>
+            <th class="col-course">Tournament / Course</th>
+            <th class="col-stat" style="text-align: center;">R1-R2-R3</th>
+            <th class="col-stat" style="text-align: center;">Total</th>
+            <th class="col-stat" style="text-align: center;">Par</th>
+            <th class="col-stat" style="text-align: center;">Finish</th>
           </tr>
         </thead>
         <tbody style="color: #2d3436;">
-          <tr style="border-bottom: 1px solid #edf2f7;">
-            <td style="padding: 18px 15px; font-weight: 600;">Feb 2-4</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Compadres Collegiate (UTRGV)</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">Iberostar Playa Paraiso - Playa Del Carmen, MX</div>
+          
+          <tr>
+            <td>
+              <div style="font-weight: 700; color: #2e7d32; font-size: 13px;">Feb 2-4, 2026</div>
+              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Compadres Collegiate (UTRGV)</div>
+              <div style="font-size: 13px; color: #7f8c8d;">Iberostar Playa Paraiso - MX</div>
+              <div class="mobile-status-bar">
+                <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">TBD</span></div>
+              </div>
             </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">TBD</td>
           </tr>
-          <tr style="border-bottom: 1px solid #edf2f7; background-color: #fcfdfe;">
-            <td style="padding: 18px 15px; font-weight: 600;">Feb 23-24</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Lone Star Collegiate (UTSA)</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">TPC San Antonio Canyons - San Antonio, TX</div>
+
+          <tr style="background-color: #fcfdfe;">
+            <td>
+              <div style="font-weight: 700; color: #2e7d32; font-size: 13px;">Feb 23-24, 2026</div>
+              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Lone Star Collegiate (UTSA)</div>
+              <div style="font-size: 13px; color: #7f8c8d;">TPC San Antonio Canyons - TX</div>
+              <div class="mobile-status-bar">
+                <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">TBD</span></div>
+              </div>
             </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">TBD</td>
           </tr>
-          <tr style="border-bottom: 1px solid #edf2f7;">
-            <td style="padding: 18px 15px; font-weight: 600;">Mar 2-3</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Golden Nugget Inv. (Lamar)</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">The CC at Golden Nugget - Lake Charles, LA</div>
+
+          <tr style="background: rgba(201, 138, 46, 0.03);">
+            <td>
+              <div style="font-weight: 700; color: #c98a2e; font-size: 13px;">Apr 27-29, 2026</div>
+              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">American Conference Championship</div>
+              <div style="font-size: 13px; color: #7f8c8d;">Ritz Carlton Members Club - FL</div>
+              <div class="mobile-status-bar" style="background: rgba(201, 138, 46, 0.05);">
+                <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value" style="color:#c98a2e;">TBD</span></div>
+              </div>
             </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; font-weight: 700; color: #c98a2e;">TBD</td>
           </tr>
-          <tr style="border-bottom: 1px solid #edf2f7; background-color: #fcfdfe;">
-            <td style="padding: 18px 15px; font-weight: 600;">Mar 16-17</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Arizona Thunderbirds Intercollegiate</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">Tucson CC - Tucson, AZ</div>
-            </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #edf2f7;">
-            <td style="padding: 18px 15px; font-weight: 600;">Mar 23-24</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Bell Bank "Pay it Forward" Collegiate</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">Wigwam GC - Litchfield Park, AZ</div>
-            </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #edf2f7; background-color: #fcfdfe;">
-            <td style="padding: 18px 15px; font-weight: 600;">Apr 6-7</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">Tiger Intercollegiate (Missouri)</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">The Club at Old Hawthorne - Columbia, MO</div>
-            </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #edf2f7; background: rgba(201, 138, 46, 0.03);">
-            <td style="padding: 18px 15px; font-weight: 600; color: #c98a2e;">Apr 27-29</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">American Conference Championship</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">Ritz Carlton Members Club - Sarasota, FL</div>
-            </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #edf2f7;">
-            <td style="padding: 18px 15px; font-weight: 600;">May 18-20</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">NCAA Regional</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">TBD - Location to be Announced</div>
-            </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-          </tr>
+
           <tr style="background: rgba(12, 35, 64, 0.05);">
-            <td style="padding: 18px 15px; font-weight: 600; color: #0c2340;">May 29 - Jun 3</td>
-            <td style="padding: 18px 15px;">
-              <div style="font-weight: 800; color: #0c2340;">NCAA Championship</div>
-              <div style="font-size: 13px; color: #7f8c8d; margin-top: 4px;">Omni La Costa - Carlsbad, CA</div>
+            <td>
+              <div style="font-weight: 700; color: #0c2340; font-size: 13px;">May 29 - Jun 3, 2026</div>
+              <div style="font-weight: 900; color: #0c2340; font-size: 16px; margin: 2px 0;">NCAA Championship</div>
+              <div style="font-size: 13px; color: #7f8c8d;">Omni La Costa - Carlsbad, CA</div>
+              <div class="mobile-status-bar" style="background: white;">
+                <div class="ms-item"><span class="ms-label">R1-R2-R3</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">TOTAL</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+                <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value" style="color:#0c2340;">TBD</span></div>
+              </div>
             </td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
-            <td style="padding: 18px 15px; text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; color: #bdc3c7;">-</td>
+            <td class="hide-log-mobile" style="text-align: center; font-weight: 900; color: #0c2340;">TBD</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+</div>
+
+
+
+  
 
   <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 12px; border: 1px solid #e2e8f0;">
     <p style="margin: 0; font-size: 14px; color: #666; line-height: 1.6;">
