@@ -41,56 +41,64 @@
     .logo-img { height: 40px; width: auto; margin-right: 12px; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* [메뉴 버튼] 로고와 겹치지 않게 여백 확실히 확보 */
+    /* [메뉴 버튼] 로고와 겹치지 않게 고정 너비와 여백 설정 */
     .menu-toggle {
       display: none; font-size: 28px; cursor: pointer;
       background: none; border: none; padding: 10px; 
       color: #F15A22; z-index: 3000; position: relative;
+      width: 50px; text-align: left;
     }
 
-    @media (max-width: 768px) {
-      /* 로고와 버튼 겹침 방지: 간격 설정 */
-      .header-wrapper { justify-content: flex-start; gap: 15px; } 
+    /* [모바일 및 가로모드 통합 대응] */
+    @media (max-width: 1024px) { /* 가로모드 대응을 위해 범위를 넓혔습니다 */
+      .header-wrapper { justify-content: flex-start; gap: 5px; } 
       .menu-toggle { display: block; flex-shrink: 0; }
-      .logo-area { flex-grow: 1; }
+      .logo-area { display: flex; align-items: center; }
       .logo-text { display: none; } 
-      .logo-img { height: 32px; }
+      .logo-img { height: 32px; margin-right: 0; }
 
       .nav-links {
         position: fixed; top: 0; left: -100%; 
-        width: 260px; height: 100vh;
-        background: #fff; flex-direction: column; padding: 40px 20px;
+        width: 210px; /* 메뉴창을 더 좁게 설정 */
+        height: 100vh;
+        background: #fff; flex-direction: column; padding: 30px 20px;
         transition: 0.3s; z-index: 2000; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
         display: flex;
+        overflow-y: auto; /* 가로모드에서 메뉴가 길어질 경우 스크롤 가능하게 함 */
       }
       .nav-links.active { left: 0; }
       
       .mobile-menu-logo { 
-        display: block; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;
+        display: block; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px;
       }
-      .mobile-menu-logo img { height: 30px; }
+      .mobile-menu-logo img { height: 28px; }
 
-      /* 메뉴 항목 간격 줄임 (공간 확보) */
+      /* 메뉴 항목 간격 */
       .nav-links a { 
-        width: 100%; font-size: 13px; padding: 8px 0; /* 기존 12px에서 축소 */
+        width: 100%; font-size: 13px; padding: 8px 0;
         border-bottom: 1px solid #f9f9f9; text-decoration: none; color: #666;
         font-family: 'Oswald', sans-serif; text-transform: uppercase;
       }
       .nav-links a.active { color: #F15A22; border-bottom: 1px solid #F15A22; }
 
-      /* 인스타그램 디자인 적용 */
-      .insta-section { display: block; margin-top: 20px; text-align: center; }
+      /* 인스타그램 디자인 - 단순화(Simple Rectangle) */
+      .insta-section { display: block; margin-top: 20px; text-align: left; }
       .insta-text { 
-        color: #666; font-size: 10px; letter-spacing: 2px; 
-        margin-bottom: 10px; font-weight: 400; text-transform: uppercase; display: block;
+        color: #999; font-size: 10px; letter-spacing: 1px; 
+        margin-bottom: 8px; font-weight: 400; text-transform: uppercase; display: block;
       }
-      .insta-btn-wrap {
-        display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px;
-        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-        color: white; text-decoration: none; border-radius: 50px; 
-        font-weight: 700; font-size: 12px; box-shadow: 0 4px 10px rgba(188, 24, 136, 0.3);
+      .insta-btn-simple {
+        display: inline-block; padding: 8px 15px;
+        border: 1px solid #333; background: #fff;
+        color: #333; text-decoration: none; 
+        font-weight: 500; font-size: 11px; 
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
       }
-      .insta-btn-wrap svg { width: 18px; height: 18px; }
+      .insta-btn-simple:active { background: #eee; }
+
+      /* 가로모드에서 아이콘이 커지는 문제 방지 */
+      svg { width: 14px; height: 14px; vertical-align: middle; margin-right: 5px; }
 
       .close-menu { position: absolute; top: 15px; right: 15px; font-size: 20px; cursor: pointer; color: #ccc; }
     }
@@ -119,14 +127,9 @@
         <a href="junior-career.html">Junior Career</a>
 
         <div class="insta-section">
-            <span class="insta-text">Inside Joshua's Golf</span>
-            <a href="https://www.instagram.com/joshuahayoung/" target="_blank" class="insta-btn-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-              FOLLOW ON INSTAGRAM
+            <span class="insta-text">Follow on</span>
+            <a href="https://www.instagram.com/joshuahayoung/" target="_blank" class="insta-btn-simple">
+              INSTAGRAM
             </a>
         </div>
       </nav>
