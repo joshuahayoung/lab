@@ -238,35 +238,116 @@
     
 <div style="max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box;">
     <a href="ncaa-stats.html#current-focus" style="text-decoration: none; display: block;">
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; transition: all 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
+        <div class="focus-container">
             
-            <div style="display: flex; align-items: center; gap: 16px;">
-                <div style="background: #0c2340; color: #ffffff; padding: 5px 14px; border-radius: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 8px; box-shadow: 0 2px 5px rgba(12,35,64,0.2);">
-                    <span class="focus-pulse" style="width: 6px; height: 6px; background: #10b981; border-radius: 50%;"></span>
+            <div class="focus-content">
+                <div class="focus-badge">
+                    <span class="focus-pulse"></span>
                     Current Focus
                 </div>
                 
-                <div style="display: flex; flex-direction: column;">
-                    <span style="color: #475569; font-size: 14px; font-weight: 700; line-height: 1.4;">
+                <div class="focus-text-wrapper" title="Technical feedback on Oaks course conditions & winter training status.">
+                    <span class="focus-text">
                         Technical feedback on Oaks course conditions & winter training status.
                     </span>
                 </div>
             </div>
 
-            <div style="color: #0c2340; font-size: 20px; font-weight: 300; padding-left: 15px;">&rarr;</div>
+            <div class="focus-arrow">&rarr;</div>
         </div>
     </a>
 </div>
 
 <style>
-  /* 아주 느리고 부드럽게 깜빡이는 효과 (Soft Pulse) */
+  /* 공통 컨테이너 스타일 */
+  .focus-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+
+  .focus-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden; /* 글자 넘침 방지 */
+    flex: 1;
+  }
+
+  .focus-badge {
+    background: #0c2340;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* 텍스트 줄임표 처리 (...) */
+  .focus-text-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+
+  .focus-text {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .focus-arrow {
+    color: #0c2340;
+    font-size: 20px;
+    font-weight: 300;
+    padding-left: 15px;
+  }
+
+  /* 애니메이션 */
   .focus-pulse {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
     animation: soft-pulse 2.5s infinite ease-in-out;
   }
+
   @keyframes soft-pulse {
     0% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.3; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* 📱 모바일 환경 (768px 이하) 최적화 */
+  @media (max-width: 768px) {
+    .focus-content {
+      flex-direction: column; /* 위아래로 배치 */
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .focus-text-wrapper {
+      white-space: normal; /* 모바일에서는 줄바꿈 허용해서 다 보여줌 */
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* 최대 2줄까지만 표시 후 ... */
+      -webkit-box-orient: vertical;
+    }
+    .focus-container {
+      padding: 15px;
+    }
   }
 </style>
     
