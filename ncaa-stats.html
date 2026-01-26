@@ -272,19 +272,18 @@
 <div class="live-event-card">
     <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="background: #27ae60; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+        <span style="background: #f39c12; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
           <span style="width: 8px; height: 8px; background: white; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
-          SCHEDULE UPDATED
+          SCHEDULE DELAYED
         </span>
         <h2 style="color: #0c2340; margin: 0; font-size: 22px; font-weight: 800;">Compadres Collegiate (UTRGV) Qualifying</h2>
       </div>
       <div style="font-size: 12px; color: #95a5a6; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Last Updated: Jan 26, 2026</div>
     </div>
 
-    <div style="margin: 0 25px 15px 25px; padding: 12px 15px; background: #ebf9f0; border-left: 4px solid #27ae60; border-radius: 4px; display: flex; align-items: flex-start; gap: 10px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e8449" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-      <p style="margin: 0; font-size: 13px; color: #1e8449; font-weight: 700; line-height: 1.5;">
-        NOTICE: Qualifying rounds 3 & 4 have been confirmed for Tuesday (Jan 27) and Wednesday (Jan 28). Joshua will depart for the Cancun opener immediately following R4.
+    <div style="margin: 0 25px 15px 25px; padding: 12px 15px; background: #fff9eb; border-left: 4px solid #f39c12; border-radius: 4px;">
+      <p style="margin: 0; font-size: 13px; color: #7e5109; font-weight: 700; line-height: 1.5;">
+        ⚠️ NOTICE: Schedule adjusted to Wed/Thu due to winter storm and course closure. Rounds are subject to change based on weather conditions.
       </p>
     </div>
 
@@ -305,11 +304,25 @@
               <div style="font-weight: 600; font-size: 13px; color: #e74c3c;">Jan 22, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 1: The Canyons Course (Par 72)</div>
               <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
-              
-              <button type="button" onclick="document.getElementById('scorecard-modal').style.display='flex'" style="cursor: pointer; display: inline-flex; align-items: center; margin-top: 8px; padding: 6px 14px; background: #ffffff; color: #0c2340; font-family: inherit; font-size: 11px; font-weight: 800; border-radius: 6px; border: 1.5px solid #0c2340; gap: 6px; transition: all 0.2s;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
-                VIEW SCORECARD
+
+              <button type="button" 
+                onclick="gtag('event', 'view_scorecard', {'event_category': 'Engagement', 'event_label': 'Cancun Qualifying R1'}); document.getElementById('scorecard-modal').style.display='flex'"
+                style="cursor: pointer; display: inline-flex; align-items: center; margin-top: 8px; padding: 5px 12px; background: #ffffff; color: #0c2340; font-family: inherit; font-size: 11px; font-weight: 800; border-radius: 6px; border: 1.5px solid #0c2340; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <span style="margin-right: 5px;">📊</span> VIEW SCORECARD
               </button>
+
+              <div id="scorecard-modal" 
+                onclick="this.style.display='none'" 
+                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
+                <div style="position: relative; max-width: 100%; max-height: 90%;">
+                  <div style="color: white; text-align: right; font-size: 12px; margin-bottom: 10px; font-weight: 600;">CLOSE [X]</div>
+                  <img src="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/qualify%201%20cancun.jpg" 
+                    style="max-width: 100%; max-height: 80vh; border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.5); border: 3px solid white;">
+                  <div style="color: white; text-align: center; margin-top: 15px; font-size: 14px; font-weight: 700;">
+                    Cancun Collegiate Qualifying - Round 1 Scorecard
+                  </div>
+                </div>
+              </div>
 
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">68</span></div>
@@ -323,7 +336,6 @@
             <td class="hide-mobile" style="font-weight: 700; font-size: 13px;">Final</td>
             <td class="hide-mobile" style="font-weight: 800; font-size: 16px;">T1</td>
           </tr>
-          
           <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Jan 23, 2026</div>
@@ -341,34 +353,32 @@
             <td class="hide-mobile" style="font-weight: 700; font-size: 13px;">Final</td>
             <td class="hide-mobile" style="font-weight: 800; font-size: 16px;">2</td>
           </tr>
-
           <tr>
             <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #3498db;">Jan 27, 2026 (Tue)</div>
+              <div style="font-weight: 600; font-size: 13px; color: #f39c12;">Jan 28, 2026 (TBD)</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 3: The Canyons Course (Par 72)</div>
               <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
               <div class="mobile-status-bar">
-                <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value" style="color:#3498db;">Confirmed</span></div>
+                <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value" style="color:#f39c12;">Delayed</span></div>
               </div>
             </td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="font-weight: 700; color: #3498db;">Confirmed</td>
+            <td class="hide-mobile" style="font-weight: 700; color: #f39c12;">Delayed</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr>
             <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #3498db;">Jan 28, 2026 (Wed)</div>
+              <div style="font-weight: 600; font-size: 13px; color: #f39c12;">Jan 29, 2026 (TBD)</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 4: The Oaks Course (Par 72)</div>
               <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
               <div class="mobile-status-bar">
-                <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value" style="color:#3498db;">Confirmed</span></div>
+                <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value" style="color:#f39c12;">Delayed</span></div>
               </div>
             </td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="font-weight: 700; color: #3498db;">Confirmed</td>
+            <td class="hide-mobile" style="font-weight: 700; color: #f39c12;">Delayed</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
         </tbody>
@@ -376,11 +386,11 @@
     </div>
 
     <div style="background: #0c2340; padding: 15px 25px; border-radius: 0 0 18px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-      <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Stats (R1-R2)</div>
+      <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Stats</div>
       <div style="display: flex; gap: 25px; align-items: center;">
         <div style="text-align: right; padding-right: 20px; border-right: 1px solid rgba(255,255,255,0.1);">
-          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">SCORE</span>
-          <span style="color: #e74c3c; font-size: 20px; font-weight: 900;">137</span>
+          <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">R1-R2-R3-R4</span>
+          <span style="color: #e74c3c; font-size: 20px; font-weight: 900;">68-69</span>
         </div>
         <div style="text-align: right; padding-right: 20px; border-right: 1px solid rgba(255,255,255,0.1);">
           <span style="color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 800; display: block;">PAR</span>
@@ -393,6 +403,16 @@
       </div>
     </div>
 </div>
+
+<style>
+  @keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+  
 
 
 <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-top: 60px; margin-bottom: 40px; text-align: center;">
