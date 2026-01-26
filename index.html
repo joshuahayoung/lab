@@ -419,7 +419,7 @@
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      /* 가을 카드의 긴 텍스트를 수용하기 위해 높이를 충분히 확보합니다 */
+      /* 데스크탑 기본 높이 */
       min-height: 580px; 
       perspective: 1000px;
     }
@@ -459,7 +459,7 @@
       border: 1.2px solid rgba(148, 163, 184, 0.3);
       border-radius: 50px;
       transition: all 0.2s;
-      align-self: flex-start; /* 버튼이 왼쪽 정렬되도록 */
+      align-self: flex-start;
       margin-top: 15px;
     }
     .toggle-btn:hover {
@@ -471,6 +471,22 @@
       0% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.3; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* 📱 모바일 에러 수정: 화면이 좁아지면 카드 높이가 늘어나므로 부모 높이도 같이 조절 */
+    @media (max-width: 768px) {
+      .insight-card-wrapper {
+        min-height: 750px; /* 모바일에서 텍스트가 밀려 내려오는 것을 고려해 높이 확보 */
+      }
+      .insight-card {
+        padding: 25px 20px; /* 모바일에서 내부 여백 살짝 조절 */
+      }
+    }
+    /* 아주 작은 기기 대응 */
+    @media (max-width: 480px) {
+      .insight-card-wrapper {
+        min-height: 850px;
+      }
     }
   </style>
 
@@ -535,14 +551,8 @@
 
 
   
-
-
-  
-
-    <div class="intro-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  
+<div class="intro-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <div style="background-color: #f8faff; padding: 40px 30px; border-radius: 25px; border: 1px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.02); margin-bottom: 40px; box-sizing: border-box;">
-    
     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
       <div style="width: 6px; height: 32px; background-color: #0c2340; border-radius: 10px;"></div>
       <h2 style="font-size: 26px; color: #0c2340; margin: 0; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Introduction</h2>
