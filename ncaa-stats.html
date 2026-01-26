@@ -168,14 +168,6 @@
     }
   </script>
 
-
-<div style="max-width: 900px; margin: 20px auto; padding: 0 15px; text-align: right;">
-    <a href="fall-2025-archive.html" style="text-decoration: none; font-size: 11px; color: #94a3b8; font-weight: 700; border: 1.5px solid #e2e8f0; padding: 6px 15px; border-radius: 4px; display: inline-flex; align-items: center; gap: 6px;">
-        <span>📁</span> FALL 2025 SEASON ARCHIVE
-    </a>
-</div>
-
-  
   
     
 <div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box;">
@@ -944,12 +936,32 @@
 
 <div class="analysis-section" style="max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
-  <div style="margin-bottom: 15px; display: flex; justify-content: flex-end;">
-    <a href="fall-2025-archive.html" style="text-decoration: none; font-size: 13px; color: #806600; font-weight: 800; border: 2px solid #806600; padding: 10px 20px; border-radius: 12px; display: inline-flex; align-items: center; gap: 10px; background: #ffffff; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(128, 102, 0, 0.1); letter-spacing: 0.5px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+  <style>
+    /* 모바일 전용 스타일: 화면 폭이 600px 이하일 때 적용 */
+    @media (max-width: 600px) {
+      .archive-btn-container {
+        justify-content: center !important; /* 모바일에서 중앙 정렬 */
+        margin-bottom: 10px !important;
+      }
+      .archive-btn {
+        padding: 8px 16px !important; /* 모바일에서 크기 축소 */
+        font-size: 11px !important;    /* 폰트 크기 축소 */
+        gap: 8px !important;
+      }
+      .archive-btn svg {
+        width: 15px !important;       /* 아이콘 크기 축소 */
+        height: 15px !important;
+      }
+    }
+  </style>
+
+  <div class="archive-btn-container" style="margin-bottom: 15px; display: flex; justify-content: flex-end;">
+    <a href="fall-2025-archive.html" class="archive-btn" style="text-decoration: none; font-size: 12px; color: #806600; font-weight: 800; border: 1.5px solid #806600; padding: 10px 18px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; background: #ffffff; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(128, 102, 0, 0.08); letter-spacing: 0.5px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
       VIEW FALL 2025 SEASON ARCHIVE
     </a>
   </div>
+  
   
   <div style="margin-bottom: 40px; border: 1px solid #e2e8f0; border-radius: 20px; padding: 35px 30px; background: #ffffff; box-shadow: 0 15px 35px rgba(0,0,0,0.06); overflow: hidden;">
     
