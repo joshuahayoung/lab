@@ -417,57 +417,77 @@
 </style>
 
 
-<div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-top: 40px; margin-bottom: 40px; text-align: center;">
+<div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-top: 60px; margin-bottom: 40px; text-align: center;">
     <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
       Current Focus
     </h1>
 </div>
 
-<div class="current-focus-card" style="margin-bottom: 40px; background: #ffffff; border-radius: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;">
-    <div style="padding: 25px; display: flex; flex-direction: column; align-items: center;">
-        <h3 style="color: #0c2340; margin-top: 0; margin-bottom: 15px; font-size: 20px; font-weight: 800; text-align: center;">
-            Navigating Winter Storm Challenges
+<div class="current-focus-card" style="margin-bottom: 40px; background: linear-gradient(145deg, #ffffff, #f8fafc); border-radius: 20px; box-shadow: 0 10px 30px rgba(12, 35, 64, 0.08); border: 1px solid rgba(12, 35, 64, 0.05); overflow: hidden; position: relative;">
+    <div style="padding: 40px 30px; text-align: center;">
+        <div style="margin-bottom: 20px; display: inline-block; padding: 15px; background: rgba(12, 35, 64, 0.05); border-radius: 50%;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"></path><line x1="8" y1="16" x2="8.01" y2="16"></line><line x1="8" y1="20" x2="8.01" y2="20"></line><line x1="12" y1="18" x2="12.01" y2="18"></line><line x1="12" y1="22" x2="12.01" y2="22"></line><line x1="16" y1="16" x2="16.01" y2="16"></line><line x1="16" y1="20" x2="16.01" y2="20"></line></svg>
+        </div>
+        
+        <h3 style="color: #0c2340; margin: 0 0 15px 0; font-size: 22px; font-weight: 900; letter-spacing: -0.5px;">
+            Winter Storm: Tactical Adaptation
         </h3>
-        <p style="font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; text-align: center; max-width: 600px;">
-            With campus golf facilities closed due to severe winter weather, Joshua is diligently maintaining his preparedness. 
-            Click below for a brief update on how he's adapting.
+        <p style="font-size: 15px; color: #4a5568; line-height: 1.6; margin: 0 auto 25px auto; max-width: 500px; font-weight: 500;">
+            How Joshua is maintaining elite-level readiness despite the historic winter storm and facility closures in San Antonio.
         </p>
         
         <button type="button" 
             onclick="gtag('event', 'view_current_focus', {'event_category': 'Engagement', 'event_label': 'Winter Storm Update'}); document.getElementById('focus-detail-modal').style.display='flex'"
-            style="cursor: pointer; display: inline-flex; align-items: center; padding: 10px 20px; background: #0c2340; color: white; font-family: inherit; font-size: 13px; font-weight: 800; border-radius: 8px; border: none; transition: all 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <span style="margin-right: 8px;">✨</span> VIEW UPDATE
+            style="cursor: pointer; display: inline-flex; align-items: center; padding: 12px 28px; background: #0c2340; color: white; font-family: inherit; font-size: 14px; font-weight: 800; border-radius: 12px; border: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(12, 35, 64, 0.2); text-transform: uppercase; letter-spacing: 1px;">
+            VIEW FIELD REPORT
         </button>
     </div>
 
     <div id="focus-detail-modal" 
-        onclick="this.style.display='none'" 
-        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box;">
-        <div style="position: relative; max-width: 700px; width: 90%; max-height: 90%; background: #ffffff; border-radius: 12px; padding: 30px; box-shadow: 0 0 30px rgba(0,0,0,0.5); overflow-y: auto;">
-            <div style="color: #555; text-align: right; font-size: 14px; margin-bottom: 15px; font-weight: 600; cursor: pointer;" onclick="document.getElementById('focus-detail-modal').style.display='none'">CLOSE [X]</div>
-            <h3 style="color: #0c2340; margin-top: 0; margin-bottom: 20px; font-size: 24px; font-weight: 900; text-align: center;">
-                Joshua's Winter Storm Adaptation Update
+        onclick="if(event.target == this) this.style.display='none'" 
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(12, 35, 64, 0.9); z-index: 9999; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; backdrop-filter: blur(8px);">
+        
+        <div style="position: relative; max-width: 600px; width: 100%; max-height: 85vh; background: #f1f5f9; border-radius: 24px; padding: 35px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); overflow-y: auto;">
+            <div style="color: #0c2340; text-align: right; font-size: 13px; margin-bottom: 20px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;" onclick="document.getElementById('focus-detail-modal').style.display='none'">[ Close ]</div>
+            
+            <h3 style="color: #0c2340; margin: 0 0 25px 0; font-size: 24px; font-weight: 900; text-align: left; border-left: 5px solid #0c2340; padding-left: 15px;">
+                Status Update: Jan 26, 2026
             </h3>
             
-            <p style="font-size: 15px; color: #333; line-height: 1.8; margin-bottom: 15px;">
-                Following the recent qualifying rounds, severe winter weather warnings have led to mandatory apartment restrictions and campus golf course closures. 
-                Despite these challenges, Joshua is maximizing every opportunity to prepare for the spring season.
-            </p>
+            <div style="display: grid; gap: 15px;">
+                <div style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"></circle><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="18" cy="14" r="2"></circle><line x1="22" y1="22" x2="16" y2="16"></line></svg>
+                        <span style="font-weight: 900; color: #0c2340; font-size: 14px; text-transform: uppercase;">Technical Training</span>
+                    </div>
+                    <p style="margin: 0; font-size: 14px; color: #4a5568; line-height: 1.6;">
+                        Campus facilities closed. Transitioned to <strong>Trackman precision work</strong> at PGA Superstore for iron calibration. Currently maintaining swing feel via indoor drills and intensive putting mat sessions within the residence.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05);">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        <span style="font-weight: 900; color: #0c2340; font-size: 14px; text-transform: uppercase;">Academic Integrity</span>
+                    </div>
+                    <p style="margin: 0; font-size: 14px; color: #4a5568; line-height: 1.6;">
+                        Leveraging the storm-induced downtime to complete all coursework ahead of schedule. Fully focused on maintaining academic excellence before the spring season travel begins.
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.05); border-bottom: 4px solid #0c2340;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span style="font-weight: 900; color: #0c2340; font-size: 14px; text-transform: uppercase;">Team Readiness</span>
+                    </div>
+                    <p style="margin: 0; font-size: 14px; color: #4a5568; line-height: 1.6;">
+                        Qualifying (R3-R4) tentatively moved to Wed/Thu. Departing for <strong>Cancun (Spring Opener)</strong> this Friday. Mental and physical focus remains 100% on contributing to the team's victory.
+                    </p>
+                </div>
+            </div>
             
-            <ul style="list-style-type: none; padding: 0; margin-bottom: 20px;">
-                <li style="margin-bottom: 10px; font-size: 15px; color: #333; line-height: 1.8;">
-                    <strong style="color: #0c2340;">Golf Prep:</strong> Due to course closures, practice has been limited. However, a dedicated Trackman session at PGA Superstore was utilized for iron work. At the apartment's sports center, indoor full swings are maintained, with extensive putting drills on a dedicated mat.
-                </li>
-                <li style="margin-bottom: 10px; font-size: 15px; color: #333; line-height: 1.8;">
-                    <strong style="color: #0c2340;">Academic Focus:</strong> The unexpected downtime has been fully leveraged to complete outstanding assignments, ensuring academic responsibilities are well ahead.
-                </li>
-                <li style="margin-bottom: 10px; font-size: 15px; color: #333; line-height: 1.8;">
-                    <strong style="color: #0c2340;">Upcoming:</strong> The initial Jan 22-23 qualifying rounds are now tentatively rescheduled to Jan 28-29, subject to weather. Joshua departs this Friday for Cancun for the first spring tournament, fully committed to perform for the team despite the current conditions.
-                </li>
-            </ul>
-            
-            <p style="font-size: 14px; color: #555; text-align: center; margin-top: 30px; font-style: italic;">
-                "Committed to personal growth and ready to contribute to team success, whatever the conditions."
+            <p style="font-size: 13px; color: #94a3b8; text-align: center; margin-top: 25px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                "Adapt. Overcome. Deliver."
             </p>
         </div>
     </div>
