@@ -1,1 +1,55 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<div style="width: 100%; max-width: 900px; margin: 20px auto; padding: 20px; background: #f9f9f9; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <h3 style="text-align: center; color: #0c2340; font-family: sans-serif; margin-bottom: 25px;">Seasonal Performance Trajectory</h3>
+  <canvas id="performanceChart"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('performanceChart').getContext('2d');
+
+// 데이터 설정: 가을 시합 1~4 -> 패트리어트 -> 현재 퀄리파이
+const labels = ['UTSA 1', 'UTSA 2', 'UTSA 3', 'UTSA 4', 'Patriot All-Am', 'Current Qualy'];
+const scoreData = [69.67, 70.67, 71.33, 72.0, 72.0, 68.5]; // 각 시합별 평균 타수
+const finishData = [9, 12, 24, 55, 38, 1]; // 등수 (퀄리는 1등으로 상정)
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: 'Scoring Average',
+      data: scoreData,
+      borderColor: '#806600', // 요청하신 금빛 테마
+      backgroundColor: 'rgba(128, 102, 0, 0.1)',
+      borderWidth: 3,
+      pointBackgroundColor: '#F15A22', // UTSA 주황 포인트
+      pointRadius: 6,
+      tension: 0.3, // 부드러운 곡선
+      fill: true,
+      yAxisID: 'y'
+    }]
+  },
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        reverse: true, // 골프는 타수가 낮을수록 위로 가야 하므로 역전
+        title: { display: true, text: 'Average Score' },
+        suggestedMin: 67,
+        suggestedMax: 73
+      }
+    },
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return ` Avg: ${context.parsed.y} / Finish: T${finishData[context.dataIndex]}`;
+          }
+        }
+      }
+    }
+  }
+});
+</script>
