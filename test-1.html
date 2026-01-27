@@ -2,72 +2,82 @@
 
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
   <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
-  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Verified Tournament and Internal Qualifier Records (2025 Fall - 2026 Spring)</p>
+  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament Metrics: WAGR Power (Field Strength) vs. WAGR Earned (Player Performance)</p>
   
   <div style="margin-bottom: 50px;">
     <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
-    <div style="position: relative; height: 350px;">
+    <div style="position: relative; height: 380px;">
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
 
   <div>
     <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #806600; padding-bottom: 5px;">Internal Qualifier Rounds (TPC San Antonio)</h3>
-    <div style="position: relative; height: 350px;">
+    <div style="position: relative; height: 380px;">
       <canvas id="internalQualifierChart"></canvas>
     </div>
   </div>
 </div>
 
 <script>
-// ---------- 1. Official Tournament Chart (일정 및 타수 100% 검증) ----------
+// ---------- 1. Official Tournament Chart (Power vs Earned 구분) ----------
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
+
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)'],
+    labels: ['SEP. 07-09 (Argent)', 'SEP. 15-16 (Highlands)', 'SEP. 22-23 (Badger)', 'OCT. 05-07 (Trinity)', 'DIC. 27-31 (Patriot)'],
     datasets: [{
       label: 'Scoring Avg',
-      data: [69.67, 70.67, 71.33, 72.0, 72.0],
+      data: [69.66, 70.66, 71.33, 72.0, 72.0],
       borderColor: '#F15A22',
       backgroundColor: 'rgba(241, 90, 34, 0.1)',
       borderWidth: 2,
       pointRadius: 6,
-      tension: 0.2,
+      tension: 0.1,
       fill: true
     }]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { min: 68, max: 74, title: { display: true, text: 'Strokes' } } },
+    scales: { y: { reverse: false, min: 68, max: 74, title: { display: true, text: 'Strokes' } } },
     plugins: {
+      legend: { display: false },
       tooltip: {
         callbacks: {
           afterLabel: function(context) {
-            const pwr = ['WAGR Pwr: 12.4', 'WAGR Pwr: 14.1', 'WAGR Pwr: 11.8', 'WAGR Pwr: 13.5', 'WAGR Pwr: 58.2'];
-            return pwr[context.dataIndex];
+            // Power(필드 강도)와 Earned(선수 성과) 데이터 구분
+            const pwr = ['12.4', '14.1', '11.8', '13.5', '58.2'];
+            const earned = ['209', '424', '642', '864', '1080'];
+            return [
+              `WAGR Power: ${pwr[context.dataIndex]}`,
+              `WAGR Earned: ${earned[context.dataIndex]}`
+            ];
+          },
+          labelTextColor: function(context) {
+             return '#333';
           }
         }
-      },
-      legend: { display: false }
+      }
     }
   }
 });
 
-// ---------- 2. Internal Qualifier Chart (Canyons vs Oaks 정밀 분류) ----------
+// ---------- 2. Internal Qualifier Chart (Canyons vs Oaks 100% 원본 데이터) ----------
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
+
 new Chart(ctxInternal, {
   type: 'line',
   data: {
     labels: [
-      '8/27 (Can)', '8/28 (Can)', '9/01 (Can)', '9/01 (Oaks)', '9/02 (Oaks)', 
-      '9/26 (Oaks)', '9/30 (Oaks)', '10/02 (Oaks)', '1/22 (Can)', '1/23 (Can)', '1/24 (Can)'
+      '27-ago (Can)', '28-ago (Can)', '01-sep (Can)', '01-sep (Oaks)', '02-sep (Oaks)', 
+      '26-sep (Can)', '30-sep (Oaks)', '02-oct (Oaks)', '22-ene (Can)', '23-ene (Oaks)'
     ],
     datasets: [
       {
-        label: 'Canyons Course',
-        data: [69, 68, 69, null, null, null, null, null, 73, 68, null], // 1/24 R3 대기
+        label: 'TPC SA - Canyons',
+        data: [69, 68, 69, null, null, 73, null, null, 68, null],
         borderColor: '#806600',
         backgroundColor: 'rgba(128, 102, 0, 0.1)',
         borderWidth: 2,
@@ -75,8 +85,8 @@ new Chart(ctxInternal, {
         spanGaps: true
       },
       {
-        label: 'Oaks Course',
-        data: [null, null, null, 81, 74, 69, 74, 69, null, null, null],
+        label: 'TPC SA - Oaks',
+        data: [null, null, null, 81, 74, null, 74, 69, null, 69],
         borderColor: '#0c2340',
         backgroundColor: 'rgba(12, 35, 64, 0.1)',
         borderWidth: 2,
@@ -88,7 +98,7 @@ new Chart(ctxInternal, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { min: 65, max: 85, title: { display: true, text: 'Strokes' } } },
+    scales: { y: { reverse: false, min: 65, max: 85, title: { display: true, text: 'Strokes' } } },
     plugins: { legend: { position: 'bottom' } }
   }
 });
