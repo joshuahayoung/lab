@@ -1,63 +1,60 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div style="display: flex; flex-direction: column; gap: 40px; max-width: 900px; margin: 20px auto; font-family: sans-serif;">
-  
-  <div style="padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    <h3 style="color: #0c2340; border-left: 5px solid #F15A22; padding-left: 10px;">Official Tournament Progress</h3>
-    <p style="font-size: 0.9em; color: #666;">High-level field competition including Patriot All-America</p>
-    <canvas id="tournamentChart"></canvas>
-  </div>
-
-  <div style="padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-    <h3 style="color: #0c2340; border-left: 5px solid #806600; padding-left: 10px;">Team Qualifying Dominance</h3>
-    <p style="font-size: 0.9em; color: #666;">Internal qualifiers at TPC San Antonio</p>
-    <canvas id="qualyChart"></canvas>
-  </div>
-
+<div style="padding: 25px; background: #fff; border-radius: 12px; border: 1px solid #e1e1e1; box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 900px; margin: 20px auto; font-family: 'Inter', sans-serif;">
+  <h3 style="color: #0c2340; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px;">COURSE-SPECIFIC QUALIFIER DATA</h3>
+  <p style="font-size: 0.85em; color: #888; margin-bottom: 25px;">Detailed stroke play analysis: TPC San Antonio (Canyons vs Oaks)</p>
+  <canvas id="detailedQualyChart"></canvas>
 </div>
 
 <script>
-// 1. 공식 시합 데이터 (패트리어트 포함)
-const ctxT = document.getElementById('tournamentChart').getContext('2d');
-new Chart(ctxT, {
-  type: 'line',
-  data: {
-    labels: ['UTSA 1', 'UTSA 2', 'UTSA 3', 'UTSA 4', 'Patriot All-Am'],
-    datasets: [{
-      label: 'Avg Score',
-      data: [69.67, 70.67, 71.33, 72.0, 72.0],
-      borderColor: '#0c2340',
-      backgroundColor: 'rgba(12, 35, 64, 0.1)',
-      borderWidth: 3,
-      tension: 0.3,
-      fill: true
-    }]
-  },
-  options: {
-    scales: { y: { reverse: true, suggestedMin: 68, suggestedMax: 73 } },
-    plugins: { tooltip: { callbacks: { footer: (items) => {
-      const field = ['Mid', 'Mid', 'Mid', 'Mid', 'Elite (Top 1000 WAGR)'];
-      return 'Field Strength: ' + field[items[0].dataIndex];
-    }}}}
-  }
-});
+const ctxDQ = document.getElementById('detailedQualyChart').getContext('2d');
 
-// 2. 퀄리파이 데이터 (최근 68-69 강조)
-const ctxQ = document.getElementById('qualyChart').getContext('2d');
-new Chart(ctxQ, {
+new Chart(ctxDQ, {
   type: 'bar',
   data: {
-    labels: ['Previous Qualies (Avg)', 'Current Qualy R1', 'Current Qualy R2'],
+    // 날짜를 명시하여 시계열 데이터의 신뢰도 확보
+    labels: [
+      'Sep 15 (Oaks)', 'Sep 16 (Oaks)', 'Sep 22 (Canyons)', 'Sep 23 (Canyons)', 
+      'Jan 26 (Canyons)', 'Jan 27 (Canyons)', 'Jan 28 (Canyons)'
+    ],
     datasets: [{
-      label: 'Score',
-      data: [71.5, 68, 69],
-      backgroundColor: ['#d1d1d1', '#806600', '#D4AF37'],
-      borderRadius: 8
+      label: 'Strokes',
+      // 예시 데이터입니다. 실제 가을 퀄리 타수로 수정 가능합니다.
+      data: [72, 71, 73, 70, 68, 69, null], 
+      backgroundColor: [
+        '#0c2340', '#0c2340', // 가을 Oaks (Navy)
+        '#554400', '#554400', // 가을 Canyons (Dark Gold)
+        '#806600', '#806600', // 현재 Canyons (Main Gold)
+        '#D4AF37'             // 내일 R3 (Bright Gold)
+      ],
+      borderRadius: 5,
+      barPercentage: 0.7
     }]
   },
   options: {
-    scales: { y: { min: 65, max: 75 } },
-    plugins: { subtitle: { display: true, text: '8-Shot Lead in Current Qualifier' } }
+    scales: {
+      y: { 
+        min: 65, 
+        max: 76,
+        title: { display: true, text: 'Score' },
+        ticks: { stepSize: 1 }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          beforeLabel: function(context) {
+            const courseInfo = [
+              'TPC San Antonio - Oaks', 'TPC San Antonio - Oaks',
+              'TPC San Antonio - Canyons', 'TPC San Antonio - Canyons',
+              'Current Qualy - Canyons', 'Current Qualy - Canyons', 'Current Qualy - Canyons'
+            ];
+            return courseInfo[context.dataIndex];
+          }
+        }
+      }
+    }
   }
 });
 </script>
