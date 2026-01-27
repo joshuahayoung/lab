@@ -209,10 +209,10 @@
 
 <div style="max-width: 900px; margin: 0 auto 15px; padding: 0 15px; box-sizing: border-box;">
     <style>
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
+        @keyframes pulse-red {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
     </style>
     <div style="margin-top: -10px; margin-bottom: 12px; display: flex; align-items: baseline; gap: 10px;">
@@ -226,7 +226,8 @@
 
     <div style="background: #ffffff; border: 1.5px solid #0c2340; border-radius: 8px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
         <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="background: #22c55e; color: white; padding: 3px 10px; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; animation: blink 1s infinite;">
+            <span style="background: #22c55e; color: white; padding: 3px 10px; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                <span style="width: 6px; height: 6px; background-color: #ff0000; border-radius: 50%; display: inline-block; animation: pulse-red 1s infinite; box-shadow: 0 0 5px #ff0000;"></span>
                 On-going
             </span>
             <div style="color: #0c2340; font-weight: 700; font-size: 13px;">
