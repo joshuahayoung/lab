@@ -1,56 +1,95 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div style="padding: 25px; background: #fff; border-radius: 12px; border: 1px solid #e1e1e1; box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 900px; margin: 20px auto; font-family: 'Inter', sans-serif;">
-  <h3 style="color: #0c2340; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.5px;">COURSE-SPECIFIC QUALIFIER DATA</h3>
-  <p style="font-size: 0.85em; color: #888; margin-bottom: 25px;">Detailed stroke play analysis: TPC San Antonio (Canyons vs Oaks)</p>
-  <canvas id="detailedQualyChart"></canvas>
+<div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
+  <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
+  <p style="font-size: 0.9em; color: #777; margin-bottom: 25px;">Comprehensive tracking of tournament and qualifier rounds at TPC San Antonio and national events.</p>
+  
+  <div style="position: relative; height: 450px;">
+    <canvas id="integratedPerformanceChart"></canvas>
+  </div>
 </div>
 
 <script>
-const ctxDQ = document.getElementById('detailedQualyChart').getContext('2d');
+const ctx = document.getElementById('integratedPerformanceChart').getContext('2d');
 
-new Chart(ctxDQ, {
-  type: 'bar',
+// 공통 데이터 구조
+const labels = [
+  'Sep 15', 'Sep 16', 'Sep 22', 'Sep 23', // 가을 퀄리
+  'Sep 29', 'Oct 1', 'Oct 14', 'Oct 28', // 가을 시합(대표)
+  'Dec 29', 'Jan 26', 'Jan 27', 'Jan 28'  // 패트리어트 및 현재 퀄리
+];
+
+// 코스 정보 및 메트릭스 (툴팁용)
+const details = [
+  { course: 'TPC SA - Oaks', metric: 'Internal Qualy' },
+  { course: 'TPC SA - Oaks', metric: 'Internal Qualy' },
+  { course: 'TPC SA - Canyons', metric: 'Internal Qualy' },
+  { course: 'TPC SA - Canyons', metric: 'Internal Qualy' },
+  { course: 'Tournament 1', metric: 'WAGR 12.4' },
+  { course: 'Tournament 2', metric: 'WAGR 14.1' },
+  { course: 'Tournament 3', metric: 'WAGR 11.8' },
+  { course: 'Tournament 4', metric: 'WAGR 13.5' },
+  { course: 'Patriot All-Am', metric: 'WAGR 58.2' },
+  { course: 'Current Qualy - Canyons', metric: 'R1' },
+  { course: 'Current Qualy - Canyons', metric: 'R2' },
+  { course: 'Current Qualy - Canyons', metric: 'R3 (Pending)' }
+];
+
+new Chart(ctx, {
+  type: 'line',
   data: {
-    // 날짜를 명시하여 시계열 데이터의 신뢰도 확보
-    labels: [
-      'Sep 15 (Oaks)', 'Sep 16 (Oaks)', 'Sep 22 (Canyons)', 'Sep 23 (Canyons)', 
-      'Jan 26 (Canyons)', 'Jan 27 (Canyons)', 'Jan 28 (Canyons)'
-    ],
-    datasets: [{
-      label: 'Strokes',
-      // 예시 데이터입니다. 실제 가을 퀄리 타수로 수정 가능합니다.
-      data: [72, 71, 73, 70, 68, 69, null], 
-      backgroundColor: [
-        '#0c2340', '#0c2340', // 가을 Oaks (Navy)
-        '#554400', '#554400', // 가을 Canyons (Dark Gold)
-        '#806600', '#806600', // 현재 Canyons (Main Gold)
-        '#D4AF37'             // 내일 R3 (Bright Gold)
-      ],
-      borderRadius: 5,
-      barPercentage: 0.7
-    }]
+    labels: labels,
+    datasets: [
+      {
+        label: 'TPC San Antonio - Oaks',
+        data: [72, 71, null, null, null, null, null, null, null, null, null, null],
+        borderColor: '#0c2340',
+        backgroundColor: '#0c2340',
+        borderWidth: 2,
+        pointRadius: 5,
+        spanGaps: true
+      },
+      {
+        label: 'TPC San Antonio - Canyons',
+        data: [null, null, 73, 70, null, null, null, null, null, 68, 69, null],
+        borderColor: '#806600',
+        backgroundColor: '#806600',
+        borderWidth: 2,
+        pointRadius: 5,
+        spanGaps: true
+      },
+      {
+        label: 'Away Tournaments',
+        data: [null, null, null, null, 69.6, 70.6, 71.3, 72.0, 72.0, null, null, null],
+        borderColor: '#d1d1d1',
+        backgroundColor: '#d1d1d1',
+        borderWidth: 2,
+        pointRadius: 5,
+        borderDash: [5, 5], // 시합 데이터는 점선으로 구분
+        spanGaps: true
+      }
+    ]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
-      y: { 
-        min: 65, 
-        max: 76,
-        title: { display: true, text: 'Score' },
-        ticks: { stepSize: 1 }
+      y: {
+        reverse: true, // 낮은 타수가 위로
+        suggestedMin: 67,
+        suggestedMax: 74,
+        title: { display: true, text: 'Strokes' }
       }
     },
     plugins: {
-      legend: { display: false },
+      legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } },
       tooltip: {
         callbacks: {
-          beforeLabel: function(context) {
-            const courseInfo = [
-              'TPC San Antonio - Oaks', 'TPC San Antonio - Oaks',
-              'TPC San Antonio - Canyons', 'TPC San Antonio - Canyons',
-              'Current Qualy - Canyons', 'Current Qualy - Canyons', 'Current Qualy - Canyons'
-            ];
-            return courseInfo[context.dataIndex];
+          title: (context) => `Date: ${context[0].label}`,
+          label: (context) => ` Score: ${context.parsed.y}`,
+          afterLabel: (context) => {
+            const i = context.dataIndex;
+            return [`Course: ${details[i].course}`, `Metrics: ${details[i].metric}`];
           }
         }
       }
