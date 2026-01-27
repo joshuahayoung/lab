@@ -2,52 +2,38 @@
 
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
   <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
-  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Comprehensive tracking of tournament and qualifier rounds at TPC San Antonio and national events.</p>
+  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament and qualifier rounds at TPC San Antonio and national events.</p>
   
   <div style="margin-bottom: 50px;">
-    <h3 style="font-size: 1.2em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
-    <div style="position: relative; height: 380px;">
+    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
+    <div style="position: relative; height: 350px;">
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
 
   <div>
-    <h3 style="font-size: 1.2em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #806600; padding-bottom: 5px;">Internal Qualifier Rounds (TPC San Antonio)</h3>
-    <div style="position: relative; height: 380px;">
+    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #806600; padding-bottom: 5px;">Internal Qualifier Rounds (TPC San Antonio)</h3>
+    <div style="position: relative; height: 350px;">
       <canvas id="internalQualifierChart"></canvas>
     </div>
   </div>
 </div>
 
 <script>
-// ---------- 1. Official Tournament Chart Data (공식 시합 데이터) ----------
+// ---------- 1. Official Tournament Chart (실제 데이터 반영) ----------
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
-
-const officialLabels = ['Sep 29', 'Oct 1', 'Oct 14', 'Oct 28', 'Dec 29', 'Feb 2', 'Feb 24', 'Mar 2']; // Fall + Patriot + Spring 첫 3경기 (가정)
-const officialScores = [69.6, 70.6, 71.3, 72.0, 72.0, 70, 69, 71]; // Patriots 72.0, Compadres 70, Lone Star 69, Golden Nugget 71
-const officialDetails = [
-  { tournament: 'UTSA 1', metric: 'WAGR 12.4' },
-  { tournament: 'UTSA 2', metric: 'WAGR 14.1' },
-  { tournament: 'UTSA 3', metric: 'WAGR 11.8' },
-  { tournament: 'UTSA 4', metric: 'WAGR 13.5' },
-  { tournament: 'Patriot All-Am', metric: 'WAGR 58.2 (Elite Field)' },
-  { tournament: 'Compadres Invite', metric: 'WAGR 15.0' }, // Spring 1
-  { tournament: 'Lone Star Invite', metric: 'WAGR 18.0' }, // Spring 2
-  { tournament: 'Golden Nugget', metric: 'WAGR 16.5' }  // Spring 3
-];
 
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: officialLabels,
+    labels: ['9/29 (UTSA 1)', '10/1 (UTSA 2)', '10/14 (UTSA 3)', '10/28 (UTSA 4)', '12/29 (Patriot)'],
     datasets: [{
-      label: 'Scoring Average',
-      data: officialScores,
-      borderColor: '#F15A22', // UTSA Orange for tournaments
+      label: 'Scoring Avg',
+      data: [69.67, 70.67, 71.33, 72.0, 72.0], // 이미지 데이터 기반
+      borderColor: '#F15A22',
       backgroundColor: 'rgba(241, 90, 34, 0.1)',
       borderWidth: 2,
       pointRadius: 6,
-      pointBackgroundColor: '#F15A22',
       tension: 0.2,
       fill: true
     }]
@@ -56,26 +42,19 @@ new Chart(ctxOfficial, {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: {
-        reverse: false, // 낮은 타수가 아래로
-        suggestedMin: 68,
-        suggestedMax: 74,
-        title: { display: true, text: 'Strokes' },
-        ticks: { stepSize: 1 }
-      },
-      x: {
-        title: { display: true, text: 'Date (Month Day)' }
+      y: { 
+        reverse: false, // 낮은 타수가 아래
+        min: 68, max: 74,
+        title: { display: true, text: 'Strokes' } 
       }
     },
     plugins: {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          title: (context) => `Date: ${context[0].label}`,
-          label: (context) => ` Score: ${context.parsed.y}`,
-          afterLabel: (context) => {
-            const i = context.dataIndex;
-            return [`Tournament: ${officialDetails[i].tournament}`, `Metrics: ${officialDetails[i].metric}`];
+          afterLabel: function(context) {
+            const metrics = ['WAGR 12.4', 'WAGR 14.1', 'WAGR 11.8', 'WAGR 13.5', 'WAGR 58.2'];
+            return 'Metric: ' + metrics[context.dataIndex];
           }
         }
       }
@@ -83,51 +62,34 @@ new Chart(ctxOfficial, {
   }
 });
 
-// ---------- 2. Internal Qualifier Chart Data (내부 퀄리파이 데이터) ----------
+// ---------- 2. Internal Qualifier Chart (실제 데이터 반영) ----------
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
-
-const qualifierLabels = [
-  'Sep 15 (Oaks)', 'Sep 16 (Oaks)', 'Sep 22 (Canyons)', 'Sep 23 (Canyons)', 
-  'Jan 26 (Canyons)', 'Jan 27 (Canyons)', 'Jan 28 (Canyons)'
-];
-const qualifierScores = [72, 71, 73, 70, 68, 69, 70]; // R3는 70으로 가정
-const qualifierDetails = [
-  { course: 'TPC SA - Oaks', round: 'R1' },
-  { course: 'TPC SA - Oaks', round: 'R2' },
-  { course: 'TPC SA - Canyons', round: 'R1' },
-  { course: 'TPC SA - Canyons', round: 'R2' },
-  { course: 'Current Qualy - Canyons', round: 'R1' },
-  { course: 'Current Qualy - Canyons', round: 'R2' },
-  { course: 'Current Qualy - Canyons', round: 'R3 (Final)' }
-];
 
 new Chart(ctxInternal, {
   type: 'line',
   data: {
-    labels: qualifierLabels,
+    labels: [
+      '9/15 (Oaks)', '9/16 (Oaks)', 
+      '9/22 (Canyons)', '9/23 (Canyons)', 
+      '1/26 (Canyons)', '1/27 (Canyons)', '1/28 (Canyons)'
+    ],
     datasets: [
       {
-        label: 'TPC SA - Oaks',
+        label: 'Oaks Course',
         data: [72, 71, null, null, null, null, null],
-        borderColor: '#0c2340', // Oaks - UTSA Navy
+        borderColor: '#0c2340',
         backgroundColor: 'rgba(12, 35, 64, 0.1)',
         borderWidth: 2,
         pointRadius: 6,
-        pointBackgroundColor: '#0c2340',
-        tension: 0.2,
-        fill: true,
         spanGaps: true
       },
       {
-        label: 'TPC SA - Canyons',
-        data: [null, null, 73, 70, 68, 69, 70], // R3 70으로 가정
-        borderColor: '#806600', // Canyons - Gold
+        label: 'Canyons Course',
+        data: [null, null, 73, 70, 68, 69, null], // 1/28(R3) 자리는 비워둠
+        borderColor: '#806600',
         backgroundColor: 'rgba(128, 102, 0, 0.1)',
         borderWidth: 2,
         pointRadius: 6,
-        pointBackgroundColor: '#806600',
-        tension: 0.2,
-        fill: true,
         spanGaps: true
       }
     ]
@@ -136,29 +98,14 @@ new Chart(ctxInternal, {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: {
-        reverse: false, // 낮은 타수가 아래로
-        suggestedMin: 67,
-        suggestedMax: 74,
-        title: { display: true, text: 'Strokes' },
-        ticks: { stepSize: 1 }
-      },
-      x: {
-        title: { display: true, text: 'Date (Course)' }
+      y: { 
+        reverse: false, // 낮은 타수가 아래
+        min: 67, max: 75,
+        title: { display: true, text: 'Strokes' } 
       }
     },
     plugins: {
-      legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20 } },
-      tooltip: {
-        callbacks: {
-          title: (context) => `Date: ${context[0].label}`,
-          label: (context) => ` Score: ${context.parsed.y}`,
-          afterLabel: (context) => {
-            const i = context.dataIndex;
-            return [`Course: ${qualifierDetails[i].course}`, `Round: ${qualifierDetails[i].round}`];
-          }
-        }
-      }
+      legend: { position: 'bottom' }
     }
   }
 });
