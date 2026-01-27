@@ -1,55 +1,63 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div style="width: 100%; max-width: 900px; margin: 20px auto; padding: 20px; background: #f9f9f9; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-  <h3 style="text-align: center; color: #0c2340; font-family: sans-serif; margin-bottom: 25px;">Seasonal Performance Trajectory</h3>
-  <canvas id="performanceChart"></canvas>
+<div style="display: flex; flex-direction: column; gap: 40px; max-width: 900px; margin: 20px auto; font-family: sans-serif;">
+  
+  <div style="padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #0c2340; border-left: 5px solid #F15A22; padding-left: 10px;">Official Tournament Progress</h3>
+    <p style="font-size: 0.9em; color: #666;">High-level field competition including Patriot All-America</p>
+    <canvas id="tournamentChart"></canvas>
+  </div>
+
+  <div style="padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #0c2340; border-left: 5px solid #806600; padding-left: 10px;">Team Qualifying Dominance</h3>
+    <p style="font-size: 0.9em; color: #666;">Internal qualifiers at TPC San Antonio</p>
+    <canvas id="qualyChart"></canvas>
+  </div>
+
 </div>
 
 <script>
-const ctx = document.getElementById('performanceChart').getContext('2d');
-
-// 데이터 설정: 가을 시합 1~4 -> 패트리어트 -> 현재 퀄리파이
-const labels = ['UTSA 1', 'UTSA 2', 'UTSA 3', 'UTSA 4', 'Patriot All-Am', 'Current Qualy'];
-const scoreData = [69.67, 70.67, 71.33, 72.0, 72.0, 68.5]; // 각 시합별 평균 타수
-const finishData = [9, 12, 24, 55, 38, 1]; // 등수 (퀄리는 1등으로 상정)
-
-new Chart(ctx, {
+// 1. 공식 시합 데이터 (패트리어트 포함)
+const ctxT = document.getElementById('tournamentChart').getContext('2d');
+new Chart(ctxT, {
   type: 'line',
   data: {
-    labels: labels,
+    labels: ['UTSA 1', 'UTSA 2', 'UTSA 3', 'UTSA 4', 'Patriot All-Am'],
     datasets: [{
-      label: 'Scoring Average',
-      data: scoreData,
-      borderColor: '#806600', // 요청하신 금빛 테마
-      backgroundColor: 'rgba(128, 102, 0, 0.1)',
+      label: 'Avg Score',
+      data: [69.67, 70.67, 71.33, 72.0, 72.0],
+      borderColor: '#0c2340',
+      backgroundColor: 'rgba(12, 35, 64, 0.1)',
       borderWidth: 3,
-      pointBackgroundColor: '#F15A22', // UTSA 주황 포인트
-      pointRadius: 6,
-      tension: 0.3, // 부드러운 곡선
-      fill: true,
-      yAxisID: 'y'
+      tension: 0.3,
+      fill: true
     }]
   },
   options: {
-    responsive: true,
-    scales: {
-      y: {
-        reverse: true, // 골프는 타수가 낮을수록 위로 가야 하므로 역전
-        title: { display: true, text: 'Average Score' },
-        suggestedMin: 67,
-        suggestedMax: 73
-      }
-    },
-    plugins: {
-      legend: { position: 'top' },
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            return ` Avg: ${context.parsed.y} / Finish: T${finishData[context.dataIndex]}`;
-          }
-        }
-      }
-    }
+    scales: { y: { reverse: true, suggestedMin: 68, suggestedMax: 73 } },
+    plugins: { tooltip: { callbacks: { footer: (items) => {
+      const field = ['Mid', 'Mid', 'Mid', 'Mid', 'Elite (Top 1000 WAGR)'];
+      return 'Field Strength: ' + field[items[0].dataIndex];
+    }}}}
+  }
+});
+
+// 2. 퀄리파이 데이터 (최근 68-69 강조)
+const ctxQ = document.getElementById('qualyChart').getContext('2d');
+new Chart(ctxQ, {
+  type: 'bar',
+  data: {
+    labels: ['Previous Qualies (Avg)', 'Current Qualy R1', 'Current Qualy R2'],
+    datasets: [{
+      label: 'Score',
+      data: [71.5, 68, 69],
+      backgroundColor: ['#d1d1d1', '#806600', '#D4AF37'],
+      borderRadius: 8
+    }]
+  },
+  options: {
+    scales: { y: { min: 65, max: 75 } },
+    plugins: { subtitle: { display: true, text: '8-Shot Lead in Current Qualifier' } }
   }
 });
 </script>
