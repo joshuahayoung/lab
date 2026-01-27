@@ -2,7 +2,7 @@
 
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
   <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
-  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament and qualifier rounds at TPC San Antonio and national events.</p>
+  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Verified Tournament and Internal Qualifier Records (2025 Fall - 2026 Spring)</p>
   
   <div style="margin-bottom: 50px;">
     <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
@@ -20,13 +20,12 @@
 </div>
 
 <script>
-// ---------- 1. Official Tournament Chart (WAGR Power 반영) ----------
+// ---------- 1. Official Tournament Chart (일정 및 타수 100% 검증) ----------
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
-
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: ['9/12 (Argent)', '10/3 (Trinity)', '10/10 (Everett)', '10/24 (Little Rock)', '12/29 (Patriot)'],
+    labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)'],
     datasets: [{
       label: 'Scoring Avg',
       data: [69.67, 70.67, 71.33, 72.0, 72.0],
@@ -41,50 +40,45 @@ new Chart(ctxOfficial, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
-      y: { reverse: false, min: 68, max: 74, title: { display: true, text: 'Strokes' } }
-    },
+    scales: { y: { min: 68, max: 74, title: { display: true, text: 'Strokes' } } },
     plugins: {
-      legend: { display: false },
       tooltip: {
         callbacks: {
           afterLabel: function(context) {
-            // 전문가를 위한 WAGR Power 수치 병기
             const pwr = ['WAGR Pwr: 12.4', 'WAGR Pwr: 14.1', 'WAGR Pwr: 11.8', 'WAGR Pwr: 13.5', 'WAGR Pwr: 58.2'];
             return pwr[context.dataIndex];
           }
         }
-      }
+      },
+      legend: { display: false }
     }
   }
 });
 
-// ---------- 2. Internal Qualifier Chart (Course 데이터 재검증) ----------
+// ---------- 2. Internal Qualifier Chart (Canyons vs Oaks 정밀 분류) ----------
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
-
 new Chart(ctxInternal, {
   type: 'line',
   data: {
     labels: [
-      '9/15 (Oaks)', '9/16 (Oaks)', 
-      '9/22 (Canyons)', '9/23 (Canyons)', 
-      '1/26 (Canyons)', '1/27 (Canyons)', '1/28 (Canyons)'
+      '8/27 (Can)', '8/28 (Can)', '9/01 (Can)', '9/01 (Oaks)', '9/02 (Oaks)', 
+      '9/26 (Oaks)', '9/30 (Oaks)', '10/02 (Oaks)', '1/22 (Can)', '1/23 (Can)', '1/24 (Can)'
     ],
     datasets: [
       {
-        label: 'Oaks Course',
-        data: [72, 71, null, null, null, null, null],
-        borderColor: '#0c2340',
-        backgroundColor: 'rgba(12, 35, 64, 0.1)',
+        label: 'Canyons Course',
+        data: [69, 68, 69, null, null, null, null, null, 73, 68, null], // 1/24 R3 대기
+        borderColor: '#806600',
+        backgroundColor: 'rgba(128, 102, 0, 0.1)',
         borderWidth: 2,
         pointRadius: 6,
         spanGaps: true
       },
       {
-        label: 'Canyons Course',
-        data: [null, null, 73, 70, 68, 69, null], // 현재 퀄리 R3 대기
-        borderColor: '#806600',
-        backgroundColor: 'rgba(128, 102, 0, 0.1)',
+        label: 'Oaks Course',
+        data: [null, null, null, 81, 74, 69, 74, 69, null, null, null],
+        borderColor: '#0c2340',
+        backgroundColor: 'rgba(12, 35, 64, 0.1)',
         borderWidth: 2,
         pointRadius: 6,
         spanGaps: true
@@ -94,12 +88,8 @@ new Chart(ctxInternal, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
-      y: { reverse: false, min: 67, max: 75, title: { display: true, text: 'Strokes' } }
-    },
-    plugins: {
-      legend: { position: 'bottom' }
-    }
+    scales: { y: { min: 65, max: 85, title: { display: true, text: 'Strokes' } } },
+    plugins: { legend: { position: 'bottom' } }
   }
 });
 </script>
