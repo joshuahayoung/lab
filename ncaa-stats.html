@@ -260,10 +260,10 @@
       .col-status { width: 15%; }
       .col-finish { width: 10%; }
     }
-    
-    @keyframes pulse-red {
+
+    @keyframes pulse {
       0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
+      50% { opacity: 0.2; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
     }
   </style>
@@ -277,8 +277,8 @@
 <div class="live-event-card">
     <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="background: #22c55e; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
-          <span style="width: 8px; height: 8px; background: #ff0000; border-radius: 50%; animation: pulse-red 1s infinite; box-shadow: 0 0 5px #ff0000;"></span>
+        <span style="background: #94a3b8; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+          <span style="width: 8px; height: 8px; background: white; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
           RESCHEDULED
         </span>
         <h2 style="color: #0c2340; margin: 0; font-size: 22px; font-weight: 800;">Compadres Collegiate (UTRGV) Qualifying</h2>
@@ -290,7 +290,7 @@
   <div style="flex-shrink: 0; margin-top: 2px;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" x1="8" x2="12" y2="12"></line>
       <line x1="12" y1="16" x2="12.01" y2="16"></line>
     </svg>
   </div>
