@@ -20,16 +20,16 @@
 </div>
 
 <script>
-// ---------- 1. Official Tournament Chart (실제 데이터 반영) ----------
+// ---------- 1. Official Tournament Chart (WAGR Power 반영) ----------
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
 
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: ['9/29 (UTSA 1)', '10/1 (UTSA 2)', '10/14 (UTSA 3)', '10/28 (UTSA 4)', '12/29 (Patriot)'],
+    labels: ['9/12 (Argent)', '10/3 (Trinity)', '10/10 (Everett)', '10/24 (Little Rock)', '12/29 (Patriot)'],
     datasets: [{
       label: 'Scoring Avg',
-      data: [69.67, 70.67, 71.33, 72.0, 72.0], // 이미지 데이터 기반
+      data: [69.67, 70.67, 71.33, 72.0, 72.0],
       borderColor: '#F15A22',
       backgroundColor: 'rgba(241, 90, 34, 0.1)',
       borderWidth: 2,
@@ -42,19 +42,16 @@ new Chart(ctxOfficial, {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: { 
-        reverse: false, // 낮은 타수가 아래
-        min: 68, max: 74,
-        title: { display: true, text: 'Strokes' } 
-      }
+      y: { reverse: false, min: 68, max: 74, title: { display: true, text: 'Strokes' } }
     },
     plugins: {
       legend: { display: false },
       tooltip: {
         callbacks: {
           afterLabel: function(context) {
-            const metrics = ['WAGR 12.4', 'WAGR 14.1', 'WAGR 11.8', 'WAGR 13.5', 'WAGR 58.2'];
-            return 'Metric: ' + metrics[context.dataIndex];
+            // 전문가를 위한 WAGR Power 수치 병기
+            const pwr = ['WAGR Pwr: 12.4', 'WAGR Pwr: 14.1', 'WAGR Pwr: 11.8', 'WAGR Pwr: 13.5', 'WAGR Pwr: 58.2'];
+            return pwr[context.dataIndex];
           }
         }
       }
@@ -62,7 +59,7 @@ new Chart(ctxOfficial, {
   }
 });
 
-// ---------- 2. Internal Qualifier Chart (실제 데이터 반영) ----------
+// ---------- 2. Internal Qualifier Chart (Course 데이터 재검증) ----------
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
 
 new Chart(ctxInternal, {
@@ -85,7 +82,7 @@ new Chart(ctxInternal, {
       },
       {
         label: 'Canyons Course',
-        data: [null, null, 73, 70, 68, 69, null], // 1/28(R3) 자리는 비워둠
+        data: [null, null, 73, 70, 68, 69, null], // 현재 퀄리 R3 대기
         borderColor: '#806600',
         backgroundColor: 'rgba(128, 102, 0, 0.1)',
         borderWidth: 2,
@@ -98,11 +95,7 @@ new Chart(ctxInternal, {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: { 
-        reverse: false, // 낮은 타수가 아래
-        min: 67, max: 75,
-        title: { display: true, text: 'Strokes' } 
-      }
+      y: { reverse: false, min: 67, max: 75, title: { display: true, text: 'Strokes' } }
     },
     plugins: {
       legend: { position: 'bottom' }
