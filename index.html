@@ -84,11 +84,11 @@
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 */
+    /* TOP 버튼 - 배경색 수정 (#806600 -> #F15A22) */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
-      background-color: #806600 !important;
+      background-color: #F15A22 !important; 
       color: #fff !important;
       border: none !important; border-radius: 50% !important;
       font-weight: 900 !important; font-size: 12px !important;
@@ -116,7 +116,6 @@
       .nav-links.active { left: 0; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
       
-      /* 모바일 메뉴 내부 로고 크기 조정 */
       .mobile-menu-logo { display: block; margin-bottom: 30px; width: 100%; text-align: left; }
       .mobile-menu-logo img { height: 30px !important; width: auto !important; }
 
@@ -161,15 +160,7 @@
       </nav>
     </header>
   </div>
- <div class="sticky-top">
-    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
-    <header class="header-wrapper">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      
-      <a href="index.html" class="logo-area">
-        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
-        <span class="logo-text">Joshua Hong Golf</span>
-      </a>
+
   <nav class="nav-links" id="navLinks" style="display:none;">
       <span class="close-menu" onclick="toggleMenu()">✕</span>
       <div class="mobile-menu-logo">
@@ -206,8 +197,6 @@
 
     window.addEventListener('scroll', () => {
       const curr = window.pageYOffset;
-
-      // 1. [개선] 스크롤이 시작되자마자(50px) 바로 나오게 수정
       if (curr > 50) { 
         headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
@@ -222,6 +211,8 @@
     }
   </script>
 </body>
+
+
 
 
 
