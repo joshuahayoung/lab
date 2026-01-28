@@ -1,6 +1,6 @@
 <head>
   <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,14 +20,18 @@
       margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
+      scroll-behavior: smooth;
     }
     * { box-sizing: border-box; }
 
     /* [상단 고정 헤더] */
     .sticky-top {
-      position: sticky; top: 0; z-index: 1000; width: 100%;
+      position: fixed; top: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease-in-out; /* 스므스 애니메이션 */
     }
+    .sticky-top.nav-up { transform: translateY(-100%); } /* 스크롤 시 숨김 */
+
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
       padding: 10px 0; font-size: 11px;
@@ -106,18 +110,14 @@
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
 
-    /* [가로 모드 해결] */
-    @media (orientation: landscape) and (max-height: 500px) {
-      .header-wrapper { height: 55px; }
-      .logo-img { height: 35px !important; }
-      .nav-links { padding: 30px 25px; overflow-y: auto; }
-      .menu-footer { margin-top: 30px; }
-    }
+    /* Fixed 헤더를 위한 바디 여백 */
+    body { padding-top: 120px; }
+    @media (max-width: 1024px) { body { padding-top: 110px; } }
   </style>
 </head>
 
 <body>
-  <div class="sticky-top">
+  <div class="sticky-top" id="mainHeader">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
     <header class="header-wrapper">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -154,14 +154,27 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // 잘 작동하는 Reference 페이지의 스크립트 방식을 적용
+    let lastScrollTop = 0;
+    const header = document.getElementById('mainHeader');
+    const btn = document.getElementById('fixedTopBtn');
+
     window.addEventListener('scroll', function() {
-      const btn = document.getElementById('fixedTopBtn');
-      if (window.pageYOffset > 100) {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // TOP 버튼 노출
+      if (scrollTop > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
+
+      // 헤더 스므스 숨기기/보이기
+      if (scrollTop > lastScrollTop && scrollTop > 150) {
+        header.classList.add('nav-up');
+      } else {
+        header.classList.remove('nav-up');
+      }
+      lastScrollTop = scrollTop;
     });
 
     function scrollToTop() {
@@ -170,19 +183,12 @@
   </script>
 </body>
 
-
-
-
-  
-
-  
-
 <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
-  <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
-  JOSHUA HONG
-</h1>
+    <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+      JOSHUA HONG
+    </h1>
     <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
       UTSA MEN'S GOLF
     </p>
