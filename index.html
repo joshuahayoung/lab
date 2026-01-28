@@ -24,16 +24,31 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더] */
+    /* [헤더 설정] 처음에는 평범하게 있다가 스크롤 시 변신 */
     .sticky-top {
-      position: fixed; top: 0; z-index: 1000; width: 100%;
-      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.4s ease-in-out; /* 스르륵 효과 */
-      will-change: transform;
+      position: absolute; /* 처음엔 상단에 고정 */
+      top: 0; z-index: 1000; width: 100%;
+      background: #ffffff;
+      transition: all 0.4s ease-in-out; 
     }
-    
-    /* 스크롤 다운 시 숨김 (위로 100% 밀어냄) */
-    .nav-up { transform: translateY(-100%) !important; }
+
+    /* 스크롤 내릴 때 적용되는 스타일: 스르륵 내려오며 따라다님 */
+    .sticky-top.scrolled {
+      position: fixed;
+      transform: translateY(0); /* 아래로 스르륵 나타남 */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: slideDown 0.4s ease-out;
+    }
+
+    /* 스크롤 올릴 때 숨길 스타일 */
+    .sticky-top.nav-hide {
+      transform: translateY(-100%);
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
 
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
@@ -58,7 +73,6 @@
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
     .nav-links a.active { background-color: #F15A22; color: #fff; } 
-    .mobile-menu-logo, .close-menu, .menu-footer { display: none; } 
 
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
@@ -76,9 +90,8 @@
     }
 
     @media (max-width: 1024px) {
-      .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; } 
-      .logo-area { order: 2; margin-left: 0; } 
+      .header-wrapper { padding: 0 20px; height: 70px; }
+      .menu-toggle { display: block; } 
       .logo-text { display: none; } 
       .logo-img { height: 40px; }
       .nav-links {
@@ -86,27 +99,19 @@
         width: 260px; height: 100vh;
         background: #ffffff !important; flex-direction: column;
         padding: 50px 25px; transition: 0.3s; z-index: 2000;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
-        align-items: flex-start; gap: 10px;
       }
       .nav-links.active { left: 0; }
-      .nav-links a { width: 100%; padding: 12px 20px; }
-      .nav-links a.active { background-color: #F15A22; color: #fff; } 
-      .mobile-menu-logo { display: block; margin-bottom: 30px; } 
-      .mobile-menu-logo img { height: 35px; }
-      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; }
-      .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
-      .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
-      .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
 
-    /* 본문 배너 사이즈 왜곡 방지: 여백을 body에 직접 적용 */
-    body { padding-top: 120px; }
-    @media (max-width: 1024px) { body { padding-top: 110px; } }
+    /* [배너 사이즈 해결] 헤더가 붕 뜨지 않게 유지 */
+    .header-placeholder { height: 120px; }
+    @media (max-width: 1024px) { .header-placeholder { height: 110px; } }
   </style>
 </head>
 
 <body>
+  <div class="header-placeholder"></div>
+
   <div class="sticky-top" id="mainHeader">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
     <header class="header-wrapper">
@@ -116,19 +121,11 @@
         <span class="logo-text">Joshua Hong Golf</span>
       </a>
       <nav class="nav-links" id="navLinks">
-        <span class="close-menu" onclick="toggleMenu()">✕</span>
-        <div class="mobile-menu-logo">
-            <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
-        </div>
         <a href="index.html" class="active">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
         <a href="junior-career.html">Junior Career</a>
-        <div class="menu-footer">
-            <span class="footer-name">JOSHUA HONG</span>
-            <span class="footer-team">UTSA MEN'S GOLF</span>
-        </div>
       </nav>
     </header>
   </div>
@@ -140,46 +137,49 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    let lastScrollTop = 0;
+    let lastScroll = 0;
     const header = document.getElementById('mainHeader');
     const btn = document.getElementById('fixedTopBtn');
 
-    window.addEventListener('scroll', function() {
-      // 현재 스크롤 위치값 가져오기
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
 
-      // 1. TOP 버튼 노출 제어 (100px 이상일 때만)
-      if (scrollTop > 100) {
+      // 1. TOP 버튼
+      if (currentScroll > 150) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
 
-      // 2. 스크롤 방향 감지 및 헤더 숨김/노출
-      // scrollTop > lastScrollTop 이면 '내리는 중'
-      if (scrollTop > lastScrollTop && scrollTop > 80) {
-        // [내릴 때] 헤더를 위로 올려서 숨김
-        header.classList.add('nav-up');
+      // 2. 부모님 요청 로직: 내릴 때 스르륵 나타나고, 올릴 때 사라짐
+      if (currentScroll > 50) { // 50픽셀 이상 내리면
+        if (currentScroll > lastScroll) {
+          // [내려가는 중] 헤더가 스르륵 나타나 따라다님
+          header.classList.remove('nav-hide');
+          header.classList.add('scrolled');
+        } else {
+          // [올라가는 중] 헤더를 숨김
+          header.classList.add('nav-hide');
+        }
       } else {
-        // [올릴 때] 혹은 [최상단일 때] 헤더를 다시 내림
-        header.classList.remove('nav-up');
+        // 최상단일 때는 원래 상태로
+        header.classList.remove('scrolled', 'nav-hide');
       }
-
-      // 이전 스크롤 위치 업데이트 (음수 방지)
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, { passive: true });
+      
+      lastScroll = currentScroll;
+    });
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
-  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px;">
     <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
-      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; text-transform: uppercase;">
         JOSHUA HONG
       </h1>
-      <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+      <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600;">
         UTSA MEN'S GOLF
       </p>
     </div>
