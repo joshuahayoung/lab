@@ -149,38 +149,49 @@
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
+ <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  let lastScrollTop = 0;
+  const delta = 5; // 이 값보다 더 많이 움직여야 작동 (미세 스크롤 무시)
+  const header = document.getElementById('mainHeader');
+  const btn = document.getElementById('fixedTopBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // 1. TOP 버튼 노출 (100px 이상 내리면 표시)
+    if (scrollTop > 100) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
     }
 
-    let lastScrollTop = 0;
-    const header = document.getElementById('mainHeader');
-    const btn = document.getElementById('fixedTopBtn');
-
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      // TOP 버튼 노출
-      if (scrollTop > 100) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
-
-      // 헤더 스므스 숨기기/보이기
-      if (scrollTop > lastScrollTop && scrollTop > 150) {
-        header.classList.add('nav-up');
-      } else {
-        header.classList.remove('nav-up');
-      }
-      lastScrollTop = scrollTop;
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 2. 헤더 스므스 로직 보완
+    // 스크롤 변화량이 delta보다 작거나, 모바일 메뉴가 열려있으면 작동 안 함
+    if (Math.abs(lastScrollTop - scrollTop) <= delta || navLinks.classList.contains('active')) {
+      return;
     }
-  </script>
+
+    // 아래로 내릴 때 (현재 위치 > 이전 위치) & 일정 높이 이상 내려왔을 때 숨김
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      header.classList.add('nav-up');
+    } 
+    // 위로 올릴 때 다시 나타남
+    else if (scrollTop < lastScrollTop) {
+      header.classList.remove('nav-up');
+    }
+
+    lastScrollTop = scrollTop;
+  });
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 
 <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
