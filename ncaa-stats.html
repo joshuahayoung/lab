@@ -504,39 +504,49 @@
   </div>
   
   <style>
-    /* 테이블 기본 구조 (데스크탑) */
-    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
-    .log-table th { background: #f8f9fa; font-size: 12px; color: #0c2340; text-transform: uppercase; padding: 15px 10px; border-bottom: 2px solid #2e7d32; text-align: center; }
-    .log-table th.col-left { text-align: left; padding-left: 20px; }
-    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
-    .log-table td.col-left { text-align: left; padding-left: 20px; }
+    /* 모든 테이블의 규격을 통일하기 위한 통합 클래스 */
+    .log-table, .res-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    .log-table th, .res-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 15px 10px; border-bottom: 2px solid #2e7d32; text-align: center; }
+    .log-table th.col-left, .res-table th.col-left { text-align: left; padding-left: 20px; }
+    .log-table td, .res-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td.col-left, .res-table td.col-left { text-align: left; padding-left: 20px; }
     
-    /* 강조 스타일 */
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
     .scheduled-text { font-size: 11px; color: #95a5a6; font-weight: 600; }
 
-    /* 모바일 최적화 (768px 이하) */
+    .leaderboard-btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      margin-left: 8px;
+      vertical-align: middle;
+      transition: opacity 0.2s;
+    }
+    .leaderboard-btn:hover { opacity: 0.7; }
+
+    /* 모바일 레이아웃 통일 */
     @media (max-width: 768px) {
-      .log-table thead { display: none; }
-      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
-      .log-table tr { margin-bottom: 20px; border: 1px solid #e2e8f0 !important; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
-      .hide-mobile { display: none !important; }
-      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 15px; padding: 10px 5px; border: 1px dashed #e2e8f0; }
-      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
-      .ms-item:last-child { border-right: none; }
-      .ms-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
-      .ms-value { display: block; font-size: 13px; font-weight: 800; color: #bdc3c7; }
+      .log-table thead, .res-table thead { display: none; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td,
+      .res-table, .res-table tbody, .res-table tr, .res-table td { display: block; width: 100%; box-sizing: border-box; }
+      .log-table tr, .res-table tr { margin-bottom: 20px; border: 1px solid #e2e8f0 !important; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: white !important; }
+      .log-table td, .res-table td { border: none !important; padding: 0 !important; text-align: left !important; overflow: visible; }
+      .hide-mobile, .hide-on-mobile { display: none !important; }
+      .mobile-status-bar, .mobile-score-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 15px; padding: 10px 5px; border: 1px dashed #e2e8f0; }
+      .ms-item, .m-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+      .ms-item:last-child, .m-item:last-child { border-right: none; }
+      .ms-label, .m-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .ms-value, .m-value { display: block; font-size: 13px; font-weight: 800; color: #bdc3c7; }
     }
     
-    /* PC 전용 너비 */
     @media (min-width: 769px) {
-      .mobile-status-bar { display: none !important; }
-      .col-info { width: 50%; }
-      .col-rounds { width: 15%; }
-      .col-total { width: 10%; }
-      .col-par { width: 10%; }
-      .col-finish { width: 15%; }
+      .mobile-status-bar, .mobile-score-bar { display: none !important; }
+      .col-info, .col-tour { width: 45%; }
+      .col-rounds, .col-score { width: 20%; }
+      .col-total { width: 11%; }
+      .col-par { width: 11%; }
+      .col-finish { width: 13%; }
+      .col-val { width: 11%; }
     }
   </style>
 
@@ -562,7 +572,6 @@
           </tr>
         </thead>
         <tbody style="color: #2d3436;">
-          
           <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Feb 2-4, 2026</div>
@@ -580,7 +589,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr style="background-color: #fcfdfe;">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Feb 23-24, 2026</div>
@@ -598,7 +606,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Mar 2-3, 2026</div>
@@ -616,7 +623,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr style="background-color: #fcfdfe;">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Mar 16-17, 2026</div>
@@ -634,7 +640,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Mar 23-24, 2026</div>
@@ -652,7 +657,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr style="background-color: #fcfdfe;">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">Apr 6-7, 2026</div>
@@ -670,7 +674,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr style="background: rgba(201, 138, 46, 0.03);">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px; color: #c98a2e;">Apr 27-29, 2026</div>
@@ -688,7 +691,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px;">May 18-20, 2026</div>
@@ -706,7 +708,6 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
           <tr style="background: rgba(12, 35, 64, 0.05);">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px; color: #0c2340;">May 29 - Jun 3, 2026</div>
@@ -724,16 +725,10 @@
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
             <td class="hide-mobile" style="color: #bdc3c7;">-</td>
           </tr>
-
         </tbody>
       </table>
     </div>
   </div>
-</div>
-
-
-
-  
 
   <div style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 12px; border: 1px solid #e2e8f0;">
     <p style="margin: 0; font-size: 14px; color: #666; line-height: 1.6;">
@@ -741,49 +736,9 @@
       <br><span style="color: #2e7d32; font-weight: 700;">● Live Scoring</span> available via Golfstat / Official Tournament Channels.
     </p>
   </div>
-
 </div>
 
-
-  
-  
 <div class="archives-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-
-  <style>
-    .res-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; }
-    .res-table th { background: #f8f9fa; font-size: 11px; color: #666; text-transform: uppercase; padding: 15px 10px; border-bottom: 1px solid #eee; }
-    .res-table td { padding: 15px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
-    
-    .leaderboard-btn {
-      display: inline-flex;
-      align-items: center;
-      text-decoration: none;
-      margin-left: 8px;
-      vertical-align: middle;
-      transition: opacity 0.2s;
-    }
-    .leaderboard-btn:hover { opacity: 0.7; }
-
-    @media (max-width: 768px) {
-      .res-table thead { display: none; }
-      .res-table, .res-table tbody, .res-table tr, .res-table td { display: block; width: 100%; box-sizing: border-box; }
-      .res-table tr { margin-bottom: 20px; border: 1px solid #eee !important; border-radius: 15px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-      .res-table td { border: none; padding: 0; text-align: left; overflow: visible; }
-      .hide-on-mobile { display: none !important; }
-      .mobile-score-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 15px; padding: 10px 5px; border: 1px solid #f0f0f0; }
-      .m-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
-      .m-item:last-child { border-right: none; }
-      .m-label { display: block; font-size: 9px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
-      .m-value { display: block; font-size: 13px; font-weight: 800; color: #333; }
-    }
-    
-    @media (min-width: 769px) {
-      .mobile-score-bar { display: none !important; }
-      .col-tour { width: 45%; }
-      .col-score { width: 20%; }
-      .col-val { width: 11%; }
-    }
-  </style>
 
   <div style="border-top: 2px solid #0c2340; border-bottom: 2px solid #0c2340; padding: 25px 0; margin-bottom: 40px; text-align: center; background-color: #fafafa;">
     <h2 style="margin: 0; font-size: 22px; color: #0c2340; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">Managed Official Archives</h2>
@@ -796,11 +751,11 @@
       <h4 style="margin: 0; color: #c98a2e; font-size: 20px; font-weight: 800;">Off-Season / Special Invitational</h4>
     </div>
     
-    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden;">
+    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
       <table class="res-table">
         <thead>
           <tr>
-            <th class="col-tour">Date / Tournament</th>
+            <th class="col-tour col-left">Date / Tournament</th>
             <th class="col-score">R1-R2-R3</th>
             <th class="col-val">Total</th>
             <th class="col-val">Par</th>
@@ -809,7 +764,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td class="col-left">
               <div style="color: #999; font-weight: 700; font-size: 11px;">Dec 2025</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span style="font-weight: 800; color: #0c2340; font-size: 16px;">Patriot All-America Invitational</span>
@@ -826,10 +781,10 @@
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T38</span></div>
               </div>
             </td>
-            <td class="hide-on-mobile" style="text-align: center;">71-73-72</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">216</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 800;">+6</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 800; color: #0c2340;">T38</td>
+            <td class="hide-on-mobile">71-73-72</td>
+            <td class="hide-on-mobile" style="font-weight: 700;">216</td>
+            <td class="hide-on-mobile" style="font-weight: 800;">+6</td>
+            <td class="hide-on-mobile" style="font-weight: 800; color: #0c2340;">T38</td>
           </tr>
         </tbody>
       </table>
@@ -841,11 +796,11 @@
       <h4 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 800;">2025 NCAA Fall Season</h4>
     </div>
     
-    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden;">
+    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
       <table class="res-table">
         <thead>
           <tr>
-            <th class="col-tour">Date / Tournament</th>
+            <th class="col-tour col-left">Date / Tournament</th>
             <th class="col-score">R1-R2-R3</th>
             <th class="col-val">Total</th>
             <th class="col-val">Par</th>
@@ -854,7 +809,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>
+            <td class="col-left">
               <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Trinity Forest Invitational</span>
@@ -870,13 +825,13 @@
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T55</span></div>
               </div>
             </td>
-            <td class="hide-on-mobile" style="text-align: center;">75-73-74</td>
-            <td class="hide-on-mobile" style="text-align: center;">222</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">+6</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">T55</td>
+            <td class="hide-on-mobile">75-73-74</td>
+            <td class="hide-on-mobile">222</td>
+            <td class="hide-on-mobile" style="font-weight: 700;">+6</td>
+            <td class="hide-on-mobile" style="font-weight: 700;">T55</td>
           </tr>
           <tr style="background: #fcfdfe;">
-            <td>
+            <td class="col-left">
               <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Badger Invitational</span>
@@ -892,13 +847,13 @@
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T24</span></div>
               </div>
             </td>
-            <td class="hide-on-mobile" style="text-align: center;"><span style="color:#e53935;font-weight:800;">71</span>-71-76</td>
-            <td class="hide-on-mobile" style="text-align: center;">218</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">+2</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 700;">T24</td>
+            <td class="hide-on-mobile"><span style="color:#e53935;font-weight:800;">71</span>-71-76</td>
+            <td class="hide-on-mobile">218</td>
+            <td class="hide-on-mobile" style="font-weight: 700;">+2</td>
+            <td class="hide-on-mobile" style="font-weight: 700;">T24</td>
           </tr>
           <tr>
-            <td>
+            <td class="col-left">
               <div style="color: #999; font-weight: 700; font-size: 11px;">Sep 2025</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Highlands Invitational</span>
@@ -914,13 +869,13 @@
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T12</span></div>
               </div>
             </td>
-            <td class="hide-on-mobile" style="text-align: center;">74-<span style="color:#e53935;font-weight:800;">71</span>-70</td>
-            <td class="hide-on-mobile" style="text-align: center;">215</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">-1</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 800;">T12</td>
+            <td class="hide-on-mobile">74-<span style="color:#e53935;font-weight:800;">71</span>-70</td>
+            <td class="hide-on-mobile">215</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">-1</td>
+            <td class="hide-on-mobile" style="font-weight: 800;">T12</td>
           </tr>
           <tr style="background: rgba(12, 35, 64, 0.04);">
-            <td>
+            <td class="col-left">
               <div style="color: #0c2340; font-weight: 700; font-size: 11px;">Sep 2025</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span style="font-weight: 800; color: #0c2340; font-size: 15px;">Argent Financial Invitational</span>
@@ -936,10 +891,10 @@
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T9</span></div>
               </div>
             </td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">70-70-69</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">209</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color:#e53935;">-7</td>
-            <td class="hide-on-mobile" style="text-align: center; font-weight: 900; color: #0c2340;">T9</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">70-70-69</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">209</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">-7</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color: #0c2340;">T9</td>
           </tr>
         </tbody>
       </table>
