@@ -523,7 +523,7 @@
   
 
 
-  <div class="insight-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+ <div class="insight-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <input type="checkbox" id="card-toggle" style="display: none;">
 
@@ -531,7 +531,8 @@
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      min-height: 580px; 
+      /* 텍스트 양에 맞춰 높이를 최적화 (기존 580px -> 460px) */
+      min-height: 460px; 
       perspective: 1000px;
     }
     .insight-card {
@@ -584,12 +585,13 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
+    /* 모바일 반응형 높이 조정 (텍스트가 튀어나가지 않도록 여유 확보) */
     @media (max-width: 768px) {
-      .insight-card-wrapper { min-height: 780px; }
+      .insight-card-wrapper { min-height: 520px; }
       .insight-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .insight-card-wrapper { min-height: 880px; }
+      .insight-card-wrapper { min-height: 620px; }
     }
   </style>
 
