@@ -10,7 +10,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Joshua Hong Golf</title>
+  <title>News & Media - Joshua Hong Golf</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -84,11 +84,11 @@
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 */
+    /* [수정] TOP 버튼 - UTSA 오렌지색 적용 */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
-      background-color: #806600 !important;
+      background-color: #F15A22 !important; 
       color: #fff !important;
       border: none !important; border-radius: 50% !important;
       font-weight: 900 !important; font-size: 12px !important;
@@ -97,14 +97,12 @@
       transition: opacity 0.3s;
     }
 
-    /* 모바일 환경 설정 */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
       .menu-toggle { display: block; order: 1; } 
       .logo-area { order: 2; margin-left: 0; } 
       .logo-text { display: none; } 
       .logo-img { height: 40px !important; }
-
       .nav-links {
         position: fixed; top: 0; left: -100%; 
         width: 260px; height: 100vh;
@@ -115,11 +113,8 @@
       }
       .nav-links.active { left: 0; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
-      
-      /* 모바일 메뉴 내부 로고 크기 조정 */
       .mobile-menu-logo { display: block; margin-bottom: 30px; width: 100%; text-align: left; }
       .mobile-menu-logo img { height: 30px !important; width: auto !important; }
-
       .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
@@ -137,9 +132,9 @@
         <span class="logo-text">Joshua Hong Golf</span>
       </a>
       <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
-        <a href="news-media.html">News & Media</a>
+        <a href="news-media.html" class="active">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
         <a href="junior-career.html">Junior Career</a>
       </nav>
@@ -153,9 +148,9 @@
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
       </a>
       <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
-        <a href="news-media.html">News & Media</a>
+        <a href="news-media.html" class="active">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
         <a href="junior-career.html">Junior Career</a>
       </nav>
@@ -167,9 +162,9 @@
       <div class="mobile-menu-logo">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
       </div>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="ncaa-stats.html">NCAA Stats</a>
-      <a href="news-media.html">News & Media</a>
+      <a href="news-media.html" class="active">News & Media</a>
       <a href="reference-links.html">Reference & Links</a>
       <a href="junior-career.html">Junior Career</a>
       
@@ -198,8 +193,6 @@
 
     window.addEventListener('scroll', () => {
       const curr = window.pageYOffset;
-
-      // 1. [개선] 스크롤이 시작되자마자(50px) 바로 나오게 수정
       if (curr > 50) { 
         headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
@@ -214,6 +207,10 @@
     }
   </script>
 </body>
+
+
+
+
 
 
 
