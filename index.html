@@ -26,13 +26,13 @@
 
     /* [헤더 설정] */
     .sticky-top {
-      position: absolute; /* 시작은 상단 고정 */
+      position: absolute; 
       top: 0; z-index: 1000; width: 100%;
       background: #ffffff;
       transition: all 0.4s ease-in-out;
     }
 
-    /* 스크롤 시 변신: 스르륵 내려오며 따라다님 */
+    /* 내릴 때 나타남 */
     .sticky-top.scrolled {
       position: fixed;
       transform: translateY(0);
@@ -40,7 +40,7 @@
       animation: slideDown 0.4s ease-out;
     }
 
-    /* 스크롤 올릴 때 숨김 */
+    /* 올릴 때 숨김 */
     .sticky-top.nav-hide {
       transform: translateY(-100%);
     }
@@ -103,14 +103,48 @@
       .nav-links.active { left: 0; }
     }
 
-    /* [배너 사이즈 문제 해결] 본문 상단 여백을 명확히 주어 배너가 커지지 않게 함 */
-    .main-content {
-      margin-top: 120px; /* 헤더 높이만큼 띄움 */
-    }
-    @media (max-width: 1024px) {
-      .main-content { margin-top: 110px; }
-    }
+    /* 본문 배너 상단 여백 유지 */
+    body { padding-top: 120px; }
+    @media (max-width: 1024px) { body { padding-top: 110px; } }
   </style>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('load', () => {
+      let lastScroll = 0;
+      const header = document.getElementById('mainHeader');
+      const btn = document.getElementById('fixedTopBtn');
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 150) {
+          btn.style.display = 'block';
+        } else {
+          btn.style.display = 'none';
+        }
+
+        if (currentScroll > 50) {
+          if (currentScroll > lastScroll) {
+            header.classList.remove('nav-hide');
+            header.classList.add('scrolled');
+          } else {
+            header.classList.add('nav-hide');
+          }
+        } else {
+          header.classList.remove('scrolled', 'nav-hide');
+        }
+        lastScroll = currentScroll;
+      });
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </head>
 
 <body>
@@ -134,58 +168,18 @@
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
-  <div class="main-content">
-    <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;">
-      <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
-        <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
-          JOSHUA HONG
-        </h1>
-        <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
-          UTSA MEN'S GOLF
-        </p>
-      </div>
+  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+        JOSHUA HONG
+      </h1>
+      <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+        UTSA MEN'S GOLF
+      </p>
     </div>
   </div>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    let lastScroll = 0;
-    const header = document.getElementById('mainHeader');
-    const btn = document.getElementById('fixedTopBtn');
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-
-      // TOP 버튼 노출
-      if (currentScroll > 150) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
-
-      // 내릴 때 헤더 스르륵 / 올릴 때 숨김 로직
-      if (currentScroll > 50) {
-        if (currentScroll > lastScroll) {
-          header.classList.remove('nav-hide');
-          header.classList.add('scrolled');
-        } else {
-          header.classList.add('nav-hide');
-        }
-      } else {
-        header.classList.remove('scrolled', 'nav-hide');
-      }
-      
-      lastScroll = currentScroll;
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
+
 
 
 
