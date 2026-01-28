@@ -23,11 +23,15 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더] sticky를 사용하여 내릴 때 바로 따라오게 설정 */
+    /* [상단 고정 헤더] Fixed로 변경하여 무조건 따라다니게 설정 */
     .sticky-top {
-      position: sticky; top: 0; z-index: 1000; width: 100%;
-      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      /* transition 제거: 내릴 때 지연 없이 즉시 따라오도록 함 */
+      position: fixed; /* sticky 대신 fixed로 확실하게 고정 */
+      top: 0; 
+      left: 0;
+      z-index: 1000; 
+      width: 100%;
+      background: #ffffff; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .top-bar {
@@ -160,13 +164,11 @@
       const btn = document.getElementById('fixedTopBtn');
       const currentScrollY = window.pageYOffset;
 
-      // TOP 버튼 노출
       if (currentScrollY > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
-      // 헤더는 이제 CSS sticky에 의해 내리자마자 바로 따라오며, 위로 가도 사라지지 않고 상단에 합쳐집니다.
     });
 
     function scrollToTop() {
@@ -174,7 +176,7 @@
     }
   </script>
 
-<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 20px 15px 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 130px 15px 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
   <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
