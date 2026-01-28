@@ -27,26 +27,27 @@
     .sticky-top {
       position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: all 0.4s ease-in-out; 
+      /* 우아한 등장을 위한 트랜지션 설정 */
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
     }
 
-    /* 스크롤 시 '폼 나게' 내려와 고정되는 상태 - 깜빡임 방지 최적화 */
+    /* 스크롤 시 내려와 고정되는 상태 */
     .sticky-top.scrolled {
       position: fixed;
       top: 0;
       transform: translateY(0);
-      background: rgba(255, 255, 255, 0.98);
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
+      background: rgba(255, 255, 255, 0.98);
     }
 
-    /* 상단 복귀 시 자연스러운 전환을 위한 숨김 상태 */
+    /* 위로 올라갈 때 '스르르륵' 사라지는 준비 상태 */
     .sticky-top.preparing {
       position: fixed;
+      top: 0;
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
-      transition: none; /* 위로 올라갈 때는 즉시 대기 */
     }
 
     .top-bar {
@@ -179,16 +180,16 @@
         btn.style.display = 'none';
       }
 
-      // 2. 헤더 제어: 배너 사진이 끝나는 지점인 600px 이후에 등장
-      if (currentScrollY > 600) {
+      // 2. 헤더 우아한 제어 (300px 기준)
+      if (currentScrollY > 300) {
         header.classList.add('scrolled');
         header.classList.remove('preparing');
-      } else if (currentScrollY > 150) {
-        // 맨 위로 올라가기 전 미리 숨겨서 합쳐질 때 깜빡임 방지
+      } else if (currentScrollY > 10) { 
+        // 10px ~ 300px 사이일 때 위로 스르르르륵 숨김
         header.classList.remove('scrolled');
         header.classList.add('preparing');
       } else {
-        // 최상단 도달 시 원래 위치의 헤더가 보이도록 초기화
+        // 완전 최상단일 때 원래 위치에 깜빡임 없이 안착
         header.classList.remove('scrolled', 'preparing');
       }
     });
