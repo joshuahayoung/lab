@@ -23,19 +23,33 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 헤더 - 항상 고정] */
-    .sticky-top {
-      position: fixed; /* 페이지 최상단에 항상 고정 */
-      top: 0; left: 0; z-index: 1000; width: 100%;
+    /* [헤더 기본 스타일] */
+    .header-container {
+      width: 100%;
       background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease; /* 부드러운 변화를 위해 유지 */
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 부드러운 가속도 효과 */
     }
 
-    /* 스크롤이 내려갔을 때 헤더가 살짝 더 슬림해지거나 그림자가 진해지는 효과 (선택사항) */
-    .sticky-top.scrolled {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      background: rgba(255, 255, 255, 0.98); /* 살짝 투명하게 가능 */
+    /* 평상시 상태 (상단에 위치) */
+    .header-normal {
+      position: absolute;
+      top: 0;
+    }
+
+    /* 스크롤 시 나타나는 상태 (부드럽게 내려오는 효과) */
+    .header-fixed {
+      position: fixed;
+      top: 0;
+      transform: translateY(-100%); /* 일단 위로 숨김 */
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      visibility: hidden;
+    }
+
+    /* 스크롤 감지 후 실제로 보여질 때 */
+    .header-fixed.is-visible {
+      transform: translateY(0); /* 사르륵 내려옴 */
+      visibility: visible;
     }
 
     .top-bar {
@@ -50,8 +64,9 @@
       padding: 0 40px; height: 80px;
     }
 
+    /* 로고 크기 절대 고정 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-    .logo-img { height: 50px; width: auto; display: block; }
+    .logo-img { height: 50px !important; width: auto !important; max-width: 200px; display: block; object-fit: contain; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
 
     .nav-links { display: flex; gap: 30px; align-items: center; }
@@ -67,23 +82,24 @@
       background: none; border: none; color: #F15A22;
     }
 
+    /* TOP 버튼 */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
-      background-color: #F15A22 !important; color: #fff !important;
+      background-color: #806600 !important; /* 요청하신 색상 적용 */
+      color: #fff !important;
       border: none !important; border-radius: 50% !important;
       font-weight: 900 !important; font-size: 12px !important;
       z-index: 9999 !important; cursor: pointer !important;
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* 모바일 스타일 */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
       .menu-toggle { display: block; order: 1; } 
       .logo-area { order: 2; margin-left: 0; } 
       .logo-text { display: none; } 
-      .logo-img { height: 40px; }
+      .logo-img { height: 40px !important; }
       .nav-links {
         position: fixed; top: 0; left: -100%; 
         width: 260px; height: 100vh;
@@ -95,7 +111,7 @@
       .nav-links.active { left: 0; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
       .mobile-menu-logo { display: block; margin-bottom: 30px; }
-      .mobile-menu-logo img { height: 35px; }
+      .mobile-menu-logo img { height: 35px !important; }
       .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
@@ -104,63 +120,73 @@
 </head>
 
 <body>
-  <div class="sticky-top" id="mainHeader">
+  <div class="header-container header-normal" id="headerNormal">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
     <header class="header-wrapper">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      
       <a href="index.html" class="logo-area">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
         <span class="logo-text">Joshua Hong Golf</span>
       </a>
-
-      <nav class="nav-links" id="navLinks">
-        <span class="close-menu" onclick="toggleMenu()">✕</span>
-        <div class="mobile-menu-logo">
-            <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
-        </div>
-        
+      <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
         <a href="junior-career.html">Junior Career</a>
-
-        <div class="menu-footer">
-            <span class="footer-name">JOSHUA HONG</span>
-            <span class="footer-team">UTSA MEN'S GOLF</span>
-        </div>
       </nav>
     </header>
   </div>
 
-  <div style="height: 120px;" id="headerSpacer"></div>
+  <div class="header-container header-fixed" id="headerFixed">
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <a href="index.html" class="logo-area">
+        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html">News & Media</a>
+        <a href="reference-links.html">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+      </nav>
+    </header>
+  </div>
+
+  <nav class="nav-links" id="navLinks" style="display:none;">
+      <span class="close-menu" onclick="toggleMenu()">✕</span>
+      <div class="mobile-menu-logo"><img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong"></div>
+      <a href="index.html" class="active">Home</a>
+      <a href="ncaa-stats.html">NCAA Stats</a>
+      <a href="news-media.html">News & Media</a>
+      <a href="reference-links.html">Reference & Links</a>
+      <a href="junior-career.html">Junior Career</a>
+  </nav>
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <script>
     function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
+      const nav = document.getElementById('navLinks');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      nav.classList.toggle('active');
     }
 
-    const header = document.getElementById('mainHeader');
+    const headerNormal = document.getElementById('headerNormal');
+    const headerFixed = document.getElementById('headerFixed');
     const topBtn = document.getElementById('fixedTopBtn');
 
     window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
+      const curr = window.pageYOffset;
 
-      // 1. TOP 버튼 제어
-      if (currentScrollY > 100) {
+      // TOP 버튼 및 스티키 헤더 로직
+      if (curr > 200) { // 200px 이상 내리면
+        headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
       } else {
+        headerFixed.classList.remove('is-visible');
         topBtn.style.display = 'none';
-      }
-
-      // 2. 헤더 스크롤 상태 표시 (스크롤 시 그림자를 더 진하게 하는 등 효과용)
-      if (currentScrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
       }
     });
 
@@ -169,6 +195,11 @@
     }
   </script>
 </body>
+
+
+
+
+
 
 
 
