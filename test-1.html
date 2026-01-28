@@ -36,15 +36,14 @@
       top: 0;
     }
 
-    /* [핵심 수정: 스으으윽 효과] */
+    /* [스으으윽 효과] */
     .header-fixed {
       position: fixed;
       top: 0;
-      transform: translateY(-100%); /* 위로 숨김 */
+      transform: translateY(-100%); 
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       visibility: hidden;
-      opacity: 0; /* 투명도 추가해서 더 부드럽게 */
-      /* 시간을 0.8s로 늘리고, 더 부드러운 가속도 곡선(ease-out) 적용 */
+      opacity: 0;
       transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease-out;
     }
 
@@ -85,7 +84,7 @@
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 (색상 요청 반영) */
+    /* TOP 버튼 */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
@@ -98,12 +97,14 @@
       transition: opacity 0.3s;
     }
 
+    /* 모바일 환경 설정 */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
       .menu-toggle { display: block; order: 1; } 
       .logo-area { order: 2; margin-left: 0; } 
       .logo-text { display: none; } 
       .logo-img { height: 40px !important; }
+
       .nav-links {
         position: fixed; top: 0; left: -100%; 
         width: 260px; height: 100vh;
@@ -114,7 +115,11 @@
       }
       .nav-links.active { left: 0; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
-      .mobile-menu-logo { display: block; margin-bottom: 30px; }
+      
+      /* 모바일 메뉴 내부 로고 크기 조정 */
+      .mobile-menu-logo { display: block; margin-bottom: 30px; width: 100%; text-align: left; }
+      .mobile-menu-logo img { height: 30px !important; width: auto !important; }
+
       .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
@@ -159,12 +164,19 @@
 
   <nav class="nav-links" id="navLinks" style="display:none;">
       <span class="close-menu" onclick="toggleMenu()">✕</span>
-      <div class="mobile-menu-logo"><img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong"></div>
+      <div class="mobile-menu-logo">
+        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
+      </div>
       <a href="index.html" class="active">Home</a>
       <a href="ncaa-stats.html">NCAA Stats</a>
       <a href="news-media.html">News & Media</a>
       <a href="reference-links.html">Reference & Links</a>
       <a href="junior-career.html">Junior Career</a>
+      
+      <div class="menu-footer">
+          <span class="footer-name">JOSHUA HONG</span>
+          <span class="footer-team">UTSA MEN'S GOLF</span>
+      </div>
   </nav>
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
@@ -172,8 +184,13 @@
   <script>
     function toggleMenu() {
       const nav = document.getElementById('navLinks');
-      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
-      nav.classList.toggle('active');
+      if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+        nav.classList.remove('active');
+      } else {
+        nav.style.display = 'flex';
+        nav.classList.add('active');
+      }
     }
 
     const headerFixed = document.getElementById('headerFixed');
@@ -182,8 +199,8 @@
     window.addEventListener('scroll', () => {
       const curr = window.pageYOffset;
 
-      // 300px 이상 내렸을 때 살포시 등장
-      if (curr > 300) { 
+      // 1. [개선] 스크롤이 시작되자마자(50px) 바로 나오게 수정
+      if (curr > 50) { 
         headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
       } else {
@@ -206,6 +223,117 @@
 
 
 
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
+  <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
+  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament & Internal Qualifier Verified Records.</p>
+  
+  <div style="margin-bottom: 50px;">
+    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
+    <div style="position: relative; height: 380px;">
+      <canvas id="officialTournamentChart"></canvas>
+    </div>
+  </div>
+
+  <div>
+    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #806600; padding-bottom: 5px;">Internal Qualifier Rounds (TPC San Antonio)</h3>
+    <div style="position: relative; height: 380px;">
+      <canvas id="internalQualifierChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+// 1. Official Tournament Chart (툴팁 상세 정보 추가)
+const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
+new Chart(ctxOfficial, {
+  type: 'line',
+  data: {
+    labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)'],
+    datasets: [{
+      label: 'Scoring Avg',
+      data: [69.66, 70.66, 71.33, 72.0, 72.0],
+      borderColor: '#F15A22',
+      backgroundColor: 'rgba(241, 90, 34, 0.1)',
+      borderWidth: 2,
+      pointRadius: 6,
+      tension: 0.1,
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: { y: { reverse: false, min: 68, max: 74, title: { display: true, text: 'Strokes' } } },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          afterLabel: function(context) {
+            const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)'];
+            const rank = ['T3', 'T6', 'T9', 'T12', 'T15'];
+            const pwr = ['12.4', '14.1', '11.8', '13.5', '58.2'];
+            const earned = ['209', '424', '642', '864', '1080'];
+            const i = context.dataIndex;
+            return [
+              `Round Info: ${rounds[i]}`,
+              `Final Rank: ${rank[i]}`,
+              `--------------------`,
+              `WAGR Power: ${pwr[i]}`,
+              `WAGR Earned: ${earned[i]}`
+            ];
+          }
+        }
+      }
+    }
+  }
+});
+
+// 2. Internal Qualifier Chart (날짜 및 코스 최종 보정)
+const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
+new Chart(ctxInternal, {
+  type: 'line',
+  data: {
+    labels: [
+      '27-ago (Can)', '28-ago (Can)', '01-sep (Can)', '01-sep (Oaks)', '02-sep (Oaks)', 
+      '26-sep (Can)', '30-sep (Oaks)', '02-oct (Oaks)', '22-ene (Can)', '23-ene (Oaks)'
+    ],
+    datasets: [
+      {
+        label: 'TPC SA - Canyons',
+        data: [69, 68, 69, null, null, 73, null, null, 68, null],
+        borderColor: '#806600',
+        backgroundColor: 'rgba(128, 102, 0, 0.1)',
+        borderWidth: 2,
+        pointRadius: 6,
+        spanGaps: true
+      },
+      {
+        label: 'TPC SA - Oaks',
+        data: [null, null, null, 81, 74, null, 69, 74, null, 69],
+        borderColor: '#0c2340',
+        backgroundColor: 'rgba(12, 35, 64, 0.1)',
+        borderWidth: 2,
+        pointRadius: 6,
+        spanGaps: true
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: { y: { reverse: false, min: 65, max: 85, title: { display: true, text: 'Strokes' } } },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+</script>
 
 
 
