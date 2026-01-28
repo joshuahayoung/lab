@@ -23,105 +23,64 @@
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 컨테이너 설정] */
-    .header-container {
-      width: 100%;
-      background: #ffffff;
-      z-index: 1000;
-    }
-
-    /* 평상시 상단 위치 */
-    .header-normal {
-      position: absolute;
-      top: 0;
-    }
-
-    /* [스으으윽 효과] */
+    /* 헤더 컨테이너 */
+    .header-container { width: 100%; background: #ffffff; z-index: 1000; left: 0; right: 0; }
+    .header-normal { position: absolute; top: 0; }
     .header-fixed {
-      position: fixed;
-      top: 0;
-      transform: translateY(-100%); 
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      visibility: hidden;
-      opacity: 0;
+      position: fixed; top: 0; transform: translateY(-100%); 
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08); visibility: hidden; opacity: 0;
       transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease-out;
     }
-
-    /* 스크롤 감지 후 나타날 때 */
-    .header-fixed.is-visible {
-      transform: translateY(0);
-      visibility: visible;
-      opacity: 1;
-    }
+    .header-fixed.is-visible { transform: translateY(0); visibility: visible; opacity: 1; }
 
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
-      padding: 10px 0; font-size: 11px;
-      font-family: 'Oswald', sans-serif; letter-spacing: 1.5px;
-      font-weight: 400;
+      padding: 10px 0; font-size: 11px; font-family: 'Oswald', sans-serif;
+      letter-spacing: 1.5px; font-weight: 400;
     }
 
-    .header-wrapper {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 80px;
-    }
-
-    /* 로고 크기 고정 */
+    .header-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 80px; }
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 50px !important; width: auto !important; max-width: 200px; display: block; object-fit: contain; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
 
-    .nav-links { display: flex; gap: 30px; align-items: center; }
-    .nav-links a {
+    .nav-links-desktop { display: flex; gap: 30px; align-items: center; }
+    .nav-links-desktop a {
       text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
       font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
-    .nav-links a.active { background-color: #F15A22; color: #fff; } 
+    .nav-links-desktop a.active { background-color: #F15A22; color: #fff; }
 
-    .menu-toggle {
-      display: none; font-size: 30px; cursor: pointer;
-      background: none; border: none; color: #F15A22;
-    }
+    .menu-toggle { display: none; font-size: 30px; cursor: pointer; background: none; border: none; color: #F15A22; }
 
-    /* [수정] TOP 버튼 - UTSA 오렌지색 적용 */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
-      width: 50px !important; height: 50px !important;
-      background-color: #F15A22 !important; /* UTSA Orange */
-      color: #fff !important;
-      border: none !important; border-radius: 50% !important;
-      font-weight: 900 !important; font-size: 12px !important;
-      z-index: 9999 !important; cursor: pointer !important;
-      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: opacity 0.3s;
+      width: 50px !important; height: 50px !important; background-color: #F15A22 !important;
+      color: #fff !important; border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important; z-index: 9999 !important;
+      cursor: pointer !important; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* 모바일 환경 설정 */
+    .nav-links-mobile {
+      position: fixed; top: 0; left: -100%; width: 260px; height: 100vh;
+      background: #ffffff !important; display: flex; flex-direction: column;
+      padding: 50px 25px; transition: 0.3s; z-index: 2001;
+      box-shadow: 10px 0 20px rgba(0,0,0,0.1); align-items: flex-start; gap: 10px;
+    }
+    .nav-links-mobile.active { left: 0; }
+    .nav-links-mobile a {
+      text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
+      font-size: 16px; text-transform: uppercase; width: 100%; padding: 10px 0;
+    }
+    .close-menu { position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
+
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; } 
-      .logo-area { order: 2; margin-left: 0; } 
-      .logo-text { display: none; } 
-      .logo-img { height: 40px !important; }
-
-      .nav-links {
-        position: fixed; top: 0; left: -100%; 
-        width: 260px; height: 100vh;
-        background: #ffffff !important; flex-direction: column;
-        padding: 50px 25px; transition: 0.3s; z-index: 2000;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
-        align-items: flex-start; gap: 10px;
-      }
-      .nav-links.active { left: 0; }
-      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
-      
-      .mobile-menu-logo { display: block; margin-bottom: 30px; width: 100%; text-align: left; }
-      .mobile-menu-logo img { height: 30px !important; width: auto !important; }
-
-      .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
-      .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
-      .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
+      .menu-toggle { display: block; order: 1; }
+      .logo-area { order: 2; }
+      .logo-text { display: none; }
+      .nav-links-desktop { display: none; }
     }
   </style>
 </head>
@@ -135,7 +94,7 @@
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
         <span class="logo-text">Joshua Hong Golf</span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links-desktop">
         <a href="index.html">Home</a>
         <a href="ncaa-stats.html" class="active">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
@@ -151,7 +110,7 @@
       <a href="index.html" class="logo-area">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links-desktop">
         <a href="index.html">Home</a>
         <a href="ncaa-stats.html" class="active">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
@@ -161,43 +120,55 @@
     </header>
   </div>
 
-  <nav class="nav-links" id="navLinks" style="display:none;">
-      <span class="close-menu" onclick="toggleMenu()">✕</span>
-      <div class="mobile-menu-logo">
-        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
-      </div>
-      <a href="index.html">Home</a>
-      <a href="ncaa-stats.html" class="active">NCAA Stats</a>
-      <a href="news-media.html">News & Media</a>
-      <a href="reference-links.html">Reference & Links</a>
-      <a href="junior-career.html">Junior Career</a>
-      
-      <div class="menu-footer">
-          <span class="footer-name">JOSHUA HONG</span>
-          <span class="footer-team">UTSA MEN'S GOLF</span>
-      </div>
+  <nav class="nav-links-mobile" id="navLinksMobile">
+    <span class="close-menu" onclick="toggleMenu()">✕</span>
+    <div style="margin-bottom: 30px; width: 100%;">
+      <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong" style="height: 30px; width: auto;">
+    </div>
+    <a href="index.html">Home</a>
+    <a href="ncaa-stats.html" class="active">NCAA Stats</a>
+    <a href="news-media.html">News & Media</a>
+    <a href="reference-links.html">Reference & Links</a>
+    <a href="junior-career.html">Junior Career</a>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; width: 100%;">
+      <span style="display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333;">JOSHUA HONG</span>
+      <span style="display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px;">UTSA MEN'S GOLF</span>
+    </div>
   </nav>
+
+  <div style="height: 140px;"></div>
+
+  <div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box;">
+    <div style="text-align: center; margin-bottom: 35px; padding-top: 20px;">
+      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
+        NCAA STATS
+      </h1>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
+        <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+        <p style="font-size: 15px; color: #666; margin: 0; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">UTSA Roadrunners</p>
+        <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+      </div>
+    </div>
+
+    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0; min-height: 200px;">
+      <img src="https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty" 
+           style="width: 100%; height: auto; display: block; object-fit: contain;" 
+           alt="Joshua Hong Performance"
+           onerror="this.src='https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty';">
+    </div>
+  </div>
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <script>
     function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-        nav.classList.remove('active');
-      } else {
-        nav.style.display = 'flex';
-        nav.classList.add('active');
-      }
+      const nav = document.getElementById('navLinksMobile');
+      nav.classList.toggle('active');
     }
-
-    const headerFixed = document.getElementById('headerFixed');
-    const topBtn = document.getElementById('fixedTopBtn');
-
     window.addEventListener('scroll', () => {
-      const curr = window.pageYOffset;
-      if (curr > 50) { 
+      const headerFixed = document.getElementById('headerFixed');
+      const topBtn = document.getElementById('fixedTopBtn');
+      if (window.pageYOffset > 50) { 
         headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
       } else {
@@ -205,41 +176,11 @@
         topBtn.style.display = 'none';
       }
     });
-
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </body>
-
-
-
-
-  
-    
-<div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box;">
-
-  <div style="text-align: center; margin-bottom: 35px; padding-top: 20px;">
-    <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
-      NCAA STATS
-    </h1>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
-      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">
-        UTSA Roadrunners
-      </p>
-      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
-    </div>
-  </div>
-
-  <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0; min-height: 200px;">
-    <img src="https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty" 
-         style="width: 100%; height: auto; display: block; object-fit: contain;" 
-         alt="Joshua Hong Performance"
-         onerror="this.style.display='none';">
-  </div>
-
-</div>
 
 
   
