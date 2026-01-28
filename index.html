@@ -28,12 +28,12 @@
     .sticky-top {
       position: fixed; top: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.4s ease-in-out; /* 스르륵 애니메이션 */
+      transition: transform 0.4s ease-in-out; /* 스르륵 효과 */
       will-change: transform;
     }
     
-    /* 스크롤 다운 시 숨김 클래스 */
-    .nav-up { transform: translateY(-100%); }
+    /* 스크롤 다운 시 숨김 (위로 100% 밀어냄) */
+    .nav-up { transform: translateY(-100%) !important; }
 
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
@@ -100,9 +100,9 @@
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
 
-    /* [중요] 배너가 헤더에 가려지지 않도록 정확한 여백 확보 */
-    .content-spacer { height: 120px; } 
-    @media (max-width: 1024px) { .content-spacer { height: 110px; } }
+    /* 본문 배너 사이즈 왜곡 방지: 여백을 body에 직접 적용 */
+    body { padding-top: 120px; }
+    @media (max-width: 1024px) { body { padding-top: 110px; } }
   </style>
 </head>
 
@@ -133,8 +133,6 @@
     </header>
   </div>
 
-  <div class="content-spacer"></div>
-
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <script>
@@ -147,30 +145,28 @@
     const btn = document.getElementById('fixedTopBtn');
 
     window.addEventListener('scroll', function() {
+      // 현재 스크롤 위치값 가져오기
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      // 1. TOP 버튼 노출
+      // 1. TOP 버튼 노출 제어 (100px 이상일 때만)
       if (scrollTop > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
 
-      // 2. 헤더 반응 로직 (스크롤 감도 조정)
-      if (scrollTop > lastScrollTop && scrollTop > 50) {
-        // 내릴 때: 즉시 숨김
+      // 2. 스크롤 방향 감지 및 헤더 숨김/노출
+      // scrollTop > lastScrollTop 이면 '내리는 중'
+      if (scrollTop > lastScrollTop && scrollTop > 80) {
+        // [내릴 때] 헤더를 위로 올려서 숨김
         header.classList.add('nav-up');
-      } else if (scrollTop < lastScrollTop) {
-        // 올릴 때: 즉시 나타남
+      } else {
+        // [올릴 때] 혹은 [최상단일 때] 헤더를 다시 내림
         header.classList.remove('nav-up');
       }
 
-      // 최상단에서는 무조건 노출
-      if (scrollTop <= 10) {
-        header.classList.remove('nav-up');
-      }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+      // 이전 스크롤 위치 업데이트 (음수 방지)
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, { passive: true });
 
     function scrollToTop() {
