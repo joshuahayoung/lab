@@ -103,42 +103,40 @@
       .nav-links.active { left: 0; }
     }
 
-    /* 본문 배너 상단 여백 유지 */
+    /* 배너 사이즈 유지를 위한 상단 패딩 */
     body { padding-top: 120px; }
     @media (max-width: 1024px) { body { padding-top: 110px; } }
   </style>
 
   <script>
     function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
+      const nav = document.getElementById('navLinks');
+      if(nav) nav.classList.toggle('active');
     }
 
-    window.addEventListener('load', () => {
-      let lastScroll = 0;
+    window.addEventListener('scroll', () => {
       const header = document.getElementById('mainHeader');
       const btn = document.getElementById('fixedTopBtn');
+      if(!header || !btn) return;
 
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+      const currentScroll = window.pageYOffset;
+      const lastScroll = window.lastScroll || 0;
 
-        if (currentScroll > 150) {
-          btn.style.display = 'block';
+      // TOP 버튼 노출
+      btn.style.display = (currentScroll > 150) ? 'block' : 'none';
+
+      // 마우스 내릴 때 나타나고, 올릴 때 숨기는 로직
+      if (currentScroll > 50) {
+        if (currentScroll > lastScroll) {
+          header.classList.remove('nav-hide');
+          header.classList.add('scrolled');
         } else {
-          btn.style.display = 'none';
+          header.classList.add('nav-hide');
         }
-
-        if (currentScroll > 50) {
-          if (currentScroll > lastScroll) {
-            header.classList.remove('nav-hide');
-            header.classList.add('scrolled');
-          } else {
-            header.classList.add('nav-hide');
-          }
-        } else {
-          header.classList.remove('scrolled', 'nav-hide');
-        }
-        lastScroll = currentScroll;
-      });
+      } else {
+        header.classList.remove('scrolled', 'nav-hide');
+      }
+      window.lastScroll = currentScroll;
     });
 
     function scrollToTop() {
@@ -168,12 +166,12 @@
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
-  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-    <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;">
+    <div style="text-align: center; margin-bottom: 10px; padding-top: 10px;">
       <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
         JOSHUA HONG
       </h1>
-      <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+      <p style="font-size: 16px; color: #666; margin: 5px 0 0 0; font-weight: 600; letter-spacing: 2px;">
         UTSA MEN'S GOLF
       </p>
     </div>
