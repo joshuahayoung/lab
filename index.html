@@ -531,8 +531,8 @@
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      /* 텍스트 양에 맞춰 높이를 최적화 (기존 580px -> 460px) */
-      min-height: 460px; 
+      /* 버튼과 LAST UPDATED 문구가 넉넉히 들어가도록 높이 재조정 */
+      min-height: 500px; 
       perspective: 1000px;
     }
     .insight-card {
@@ -549,7 +549,7 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-between; /* 상단 내용과 하단 버튼/날짜를 양끝으로 배치 */
     }
     .card-current { transform: rotateY(0deg); z-index: 2; }
     .card-archive { transform: rotateY(180deg); z-index: 1; }
@@ -585,13 +585,13 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 모바일 반응형 높이 조정 (텍스트가 튀어나가지 않도록 여유 확보) */
+    /* 모바일 반응형: 화면이 좁아지면 텍스트가 길어지므로 높이를 더 확보 */
     @media (max-width: 768px) {
-      .insight-card-wrapper { min-height: 520px; }
+      .insight-card-wrapper { min-height: 650px; }
       .insight-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .insight-card-wrapper { min-height: 620px; }
+      .insight-card-wrapper { min-height: 780px; }
     }
   </style>
 
