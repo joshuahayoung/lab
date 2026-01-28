@@ -23,33 +23,36 @@
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 기본 스타일] */
+    /* [헤더 컨테이너 설정] */
     .header-container {
       width: 100%;
       background: #ffffff;
       z-index: 1000;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 부드러운 가속도 효과 */
     }
 
-    /* 평상시 상태 (상단에 위치) */
+    /* 평상시 상단 위치 */
     .header-normal {
       position: absolute;
       top: 0;
     }
 
-    /* 스크롤 시 나타나는 상태 (부드럽게 내려오는 효과) */
+    /* [핵심 수정: 스으으윽 효과] */
     .header-fixed {
       position: fixed;
       top: 0;
-      transform: translateY(-100%); /* 일단 위로 숨김 */
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      transform: translateY(-100%); /* 위로 숨김 */
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       visibility: hidden;
+      opacity: 0; /* 투명도 추가해서 더 부드럽게 */
+      /* 시간을 0.8s로 늘리고, 더 부드러운 가속도 곡선(ease-out) 적용 */
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease-out;
     }
 
-    /* 스크롤 감지 후 실제로 보여질 때 */
+    /* 스크롤 감지 후 나타날 때 */
     .header-fixed.is-visible {
-      transform: translateY(0); /* 사르륵 내려옴 */
+      transform: translateY(0);
       visibility: visible;
+      opacity: 1;
     }
 
     .top-bar {
@@ -64,7 +67,7 @@
       padding: 0 40px; height: 80px;
     }
 
-    /* 로고 크기 절대 고정 */
+    /* 로고 크기 고정 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 50px !important; width: auto !important; max-width: 200px; display: block; object-fit: contain; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
@@ -82,16 +85,17 @@
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 */
+    /* TOP 버튼 (색상 요청 반영) */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
-      background-color: #806600 !important; /* 요청하신 색상 적용 */
+      background-color: #806600 !important;
       color: #fff !important;
       border: none !important; border-radius: 50% !important;
       font-weight: 900 !important; font-size: 12px !important;
       z-index: 9999 !important; cursor: pointer !important;
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: opacity 0.3s;
     }
 
     @media (max-width: 1024px) {
@@ -111,7 +115,6 @@
       .nav-links.active { left: 0; }
       .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
       .mobile-menu-logo { display: block; margin-bottom: 30px; }
-      .mobile-menu-logo img { height: 35px !important; }
       .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
@@ -173,15 +176,14 @@
       nav.classList.toggle('active');
     }
 
-    const headerNormal = document.getElementById('headerNormal');
     const headerFixed = document.getElementById('headerFixed');
     const topBtn = document.getElementById('fixedTopBtn');
 
     window.addEventListener('scroll', () => {
       const curr = window.pageYOffset;
 
-      // TOP 버튼 및 스티키 헤더 로직
-      if (curr > 200) { // 200px 이상 내리면
+      // 300px 이상 내렸을 때 살포시 등장
+      if (curr > 300) { 
         headerFixed.classList.add('is-visible');
         topBtn.style.display = 'block';
       } else {
