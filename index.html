@@ -23,15 +23,23 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더] Fixed로 변경하여 무조건 따라다니게 설정 */
+    /* [상단 헤더 기본 스타일] */
     .sticky-top {
-      position: fixed; /* sticky 대신 fixed로 확실하게 고정 */
-      top: 0; 
-      left: 0;
-      z-index: 1000; 
-      width: 100%;
-      background: #ffffff; 
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
+      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.5s ease-out, background 0.3s; /* 스르르 내려오는 효과 */
+    }
+
+    /* 스크롤 시 '폼 나게' 내려와 고정되는 상태 */
+    .sticky-top.scrolled {
+      position: fixed;
+      transform: translateY(0);
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
     }
 
     .top-bar {
@@ -111,14 +119,6 @@
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
-
-    /* [가로 모드 해결] */
-    @media (orientation: landscape) and (max-height: 500px) {
-      .header-wrapper { height: 55px; }
-      .logo-img { height: 35px !important; }
-      .nav-links { padding: 30px 25px; overflow-y: auto; }
-      .menu-footer { margin-top: 30px; }
-    }
   </style>
 </head>
 
@@ -162,12 +162,21 @@
 
     window.addEventListener('scroll', function() {
       const btn = document.getElementById('fixedTopBtn');
+      const header = document.getElementById('mainHeader');
       const currentScrollY = window.pageYOffset;
 
+      // 1. TOP 버튼 제어
       if (currentScrollY > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
+      }
+
+      // 2. 헤더 '스르르' 제어: 조금만 내려와도 바로 작동하게 50px로 설정
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
     });
 
