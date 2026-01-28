@@ -28,9 +28,11 @@
     .sticky-top {
       position: fixed; top: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease-in-out; /* 스므스 애니메이션 */
+      transition: transform 0.4s ease-in-out; /* 애니메이션 속도 최적화 */
+      will-change: transform;
     }
-    .sticky-top.nav-up { transform: translateY(-100%); } /* 스크롤 시 숨김 */
+    /* 헤더 숨김 클래스 */
+    .nav-up { transform: translateY(-100%); }
 
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
@@ -110,7 +112,7 @@
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
 
-    /* Fixed 헤더를 위한 바디 여백 */
+    /* Fixed 헤더 높이만큼 바디 여백 */
     body { padding-top: 120px; }
     @media (max-width: 1024px) { body { padding-top: 110px; } }
   </style>
@@ -149,61 +151,59 @@
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
- <script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
-
-  let lastScrollTop = 0;
-  const delta = 5; // 이 값보다 더 많이 움직여야 작동 (미세 스크롤 무시)
-  const header = document.getElementById('mainHeader');
-  const btn = document.getElementById('fixedTopBtn');
-  const navLinks = document.getElementById('navLinks');
-
-  window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // 1. TOP 버튼 노출 (100px 이상 내리면 표시)
-    if (scrollTop > 100) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // 2. 헤더 스므스 로직 보완
-    // 스크롤 변화량이 delta보다 작거나, 모바일 메뉴가 열려있으면 작동 안 함
-    if (Math.abs(lastScrollTop - scrollTop) <= delta || navLinks.classList.contains('active')) {
-      return;
+    let lastScrollTop = 0;
+    const header = document.getElementById('mainHeader');
+    const btn = document.getElementById('fixedTopBtn');
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // 1. TOP 버튼 (100px 기준)
+      if (scrollTop > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+
+      // 2. 즉각적인 헤더 스므스 반응 로직
+      if (scrollTop > lastScrollTop && scrollTop > 50) {
+        // 아래로 내릴 때 즉시 숨김 (기준점을 50px로 낮춤)
+        header.classList.add('nav-up');
+      } else {
+        // 위로 조금이라도 올리면 즉시 나타남
+        header.classList.remove('nav-up');
+      }
+      
+      // 최상단 근처에서는 무조건 보이기
+      if (scrollTop <= 5) {
+        header.classList.remove('nav-up');
+      }
+
+      lastScrollTop = scrollTop;
+    }, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  </script>
 
-    // 아래로 내릴 때 (현재 위치 > 이전 위치) & 일정 높이 이상 내려왔을 때 숨김
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-      header.classList.add('nav-up');
-    } 
-    // 위로 올릴 때 다시 나타남
-    else if (scrollTop < lastScrollTop) {
-      header.classList.remove('nav-up');
-    }
-
-    lastScrollTop = scrollTop;
-  });
-
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
+  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+        JOSHUA HONG
+      </h1>
+      <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+        UTSA MEN'S GOLF
+      </p>
+    </div>
+  </div>
 </body>
 
-<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  
-  <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
-    <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
-      JOSHUA HONG
-    </h1>
-    <p style="font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 600; letter-spacing: 2px;">
-      UTSA MEN'S GOLF
-    </p>
-  </div>
 
 <div style="margin-bottom: 40px; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background-color: #f8f8f8; position: relative;">
     <a href="https://drive.google.com/uc?export=view&id=1laJtS3I1EaKcYR5U1Hk0KM-2lG1tRdfI" target="_blank" style="display:block; text-decoration: none;">
