@@ -24,11 +24,11 @@
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 지지대] 배너가 위아래로 흔들리지 않게 잡아주는 역할 */
+    /* [헤더 지지대] 데스크탑 본문 가려짐 방지 */
     .header-placeholder {
-      height: 120px; /* 헤더의 총 높이 */
+      height: 120px;
       width: 100%;
-      background: white;
+      display: block;
     }
 
     /* [헤더 설정] */
@@ -46,7 +46,6 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    /* 페이지 상단이 아닐 때 나타나는 애니메이션 */
     .slide-in {
       animation: slideDown 0.4s ease-out forwards;
     }
@@ -123,18 +122,14 @@
 
       window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
-        // TOP 버튼
         if(btn) btn.style.display = (currentScroll > 150) ? 'block' : 'none';
 
         if(header) {
-          // 80px 이상 내려가면 고정 헤더 등장
-          if (currentScroll > 80) {
+          if (currentScroll > 120) {
             if (!header.classList.contains('scrolled')) {
               header.classList.add('scrolled', 'slide-in');
             }
           } else if (currentScroll <= 10) {
-            // 맨 위로 가면 다시 합쳐짐
             header.classList.remove('scrolled', 'slide-in');
           }
         }
@@ -171,16 +166,18 @@
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;">
-    <div style="text-align: center; margin-bottom: 10px; padding-top: 10px;">
-      <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
+    <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+      <h1 style="font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 500; color: #0c2340; margin: 0; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1;">
         JOSHUA HONG
       </h1>
-      <p style="font-size: 16px; color: #666; margin: 5px 0 0 0; font-weight: 600; letter-spacing: 2px;">
+      <p style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 400; letter-spacing: 2px;">
         UTSA MEN'S GOLF
       </p>
     </div>
   </div>
 </body>
+
+
 
 
 
