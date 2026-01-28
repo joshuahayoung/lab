@@ -1,6 +1,6 @@
 <head>
   <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
-<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,11 +23,33 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더] */
+    /* [상단 헤더 기본 스타일] */
     .sticky-top {
-      position: sticky; top: 0; z-index: 1000; width: 100%;
+      position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      /* 우아한 등장을 위한 트랜지션 */
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
     }
+
+    /* 스크롤 시 내려와 고정되는 상태 */
+    .sticky-top.scrolled {
+      position: fixed;
+      top: 0;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    /* 위로 올라갈 때 사라지는 준비 상태 */
+    .sticky-top.preparing {
+      position: fixed;
+      top: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
     .top-bar {
       background-color: #F15A22; color: white; text-align: center;
       padding: 10px 0; font-size: 11px;
@@ -53,7 +75,7 @@
       font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
-    /* NCAA Stats 활성화 (주황색 버튼) */
+    /* NCAA Stats 활성화 */
     .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
     .mobile-menu-logo, .close-menu, .menu-footer { display: none; }
 
@@ -106,18 +128,11 @@
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
     }
-
-    @media (orientation: landscape) and (max-height: 500px) {
-      .header-wrapper { height: 55px; }
-      .logo-img { height: 35px !important; }
-      .nav-links { padding: 30px 25px; overflow-y: auto; }
-      .menu-footer { margin-top: 30px; }
-    }
   </style>
 </head>
 
 <body>
-  <div class="sticky-top">
+  <div class="sticky-top" id="mainHeader">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA</div>
     <header class="header-wrapper">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -156,10 +171,24 @@
 
     window.addEventListener('scroll', function() {
       const btn = document.getElementById('fixedTopBtn');
-      if (window.pageYOffset > 100) {
+      const header = document.getElementById('mainHeader');
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
+      }
+
+      // 우아한 헤더 제어 (300px 기준)
+      if (currentScrollY > 300) {
+        header.classList.add('scrolled');
+        header.classList.remove('preparing');
+      } else if (currentScrollY > 10) { 
+        header.classList.remove('scrolled');
+        header.classList.add('preparing');
+      } else {
+        header.classList.remove('scrolled', 'preparing');
       }
     });
 
@@ -168,19 +197,11 @@
     }
   </script>
 
-
 <div class="return-btn-section" style="max-width: 900px; margin: 15px auto 0; padding: 0 15px; box-sizing: border-box;">
-  
   <style>
-    /* 모바일 전용 스타일 */
     @media (max-width: 600px) {
-      .return-btn-container {
-        justify-content: center !important; /* 모바일에서 중앙 정렬 */
-      }
-      .return-link {
-        padding: 8px 16px !important; /* 모바일에서 더 슬림하게 */
-        font-size: 11px !important;
-      }
+      .return-btn-container { justify-content: center !important; }
+      .return-link { padding: 8px 16px !important; font-size: 11px !important; }
     }
   </style>
 
@@ -553,6 +574,13 @@
 
   </div>
 </div>
+
+    <div class="return-btn-container" style="display: flex; justify-content: flex-start;">
+    <a href="ncaa-stats.html" class="return-link" style="text-decoration: none; font-size: 12px; color: #ffffff; font-weight: 800; background: #0c2340; border: none; padding: 10px 18px; border-radius: 10px; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(12, 35, 64, 0.15); letter-spacing: 0.5px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        RETURN TO CURRENT SPRING 2026 STATS
+    </a>
+  </div>
 
  <div style="text-align: center; padding-top: 20px; margin-top: 40px; border-top: 1px solid #f1f1f1; clear: both;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8; margin-bottom: 0;">
