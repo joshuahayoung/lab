@@ -23,25 +23,24 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더 핵심 수정] */
+    /* [상단 헤더 핵심 수정] */
     .sticky-top {
-      position: absolute; /* 처음에는 일반 위치 */
+      position: fixed; /* 고정 상태로 시작 */
       top: 0; z-index: 1000; width: 100%;
       background: #ffffff;
-      transition: transform 0.4s ease-in-out, background 0.3s;
+      transition: transform 0.3s ease-in-out; /* 부드러운 이동만 담당 */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
-    /* 스크롤 시 적용될 현대적인 스타일 */
-    .sticky-top.fixed {
-      position: fixed;
-      top: 0;
-      transform: translateY(-100%); /* 일단 숨김 */
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    /* 위로 숨길 때 (스크롤 다운 시) */
+    .header-hide {
+      transform: translateY(-100%);
     }
 
-    /* 애니메이션으로 내려오는 상태 */
-    .sticky-top.visible {
-      transform: translateY(0); /* 스르륵 내려옴 */
+    /* 다시 나타날 때 (스크롤 업 시) */
+    .header-show {
+      transform: translateY(0);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .top-bar {
@@ -51,18 +50,15 @@
       font-weight: 400;
     }
 
-    /* 헤더 래퍼 */
     .header-wrapper {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 80px;
     }
 
-    /* 로고 영역 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 50px; width: auto; display: block; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
 
-    /* 데스크탑 메뉴 */
     .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a {
       text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
@@ -72,13 +68,11 @@
     .nav-links a.active { background-color: #F15A22; color: #fff; } 
     .mobile-menu-logo, .close-menu, .menu-footer { display: none; } 
 
-    /* 세줄 버튼 */
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
       background: none; border: none; color: #F15A22;
     }
 
-    /* [TOP 버튼] */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
@@ -89,14 +83,12 @@
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* 모바일 스타일 */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
       .menu-toggle { display: block; order: 1; } 
       .logo-area { order: 2; margin-left: 0; } 
       .logo-text { display: none; } 
       .logo-img { height: 40px; }
-
       .nav-links {
         position: fixed; top: 0; left: -100%; 
         width: 260px; height: 100vh;
@@ -147,6 +139,8 @@
     </header>
   </div>
 
+  <div style="height: 120px;" id="headerSpacer"></div>
+
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <script>
@@ -156,29 +150,30 @@
 
     const header = document.getElementById('mainHeader');
     const topBtn = document.getElementById('fixedTopBtn');
-    
-    window.addEventListener('scroll', function() {
-      let curr = window.pageYOffset;
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
 
       // 1. TOP 버튼 제어
-      if (curr > 100) {
+      if (currentScrollY > 100) {
         topBtn.style.display = 'block';
       } else {
         topBtn.style.display = 'none';
       }
 
-      // 2. 스티키 헤더 제어 (현대적인 Reveal 효과)
-      if (curr > 150) { // 150px 이상 내려가면 고정 준비
-        header.classList.add('fixed');
-        // 약간의 시간차를 두어 사르륵 내려오게 함
-        if (curr > 250) {
-          header.classList.add('visible');
-        }
+      // 2. 스마트 헤더 제어
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+        // 아래로 스크롤 중 + 어느 정도 내려옴 -> 헤더 숨김
+        header.classList.add('header-hide');
+        header.classList.remove('header-show');
       } else {
-        // 맨 위로 올라가면 다시 정상 상태로
-        header.classList.remove('visible');
-        header.classList.remove('fixed');
+        // 위로 스크롤 중 -> 헤더 나타남
+        header.classList.add('header-show');
+        header.classList.remove('header-hide');
       }
+
+      lastScrollY = currentScrollY;
     });
 
     function scrollToTop() {
@@ -186,6 +181,8 @@
     }
   </script>
 </body>
+
+
 
 
 
