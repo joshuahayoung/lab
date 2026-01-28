@@ -23,20 +23,11 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 고정 헤더] */
+    /* [상단 고정 헤더] sticky를 사용하여 내릴 때 바로 따라오게 설정 */
     .sticky-top {
-      position: absolute; top: 0; z-index: 1000; width: 100%;
+      position: sticky; top: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.4s ease-in-out; /* 스르르 효과 */
-    }
-
-    /* 스크롤 시 고정 및 나타남 */
-    .sticky-top.fixed {
-      position: fixed;
-      transform: translateY(0);
-    }
-    .sticky-top.hidden {
-      transform: translateY(-100%);
+      /* transition 제거: 내릴 때 지연 없이 즉시 따라오도록 함 */
     }
 
     .top-bar {
@@ -165,10 +156,8 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
 
-    let lastScrollY = window.pageYOffset;
     window.addEventListener('scroll', function() {
       const btn = document.getElementById('fixedTopBtn');
-      const header = document.getElementById('mainHeader');
       const currentScrollY = window.pageYOffset;
 
       // TOP 버튼 노출
@@ -177,19 +166,7 @@
       } else {
         btn.style.display = 'none';
       }
-
-      // 헤더 스크롤 로직 (스르르 기능)
-      if (currentScrollY > 200) {
-        header.classList.add('fixed');
-        if (currentScrollY > lastScrollY) {
-          header.classList.add('hidden'); // 내릴 때 숨김
-        } else {
-          header.classList.remove('hidden'); // 올릴 때 나타남
-        }
-      } else if (currentScrollY <= 10) {
-        header.classList.remove('fixed', 'hidden'); // 최상단 복귀
-      }
-      lastScrollY = currentScrollY;
+      // 헤더는 이제 CSS sticky에 의해 내리자마자 바로 따라오며, 위로 가도 사라지지 않고 상단에 합쳐집니다.
     });
 
     function scrollToTop() {
@@ -197,7 +174,7 @@
     }
   </script>
 
-<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 130px 15px 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 20px 15px 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
   <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase; line-height: 1.1;">
@@ -224,6 +201,8 @@
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
       UTSA
     </div>
+
+    
 
 
 
