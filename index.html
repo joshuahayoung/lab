@@ -14,35 +14,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      if(nav) nav.classList.toggle('active');
-    }
-
-    // 스크롤 로직 복구
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('mainHeader');
-      const btn = document.getElementById('fixedTopBtn');
-      const currentScroll = window.pageYOffset;
-
-      if(btn) btn.style.display = (currentScroll > 150) ? 'block' : 'none';
-
-      if(header) {
-        if (currentScroll > 100) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-
   <style>
+    /* 1. 기본 레이아웃 유지 */
     html, body {
       margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
       font-family: 'Montserrat', sans-serif;
@@ -51,13 +24,19 @@
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 설정] 배너 크기에 영향을 주지 않도록 설정 */
-    .sticky-top {
+    /* [헤더 설정] 공간을 미리 차지하게 하여 배너 밀림 방지 */
+    .header-placeholder {
+      height: 120px; /* 데스크탑 기준 헤더 높이 */
       width: 100%;
-      background: #ffffff;
-      z-index: 1000;
     }
 
+    .sticky-top {
+      position: absolute; 
+      top: 0; z-index: 1000; width: 100%;
+      background: #ffffff;
+    }
+
+    /* 스크롤 시 변신: 나타난 뒤에는 끝까지 올리기 전까지 고정 */
     .sticky-top.scrolled {
       position: fixed;
       top: 0;
@@ -94,51 +73,52 @@
     }
     .nav-links a.active { background-color: #F15A22; color: #fff; } 
 
-    .menu-toggle {
-      display: none; font-size: 30px; cursor: pointer;
-      background: none; border: none; color: #F15A22;
-    }
-
-    #fixedTopBtn {
-      position: fixed !important; bottom: 25px !important; right: 20px !important;
-      width: 50px !important; height: 50px !important;
-      background-color: #F15A22 !important; color: #fff !important;
-      border: none !important; border-radius: 50% !important;
-      font-weight: 900 !important; font-size: 12px !important;
-      z-index: 9999 !important; cursor: pointer !important;
-      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    /* [배너 이미지 크기 고정 핵심] */
+    .profile-banner {
+      width: 100%;
+      max-width: 1200px; /* 사진이 너무 커지지 않게 제한 */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
     }
 
     @media (max-width: 1024px) {
+      .header-placeholder { height: 110px; }
       .header-wrapper { padding: 0 20px; height: 70px; }
-      .menu-toggle { display: block; } 
       .logo-text { display: none; } 
-      .logo-img { height: 40px; }
-      .nav-links {
-        position: fixed; top: 0; left: -100%; 
-        width: 260px; height: 100vh;
-        background: #ffffff !important; flex-direction: column;
-        padding: 50px 25px; transition: 0.3s; z-index: 2000;
-      }
-      .nav-links.active { left: 0; }
-    }
-
-    /* [배너 고정 핵심] 배너 크기가 늘어나지 않게 제어 */
-    .profile-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px 15px;
-      overflow: hidden; /* 이미지 돌출 방지 */
     }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      if(nav) nav.classList.toggle('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('mainHeader');
+      
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 150) {
+          header.classList.add('scrolled');
+        } else if (currentScroll <= 10) {
+          // 맨 위(0~10px)에 도달했을 때만 원래 위치로 복귀
+          header.classList.remove('scrolled');
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
+  <div class="header-placeholder"></div>
+
   <div class="sticky-top" id="mainHeader">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
     <header class="header-wrapper">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <a href="index.html" class="logo-area">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
         <span class="logo-text">Joshua Hong Golf</span>
@@ -153,19 +133,19 @@
     </header>
   </div>
 
-  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+  <div style="text-align: center; margin: 30px 0;">
+    <h1 style="font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 500; color: #0c2340; margin: 0; text-transform: uppercase;">
+      JOSHUA HONG
+    </h1>
+    <p style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #666; margin-top: 5px; letter-spacing: 2px;">
+      UTSA MEN'S GOLF
+    </p>
+  </div>
 
-  <div class="profile-container">
-    <div style="text-align: center; margin-bottom: 25px;">
-      <h1 style="font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 500; color: #0c2340; margin: 0; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1;">
-        JOSHUA HONG
-      </h1>
-      <p style="font-family: 'Oswald', sans-serif; font-size: 16px; color: #666; margin: 10px 0 0 0; font-weight: 400; letter-spacing: 2px;">
-        UTSA MEN'S GOLF
-      </p>
-    </div>
-    
-    </div>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <img src="images/joshua-profile-banner.jpg" alt="Joshua Hong UTSA" class="profile-banner">
+  </div>
+
 </body>
 
 
