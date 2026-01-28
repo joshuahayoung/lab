@@ -20,24 +20,21 @@
       if(nav) nav.classList.toggle('active');
     }
 
-    let lastScroll = 0;
+    // 스크롤 로직 복구
     window.addEventListener('scroll', () => {
       const header = document.getElementById('mainHeader');
       const btn = document.getElementById('fixedTopBtn');
       const currentScroll = window.pageYOffset;
 
-      // TOP 버튼 노출
       if(btn) btn.style.display = (currentScroll > 150) ? 'block' : 'none';
 
-      // 헤더 스크롤 로직: 내릴 때 스르륵 나타나고, 맨 위에서만 합쳐짐
       if(header) {
-        if (currentScroll > 80) {
+        if (currentScroll > 100) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
       }
-      lastScroll = currentScroll;
     });
 
     function scrollToTop() {
@@ -54,14 +51,13 @@
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 설정] */
+    /* [헤더 설정] 배너 크기에 영향을 주지 않도록 설정 */
     .sticky-top {
-      position: relative; /* 초기 상태 */
-      z-index: 1000; width: 100%;
+      width: 100%;
       background: #ffffff;
+      z-index: 1000;
     }
 
-    /* 스크롤 시 변신 */
     .sticky-top.scrolled {
       position: fixed;
       top: 0;
@@ -126,6 +122,15 @@
       }
       .nav-links.active { left: 0; }
     }
+
+    /* [배너 고정 핵심] 배너 크기가 늘어나지 않게 제어 */
+    .profile-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      overflow: hidden; /* 이미지 돌출 방지 */
+    }
   </style>
 </head>
 
@@ -150,8 +155,8 @@
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
-  <div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0 15px; box-sizing: border-box;">
-    <div style="text-align: center; margin-bottom: 25px; padding-top: 20px;">
+  <div class="profile-container">
+    <div style="text-align: center; margin-bottom: 25px;">
       <h1 style="font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 500; color: #0c2340; margin: 0; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1;">
         JOSHUA HONG
       </h1>
@@ -159,9 +164,9 @@
         UTSA MEN'S GOLF
       </p>
     </div>
-  </div>
-
-  </body>
+    
+    </div>
+</body>
 
 
 
