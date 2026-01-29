@@ -237,6 +237,7 @@
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
+    /* 테이블 구조 최적화 */
     .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
     .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
     .log-table th.col-left { text-align: left; padding-left: 20px; }
@@ -244,7 +245,9 @@
     .log-table td.col-left { text-align: left; padding-left: 20px; }
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
     .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
-    .live-event-card { background: #ffffff; border: 2px solid #0c2340; border-radius: 20px; padding: 0; box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); margin-bottom: 50px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    
+    /* 이중 스크롤 방지를 위해 overflow 설정 제거 또는 auto 변경 */
+    .live-event-card { background: #ffffff; border: 2px solid #0c2340; border-radius: 20px; padding: 0; box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); margin-bottom: 50px; position: relative; display: flex; flex-direction: column; }
 
     @media (max-width: 768px) {
       .log-table thead { display: none; }
@@ -287,7 +290,7 @@
       <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Jan 29, 2026</div>
     </div>
 
-    <div style="overflow: hidden;">
+    <div>
       <table class="log-table">
         <thead>
           <tr>
@@ -370,6 +373,7 @@
       </div>
     </div>
   </div>
+
   <div id="lineup-section" style="padding-top: 20px;">
     </div>
 </div>
