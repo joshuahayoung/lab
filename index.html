@@ -242,15 +242,23 @@
       background: #ffffff;
       border: 2px solid #0c2340;
       border-radius: 12px;
-      overflow: hidden; /* 모서리 끊김 방지 */
+      overflow: hidden; 
       box-shadow: 0 8px 20px rgba(12, 35, 64, 0.06);
+    }
+    /* 리더보드 아이콘 스타일 */
+    .icon-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: 0.2s;
     }
   </style>
 
   <div style="margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 15px;">
     <div style="flex-grow: 1; height: 1px; background: #edf2f7; max-width: 50px;"></div>
-    <h2 style="margin: 0; color: #806600; font-size: 14px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase;">
-      On-Going Activity
+    <h2 style="margin: 0; color: #806600; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+      <span style="font-weight: 900;">O</span>n-<span style="font-weight: 900;">G</span>oing <span style="font-weight: 900;">A</span>ctivity
     </h2>
     <div style="flex-grow: 1; height: 1px; background: #edf2f7; max-width: 50px;"></div>
   </div>
@@ -273,22 +281,21 @@
         </div>
       </div>
 
-      <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0; transition: all 0.2s;">
+      <a href="ncaa-stats.html#Tournament-Schedule-Scoring" class="icon-link" style="background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
         <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
           View Line-up Status
         </span>
-        <div class="focus-arrow" style="color: #0c2340; font-size: 14px; line-height: 1;">&rarr;</div>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
       </a>
 
     </div>
   </div>
 </div>
 
-    
-
-    
-
-<div style="max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box;">
+<div style="max-width: 900px; margin: 0 auto 50px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
     <a href="./ncaa-stats.html#current-focus" style="text-decoration: none; display: block;">
         <div class="focus-container">
             
@@ -305,7 +312,12 @@
                 </div>
             </div>
 
-            <div class="focus-arrow">&rarr;</div>
+            <div class="focus-arrow-svg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
         </div>
     </a>
 </div>
@@ -347,7 +359,6 @@
     gap: 8px;
   }
 
-  /* 텍스트 줄임표 처리 (...) */
   .focus-text-wrapper {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -362,11 +373,10 @@
     line-height: 1.4;
   }
 
-  .focus-arrow {
-    color: #0c2340;
-    font-size: 20px;
-    font-weight: 300;
+  .focus-arrow-svg {
     padding-left: 15px;
+    display: flex;
+    align-items: center;
   }
 
   /* 애니메이션 */
