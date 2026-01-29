@@ -389,8 +389,9 @@
 </div>
 
 <style>
-    /* 모바일에서 포스트잇이 겹치지 않도록 조정 */
+    /* 모바일 대응 조정 */
     @media (max-width: 600px) {
+        .clipboard-content { padding: 40px 20px !important; }
         .memo-body { max-width: 100% !important; }
         .post-it { 
             position: relative !important; 
@@ -403,62 +404,62 @@
     }
 </style>
 
-<div class="clipboard-wrapper" style="max-width: 900px; margin: 0 auto 100px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; padding: 0 15px; box-sizing: border-box;">
-    <div style="width: 140px; height: 45px; background: #475569; border-radius: 10px 10px 0 0; margin: 0 auto; position: relative; top: 15px; z-index: 2; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); border: 2px solid #0c2340; border-bottom: none;"></div>
+<div class="clipboard-wrapper" style="max-width: 750px; margin: 0 auto 100px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; padding: 0 15px; box-sizing: border-box;">
+    <div style="width: 120px; height: 40px; background: #475569; border-radius: 8px 8px 0 0; margin: 0 auto; position: relative; top: 15px; z-index: 2; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); border: 2px solid #0c2340; border-bottom: none;"></div>
     
-    <div style="background: #ffffff; border: 3px solid #0c2340; border-radius: 15px; box-shadow: 20px 20px 0px rgba(12, 35, 64, 0.05), 0 25px 50px rgba(0,0,0,0.15); padding: 50px 30px; position: relative; min-height: 520px; overflow: hidden;">
+    <div class="clipboard-content" style="background: #ffffff; border: 3px solid #0c2340; border-radius: 15px; box-shadow: 15px 15px 0px rgba(12, 35, 64, 0.05), 0 25px 50px rgba(0,0,0,0.1); padding: 50px 40px; position: relative; min-height: 500px; overflow: hidden;">
         
-        <div style="position: absolute; top: 25px; right: 25px; transform: rotate(15deg); opacity: 0.6;">
-            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <div style="position: absolute; top: 25px; right: 25px; transform: rotate(15deg); opacity: 0.4;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 20h9"></path>
                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
             </svg>
         </div>
 
-        <h3 style="margin: 0 0 35px 0; color: #0c2340; font-size: 22px; font-weight: 900; border-bottom: 3px double #e2e8f0; padding-bottom: 15px; display: inline-block; text-transform: uppercase;">
-            Current Status Update
+        <h3 style="margin: 0 0 35px 0; color: #0c2340; font-size: 20px; font-weight: 900; border-bottom: 3px double #e2e8f0; padding-bottom: 12px; display: inline-block; text-transform: uppercase;">
+            Performance Analysis & Plan
         </h3>
 
-        <div class="memo-body" style="display: flex; flex-direction: column; gap: 30px; max-width: 65%;">
-            <div style="display: flex; gap: 15px; align-items: flex-start;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="memo-body" style="display: flex; flex-direction: column; gap: 25px; max-width: 62%;">
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <div>
-                    <h4 style="margin: 0; font-size: 14px; color: #0c2340; font-weight: 900; text-transform: uppercase;">Qualifying Feedback</h4>
-                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #475569; line-height: 1.6;">
-                        <strong>Ball-Striking:</strong> Consistent through R1-R2. <br>
-                        <strong>Course:</strong> High surface challenges at The Oaks (Valero Open prep).
+                    <h4 style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 900; text-transform: uppercase;">R3 Technical Feedback</h4>
+                    <p style="margin: 5px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.6;">
+                        <strong>Putting:</strong> 3-putts recorded 3 times. Urgent recalibration of distance control and green reading required. <br>
+                        <strong>Long Game:</strong> Unstable driver dispersion due to loss of competitive rhythm in cold conditions.
                     </p>
                 </div>
             </div>
 
-            <div style="display: flex; gap: 15px; align-items: flex-start;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 <div>
-                    <h4 style="margin: 0; font-size: 14px; color: #0c2340; font-weight: 900; text-transform: uppercase;">Team & Training</h4>
-                    <p style="margin: 5px 0 0 0; font-size: 14px; color: #475569; line-height: 1.6;">
-                        Collaborative iron work at PGA Superstore & indoor drills to maintain competitive rhythms.
+                    <h4 style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 900; text-transform: uppercase;">Corrective Training</h4>
+                    <p style="margin: 5px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.6;">
+                        Jan 29: Intensive session at TPC San Antonio focusing on short-game touch and driver alignment to regain R1-R2 performance levels.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="post-it" style="position: absolute; bottom: 50px; right: 30px; width: 230px; background: #fff9c4; padding: 25px; box-shadow: 10px 10px 20px rgba(0,0,0,0.1); border-left: 8px solid #806600; transform: rotate(-2deg); z-index: 5;">
-            <div style="font-size: 20px; margin-bottom: 10px;">📌</div>
-            <h5 style="margin: 0 0 10px 0; font-size: 13px; color: #806600; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid rgba(128, 102, 0, 0.2);">Final Schedule</h5>
-            <p style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 700; line-height: 1.6;">
-                • R3: Jan 28 @ The Oaks<br>
-                • R4: Canceled<br>
-                • Travel: Cancun on Friday
+        <div class="post-it" style="position: absolute; bottom: 60px; right: 35px; width: 220px; background: #fff9c4; padding: 22px; box-shadow: 10px 10px 20px rgba(0,0,0,0.08); border-left: 6px solid #806600; transform: rotate(-1.5deg); z-index: 5;">
+            <div style="font-size: 18px; margin-bottom: 8px;">✈️</div>
+            <h5 style="margin: 0 0 8px 0; font-size: 12px; color: #806600; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid rgba(128, 102, 0, 0.2);">Travel Logistics</h5>
+            <p style="margin: 0; font-size: 12.5px; color: #0c2340; font-weight: 700; line-height: 1.6;">
+                • Status: Travel Squad Confirmed<br>
+                • Destination: Cancun, Mexico<br>
+                • Departure: Jan 30 (Fri)<br>
+                • Goal: Maintain Rank 1 seed
             </p>
         </div>
 
-        <div style="margin-top: 40px; border-top: 2px solid #f1f5f9; padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 11px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Today's Memo</span>
-            <span style="font-size: 11px; color: #0c2340; font-weight: 900; background: #f1f5f9; padding: 3px 10px; border-radius: 4px;">JAN 28, 2026</span>
+        <div style="margin-top: auto; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9;">
+            <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Post-Qualifying Memo</span>
+            <span style="font-size: 11px; color: #0c2340; font-weight: 900; background: #f1f5f9; padding: 4px 12px; border-radius: 4px;">JAN 28, 2026</span>
         </div>
     </div>
 </div>
-
 
   
 
