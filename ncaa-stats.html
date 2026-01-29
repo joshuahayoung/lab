@@ -235,107 +235,28 @@
   
 
   
-<div 
-  class="performance-log-section" 
-  style="
-    max-width: 900px; 
-    margin: 0 auto 60px; 
-    padding: 0 15px; 
-    box-sizing: border-box; 
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  "
->
+<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
-    /* 현 Tournament Schedule & scoring */
-    .log-table { 
-      width: 100%; 
-      border-collapse: collapse; 
-      background: white; 
-      table-layout: fixed; 
-      margin-bottom: 0; 
-      border: none; 
-    }
-    .log-table th { 
-      background: #f8f9fa; 
-      font-size: 11px; 
-      color: #0c2340; 
-      text-transform: uppercase; 
-      padding: 12px 10px; 
-      border-bottom: 2px solid #0c2340; 
-      text-align: center; 
-    }
-    .log-table th.col-left { 
-      text-align: left; 
-      padding-left: 20px; 
-    }
-    .log-table td { 
-      padding: 15px 10px; 
-      border-bottom: 1px solid #edf2f7; 
-      vertical-align: middle; 
-      text-align: center; 
-    }
-    .log-table td.col-left { 
-      text-align: left; 
-      padding-left: 20px; 
-    }
-    
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
+    .log-table th.col-left { text-align: left; padding-left: 20px; }
+    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td.col-left { text-align: left; padding-left: 20px; }
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
     .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
-
-    .live-event-card {
-      background: #ffffff;
-      border: 2px solid #0c2340;
-      border-radius: 20px;
-      padding: 0;
-      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
-      margin-bottom: 50px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+    .live-event-card { background: #ffffff; border: 2px solid #0c2340; border-radius: 20px; padding: 0; box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); margin-bottom: 50px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
 
     @media (max-width: 768px) {
       .log-table thead { display: none; }
-      .log-table, .log-table tbody, .log-table tr, .log-table td { 
-        display: block; 
-        width: 100%; 
-        box-sizing: border-box; 
-      }
-      .log-table tr { 
-        margin-bottom: 15px; 
-        border: 1px solid #eee !important; 
-        border-radius: 12px; 
-        padding: 12px; 
-      }
-      .log-table td { 
-        border: none !important; 
-        padding: 0 !important; 
-        text-align: left !important; 
-      }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+      .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
+      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
       .hide-mobile { display: none !important; }
-      .mobile-status-bar { 
-        display: flex !important; 
-        background: #fcfcfc; 
-        border-radius: 8px; 
-        margin-top: 10px; 
-        padding: 8px 5px; 
-        border: 1px dashed #e2e8f0; 
-      }
+      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
       .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
       .ms-item:last-child { border-right: none; }
-      .ms-label { 
-        display: block; 
-        font-size: 8px; 
-        color: #aaa; 
-        font-weight: 800; 
-        margin-bottom: 2px; 
-      }
-      .ms-value { 
-        display: block; 
-        font-size: 12px; 
-        font-weight: 800; 
-      }
+      .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .ms-value { display: block; font-size: 12px; font-weight: 800; }
     }
     
     @media (min-width: 769px) {
@@ -348,66 +269,22 @@
     }
   </style>
 
-  <div 
-    style="
-      border-bottom: 2px solid #0c2340; 
-      padding-bottom: 20px; 
-      margin-bottom: 40px; 
-      text-align: center;
-    "
-  >
-    <h1 
-      style="
-        margin: 0; 
-        color: #0c2340; 
-        font-size: 24px; 
-        letter-spacing: 2px; 
-        font-weight: 900; 
-        text-transform: uppercase;
-      "
-    >
+  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
+    <h1 style="margin: 0; color: #0c2340; font-size: 24px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
       Tournament Schedule & Scoring
     </h1>
   </div>
 
   <div class="live-event-card">
-    <div 
-      style="
-        padding: 20px 25px; 
-        display: flex; 
-        align-items: center; 
-        justify-content: space-between; 
-        flex-wrap: wrap; 
-        gap: 10px; 
-        background: #f8fafc;
-      "
-    >
+    <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span 
-          style="
-            background: #0c2340; 
-            color: white; 
-            padding: 4px 12px; 
-            border-radius: 4px; 
-            font-size: 10px; 
-            font-weight: 900; 
-            letter-spacing: 1px;
-          "
-        >
-          UPCOMING
-        </span>
+        <span style="background: #0c2340; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px;">UPCOMING</span>
         <div>
-          <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">
-            Compadres Collegiate (UTRGV)
-          </h2>
-          <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">
-            Iberostar Playa Paraiso | Par 72
-          </div>
+          <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
+          <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 72</div>
         </div>
       </div>
-      <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">
-        Updated: Jan 29, 2026
-      </div>
+      <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Jan 29, 2026</div>
     </div>
 
     <div style="overflow: hidden;">
@@ -471,36 +348,8 @@
       </table>
     </div>
 
-    <div 
-      style="
-        background: #0c2340; 
-        padding: 15px 25px; 
-        display: flex; 
-        justify-content: flex-end; 
-        align-items: center; 
-        gap: 30px;
-      "
-    >
-      <a 
-        href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" 
-        target="_blank" 
-        style="
-          margin-right: auto; 
-          display: flex; 
-          align-items: center; 
-          gap: 8px; 
-          color: #ffffff; 
-          text-decoration: none; 
-          font-size: 11px; 
-          font-weight: 800; 
-          letter-spacing: 0.5px; 
-          text-transform: uppercase; 
-          border: 1px solid rgba(255,255,255,0.3); 
-          padding: 6px 12px; 
-          border-radius: 4px; 
-          transition: 0.2s;
-        "
-      >
+    <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
+      <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 6px 12px; border-radius: 4px; transition: 0.2s;">
         LIVE LEADERBOARD
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <line x1="7" y1="17" x2="17" y2="7"></line>
