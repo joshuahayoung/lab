@@ -246,6 +246,7 @@
     .log-table td.col-left { text-align: left; padding-left: 20px; }
     
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
+    .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
     .scheduled-text { font-size: 11px; color: #95a5a6; font-weight: 600; }
     .today-text { font-size: 12px; font-weight: 800; color: #e74c3c; }
 
@@ -295,32 +296,30 @@
 
   <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
     <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
-      On-going Tournament
+      Tournament Results
     </h1>
   </div>
 
   <div class="live-event-card">
     <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
       <div style="display: flex; align-items: center; gap: 12px;">
-        <span style="background: #94a3b8; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
-          <span style="width: 8px; height: 8px; background: white; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
-          RESCHEDULED
+        <span style="background: #0c2340; color: white; padding: 4px 14px; border-radius: 50px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center;">
+          QUALIFIED (RANK 1)
         </span>
         <h2 style="color: #0c2340; margin: 0; font-size: 22px; font-weight: 800;">Compadres Collegiate (UTRGV) Qualifying</h2>
       </div>
       <div style="font-size: 12px; color: #95a5a6; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Last Updated: Jan 28, 2026</div>
     </div>
 
-    <div style="margin: 0 25px 15px 25px; padding: 12px 15px; background: #f8fafc; border-left: 4px solid #806600; border-radius: 4px; display: flex; align-items: flex-start; gap: 10px;">
+    <div style="margin: 0 25px 15px 25px; padding: 12px 15px; background: #f8fafc; border-left: 4px solid #0c2340; border-radius: 4px; display: flex; align-items: flex-start; gap: 10px;">
       <div style="flex-shrink: 0; margin-top: 2px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
       </div>
       <p style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 700; line-height: 1.5;">
-        NOTICE: Round 3 is confirmed for Jan 28 at The Oaks Course.
+        FINAL STATUS: Total 213 (-3). Ranked 1st overall. Secured spot for Cancun Squad.
       </p>
     </div>
 
@@ -336,11 +335,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="background: rgba(231, 76, 60, 0.02);">
+          <tr>
             <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #e74c3c;">Jan 22, 2026</div>
+              <div style="font-weight: 600; font-size: 13px; color: #7f8c8d;">Jan 22, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 1: The Canyons Course (Par 72)</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">68</span></div>
                 <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-4</span></div>
@@ -355,9 +354,9 @@
           </tr>
           <tr>
             <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px;">Jan 23, 2026</div>
+              <div style="font-weight: 600; font-size: 13px; color: #7f8c8d;">Jan 23, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 2: The Oaks Course (Par 72)</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">69</span></div>
                 <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-3</span></div>
@@ -370,23 +369,28 @@
             <td class="hide-mobile" style="font-weight: 700; font-size: 13px;">Final</td>
             <td class="hide-mobile" style="font-weight: 800; font-size: 16px;">2</td>
           </tr>
-          <tr style="background: rgba(34, 197, 94, 0.03);">
+          <tr style="background: rgba(12, 35, 64, 0.02);">
             <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #22c55e;">Jan 28, 2026</div>
+              <div style="font-weight: 600; font-size: 13px; color: #0c2340;">Jan 28, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Round 3: The Oaks Course (Par 72)</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio </div>
+              <div style="font-size: 12px; color: #7f8c8d;">TPC San Antonio</div>
               <div class="mobile-status-bar">
-                <div class="ms-item" style="border:none;"><span class="ms-label">STATUS</span><span class="ms-value" style="color:#22c55e;">Scheduled</span></div>
+                <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value over-par">76</span></div>
+                <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value over-par">+4</span></div>
+                <div class="ms-item"><span class="ms-label">STATUS</span><span class="ms-value">Final</span></div>
+                <div class="ms-item"><span class="ms-label">FINISH</span><span class="ms-value">1</span></div>
               </div>
             </td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="font-weight: 700; color: #22c55e;">Scheduled</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile"><span class="over-par" style="font-size: 16px;">76</span></td>
+            <td class="hide-mobile"><span class="over-par" style="font-size: 16px;">+4</span></td>
+            <td class="hide-mobile" style="font-weight: 700; font-size: 13px;">Final</td>
+            <td class="hide-mobile" style="font-weight: 800; font-size: 16px; color: #e74c3c;">1</td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
+</div>
 
     <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-top: auto;">
       <div style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Current Stats</div>
@@ -999,7 +1003,7 @@
         <span style="display: block; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Scoring Power</span>
         <span style="font-size: 20px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;">7 Under Par</span>
         <div style="display: block; font-size: 12px; color: #64748b; margin-top: 2px; font-weight: 600;">Out of 12 Rounds</div>
-        <div style="display: inline-block; font-size: 12px; color: #2b6cb0; margin-top: 8px; font-weight: 700; background: rgba(43, 108, 176, 0.05); padding: 2px 12px; border-radius: 20px;">STATUS: Spring Qualifiers</div>
+        <div style="display: inline-block; font-size: 12px; color: #2b6cb0; margin-top: 8px; font-weight: 700; background: rgba(43, 108, 176, 0.05); padding: 2px 12px; border-radius: 20px;">STATUS: Fall Cumulative</div>
       </div>
       <div style="padding: 20px; background: #f8fafc; border-radius: 15px; text-align: center; border: 1px solid #edf2f7;">
         <span style="display: block; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Academic Discipline</span>
