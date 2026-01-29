@@ -230,53 +230,38 @@
     
 
 
-<div style="max-width: 900px; margin: 0 auto 15px; padding: 0 15px; box-sizing: border-box;">
+<div style="max-width: 900px; margin: 0 auto 15px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
     @keyframes pulse {
       0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.3; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
     }
+    .status-dot { width: 6px; height: 6px; background-color: #0c2340; border-radius: 50%; display: inline-block; animation: pulse 2s infinite ease-in-out; }
   </style>
 
-  <div style="margin-top: -10px; margin-bottom: 12px; display: flex; align-items: baseline; gap: 10px;">
-    <h2 style="margin: 0; color: #0c2340; font-size: 15px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase;">
-      Next Tournament
-    </h2>
-    <span style="font-size: 10px; color: #806600; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
-      • Spring Season Opener
-    </span>
-  </div>
+  <div style="background: #ffffff; border-bottom: 2px solid #0c2340; padding: 10px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+    
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 6px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px;">
+        <span class="status-dot"></span>
+        <span style="color: #0c2340; font-size: 10px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">Upcoming</span>
+      </div>
+      
+      <div style="display: flex; align-items: baseline; gap: 8px;">
+        <span style="color: #0c2340; font-weight: 800; font-size: 14px;">Compadres Collegiate</span>
+        <span style="color: #64748b; font-size: 12px; font-weight: 500;">| Iberostar Playa Paraiso, Mexico</span>
+        <span style="color: #94a3b8; font-size: 12px; font-weight: 600; margin-left: 5px;">(Feb 1-3)</span>
+      </div>
+    </div>
 
-  <div style="background: #ffffff; border: 1.5px solid #0c2340; border-radius: 8px; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <span style="background: #0c2340; color: white; padding: 3px 10px; border-radius: 4px; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
-        <span style="width: 6px; height: 6px; background-color: #ffffff; border-radius: 50%; display: inline-block; animation: pulse 2s infinite ease-in-out;"></span>
-        UPCOMING
+    <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; gap: 6px;">
+      <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #0c2340; padding-bottom: 1px;">
+        Line-up Status
       </span>
-      <div style="color: #0c2340; font-weight: 700; font-size: 13px;">
-        Compadres Collegiate (Feb 1-3)
-      </div>
-    </div>
+      <div class="focus-arrow" style="color: #0c2340; font-size: 14px; line-height: 1;">&rarr;</div>
+    </a>
 
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <div style="text-align: left;">
-        <span style="display: block; font-size: 8px; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Location</span>
-        <span style="font-size: 13px; font-weight: 800; color: #0c2340;">Cancun, Mexico</span>
-      </div>
-      <div style="width: 1px; height: 20px; background: #e2e8f0;"></div>
-      <div style="text-align: left;">
-        <span style="display: block; font-size: 8px; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Course</span>
-        <span style="font-size: 13px; font-weight: 800; color: #0c2340;">Iberostar Playa Paraiso GC</span>
-      </div>
-    </div>
-
-<a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-  <span style="color: #0c2340; font-size: 11px; font-weight: 800; border-bottom: 1.5px solid #0c2340; padding-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
-    VIEW LINE-UP STATUS
-  </span>
-  <div class="focus-arrow" style="color: #0c2340; font-size: 16px; line-height: 1;">&rarr;</div>
-</a>
   </div>
 </div>
 
