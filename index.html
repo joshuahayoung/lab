@@ -521,7 +521,7 @@
   
 
 
- <div class="insight-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="insight-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <input type="checkbox" id="card-toggle" style="display: none;">
 
@@ -529,8 +529,8 @@
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      /* 버튼과 LAST UPDATED 문구가 넉넉히 들어가도록 높이 재조정 */
-      min-height: 500px; 
+      /* 내부 콘텐츠 길이에 맞게 가변적으로 변하도록 기본 높이 상향 및 유연성 부여 */
+      min-height: 580px; 
       perspective: 1000px;
     }
     .insight-card {
@@ -547,7 +547,9 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* 상단 내용과 하단 버튼/날짜를 양끝으로 배치 */
+      justify-content: space-between;
+      /* 내용이 넘칠 경우 내부 스크롤이 아닌 카드 크기에 맞게 표시되도록 설정 */
+      overflow: visible; 
     }
     .card-current { transform: rotateY(0deg); z-index: 2; }
     .card-archive { transform: rotateY(180deg); z-index: 1; }
@@ -583,13 +585,14 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 모바일 반응형: 화면이 좁아지면 텍스트가 길어지므로 높이를 더 확보 */
+    /* 모바일 반응형: 텍스트가 세로로 길어지므로 카드 높이를 대폭 확보 */
     @media (max-width: 768px) {
-      .insight-card-wrapper { min-height: 650px; }
+      .insight-card-wrapper { min-height: 720px; }
       .insight-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .insight-card-wrapper { min-height: 780px; }
+      .insight-card-wrapper { min-height: 850px; }
+      .insight-card { padding: 20px 15px; }
     }
   </style>
 
@@ -644,11 +647,17 @@
           <h3 style="font-size: 22px; color: #94a3b8; margin: 0; font-weight: 800;">Performance Archive</h3>
         </div>
 
-        <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; font-style: italic;">
-          <p style="margin: 0 0 18px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus </p>
-          <p style="margin-bottom: 18px;">The Patriot All-America provided a clear benchmark against one of the strongest amateur fields in the country. Following the event, Joshua conducted a technical review, which identified <strong>long-iron precision</strong> as a key area requiring immediate improvement to compete consistently at the NCAA level.</p>
-          <p style="margin-bottom: 18px;">In coordination with the UTSA coaching staff, a short-term adjustment was approved to prioritize an <strong>intensive training block during January</strong>. This decision was made with a single objective: to return fully prepared for qualifying rounds and contribute more effectively to the team’s performance during the Spring season.</p>
-          <p style="margin-bottom: 0;">Joshua is grateful to the UTSA staff for their trust and collaboration, and he remains fully committed to translating this focused work into measurable results that elevate the team’s standing.</p>
+      <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; font-style: italic;">
+          <p style="margin: 0 0 18px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus</p>
+          <p style="margin-bottom: 18px;">
+            The Patriot All-America Invitational served as a competitive reference point against a national amateur field, including several of the top collegiate players. Following the event, a technical review identified <strong>long-iron performance</strong> as an area for improvement ahead of Spring qualifying.
+          </p>
+          <p style="margin-bottom: 18px;">
+            In coordination with the UTSA coaching staff, a short-term adjustment was approved for Joshua to remain on campus and continue <strong>individual training during January</strong> rather than participate in the scheduled team trip.
+          </p>
+          <p style="margin-bottom: 0;">
+            This period was used to address identified technical areas prior to Spring qualifying rounds and subsequent team events. Joshua continues preparation within the UTSA program for the Spring season.
+          </p>
         </div>
       </div>
 
