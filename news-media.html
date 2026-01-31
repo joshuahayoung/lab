@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
+
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png" sizes="32x32">
 <link rel="shortcut icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
 
-  <title>News & Media | Joshua Hong Golf | UTSA</title>
-  <meta name="description" content="Official news, media coverage, and performance highlights for Joshua Hong at UTSA.">
-  <link rel="canonical" href="https://www.joshuahonggolf.com/news-media.html">
-
- 
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<title>News & Interviews Archive | Joshua Hong Golf | Korean-Mexican NCAA D1 Golfer</title>
+<meta name="description" content="A complete media archive of Joshua Hong, featuring news, interviews, and coverage from his Junior career through NCAA Division I at UTSA. Explore his full competitive journey.">
+<link rel="canonical" href="https://www.joshuahonggolf.com/news-media.html">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -18,20 +17,217 @@
     gtag('config', 'G-H1JW8YBDZ8');
   </script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>News & Media | Joshua Hong Golf</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* 상단 헤더 및 레이아웃 복구용 핵심 CSS */
-    .header-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 80px; }
+    /* 1. 기본 설정 */
+    html, body {
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+    * { box-sizing: border-box; }
+
+    /* [상단 헤더 기본 스타일] */
+    .sticky-top {
+      position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
+      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      /* 우아한 등장을 위한 트랜지션 */
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    }
+
+    /* 스크롤 시 내려와 고정되는 상태 */
+    .sticky-top.scrolled {
+      position: fixed;
+      top: 0;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    /* 위로 올라갈 때 '스르르륵' 사라지는 상태 */
+    .sticky-top.preparing {
+      position: fixed;
+      top: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .top-bar {
+      background-color: #F15A22; color: white; text-align: center;
+      padding: 10px 0; font-size: 11px;
+      font-family: 'Oswald', sans-serif; letter-spacing: 1.5px;
+      font-weight: 400;
+    }
+
+    /* 헤더 래퍼: 데스크탑/모바일 공용 */
+    .header-wrapper {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 80px;
+    }
+
+    /* 로고 영역 */
+    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
+    .logo-img { height: 50px; width: auto; display: block; }
+    .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
+
+    /* 데스크탑 메뉴 */
     .nav-links { display: flex; gap: 30px; align-items: center; }
-    .nav-links a { text-decoration: none; color: #444; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; }
-    .logo-img { height: 50px; width: auto; }
-    svg { vertical-align: middle; }
+    .nav-links a {
+      text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
+      font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+      transition: 0.3s; padding: 8px 15px; border-radius: 4px;
+    }
+    /* News & Media 활성화 스타일 */
+    .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
+    .mobile-menu-logo, .close-menu, .menu-footer { display: none; }
+
+    /* 메뉴 토글 버튼 */
+    .menu-toggle {
+      display: none; font-size: 30px; cursor: pointer;
+      background: none; border: none; color: #F15A22;
+    }
+
+    /* TOP 버튼 스타일 */
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; color: #fff !important;
+      border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* [모바일 반응형] */
+    @media (max-width: 1024px) {
+      .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
+      .menu-toggle { display: block; order: 1; }
+      .logo-area { order: 2; }
+      .logo-text { display: none; }
+      .logo-img { height: 40px; }
+
+      .nav-links {
+        position: fixed; top: 0; left: -100%; 
+        width: 260px; height: 100vh;
+        background: #ffffff !important; flex-direction: column;
+        padding: 50px 25px; transition: 0.3s; z-index: 2000;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        align-items: flex-start; gap: 10px;
+      }
+      .nav-links.active { left: 0; }
+      
+      .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
+      .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
+
+      .mobile-menu-logo { display: block; margin-bottom: 30px; } 
+      .mobile-menu-logo img { height: 35px; }
+      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; }
+      
+      .menu-footer {
+        display: block; margin-top: 60px; 
+        padding-top: 20px; border-top: 1px solid #eee; width: 100%;
+      }
+      .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
+      .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      .header-wrapper { height: 55px; }
+      .logo-img { height: 35px !important; }
+      .nav-links { padding: 30px 25px; overflow-y: auto; }
+      .menu-footer { margin-top: 30px; }
+    }
   </style>
 </head>
 
 <body>
- <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 850px; width: 100%; margin: auto; padding: 20px; color: #333; background-color: #ffffff; box-sizing: border-box;">
+  <div class="sticky-top" id="mainHeader">
+    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
+      <a href="index.html" class="logo-area">
+        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+        <span class="logo-text">Joshua Hong Golf</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <div class="mobile-menu-logo">
+            <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
+        </div>
+        
+        <a href="index.html">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html" class="active">News & Media</a>
+        <a href="reference-links.html">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+
+        <div class="menu-footer">
+            <span class="footer-name">JOSHUA HONG</span>
+            <span class="footer-team">UTSA MEN'S GOLF</span>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      const header = document.getElementById('mainHeader');
+      const currentScrollY = window.pageYOffset;
+
+      // 1. TOP 버튼 제어
+      if (currentScrollY > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+
+      // 2. 헤더 우아한 제어 (300px 기준)
+      if (currentScrollY > 300) {
+        header.classList.add('scrolled');
+        header.classList.remove('preparing');
+      } else if (currentScrollY > 10) { 
+        header.classList.remove('scrolled');
+        header.classList.add('preparing');
+      } else {
+        header.classList.remove('scrolled', 'preparing');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 140px 10px 0;">
+  <div style="text-align: center; margin-bottom: 35px;">
+    <h1 style="font-size: 34px; font-weight: 800; color: #0c2340; margin: 0; letter-spacing: -0.5px; text-transform: uppercase;">
+      NEWS & MEDIA
+    </h1>
+    <p style="font-size: 14px; color: #777; margin: 6px 0 0 0; font-weight: 500; letter-spacing: 0.8px;">
+      Official News and Interviews
+    </p>
+  </div>
+
+  
+
+  <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 850px; width: 100%; margin: auto; padding: 20px; color: #333; background-color: #ffffff; box-sizing: border-box;">
     
     <div style="border-bottom: 2px solid #0c2340; padding-bottom: 12px; margin-bottom: 40px;">
       <h2 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 700; letter-spacing: 0.3px;">
@@ -52,7 +248,7 @@
         <div style="border: 1px solid #0c2340; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s;">
           <div style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;">
             <div style="flex: 1; background: #f8f8f8; min-width: 300px; width: 100%; display: flex; align-items: center; justify-content: center;">
-              <img src="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-interview-cgn.jpg" alt="Joshua Hong CGN Highlight" style="width: 100%; height: auto; max-height: 450px; object-fit: contain; display: block;">
+              <img src="https://lh3.googleusercontent.com/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" alt="Joshua Hong CGN Highlight" style="width: 100%; height: auto; max-height: 450px; object-fit: contain; display: block;">
             </div>
             <div style="flex: 1.2; padding: 30px; display: flex; flex-direction: column; justify-content: center; min-width: 300px;">
               <div style="font-size: 12px; color: #ff5a00; font-weight: bold; margin-bottom: 10px; letter-spacing: 1px;">CGN PLAYER HIGHLIGHT</div>
@@ -73,7 +269,7 @@
 
     <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
       <span style="margin-right: 12px; display: flex; align-items: center;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
           <line x1="7" y1="2" x2="7" y2="22"></line>
           <line x1="17" y1="2" x2="17" y2="22"></line>
@@ -117,7 +313,7 @@
 
     <h3 style="color: #0c2340; font-size: 18px; margin-top: 40px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
       <span style="margin-right: 12px; display: flex; align-items: center;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
           <path d="M18 14h-8"></path>
           <path d="M15 18h-5"></path>
@@ -189,7 +385,6 @@
       </div>
     </div>
   </a>
- </div>
 
 
 
@@ -491,3 +686,5 @@
 
   </div>
 </div>
+</body>
+</html>
