@@ -215,13 +215,16 @@
     @keyframes pulse {  0% { opacity: 1; transform: scale(1); }       50% { opacity: 0.3; transform: scale(0.8); }       100% { opacity: 1; transform: scale(1); }    }
     .status-dot { width: 6px; height: 6px; background-color: #ffffff; border-radius: 50%; display: inline-block; animation: pulse 2s infinite ease-in-out; }
     
-    .activity-card, .focus-container { background: #ffffff; border: 2px solid #0c2340; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(12, 35, 64, 0.06); transition: all 0.2s; }
+    /* 두 카드의 공통 스타일 적용 */
+    .activity-card, .focus-container { background: #ffffff; border: 2px solid #0c2340; 
+    /* 테두리 두께와 색상 통일 */ border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(12, 35, 64, 0.06); transition: all 0.2s; }
 
-    .activity-card { margin-bottom: 15px; }
+    .activity-card { margin-bottom: 15px; /* 카드 사이 간격 최적화 */ }
     .icon-link { display: flex; align-items: center; gap: 8px; text-decoration: none; transition: 0.2s; }
-    .focus-container { padding: 15px 20px; display: flex; align-items: center; justify-content: space-between;}
+    .focus-container { padding: 15px 20px; /* 상단 카드와 여백 통일 */ display: flex; align-items: center; justify-content: space-between;}
     .focus-content { display: flex; align-items: center; gap: 16px; overflow: hidden; flex: 1; }
-    .focus-badge { background: #0c2340; color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+    .focus-badge { background: #0c2340; color: #ffffff; padding: 5px 12px; border-radius: 6px; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+      white-space: nowrap; display: flex; align-items: center; gap: 8px; }
     .focus-text-wrapper { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
     .focus-text { color: #475569; font-size: 14px; font-weight: 700; line-height: 1.4; }
     .focus-arrow-svg { padding-left: 15px; display: flex; align-items: center; }
