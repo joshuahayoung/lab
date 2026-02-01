@@ -447,3 +447,196 @@ new Chart(ctxInternal, {
   }
 });
 </script>
+
+
+
+
+
+
+<div style="max-width: 1200px; margin: 0 auto; position: relative; padding: 0 40px;">
+  <style>
+    /* 썸네일 컨테이너 및 그리드 설정 */
+    #thumbWrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    #thumbScroll {
+      display: grid;
+      grid-template-columns: repeat(16, 1fr); /* 이미지 개수에 맞춰 확장 */
+      gap: 15px;
+      padding: 20px 0;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform;
+    }
+    .thumb-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      border: 1px solid #f1f1f1;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .thumb-img:hover {
+      transform: translateY(-5px);
+    }
+
+    /* 얼굴 위치 조정을 위한 세밀한 세팅 (6번 요청 반영) */
+    .pos-top { object-position: center 10%; }
+    .pos-center { object-position: center center; }
+    .pos-focus { object-position: center 25%; } /* 일반적인 인물 상반신 최적화 */
+
+    /* 외부 화살표 버튼 (2번 요청 반영) */
+    .scroll-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: #ffffff;
+      border: 1px solid #0c2340;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .scroll-nav:hover { background: #0c2340; color: #fff; }
+    .scroll-nav.prev { left: -10px; }
+    .scroll-nav.next { right: -10px; }
+    .scroll-nav svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 3; }
+  </style>
+
+  <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </div>
+  <div class="scroll-nav next" onclick="scrollThumbs(1)">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </div>
+
+  <div id="thumbWrapper">
+    <div id="thumbScroll">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(0)" class="thumb-img pos-focus">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(1)" class="thumb-img pos-center">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(2)" class="thumb-img pos-focus">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(3)" class="thumb-img pos-focus">
+      
+      <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(4)" class="thumb-img pos-focus">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(5)" class="thumb-img pos-focus">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(6)" class="thumb-img pos-focus">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(7)" class="thumb-img pos-focus">
+      
+      <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(8)" class="thumb-img pos-focus">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(9)" class="thumb-img pos-focus">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(10)" class="thumb-img pos-center">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(11)" class="thumb-img pos-center">
+      
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(12)" class="thumb-img pos-focus">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(13)" class="thumb-img pos-center">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(14)" class="thumb-img pos-focus">
+      <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(15)" class="thumb-img pos-focus">
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg",
+      "https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl",
+      "https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV",
+      "https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD",
+      "https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT",
+      "https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb",
+      "https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI",
+      "https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv",
+      "https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg",
+      "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg"
+    ];
+
+    let currentThumbPage = 0;
+    function scrollThumbs(dir) {
+      const container = document.getElementById('thumbScroll');
+      const maxPages = Math.ceil(images.length / 4) - 1;
+      currentThumbPage = Math.max(0, Math.min(currentThumbPage + dir, maxPages));
+      // 컨테이너 너비를 4개 이미지 기준으로 계산하여 이동
+      const moveDistance = currentThumbPage * 100; 
+      container.style.transform = `translateX(-${moveDistance}%)`;
+      // % 이동 시 간격 보정을 위해 뷰포트 기반 계산 적용 가능하나 구조적 단순화 위해 % 사용
+    }
+
+    function popupGallery(index) {
+      const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
+      const h = window.innerHeight > 950 ? 950 : window.innerHeight;
+      const left = (screen.width / 2) - (w / 2);
+      const top = (screen.height / 2) - (h / 2);
+      const popup = window.open("", "JoshuaGallery", `width=${w},height=${h},top=${top},left=${left},resizable=yes`);
+      
+      const content = `
+        <html>
+          <head>
+            <title>Joshua Hong - Gallery</title>
+            <style>
+              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+              #mainImg { max-width: 90%; max-height: 75vh; object-fit: contain; border-radius: 8px; box-shadow: 0 0 30px rgba(255,255,255,0.1); transition: opacity 0.2s; }
+              /* 4번 요청: 더 크고 눈에 띄는 화살표 */
+              .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 80px; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 60px; color: rgba(255,255,255,0.2); cursor: pointer; user-select: none; transition: 0.3s; z-index: 5; }
+              .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
+              #prev { left: 0; } #next { right: 0; }
+              #close { position: absolute; top: 20px; right: 20px; font-size: 40px; cursor: pointer; opacity: 0.5; z-index: 10; transition: 0.3s; }
+              #close:hover { opacity: 1; transform: rotate(90deg); }
+              /* 3번 요청: 하단 Close 버튼 */
+              .bottom-controls { position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 10px 30px; border-radius: 25px; font-weight: 800; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+              .close-btn-bottom:hover { background: #ff4d4d; color: #fff; }
+              .counter { font-size: 12px; opacity: 0.5; letter-spacing: 2px; }
+            </style>
+          </head>
+          <body>
+            <div id="close" onclick="window.close()">×</div>
+            <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
+            <img id="mainImg" src="${images[index]}">
+            <div id="next" class="nav-btn" onclick="move(1)">❯</div>
+            
+            <div class="bottom-controls">
+              <button class="close-btn-bottom" onclick="window.close()">CLOSE GALLERY</button>
+              <div class="counter" id="countDisplay">${index + 1} / ${images.length}</div>
+            </div>
+
+            <script>
+              let idx = ${index};
+              const imgArray = ${JSON.stringify(images)};
+              function move(step) {
+                idx = (idx + step + imgArray.length) % imgArray.length;
+                const img = document.getElementById('mainImg');
+                img.style.opacity = 0;
+                setTimeout(() => {
+                  img.src = imgArray[idx];
+                  document.getElementById('countDisplay').innerText = (idx + 1) + " / " + imgArray.length;
+                  img.style.opacity = 1;
+                }, 150);
+              }
+              window.addEventListener('keydown', (e) => {
+                if (e.key === "ArrowLeft") move(-1);
+                if (e.key === "ArrowRight") move(1);
+                if (e.key === "Escape") window.close();
+              });
+            </` + `script>
+          </body>
+        </html>
+      `;
+      
+      popup.document.write(content);
+      popup.document.close();
+    }
+  </script>
+</div>
