@@ -350,67 +350,91 @@
 
 
   
-<div class="activity-card" style="background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); overflow: hidden;">
-    <div style="padding: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-      <div style="display: flex; align-items: flex-start; gap: 20px;">
-        <div style="display: flex; align-items: center; gap: 8px; background: #0c2340; padding: 6px 12px; border-radius: 6px; flex-shrink: 0;">
-          <span class="status-dot" style="width: 6px; height: 6px; background-color: #10b981; border-radius: 50%; display: inline-block;"></span>
-          <span style="color: #ffffff; font-size: 10px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;">IN PROGRESS</span>
+<div class="activity-card" style="max-width: 900px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); overflow: hidden; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div style="padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: nowrap;">
+    
+    <div style="display: flex; align-items: center; gap: 15px; flex: 1;">
+      <div style="display: flex; align-items: center; gap: 6px; background: #0c2340; padding: 4px 10px; border-radius: 4px; flex-shrink: 0;">
+        <span style="width: 5px; height: 5px; background-color: #10b981; border-radius: 50%;"></span>
+        <span style="color: #ffffff; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">IN PROGRESS</span>
+      </div>
+      <div style="min-width: 0;">
+        <div style="display: flex; align-items: baseline; gap: 8px;">
+          <span style="color: #0c2340; font-weight: 900; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Compadres Collegiate</span>
+          <span style="color: #94a3b8; font-size: 11px; font-weight: 700; flex-shrink: 0;">(Feb 1-3)</span>
         </div>
+        <span style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-top: 1px;">Iberostar Playa Paraiso, Mexico</span>
+      </div>
+    </div>
 
-        <div style="display: flex; flex-direction: column; gap: 12px;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 2px;">
-              <span style="color: #0c2340; font-weight: 900; font-size: 17px; letter-spacing: -0.3px;">Compadres Collegiate</span>
-              <span style="color: #94a3b8; font-size: 13px; font-weight: 700;">(Feb 1-3)</span>
+    <div style="display: flex; align-items: center; gap: 20px; flex-shrink: 0;">
+      <div style="text-align: right; border-right: 1px solid #e2e8f0; padding-right: 20px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+            <span style="color: #94a3b8; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">R1-R2-R3</span>
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 75px; justify-content: flex-end;">
+              <span style="color: #e74c3c; font-size: 14px; font-weight: 900;">70</span>
+              <span style="color: #cbd5e1; font-size: 14px; font-weight: 400;">—</span>
+              <span style="color: #cbd5e1; font-size: 14px; font-weight: 400;">—</span>
             </div>
-            <span style="color: #64748b; font-size: 12px; font-weight: 600; display: block;">Iberostar Playa Paraiso, Mexico</span>
           </div>
-          
-          <div style="background: #f8fafc; border-radius: 8px; padding: 12px 16px; border: 1px solid #f1f5f9;">
-            <table style="border-collapse: collapse; width: 100%; min-width: 240px;">
-              <thead>
-                <tr>
-                  <th style="color: #94a3b8; font-size: 9px; font-weight: 800; text-align: left; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0;">R1-R2-R3</th>
-                  <th style="color: #94a3b8; font-size: 9px; font-weight: 800; text-align: center; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0; width: 60px;">Par</th>
-                  <th style="color: #94a3b8; font-size: 9px; font-weight: 800; text-align: center; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0; width: 60px;">Total</th>
-                  <th style="color: #94a3b8; font-size: 9px; font-weight: 800; text-align: center; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0; width: 60px;">Rank</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="padding-top: 8px; vertical-align: bottom;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span style="color: #e74c3c; font-size: 16px; font-weight: 900;">70</span>
-                      <span style="color: #cbd5e1; font-size: 16px; font-weight: 400;">—</span>
-                      <span style="color: #cbd5e1; font-size: 16px; font-weight: 400;">—</span>
-                    </div>
-                  </td>
-                  <td style="padding-top: 8px; text-align: center; vertical-align: bottom;">
-                    <span style="color: #e74c3c; font-size: 16px; font-weight: 900;">-2</span>
-                  </td>
-                  <td style="padding-top: 8px; text-align: center; vertical-align: bottom;">
-                    <span style="color: #0c2340; font-size: 16px; font-weight: 900;">70</span>
-                  </td>
-                  <td style="padding-top: 8px; text-align: center; vertical-align: bottom;">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; background: #0c2340; color: #ffffff; width: 24px; height: 24px; border-radius: 4px; font-size: 13px; font-weight: 900;">1</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+            <span style="color: #94a3b8; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">PAR / TOTAL</span>
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 75px; justify-content: flex-end;">
+              <span style="color: #e74c3c; font-size: 14px; font-weight: 900;">-2</span>
+              <span style="color: #0c2340; font-size: 14px; font-weight: 900;">(70)</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="background: #ffffff; padding: 10px 18px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 8px; text-decoration: none; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-        <span style="color: #0c2340; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">VIEW</span>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+        <span style="color: #94a3b8; font-size: 8px; font-weight: 800; text-transform: uppercase;">RANK</span>
+        <div style="background: #0c2340; color: #ffffff; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900;">1</div>
+      </div>
+
+      <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; border: 1px solid #e2e8f0; background: #ffffff; transition: all 0.2s ease;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <line x1="7" y1="17" x2="17" y2="7"></line>
           <polyline points="7 7 17 7 17 17"></polyline>
         </svg>
       </a>
     </div>
+
   </div>
+</div>
+
+<style>
+  @media (max-width: 600px) {
+    .activity-card div[style*="flex-wrap: nowrap"] {
+      flex-wrap: wrap !important;
+      padding: 15px !important;
+    }
+    .activity-card div[style*="flex: 1"] {
+      flex: 0 0 100% !important;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 12px;
+    }
+    .activity-card div[style*="flex-shrink: 0"] {
+      width: 100% !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+    }
+    .activity-card div[style*="border-right: 1px solid"] {
+      border-right: none !important;
+      padding-right: 0 !important;
+      text-align: left !important;
+    }
+    .activity-card div[style*="justify-content: flex-end"] {
+      justify-content: flex-start !important;
+    }
+    .activity-card a[style*="width: 32px"] {
+      margin-left: auto;
+    }
+  }
+</style>
+
+  
 
   
 
