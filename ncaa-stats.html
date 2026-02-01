@@ -1381,6 +1381,7 @@
       display: flex;
       transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
       will-change: transform;
+      width: 100%;
     }
     .thumb-page {
       display: grid;
@@ -1396,13 +1397,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* 3, 6번 요청: 썸네일 얼굴 위치 최적화 */
-      object-position: center 20%; 
+      /* 얼굴 위치 조정: 위에서 15% 지점에 초점 */
+      object-position: 50% 15%; 
       border-radius: 16px;
       cursor: pointer;
       border: 1px solid #f1f1f1;
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
+      display: block;
     }
     .thumb-img:hover {
       transform: translateY(-5px);
@@ -1411,13 +1413,19 @@
     
     .pos-center { object-position: center center !important; }
 
-    /* 2번 요청: 모바일 최적화 (길게 늘어짐 방지) */
+    /* 모바일 에러 수정: 겹침 방지 및 얼굴 위치 재조정 */
     @media (max-width: 768px) {
       .thumb-page {
-        grid-template-columns: repeat(2, 1fr); /* 모바일은 2열 */
-        grid-template-rows: repeat(3, 220px); /* 3행으로 고정하여 6개씩 표시 */
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px); /* 높이를 줄여 겹침 방지 */
+        gap: 10px;
+        padding: 0 10px 20px;
+        min-height: 580px;
       }
-      .scroll-nav { width: 36px !important; height: 36px !important; }
+      .thumb-img {
+        object-position: 50% 10%; /* 모바일에서 더 상단 고정 */
+      }
+      .scroll-nav { width: 38px !important; height: 38px !important; top: 50% !important; }
     }
 
     .scroll-nav {
@@ -1517,16 +1525,17 @@
             <title>Joshua Hong - Gallery</title>
             <style>
               body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; overflow: hidden; }
-              #mainImg { max-width: 90%; max-height: 72vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
-              .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); font-size: 80px; color: rgba(255,255,255,0.25); cursor: pointer; padding: 20px 40px; user-select: none; transition: 0.3s; z-index: 10; }
+              #mainImg { max-width: 95%; max-height: 70vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
+              .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); font-size: 70px; color: rgba(255,255,255,0.25); cursor: pointer; padding: 20px 30px; user-select: none; transition: 0.3s; z-index: 10; }
               .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
               #prev { left: 0; } #next { right: 0; }
               #close-x { position: absolute; top: 20px; right: 20px; font-size: 45px; cursor: pointer; opacity: 0.6; z-index: 20; transition: 0.3s; line-height: 1; }
               #close-x:hover { opacity: 1; transform: rotate(90deg); }
-              .bottom-controls { position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 12px 45px; border-radius: 30px; font-weight: 800; font-size: 14px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
+              .bottom-controls { position: absolute; bottom: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 12px 40px; border-radius: 30px; font-weight: 800; font-size: 14px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
               .close-btn-bottom:hover { background: #ff4d4d; color: #fff; }
               .counter { font-size: 14px; opacity: 0.5; letter-spacing: 2px; }
+              @media (max-width: 600px) { .nav-btn { font-size: 40px; padding: 15px; } }
             </style>
           </head>
           <body>
@@ -1565,6 +1574,7 @@
     }
   </script>
 </div>
+  
 
   <div style="text-align: center; padding-top: 20px; margin: 40px 15px 0; border-top: 1px solid #f1f1f1;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
