@@ -272,6 +272,21 @@
       overflow: hidden; /* 모서리 끊김 해결 */
     }
 
+    /* 실시간 상태 표시 점 애니메이션 추가 */
+    @keyframes live-pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: live-pulse 2s infinite ease-in-out;
+    }
+
     @media (max-width: 768px) {
       .log-table thead { display: none; }
       .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
@@ -398,7 +413,10 @@
 <div class="live-event-card">
   <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="background: #0c2340; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px;">IN PROGRESS</span>
+      <div style="background: #0c2340; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+        <span class="live-dot"></span>
+        IN PROGRESS
+      </div>
       <div>
         <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
         <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 71/6,701 yards</div>
