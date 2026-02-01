@@ -1358,7 +1358,7 @@
 
   
 
-<div class="gallery-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="gallery-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; position: relative;">
   <div style="display: flex; align-items: center; margin-bottom: 25px; border-left: 5px solid #806600; padding-left: 15px; margin-left: 15px;">
     <div style="display: flex; align-items: center; justify-content: center; background: #fdfaf3; width: 34px; height: 34px; border-radius: 8px; border: 1px solid #f1e6d0; margin-right: 12px;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1370,26 +1370,100 @@
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
-  <div id="thumbScroll" style="display: flex; overflow-x: auto; gap: 15px; padding: 0 15px 20px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory;">
+  <style>
+    #thumbWrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    #thumbScroll {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+      will-change: transform;
+    }
+    .thumb-page {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 280px); /* 900px 너비에 맞춘 높이 조정 */
+      gap: 15px;
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      padding-bottom: 20px;
+    }
+    .thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      border: 1px solid #f1f1f1;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .thumb-img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    /* 6번 요청: 얼굴 위치 조정 */
+    .pos-focus { object-position: center 25%; }
+    .pos-center { object-position: center center; }
 
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(0)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(1)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(2)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(3)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(4)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(5)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(6)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(7)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(8)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(9)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+    /* 내비게이션 화살표 */
+    .scroll-nav {
+      position: absolute;
+      top: 55%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border: 1px solid #0c2340;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      color: #0c2340;
+    }
+    .scroll-nav:hover { background: #0c2340; color: #fff; }
+    .scroll-nav.prev { left: -5px; }
+    .scroll-nav.next { right: -5px; }
+  </style>
 
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(10)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(11)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(12)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(13)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(14)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(15)" style="flex: 0 0 280px; height: 380px; object-fit: cover; border-radius: 16px; cursor: pointer; scroll-snap-align: start; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-   
+  <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </div>
+  <div class="scroll-nav next" onclick="scrollThumbs(1)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </div>
+
+  <div id="thumbWrapper">
+    <div id="thumbScroll">
+      <div class="thumb-page">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(0)" class="thumb-img pos-focus">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(1)" class="thumb-img pos-center">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(2)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(3)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(4)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(5)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(6)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(7)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(8)" class="thumb-img pos-focus">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(9)" class="thumb-img pos-focus">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(10)" class="thumb-img pos-center">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(11)" class="thumb-img pos-center">
+      </div>
+      <div class="thumb-page">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(12)" class="thumb-img pos-focus">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(13)" class="thumb-img pos-center">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(14)" class="thumb-img pos-focus">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(15)" class="thumb-img pos-focus">
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1410,7 +1484,15 @@
       "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg",
       "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg",
       "./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg"
-      ];
+    ];
+
+    let currentThumbPage = 0;
+    const totalPages = Math.ceil(images.length / 12);
+
+    function scrollThumbs(dir) {
+      currentThumbPage = (currentThumbPage + dir + totalPages) % totalPages;
+      document.getElementById('thumbScroll').style.transform = `translateX(-${currentThumbPage * 100}%)`;
+    }
 
     function popupGallery(index) {
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
@@ -1420,17 +1502,21 @@
       const popup = window.open("", "JoshuaGallery", `width=${w},height=${h},top=${top},left=${left},resizable=yes`);
       
       const content = `
-
+        <html>
+          <head>
             <title>Joshua Hong - Gallery</title>
             <style>
               body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif; overflow: hidden; }
-              #mainImg { max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; }
-              .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); font-size: 50px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 40px; user-select: none; transition: 0.3s; }
-              .nav-btn:hover { color: #fff; }
+              #mainImg { max-width: 90%; max-height: 75vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
+              .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); font-size: 70px; color: rgba(255,255,255,0.3); cursor: pointer; padding: 40px; user-select: none; transition: 0.3s; z-index: 10; }
+              .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.05); }
               #prev { left: 0; } #next { right: 0; }
-              #close { position: absolute; top: 20px; right: 20px; font-size: 30px; cursor: pointer; opacity: 0.6; }
-              #close:hover { opacity: 1; }
-              .counter { position: absolute; bottom: 30px; font-size: 14px; opacity: 0.5; letter-spacing: 2px; }
+              #close { position: absolute; top: 20px; right: 20px; font-size: 40px; cursor: pointer; opacity: 0.6; z-index: 20; transition: 0.3s; }
+              #close:hover { opacity: 1; transform: rotate(90deg); }
+              .bottom-controls { position: absolute; bottom: 35px; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 10px 35px; border-radius: 25px; font-weight: 800; font-size: 13px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
+              .close-btn-bottom:hover { background: #ff4d4d; color: #fff; }
+              .counter { font-size: 14px; opacity: 0.5; letter-spacing: 2px; }
             </style>
           </head>
           <body>
@@ -1438,7 +1524,10 @@
             <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
             <img id="mainImg" src="${images[index]}">
             <div id="next" class="nav-btn" onclick="move(1)">❯</div>
-            <div class="counter" id="countDisplay">${index + 1} / ${images.length}</div>
+            <div class="bottom-controls">
+              <button class="close-btn-bottom" onclick="window.close()">CLOSE</button>
+              <div class="counter" id="countDisplay">${index + 1} / ${images.length}</div>
+            </div>
             <script>
               let idx = ${index};
               const imgArray = ${JSON.stringify(images)};
@@ -1457,10 +1546,10 @@
                 if (e.key === "ArrowRight") move(1);
                 if (e.key === "Escape") window.close();
               });
-            ` + `</` + `script>
-
+            </` + `script>
+          </body>
+        </html>
       `;
-      
       popup.document.write(content);
       popup.document.close();
     }
