@@ -1397,7 +1397,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* 썸네일 얼굴 위치 조정 */
       object-position: center 15%; 
       border-radius: 16px;
       cursor: pointer;
@@ -1413,20 +1412,20 @@
     
     .pos-center { object-position: center center !important; }
 
-    /* 모바일 겹침 및 얼굴 잘림 해결 */
+    /* 모바일 4열 3행 유지 보정 */
     @media (max-width: 768px) {
       .thumb-page {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto); /* 높이 자동화로 겹침 해결 */
-        gap: 12px;
-        padding: 0 12px 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 8px;
+        padding: 0 10px 20px;
+        flex: 0 0 100%;
       }
       .thumb-img {
-        aspect-ratio: 1 / 1.1; /* 모바일 세로 비율 고정 */
+        aspect-ratio: 1 / 1.2;
         height: auto;
-        object-position: center 15%;
       }
-      .scroll-nav { width: 36px !important; height: 36px !important; top: 50% !important; }
+      .scroll-nav { width: 32px !important; height: 32px !important; top: 50% !important; }
     }
 
     .scroll-nav {
