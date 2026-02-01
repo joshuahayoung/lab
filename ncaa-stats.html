@@ -508,13 +508,24 @@
   </div>
 
   <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
-    <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 6px 12px; border-radius: 4px; transition: 0.2s;">
-      LIVE LEADERBOARD
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="7" y1="17" x2="17" y2="7"></line>
-        <polyline points="7 7 17 7 17 17"></polyline>
-      </svg>
-    </a>
+ <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
+  <span style="display: flex; align-items: center; gap: 6px;">
+    <span style="width: 5px; height: 5px; background-color: #e74c3c; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite;"></span>
+    LIVE LEADERBOARD
+  </span>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+</a>
+
+<style>
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
     <div style="text-align: right;">
       <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
       <span style="color: #ffffff; font-size: 18px; font-weight: 900;">-</span>
