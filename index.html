@@ -608,16 +608,18 @@ gtag('config', 'G-H1JW8YBDZ8');
   
 
 
-<div class="insight-section" style="max-width: 900px; margin: 0 auto 100px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+    <div class="insight-section" style="max-width: 900px; margin: 0 auto 100px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
-  <input type="checkbox" id="card-toggle" style="display: none;">
+  <input type="radio" name="insight-view" id="view-spring" checked style="display: none;">
+  <input type="radio" name="insight-view" id="view-winter" style="display: none;">
+  <input type="radio" name="insight-view" id="view-fall" style="display: none;">
 
   <style>
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      /* 데스크탑 기본 높이 */
-      min-height: 580px; 
+      min-height: 620px; 
       perspective: 1000px;
     }
     .insight-card {
@@ -630,103 +632,138 @@ gtag('config', 'G-H1JW8YBDZ8');
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.5s ease;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      /* 내용이 넘칠 경우 가독성을 위해 overflow 설정 유지 */
-      overflow: visible; 
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
     }
-    .card-current { transform: rotateY(0deg); z-index: 2; }
-    .card-archive { transform: rotateY(180deg); z-index: 1; }
 
-    #card-toggle:checked ~ .insight-card-wrapper .card-current { transform: rotateY(-180deg); z-index: 1; }
-    #card-toggle:checked ~ .insight-card-wrapper .card-archive { transform: rotateY(0deg); z-index: 2; }
+    /* Radio Button Logic for Switching */
+    #view-spring:checked ~ .insight-card-wrapper .card-spring,
+    #view-winter:checked ~ .insight-card-wrapper .card-winter,
+    #view-fall:checked ~ .insight-card-wrapper .card-fall {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      z-index: 2;
+    }
 
-    .toggle-btn {
+    .nav-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       color: #94a3b8;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border: 1.2px solid rgba(148, 163, 184, 0.3);
       border-radius: 50px;
       transition: all 0.2s;
-      align-self: flex-start;
-      margin-top: 15px;
     }
-    .toggle-btn:hover {
+
+    .nav-btn:hover {
       background: rgba(201,138,46,0.1);
       color: #c98a2e;
+    }
+
+    /* Active Button Styling */
+    #view-spring:checked ~ .nav-container .btn-spring,
+    #view-winter:checked ~ .nav-container .btn-winter,
+    #view-fall:checked ~ .nav-container .btn-fall {
+      background: #c98a2e;
+      color: white;
       border-color: #c98a2e;
     }
+
     @keyframes pulse {
       0% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.3; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 모바일 반응형: 사진에서 확인된 텍스트 넘침 현상을 해결하기 위해 높이 대폭 확장 */
     @media (max-width: 768px) {
       .insight-card-wrapper { min-height: 850px; }
       .insight-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      /* 가장 좁은 화면에서도 LAST UPDATED 문구까지 여유 있게 포함되도록 설정 */
-      .insight-card-wrapper { min-height: 1050px; }
+      .insight-card-wrapper { min-height: 1080px; }
       .insight-card { padding: 20px 15px; }
+      .nav-btn { width: 100%; justify-content: center; }
     }
   </style>
 
   <div class="insight-card-wrapper">
     
-    <div class="insight-card card-current">
+    <div class="insight-card card-spring">
       <div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px;">
           <div style="display: flex; align-items: center;">
             <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
             </div>
             <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
           </div>
           <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
             <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
-            CURRENT FOCUS
+            SPRING OPENER
           </span>
         </div>
 
-      <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px;">
-          <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Winter Preparation & Competitive Assessment</p>
-          <p style="margin-bottom: 15px;">
-            January training was structured around refining <strong>long-iron dispersion</strong> and reinforcing <strong>short-game execution</strong>, with the objective of stabilizing scoring opportunities from mid-to-long range.
+        <div style="font-size: 14.5px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px;">
+          <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Cancun, Mexico: Technical Assessment</p>
+          <p style="margin-bottom: 12px;">
+            <strong>Logistics:</strong> Friday departure (04:00) via SAT-AUS-DFW-CUN. Arrival focused on site verification and green speed calibration. Finalized prep with intensive range and putting sessions until sunset to adjust to local turf and wind.
           </p>
-          <p style="margin-bottom: 15px;">
-            Performance during the Jan 22–23 qualifying rounds (R1–R2) reflected improved ball-striking consistency under competitive conditions. During Round 3, a separate data point was recorded as Joshua tested aggressive driving lines on the Oaks Course in a <strong>high-margin scenario</strong>. This round provided useful feedback on driver control and decision-making under full-power execution.
+          <p style="margin-bottom: 12px;">
+            <strong>R1-R2 Data:</strong> High-wind conditions exposed inconsistent off-the-tee accuracy. Scoring was stabilized through high-efficiency scrambling, including a 100% conversion rate on 8 birdie opportunities in R1. Back-nine dispersion in R2 resulted in scoring erosion, mitigated by par-save execution.
           </p>
-          <p style="margin-bottom: 15px;">
-            A corrective training session followed on Jan 29 at TPC San Antonio, focusing on driver alignment and short-game touch to recalibrate feel and reestablish R1–R2 performance benchmarks.
-          </p>
-          <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-            Preparation continues with the goal of entering the Spring season fully calibrated and ready to contribute consistently across all competitive rounds.
+          <p style="margin-bottom: 12px;">
+            <strong>R3 & Result:</strong> Improved driver alignment and adjustment to difficult pin positions. Carded -1 for the round (Total E, T3). Technical data acquired confirms <strong>driver accuracy recalibration</strong> as the primary focus for the upcoming home event.
           </p>
         </div>
       </div>
-      
-      <div>
-        <label for="card-toggle" class="toggle-btn">
-          VIEW FALL 2025 ANALYSIS (ARCHIVE) <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </label>
-        <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: JAN 26, 2026</div>
-      </div>
+      <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: FEB 4, 2026</div>
     </div>
 
-    <div class="insight-card card-archive">
+    <div class="insight-card card-winter">
+      <div>
+        <div style="display: flex; align-items: center; margin-bottom: 25px;">
+          <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
+          <h3 style="font-size: 22px; color: #94a3b8; margin: 0; font-weight: 800;">Winter Prep Analysis</h3>
+        </div>
+        <div style="font-size: 14.5px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px;">
+          <p style="margin: 0 0 15px 0; color: #fff; font-weight: 700; font-size: 17px;">Pre-Season Calibration</p>
+          <p style="margin-bottom: 15px;">
+            January training focused on refining <strong>long-iron dispersion</strong> and reinforcing <strong>short-game execution</strong>. Data from Jan 22–23 qualifying rounds reflected improved ball-striking consistency under competitive pressure.
+          </p>
+          <p style="margin-bottom: 15px;">
+            A separate data point was recorded in R3 while testing aggressive driving lines in a high-margin scenario, providing feedback on driver control under full-power execution.
+          </p>
+          <p style="margin-bottom: 0;">
+            Corrective sessions at TPC San Antonio followed to recalibrate alignment and reestablish performance benchmarks ahead of the season opener.
+          </p>
+        </div>
+      </div>
+      <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: JAN 26, 2026</div>
+    </div>
+
+    <div class="insight-card card-fall">
       <div>
         <div style="display: flex; align-items: center; margin-bottom: 25px;">
           <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
@@ -734,27 +771,37 @@ gtag('config', 'G-H1JW8YBDZ8');
           </div>
           <h3 style="font-size: 22px; color: #94a3b8; margin: 0; font-weight: 800;">Performance Archive</h3>
         </div>
-
-      <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; font-style: italic;">
-          <p style="margin: 0 0 18px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus</p>
-          <p style="margin-bottom: 18px;">
-            The Patriot All-America Invitational served as a competitive reference point against a national amateur field, including several of the top collegiate players. Following the event, a technical review identified <strong>long-iron performance</strong> as an area for improvement ahead of Spring qualifying.
+        <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; font-style: italic;">
+          <p style="margin: 0 0 15px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus</p>
+          <p style="margin-bottom: 15px;">
+            Technical review following the Patriot All-America Invitational identified long-iron proximity as a key area for off-season development.
           </p>
-          <p style="margin-bottom: 18px;">
-            In coordination with the UTSA coaching staff, a short-term adjustment was approved for Joshua to remain on campus and continue <strong>individual training during January</strong> rather than participate in the scheduled team trip.
+          <p style="margin-bottom: 15px;">
+            In coordination with coaching staff, January was dedicated to individual technical training to address identified dispersion areas prior to the Spring competitive schedule.
           </p>
           <p style="margin-bottom: 0;">
-            This period was used to address identified technical areas prior to Spring qualifying rounds and subsequent team events. Joshua continues preparation within the UTSA program for the Spring season.
+            Preparation continues within the UTSA program framework to ensure consistent contribution across team events.
           </p>
         </div>
       </div>
-
-      <label for="card-toggle" class="toggle-btn" style="margin-top: 20px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg> BACK TO CURRENT FOCUS
-      </label>
+      <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">ARCHIVED: DEC 2025</div>
     </div>
 
   </div>
+
+  <div class="nav-container">
+    <label for="view-spring" class="nav-btn btn-spring">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      SPRING OPENER (CANCUN)
+    </label>
+    <label for="view-winter" class="nav-btn btn-winter">
+      VIEW WINTER PREP
+    </label>
+    <label for="view-fall" class="nav-btn btn-fall">
+      VIEW FALL 2025 ARCHIVE
+    </label>
+  </div>
+
 </div>
 
   
