@@ -608,15 +608,15 @@ gtag('config', 'G-H1JW8YBDZ8');
   
 
 
-<div class="insight-section" style="max-width: 900px; margin: 0 auto 100px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div id="joshua-unique-section" class="insight-section" style="max-width: 900px; margin: 0 auto 100px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <input type="radio" name="insight-view" id="view-spring" checked style="display: none;">
   <input type="radio" name="insight-view" id="view-winter" style="display: none;">
   <input type="radio" name="insight-view" id="view-fall" style="display: none;">
 
   <style>
-    /* Joshua-Unique Isolated Namespace */
-    .joshua-unique-wrapper {
+    /* Joshua-Unique Isolated Namespace - Scoped to ID */
+    #joshua-unique-section .joshua-unique-wrapper {
       position: relative;
       width: 100%;
       min-height: 550px; 
@@ -625,7 +625,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       padding: 0;
       box-sizing: border-box !important;
     }
-    .joshua-unique-card {
+    #joshua-unique-section .joshua-unique-card {
       background: #111;
       border-radius: 25px;
       padding: 35px 30px;
@@ -648,24 +648,25 @@ gtag('config', 'G-H1JW8YBDZ8');
     }
 
     /* Radio Control: Show relevant card based on selection */
-    #view-spring:checked ~ .joshua-unique-wrapper .card-spring,
-    #view-winter:checked ~ .joshua-unique-wrapper .card-winter,
-    #view-fall:checked ~ .joshua-unique-wrapper .card-fall {
+    #joshua-unique-section #view-spring:checked ~ .joshua-unique-wrapper .card-spring,
+    #joshua-unique-section #view-winter:checked ~ .joshua-unique-wrapper .card-winter,
+    #joshua-unique-section #view-fall:checked ~ .joshua-unique-wrapper .card-fall {
       opacity: 1;
       visibility: visible;
       transform: scale(1);
       z-index: 2;
     }
 
-    .joshua-unique-nav-container {
+    #joshua-unique-section .joshua-unique-nav-container {
       display: flex;
       gap: 10px;
-      margin-top: 20px;
+      margin: 20px 0 0 0;
       flex-wrap: wrap;
       box-sizing: border-box !important;
+      padding: 0 10px;
     }
 
-    .joshua-unique-nav-btn {
+    #joshua-unique-section .joshua-unique-nav-btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -682,16 +683,16 @@ gtag('config', 'G-H1JW8YBDZ8');
       box-sizing: border-box !important;
     }
 
-    .joshua-unique-nav-btn:hover {
+    #joshua-unique-section .joshua-unique-nav-btn:hover {
       background: rgba(201,138,46,0.1);
       color: #c98a2e;
       border-color: #c98a2e;
     }
 
     /* Active State Styling */
-    #view-spring:checked ~ .joshua-unique-nav-container .btn-spring,
-    #view-winter:checked ~ .joshua-unique-nav-container .btn-winter,
-    #view-fall:checked ~ .joshua-unique-nav-container .btn-fall {
+    #joshua-unique-section #view-spring:checked ~ .joshua-unique-nav-container .btn-spring,
+    #joshua-unique-section #view-winter:checked ~ .joshua-unique-nav-container .btn-winter,
+    #joshua-unique-section #view-fall:checked ~ .joshua-unique-nav-container .btn-fall {
       background: rgba(201,138,46,0.15);
       color: #c98a2e;
       border-color: #c98a2e;
@@ -706,13 +707,13 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     /* Responsive Logic within Scoped Namespace */
     @media (max-width: 768px) {
-      .joshua-unique-wrapper { min-height: 800px; }
-      .joshua-unique-card { padding: 25px 20px; }
+      #joshua-unique-section .joshua-unique-wrapper { min-height: 800px; }
+      #joshua-unique-section .joshua-unique-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .joshua-unique-wrapper { min-height: 1100px; }
-      .joshua-unique-card { padding: 20px 15px; }
-      .joshua-unique-nav-btn { width: 100%; justify-content: center; }
+      #joshua-unique-section .joshua-unique-wrapper { min-height: 1100px; }
+      #joshua-unique-section .joshua-unique-card { padding: 20px 15px; }
+      #joshua-unique-section .joshua-unique-nav-btn { width: 100%; justify-content: center; }
     }
   </style>
 
@@ -804,6 +805,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 </div>
 
+    
   
 
 
