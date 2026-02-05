@@ -809,48 +809,34 @@ gtag('config', 'G-H1JW8YBDZ8');
     
   
 <style>
-  /* 1. 모든 상위 컨테이너의 폭 제한 해제 */
-  html, body, .main-container, .content-area {
+  /* 1. 상단 섹션과 하단 요소 간의 간섭을 완전히 차단 */
+  #joshua-unique-section {
+    clear: both !important;
+    display: block !important;
     width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
   }
 
-  /* 2. Insight 섹션 이후의 모든 요소를 900px로 강제 고정 */
-  #joshua-unique-section ~ * {
+  /* 2. 이 아래에 오는 모든 테이블 및 컨테이너의 '넓이'만 강제 복구 */
+  /* 내부 구성(글씨, 정렬)에 영향을 주는 display 속성은 절대 건드리지 않습니다. */
+  #joshua-unique-section ~ div,
+  #joshua-unique-section ~ table,
+  #joshua-unique-section ~ section,
+  #joshua-unique-section ~ center {
     max-width: 900px !important;
-    width: 95% !important; /* 모바일 여백 확보를 위해 95% 권장 */
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    display: block !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     box-sizing: border-box !important;
-    clear: both !important;
   }
 
-  /* 3. 테이블 자체의 인라인 스타일(고정폭) 강제 덮어쓰기 */
-  #joshua-unique-section ~ * table,
-  #joshua-unique-section ~ * div,
-  #joshua-unique-section ~ table {
-    width: 100% !important;
-    max-width: 900px !important;
-    table-layout: auto !important; /* 내용에 맞게 조절 */
-  }
-
-  /* 4. 모바일 환경 최적화 - 좁아지는 현상 원천 차단 */
+  /* 3. 모바일에서 좁아진 원인인 좌우 패딩만 제거하여 원래 넓이 확보 */
   @media (max-width: 900px) {
-    #joshua-unique-section ~ * {
+    #joshua-unique-section ~ div,
+    #joshua-unique-section ~ table {
       width: 100% !important;
       max-width: 100% !important;
-      padding: 0 10px !important;
-    }
-    
-    #joshua-unique-section ~ table,
-    #joshua-unique-section ~ * table {
-      min-width: 0 !important;
-      width: 100% !important;
-      display: block !important; /* 테이블이 화면을 뚫고 나가지 않게 함 */
-      overflow-x: auto !important;
     }
   }
 </style>
