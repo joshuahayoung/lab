@@ -809,24 +809,48 @@ gtag('config', 'G-H1JW8YBDZ8');
     
   
 <style>
-  /* 이 섹션 이후에 오는 모든 직접적인 div와 table 구조에 영향을 미칩니다. */
-  .insight-section ~ div, 
-  .insight-section ~ table,
-  .insight-section ~ section {
-    max-width: 900px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+  /* 1. 모든 상위 컨테이너의 폭 제한 해제 */
+  html, body, .main-container, .content-area {
     width: 100% !important;
-    box-sizing: border-box !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 모바일 환경에서 하단 테이블들이 잘리지 않도록 대응 */
+  /* 2. Insight 섹션 이후의 모든 요소를 900px로 강제 고정 */
+  #joshua-unique-section ~ * {
+    max-width: 900px !important;
+    width: 95% !important; /* 모바일 여백 확보를 위해 95% 권장 */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    clear: both !important;
+  }
+
+  /* 3. 테이블 자체의 인라인 스타일(고정폭) 강제 덮어쓰기 */
+  #joshua-unique-section ~ * table,
+  #joshua-unique-section ~ * div,
+  #joshua-unique-section ~ table {
+    width: 100% !important;
+    max-width: 900px !important;
+    table-layout: auto !important; /* 내용에 맞게 조절 */
+  }
+
+  /* 4. 모바일 환경 최적화 - 좁아지는 현상 원천 차단 */
   @media (max-width: 900px) {
-    .insight-section ~ div, 
-    .insight-section ~ table,
-    .insight-section ~ section {
+    #joshua-unique-section ~ * {
+      width: 100% !important;
       max-width: 100% !important;
       padding: 0 10px !important;
+    }
+    
+    #joshua-unique-section ~ table,
+    #joshua-unique-section ~ * table {
+      min-width: 0 !important;
+      width: 100% !important;
+      display: block !important; /* 테이블이 화면을 뚫고 나가지 않게 함 */
+      overflow-x: auto !important;
     }
   }
 </style>
