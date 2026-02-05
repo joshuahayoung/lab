@@ -618,9 +618,10 @@ gtag('config', 'G-H1JW8YBDZ8');
     .insight-card-wrapper {
       position: relative;
       width: 100%;
-      /* 기본 높이 설정 및 모바일 대응을 위한 유연한 높이 관리 */
-      min-height: 600px; 
+      min-height: 550px; 
       perspective: 1000px;
+      margin: 0;
+      padding: 0;
     }
     .insight-card {
       background: #111;
@@ -629,6 +630,8 @@ gtag('config', 'G-H1JW8YBDZ8');
       color: white;
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
@@ -699,11 +702,11 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     /* Responsive: Expand height for mobile to prevent text overflow */
     @media (max-width: 768px) {
-      .insight-card-wrapper { min-height: 900px; }
-      .insight-card { padding: 25px 20px; position: absolute; }
+      .insight-card-wrapper { min-height: 800px; }
+      .insight-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .insight-card-wrapper { min-height: 1250px; }
+      .insight-card-wrapper { min-height: 1100px; }
       .insight-card { padding: 20px 15px; }
       .nav-btn { width: 100%; justify-content: center; }
     }
