@@ -615,15 +615,17 @@ gtag('config', 'G-H1JW8YBDZ8');
   <input type="radio" name="insight-view" id="view-fall" style="display: none;">
 
   <style>
-    .insight-card-wrapper {
+    /* Joshua-Unique Isolated Namespace */
+    .joshua-unique-wrapper {
       position: relative;
       width: 100%;
       min-height: 550px; 
       perspective: 1000px;
       margin: 0;
       padding: 0;
+      box-sizing: border-box !important;
     }
-    .insight-card {
+    .joshua-unique-card {
       background: #111;
       border-radius: 25px;
       padding: 35px 30px;
@@ -636,7 +638,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       height: 100%;
       backface-visibility: hidden;
       transition: all 0.5s ease-in-out;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -646,23 +648,24 @@ gtag('config', 'G-H1JW8YBDZ8');
     }
 
     /* Radio Control: Show relevant card based on selection */
-    #view-spring:checked ~ .insight-card-wrapper .card-spring,
-    #view-winter:checked ~ .insight-card-wrapper .card-winter,
-    #view-fall:checked ~ .insight-card-wrapper .card-fall {
+    #view-spring:checked ~ .joshua-unique-wrapper .card-spring,
+    #view-winter:checked ~ .joshua-unique-wrapper .card-winter,
+    #view-fall:checked ~ .joshua-unique-wrapper .card-fall {
       opacity: 1;
       visibility: visible;
       transform: scale(1);
       z-index: 2;
     }
 
-    .nav-container {
+    .joshua-unique-nav-container {
       display: flex;
       gap: 10px;
       margin-top: 20px;
       flex-wrap: wrap;
+      box-sizing: border-box !important;
     }
 
-    .nav-btn {
+    .joshua-unique-nav-btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -676,45 +679,46 @@ gtag('config', 'G-H1JW8YBDZ8');
       border: 1.2px solid rgba(148, 163, 184, 0.3);
       border-radius: 50px;
       transition: all 0.2s;
+      box-sizing: border-box !important;
     }
 
-    .nav-btn:hover {
+    .joshua-unique-nav-btn:hover {
       background: rgba(201,138,46,0.1);
       color: #c98a2e;
       border-color: #c98a2e;
     }
 
     /* Active State Styling */
-    #view-spring:checked ~ .nav-container .btn-spring,
-    #view-winter:checked ~ .nav-container .btn-winter,
-    #view-fall:checked ~ .nav-container .btn-fall {
+    #view-spring:checked ~ .joshua-unique-nav-container .btn-spring,
+    #view-winter:checked ~ .joshua-unique-nav-container .btn-winter,
+    #view-fall:checked ~ .joshua-unique-nav-container .btn-fall {
       background: rgba(201,138,46,0.15);
       color: #c98a2e;
       border-color: #c98a2e;
       box-shadow: 0 0 15px rgba(201,138,46,0.1);
     }
 
-    @keyframes pulse {
+    @keyframes pulse-joshua {
       0% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.3; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Responsive: Expand height for mobile to prevent text overflow */
+    /* Responsive Logic within Scoped Namespace */
     @media (max-width: 768px) {
-      .insight-card-wrapper { min-height: 800px; }
-      .insight-card { padding: 25px 20px; }
+      .joshua-unique-wrapper { min-height: 800px; }
+      .joshua-unique-card { padding: 25px 20px; }
     }
     @media (max-width: 480px) {
-      .insight-card-wrapper { min-height: 1100px; }
-      .insight-card { padding: 20px 15px; }
-      .nav-btn { width: 100%; justify-content: center; }
+      .joshua-unique-wrapper { min-height: 1100px; }
+      .joshua-unique-card { padding: 20px 15px; }
+      .joshua-unique-nav-btn { width: 100%; justify-content: center; }
     }
   </style>
 
-  <div class="insight-card-wrapper">
+  <div class="joshua-unique-wrapper">
     
-    <div class="insight-card card-spring">
+    <div class="joshua-unique-card card-spring">
       <div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px;">
           <div style="display: flex; align-items: center;">
@@ -724,28 +728,28 @@ gtag('config', 'G-H1JW8YBDZ8');
             <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
           </div>
           <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
-            <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
+            <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: pulse-joshua 1.5s infinite;"></span>
             SPRING OPENER
           </span>
         </div>
 
-    <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px;">
-  <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Spring Season Opener — Cancun, Mexico</p>
- <p style="margin-bottom: 12px;">
-Travel began before 4:00 a.m., including ground transportation from San Antonio to Austin, followed by connecting flights through Dallas to Cancun. Upon arrival, preparation focused on course and putting green familiarization ahead of competition.
-</p>
-  <p style="margin-bottom: 12px;">Round 1 was played in high-wind conditions. Driver accuracy varied, while scoring was maintained through short-game execution. The round concluded at 70 (-2).</p>
-  <p style="margin-bottom: 12px;">In Round 2, driver dispersion affected play, including an early double bogey. Birdies on the front nine were followed by dropped strokes on the back nine. Scrambling limited further score impact. The round concluded at 75 (+3).</p>
-  <p style="margin-bottom: 12px;">Round 3 showed improved driver alignment under continued wind conditions. The round concluded at 71 (-1).</p>
-  <p style="margin-bottom: 12px;">Joshua finished the tournament at Even Par, placing T3, with only two players ahead.</p>
-  <p style="margin-bottom: 12px; color: #fff; font-weight: 700;">As a result, his national ranking moved from No. 523 to No. 403.</p>
-  <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with ongoing driver accuracy calibration.</p>
-</div>
-</div>
-<div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: FEB 4, 2026</div>
-</div>
+        <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px;">
+          <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Spring Season Opener — Cancun, Mexico</p>
+          <p style="margin-bottom: 12px;">
+          Travel began before 4:00 a.m., including ground transportation from San Antonio to Austin, followed by connecting flights through Dallas to Cancun. Upon arrival, preparation focused on course and putting green familiarization ahead of competition.
+          </p>
+          <p style="margin-bottom: 12px;">Round 1 was played in high-wind conditions. Driver accuracy varied, while scoring was maintained through short-game execution. The round concluded at 70 (-2).</p>
+          <p style="margin-bottom: 12px;">In Round 2, driver dispersion affected play, including an early double bogey. Birdies on the front nine were followed by dropped strokes on the back nine. Scrambling limited further score impact. The round concluded at 75 (+3).</p>
+          <p style="margin-bottom: 12px;">Round 3 showed improved driver alignment under continued wind conditions. The round concluded at 71 (-1).</p>
+          <p style="margin-bottom: 12px;">Joshua finished the tournament at Even Par, placing T3, with only two players ahead.</p>
+          <p style="margin-bottom: 12px; color: #fff; font-weight: 700;">As a result, his national ranking moved from No. 523 to No. 403.</p>
+          <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with ongoing driver accuracy calibration.</p>
+        </div>
+      </div>
+      <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: FEB 4, 2026</div>
+    </div>
 
-    <div class="insight-card card-winter">
+    <div class="joshua-unique-card card-winter">
       <div>
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px;">
           <div style="display: flex; align-items: center;">
@@ -755,7 +759,7 @@ Travel began before 4:00 a.m., including ground transportation from San Antonio 
             <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
           </div>
           <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
-            <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: pulse 1.5s infinite;"></span>
+            <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%; animation: pulse-joshua 1.5s infinite;"></span>
             CURRENT FOCUS
           </span>
         </div>
@@ -771,7 +775,7 @@ Travel began before 4:00 a.m., including ground transportation from San Antonio 
       <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">LAST UPDATED: JAN 26, 2026</div>
     </div>
 
-    <div class="insight-card card-fall">
+    <div class="joshua-unique-card card-fall">
       <div>
         <div style="display: flex; align-items: center; margin-bottom: 25px;">
           <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
@@ -792,10 +796,10 @@ Travel began before 4:00 a.m., including ground transportation from San Antonio 
 
   </div>
 
-  <div class="nav-container">
-    <label for="view-spring" class="nav-btn btn-spring">Spring Opener</label>
-    <label for="view-winter" class="nav-btn btn-winter">Winter Prep</label>
-    <label for="view-fall" class="nav-btn btn-fall">Fall Archive</label>
+  <div class="joshua-unique-nav-container">
+    <label for="view-spring" class="joshua-unique-nav-btn btn-spring">Spring Opener</label>
+    <label for="view-winter" class="joshua-unique-nav-btn btn-winter">Winter Prep</label>
+    <label for="view-fall" class="joshua-unique-nav-btn btn-fall">Fall Archive</label>
   </div>
 
 </div>
