@@ -217,20 +217,6 @@
   </script>
 </body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
@@ -253,7 +239,7 @@
 </div>
 
 <script>
-// 1. Official Tournament Chart (툴팁 상세 정보 추가)
+// 1. Official Tournament Chart (데이터 정정 반영)
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
 new Chart(ctxOfficial, {
   type: 'line',
@@ -261,7 +247,7 @@ new Chart(ctxOfficial, {
     labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)', '2/01 (Compadres)'],
     datasets: [{
       label: 'Scoring Avg',
-      data: [69.66, 70.66, 71.33, 72.0, 72.0, 72.0],
+      data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00],
       borderColor: '#F15A22',
       backgroundColor: 'rgba(241, 90, 34, 0.1)',
       borderWidth: 2,
@@ -273,7 +259,7 @@ new Chart(ctxOfficial, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { reverse: false, min: 68, max: 74, title: { display: true, text: 'Strokes' } } },
+    scales: { y: { reverse: false, min: 68, max: 76, title: { display: true, text: 'Strokes' } } },
     plugins: {
       legend: { display: false },
       tooltip: {
@@ -303,7 +289,7 @@ new Chart(ctxOfficial, {
   }
 });
 
-// 2. Internal Qualifier Chart (날짜 및 코스 최종 보정)
+// 2. Internal Qualifier Chart (26-ene 76타 추가 및 데이터 정합성 유지)
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
 new Chart(ctxInternal, {
   type: 'line',
@@ -341,10 +327,3 @@ new Chart(ctxInternal, {
   }
 });
 </script>
-
-
-
-
-
-
-
