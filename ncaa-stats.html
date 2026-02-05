@@ -626,73 +626,69 @@
     </div>
 </div>
 
-<style>
-    /* 모바일 대응 조정 */
-    @media (max-width: 600px) {
-        .clipboard-content { padding: 40px 20px !important; }
-        .memo-body { max-width: 100% !important; }
-        .post-it { 
-            position: relative !important; 
-            right: 0 !important; 
-            bottom: 0 !important; 
-            margin: 30px auto 0 !important; 
-            width: 90% !important; 
-            transform: rotate(1deg) !important;
-        }
-    }
-</style>
-
-<div class="clipboard-wrapper" style="max-width: 750px; margin: 0 auto 100px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; padding: 0 15px; box-sizing: border-box;">
-    <div style="width: 120px; height: 40px; background: #475569; border-radius: 8px 8px 0 0; margin: 0 auto; position: relative; top: 15px; z-index: 2; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); border: 2px solid #0c2340; border-bottom: none;"></div>
+<div class="legal-pad-wrapper" style="max-width: 900px; margin: 0 auto 100px; position: relative; font-family: 'Courier New', Courier, monospace; padding: 0 15px; box-sizing: border-box;">
+    <div style="width: 100%; height: 35px; background: #334155; border-radius: 15px 15px 0 0; position: relative; z-index: 2; box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2); border: 1px solid #1e293b;">
+        <div style="display: flex; justify-content: center; gap: 40px; padding-top: 10px;">
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+        </div>
+    </div>
     
-    <div class="clipboard-content" style="background: #ffffff; border: 3px solid #0c2340; border-radius: 15px; box-shadow: 15px 15px 0px rgba(12, 35, 64, 0.05), 0 25px 50px rgba(0,0,0,0.1); padding: 50px 40px; position: relative; min-height: 500px;">
+    <div class="legal-pad-content" style="background: #fff9c4; background-image: linear-gradient(#e5e0a3 1px, transparent 1px); background-size: 100% 28px; border-left: 1px solid #e5e0a3; border-right: 1px solid #e5e0a3; border-bottom: 4px solid #d4cf92; border-radius: 0 0 50px 50px; padding: 40px 40px 180px 80px; position: relative; box-shadow: 15px 15px 30px rgba(0,0,0,0.07); min-height: 550px; overflow: hidden;">
         
-        <div style="position: absolute; top: 25px; right: 25px; transform: rotate(15deg); opacity: 0.4;">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20h9"></path>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-            </svg>
+        <div style="position: absolute; left: 65px; top: 0; bottom: 0; width: 2px; border-left: 1px solid #ff8a80; border-right: 1px solid #ff8a80;"></div>
+
+        <div style="margin-bottom: 45px; position: relative;">
+            <span style="font-size: 14px; color: #d32f2f; font-weight: 700; text-transform: uppercase; font-family: 'Segoe UI', sans-serif;">Date: Feb 05, 2026</span>
+            <h3 style="margin: 10px 0 0 0; color: #0c2340; font-size: 24px; font-weight: 900; font-family: 'Segoe UI', sans-serif; text-transform: uppercase; border-bottom: 2px solid #0c2340; display: inline-block;">
+                Performance Analysis & Training Plan
+            </h3>
         </div>
 
-        <h3 style="margin: 0 0 35px 0; color: #0c2340; font-size: 20px; font-weight: 900; border-bottom: 3px double #e2e8f0; padding-bottom: 12px; display: inline-block; text-transform: uppercase;">
-            Performance Analysis & Plan
-        </h3>
-
-        <div class="memo-body" style="display: flex; flex-direction: column; gap: 25px; max-width: 62%;">
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <div class="memo-body" style="display: flex; flex-direction: column; gap: 28px; max-width: 92%; position: relative; z-index: 1;">
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900; font-family: 'Segoe UI', sans-serif;">01.</span>
                 <div>
-                  <h4 style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 900; text-transform: uppercase;">R3 Technical Feedback</h4>
-<p style="margin: 5px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.6;">
-    <strong>Status:</strong> Increased yardage applied under narrow fairway/high-wind conditions. Driver and long-iron dispersion data recorded for technical adjustment and subsequent training. <br>
-    <strong>Focus:</strong> Maintaining consistent short-game execution (wedge/putting) while prioritizing dispersion recalibration.
-</p>
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; font-family: 'Segoe UI', sans-serif; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">R3 Technical Feedback</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500; font-family: 'Segoe UI', sans-serif;">
+                        <strong>Status:</strong> Increased yardage applied under narrow fairway/high-wind conditions. Driver and long-iron dispersion data recorded for technical adjustment and subsequent training. <br>
+                        <strong>Focus:</strong> Maintaining consistent short-game execution (wedge/putting) while prioritizing dispersion recalibration.
+                    </p>
                 </div>
             </div>
 
-            <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900; font-family: 'Segoe UI', sans-serif;">02.</span>
                 <div>
-                    <h4 style="margin: 0; font-size: 13px; color: #0c2340; font-weight: 900; text-transform: uppercase;">Corrective Training</h4>
-               <p style="margin: 5px 0 0 0; font-size: 13.5px; color: #475569; line-height: 1.6;">
-    <strong>Feb 4:</strong> Technical training session conducted to address driver dispersion and long-iron control in preparation for the home tournament (Feb 23–24). Academic scheduling adjustments finalized to maintain balance with upcoming competition commitments.
-</p>
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; font-family: 'Segoe UI', sans-serif; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">Corrective Training</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500; font-family: 'Segoe UI', sans-serif;">
+                        <strong>Feb 4:</strong> Technical training session conducted to address driver dispersion and long-iron control in preparation for the home tournament (Feb 23–24). Academic scheduling adjustments finalized to maintain balance with upcoming competition commitments.
+                    </p>
                 </div>
             </div>
         </div>
 
-<div class="post-it" style="position: absolute; bottom: 60px; right: 35px; width: 220px; background: #fff9c4; padding: 22px; box-shadow: 10px 10px 20px rgba(0,0,0,0.08); border-left: 6px solid #806600; transform: rotate(-1.5deg); z-index: 5;">
-    <div style="font-size: 18px; margin-bottom: 8px;">🏠</div>
-    <h5 style="margin: 0 0 8px 0; font-size: 12px; color: #806600; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid rgba(128, 102, 0, 0.2);">Next Event Focus</h5>
-    <p style="margin: 0; font-size: 12.5px; color: #0c2340; font-weight: 700; line-height: 1.6;">
-        • Target: Home-Field Team Title<br>
-        • Drills: Dispersion Control (w/ Bryan)<br>
-        • Academic: Coursework management
-    </p>
-</div>
+        <div style="position: absolute; bottom: 40px; left: 85px; right: 40px; background: #ffffff; padding: 25px; border-radius: 15px; border: 1px solid #d4cf92; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-family: 'Segoe UI', sans-serif;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 12px;">
+                <h5 style="margin: 0; font-size: 14px; color: #d32f2f; font-weight: 900; text-transform: uppercase;">Next Event Focus & Updates</h5>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Spring Opener Technical Memo</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 200px;">
+                    • Target: Home-Field Team Title<br>
+                    • Drills: Dispersion Control (w/ Bryan)
+                </p>
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 200px;">
+                    • Academic: Coursework management<br>
+                    • Status: Training Schedule Optimized
+                </p>
+            </div>
+        </div>
 
-        <div style="margin-top: auto; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9;">
-            <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Spring Opener Technical Memo</span>
+        <div style="position: absolute; bottom: 15px; left: 100px; font-size: 9px; color: #cbd5e1; font-weight: 800; text-transform: uppercase; font-family: 'Segoe UI', sans-serif; letter-spacing: 1px;">
+            Technical Memo
         </div>
     </div>
 </div>
