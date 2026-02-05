@@ -805,9 +805,33 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 </div>
 
+
     
   
+<style>
+  /* 이 섹션 이후에 오는 모든 직접적인 div와 table 구조에 영향을 미칩니다. */
+  .insight-section ~ div, 
+  .insight-section ~ table,
+  .insight-section ~ section {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
+  /* 모바일 환경에서 하단 테이블들이 잘리지 않도록 대응 */
+  @media (max-width: 900px) {
+    .insight-section ~ div, 
+    .insight-section ~ table,
+    .insight-section ~ section {
+      max-width: 100% !important;
+      padding: 0 10px !important;
+    }
+  }
+</style>
+
+    
 
 
   
