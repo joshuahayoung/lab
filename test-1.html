@@ -239,381 +239,347 @@
     }
   </script>
 
-    
-    
-<div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 140px 10px 0; box-sizing: border-box;">
+<div id="joshua-ncaa-global-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 0; box-sizing: border-box; clear: both;">
 
-  <div style="text-align: center; margin-bottom: 35px;">
-    <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
-  NCAA STATS
-</h1>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
-      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">
-        JOSHUA HONG
-      </p>
-      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
-    </div>
-  </div>
-  
-
-<div class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box;">
-    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0;">
-        <img src="https://drive.google.com/thumbnail?id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty&sz=w1200" 
-             style="width: 100%; height: auto; display: block; object-fit: contain;" 
-             alt="Joshua Hong Performance"
-             onerror="this.src='https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty';">
-    </div>
-</div>
-
-</div>
-
-  
-
-  
-<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <style>
-    /* 테이블 구조 최적화 */
-    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
-    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
-    .log-table th.col-left { text-align: left; padding-left: 20px; }
-    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
-    .log-table td.col-left { text-align: left; padding-left: 20px; }
-    .under-par { color: #e74c3c !important; font-weight: 800 !important; }
-    .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
-    
-    /* 테두리 끊김 방지를 위해 overflow: hidden 재적용 및 스크롤 간섭 제거 */
-    .live-event-card { 
-      background: #ffffff; 
-      border: 2px solid #0c2340; 
-      border-radius: 20px; 
-      padding: 0; 
-      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
-      margin-bottom: 50px; 
-      position: relative; 
-      display: flex; 
-      flex-direction: column;
-      overflow: hidden; /* 모서리 끊김 해결 */
-    }
-
-    /* 실시간 상태 표시 점 애니메이션 추가 */
-    @keyframes live-pulse {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      background-color: #ffffff;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    @media (max-width: 768px) {
-      .log-table thead { display: none; }
-      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
-      .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
-      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
-      .hide-mobile { display: none !important; }
-      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
-      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
-      .ms-item:last-child { border-right: none; }
-      .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
-      .ms-value { display: block; font-size: 12px; font-weight: 800; }
-    }
-    
-    @media (min-width: 769px) {
-      .mobile-status-bar { display: none !important; }
-      .col-info { width: 55%; }
-      .col-score { width: 10%; }
-      .col-par { width: 10%; }
-      .col-status { width: 15%; }
-      .col-finish { width: 10%; }
-    }
-  </style>
-
-  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
-    <h1 style="margin: 0; color: #0c2340; font-size: 24px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
-      Tournament Schedule & Scoring
-    </h1>
-  </div>
-    <div id="Tournament-Schedule-Scoring" style="padding-top: 20px;">
-    </div>
-
-<style>
-  /* Pairing Modal 기본 스타일 */
-  .pairing-modal {
-    display: none;
-    position: fixed;
-    z-index: 10001;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal-content-wrapper {
-    position: relative;
-    max-width: 90%;
-    max-height: 90vh;
-    text-align: center;
-  }
-  .pairing-modal img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    border: 3px solid #fff;
-  }
-  .close-x {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .close-btn-bottom {
-    margin-top: 15px;
-    padding: 8px 25px;
-    background: #fff;
-    color: #0c2340;
-    border: none;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  /* 라운드 페어링 버튼 공통 클래스 */
-  .pairing-btn {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background: #f1f5f9;
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.2s ease;
-  }
-  .pairing-btn:hover {
-    background: #e2e8f0;
-  }
-  .pairing-btn span {
-    font-size: 10px;
-    font-weight: 800;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-</style>
-
-<div id="pairingModal" class="pairing-modal" onclick="closePairing()">
-  <div class="modal-content-wrapper" onclick="event.stopPropagation()">
-    <span class="close-x" onclick="closePairing()">&times;</span>
-    <img id="pairingImg" src="" alt="Round Pairing">
-    <br>
-    <button class="close-btn-bottom" onclick="closePairing()">Close</button>
-  </div>
-</div>
-
-<script>
-  function openPairing(imgSrc) {
-    document.getElementById('pairingImg').src = imgSrc;
-    document.getElementById('pairingModal').style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // 스크롤 방지
-  }
-  function closePairing() {
-    document.getElementById('pairingModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // 스크롤 재개
-  }
-</script>
-
-<div class="live-event-card">
-  <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="background: #94a3b8; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
-        <span class="live-dot"></span>
-        FINISHED
+    <div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; margin: 0 0 50px 0; padding: 140px 15px 0; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
+          NCAA STATS
+        </h1>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
+          <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+          <p style="font-size: 15px; color: #666; margin: 0; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">
+            JOSHUA HONG
+          </p>
+          <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+        </div>
       </div>
-      <div>
-        <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
-        <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 72/6,701 yards</div>
+      
+      <div class="image-section" style="width: 100%; margin: 0 auto 40px; box-sizing: border-box;">
+        <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0;">
+            <img src="https://drive.google.com/thumbnail?id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty&sz=w1200" 
+                 style="width: 100%; height: auto; display: block; object-fit: contain;" 
+                 alt="Joshua Hong Performance"
+                 onerror="this.src='https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty';">
+        </div>
       </div>
     </div>
-    <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Feb 3, 2026</div>
-  </div>
 
-  <div>
-    <table class="log-table">
-      <thead>
-        <tr>
-          <th class="col-info col-left">Round</th>
-          <th class="col-score">Score</th>
-          <th class="col-par">Par</th>
-          <th class="col-status">Status</th>
-          <th class="col-finish">Rank</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 1</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-Round-1-pairing.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d;">Feb 1, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">70</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-2</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">1</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile under-par">70</td>
-          <td class="hide-mobile under-par">-2</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
-        </tr>
-
-    <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing2.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 2, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">75</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">+3</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T2</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">75</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">+3</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
-        </tr>
-
-        <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing3.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 3, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">71</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-1</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T3</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile under-par">71</td>
-          <td class="hide-mobile under-par">-1</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
-        </tr>
+    <div class="performance-log-section" style="width: 100%; margin: 0 0 60px 0; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+      <style>
+        /* 테이블 구조 최적화 */
+        .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+        .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
+        .log-table th.col-left { text-align: left; padding-left: 20px; }
+        .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+        .log-table td.col-left { text-align: left; padding-left: 20px; }
+        .under-par { color: #e74c3c !important; font-weight: 800 !important; }
+        .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
         
-      </tbody>
-    </table>
-  </div>
+        .live-event-card { 
+          background: #ffffff; 
+          border: 2px solid #0c2340; 
+          border-radius: 20px; 
+          padding: 0; 
+          box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
+          margin-bottom: 50px; 
+          position: relative; 
+          display: flex; 
+          flex-direction: column;
+          overflow: hidden;
+        }
 
- <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
- <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
-  <span style="display: flex; align-items: center; gap: 6px;">
-    <span style="width: 5px; height: 5px; background-color: #bdc3c7; border-radius: 50%; display: inline-block;"></span>
-    FINAL RESULTS
-  </span>
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="7" y1="17" x2="17" y2="7"></line>
-    <polyline points="7 7 17 7 17 17"></polyline>
-  </svg>
-</a>
+        @keyframes live-pulse {
+          0% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.9); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        .live-dot {
+          width: 6px;
+          height: 6px;
+          background-color: #ffffff;
+          border-radius: 50%;
+          display: inline-block;
+        }
 
-<style>
-@keyframes pulse {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
-}
-</style>
+        @media (max-width: 768px) {
+          .log-table thead { display: none; }
+          .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+          .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
+          .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
+          .hide-mobile { display: none !important; }
+          .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
+          .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+          .ms-item:last-child { border-right: none; }
+          .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+          .ms-value { display: block; font-size: 12px; font-weight: 800; }
+        }
+        
+        @media (min-width: 769px) {
+          .mobile-status-bar { display: none !important; }
+          .col-info { width: 55%; }
+          .col-score { width: 10%; }
+          .col-par { width: 10%; }
+          .col-status { width: 15%; }
+          .col-finish { width: 10%; }
+        }
 
-      <div style="text-align: right;">
+        .pairing-modal {
+          display: none;
+          position: fixed;
+          z-index: 10001;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+        }
+        .modal-content-wrapper {
+          position: relative;
+          max-width: 90%;
+          max-height: 90vh;
+          text-align: center;
+        }
+        .pairing-modal img {
+          max-width: 100%;
+          max-height: 80vh;
+          border-radius: 8px;
+          box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+          border: 3px solid #fff;
+        }
+        .close-x {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          color: white;
+          font-size: 30px;
+          cursor: pointer;
+          font-weight: bold;
+        }
+        .close-btn-bottom {
+          margin-top: 15px;
+          padding: 8px 25px;
+          background: #fff;
+          color: #0c2340;
+          border: none;
+          border-radius: 4px;
+          font-weight: 800;
+          font-size: 12px;
+          cursor: pointer;
+          text-transform: uppercase;
+        }
+        .pairing-btn {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          background: #f1f5f9;
+          padding: 2px 6px;
+          border-radius: 4px;
+          border: 1px solid #e2e8f0;
+          transition: all 0.2s ease;
+        }
+        .pairing-btn:hover {
+          background: #e2e8f0;
+        }
+        .pairing-btn span {
+          font-size: 10px;
+          font-weight: 800;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      </style>
 
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
+      <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
+        <h1 style="margin: 0; color: #0c2340; font-size: 24px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
+          Tournament Schedule & Scoring
+        </h1>
+      </div>
+      <div id="Tournament-Schedule-Scoring" style="padding-top: 20px;"></div>
 
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">216</span>
+      <div id="pairingModal" class="pairing-modal" onclick="closePairing()">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+          <span class="close-x" onclick="closePairing()">&times;</span>
+          <img id="pairingImg" src="" alt="Round Pairing">
+          <br>
+          <button class="close-btn-bottom" onclick="closePairing()">Close</button>
+        </div>
+      </div>
 
+      <script>
+        function openPairing(imgSrc) {
+          document.getElementById('pairingImg').src = imgSrc;
+          document.getElementById('pairingModal').style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+        function closePairing() {
+          document.getElementById('pairingModal').style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      </script>
+
+      <div class="live-event-card">
+        <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="background: #94a3b8; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+              <span class="live-dot"></span>
+              FINISHED
+            </div>
+            <div>
+              <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
+              <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 72/6,701 yards</div>
+            </div>
+          </div>
+          <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Feb 3, 2026</div>
+        </div>
+
+        <div>
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th class="col-info col-left">Round</th>
+                <th class="col-score">Score</th>
+                <th class="col-par">Par</th>
+                <th class="col-status">Status</th>
+                <th class="col-finish">Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-left">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 1</div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-Round-1-pairing.jpeg')">
+                      <span>Pairing</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                      <span>Scorecard</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div style="font-size: 11px; color: #7f8c8d;">Feb 1, 2026</div>
+                  <div class="mobile-status-bar">
+                    <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">70</span></div>
+                    <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-2</span></div>
+                    <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">1</span></div>
+                  </div>
+                </td>
+                <td class="hide-mobile under-par">70</td>
+                <td class="hide-mobile under-par">-2</td>
+                <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+                <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
+              </tr>
+              <tr>
+                <td class="col-left">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing2.jpeg')">
+                      <span>Pairing</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                      <span>Scorecard</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 2, 2026</div>
+                  <div class="mobile-status-bar">
+                    <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">75</span></div>
+                    <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">+3</span></div>
+                    <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T2</span></div>
+                  </div>
+                </td>
+                <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">75</td>
+                <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">+3</td>
+                <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+                <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
+              </tr>
+              <tr>
+                <td class="col-left">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing3.jpeg')">
+                      <span>Pairing</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                    <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                      <span>Scorecard</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 3, 2026</div>
+                  <div class="mobile-status-bar">
+                    <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">71</span></div>
+                    <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-1</span></div>
+                    <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T3</span></div>
+                  </div>
+                </td>
+                <td class="hide-mobile under-par">71</td>
+                <td class="hide-mobile under-par">-1</td>
+                <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+                <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
+          <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
+            <span style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 5px; height: 5px; background-color: #bdc3c7; border-radius: 50%; display: inline-block;"></span>
+              FINAL RESULTS
+            </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <div style="text-align: right;">
+            <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
+            <span style="color: #ffffff; font-size: 18px; font-weight: 900;">216</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Par</span>
+            <span style="color: #ffffff; font-size: 18px; font-weight: 900;">E</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Final Rank</span>
+            <span style="color: #ffffff; font-size: 18px; font-weight: 900;">T3</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div style="text-align: right;">
-
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Par</span>
-
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">E</span>
-
-    </div>
-
-    <div style="text-align: right;">
-
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Final Rank</span>
-
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">T3</span>
-
-    </div>
-
-  </div>
-
 </div>
+
+
+  2번 테이블 시작
 
   
 
