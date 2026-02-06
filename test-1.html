@@ -223,74 +223,103 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
-  <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
-  <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament & Internal Qualifier Verified Records.</p>
+<div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; font-family: 'Oswald', sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+  <h2 style="font-size: 1.6em; color: #0c2340; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Performance Data Analysis</h2>
+  <p style="font-size: 0.9em; color: #888; margin-bottom: 35px; font-family: 'Montserrat', sans-serif;">Official Tournament & Internal Qualifier Verified Records.</p>
   
-  <div style="margin-bottom: 50px;">
-    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #F15A22; padding-bottom: 5px;">Official Tournament Rounds</h3>
-    <div style="position: relative; height: 380px;">
+  <div style="margin-bottom: 60px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; border-bottom: 2px solid #F15A22; padding-bottom: 8px;">
+      <h3 style="font-size: 1.2em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Official Tournament Rounds</h3>
+      <span style="font-size: 0.8em; color: #F15A22; font-weight: 400;">* WAGR Verified Performance</span>
+    </div>
+    <div style="position: relative; height: 400px; background: linear-gradient(to bottom, #fcfcfc, #ffffff);">
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
 
   <div>
-    <h3 style="font-size: 1.1em; color: #0c2340; margin-bottom: 15px; font-weight: 600; border-bottom: 2px solid #806600; padding-bottom: 5px;">Internal Qualifier Rounds (TPC San Antonio)</h3>
-    <div style="position: relative; height: 380px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; border-bottom: 2px solid #806600; padding-bottom: 8px;">
+      <h3 style="font-size: 1.2em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Internal Qualifier Rounds</h3>
+      <span style="font-size: 0.8em; color: #806600; font-weight: 400;">TPC San Antonio (Canyons / Oaks)</span>
+    </div>
+    <div style="position: relative; height: 400px; background: linear-gradient(to bottom, #fcfcfc, #ffffff);">
       <canvas id="internalQualifierChart"></canvas>
     </div>
   </div>
 </div>
 
 <script>
-// 1. Official Tournament Chart (WAGR 정정 데이터 반영 및 Top Finishes 시각화)
+// Chart.js 전역 설정: 폰트 일관성 유지
+Chart.defaults.font.family = "'Oswald', sans-serif";
+Chart.defaults.color = '#555';
+
+// 1. Official Tournament Chart
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
+const gradientOfficial = ctxOfficial.createLinearGradient(0, 0, 0, 400);
+gradientOfficial.addColorStop(0, 'rgba(241, 90, 34, 0.15)');
+gradientOfficial.addColorStop(1, 'rgba(241, 90, 34, 0.01)');
+
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)', '2/01 (Compadres)'],
+    labels: ['Sep 07 (Argent)', 'Sep 15 (Highlands)', 'Sep 22 (Badger)', 'Oct 05 (Trinity)', 'Dec 27 (Patriot)', 'Feb 01 (Compadres)'],
     datasets: [{
       label: 'Scoring Avg',
       data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00],
       borderColor: '#F15A22',
-      backgroundColor: 'rgba(241, 90, 34, 0.1)',
-      borderWidth: 2,
-      // 강조 로직: i=0(T9), i=5(T3) 지점의 포인트를 더 크고 굵게 표시
-      pointRadius: [10, 6, 6, 6, 6, 12], 
-      pointHoverRadius: [12, 8, 8, 8, 8, 14],
-      pointBackgroundColor: ['#F15A22', '#F15A22', '#F15A22', '#F15A22', '#F15A22', '#0c2340'],
-      pointBorderColor: ['#0c2340', '#F15A22', '#F15A22', '#F15A22', '#F15A22', '#F15A22'],
-      pointBorderWidth: [3, 1, 1, 1, 1, 4],
-      tension: 0.1,
+      backgroundColor: gradientOfficial,
+      borderWidth: 3,
+      pointRadius: [10, 6, 6, 6, 6, 14],
+      pointHoverRadius: [12, 8, 8, 8, 8, 16],
+      pointBackgroundColor: ['#0c2340', '#F15A22', '#F15A22', '#F15A22', '#F15A22', '#0c2340'],
+      pointBorderColor: '#fff',
+      pointBorderWidth: 3,
+      tension: 0.3,
       fill: true
     }]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { reverse: false, min: 68, max: 76, title: { display: true, text: 'Strokes' } } },
+    scales: {
+      y: {
+        reverse: false,
+        min: 68,
+        max: 76,
+        grid: { color: '#f0f0f0', drawBorder: false },
+        ticks: { font: { size: 12, weight: '500' }, callback: (val) => val + ' STK' },
+        title: { display: true, text: 'STROKES PER ROUND', color: '#999', font: { size: 10, weight: '500' } }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 }, maxRotation: 45, minRotation: 45 }
+      }
+    },
     plugins: {
       legend: { display: false },
       tooltip: {
+        backgroundColor: 'rgba(12, 35, 64, 0.9)',
+        titleFont: { size: 14, family: "'Oswald'" },
+        bodyFont: { family: "'Montserrat'" },
+        padding: 12,
+        cornerRadius: 4,
+        displayColors: false,
         callbacks: {
           afterLabel: function(context) {
             const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)'];
-            const rank = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
+            const rank = ['T9 (Top 10)', 'T12', 'T24', 'T55', 'T38', 'T3 (Podium)'];
             const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'];
             const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'];
             const i = context.dataIndex;
-            let tip = [
-              `Round Info: ${rounds[i]}`,
-              `Final Rank: ${rank[i]}`,
-              `--------------------`,
+            return [
+              '',
+              `Score: ${rounds[i]}`,
+              `Rank: ${rank[i]}`,
+              `-----------------------`,
               `WAGR Power: ${pwr[i]}`,
-              `WAGR Earned: ${earned[i]}`
-            ];
-            if (i === 5) {
-              tip.push(`Rank Effect: ▲ 136`);
-              tip.push(`SG: 0.35`);
-            }
-            return tip;
+              `WAGR Earned: ${earned[i]}`,
+              i === 5 ? `Rank Effect: ▲ 136` : null
+            ].filter(v => v !== null);
           }
         }
       }
@@ -298,41 +327,61 @@ new Chart(ctxOfficial, {
   }
 });
 
-// 2. Internal Qualifier Chart (데이터 정합성 유지)
+// 2. Internal Qualifier Chart
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
 new Chart(ctxInternal, {
   type: 'line',
   data: {
     labels: [
-      '27-ago (Can)', '28-ago (Can)', '01-sep (Can)', '01-sep (Oaks)', '02-sep (Oaks)', 
-      '26-sep (Can)', '30-sep (Oaks)', '02-oct (Oaks)', '22-ene (Can)', '23-ene (Oaks)', '26-ene (Oaks)'
+      'Aug 27 (Can)', 'Aug 28 (Can)', 'Sep 01 (Can)', 'Sep 01 (Oaks)', 'Sep 02 (Oaks)', 
+      'Sep 26 (Can)', 'Sep 30 (Oaks)', 'Oct 02 (Oaks)', 'Jan 22 (Can)', 'Jan 23 (Oaks)', 'Jan 26 (Oaks)'
     ],
     datasets: [
       {
-        label: 'TPC SA - Canyons',
+        label: 'TPC SA - CANYONS',
         data: [69, 68, 69, null, null, 73, null, null, 68, null, null],
         borderColor: '#806600',
-        backgroundColor: 'rgba(128, 102, 0, 0.1)',
+        backgroundColor: 'transparent',
         borderWidth: 2,
-        pointRadius: 6,
-        spanGaps: true
+        pointRadius: 5,
+        pointBackgroundColor: '#806600',
+        spanGaps: true,
+        tension: 0.1
       },
       {
-        label: 'TPC SA - Oaks',
+        label: 'TPC SA - OAKS',
         data: [null, null, null, 81, 74, null, 69, 74, null, 69, 76],
         borderColor: '#0c2340',
-        backgroundColor: 'rgba(12, 35, 64, 0.1)',
+        backgroundColor: 'transparent',
         borderWidth: 2,
-        pointRadius: 6,
-        spanGaps: true
+        pointRadius: 5,
+        pointBackgroundColor: '#0c2340',
+        spanGaps: true,
+        tension: 0.1
       }
     ]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { reverse: false, min: 65, max: 85, title: { display: true, text: 'Strokes' } } },
-    plugins: { legend: { position: 'bottom' } }
+    scales: {
+      y: {
+        min: 65,
+        max: 85,
+        grid: { color: '#f0f0f0' },
+        ticks: { font: { size: 11 }, callback: (val) => val + ' STK' }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 10 }, maxRotation: 45, minRotation: 45 }
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { boxWidth: 12, font: { size: 12, weight: '500' }, padding: 20 }
+      }
+    }
   }
 });
 </script>
