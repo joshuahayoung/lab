@@ -227,7 +227,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 
-<div style="width: 100%; max-width: 950px; margin: 80px auto 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; font-family: 'Oswald', sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+<div style="width: 100%; max-width: 950px; margin: 100px auto 30px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; font-family: 'Oswald', sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
   <h2 style="display: inline-block; background: #F15A22; color: #ffffff; padding: 5px 15px; border-radius: 4px; font-size: 1.4em; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Performance Data Analysis</h2>
   <p style="font-size: 0.85em; color: #888; margin-bottom: 35px; font-family: 'Montserrat', sans-serif; padding-left: 5px;">Tournament & Internal Qualifier Verified Records.</p>
   
@@ -236,7 +236,7 @@
       <h3 style="font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Official Tournament Rounds</h3>
       <span style="background: #0c2340; color: #fff; padding: 4px 10px; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
     </div>
-    <div style="position: relative; height: 420px; background: #fafafa; border-radius: 8px; padding: 25px 15px 15px 15px;">
+    <div style="position: relative; height: 420px; background: #fafafa; border-radius: 8px; padding: 35px 15px 15px 15px;">
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
@@ -282,19 +282,17 @@ new Chart(ctxOfficial, {
       datalabels: {
         align: 'top',
         anchor: 'end',
-        offset: 8,
-        padding: 6,
-        // 상위 성적은 오렌지색 원형 배경, 나머지는 텍스트만
+        offset: 10,
+        padding: { top: 4, bottom: 4, left: 8, right: 8 },
+        // 상위 성적은 오렌지색 원형 배경
         backgroundColor: (context) => {
           const i = context.dataIndex;
           return (i === 0 || i === 5) ? '#F15A22' : 'transparent';
         },
-        borderRadius: 15, // 둥근 서클 효과
-        color: (context) => {
-          const i = context.dataIndex;
-          return (i === 0 || i === 5) ? '#ffffff' : '#0c2340';
-        },
-        font: { weight: '700', size: 11 },
+        borderRadius: 20,
+        // 모든 텍스트를 남색(#0c2340)으로 통일하여 가독성 확보
+        color: '#0c2340',
+        font: { weight: '700', size: 12 },
         formatter: function(value, context) {
           const ranks = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
           return ranks[context.dataIndex];
@@ -305,12 +303,12 @@ new Chart(ctxOfficial, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 40 } }, // 레이블 공간 확보
+    layout: { padding: { top: 20 } },
     interaction: { mode: 'index', intersect: false },
     scales: {
       y: {
         min: 65,
-        max: 80, // 상단 레이블 가림 방지를 위해 더 여유 있게 설정
+        max: 82, // 레이블이 천장에 닿지 않도록 상단 한도 상향
         grid: { color: '#e5e5e5', drawBorder: false },
         ticks: { font: { size: 12, weight: '600' }, color: '#333', padding: 10 },
         title: { display: true, text: 'AVG. STROKES', color: '#333', font: { size: 12, weight: '700' } }
@@ -357,7 +355,7 @@ new Chart(ctxOfficial, {
   }
 });
 
-// 2. Internal Qualifier Chart (디자인 통일성 유지)
+// 2. Internal Qualifier Chart
 const ctxInternal = document.getElementById('internalQualifierChart').getContext('2d');
 new Chart(ctxInternal, {
   type: 'line',
@@ -372,12 +370,7 @@ new Chart(ctxInternal, {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: { 
-        min: 65, max: 85, 
-        grid: { color: '#e5e5e5' }, 
-        ticks: { font: { size: 11, weight: '600' }, color: '#333' },
-        title: { display: true, text: 'STROKES', color: '#333', font: { size: 11, weight: '700' } }
-      },
+      y: { min: 65, max: 85, grid: { color: '#e5e5e5' }, ticks: { font: { size: 11, weight: '600' }, color: '#333' }, title: { display: true, text: 'STROKES', color: '#333', font: { size: 11, weight: '700' } } },
       x: { grid: { display: false }, ticks: { font: { size: 9 }, color: '#333' } }
     },
     plugins: {
