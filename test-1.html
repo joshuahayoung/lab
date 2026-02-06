@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <head>
-  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/lab/main/images/joshua-hong-logo.jpg">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png" sizes="32x32">
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -10,53 +13,75 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Joshua Hong Golf</title>
+  <meta name="keywords" content="Joshua Hong Golf, Joshua Hong UTSA, 멕시코 골프 선수 자슈아 홍, 자슈아 홍 골프, Joshua Hong Mexico, NCAA D1 Golfer, UTSA Men's Golf">
+  <title>NCAA Stats | Joshua Hong Golf</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Google Analytics 4 Configuration
+  gtag('config', 'G-H1JW8YBDZ8', {
+    'page_title': 'Joshua Hong Official Site',
+    'send_page_view': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+
+  // Bookmark & Return Visitor Tracking Logic
+  if (window.performance && window.performance.navigation.type === 0) {
+    // Type 0: Direct access (Potential Bookmark or URL entry)
+    gtag('event', 'visitor_entry', {
+      'method': 'direct_or_bookmark',
+      'event_category': 'Engagement',
+      'event_label': 'Direct Access Tracking'
+    });
+  }
+</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* 1. 기본 설정 */
-    html, body {
-      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+    /* 1. 기본 설정 - 이중 스크롤 방지를 위해 overflow 수정 */
+    html {
+      margin: 0; padding: 0; width: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0; padding: 0; width: 100%;
       font-family: 'Montserrat', sans-serif;
       font-weight: 300;
+      -webkit-text-size-adjust: 100%;
     }
     * { box-sizing: border-box; }
 
-    /* [헤더 컨테이너 설정] */
-    .header-container {
-      width: 100%;
-      background: #ffffff;
-      z-index: 1000;
+    /* [상단 헤더 기본 스타일] */
+    .sticky-top {
+      position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
+      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
     }
 
-    /* 평상시 상단 위치 */
-    .header-normal {
-      position: absolute;
-      top: 0;
-    }
-
-    /* [스으으윽 효과] */
-    .header-fixed {
+    /* 스크롤 시 '폼 나게' 내려와 고정되는 상태 */
+    .sticky-top.scrolled {
       position: fixed;
       top: 0;
-      transform: translateY(-100%); 
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      visibility: hidden;
-      opacity: 0;
-      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease-out;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      background: rgba(255, 255, 255, 0.98);
     }
 
-    /* 스크롤 감지 후 나타날 때 */
-    .header-fixed.is-visible {
-      transform: translateY(0);
-      visibility: visible;
-      opacity: 1;
+    /* 위로 올라갈 때 우아하게 사라지는 준비 상태 */
+    .sticky-top.preparing {
+      position: fixed;
+      top: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
     }
 
     .top-bar {
@@ -66,49 +91,52 @@
       font-weight: 400;
     }
 
+    /* 헤더 래퍼: 데스크탑/모바일 공용 */
     .header-wrapper {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 80px;
     }
 
-    /* 로고 크기 고정 */
+    /* 로고 영역 */
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-    .logo-img { height: 50px !important; width: auto !important; max-width: 200px; display: block; object-fit: contain; }
+    .logo-img { height: 50px; width: auto; display: block; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
 
+    /* 데스크탑 메뉴 */
     .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a {
       text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
       font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
-    .nav-links a.active { background-color: #F15A22; color: #fff; } 
+    /* NCAA Stats 활성화 (주황색 버튼) */
+    .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
+    .mobile-menu-logo, .close-menu, .menu-footer { display: none; }
 
+    /* 메뉴 토글 버튼 */
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 - 배경색 수정 (#806600 -> #F15A22) */
+    /* TOP 버튼 스타일 */
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
-      background-color: #F15A22 !important; 
-      color: #fff !important;
+      background-color: #F15A22 !important; color: #fff !important;
       border: none !important; border-radius: 50% !important;
       font-weight: 900 !important; font-size: 12px !important;
       z-index: 9999 !important; cursor: pointer !important;
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: opacity 0.3s;
     }
 
-    /* 모바일 환경 설정 */
+    /* [모바일 반응형] */
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; } 
-      .logo-area { order: 2; margin-left: 0; } 
-      .logo-text { display: none; } 
-      .logo-img { height: 40px !important; }
+      .menu-toggle { display: block; order: 1; }
+      .logo-area { order: 2; }
+      .logo-text { display: none; }
+      .logo-img { height: 40px; }
 
       .nav-links {
         position: fixed; top: 0; left: -100%; 
@@ -119,95 +147,90 @@
         align-items: flex-start; gap: 10px;
       }
       .nav-links.active { left: 0; }
-      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; cursor: pointer; }
       
-      .mobile-menu-logo { display: block; margin-bottom: 30px; width: 100%; text-align: left; }
-      .mobile-menu-logo img { height: 30px !important; width: auto !important; }
+      .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
+      .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
 
-      .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
+      .mobile-menu-logo { display: block; margin-bottom: 30px; } 
+      .mobile-menu-logo img { height: 35px; }
+      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; }
+      
+      .menu-footer {
+        display: block; margin-top: 60px; 
+        padding-top: 20px; border-top: 1px solid #eee; width: 100%;
+      }
       .footer-name { display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333; }
       .footer-team { display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px; }
+    }
+
+    @media (orientation: landscape) and (max-height: 500px) {
+      .header-wrapper { height: 55px; }
+      .logo-img { height: 35px !important; }
+      .nav-links { padding: 30px 25px; overflow-y: auto; }
+      .menu-footer { margin-top: 30px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="header-container header-normal" id="headerNormal">
-    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
+  <div class="sticky-top" id="mainHeader">
+    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA</div>
     <header class="header-wrapper">
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      
       <a href="index.html" class="logo-area">
         <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
         <span class="logo-text">Joshua Hong Golf</span>
       </a>
-      <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="ncaa-stats.html">NCAA Stats</a>
+
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <div class="mobile-menu-logo">
+            <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
+        </div>
+        
+        <a href="index.html">Home</a>
+        <a href="ncaa-stats.html" class="active">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
         <a href="junior-career.html">Junior Career</a>
+
+        <div class="menu-footer">
+            <span class="footer-name">JOSHUA HONG</span>
+            <span class="footer-team">UTSA MEN'S GOLF</span>
+        </div>
       </nav>
     </header>
   </div>
-
-  <div class="header-container header-fixed" id="headerFixed">
-    <header class="header-wrapper">
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <a href="index.html" class="logo-area">
-        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
-      </a>
-      <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="ncaa-stats.html">NCAA Stats</a>
-        <a href="news-media.html">News & Media</a>
-        <a href="reference-links.html">Reference & Links</a>
-        <a href="junior-career.html">Junior Career</a>
-      </nav>
-    </header>
-  </div>
-
-  <nav class="nav-links" id="navLinks" style="display:none;">
-      <span class="close-menu" onclick="toggleMenu()">✕</span>
-      <div class="mobile-menu-logo">
-        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
-      </div>
-      <a href="index.html" class="active">Home</a>
-      <a href="ncaa-stats.html">NCAA Stats</a>
-      <a href="news-media.html">News & Media</a>
-      <a href="reference-links.html">Reference & Links</a>
-      <a href="junior-career.html">Junior Career</a>
-      
-      <div class="menu-footer">
-          <span class="footer-name">JOSHUA HONG</span>
-          <span class="footer-team">UTSA MEN'S GOLF</span>
-      </div>
-  </nav>
 
   <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
   <script>
     function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-        nav.classList.remove('active');
-      } else {
-        nav.style.display = 'flex';
-        nav.classList.add('active');
-      }
+      document.getElementById('navLinks').classList.toggle('active');
     }
 
-    const headerFixed = document.getElementById('headerFixed');
-    const topBtn = document.getElementById('fixedTopBtn');
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      const header = document.getElementById('mainHeader');
+      const currentScrollY = window.pageYOffset;
 
-    window.addEventListener('scroll', () => {
-      const curr = window.pageYOffset;
-      if (curr > 50) { 
-        headerFixed.classList.add('is-visible');
-        topBtn.style.display = 'block';
+      // 1. TOP 버튼 제어
+      if (currentScrollY > 100) {
+        btn.style.display = 'block';
       } else {
-        headerFixed.classList.remove('is-visible');
-        topBtn.style.display = 'none';
+        btn.style.display = 'none';
+      }
+
+      // 2. 헤더 우아한 제어 (300px 기준)
+      if (currentScrollY > 300) {
+        header.classList.add('scrolled');
+        header.classList.remove('preparing');
+      } else if (currentScrollY > 10) { 
+        header.classList.remove('scrolled');
+        header.classList.add('preparing');
+      } else {
+        header.classList.remove('scrolled', 'preparing');
       }
     });
 
@@ -215,7 +238,470 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
-</body>
+
+    
+    
+<div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 140px 10px 0; box-sizing: border-box;">
+
+  <div style="text-align: center; margin-bottom: 35px;">
+    <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
+  NCAA STATS
+</h1>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
+      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+      <p style="font-size: 15px; color: #666; margin: 0; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">
+        JOSHUA HONG
+      </p>
+      <div style="height: 2px; width: 30px; background: #c98a2e;"></div>
+    </div>
+  </div>
+  
+
+<div class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box;">
+    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0;">
+        <img src="https://drive.google.com/thumbnail?id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty&sz=w1200" 
+             style="width: 100%; height: auto; display: block; object-fit: contain;" 
+             alt="Joshua Hong Performance"
+             onerror="this.src='https://drive.google.com/uc?export=view&id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty';">
+    </div>
+</div>
+
+</div>
+
+  
+
+  
+<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <style>
+    /* 테이블 구조 최적화 */
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
+    .log-table th.col-left { text-align: left; padding-left: 20px; }
+    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td.col-left { text-align: left; padding-left: 20px; }
+    .under-par { color: #e74c3c !important; font-weight: 800 !important; }
+    .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
+    
+    /* 테두리 끊김 방지를 위해 overflow: hidden 재적용 및 스크롤 간섭 제거 */
+    .live-event-card { 
+      background: #ffffff; 
+      border: 2px solid #0c2340; 
+      border-radius: 20px; 
+      padding: 0; 
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
+      margin-bottom: 50px; 
+      position: relative; 
+      display: flex; 
+      flex-direction: column;
+      overflow: hidden; /* 모서리 끊김 해결 */
+    }
+
+    /* 실시간 상태 표시 점 애니메이션 추가 */
+    @keyframes live-pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+      .log-table thead { display: none; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+      .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
+      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
+      .hide-mobile { display: none !important; }
+      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
+      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+      .ms-item:last-child { border-right: none; }
+      .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .ms-value { display: block; font-size: 12px; font-weight: 800; }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-status-bar { display: none !important; }
+      .col-info { width: 55%; }
+      .col-score { width: 10%; }
+      .col-par { width: 10%; }
+      .col-status { width: 15%; }
+      .col-finish { width: 10%; }
+    }
+  </style>
+
+  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
+    <h1 style="margin: 0; color: #0c2340; font-size: 24px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
+      Tournament Schedule & Scoring
+    </h1>
+  </div>
+    <div id="Tournament-Schedule-Scoring" style="padding-top: 20px;">
+    </div>
+
+<style>
+  /* Pairing Modal 기본 스타일 */
+  .pairing-modal {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-content-wrapper {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    text-align: center;
+  }
+  .pairing-modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+  }
+  .close-x {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .close-btn-bottom {
+    margin-top: 15px;
+    padding: 8px 25px;
+    background: #fff;
+    color: #0c2340;
+    border: none;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  /* 라운드 페어링 버튼 공통 클래스 */
+  .pairing-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+  }
+  .pairing-btn:hover {
+    background: #e2e8f0;
+  }
+  .pairing-btn span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+</style>
+
+<div id="pairingModal" class="pairing-modal" onclick="closePairing()">
+  <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+    <span class="close-x" onclick="closePairing()">&times;</span>
+    <img id="pairingImg" src="" alt="Round Pairing">
+    <br>
+    <button class="close-btn-bottom" onclick="closePairing()">Close</button>
+  </div>
+</div>
+
+<script>
+  function openPairing(imgSrc) {
+    document.getElementById('pairingImg').src = imgSrc;
+    document.getElementById('pairingModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+  }
+  function closePairing() {
+    document.getElementById('pairingModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // 스크롤 재개
+  }
+</script>
+
+<div class="live-event-card">
+  <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="background: #94a3b8; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+        <span class="live-dot"></span>
+        FINISHED
+      </div>
+      <div>
+        <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
+        <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 72/6,701 yards</div>
+      </div>
+    </div>
+    <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Feb 3, 2026</div>
+  </div>
+
+  <div>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th class="col-info col-left">Round</th>
+          <th class="col-score">Score</th>
+          <th class="col-par">Par</th>
+          <th class="col-status">Status</th>
+          <th class="col-finish">Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+          <td class="col-left">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 1</div>
+              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-Round-1-pairing.jpeg')">
+                <span>Pairing</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                <span>Scorecard</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: #7f8c8d;">Feb 1, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">70</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-2</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">1</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile under-par">70</td>
+          <td class="hide-mobile under-par">-2</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
+        </tr>
+
+    <tr>
+          <td class="col-left">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div>
+              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing2.jpeg')">
+                <span>Pairing</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                <span>Scorecard</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 2, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">75</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">+3</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T2</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">75</td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">+3</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
+        </tr>
+
+        <tr>
+          <td class="col-left">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div>
+              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing3.jpeg')">
+                <span>Pairing</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
+                <span>Scorecard</span>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14L21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 3, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">71</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-1</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T3</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile under-par">71</td>
+          <td class="hide-mobile under-par">-1</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+ <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
+ <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
+  <span style="display: flex; align-items: center; gap: 6px;">
+    <span style="width: 5px; height: 5px; background-color: #bdc3c7; border-radius: 50%; display: inline-block;"></span>
+    FINAL RESULTS
+  </span>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+</a>
+
+<style>
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
+
+      <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
+
+      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">216</span>
+
+    </div>
+
+    <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Par</span>
+
+      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">E</span>
+
+    </div>
+
+    <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Final Rank</span>
+
+      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">T3</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+  
+
+
+
+ <div class="current-focus-section" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <a id="current-focus" style="display: block; position: relative; top: -100px; visibility: hidden;"></a>
+    <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
+        <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
+            Current Focus
+        </h1>
+    </div>
+</div>
+
+<div class="legal-pad-wrapper" style="max-width: 900px; margin: 0 auto 100px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0 15px; box-sizing: border-box;">
+    <div style="width: 100%; height: 35px; background: #334155; border-radius: 20px 20px 0 0; position: relative; z-index: 2; box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2); border: 1px solid #1e293b;">
+        <div style="display: flex; justify-content: center; gap: 40px; padding-top: 10px;">
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+        </div>
+    </div>
+    
+    <div class="legal-pad-content" style="background: #fff9c4; background-image: linear-gradient(#e5e0a3 1px, transparent 1px); background-size: 100% 28px; border-left: 1px solid #e5e0a3; border-right: 1px solid #e5e0a3; border-bottom: 4px solid #d4cf92; border-radius: 0 0 60px 60px; padding: 40px 40px 60px 80px; position: relative; box-shadow: 15px 15px 30px rgba(0,0,0,0.07); min-height: 550px; display: flex; flex-direction: column;">
+        
+        <div style="position: absolute; left: 65px; top: 0; bottom: 0; width: 2px; border-left: 1px solid #ff8a80; border-right: 1px solid #ff8a80; pointer-events: none;"></div>
+
+        <div style="margin-bottom: 45px; position: relative;">
+            <span style="font-size: 14px; color: #d32f2f; font-weight: 700; text-transform: uppercase;">Date: Feb 05, 2026</span>
+            <h3 style="margin: 10px 0 0 0; color: #0c2340; font-size: 24px; font-weight: 900; text-transform: uppercase; border-bottom: 2px solid #0c2340; display: inline-block;">
+                Performance Analysis & Training Plan
+            </h3>
+        </div>
+
+        <div class="memo-body" style="display: flex; flex-direction: column; gap: 28px; max-width: 100%; position: relative; z-index: 1; margin-bottom: 50px;">
+            
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900;">01.</span>
+                <div>
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">R3 Technical Feedback</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500;">
+                        <strong>Status:</strong> Increased yardage applied under narrow fairway/high-wind conditions. Driver and long-iron dispersion data recorded for technical adjustment and subsequent training. <br>
+                        <strong>Focus:</strong> Maintaining consistent short-game execution (wedge/putting) while prioritizing dispersion recalibration.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; align-items: flex-start;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900;">02.</span>
+                <div>
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">Corrective Training</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500;">
+                        <strong>Feb 4:</strong> Technical training session conducted to address driver dispersion and long-iron control in preparation for the home tournament (Feb 23–24). Academic scheduling adjustments finalized to maintain balance with upcoming competition commitments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #ffffff; padding: 25px; border-radius: 15px; border: 1px solid #d4cf92; box-shadow: 0 10px 20px rgba(0,0,0,0.05); width: calc(100% + 20px); margin-left: -10px; box-sizing: border-box; z-index: 2; position: relative;">
+            <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%) rotate(15deg); width: 30px; height: 50px; z-index: 3; pointer-events: none;">
+                <div style="position: absolute; top: 20px; left: 14px; width: 2px; height: 25px; background: linear-gradient(to right, #94a3b8, #f1f5f9, #64748b); box-shadow: 1px 1px 2px rgba(0,0,0,0.2);"></div>
+                <div style="position: absolute; top: 0; left: 3px; width: 24px; height: 24px; background: #d32f2f; border-radius: 50%; box-shadow: 2px 4px 6px rgba(0,0,0,0.3);">
+                    <div style="position: absolute; top: 4px; left: 4px; width: 8px; height: 8px; background: rgba(255,255,255,0.4); border-radius: 50%;"></div>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 12px;">
+                <h5 style="margin: 0; font-size: 14px; color: #d32f2f; font-weight: 900; text-transform: uppercase;">Next Event Focus & Updates</h5>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Spring Opener Technical Memo</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px;">
+                    • Target: Home-Field Team Title<br>
+                    • Drills: Dispersion Control (w/ Bryan)
+                </p>
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px;">
+                    • Academic: Coursework management<br>
+                    • Status: Training Schedule Optimized
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding-left: 10px; font-size: 10px; color: #cbd5e1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+            Joshua's Memo Note
+        </div>
+    </div>
+</div>
+  
 
 
 
