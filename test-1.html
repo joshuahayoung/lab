@@ -227,25 +227,25 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; font-family: 'Oswald', sans-serif; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-  <h2 style="font-size: 1.6em; color: #0c2340; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Performance Data Analysis</h2>
-  <p style="font-size: 0.9em; color: #888; margin-bottom: 35px; font-family: 'Montserrat', sans-serif;">Official Tournament & Internal Qualifier Verified Records.</p>
+  <h2 style="display: inline-block; background: #F15A22; color: #ffffff; padding: 5px 15px; border-radius: 4px; font-size: 1.4em; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Performance Data Analysis</h2>
+  <p style="font-size: 0.85em; color: #888; margin-bottom: 35px; font-family: 'Montserrat', sans-serif; padding-left: 5px;">Tournament & Internal Qualifier Verified Records.</p>
   
   <div style="margin-bottom: 60px; position: relative;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; border-bottom: 2px solid #F15A22; padding-bottom: 8px;">
-      <h3 style="font-size: 1.2em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Official Tournament Rounds</h3>
-      <span style="font-size: 0.8em; color: #F15A22; font-weight: 400;">* WAGR Verified Performance</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #F15A22; padding-bottom: 8px;">
+      <h3 style="font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Official Tournament Rounds</h3>
+      <span style="background: #0c2340; color: #fff; padding: 2px 8px; font-size: 0.75em; border-radius: 3px; font-weight: 400;">OFFICIAL TOURNAMENT RESULTS</span>
     </div>
-    <div style="position: relative; height: 420px; background: linear-gradient(to bottom, #fcfcfc, #ffffff); border-radius: 8px; padding-top: 20px;">
+    <div style="position: relative; height: 400px; background: #fafafa; border-radius: 8px; padding: 15px;">
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
 
   <div style="position: relative;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; border-bottom: 2px solid #806600; padding-bottom: 8px;">
-      <h3 style="font-size: 1.2em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Internal Qualifier Rounds</h3>
-      <span style="font-size: 0.8em; color: #806600; font-weight: 400;">TPC San Antonio (Canyons / Oaks)</span>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #806600; padding-bottom: 8px;">
+      <h3 style="font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Internal Qualifier Rounds</h3>
+      <span style="background: #806600; color: #fff; padding: 2px 8px; font-size: 0.75em; border-radius: 3px; font-weight: 400;">TPC SAN ANTONIO</span>
     </div>
-    <div style="position: relative; height: 400px; background: linear-gradient(to bottom, #fcfcfc, #ffffff); border-radius: 8px;">
+    <div style="position: relative; height: 400px; background: #fafafa; border-radius: 8px; padding: 15px;">
       <canvas id="internalQualifierChart"></canvas>
     </div>
   </div>
@@ -253,81 +253,77 @@
 
 <script>
 Chart.defaults.font.family = "'Oswald', sans-serif";
-Chart.defaults.color = '#555';
 
 // 1. Official Tournament Chart
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
-const gradientOfficial = ctxOfficial.createLinearGradient(0, 0, 0, 400);
-gradientOfficial.addColorStop(0, 'rgba(241, 90, 34, 0.12)');
-gradientOfficial.addColorStop(1, 'rgba(241, 90, 34, 0.00)');
-
 new Chart(ctxOfficial, {
   type: 'line',
   data: {
-    labels: ['Sep 07 (Argent)', 'Sep 15 (Highlands)', 'Sep 22 (Badger)', 'Oct 05 (Trinity)', 'Dec 27 (Patriot)', 'Feb 01 (Compadres)'],
+    labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)', '2/01 (Compadres)'],
     datasets: [{
       label: 'Scoring Avg',
       data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00],
       borderColor: '#F15A22',
-      backgroundColor: gradientOfficial,
-      borderWidth: 3,
-      pointRadius: [10, 6, 6, 6, 6, 14],
-      pointHoverRadius: [12, 8, 8, 8, 8, 16],
+      backgroundColor: 'rgba(241, 90, 34, 0.05)',
+      borderWidth: 2.5,
+      pointRadius: [8, 5, 5, 5, 5, 10],
+      pointHoverRadius: [10, 7, 7, 7, 7, 12],
       pointBackgroundColor: ['#0c2340', '#F15A22', '#F15A22', '#F15A22', '#F15A22', '#0c2340'],
       pointBorderColor: '#fff',
-      pointBorderWidth: 3,
-      tension: 0.3,
+      pointBorderWidth: 2,
+      tension: 0.2,
       fill: true
     }]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    interaction: {
-      mode: 'index',
-      intersect: false, // 마우스를 근처에만 가져가도 툴팁 활성화
-    },
+    interaction: { mode: 'index', intersect: false },
     scales: {
       y: {
-        reverse: false,
         min: 68,
-        max: 78, // 툴팁 공간 확보를 위해 상단 여백 상향 조정
-        grid: { color: '#f5f5f5', drawBorder: false },
-        ticks: { font: { size: 12, weight: '500' }, callback: (val) => val + ' STK' },
-        title: { display: true, text: 'STROKES PER ROUND', color: '#bbb', font: { size: 10 } }
+        max: 78,
+        grid: { color: '#e5e5e5', drawBorder: false },
+        ticks: { 
+          font: { size: 11, weight: '600' },
+          color: '#F15A22',
+          callback: (val) => val + ' STK'
+        },
+        title: { display: true, text: 'AVG. STROKES', color: '#999', font: { size: 9, weight: '500' } }
       },
       x: {
         grid: { display: false },
-        ticks: { font: { size: 11 }, maxRotation: 45, minRotation: 45 }
+        ticks: { color: '#333', font: { size: 10, weight: '400' }, maxRotation: 0, minRotation: 0 }
       }
     },
     plugins: {
       legend: { display: false },
       tooltip: {
         enabled: true,
-        position: 'average', // 데이터 포인트 근처에 위치하되 
-        yAlign: 'bottom',    // 툴팁 박스가 포인트 '위쪽'으로 나타나도록 고정 (오른쪽 가림 방지)
-        backgroundColor: 'rgba(12, 35, 64, 0.95)',
-        titleFont: { size: 14, family: "'Oswald'" },
-        bodyFont: { family: "'Montserrat'", size: 12 },
-        padding: 15,
-        cornerRadius: 6,
+        yAlign: 'bottom',
+        backgroundColor: '#0c2340', // UTSA Midnight Blue
+        titleColor: '#F15A22',      // UTSA Orange 포인트
+        titleFont: { size: 13, weight: '600' },
+        bodyColor: '#ffffff',
+        bodyFont: { family: "'Montserrat'", size: 11 },
+        padding: 12,
+        cornerRadius: 4,
         displayColors: false,
         callbacks: {
           afterLabel: function(context) {
             const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)'];
-            const rank = ['T9 (Top 10)', 'T12', 'T24', 'T55', 'T38', 'T3 (Podium)'];
+            const rank = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
             const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'];
             const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'];
             const i = context.dataIndex;
             return [
               '',
-              `Score: ${rounds[i]}`,
+              `Rounds: ${rounds[i]}`,
               `Rank: ${rank[i]}`,
               `-----------------------`,
-              `WAGR Power: ${pwr[i]}`,
-              `WAGR Earned: ${earned[i]}`,
-              i === 5 ? `Rank Effect: ▲ 136` : null
+              `WAGR Pwr: ${pwr[i]}`,
+              `Earned: ${earned[i]}`,
+              i === 5 ? `Rank ▲ 136` : null
             ].filter(v => v !== null);
           }
         }
@@ -341,32 +337,26 @@ const ctxInternal = document.getElementById('internalQualifierChart').getContext
 new Chart(ctxInternal, {
   type: 'line',
   data: {
-    labels: ['Aug 27 (Can)', 'Aug 28 (Can)', 'Sep 01 (Can)', 'Sep 01 (Oaks)', 'Sep 02 (Oaks)', 'Sep 26 (Can)', 'Sep 30 (Oaks)', 'Oct 02 (Oaks)', 'Jan 22 (Can)', 'Jan 23 (Oaks)', 'Jan 26 (Oaks)'],
+    labels: ['8/27', '8/28', '9/01', '9/01', '9/02', '9/26', '9/30', '10/02', '1/22', '1/23', '1/26'],
     datasets: [
-      { label: 'TPC SA - CANYONS', data: [69, 68, 69, null, null, 73, null, null, 68, null, null], borderColor: '#806600', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 5, pointBackgroundColor: '#806600', spanGaps: true, tension: 0.1 },
-      { label: 'TPC SA - OAKS', data: [null, null, null, 81, 74, null, 69, 74, null, 69, 76], borderColor: '#0c2340', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 5, pointBackgroundColor: '#0c2340', spanGaps: true, tension: 0.1 }
+      { label: 'Canyons', data: [69, 68, 69, null, null, 73, null, null, 68, null, null], borderColor: '#806600', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 4, spanGaps: true },
+      { label: 'Oaks', data: [null, null, null, 81, 74, null, 69, 74, null, 69, 76], borderColor: '#0c2340', backgroundColor: 'transparent', borderWidth: 2, pointRadius: 4, spanGaps: true }
     ]
   },
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    interaction: { mode: 'index', intersect: false },
     scales: {
-      y: { min: 65, max: 85, grid: { color: '#f5f5f5' }, ticks: { font: { size: 11 }, callback: (val) => val + ' STK' } },
-      x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, minRotation: 45 } }
+      y: { min: 65, max: 85, grid: { color: '#e5e5e5' }, ticks: { font: { size: 10 }, color: '#806600', callback: (val) => val + ' STK' } },
+      x: { grid: { display: false }, ticks: { font: { size: 9 } } }
     },
     plugins: {
-      legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 12, weight: '500' }, padding: 20 } },
-      tooltip: {
-        yAlign: 'bottom', // 여기서도 툴팁을 포인트 위로 띄워 가독성 확보
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        padding: 10
-      }
+      legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11 } } },
+      tooltip: { yAlign: 'bottom', backgroundColor: '#0c2340' }
     }
   }
 });
 </script>
-
 
 
 
