@@ -219,8 +219,10 @@
 
 
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-// Tournament Chart (데이터 정합성 유지 및 Top Finishes 강조)
+
 <div style="width: 100%; max-width: 950px; margin: 20px auto; padding: 30px; background: #ffffff; border: 1px solid #eeeeee; border-radius: 8px; font-family: 'Inter', sans-serif;">
   <h2 style="font-size: 1.4em; color: #333; margin-bottom: 5px; font-weight: 700;">Performance Data Analysis</h2>
   <p style="font-size: 0.9em; color: #777; margin-bottom: 30px;">Tournament & Internal Qualifier Verified Records.</p>
@@ -241,7 +243,7 @@
 </div>
 
 <script>
-// 1. Official Tournament Chart (데이터 정합성 유지 및 Top Finishes 강조)
+// 1. Official Tournament Chart (WAGR 정정 데이터 반영 및 Top Finishes 시각화)
 const ctxOfficial = document.getElementById('officialTournamentChart').getContext('2d');
 new Chart(ctxOfficial, {
   type: 'line',
@@ -274,8 +276,8 @@ new Chart(ctxOfficial, {
           afterLabel: function(context) {
             const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)'];
             const rank = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
-            const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', 'TBD'];
-            const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', 'TBD'];
+            const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'];
+            const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'];
             const i = context.dataIndex;
             let tip = [
               `Round Info: ${rounds[i]}`,
