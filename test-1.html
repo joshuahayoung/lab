@@ -239,7 +239,12 @@
       <h3 style="font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 500; text-transform: uppercase;">Official Tournament Rounds</h3>
       <span style="background: #0c2340; color: #fff; padding: 4px 10px; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
     </div>
+    
     <div style="position: relative; height: 420px; background: #fafafa; border-radius: 8px; padding: 35px 15px 15px 15px;">
+      <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 5px 12px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.75em; font-weight: 700; color: #0c2340; text-transform: uppercase;">Adj. Avg:</span>
+        <span style="font-size: 1.1em; font-weight: 700; color: #F15A22;">71.0</span>
+      </div>
       <canvas id="officialTournamentChart"></canvas>
     </div>
   </div>
@@ -256,7 +261,6 @@
 </div>
 
 <script>
-// 플러그인 등록
 Chart.register(ChartDataLabels);
 Chart.defaults.font.family = "'Oswald', sans-serif";
 
@@ -285,17 +289,15 @@ new Chart(ctxOfficial, {
       datalabels: {
         align: 'top',
         anchor: 'end',
-        offset: 10,
-        padding: { top: 4, bottom: 4, left: 8, right: 8 },
-        // 상위 성적은 오렌지색 원형 배경
+        offset: 12,
+        padding: { top: 6, bottom: 6, left: 10, right: 10 },
         backgroundColor: (context) => {
           const i = context.dataIndex;
           return (i === 0 || i === 5) ? '#F15A22' : 'transparent';
         },
-        borderRadius: 20,
-        // 모든 텍스트를 남색(#0c2340)으로 통일하여 가독성 확보
+        borderRadius: 25,
         color: '#0c2340',
-        font: { weight: '700', size: 12 },
+        font: { weight: '700', size: 14 }, // 가독성을 위해 14px로 상향
         formatter: function(value, context) {
           const ranks = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
           return ranks[context.dataIndex];
@@ -306,12 +308,16 @@ new Chart(ctxOfficial, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    layout: { padding: { top: 20 } },
-    interaction: { mode: 'index', intersect: false },
+    layout: { padding: { top: 30 } },
+    // 툴팁이 바로 사라지도록 하는 인터렉션 설정 수정
+    interaction: { 
+      mode: 'nearest', 
+      intersect: true // 포인트에 직접 마우스가 닿았을 때만 표시
+    },
     scales: {
       y: {
         min: 65,
-        max: 82, // 레이블이 천장에 닿지 않도록 상단 한도 상향
+        max: 82,
         grid: { color: '#e5e5e5', drawBorder: false },
         ticks: { font: { size: 12, weight: '600' }, color: '#333', padding: 10 },
         title: { display: true, text: 'AVG. STROKES', color: '#333', font: { size: 12, weight: '700' } }
@@ -372,6 +378,7 @@ new Chart(ctxInternal, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
+    interaction: { mode: 'nearest', intersect: true },
     scales: {
       y: { min: 65, max: 85, grid: { color: '#e5e5e5' }, ticks: { font: { size: 11, weight: '600' }, color: '#333' }, title: { display: true, text: 'STROKES', color: '#333', font: { size: 11, weight: '700' } } },
       x: { grid: { display: false }, ticks: { font: { size: 9 }, color: '#333' } }
