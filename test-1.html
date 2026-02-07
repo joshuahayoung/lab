@@ -705,17 +705,18 @@
 
 <div class="performance-analysis-wrapper" style="width: 100%; max-width: 900px; margin: 60px auto 30px auto; padding: 0; background: transparent; box-sizing: border-box;">
   <div style="background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box;">
-    <div style="padding: 40px 20px; box-sizing: border-box; text-align: center;">
-      <h2 style="color: #0c2340; font-family: 'Marcellus', serif; font-size: 2.2em; margin-bottom: 5px; font-weight: 400; letter-spacing: 1px; margin-top: 0; text-transform: uppercase;">Performance Data Analysis</h2>
-      <p style="font-size: 0.9em; color: #666; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400;">Official Tournaments Verified Records</p>
+    <div style="padding: 40px 0; box-sizing: border-box; text-align: center;">
       
-      <div style="margin-bottom: 10px; position: relative; text-align: left;">
+      <h2 style="color: #0c2340; font-family: 'Marcellus', serif; font-size: 1.8em; margin-bottom: 8px; font-weight: 500; letter-spacing: 1.5px; margin-top: 0; text-transform: uppercase;">Performance Data Analysis</h2>
+      <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 2px; font-weight: 400; text-transform: uppercase;">Official Tournaments Verified Records</p>
+      
+      <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.2em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Official Tournament Records</h3>
-          <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.85em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
+          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Official Tournament Records</h3>
+          <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
         </div>
         
-        <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 15px 50px 15px; box-sizing: border-box;">
+        <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box;">
           <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
             <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Adj. Avg:</span>
             <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">71.0</span>
@@ -723,11 +724,12 @@
 
           <canvas id="archiveOfficialChart"></canvas>
 
-          <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.75em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600;">
+          <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
             <span>SOURCE: SCOREBOARD.CLIPPED, WAGR & GOLFSTAT</span>
             <span>CUMULATIVE: 6 EVENTOS / 18 RONDAS</span>
           </div>
         </div>
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #999; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
       </div>
     </div>
   </div>
@@ -749,35 +751,27 @@
   new Chart(ctxOfficialArchive, {
     type: 'line',
     data: {
-      labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)', '2/01 (Compadres)'],
+      labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)*', '2/01 (Compadres)'],
       datasets: [{
         label: 'Scoring Avg',
         data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00],
-        borderColor: '#F15A22',
-        backgroundColor: 'rgba(241, 90, 34, 0.05)',
-        borderWidth: 3,
-        pointRadius: [10, 6, 6, 6, 6, 12],
-        pointHoverRadius: [12, 8, 8, 8, 8, 14],
-        pointBackgroundColor: (context) => {
-          const i = context.dataIndex;
-          return (i === 0 || i === 5) ? '#F15A22' : '#0c2340';
-        },
+        borderColor: '#0c2340',
+        backgroundColor: 'rgba(12, 35, 64, 0.05)',
+        borderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 9,
+        pointBackgroundColor: '#0c2340',
         pointBorderColor: '#fff',
         pointBorderWidth: 2,
-        tension: 0.2,
+        tension: 0.3,
         fill: true,
         datalabels: {
           align: 'top',
           anchor: 'end',
-          offset: 12,
-          padding: { top: 6, bottom: 6, left: 10, right: 10 },
-          backgroundColor: (context) => {
-            const i = context.dataIndex;
-            return (i === 0 || i === 5) ? '#F15A22' : 'transparent';
-          },
-          borderRadius: 25,
+          offset: 8,
+          backgroundColor: null, // Removed orange box
           color: '#0c2340',
-          font: { weight: '700', size: 14 },
+          font: { weight: '700', size: 13 },
           formatter: function(value, context) {
             const ranks = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
             return ranks[context.dataIndex];
@@ -788,15 +782,15 @@
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      layout: { padding: { top: 35, bottom: 10, left: 5, right: 5 } },
+      layout: { padding: { top: 30, bottom: 10, left: 0, right: 0 } },
       interaction: { mode: 'nearest', intersect: true },
       scales: {
         y: {
           min: 65,
           max: 82,
           grid: { color: '#efefef', drawBorder: false },
-          ticks: { font: { size: 12, weight: '600' }, color: '#333', padding: 10 },
-          title: { display: true, text: 'AVG. STROKES', color: '#0c2340', font: { size: 11, weight: '700' } }
+          ticks: { font: { size: 11, weight: '600' }, color: '#333', padding: 10 },
+          title: { display: true, text: 'AVG. STROKES', color: '#0c2340', font: { size: 10, weight: '700' } }
         },
         x: {
           grid: { display: false },
@@ -817,16 +811,20 @@
           cornerRadius: 4,
           displayColors: false,
           callbacks: {
+            title: function(context) {
+              let label = context[0].label || '';
+              if (context[0].dataIndex === 4) label += ' (Special Invitational)';
+              return label;
+            },
             afterLabel: function(context) {
               const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)'];
               const rank = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
               const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'];
               const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'];
               const i = context.dataIndex;
-              const isSpecial = (i === 4) ? ' (Special Invitational)' : '';
               return [
                 '',
-                `Rounds: ${rounds[i]}${isSpecial}`,
+                `Rounds: ${rounds[i]}`,
                 `Rank: ${rank[i]}`,
                 `-----------------------`,
                 `WAGR Pwr: ${pwr[i]}`,
