@@ -284,7 +284,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 기본 구조 유지 */
+    /* 기본 구조 - 너비 100% 강제 */
     .activity-card, .focus-container {
       background: #ffffff;
       border: 2.5px solid #0c2340;
@@ -294,8 +294,6 @@ gtag('config', 'G-H1JW8YBDZ8');
       margin-bottom: 20px;
       box-sizing: border-box;
       width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
       display: block;
     }
 
@@ -337,18 +335,19 @@ gtag('config', 'G-H1JW8YBDZ8');
       white-space: nowrap;
     }
 
+    /* 모바일에서 섹션 자체의 여백을 제거하여 배너와 너비를 맞춤 */
     @media (max-width: 900px) {
       .index-activity-section { 
-        padding: 0 15px !important; 
+        padding: 0 !important; 
       }
     }
 
-    /* 모바일 정밀 중앙 정렬 및 아이콘 복구 */
+    /* 모바일 정밀 레이아웃 */
     @media (max-width: 768px) {
       .activity-card-inner { 
         flex-direction: column !important; 
         align-items: center !important; 
-        padding: 25px 20px !important; 
+        padding: 25px 15px !important; 
         text-align: center;
       }
       .tournament-info {
@@ -381,12 +380,12 @@ gtag('config', 'G-H1JW8YBDZ8');
         align-items: center !important;
       }
       
-      /* 하단 FOCUS 모바일 중앙 정렬 및 아이콘 복구 */
       .focus-container { 
         flex-direction: column !important; 
         align-items: center !important; 
         text-align: center !important;
         gap: 15px !important; 
+        padding: 25px 15px !important;
       }
       .focus-container > div:first-child {
         display: flex !important;
@@ -397,7 +396,6 @@ gtag('config', 'G-H1JW8YBDZ8');
       .focus-container div[style*="flex-direction: column"] {
         align-items: center !important;
       }
-      /* 아이콘 제거 display: none 삭제 후 중앙 배치 */
       .focus-arrow-svg {
         display: block !important;
         margin-top: 5px;
