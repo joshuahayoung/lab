@@ -272,6 +272,8 @@ gtag('config', 'G-H1JW8YBDZ8');
     </div>   
 
 
+
+
  <div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
   
   <style>
@@ -281,7 +283,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 배너 이미지와 동일한 시각적 너비를 확보하기 위해 마진과 패딩을 0으로 강제 */
+    /* 기본 구조 유지 */
     .activity-card, .focus-container {
       background: #ffffff;
       border: 2.5px solid #0c2340;
@@ -334,33 +336,39 @@ gtag('config', 'G-H1JW8YBDZ8');
       white-space: nowrap;
     }
 
-    /* 모바일에서 배너 이미지에 패딩이 있다면 동일하게 적용, 없다면 0으로 유지 */
     @media (max-width: 900px) {
       .index-activity-section { 
-        padding: 0 15px !important; /* 모바일 사이드 여백 확보 */
+        padding: 0 15px !important; 
       }
     }
 
+    /* 모바일 정밀 중앙 정렬 섹션 */
     @media (max-width: 768px) {
       .activity-card-inner { 
         flex-direction: column !important; 
-        align-items: center !important; /* 중앙 정렬로 변경 */
+        align-items: center !important; 
         padding: 25px 20px !important; 
         text-align: center;
       }
       .tournament-info {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 12px !important;
+        gap: 15px !important;
+        width: 100%;
       }
-      .tournament-info div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .tournament-info > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+      }
+      .tournament-info .date-container {
+        justify-content: center !important; /* FECHA 중앙 정렬 */
+        width: 100%;
       }
       .stats-container { 
         width: 100% !important; 
-        justify-content: center !important; /* 모바일 스코어 중앙 정렬 */
+        justify-content: center !important; 
         margin-top: 20px;
         padding-top: 20px;
         border-top: 1px solid #f1f5f9;
@@ -371,17 +379,25 @@ gtag('config', 'G-H1JW8YBDZ8');
         padding-right: 0 !important;
         align-items: center !important;
       }
+      
+      /* 하단 FOCUS 모바일 중앙 정렬 고정 */
       .focus-container { 
-        flex-direction: column; 
-        align-items: center; 
-        text-align: center;
-        gap: 15px; 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        text-align: center !important;
+        gap: 15px !important; 
       }
-      .focus-container div {
-        align-items: center !important;
+      .focus-container > div:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* 배제와 텍스트 박스 모두 중앙으로 */
+        width: 100%;
+      }
+      .focus-container div[style*="flex-direction: column"] {
+        align-items: center !important; /* 내부 텍스트 라인 중앙 정렬 */
       }
       .focus-arrow-svg {
-        display: none; /* 모바일 공간 확보를 위해 화살표 숨김 */
+        display: none; 
       }
       h2 { font-size: 20px !important; }
     }
@@ -401,7 +417,7 @@ gtag('config', 'G-H1JW8YBDZ8');
           <span style="color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Upcoming Qualy</span>
         </div>
         <div>
-          <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; justify-content: inherit;">
+          <div class="date-container" style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
             <span style="color: #0c2340; font-weight: 900; font-size: 19px; letter-spacing: -0.3px;">UTSA Internal Qualifier</span>
             <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 10/12/17)</span>
           </div>
