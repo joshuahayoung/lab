@@ -342,7 +342,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       }
     }
 
-    /* 모바일 정밀 중앙 정렬 섹션 */
+    /* 모바일 정밀 중앙 정렬 및 아이콘 복구 */
     @media (max-width: 768px) {
       .activity-card-inner { 
         flex-direction: column !important; 
@@ -363,7 +363,7 @@ gtag('config', 'G-H1JW8YBDZ8');
         width: 100%;
       }
       .tournament-info .date-container {
-        justify-content: center !important; /* FECHA 중앙 정렬 */
+        justify-content: center !important;
         width: 100%;
       }
       .stats-container { 
@@ -380,7 +380,7 @@ gtag('config', 'G-H1JW8YBDZ8');
         align-items: center !important;
       }
       
-      /* 하단 FOCUS 모바일 중앙 정렬 고정 */
+      /* 하단 FOCUS 모바일 중앙 정렬 및 아이콘 복구 */
       .focus-container { 
         flex-direction: column !important; 
         align-items: center !important; 
@@ -390,14 +390,16 @@ gtag('config', 'G-H1JW8YBDZ8');
       .focus-container > div:first-child {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* 배제와 텍스트 박스 모두 중앙으로 */
+        align-items: center !important;
         width: 100%;
       }
       .focus-container div[style*="flex-direction: column"] {
-        align-items: center !important; /* 내부 텍스트 라인 중앙 정렬 */
+        align-items: center !important;
       }
+      /* 아이콘 제거 display: none 삭제 후 중앙 배치 */
       .focus-arrow-svg {
-        display: none; 
+        display: block !important;
+        margin-top: 5px;
       }
       h2 { font-size: 20px !important; }
     }
