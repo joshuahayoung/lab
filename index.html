@@ -271,7 +271,8 @@ gtag('config', 'G-H1JW8YBDZ8');
       UTSA
     </div>   
 
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
+
+ <div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
   
   <style>
     @keyframes pulse-live {
@@ -336,14 +337,53 @@ gtag('config', 'G-H1JW8YBDZ8');
     /* 모바일에서 배너 이미지에 패딩이 있다면 동일하게 적용, 없다면 0으로 유지 */
     @media (max-width: 900px) {
       .index-activity-section { 
-        padding: 0 !important; /* 배너가 화면에 꽉 찬다면 0, 여백이 있다면 그 값으로 수정 필요 */
+        padding: 0 15px !important; /* 모바일 사이드 여백 확보 */
       }
     }
 
     @media (max-width: 768px) {
-      .activity-card-inner { flex-direction: column !important; align-items: flex-start !important; padding: 20px !important; }
-      .stats-container { width: 100% !important; justify-content: space-between !important; margin-top: 15px; }
-      .focus-container { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .activity-card-inner { 
+        flex-direction: column !important; 
+        align-items: center !important; /* 중앙 정렬로 변경 */
+        padding: 25px 20px !important; 
+        text-align: center;
+      }
+      .tournament-info {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+      }
+      .tournament-info div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .stats-container { 
+        width: 100% !important; 
+        justify-content: center !important; /* 모바일 스코어 중앙 정렬 */
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #f1f5f9;
+        gap: 20px !important;
+      }
+      .score-group {
+        border-right: none !important;
+        padding-right: 0 !important;
+        align-items: center !important;
+      }
+      .focus-container { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+        gap: 15px; 
+      }
+      .focus-container div {
+        align-items: center !important;
+      }
+      .focus-arrow-svg {
+        display: none; /* 모바일 공간 확보를 위해 화살표 숨김 */
+      }
+      h2 { font-size: 20px !important; }
     }
   </style>
 
@@ -361,24 +401,24 @@ gtag('config', 'G-H1JW8YBDZ8');
           <span style="color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Upcoming Qualy</span>
         </div>
         <div>
-          <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; justify-content: inherit;">
             <span style="color: #0c2340; font-weight: 900; font-size: 19px; letter-spacing: -0.3px;">UTSA Internal Qualifier</span>
-            <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 10-17)</span>
+            <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 10/12/17)</span>
           </div>
-          <span style="color: #64748b; font-size: 13px; font-weight: 600;">The Canyons Course, San Antonio, TX</span>
+          <span style="color: #64748b; font-size: 13px; font-weight: 600;">TPC SAN ANTONIO, The Canyons Course</span>
         </div>
       </div>
 
       <div class="stats-container" style="display: flex; align-items: center; gap: 30px;">
         <div class="score-group" style="display: flex; flex-direction: column; gap: 6px; border-right: 1px solid #f1f5f9; padding-right: 40px;">
-          <div style="display: flex; justify-content: flex-end;">
+          <div style="display: flex; justify-content: center;">
             <div style="display: flex; width: 140px; justify-content: space-between;">
               <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q1</span>
               <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q2</span>
               <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q3</span>
             </div>
           </div>
-          <div style="display: flex; justify-content: flex-end; align-items: center;">
+          <div style="display: flex; justify-content: center; align-items: center;">
             <div style="display: flex; width: 140px; justify-content: space-between; align-items: center;">
               <span style="color: #cbd5e1; font-size: 19px; font-weight: 800; width: 40px; text-align: center;">-</span>
               <span style="color: #cbd5e1; font-size: 19px; font-weight: 800; width: 40px; text-align: center;">-</span>
