@@ -281,11 +281,19 @@
       box-sizing: border-box !important;
     }
 
-    /* 테이블 구조 최적화 */
-    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    /* 테이블 구조 최적화 - 너비 고정을 위해 table-layout: fixed 강제 */
+    .log-table { 
+      width: 100% !important; 
+      border-collapse: separate !important; /* collapse 대신 separate로 테두리 오차 제거 */
+      border-spacing: 0;
+      background: white; 
+      table-layout: fixed; 
+      margin-bottom: 0; 
+      border: none;
+    }
     .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
     .log-table th.col-left { text-align: left; padding-left: 20px; }
-    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .log-table td.col-left { text-align: left; padding-left: 20px; }
     .under-par { color: #e74c3c !important; font-weight: 800 !important; }
     .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
@@ -319,22 +327,16 @@
 
     @media (max-width: 768px) {
       .log-table thead { display: none; }
-      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100% !important; }
       .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
-      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
+      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; white-space: normal; }
       .hide-mobile { display: none !important; }
-      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
-      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
-      .ms-item:last-child { border-right: none; }
-      .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
-      .ms-value { display: block; font-size: 12px; font-weight: 800; }
     }
     
     @media (min-width: 769px) {
-      .mobile-status-bar { display: none !important; }
-      .col-info { width: 55%; }
-      .col-score { width: 10%; }
-      .col-par { width: 10%; }
+      .col-info { width: 50%; }
+      .col-score { width: 12.5%; }
+      .col-par { width: 12.5%; }
       .col-status { width: 15%; }
       .col-finish { width: 10%; }
     }
@@ -346,7 +348,7 @@
     </h1>
   </div>
 
-  <div class="live-event-card-wrapper" style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0;">
+  <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0; box-sizing: border-box;">
     
     <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
       <div style="display: flex; align-items: center; gap: 12px;">
@@ -362,7 +364,7 @@
       <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Feb 3, 2026</div>
     </div>
 
-    <div>
+    <div style="width: 100%; overflow: hidden;">
       <table class="log-table">
         <thead>
           <tr>
@@ -383,30 +385,30 @@
               </div>
               <div style="font-size: 11px; color: #7f8c8d;">Feb 1, 2026</div>
             </td>
-            <td class="hide-mobile under-par">70</td>
-            <td class="hide-mobile under-par">-2</td>
-            <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-            <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
+            <td class="under-par">70</td>
+            <td class="under-par">-2</td>
+            <td style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+            <td style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
           </tr>
           <tr>
             <td class="col-left">
               <div style="display: flex; align-items: center; gap: 8px;"><div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div></div>
               <div style="font-size: 11px; color: #7f8c8d;">Feb 2, 2026</div>
             </td>
-            <td class="hide-mobile">75</td>
-            <td class="hide-mobile">+3</td>
-            <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-            <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
+            <td>75</td>
+            <td>+3</td>
+            <td style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+            <td style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
           </tr>
           <tr>
             <td class="col-left">
               <div style="display: flex; align-items: center; gap: 8px;"><div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div></div>
               <div style="font-size: 11px; color: #7f8c8d;">Feb 3, 2026</div>
             </td>
-            <td class="hide-mobile under-par">71</td>
-            <td class="hide-mobile under-par">-1</td>
-            <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-            <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
+            <td class="under-par">71</td>
+            <td class="under-par">-1</td>
+            <td style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
+            <td style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
           </tr>
         </tbody>
       </table>
