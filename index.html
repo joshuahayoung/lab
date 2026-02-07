@@ -275,7 +275,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 
 
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
   
   <style>
     @keyframes pulse-live {
@@ -284,6 +284,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       100% { opacity: 1; transform: scale(1); }
     }
 
+    /* 900px 라인에 칼같이 맞추기 위해 좌우 마진/패딩 제거 */
     .activity-card, .focus-container {
       background: #ffffff;
       border: 2.5px solid #0c2340;
@@ -292,7 +293,8 @@ gtag('config', 'G-H1JW8YBDZ8');
       box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
       margin-bottom: 20px;
       box-sizing: border-box;
-      width: 100%; /* 부모 900px를 100% 꽉 채우도록 설정 */
+      width: 100%; 
+      display: block;
     }
 
     .status-dot-live {
@@ -333,8 +335,8 @@ gtag('config', 'G-H1JW8YBDZ8');
       white-space: nowrap;
     }
 
-    @media (max-width: 900px) {
-      /* 화면이 900px보다 작아질 때만 최소한의 여백 허용 */
+    /* 900px 미만일 때만 패딩을 주어 모바일 대응, 900px 이상에선 패딩 0 */
+    @media (max-width: 899px) {
       .index-activity-section { padding: 0 15px !important; }
     }
 
@@ -345,7 +347,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     }
   </style>
 
-  <div style="margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 20px;">
+  <div style="margin-bottom: 25px; display: flex; align-items: center; justify-content: center; gap: 20px; width: 100%;">
     <div style="flex-grow: 1; height: 1px; background: #edf2f7;"></div>
     <h2 style="margin: 0; color: #c98a2e; font-size: 24px; font-weight: 900; letter-spacing: -0.5px; text-transform: uppercase;">On-going Activity</h2>
     <div style="flex-grow: 1; height: 1px; background: #edf2f7;"></div>
