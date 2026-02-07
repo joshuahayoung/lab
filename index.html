@@ -275,7 +275,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 
 
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
+<div class="index-activity-section" style="width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <style>
     @keyframes pulse-live {
@@ -284,7 +284,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 900px 라인에 칼같이 맞추기 위해 좌우 마진/패딩 제거 */
+    /* 배너와 칼같이 맞추기 위해 width를 900px로 고정 및 여백 완전 제거 */
     .activity-card, .focus-container {
       background: #ffffff;
       border: 2.5px solid #0c2340;
@@ -293,7 +293,9 @@ gtag('config', 'G-H1JW8YBDZ8');
       box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
       margin-bottom: 20px;
       box-sizing: border-box;
-      width: 100%; 
+      width: 900px !important; 
+      margin-left: 0;
+      margin-right: 0;
       display: block;
     }
 
@@ -335,9 +337,10 @@ gtag('config', 'G-H1JW8YBDZ8');
       white-space: nowrap;
     }
 
-    /* 900px 미만일 때만 패딩을 주어 모바일 대응, 900px 이상에선 패딩 0 */
-    @media (max-width: 899px) {
-      .index-activity-section { padding: 0 15px !important; }
+    /* 모바일 환경 대응을 위한 최소 패딩 유지 */
+    @media (max-width: 930px) {
+      .index-activity-section { width: 100% !important; padding: 0 15px !important; }
+      .activity-card, .focus-container { width: 100% !important; }
     }
 
     @media (max-width: 768px) {
