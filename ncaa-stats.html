@@ -241,7 +241,10 @@
 
     
     
-<div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 140px 10px 0; box-sizing: border-box;">
+
+
+
+<div class="ncaa-hero-section" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; max-width: 900px; margin: 0 auto 50px; padding: 140px 15px 0; box-sizing: border-box;">
 
   <div style="text-align: center; margin-bottom: 35px;">
     <h1 style="font-size: 34px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -1.5px; text-transform: uppercase; line-height: 1.1;">
@@ -257,8 +260,8 @@
   </div>
   
 
-<div class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0 15px; box-sizing: border-box;">
-    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0;">
+<div class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0; box-sizing: border-box;">
+    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0; box-sizing: border-box;">
         <img src="https://drive.google.com/thumbnail?id=11fyK0kkDZxFBu-A3fonPZwXJirY2VRty&sz=w1200" 
              style="width: 100%; height: auto; display: block; object-fit: contain;" 
              alt="Joshua Hong Performance"
@@ -273,6 +276,9 @@
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
+    /* 모든 요소에 box-sizing: border-box 강제 적용 */
+    .performance-log-section *, .performance-log-section *::before, .performance-log-section *::after { box-sizing: border-box; }
+
     /* 테이블 구조 최적화 */
     .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
     .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
@@ -283,12 +289,14 @@
     .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
     
     /* 테두리 끊김 방지를 위해 overflow: hidden 재적용 및 스크롤 간섭 제거 */
+    /* 배너 이미지 박스와 동일한 너비를 위해 border와 box-shadow 수치 수정 */
     .live-event-card { 
+      width: 100%;
       background: #ffffff; 
-      border: 2px solid #0c2340; 
-      border-radius: 20px; 
+      border: 1px solid #e2e8f0; 
+      border-radius: 25px; 
       padding: 0; 
-      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18); 
       margin-bottom: 50px; 
       position: relative; 
       display: flex; 
@@ -312,7 +320,7 @@
 
     @media (max-width: 768px) {
       .log-table thead { display: none; }
-      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; }
       .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
       .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
       .hide-mobile { display: none !important; }
@@ -333,378 +341,329 @@
     }
   </style>
 
-  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
+  <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 10px; text-align: center;">
     <h1 style="margin: 0; color: #0c2340; font-size: 24px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
       Tournament Schedule & Scoring
     </h1>
   </div>
-    <div id="Tournament-Schedule-Scoring" style="padding-top: 20px;">
+    <div id="Tournament-Schedule-Scoring" style="padding-top: 5px;">
     </div>
 
-<style>
-  /* Pairing Modal 기본 스타일 */
-  .pairing-modal {
-    display: none;
-    position: fixed;
-    z-index: 10001;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  .modal-content-wrapper {
-    position: relative;
-    max-width: 90%;
-    max-height: 90vh;
-    text-align: center;
-  }
-  .pairing-modal img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    border: 3px solid #fff;
-  }
-  .close-x {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .close-btn-bottom {
-    margin-top: 15px;
-    padding: 8px 25px;
-    background: #fff;
-    color: #0c2340;
-    border: none;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 12px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  /* 라운드 페어링 버튼 공통 클래스 */
-  .pairing-btn {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background: #f1f5f9;
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.2s ease;
-  }
-  .pairing-btn:hover {
-    background: #e2e8f0;
-  }
-  .pairing-btn span {
-    font-size: 10px;
-    font-weight: 800;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-</style>
 
-<div id="pairingModal" class="pairing-modal" onclick="closePairing()">
-  <div class="modal-content-wrapper" onclick="event.stopPropagation()">
-    <span class="close-x" onclick="closePairing()">&times;</span>
-    <img id="pairingImg" src="" alt="Round Pairing">
-    <br>
-    <button class="close-btn-bottom" onclick="closePairing()">Close</button>
-  </div>
-</div>
-
-<script>
-  function openPairing(imgSrc) {
-    document.getElementById('pairingImg').src = imgSrc;
-    document.getElementById('pairingModal').style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // 스크롤 방지
-  }
-  function closePairing() {
-    document.getElementById('pairingModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // 스크롤 재개
-  }
-</script>
-
-<div class="live-event-card">
-  <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="background: #94a3b8; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
-        <span class="live-dot"></span>
-        FINISHED
+  <div id="joshua-qualifier-section" style="width: 100%; max-width: 900px; margin: 10px auto; padding: 0; font-family: 'Oswald', sans-serif; box-sizing: border-box; clear: both;">
+  
+  <div style="margin-bottom: 40px; width: 100%; box-sizing: border-box; padding: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-left: 5px solid #E31837; padding-left: 15px; margin-left: 10px;">
+      <h3 style="color: #0c2340; margin: 0; text-transform: none; font-size: 1.3em; line-height: 1.2;">Upcoming Tournaments</h3>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 0.85em; color: #888; padding-right: 10px;">Internal Spring Qualifier</span>
+    </div>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; width: 100%; padding: 0 10px; box-sizing: border-box;">
+      <div style="flex: 1; min-width: 250px; background: #ffffff; border: 1.5px solid #0c2340; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); box-sizing: border-box;">
+        <div style="font-size: 0.85em; color: #666; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Feb 10 (Tue)</div>
+        <div style="font-size: 1.05em; font-weight: 600; color: #0c2340; margin-bottom: 12px;">The Canyons Course / 1:00</div>
+        <div style="display: inline-block; padding: 4px 15px; background: #f0f0f0; color: #aaa; border-radius: 15px; font-size: 0.9em; font-weight: 700;">TBD</div>
       </div>
-      <div>
-        <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Compadres Collegiate (UTRGV)</h2>
-        <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">Iberostar Playa Paraiso | Par 72/6,701 yards</div>
+      <div style="flex: 1; min-width: 250px; background: #ffffff; border: 1.5px solid #0c2340; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); box-sizing: border-box;">
+        <div style="font-size: 0.85em; color: #666; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Feb 12 (Thur)</div>
+        <div style="font-size: 1.05em; font-weight: 600; color: #0c2340; margin-bottom: 12px;">The Canyons Course / 1:00</div>
+        <div style="display: inline-block; padding: 4px 15px; background: #f0f0f0; color: #aaa; border-radius: 15px; font-size: 0.9em; font-weight: 700;">TBD</div>
+      </div>
+      <div style="flex: 1; min-width: 250px; background: #ffffff; border: 1.5px solid #0c2340; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03); box-sizing: border-box;">
+        <div style="font-size: 0.85em; color: #666; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Feb 17 (Tue)</div>
+        <div style="font-size: 1.05em; font-weight: 600; color: #0c2340; margin-bottom: 12px;">The Canyons Course / 1:00</div>
+        <div style="display: inline-block; padding: 4px 15px; background: #f0f0f0; color: #aaa; border-radius: 15px; font-size: 0.9em; font-weight: 700;">TBD</div>
       </div>
     </div>
-    <div style="font-size: 11px; color: #95a5a6; font-weight: 600;">Updated: Feb 3, 2026</div>
   </div>
 
-  <div>
-    <table class="log-table">
-      <thead>
-        <tr>
-          <th class="col-info col-left">Round</th>
-          <th class="col-score">Score</th>
-          <th class="col-par">Par</th>
-          <th class="col-status">Status</th>
-          <th class="col-finish">Rank</th>
-        </tr>
-      </thead>
-      <tbody>
+  <div style="width: 100%; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; padding: 0 10px;">
+      <h3 style="color: #0c2340; border-left: 5px solid #0c2340; padding-left: 15px; margin: 0; text-transform: none; font-size: 1.3em; line-height: 1.2;">Qualifier Performance History</h3>
+      
+      <div style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; display: flex; gap: 10px; align-items: center;">
+        <span style="color: #0c2340; font-weight: 700; border-bottom: 2px solid #E31837; padding-bottom: 2px; cursor: default;">THE CANYONS</span>
+        <span style="color: #ccc; font-weight: 400; padding-bottom: 2px;">|</span>
+        <span style="color: #aaa; font-weight: 500; padding-bottom: 2px; cursor: default;">THE OAKS (DATA PENDING)</span>
+      </div>
+    </div>
 
-      <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 1</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-Round-1-pairing.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d;">Feb 1, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">70</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-2</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">1</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile under-par">70</td>
-          <td class="hide-mobile under-par">-2</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">1</td>
-        </tr>
-
-    <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing2.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 2, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">75</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">+3</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T2</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">75</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">+3</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T2</td>
-        </tr>
-
-        <tr>
-          <td class="col-left">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-UTRGV-pairing3.jpeg')">
-                <span>Pairing</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-              <div class="pairing-btn" onclick="openPairing('./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-scorecard-70.jpeg')">
-                <span>Scorecard</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6"></path>
-                  <path d="M10 14L21 3"></path>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                </svg>
-              </div>
-            </div>
-            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 3, 2026</div>
-            <div class="mobile-status-bar">
-              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">71</span></div>
-              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-1</span></div>
-              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">T3</span></div>
-            </div>
-          </td>
-          <td class="hide-mobile under-par">71</td>
-          <td class="hide-mobile under-par">-1</td>
-          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">FINISHED</td>
-          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">T3</td>
-        </tr>
-        
-      </tbody>
-    </table>
+    <div style="overflow: hidden; width: 100%; box-sizing: border-box; padding: 0 10px;">
+      <div style="border: 1.5px solid #0c2340; border-radius: 12px; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; background: #ffffff; margin: 0; box-sizing: border-box;">
+          <thead>
+            <tr style="background: #0c2340; color: #ffffff;">
+              <th style="width: 20%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Date</th>
+              <th style="width: 45%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Course Name</th>
+              <th style="width: 17.5%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Score</th>
+              <th style="width: 17.5%; padding: 15px; font-weight: 500; font-size: 0.9em; text-align: center;">To Par</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center; color: #333; font-family: 'Montserrat', sans-serif;">
+            <tr style="border-bottom: 1px solid #eee; background: rgba(12, 35, 64, 0.02);"><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">Feb 17, 2026</td><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #ccc; font-family: 'Oswald', sans-serif;">TBD</td><td style="padding: 12px; color: #ccc;">--</td></tr>
+            <tr style="border-bottom: 1px solid #eee; background: rgba(12, 35, 64, 0.02);"><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">Feb 12, 2026</td><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #ccc; font-family: 'Oswald', sans-serif;">TBD</td><td style="padding: 12px; color: #ccc;">--</td></tr>
+            <tr style="border-bottom: 1px solid #eee; background: rgba(12, 35, 64, 0.02);"><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">Feb 10, 2026</td><td style="padding: 12px; border-right: 1px solid #eee; color: #888;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #ccc; font-family: 'Oswald', sans-serif;">TBD</td><td style="padding: 12px; color: #ccc;">--</td></tr>
+            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Jan 22, 2026</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; font-family: 'Oswald', sans-serif; font-size: 1.1em;">68</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-4</td></tr>
+            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Sep 26, 2025</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; font-family: 'Oswald', sans-serif; font-size: 1.1em;">73</td><td style="padding: 12px; font-weight: 600;">+1</td></tr>
+            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Sep 01, 2025</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; font-family: 'Oswald', sans-serif; font-size: 1.1em;">69</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-3</td></tr>
+            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Aug 28, 2025</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; font-family: 'Oswald', sans-serif; font-size: 1.1em;">68</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-4</td></tr>
+            <tr><td style="padding: 12px; border-right: 1px solid #eee;">Aug 27, 2025</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; font-family: 'Oswald', sans-serif; font-size: 1.1em;">69</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-3</td></tr>
+          </tbody>
+          <tfoot>
+          <tr style="background: #fafafa; border-top: 1.5px solid #0c2340;">
+  <td style="width: 20%; padding: 12px; border-right: 1px solid #eee;"></td>
+  <td style="width: 45%; padding: 12px 15px; text-align: center; border-right: 1px solid #eee; font-weight: 600; font-size: 0.85em; color: #888; font-family: 'Montserrat', sans-serif;">
+    AVG. Course Cumulative Performance:
+  </td>
+  <td style="width: 17.5%; padding: 12px; text-align: center; border-right: 1px solid #eee;">
+    <span style="font-weight: 700; font-size: 1.05em; font-family: 'Oswald', sans-serif; color: #E31837;">
+      69.4
+    </span>
+  </td>
+  <td style="width: 17.5%; padding: 12px; text-align: center;">
+    <span style="font-weight: 700; font-size: 1.05em; font-family: 'Oswald', sans-serif; color: #E31837;">
+      -2.6
+    </span>
+  </td>
+</tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
   </div>
-
- <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
- <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
-  <span style="display: flex; align-items: center; gap: 6px;">
-    <span style="width: 5px; height: 5px; background-color: #bdc3c7; border-radius: 50%; display: inline-block;"></span>
-    FINAL RESULTS
-  </span>
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="7" y1="17" x2="17" y2="7"></line>
-    <polyline points="7 7 17 7 17 17"></polyline>
-  </svg>
-</a>
-
-<style>
-@keyframes pulse {
-  0% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(1.2); }
-  100% { opacity: 1; transform: scale(1); }
-}
-</style>
-
-      <div style="text-align: right;">
-
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
-
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">216</span>
-
-    </div>
-
-    <div style="text-align: right;">
-
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Par</span>
-
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">E</span>
-
-    </div>
-
-    <div style="text-align: right;">
-
-      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Final Rank</span>
-
-      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">T3</span>
-
-    </div>
-
-  </div>
-
 </div>
+  
 
   
 
 
 
- <div class="current-focus-section" style="max-width: 900px; margin: 60px auto 40px; padding: 0 20px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+<div class="current-focus-section" style="width: 100%; max-width: 900px; margin: 30px auto 40px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
     <a id="current-focus" style="display: block; position: relative; top: -100px; visibility: hidden;"></a>
-    <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center;">
-        <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">
+    <div style="border-bottom: 2px solid #0c2340; padding-bottom: 20px; margin-bottom: 40px; text-align: center; box-sizing: border-box;">
+        <h1 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase; box-sizing: border-box;">
             Current Focus
         </h1>
     </div>
 </div>
 
-<div class="legal-pad-wrapper" style="max-width: 900px; margin: 0 auto 100px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0 15px; box-sizing: border-box;">
-    <div style="width: 100%; height: 35px; background: #334155; border-radius: 20px 20px 0 0; position: relative; z-index: 2; box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2); border: 1px solid #1e293b;">
-        <div style="display: flex; justify-content: center; gap: 40px; padding-top: 10px;">
-            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
-            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
-            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%;"></div>
+<div class="legal-pad-wrapper" style="width: 100%; max-width: 900px; margin: 0 auto 30px; position: relative; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 0; box-sizing: border-box;">
+    <div style="width: 100%; height: 35px; background: #334155; border-radius: 20px 20px 0 0; position: relative; z-index: 2; box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2); border: 1px solid #1e293b; box-sizing: border-box;">
+        <div style="display: flex; justify-content: center; gap: 40px; padding-top: 10px; box-sizing: border-box;">
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%; box-sizing: border-box;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%; box-sizing: border-box;"></div>
+            <div style="width: 12px; height: 12px; background: #1e293b; border-radius: 50%; box-sizing: border-box;"></div>
         </div>
     </div>
     
-    <div class="legal-pad-content" style="background: #fff9c4; background-image: linear-gradient(#e5e0a3 1px, transparent 1px); background-size: 100% 28px; border-left: 1px solid #e5e0a3; border-right: 1px solid #e5e0a3; border-bottom: 4px solid #d4cf92; border-radius: 0 0 60px 60px; padding: 40px 40px 60px 80px; position: relative; box-shadow: 15px 15px 30px rgba(0,0,0,0.07); min-height: 550px; display: flex; flex-direction: column;">
+    <div class="legal-pad-content" style="background: #fff9c4; background-image: linear-gradient(#e5e0a3 1px, transparent 1px); background-size: 100% 28px; border-left: 1px solid #e5e0a3; border-right: 1px solid #e5e0a3; border-bottom: 4px solid #d4cf92; border-radius: 0 0 60px 60px; padding: 40px; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.07); display: flex; flex-direction: column; box-sizing: border-box; width: 100%;">
         
-        <div style="position: absolute; left: 65px; top: 0; bottom: 0; width: 2px; border-left: 1px solid #ff8a80; border-right: 1px solid #ff8a80; pointer-events: none;"></div>
-
-        <div style="margin-bottom: 45px; position: relative;">
-            <span style="font-size: 14px; color: #d32f2f; font-weight: 700; text-transform: uppercase;">Date: Feb 05, 2026</span>
-            <h3 style="margin: 10px 0 0 0; color: #0c2340; font-size: 24px; font-weight: 900; text-transform: uppercase; border-bottom: 2px solid #0c2340; display: inline-block;">
+        <div style="margin-bottom: 45px; position: relative; box-sizing: border-box;">
+            <span style="font-size: 14px; color: #d32f2f; font-weight: 700; text-transform: uppercase; box-sizing: border-box;">Date: Feb 09, 2026</span>
+            <h3 style="margin: 10px 0 0 0; color: #0c2340; font-size: 24px; font-weight: 900; text-transform: uppercase; border-bottom: 2px solid #0c2340; display: inline-block; box-sizing: border-box;">
                 Performance Analysis & Training Plan
             </h3>
         </div>
 
-        <div class="memo-body" style="display: flex; flex-direction: column; gap: 28px; max-width: 100%; position: relative; z-index: 1; margin-bottom: 50px;">
-            
-            <div style="display: flex; gap: 15px; align-items: flex-start;">
-                <span style="font-size: 20px; color: #0c2340; font-weight: 900;">01.</span>
-                <div>
-                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">R3 Technical Feedback</h4>
-                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500;">
-                        <strong>Status:</strong> Increased yardage applied under narrow fairway/high-wind conditions. Driver and long-iron dispersion data recorded for technical adjustment and subsequent training. <br>
-                        <strong>Focus:</strong> Maintaining consistent short-game execution (wedge/putting) while prioritizing dispersion recalibration.
+        <div class="memo-body" style="display: flex; flex-direction: column; gap: 28px; max-width: 100%; position: relative; z-index: 1; margin-bottom: 50px; box-sizing: border-box;">
+            <div style="display: flex; gap: 15px; align-items: flex-start; box-sizing: border-box;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900; box-sizing: border-box;">01.</span>
+                <div style="box-sizing: border-box;">
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px; box-sizing: border-box;">R3 Technical Feedback</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500; box-sizing: border-box;">
+                        <strong>Status:</strong> Increased yardage applied under narrow fairway and high-wind conditions during recent competition. Driver and long-iron dispersion data has been recorded and remains under technical review. <br>
+                        <strong>Focus:</strong> Short-game execution (wedge/putting) continues to be logged without material deviation. Dispersion recalibration remains under review.
                     </p>
                 </div>
             </div>
 
-            <div style="display: flex; gap: 15px; align-items: flex-start;">
-                <span style="font-size: 20px; color: #0c2340; font-weight: 900;">02.</span>
-                <div>
-                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px;">Corrective Training</h4>
-                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500;">
-                        <strong>Feb 4:</strong> Technical training session conducted to address driver dispersion and long-iron control in preparation for the home tournament (Feb 23–24). Academic scheduling adjustments finalized to maintain balance with upcoming competition commitments.
+            <div style="display: flex; gap: 15px; align-items: flex-start; box-sizing: border-box;">
+                <span style="font-size: 20px; color: #0c2340; font-weight: 900; box-sizing: border-box;">02.</span>
+                <div style="box-sizing: border-box;">
+                    <h4 style="margin: 0; font-size: 15px; color: #0c2340; font-weight: 900; text-transform: uppercase; background: rgba(0,0,0,0.05); display: inline-block; padding: 0 5px; box-sizing: border-box;">Corrective Training</h4>
+                    <p style="margin: 8px 0 0 0; font-size: 14.5px; color: #2c3e50; line-height: 28px; font-weight: 500; box-sizing: border-box;">
+                        <strong>Technical:</strong> Recent training sessions have addressed driver dispersion and long-iron control. <br>
+                        <strong>Academic:</strong> Scheduling adjustments are in place to accommodate coursework, assignments, and upcoming competition dates.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div style="background: #ffffff; padding: 25px; border-radius: 15px; border: 1px solid #d4cf92; box-shadow: 0 10px 20px rgba(0,0,0,0.05); width: calc(100% + 20px); margin-left: -10px; box-sizing: border-box; z-index: 2; position: relative;">
-            <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%) rotate(15deg); width: 30px; height: 50px; z-index: 3; pointer-events: none;">
-                <div style="position: absolute; top: 20px; left: 14px; width: 2px; height: 25px; background: linear-gradient(to right, #94a3b8, #f1f5f9, #64748b); box-shadow: 1px 1px 2px rgba(0,0,0,0.2);"></div>
-                <div style="position: absolute; top: 0; left: 3px; width: 24px; height: 24px; background: #d32f2f; border-radius: 50%; box-shadow: 2px 4px 6px rgba(0,0,0,0.3);">
-                    <div style="position: absolute; top: 4px; left: 4px; width: 8px; height: 8px; background: rgba(255,255,255,0.4); border-radius: 50%;"></div>
+        <div style="background: #ffffff; padding: 25px; border-radius: 15px; border: 1px solid #d4cf92; box-shadow: 0 10px 20px rgba(0,0,0,0.05); width: 100%; margin: 0; box-sizing: border-box; z-index: 2; position: relative;">
+            <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%) rotate(15deg); width: 30px; height: 50px; z-index: 3; pointer-events: none; box-sizing: border-box;">
+                <div style="position: absolute; top: 20px; left: 14px; width: 2px; height: 25px; background: linear-gradient(to right, #94a3b8, #f1f5f9, #64748b); box-shadow: 1px 1px 2px rgba(0,0,0,0.2); box-sizing: border-box;"></div>
+                <div style="position: absolute; top: 0; left: 3px; width: 24px; height: 24px; background: #d32f2f; border-radius: 50%; box-shadow: 2px 4px 6px rgba(0,0,0,0.3); box-sizing: border-box;">
+                    <div style="position: absolute; top: 4px; left: 4px; width: 8px; height: 8px; background: rgba(255,255,255,0.4); border-radius: 50%; box-sizing: border-box;"></div>
                 </div>
             </div>
             
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 12px;">
-                <h5 style="margin: 0; font-size: 14px; color: #d32f2f; font-weight: 900; text-transform: uppercase;">Next Event Focus & Updates</h5>
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase;">Spring Opener Technical Memo</span>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; margin-bottom: 12px; box-sizing: border-box;">
+                <h5 style="margin: 0; font-size: 14px; color: #d32f2f; font-weight: 900; text-transform: uppercase; box-sizing: border-box;">Next Event Focus & Updates</h5>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; box-sizing: border-box;">Home Field Qualifying — Technical Memo</span>
             </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px;">
-                    • Target: Home-Field Team Title<br>
-                    • Drills: Dispersion Control (w/ Bryan)
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; box-sizing: border-box;">
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px; box-sizing: border-box;">
+                    • Event: Home Field Qualifying (Feb 10, 12, 17)<br>
+                    • Technical: Driver dispersion recalibration & long-iron accuracy
                 </p>
-                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px;">
-                    • Academic: Coursework management<br>
-                    • Status: Training Schedule Optimized
+                <p style="margin: 0; font-size: 13.5px; color: #0c2340; font-weight: 700; line-height: 1.6; flex: 1; min-width: 240px; box-sizing: border-box;">
+                    • Academic: Coursework and deadlines integrated into schedule<br>
+                    • Status: Training and academic schedules aligned
                 </p>
             </div>
         </div>
 
-        <div style="margin-top: 30px; padding-left: 10px; font-size: 10px; color: #cbd5e1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+        <div style="margin-top: 20px; padding-left: 10px; font-size: 10px; color: #cbd5e1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; box-sizing: border-box;">
             Joshua's Memo Note
         </div>
     </div>
 </div>
-  
 
   
+<style> /* 오피셜 토너먼트 레코드 그래픽 차트 */</style>
+  
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 
+<div class="performance-analysis-wrapper" style="width: 100%; max-width: 900px; margin: 0px auto 30px auto; padding: 0; background: transparent; box-sizing: border-box;">
+  <div style="background: #ffffff; border: 1px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box;">
+    <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center;">
+      
+      <h2 style="margin: 0; color: #0c2340; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 26px; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">Performance Data Analysis</h2>
+      <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 2px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">Official Tournaments Verified Records</p>
+      
+      <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
+          <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Tournament Finish History</h3>
+          <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
+        </div>
+        
+        <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box;">
+          <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Adj. Avg:</span>
+            <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">71.0</span>
+          </div>
+
+          <canvas id="archiveOfficialChart"></canvas>
+
+          <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
+            <span>SOURCE: SCOREBOARD.CLIPPED, WAGR & GOLFSTAT</span>
+            <span>CUMULATIVE: 6 EVENTOS / 18 RONDAS</span>
+          </div>
+        </div>
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #999; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  if (typeof ChartDataLabels !== 'undefined') {
+    try {
+      Chart.register(ChartDataLabels);
+    } catch (e) {
+      console.log('ChartDataLabels already registered.');
+    }
+  }
+  
+  Chart.defaults.font.family = "'Oswald', sans-serif";
+
+  const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
+  new Chart(ctxOfficialArchive, {
+    type: 'line',
+    data: {
+      labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)*', '2/01 (Compadres)'],
+      datasets: [{
+        label: 'Scoring Avg',
+        data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00],
+        borderColor: '#0c2340',
+        backgroundColor: 'rgba(12, 35, 64, 0.05)',
+        borderWidth: 2,
+        pointRadius: 6,
+        pointHoverRadius: 9,
+        pointBackgroundColor: '#0c2340',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        tension: 0.3,
+        fill: true,
+        datalabels: {
+          align: 'top',
+          anchor: 'end',
+          offset: 8,
+          backgroundColor: null,
+          color: '#0c2340',
+          font: { weight: '700', size: 13 },
+          formatter: function(value, context) {
+            const ranks = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
+            return ranks[context.dataIndex];
+          }
+        }
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { top: 30, bottom: 10, left: 0, right: 0 } },
+      interaction: { mode: 'nearest', intersect: true },
+      scales: {
+        y: {
+          min: 65,
+          max: 82,
+          grid: { color: '#efefef', drawBorder: false },
+          ticks: { font: { size: 11, weight: '600' }, color: '#333', padding: 10 },
+          title: { display: true, text: 'AVG. STROKES', color: '#0c2340', font: { size: 10, weight: '700' } }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: '#333', font: { size: 10, weight: '500' } }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          enabled: true,
+          yAlign: 'bottom',
+          backgroundColor: '#0c2340',
+          titleColor: '#F15A22',
+          titleFont: { size: 13, weight: '600', family: "'Oswald'" },
+          bodyColor: '#ffffff',
+          bodyFont: { family: "'Montserrat'", size: 11 },
+          padding: 12,
+          cornerRadius: 4,
+          displayColors: false,
+          callbacks: {
+            title: function(context) {
+              let label = context[0].label || '';
+              if (context[0].dataIndex === 4) label += ' (Special Invitational)';
+              return label;
+            },
+            afterLabel: function(context) {
+              const rounds = ['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)'];
+              const rank = ['T9', 'T12', 'T24', 'T55', 'T38', 'T3'];
+              const pwr = ['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'];
+              const earned = ['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'];
+              const i = context.dataIndex;
+              return [
+                '',
+                `Rounds: ${rounds[i]}`,
+                `Rank: ${rank[i]}`,
+                `-----------------------`,
+                `WAGR Pwr: ${pwr[i]}`,
+                `Earned: ${earned[i]}`,
+                i === 5 ? `Rank ▲ 136` : null
+              ].filter(v => v !== null);
+            }
+          }
+        },
+        datalabels: { display: true }
+      }
+    }
+  });
+})();
+</script>
 
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
@@ -1029,169 +988,336 @@
 </div>
   
 
+
+
 <div class="archives-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
+
+
   <div style="border-top: 2px solid #0c2340; border-bottom: 2px solid #0c2340; padding: 25px 0; margin-bottom: 40px; text-align: center; background-color: #fafafa;">
+
     <h2 style="margin: 0; font-size: 22px; color: #0c2340; letter-spacing: 2px; font-weight: 900; text-transform: uppercase;">Managed Official Archives</h2>
+
     <div style="width: 40px; height: 3px; background: #c98a2e; margin: 12px auto;"></div>
+
     <h3 style="margin: 0; font-size: 13px; color: #666; letter-spacing: 3px; font-weight: 600; text-transform: uppercase;">Tournament Results & WAGR Metrics</h3>
+
   </div>
+
+
 
   <div style="margin-bottom: 50px;">
+
     <div style="display: flex; align-items: center; margin-bottom: 20px; border-left: 6px solid #c98a2e; padding-left: 15px;">
+
       <h4 style="margin: 0; color: #c98a2e; font-size: 20px; font-weight: 800;">Off-Season / Special Invitational</h4>
+
     </div>
+
     
+
     <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+
       <table class="res-table">
+
         <thead>
+
           <tr>
+
             <th class="col-tour col-left">Date / Tournament</th>
+
             <th class="col-score">R1-R2-R3</th>
+
             <th class="col-val">Total</th>
+
             <th class="col-val">Par</th>
+
             <th class="col-val">Finish</th>
+
           </tr>
+
         </thead>
+
         <tbody>
+
           <tr>
+
             <td class="col-left">
+
               <div style="color: #999; font-weight: 700; font-size: 11px;">Dec 2025</div>
+
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
+
                 <span style="font-weight: 800; color: #0c2340; font-size: 16px;">Patriot All-America Invitational</span>
+
                 <a href="https://www.golfgenius.com/pages/5776911" target="_blank" class="leaderboard-btn">
+
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+
                 </a>
+
               </div>
+
               <div style="font-size: 11px; color: #c98a2e; font-weight: 700; letter-spacing: -0.2px;">WAGR Pwr: 806.3420 / Pts: 6.1052</div>
+
               <div style="font-size: 11px; color: #475569; font-weight: 800; margin-top: 2px;">Head-to-Head: 42-37-5</div>
+
               <div class="mobile-score-bar">
+
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">71-73-72</span></div>
+
                 <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">216</span></div>
+
                 <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+6</span></div>
+
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T38</span></div>
+
               </div>
+
             </td>
+
             <td class="hide-on-mobile">71-73-72</td>
+
             <td class="hide-on-mobile" style="font-weight: 700;">216</td>
+
             <td class="hide-on-mobile" style="font-weight: 800;">+6</td>
+
             <td class="hide-on-mobile" style="font-weight: 800; color: #0c2340;">T38</td>
+
           </tr>
+
         </tbody>
+
       </table>
+
     </div>
+
   </div>
 
+
+
   <div style="margin-bottom: 40px;">
+
     <div style="display: flex; align-items: center; margin-bottom: 20px; border-left: 6px solid #0c2340; padding-left: 15px;">
+
       <h4 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 800;">2025 NCAA Fall Season</h4>
+
     </div>
+
     
+
     <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+
       <table class="res-table">
+
         <thead>
+
           <tr>
+
             <th class="col-tour col-left">Date / Tournament</th>
+
             <th class="col-score">R1-R2-R3</th>
+
             <th class="col-val">Total</th>
+
             <th class="col-val">Par</th>
+
             <th class="col-val">Finish</th>
+
           </tr>
+
         </thead>
+
         <tbody>
+
           <tr>
+
             <td class="col-left">
+
               <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
+
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
+
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Trinity Forest Invitational</span>
+
                 <a href="https://scoreboard.clippd.com/tournaments/239449/scoring/player" target="_blank" class="leaderboard-btn">
+
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+
                 </a>
+
               </div>
+
               <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 360.1597 / Pts: 3.1971</div>
+
               <div class="mobile-score-bar">
+
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">75-73-74</span></div>
+
                 <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">222</span></div>
+
                 <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+6</span></div>
+
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T55</span></div>
+
               </div>
+
             </td>
+
             <td class="hide-on-mobile">75-73-74</td>
+
             <td class="hide-on-mobile">222</td>
+
             <td class="hide-on-mobile" style="font-weight: 700;">+6</td>
+
             <td class="hide-on-mobile" style="font-weight: 700;">T55</td>
+
           </tr>
+
           <tr style="background: #fcfdfe;">
+
             <td class="col-left">
+
               <div style="color: #999; font-weight: 700; font-size: 11px;">Oct 2025</div>
+
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
+
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Badger Invitational</span>
+
                 <a href="https://scoreboard.clippd.com/tournaments/236150/scoring/player" target="_blank" class="leaderboard-btn">
+
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+
                 </a>
+
               </div>
+
               <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 129.0694 / Pts: 3.3178</div>
+
               <div class="mobile-score-bar">
+
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value"><span style="color:#e53935;">71-71</span>-76</span></div>
+
                 <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">218</span></div>
+
                 <div class="m-item"><span class="m-label">PAR</span><span class="m-value">+2</span></div>
+
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T24</span></div>
+
               </div>
+
             </td>
+
             <td class="hide-on-mobile"><span style="color:#e53935;font-weight:800;">71-71</span>-76</td>
+
             <td class="hide-on-mobile">218</td>
+
             <td class="hide-on-mobile" style="font-weight: 700;">+2</td>
+
             <td class="hide-on-mobile" style="font-weight: 700;">T24</td>
+
           </tr>
+
           <tr>
+
             <td class="col-left">
+
               <div style="color: #999; font-weight: 700; font-size: 11px;">Sep 2025</div>
+
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
+
                 <span style="font-weight: 700; color: #333; font-size: 15px;">Highlands Invitational</span>
+
                 <a href="https://scoreboard.clippd.com/tournaments/239590/scoring/player" target="_blank" class="leaderboard-btn">
+
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+
                 </a>
+
               </div>
+
               <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 232.6656 / Pts: 4.9097</div>
+
               <div class="mobile-score-bar">
+
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value">74-<span style="color:#e53935;">71-70</span></div>
+
                 <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value">215</span></div>
+
                 <div class="m-item"><span class="m-label">PAR</span><span class="m-value" style="color:#e53935;">-1</span></div>
+
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value">T12</span></div>
+
               </div>
+
             </td>
+
             <td class="hide-on-mobile">74-<span style="color:#e53935;font-weight:800;">71-70</span></td>
+
             <td class="hide-on-mobile">215</td>
+
             <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">-1</td>
+
             <td class="hide-on-mobile" style="font-weight: 800;">T12</td>
+
           </tr>
+
           <tr style="background: rgba(12, 35, 64, 0.04);">
+
             <td class="col-left">
+
               <div style="color: #0c2340; font-weight: 700; font-size: 11px;">Sep 2025</div>
+
               <div style="display: flex; align-items: center; flex-wrap: wrap;">
+
                 <span style="font-weight: 800; color: #0c2340; font-size: 15px;">Argent Financial Invitational</span>
+
                 <a href="https://scoreboard.clippd.com/tournaments/239222/scoring/player" target="_blank" class="leaderboard-btn">
+
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+
                 </a>
+
               </div>
+
               <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 230.8799 / Pts: 5.3735</div>
+
               <div class="mobile-score-bar">
+
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value" style="color:#e53935;">70-70-69</span></div>
+
                 <div class="m-item"><span class="m-label">TOTAL</span><span class="m-value" style="color:#e53935;">209</span></div>
+
                 <div class="m-item"><span class="m-label">PAR</span><span class="m-value" style="color:#e53935;">-7</span></div>
+
                 <div class="m-item"><span class="m-label">FINISH</span><span class="m-value" style="color:#0c2340;">T9</span></div>
+
               </div>
+
             </td>
+
             <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">70-70-69</td>
+
             <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">209</td>
+
             <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">-7</td>
+
             <td class="hide-on-mobile" style="font-weight: 900; color: #0c2340;">T9</td>
+
           </tr>
+
         </tbody>
+
       </table>
+
     </div>
+
   </div>
+
 </div>
+
+
+  
 
   
 
