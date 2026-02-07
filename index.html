@@ -292,7 +292,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
       margin-bottom: 20px;
       box-sizing: border-box;
-      width: 100%;
+      width: 100%; /* 부모 900px를 100% 꽉 채우도록 설정 */
     }
 
     .status-dot-live {
@@ -331,6 +331,11 @@ gtag('config', 'G-H1JW8YBDZ8');
       align-items: center;
       gap: 8px;
       white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      /* 화면이 900px보다 작아질 때만 최소한의 여백 허용 */
+      .index-activity-section { padding: 0 15px !important; }
     }
 
     @media (max-width: 768px) {
