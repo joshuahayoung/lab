@@ -273,7 +273,8 @@
   
 
 
-<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
     /* 베너 바로 밑 토너먼트 스케줄 테이블 구조 최적화 */
     .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
@@ -290,13 +291,12 @@
       border: 2px solid #0c2340; 
       border-radius: 20px; 
       padding: 0; 
-      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
+      box-shadow: 0 10px 30px rgba(12, 35, 64, 0.1); /* 그림자 범위를 살짝 좁혀 시각적 팽창 억제 */
       margin-bottom: 50px; 
       position: relative; 
       display: flex; 
       flex-direction: column;
       overflow: hidden; /* 모서리 끊김 해결 */
-      /* 너비 최적화: 테두리 2px 두께를 고려하여 시각적 정렬 맞춤 */
       box-sizing: border-box;
       width: 100%;
     }
@@ -316,6 +316,7 @@
     }
 
     @media (max-width: 768px) {
+      .performance-log-section { padding: 0 15px; } /* 모바일에서는 여백 필요 */
       .log-table thead { display: none; }
       .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
       .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
