@@ -275,7 +275,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 
 
-<div class="index-activity-section" style="width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
   
   <style>
     @keyframes pulse-live {
@@ -284,7 +284,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* 배너와 칼같이 맞추기 위해 width를 900px로 고정 및 여백 완전 제거 */
+    /* 배너와 칼같이 맞추기 위한 기본 구조 */
     .activity-card, .focus-container {
       background: #ffffff;
       border: 2.5px solid #0c2340;
@@ -293,9 +293,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
       margin-bottom: 20px;
       box-sizing: border-box;
-      width: 900px !important; 
-      margin-left: 0;
-      margin-right: 0;
+      width: 100%;
       display: block;
     }
 
@@ -337,16 +335,36 @@ gtag('config', 'G-H1JW8YBDZ8');
       white-space: nowrap;
     }
 
-    /* 모바일 환경 대응을 위한 최소 패딩 유지 */
-    @media (max-width: 930px) {
-      .index-activity-section { width: 100% !important; padding: 0 15px !important; }
-      .activity-card, .focus-container { width: 100% !important; }
+    /* 모바일/태블릿 정밀 대응 브레이크포인트 */
+    @media (max-width: 900px) {
+      .index-activity-section { padding: 0 15px !important; } /* 배너 여백과 동일하게 설정 */
     }
 
     @media (max-width: 768px) {
-      .activity-card-inner { flex-direction: column !important; align-items: flex-start !important; padding: 20px !important; }
-      .stats-container { width: 100% !important; justify-content: space-between !important; margin-top: 15px; }
-      .focus-container { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .activity-card-inner { 
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        padding: 20px !important; 
+      }
+      .stats-container { 
+        width: 100% !important; 
+        justify-content: space-between !important; 
+        margin-top: 15px; 
+        border-top: 1px solid #f1f5f9;
+        padding-top: 15px;
+      }
+      .score-group {
+        border-right: none !important;
+        padding-right: 0 !important;
+      }
+      .focus-container { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 12px; 
+      }
+      .focus-arrow-svg {
+        display: none; /* 모바일에서는 텍스트 흐름을 위해 화살표 생략 가능 (선택 사항) */
+      }
     }
   </style>
 
@@ -364,7 +382,7 @@ gtag('config', 'G-H1JW8YBDZ8');
           <span style="color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Upcoming Qualy</span>
         </div>
         <div>
-          <div style="display: flex; align-items: baseline; gap: 8px;">
+          <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
             <span style="color: #0c2340; font-weight: 900; font-size: 19px; letter-spacing: -0.3px;">UTSA Internal Qualifier</span>
             <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 10-17)</span>
           </div>
