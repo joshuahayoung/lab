@@ -130,21 +130,21 @@
 
     /* [모바일 반응형] */
     @media (max-width: 1024px) {
-      .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; }
-      .logo-area { order: 2; }
+      .header-wrapper { padding: 0 20px; height: 70px; justify-content: space-between; gap: 0; }
+      .menu-toggle { display: block; order: 2; }
+      .logo-area { order: 1; }
       .logo-text { display: none; }
       .logo-img { height: 40px; }
 
       .nav-links {
-        position: fixed; top: 0; left: -100%; 
+        position: fixed; top: 0; right: -100%; left: auto;
         width: 260px; height: 100vh;
         background: #ffffff !important; flex-direction: column;
         padding: 50px 25px; transition: 0.3s; z-index: 2000;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
         align-items: flex-start; gap: 10px;
       }
-      .nav-links.active { left: 0; }
+      .nav-links.active { right: 0; left: auto; }
       
       .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
       .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
