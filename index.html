@@ -48,6 +48,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
+
 <style>
     /* 1. 기본 설정 - 이중 스크롤 방지를 위해 overflow 수정 */
     html {
@@ -136,21 +137,21 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     /* [모바일 반응형] */
     @media (max-width: 1024px) {
-      .header-wrapper { padding: 0 20px; height: 70px; justify-content: flex-start; gap: 20px; }
-      .menu-toggle { display: block; order: 1; }
-      .logo-area { order: 2; }
+      .header-wrapper { padding: 0 20px; height: 70px; justify-content: space-between; gap: 0; }
+      .menu-toggle { display: block; order: 2; }
+      .logo-area { order: 1; }
       .logo-text { display: none; }
       .logo-img { height: 40px; }
 
       .nav-links {
-        position: fixed; top: 0; left: -100%; 
+        position: fixed; top: 0; right: -100%; left: auto;
         width: 260px; height: 100vh;
         background: #ffffff !important; flex-direction: column;
         padding: 50px 25px; transition: 0.3s; z-index: 2000;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1);
         align-items: flex-start; gap: 10px;
       }
-      .nav-links.active { left: 0; }
+      .nav-links.active { right: 0; left: auto; }
       
       .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
       .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
@@ -173,7 +174,9 @@ gtag('config', 'G-H1JW8YBDZ8');
       .nav-links { padding: 30px 25px; overflow-y: auto; }
       .menu-footer { margin-top: 30px; }
     }
-  </style>
+</style>
+
+  
 </head>
 
 <body>
@@ -269,7 +272,7 @@ gtag('config', 'G-H1JW8YBDZ8');
    <div style="position: relative; text-align: center; margin-bottom: 25px; padding: 10px 0; overflow: hidden;">
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
       UTSA
-    </div>   
+    </div>
 
 
 
