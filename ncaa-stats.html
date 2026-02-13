@@ -659,8 +659,15 @@
                                 `● Rank: ${['T9', 'T12', 'T24', 'T55', 'T38', 'T3'][i]}`,
                                 `-----------------------`,
                                 `● WAGR Pwr: ${['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033'][i]}`,
-                                `● Earned: ${['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'][i]}`,
-                                i === 5 ? `Rank ▲ 142` : null
+                                `● Pts.Earned: ${['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774'][i]}`,
+                                [
+                                    `● Rank ▲ 38`,
+                                    `● Rank ▼ 10`,
+                                    `● Rank ▼ 51`,
+                                    `● Rank ▼ 98`,
+                                    null,
+                                    `● Rank ▲ 142`
+                                ][i]
                             ].filter(v => v !== null);
                         }
                     }
@@ -1280,8 +1287,9 @@
 
               </div>
 
-              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 129.0694 / Pts: 3.3178</div>
-
+              <div style="font-size: 11px; color: #777; font-weight: 700;margin-top: 2px;">
+                Rank Impact: <span style="color: #e11d48;">▼</span> 51 | SG: -2.80 | Weighted Pts: 24.60<br>
+                WAGR Pwr: 129.0694 / Pts: 3.3178</div>
               <div class="mobile-score-bar">
 
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value"><span style="color:#e53935;">71-71</span>-76</span></div>
@@ -1323,8 +1331,11 @@
                 </a>
 
               </div>
-
-              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 232.6656 / Pts: 4.9097</div>
+              <div style="font-size: 11px; color: #777; font-weight: 700; margin-top: 2px;">
+                Rank Impact: <span style="color: #e11d48;">▼</span> 10 | SG: -0.88 | Weighted Pts: 32.68<br>
+                WAGR Pwr: 232.6656 / Pts: 4.9097
+              </div>  
+              
 
               <div class="mobile-score-bar">
 
@@ -1367,9 +1378,11 @@
                 </a>
 
               </div>
-
-              <div style="font-size: 11px; color: #777; font-weight: 700;">WAGR Pwr: 230.8799 / Pts: 5.3735</div>
-
+              <div style="font-size: 11px; color: #777; font-weight: 700; margin-top: 2px;">
+                Rank Impact: <span style="color: #e11d48;">▲</span> 38 | SG: -0.74 | Weighted Pts: 41.18<br>
+                WAGR Pwr: 230.8799 / Pts: 5.3735
+              </div>
+              
               <div class="mobile-score-bar">
 
                 <div class="m-item"><span class="m-label">R1-R2-R3</span><span class="m-value" style="color:#e53935;">70-70-69</span></div>
