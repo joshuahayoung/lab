@@ -1,0 +1,19 @@
+{
+  "status": "15-ROUND CUMULATIVE",
+  "scope": "15",
+  "individual": {
+    "scoringAvg": "68.0",
+    "rawAvg": "72.0",
+    "underPar": "9 Under Par",
+    "gpa": "3.4 GPA"
+  },
+  "teamMetrics": {
+    "winRate": "72.4",
+    "headToHead": "289-98-12",
+    "countingScore": "93.3",
+    "recordedRounds": "14/15",
+    "pointsShare": "32.80",
+    "pointsValue": "171.48",
+    "teamTotal": "522.84"
+  }
+}
