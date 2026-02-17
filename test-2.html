@@ -1959,6 +1959,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
+      // Views Logic: Starting from 1500
+      let views = localStorage.getItem('joshua_gallery_views');
+      if (!views) { views = 1500; }
+      views = parseInt(views) + 1;
+      localStorage.setItem('joshua_gallery_views', views);
+
       const allImages = getImages();
       const index = allImages.indexOf(element.src);
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
@@ -1972,22 +1978,25 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <head>
             <title>Joshua Hong - Gallery</title>
             <style>
-              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 40px 0; box-sizing: border-box; touch-action: none; }
-              #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex-grow: 1; pointer-events: auto; }
-              #mainImg { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }
+              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 20px 0 60px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }
+              #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex: 1; margin: 20px 0; }
+              #mainImg { max-width: 95%; max-height: 70vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }
               .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 30px 40px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 200; }
               .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
               #prev { left: 0; } #next { right: 0; }
-              #close-x { position: fixed; top: 30px; right: 30px; font-size: 60px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }
+              #close-x { position: fixed; top: 20px; right: 20px; font-size: 50px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }
               #close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }
-              .bottom-controls { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; padding-bottom: 40px; }
+              .bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; padding: 20px 0; margin-top: auto; }
               .close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
               .close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }
-              .counter { font-size: 16px; opacity: 0.6; letter-spacing: 3px; font-weight: 600; }
+              .info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }
+              .counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
               @media (max-width: 768px) { 
-                .nav-btn { font-size: 60px; padding: 20px; color: rgba(255,255,255,0.6); } 
-                #close-x { font-size: 50px; top: 20px; right: 20px; }
-                .close-btn-bottom { padding: 15px 50px; font-size: 16px; }
+                body { padding-top: 60px; }
+                .nav-btn { display: none; } 
+                #close-x { font-size: 45px; top: 15px; right: 15px; }
+                #mainImg { max-height: 60vh; }
+                .close-btn-bottom { padding: 15px 45px; font-size: 15px; }
               }
             </style>
           </head>
@@ -2000,13 +2009,16 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <div id="next" class="nav-btn" onclick="move(1)">❯</div>
             <div class="bottom-controls">
               <button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>
-              <div class="counter" id="countDisplay">${index + 1} / ${allImages.length}</div>
+              <div class="info-row">
+                <div class="view-count"><span>👁</span> ${views.toLocaleString()}</div>
+                <div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>
+                <div class="counter" id="countDisplay">${index + 1} / ${allImages.length}</div>
+              </div>
             </div>
             <script>
               let idx = ${index};
               const imgArray = ${JSON.stringify(allImages)};
               
-              // 팝업 내부 스와이프 감지 로직
               let sX = 0;
               let eX = 0;
               const container = document.getElementById('imgContainer');
