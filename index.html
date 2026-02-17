@@ -466,36 +466,93 @@ gtag('config', 'G-H1JW8YBDZ8');
           </div>
         </div>
         
-        <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #e2e8f0; background: #ffffff; transition: 0.2s;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
-      </div>
+        <style>
+  /* Focus Container 스타일 가이드 */
+  .focus-container {
+    display: flex;
+    align-items: flex-start; /* 상단 기준 칼정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬 고정 */
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .focus-container:hover {
+    border-color: #0c2340;
+  }
+
+  /* 호버 시 전체가 흔들리지 않도록 아이콘만 변화 */
+  .focus-container:hover .focus-arrow-svg {
+    background: #0c2340 !important;
+  }
+  .focus-container:hover .focus-arrow-svg stroke {
+    stroke: #ffffff;
+  }
+
+  .focus-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #0c2340;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap; /* 배지 형태 유지 */
+    letter-spacing: 0.5px;
+  }
+
+  .focus-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+  }
+
+  @media (max-width: 768px) {
+    .focus-container {
+      gap: 12px;
+      padding: 16px;
+    }
+    .focus-badge {
+      font-size: 9px;
+      padding: 4px 8px;
+    }
+  }
+</style>
+
+<a href="ncaa-stats.html#Current-Focus" class="focus-container">
+  <div class="focus-badge" style="margin-top: 2px;">
+    <span style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></span>
+    CURRENT FOCUS
+  </div>
+
+  <div class="focus-text-group">
+    <div style="color: #0c2340; font-size: 15px; font-weight: 800; letter-spacing: -0.2px; line-height: 1.4;">
+      February Qualifiers: scoring variance review and dispersion control.
+    </div>
+    <div style="color: #64748b; font-size: 14px; font-weight: 600; line-height: 1.4;">
+      Technical sessions and academic scheduling in place.
     </div>
   </div>
 
-  <a href="ncaa-stats.html#Current-Focus" class="focus-container">
-    <div style="display: flex; align-items: flex-start; gap: 20px; flex: 1;">
-      <div class="focus-badge" style="margin-top: 2px;">
-        <span style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></span>
-        CURRENT FOCUS
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 4px;">
-        <div style="color: #0c2340; font-size: 15px; font-weight: 800; letter-spacing: -0.2px;">
-          February Qualifiers: scoring variance review and dispersion control.
-        </div>
-        <div style="color: #64748b; font-size: 14px; font-weight: 600;">
-          Technical sessions and academic scheduling in place.
-        </div>
-      </div>
-    </div>
-    <div class="focus-arrow-svg" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #e2e8f0; background: #ffffff; transition: 0.2s; box-sizing: border-box;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
-      </svg>
-    </div>
-  </a>
+  <div class="focus-arrow-svg" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #e2e8f0; background: #ffffff; transition: 0.2s; box-sizing: border-box; flex-shrink: 0;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="7" y1="17" x2="17" y2="7"></line>
+      <polyline points="7 7 17 7 17 17"></polyline>
+    </svg>
+  </div>
+</a>
 
 </div>
 
