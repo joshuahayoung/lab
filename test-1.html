@@ -475,8 +475,10 @@ gtag('config', 'G-H1JW8YBDZ8');
     </div>
   </div>
 
-  <style>
-  /* Focus Container 기본 레이아웃 및 움직임 방지 */
+
+
+     <style>
+  /* Focus Container: 고정 레이아웃 및 움직임 완전 제거 */
   .focus-container-v2 {
     display: flex;
     align-items: flex-start; /* 모든 요소를 상단에 칼정렬 */
@@ -484,21 +486,22 @@ gtag('config', 'G-H1JW8YBDZ8');
     gap: 20px;
     padding: 20px;
     background: #ffffff;
-    border: 2px solid #e2e8f0;
+    border: 2px solid #e2e8f0; /* 라인 상시 노출 */
     border-radius: 12px;
     width: 100%;
     box-sizing: border-box;
-    transition: border-color 0.2s; /* 물리적 이동(transform) 제거 */
+    /* transition 제거: 호버 시 변화 없음 */
   }
 
-  /* 전체 컨테이너 호버 시 테두리만 변경 */
+  /* 컨테이너 자체의 호버 효과 제거 (기존 테두리 변경 로직 삭제) */
   .focus-container-v2:hover {
-    border-color: #0c2340;
+    border-color: #e2e8f0; /* 테두리 고정 */
   }
 
-  /* 호버 시 내부 아이콘 버튼만 반응 */
+  /* 오직 우측 아이콘 버튼만 호버 시 반응 */
   .focus-container-v2:hover .focus-arrow-svg {
     background: #0c2340 !important;
+    border-color: #0c2340 !important;
   }
   .focus-container-v2:hover .focus-arrow-svg svg {
     stroke: #ffffff;
@@ -517,7 +520,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     border-radius: 6px;
     white-space: nowrap;
     letter-spacing: 0.5px;
-    margin-top: 2px; /* 첫 줄 텍스트와 높이 맞춤 */
+    margin-top: 2px; /* 첫 줄 텍스트와 높이 정렬 */
     flex-shrink: 0;
   }
 
@@ -526,7 +529,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     flex-direction: column;
     gap: 12px; /* 문단 간 간격 */
     flex: 1;
-    text-align: left; /* 왼쪽 정렬 명시 */
+    text-align: left; /* 왼쪽 정렬 칼고정 */
   }
 
   @media (max-width: 768px) {
@@ -562,6 +565,9 @@ gtag('config', 'G-H1JW8YBDZ8');
     </svg>
   </a>
 </div>
+
+
+     
      
 </div>
 
