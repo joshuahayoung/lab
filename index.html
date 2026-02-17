@@ -21,7 +21,7 @@ gtag('js', new Date());
 
 // Google Analytics 4 Configuration
 gtag('config', 'G-H1JW8YBDZ8', {
-'page_title': 'Joshua Hong Official Site',쳑ㄱ
+'page_title': 'Joshua Hong Official Site',
 'send_page_view': true,
 'cookie_flags': 'SameSite=None;Secure'
 });
@@ -466,7 +466,18 @@ gtag('config', 'G-H1JW8YBDZ8');
           </div>
         </div>
         
- <style>
+        <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #e2e8f0; background: #ffffff; transition: 0.2s;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+<style>
   /* Focus Container 스타일 가이드 */
   .focus-container {
     display: flex;
@@ -475,25 +486,12 @@ gtag('config', 'G-H1JW8YBDZ8');
     gap: 20px;
     padding: 20px;
     background: #ffffff;
-    border: 2px solid #0c2340; /* 분석 결과: 위 테이블과 동일한 네이비 색상으로 수정 */
+    border: 2px solid #0c2340;
     border-radius: 12px;
     text-decoration: none;
-    transition: border-color 0.2s;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
-  }
-
-  .focus-container:hover {
-    border-color: #0c2340;
-  }
-
-  /* 호버 시 전체가 흔들리지 않도록 아이콘만 변화 */
-  .focus-container:hover .focus-arrow-svg {
-    background: #0c2340 !important;
-  }
-  .focus-container:hover .focus-arrow-svg stroke {
-    stroke: #ffffff;
   }
 
   .focus-badge {
@@ -519,6 +517,30 @@ gtag('config', 'G-H1JW8YBDZ8');
     text-align: left; /* 텍스트 왼쪽 정렬 */
   }
 
+  /* 링크 아이콘 스타일 및 호버 효과 */
+  .focus-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #0c2340;
+    background: #ffffff;
+    transition: 0.2s;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+
+  .focus-link-icon:hover {
+    background: #0c2340 !important;
+  }
+
+  .focus-link-icon:hover svg stroke {
+    stroke: #ffffff;
+  }
+
   @media (max-width: 768px) {
     .focus-container {
       gap: 12px;
@@ -531,29 +553,35 @@ gtag('config', 'G-H1JW8YBDZ8');
   }
 </style>
 
-<a href="ncaa-stats.html#Current-Focus" class="focus-container">
+<div class="focus-container">
   <div class="focus-badge" style="margin-top: 2px;">
     <span style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></span>
     CURRENT FOCUS
   </div>
 
   <div class="focus-text-group">
-    <div style="color: #0c2340; font-size: 15px; font-weight: 800; letter-spacing: -0.2px; line-height: 1.4;">
-      February Qualifiers: scoring variance review and dispersion control.
+    <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4;">
+      <b style="font-weight: 900;">February Qualifiers:</b> <span style="font-weight: 400;">Completion of qualifying rounds and documentation of spring scoring metrics.</span>
     </div>
-    <div style="color: #64748b; font-size: 14px; font-weight: 600; line-height: 1.4;">
-      Technical sessions and academic scheduling in place.
+    <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4; margin-top: 8px;">
+      <b style="font-weight: 900;">Upcoming Competition:</b> <span style="font-weight: 400;">Preparation for the Military City Collegiate.</span>
+    </div>
+    <div style="color: #64748b; font-size: 14px; line-height: 1.4; margin-top: 8px;">
+      <b style="font-weight: 800; color: #475569;">Current Academic & Physical Focus:</b> <span style="font-weight: 400;">Coursework and recovery protocols aligned with back-to-back tournament scheduling.</span>
     </div>
   </div>
 
-  <div class="focus-arrow-svg" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #0c2340; background: #ffffff; transition: 0.2s; box-sizing: border-box; flex-shrink: 0;">
+  <a href="ncaa-stats.html#Current-Focus" class="focus-link-icon">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
       <line x1="7" y1="17" x2="17" y2="7"></line>
       <polyline points="7 7 17 7 17 17"></polyline>
     </svg>
-  </div>
-</a>
+  </a>
+</div>
 
+
+     
+     
 </div>
 
     
