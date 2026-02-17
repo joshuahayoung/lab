@@ -619,6 +619,197 @@ gtag('config', 'G-H1JW8YBDZ8');
   </div>
 </div>
 
+
+
+<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
+  
+  <style>
+    /* 기본 구조 - 너비 100% 및 호버 움직임 제거 */
+    .activity-card, .focus-container {
+      background: #ffffff;
+      border: 2.5px solid #0c2340;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      width: 100% !important;
+      display: block;
+      transition: background 0.2s ease;
+    }
+
+    /* 마우스 오버 시 움직임 없이 배경색만 변경 */
+    .activity-card:hover, .focus-container:hover {
+      background: #f8fafc;
+    }
+
+    .status-dot-live {
+      width: 6px; /* 하단과 크기 통일 */
+      height: 6px;
+      background-color: #94a3b8;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* 배지 스타일 가이드 적용 */
+    .focus-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #0c2340;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* 링크 아이콘 스타일 통일 */
+    .focus-link-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid #0c2340;
+      background: #ffffff;
+      transition: 0.2s;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .focus-link-icon:hover {
+      background: #0c2340 !important;
+    }
+
+    .focus-link-icon:hover svg {
+      stroke: #ffffff !important;
+    }
+
+    /* 모바일 정밀 레이아웃 */
+    @media (max-width: 768px) {
+      .activity-card-inner { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        padding: 20px 15px !important; 
+        text-align: center;
+      }
+      .tournament-info {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+      }
+      .stats-container { 
+        width: 100% !important; 
+        justify-content: center !important; 
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #f1f5f9;
+      }
+      .score-group {
+        border-right: none !important;
+        padding-right: 0 !important;
+      }
+      .focus-container {
+        flex-direction: column !important;
+        padding: 16px;
+      }
+    }
+  </style>
+
+  <div class="ongoing-header-wrapper" style="width: 100%; margin-bottom: 15px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div style="box-sizing: border-box;">
+        <h2 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #c98a2e; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+          </svg>
+          On-going Activity
+        </h2>
+      </div>
+      <div style="margin-left: 25px; color: #64748b; font-size: 11px; font-weight: 700; background: #f8fafc; padding: 4px 10px; border-radius: 4px; border: 1px solid #edf2f7; flex-shrink: 0;">
+        Last Updated: Feb. 17, 2026
+      </div>
+    </div>
+    <div style="width: 100%; height: 1px; background: #edf2f7; margin-top: 10px;"></div>
+  </div>
+  
+  <div class="activity-card">
+    <div class="activity-card-inner" style="padding: 20px; display: flex; align-items: flex-start; justify-content: flex-start; gap: 20px;">
+      <div class="tournament-info" style="display: flex; align-items: flex-start; gap: 20px; flex: 1;">
+        <div class="focus-badge" style="margin-top: 2px;">
+          <span class="status-dot-live" style="background: #94a3b8;"></span>
+          COMPLETED QUALIFIER
+        </div>
+        <div class="focus-text-group">
+          <div class="date-container" style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
+            <span style="color: #0c2340; font-weight: 900; font-size: 19px; letter-spacing: -0.3px;">UTSA Internal Qualifier</span>
+            <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 10/12/17)</span>
+          </div>
+          <span style="color: #64748b; font-size: 13px; font-weight: 600;">TPC SAN ANTONIO, The Canyons Course</span>
+        </div>
+      </div>
+
+      <div class="stats-container" style="display: flex; align-items: center; gap: 30px;">
+        <div class="score-group" style="display: flex; flex-direction: column; gap: 6px; border-right: 1px solid #f1f5f9; padding-right: 40px;">
+          <div style="display: flex; justify-content: center;">
+            <div style="display: flex; width: 140px; justify-content: space-between;">
+              <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q1</span>
+              <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q2</span>
+              <span style="color: #94a3b8; font-size: 10px; font-weight: 800; width: 40px; text-align: center;">Q3</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="display: flex; width: 140px; justify-content: space-between; align-items: center;">
+              <span style="color: #e74c3c; font-size: 19px; font-weight: 800; width: 40px; text-align: center;">68 (-4)</span>
+              <span style="color: #e74c3c; font-size: 19px; font-weight: 800; width: 40px; text-align: center;">67 (-5)</span>
+              <span style="color: #e74c3c; font-size: 19px; font-weight: 800; width: 40px; text-align: center;">67 (-5)</span>
+            </div>
+          </div>
+        </div>
+        
+        <a href="ncaa-stats.html#Tournament-Schedule-Scoring" class="focus-link-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="focus-container">
+    <div class="focus-badge" style="margin-top: 2px;">
+      <span style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></span>
+      CURRENT FOCUS
+    </div>
+
+    <div class="focus-text-group">
+      <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4;">
+        <b style="font-weight: 900;">February Qualifiers:</b> <span style="font-weight: 400;">Completion of qualifying rounds and documentation of spring scoring metrics.</span>
+      </div>
+      <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4; margin-top: 8px;">
+        <b style="font-weight: 900;">Upcoming Competition:</b> <span style="font-weight: 400;">Preparation for the Military City Collegiate.</span>
+      </div>
+      <div style="color: #64748b; font-size: 14px; line-height: 1.4; margin-top: 8px;">
+        <b style="font-weight: 800; color: #475569;">Current Academic & Physical Focus:</b> <span style="font-weight: 400;">Coursework and recovery protocols aligned with back-to-back tournament scheduling.</span>
+      </div>
+    </div>
+
+    <a href="ncaa-stats.html#Current-Focus" class="focus-link-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </a>
+  </div>
+
      
      
 </div>
