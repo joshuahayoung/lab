@@ -1810,18 +1810,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
-  <div class="gallery-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; position: relative;">
-  <div style="display: flex; align-items: center; margin-bottom: 25px; border-left: 5px solid #806600; padding-left: 20px; box-sizing: border-box;">
-    <div style="display: flex; align-items: center; justify-content: center; background: #fdfaf3; width: 34px; height: 34px; border-radius: 8px; border: 1px solid #f1e6d0; margin-right: 12px;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-        <polyline points="21 15 16 10 5 21"></polyline>
-      </svg>
-    </div>
-    <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
-  </div>
-
   <style>
     #thumbWrapper {
       position: relative;
@@ -2016,20 +2004,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <div id="close-x" onclick="window.close()">×</div>
             <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
             <div id="imgContainer">
-              <img id="mainImg" src="${allImages[index]}">
+              <img id="mainImg" src="\${allImages[index]}">
             </div>
             <div id="next" class="nav-btn" onclick="move(1)">❯</div>
             <div class="bottom-controls">
               <button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>
               <div class="info-row">
-                <div class="view-count"><span>👁</span> ${views.toLocaleString()}</div>
+                <div class="view-count"><span>👁</span> \${views.toLocaleString()}</div>
                 <div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>
-                <div class="counter" id="countDisplay">${index + 1} / ${allImages.length}</div>
+                <div class="counter" id="countDisplay">\${index + 1} / \${allImages.length}</div>
               </div>
             </div>
             <script>
-              let idx = ${index};
-              const imgArray = ${JSON.stringify(allImages)};
+              let idx = \${index};
+              const imgArray = \${JSON.stringify(allImages)};
               
               let sX = 0;
               let eX = 0;
@@ -2066,12 +2054,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <\/script>
           </body>
         </html>
-      `;
+      \`;
       popup.document.write(content);
       popup.document.close();
     }
   </script>
-</div>
   
 
   <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
