@@ -1933,7 +1933,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       const scrollElement = document.getElementById('thumbScroll');
       const pages = document.querySelectorAll('.thumb-page');
       currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
-      scrollElement.style.transform = `translateX(-${currentThumbPage * 100}%)`;
+      scrollElement.style.transform = "translateX(-" + (currentThumbPage * 100) + "%)";
     }
 
     const wrapper = document.getElementById('thumbWrapper');
@@ -1959,7 +1959,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
-      // Views Logic: Starting from 1
       let views = localStorage.getItem('joshua_gallery_views');
       if (!views) { views = 0; }
       views = parseInt(views) + 1;
@@ -1971,94 +1970,64 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       const h = window.innerHeight > 950 ? 950 : window.innerHeight;
       const left = (screen.width / 2) - (w / 2);
       const top = (screen.height / 2) - (h / 2);
-      const popup = window.open("", "JoshuaGallery", `width=${w},height=${h},top=${top},left=${left},resizable=yes`);
+      const popup = window.open("", "JoshuaGallery", "width=" + w + ",height=" + h + ",top=" + top + ",left=" + left + ",resizable=yes");
       
-      const content = `
-        <html>
-          <head>
-            <title>Joshua Hong - Gallery</title>
-            <style>
-              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 20px 0 60px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }
-              #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex: 1; margin: 20px 0; }
-              #mainImg { max-width: 95%; max-height: 70vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }
-              .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 30px 40px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 200; }
-              .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
-              #prev { left: 0; } #next { right: 0; }
-              #close-x { position: fixed; top: 20px; right: 20px; font-size: 50px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }
-              #close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }
-              .bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; padding: 20px 0; margin-top: auto; }
-              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-              .close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }
-              .info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }
-              .counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-              @media (max-width: 768px) { 
-                body { padding-top: 60px; }
-                .nav-btn { display: none; } 
-                #close-x { font-size: 45px; top: 15px; right: 15px; }
-                #mainImg { max-height: 60vh; }
-                .close-btn-bottom { padding: 15px 45px; font-size: 15px; }
-              }
-            </style>
-          </head>
-          <body>
-            <div id="close-x" onclick="window.close()">×</div>
-            <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
-            <div id="imgContainer">
-              <img id="mainImg" src="\${allImages[index]}">
-            </div>
-            <div id="next" class="nav-btn" onclick="move(1)">❯</div>
-            <div class="bottom-controls">
-              <button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>
-              <div class="info-row">
-                <div class="view-count"><span>👁</span> \${views.toLocaleString()}</div>
-                <div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>
-                <div class="counter" id="countDisplay">\${index + 1} / \${allImages.length}</div>
-              </div>
-            </div>
-            <script>
-              let idx = \${index};
-              const imgArray = \${JSON.stringify(allImages)};
-              
-              let sX = 0;
-              let eX = 0;
-              const container = document.getElementById('imgContainer');
-
-              container.addEventListener('touchstart', (e) => {
-                sX = e.changedTouches[0].screenX;
-              }, { passive: true });
-
-              container.addEventListener('touchend', (e) => {
-                eX = e.changedTouches[0].screenX;
-                const dist = sX - eX;
-                if (Math.abs(dist) > 50) {
-                  move(dist > 0 ? 1 : -1);
-                }
-              }, { passive: true });
-
-              function move(step) {
-                idx = (idx + step + imgArray.length) % imgArray.length;
-                const img = document.getElementById('mainImg');
-                img.style.opacity = 0;
-                setTimeout(() => {
-                  img.src = imgArray[idx];
-                  document.getElementById('countDisplay').innerText = (idx + 1) + " / " + imgArray.length;
-                  img.style.opacity = 1;
-                }, 150);
-              }
-
-              window.addEventListener('keydown', (e) => {
-                if (e.key === "ArrowLeft") move(-1);
-                if (e.key === "ArrowRight") move(1);
-                if (e.key === "Escape") window.close();
-              });
-            <\/script>
-          </body>
-        </html>
-      \`;
+      const content = '<html><head><title>Joshua Hong - Gallery</title><style>' +
+        'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 20px 0 60px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }' +
+        '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex: 1; margin: 20px 0; }' +
+        '#mainImg { max-width: 95%; max-height: 70vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }' +
+        '.nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 30px 40px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 200; }' +
+        '.nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }' +
+        '#prev { left: 0; } #next { right: 0; }' +
+        '#close-x { position: fixed; top: 20px; right: 20px; font-size: 50px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }' +
+        '#close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }' +
+        '.bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; padding: 20px 0; margin-top: auto; }' +
+        '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }' +
+        '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }' +
+        '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }' +
+        '.counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
+        '@media (max-width: 768px) { body { padding-top: 60px; } .nav-btn { display: none; } #close-x { font-size: 45px; top: 15px; right: 15px; } #mainImg { max-height: 60vh; } .close-btn-bottom { padding: 15px 45px; font-size: 15px; } }' +
+        '</style></head><body>' +
+        '<div id="close-x" onclick="window.close()">×</div>' +
+        '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>' +
+        '<div id="imgContainer"><img id="mainImg" src="' + allImages[index] + '"></div>' +
+        '<div id="next" class="nav-btn" onclick="move(1)">❯</div>' +
+        '<div class="bottom-controls">' +
+        '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
+        '<div class="info-row">' +
+        '<div class="view-count"><span>👁</span> ' + views.toLocaleString() + '</div>' +
+        '<div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>' +
+        '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
+        '</div></div>' +
+        '<script>' +
+        'let idx = ' + index + ';' +
+        'const imgArray = ' + JSON.stringify(allImages) + ';' +
+        'let sX = 0; let eX = 0;' +
+        'const container = document.getElementById("imgContainer");' +
+        'container.addEventListener("touchstart", (e) => { sX = e.changedTouches[0].screenX; }, { passive: true });' +
+        'container.addEventListener("touchend", (e) => { eX = e.changedTouches[0].screenX; const dist = sX - eX; if (Math.abs(dist) > 50) { move(dist > 0 ? 1 : -1); } }, { passive: true });' +
+        'function move(step) {' +
+        '  idx = (idx + step + imgArray.length) % imgArray.length;' +
+        '  const img = document.getElementById("mainImg");' +
+        '  img.style.opacity = 0;' +
+        '  setTimeout(() => {' +
+        '    img.src = imgArray[idx];' +
+        '    document.getElementById("countDisplay").innerText = (idx + 1) + " / " + imgArray.length;' +
+        '    img.style.opacity = 1;' +
+        '  }, 150);' +
+        '}' +
+        'window.addEventListener("keydown", (e) => {' +
+        '  if (e.key === "ArrowLeft") move(-1);' +
+        '  if (e.key === "ArrowRight") move(1);' +
+        '  if (e.key === "Escape") window.close();' +
+        '});' +
+        '<\/script></body></html>';
+      
       popup.document.write(content);
       popup.document.close();
     }
   </script>
+
   
 
   <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
