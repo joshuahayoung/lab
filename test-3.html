@@ -615,6 +615,14 @@
     ];
 
     function popupJrGallery(index) {
+      // Logic for Views Count (Initial 1000)
+      let currentViews = localStorage.getItem('jr_gallery_views');
+      if (!currentViews) {
+          currentViews = 1000;
+      }
+      currentViews = parseInt(currentViews) + 1;
+      localStorage.setItem('jr_gallery_views', currentViews);
+
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
       const h = window.innerHeight > 950 ? 950 : window.innerHeight;
       const left = (screen.width / 2) - (w / 2);
@@ -622,18 +630,19 @@
       const popup = window.open("", "JoshuaJrGallery", "width="+w+",height="+h+",top="+top+",left="+left+",resizable=yes");
       
       let htmlContent = '<html><head><title>Joshua Hong Junior Gallery</title><style>';
-      htmlContent += 'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; overflow-x: hidden; overflow-y: auto; font-family: sans-serif; padding: 40px 0; box-sizing: border-box; touch-action: none; }';
+      htmlContent += 'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; overflow-x: hidden; overflow-y: auto; font-family: sans-serif; padding: 20px 0 60px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }';
       htmlContent += '.nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; user-select: none; padding: 30px 40px; transition: 0.3s; z-index: 10; font-weight: 200; text-decoration: none; }';
       htmlContent += '.nav-btn:hover { color: white; background: rgba(255,255,255,0.1); } #prev { left: 0; } #next { right: 0; }';
-      htmlContent += '#close-x { position: fixed; top: 30px; right: 30px; font-size: 60px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }';
+      htmlContent += '#close-x { position: fixed; top: 20px; right: 20px; font-size: 50px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }';
       htmlContent += '#close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }';
-      htmlContent += '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; flex-grow: 1; position: relative; }';
-      htmlContent += '#mainImg { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: opacity 0.2s; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }';
-      htmlContent += '.bottom-controls { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; padding-bottom: 40px; }';
+      htmlContent += '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; flex: 1; position: relative; margin: 20px 0; }';
+      htmlContent += '#mainImg { max-width: 95%; max-height: 70vh; object-fit: contain; border-radius: 8px; transition: opacity 0.2s; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }';
+      htmlContent += '.bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; padding: 20px 0; margin-top: auto; }';
       htmlContent += '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }';
       htmlContent += '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }';
-      htmlContent += '.counter { font-size: 16px; opacity: 0.6; letter-spacing: 3px; font-weight: 600; }';
-      htmlContent += '@media (max-width: 768px) { .nav-btn { font-size: 60px; padding: 20px; color: rgba(255,255,255,0.6); } #close-x { font-size: 50px; top: 20px; right: 20px; } .close-btn-bottom { padding: 15px 50px; font-size: 16px; } }';
+      htmlContent += '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }';
+      htmlContent += '.counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }';
+      htmlContent += '@media (max-width: 768px) { body { padding-top: 60px; } .nav-btn { display: none; } #close-x { font-size: 45px; top: 15px; right: 15px; } #mainImg { max-height: 60vh; } .close-btn-bottom { padding: 15px 45px; font-size: 15px; } }';
       htmlContent += '</style></head><body>';
       htmlContent += '<div id="close-x" onclick="window.close()">×</div>';
       htmlContent += '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>';
@@ -641,7 +650,11 @@
       htmlContent += '<div id="next" class="nav-btn" onclick="move(1)">❯</div>';
       htmlContent += '<div class="bottom-controls">';
       htmlContent += '  <button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>';
-      htmlContent += '  <div class="counter" id="countDisplay">' + (index + 1) + ' / ' + jrImages.length + '</div>';
+      htmlContent += '  <div class="info-row">';
+      htmlContent += '    <div class="view-count"><span>👁</span> ' + currentViews.toLocaleString() + '</div>';
+      htmlContent += '    <div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>';
+      htmlContent += '    <div class="counter" id="countDisplay">' + (index + 1) + ' / ' + jrImages.length + '</div>';
+      htmlContent += '  </div>';
       htmlContent += '</div>';
       htmlContent += '<script>';
       htmlContent += 'let idx = ' + index + ';';
