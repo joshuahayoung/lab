@@ -407,38 +407,180 @@ gtag('config', 'G-H1JW8YBDZ8');
   </style>
 
 
-<div class="ongoing-header-wrapper" style="width: 100%; margin-bottom: 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
-    
-    <div style="box-sizing: border-box;">
-      <h2 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #c98a2e; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-          <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-        </svg>
-        On-going Activity
-      </h2>
-    </div>
+<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
+  
+  <style>
+    @keyframes pulse-live {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-    <div style="margin-left: 25px; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; background: #f8fafc; padding: 4px 10px; border-radius: 4px; border: 1px solid #edf2f7; box-sizing: border-box; flex-shrink: 0;">
-      Last Updated: Feb. 17, 2026
-    </div>
+    /* 기본 구조 - 너비 100% 강제 */
+    .activity-card, .focus-container {
+      background: #ffffff;
+      border: 2.5px solid #0c2340;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      width: 100% !important;
+      display: block;
+    }
 
+    .status-dot-live {
+      width: 8px;
+      height: 8px;
+      background-color: #94a3b8; /* 회색으로 변경 */
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .focus-container {
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    /* 호버 시 배경색만 변경하고 위치 이동 제거 */
+    .focus-container:hover, .activity-card:hover {
+      background: #f8fafc;
+    }
+
+    /* 링크 아이콘 공통 디자인 및 호버 효과 */
+    .link-icon-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid #0c2340;
+      background: #ffffff;
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+
+    .link-icon-box:hover {
+      background: #0c2340 !important;
+    }
+
+    .link-icon-box:hover svg {
+      stroke: #ffffff !important;
+    }
+
+    .focus-badge {
+      background: #0c2340;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    /* 모바일에서 섹션 자체의 여백을 제거하여 배너와 너비를 맞춤 */
+    @media (max-width: 900px) {
+      .index-activity-section { 
+        padding: 0 !important; 
+      }
+    }
+
+    /* 모바일 정밀 레이아웃 */
+    @media (max-width: 768px) {
+      .activity-card-inner { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        padding: 25px 15px !important; 
+        text-align: center;
+      }
+      .tournament-info {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100%;
+      }
+      .tournament-info > div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+      }
+      .tournament-info .date-container {
+        justify-content: center !important;
+        width: 100%;
+      }
+      .stats-container { 
+        width: 100% !important; 
+        justify-content: center !important; 
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #f1f5f9;
+        gap: 20px !important;
+      }
+      .score-group {
+        border-right: none !important;
+        padding-right: 0 !important;
+        align-items: center !important;
+      }
+      
+      .focus-container { 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        text-align: center !important;
+        gap: 15px !important; 
+        padding: 25px 15px !important;
+      }
+      .focus-container > div:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100%;
+      }
+      .focus-container div[style*="flex-direction: column"] {
+        align-items: center !important;
+      }
+      .focus-arrow-svg {
+        display: block !important;
+        margin-top: 5px;
+      }
+      h2 { font-size: 20px !important; }
+    }
+  </style>
+
+  <div class="ongoing-header-wrapper" style="width: 100%; margin-bottom: 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
+      <div style="box-sizing: border-box;">
+        <h2 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #c98a2e; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+          </svg>
+          On-going Activity
+        </h2>
+      </div>
+      <div style="margin-left: 25px; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; background: #f8fafc; padding: 4px 10px; border-radius: 4px; border: 1px solid #edf2f7; box-sizing: border-box; flex-shrink: 0;">
+        Last Updated: Feb. 17, 2026
+      </div>
+    </div>
+    <div style="width: 100%; height: 1px; background: #edf2f7; margin-top: 10px;"></div>
   </div>
   
-  <div style="width: 100%; height: 1px; background: #edf2f7; margin-top: 10px;"></div>
-</div>
-      
-
-      
-      
-      
   <div class="activity-card">
-    <div class="activity-card-inner" style="padding: 20px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+    <div class="activity-card-inner" style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
       <div class="tournament-info" style="display: flex; align-items: center; gap: 15px; flex: 1;">
-        <div style="display: flex; align-items: center; gap: 8px; background: #0c2340; padding: 8px 14px; border-radius: 6px; white-space: nowrap;">
+        <div class="focus-badge">
           <span class="status-dot-live"></span>
-          <span style="color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Completed Qualifier</span>
+          <span>Completed Qualifier</span>
         </div>
         <div>
           <div class="date-container" style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
@@ -467,7 +609,7 @@ gtag('config', 'G-H1JW8YBDZ8');
           </div>
         </div>
         
-        <a href="ncaa-stats.html#Tournament-Schedule-Scoring" style="text-decoration: none; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 2px solid #e2e8f0; background: #ffffff; transition: 0.2s;">
+        <a href="ncaa-stats.html#Tournament-Schedule-Scoring" class="link-icon-box">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline>
           </svg>
@@ -475,112 +617,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       </div>
     </div>
   </div>
-
-
-
-
-<style>
-  /* Focus Container 스타일 가이드 */
-  .focus-container {
-    display: flex;
-    align-items: flex-start; /* 상단 기준 칼정렬 */
-    justify-content: flex-start; /* 왼쪽 정렬 고정 */
-    gap: 20px;
-    padding: 20px;
-    background: #ffffff;
-    border: 2px solid #0c2340;
-    border-radius: 12px;
-    text-decoration: none;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-  }
-
-  .focus-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: #0c2340;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 900;
-    padding: 6px 12px;
-    border-radius: 6px;
-    white-space: nowrap; /* 배지 형태 유지 */
-    letter-spacing: 0.5px;
-  }
-
-  .focus-text-group {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    flex: 1;
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-  }
-
-  /* 링크 아이콘 스타일 및 호버 효과 */
-  .focus-link-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    border: 2px solid #0c2340;
-    background: #ffffff;
-    transition: 0.2s;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    text-decoration: none;
-  }
-
-  .focus-link-icon:hover {
-    background: #0c2340 !important;
-  }
-
-  .focus-link-icon:hover svg stroke {
-    stroke: #ffffff;
-  }
-
-  @media (max-width: 768px) {
-    .focus-container {
-      gap: 12px;
-      padding: 16px;
-    }
-    .focus-badge {
-      font-size: 9px;
-      padding: 4px 8px;
-    }
-  }
-</style>
-
-<div class="focus-container">
-  <div class="focus-badge" style="margin-top: 2px;">
-    <span style="width: 6px; height: 6px; background: #ffffff; border-radius: 50%;"></span>
-    CURRENT FOCUS
-  </div>
-
-  <div class="focus-text-group">
-    <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4;">
-      <b style="font-weight: 900;">February Qualifiers:</b> <span style="font-weight: 400;">Completion of qualifying rounds and documentation of spring scoring metrics.</span>
-    </div>
-    <div style="color: #0c2340; font-size: 15px; letter-spacing: -0.2px; line-height: 1.4; margin-top: 8px;">
-      <b style="font-weight: 900;">Upcoming Competition:</b> <span style="font-weight: 400;">Preparation for the Military City Collegiate.</span>
-    </div>
-    <div style="color: #64748b; font-size: 14px; line-height: 1.4; margin-top: 8px;">
-      <b style="font-weight: 800; color: #475569;">Current Academic & Physical Focus:</b> <span style="font-weight: 400;">Coursework and recovery protocols aligned with back-to-back tournament scheduling.</span>
-    </div>
-  </div>
-
-  <a href="ncaa-stats.html#Current-Focus" class="focus-link-icon">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="7" y1="17" x2="17" y2="7"></line>
-      <polyline points="7 7 17 7 17 17"></polyline>
-    </svg>
-  </a>
 </div>
-
 
      
      
