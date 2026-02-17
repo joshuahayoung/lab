@@ -1499,25 +1499,25 @@
         <div style="display: flex; flex-direction: column; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-top: 5px solid #806600; box-shadow: 0 4px 12px rgba(0,0,0,0.03); box-sizing: border-box; min-width: 0; text-align: left;">
   <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Individual Scoring Avg.</span>
   <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-    <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;"> 71.0 <span style="font-size: 15px; font-weight: normal;">(Scoreboard Adj.)</span> </span>
+    <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;"> <span id="sync-scoringAvg">71.0</span> <span style="font-size: 15px; font-weight: normal;">(Scoreboard Adj.)</span> </span>
   </div>
-  <div style="font-size: 15px; color: #64748b; font-weight: 600;">Raw Avg: 72.0</div>
-  <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">STATUS: 15-Round Cumulative</div>
+  <div style="font-size: 15px; color: #64748b; font-weight: 600;">Raw Avg: <span id="sync-rawAvg">72.0</span></div>
+  <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;" class="sync-status">STATUS: 15-Round Cumulative</div>
 </div>
 
         <div style="display: flex; flex-direction: column; padding: 24px; background: #0c2340; border-radius: 12px; box-shadow: 0 4px 12px rgba(12, 35, 64, 0.2); box-sizing: border-box; min-width: 0; text-align: left; position: relative; z-index: 1;">
           <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Scoring Summary</span>
           <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px;">
-            <span style="font-size: 26px; font-weight: 900; color: #ffffff; letter-spacing: -0.5px;">9 Under Par</span>
+            <span style="font-size: 26px; font-weight: 900; color: #ffffff; letter-spacing: -0.5px;" id="sync-underPar">9 Under Par</span>
           </div>
-          <div style="font-size: 15px; color: #f15a22; font-weight: 700;">Out of 15 Rounds</div>
-          <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">STATUS: 15-Round Cumulative</div>
+          <div style="font-size: 15px; color: #f15a22; font-weight: 700;">Out of <span class="sync-scope">15</span> Rounds</div>
+          <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;" class="sync-status">STATUS: 15-Round Cumulative</div>
         </div>
 
         <div style="display: flex; flex-direction: column; padding: 24px 24px 20px 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-bottom: 4px solid #10b981; box-sizing: border-box; min-width: 0; text-align: left;">
           <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Academic Discipline</span>
           <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-            <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;">3.4 GPA</span>
+            <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;" id="sync-gpa">3.4 GPA</span>
           </div>
           <div style="font-size: 15px; color: #64748b; font-weight: 600;">Fall 2025 Semester</div>
           <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #10b981; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">METRIC: Fall Finalized</div>
@@ -1538,11 +1538,11 @@
   <div>
     <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Head-to-Head Record</span>
     <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-      <span style="font-size: 24px; font-weight: 900; color: #0c2340;">289-98-12</span>
+      <span style="font-size: 24px; font-weight: 900; color: #0c2340;" id="sync-headToHead">289-98-12</span>
     </div>
-    <div style="font-size: 15px; color: #111827; font-weight: 800;">Win Rate: 72.4%</div>
+    <div style="font-size: 15px; color: #111827; font-weight: 800;">Win Rate: <span id="sync-winRate">72.4</span>%</div>
   </div>
-  <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;">STATUS: 15-Round Cumulative</div>
+  <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;" class="sync-status">STATUS: 15-Round Cumulative</div>
 </div>
 
         <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; background: #0c2340; border-radius: 12px; box-shadow: 0 10px 25px rgba(12, 35, 64, 0.15); box-sizing: border-box; min-width: 0; text-align: left;">
@@ -1550,13 +1550,13 @@
             <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Counting Score Record</span>
             <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px;">
               <span style="font-size: 24px; font-weight: 900; color: #ffffff; line-height: 1.2;">
-                93.3%<br>
+                <span id="sync-countingScore">93.3</span>%<br>
                 <span style="font-size: 15px; color: #94a3b8; font-weight: 700;">Counting Score</span>
               </span>
             </div>
           </div>
           <div style="margin-top: 20px;">
-            <div style="display: inline-block; font-size: 10px; color: #ffffff; font-weight: 800; text-transform: uppercase; background: #f15a22; padding: 2px 8px; border-radius: 4px;">Metric: 14/15 Rounds Recorded</div>
+            <div style="display: inline-block; font-size: 10px; color: #ffffff; font-weight: 800; text-transform: uppercase; background: #f15a22; padding: 2px 8px; border-radius: 4px;">Metric: <span id="sync-recordedRounds">14/15</span> Rounds Recorded</div>
           </div>
         </div>
 
@@ -1564,28 +1564,64 @@
           <div>
             <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Points Share (Clippd w)</span>
             <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-              <span style="font-size: 30px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;">32.80%</span>
+              <span style="font-size: 30px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;" id="sync-pointsShare">32.80%</span>
             </div>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
               <div>
                 <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">(w) Points</div>
-                <div style="font-size: 13px; color: #0c2340; font-weight: 900;">171.48</div>
+                <div style="font-size: 13px; color: #0c2340; font-weight: 900;" id="sync-pointsValue">171.48</div>
               </div>
               <div>
                 <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">Team Total</div>
-                <div style="font-size: 13px; color: #0c2340; font-weight: 900;">522.84</div>
+                <div style="font-size: 13px; color: #0c2340; font-weight: 900;" id="sync-teamTotal">522.84</div>
               </div>
               <div>
                 <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">Scope</div>
-                <div style="font-size: 11px; color: #0c2340; font-weight: 900;">15 Rounds</div>
+                <div style="font-size: 11px; color: #0c2340; font-weight: 900;"><span class="sync-scope">15</span> Rounds</div>
               </div>
             </div>
           </div>
-          <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;">STATUS: 15-Round Cumulative</div>
+          <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;" class="sync-status">STATUS: 15-Round Cumulative</div>
         </div>
-        
       </div>
     </div>
+
+<script>
+async function updateMetrics() {
+  try {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    // Individual Metrics
+    document.getElementById('sync-scoringAvg').innerText = data.individual.scoringAvg;
+    document.getElementById('sync-rawAvg').innerText = data.individual.rawAvg;
+    document.getElementById('sync-underPar').innerText = data.individual.underPar;
+    document.getElementById('sync-gpa').innerText = data.individual.gpa;
+
+    // Team Metrics
+    document.getElementById('sync-headToHead').innerText = data.teamMetrics.headToHead;
+    document.getElementById('sync-winRate').innerText = data.teamMetrics.winRate;
+    document.getElementById('sync-countingScore').innerText = data.teamMetrics.countingScore;
+    document.getElementById('sync-recordedRounds').innerText = data.teamMetrics.recordedRounds || "14/15";
+    document.getElementById('sync-pointsShare').innerText = data.teamMetrics.pointsShare + '%';
+    document.getElementById('sync-pointsValue').innerText = data.teamMetrics.pointsValue;
+    document.getElementById('sync-teamTotal').innerText = data.teamMetrics.teamTotal;
+
+    // Common Text (Status & Scope)
+    const statusElements = document.querySelectorAll('.sync-status');
+    statusElements.forEach(el => el.innerText = 'STATUS: ' + data.status);
+    
+    const scopeElements = document.querySelectorAll('.sync-scope');
+    scopeElements.forEach(el => el.innerText = data.scope || "15");
+
+  } catch (error) {
+    console.error('Data Sync Error:', error);
+  }
+}
+window.addEventListener('DOMContentLoaded', updateMetrics);
+</script>
+
+  
   </div>
 </div>
 
