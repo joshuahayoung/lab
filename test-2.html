@@ -1816,6 +1816,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       overflow: hidden;
       width: 100%;
       box-sizing: border-box;
+      touch-action: pan-y;
     }
     #thumbScroll {
       display: flex;
@@ -1826,7 +1827,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     .thumb-page {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(3, 1fr); /* 3행 고정 */
+      grid-template-rows: repeat(3, 1fr);
       gap: 15px;
       flex: 0 0 100%;
       width: 100%;
@@ -1835,7 +1836,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
     .thumb-img {
       width: 100%;
-      aspect-ratio: 1 / 1.1; /* 사진 비율 고정 */
+      aspect-ratio: 1 / 1.1;
       object-fit: cover;
       object-position: center 15%; 
       border-radius: 16px;
@@ -1898,36 +1899,34 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <div id="thumbWrapper">
     <div id="thumbScroll">
       <div class="thumb-page">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(this)" class="thumb-img">
-</div>
-<div class="thumb-page">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(this)" class="thumb-img">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img">
-</div>
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(this)" class="thumb-img">
+      </div>
+      <div class="thumb-page">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(this)" class="thumb-img">
+        <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img">
+      </div>
     </div>
   </div>
 
   <script>
-    // 이미지 소스 목록을 자동으로 추출합니다.
     const getImages = () => Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
-
     let currentThumbPage = 0;
     
     function scrollThumbs(dir) {
@@ -1935,6 +1934,28 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       const pages = document.querySelectorAll('.thumb-page');
       currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
       scrollElement.style.transform = `translateX(-${currentThumbPage * 100}%)`;
+    }
+
+    const wrapper = document.getElementById('thumbWrapper');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) {
+        scrollThumbs(1);
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        scrollThumbs(-1);
+      }
     }
 
     function popupGallery(element) {
@@ -1953,17 +1974,21 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <style>
               body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 40px 0; box-sizing: border-box; }
               #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex-grow: 1; }
-              #mainImg { max-width: 95%; max-height: 75vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
-              .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 70px; color: rgba(255,255,255,0.25); cursor: pointer; padding: 20px 30px; user-select: none; transition: 0.3s; z-index: 10; }
+              #mainImg { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
+              .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 30px 40px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 200; }
               .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
               #prev { left: 0; } #next { right: 0; }
-              #close-x { position: fixed; top: 20px; right: 20px; font-size: 45px; cursor: pointer; opacity: 0.6; z-index: 20; transition: 0.3s; line-height: 1; }
-              #close-x:hover { opacity: 1; transform: rotate(90deg); }
-              .bottom-controls { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; padding-bottom: 20px; }
-              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 12px 40px; border-radius: 30px; font-weight: 800; font-size: 14px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }
-              .close-btn-bottom:hover { background: #ff4d4d; color: #fff; }
-              .counter { font-size: 14px; opacity: 0.5; letter-spacing: 2px; }
-              @media (max-width: 600px) { .nav-btn { font-size: 40px; padding: 15px; } }
+              #close-x { position: fixed; top: 30px; right: 30px; font-size: 60px; cursor: pointer; opacity: 0.7; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 300; }
+              #close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }
+              .bottom-controls { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; padding-bottom: 40px; }
+              .close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+              .close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }
+              .counter { font-size: 16px; opacity: 0.6; letter-spacing: 3px; font-weight: 600; }
+              @media (max-width: 768px) { 
+                .nav-btn { font-size: 60px; padding: 20px; color: rgba(255,255,255,0.6); } 
+                #close-x { font-size: 50px; top: 20px; right: 20px; }
+                .close-btn-bottom { padding: 15px 50px; font-size: 16px; }
+              }
             </style>
           </head>
           <body>
@@ -1974,7 +1999,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
             <div id="next" class="nav-btn" onclick="move(1)">❯</div>
             <div class="bottom-controls">
-              <button class="close-btn-bottom" onclick="window.close()">CLOSE</button>
+              <button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>
               <div class="counter" id="countDisplay">${index + 1} / ${allImages.length}</div>
             </div>
             <script>
@@ -1995,7 +2020,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 if (e.key === "ArrowRight") move(1);
                 if (e.key === "Escape") window.close();
               });
-            </` + `script>
+            <\/script>
           </body>
         </html>
       `;
