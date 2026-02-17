@@ -1972,9 +1972,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <head>
             <title>Joshua Hong - Gallery</title>
             <style>
-              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 40px 0; box-sizing: border-box; }
-              #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex-grow: 1; }
-              #mainImg { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
+              body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; font-family: sans-serif; overflow-x: hidden; overflow-y: auto; padding: 40px 0; box-sizing: border-box; touch-action: none; }
+              #imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; flex-grow: 1; pointer-events: auto; }
+              #mainImg { max-width: 95%; max-height: 80vh; object-fit: contain; border-radius: 8px; transition: 0.2s; opacity: 1; box-shadow: 0 0 30px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }
               .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 90px; color: rgba(255,255,255,0.4); cursor: pointer; padding: 30px 40px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 200; }
               .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
               #prev { left: 0; } #next { right: 0; }
@@ -2005,6 +2005,24 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <script>
               let idx = ${index};
               const imgArray = ${JSON.stringify(allImages)};
+              
+              // 팝업 내부 스와이프 감지 로직
+              let sX = 0;
+              let eX = 0;
+              const container = document.getElementById('imgContainer');
+
+              container.addEventListener('touchstart', (e) => {
+                sX = e.changedTouches[0].screenX;
+              }, { passive: true });
+
+              container.addEventListener('touchend', (e) => {
+                eX = e.changedTouches[0].screenX;
+                const dist = sX - eX;
+                if (Math.abs(dist) > 50) {
+                  move(dist > 0 ? 1 : -1);
+                }
+              }, { passive: true });
+
               function move(step) {
                 idx = (idx + step + imgArray.length) % imgArray.length;
                 const img = document.getElementById('mainImg');
@@ -2015,6 +2033,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                   img.style.opacity = 1;
                 }, 150);
               }
+
               window.addEventListener('keydown', (e) => {
                 if (e.key === "ArrowLeft") move(-1);
                 if (e.key === "ArrowRight") move(1);
