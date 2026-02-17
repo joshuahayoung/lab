@@ -615,10 +615,10 @@
     ];
 
     function popupJrGallery(index) {
-      // Logic for Views Count (Initial 1000)
+      // Logic for Views Count (Initial 1)
       let currentViews = localStorage.getItem('jr_gallery_views');
       if (!currentViews) {
-          currentViews = 1000;
+          currentViews = 0;
       }
       currentViews = parseInt(currentViews) + 1;
       localStorage.setItem('jr_gallery_views', currentViews);
