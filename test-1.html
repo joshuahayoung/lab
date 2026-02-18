@@ -1915,7 +1915,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
-  <style>
+ <style>
     #thumbWrapper {
       position: relative;
       overflow: hidden;
@@ -2070,15 +2070,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
-      // 카운트 초기화 및 1부터 시작하는 로직
-      let views = localStorage.getItem('joshua_gallery_views');
-      if (!views || views === "0") { 
-        views = 1; 
-      } else {
-        views = parseInt(views) + 1;
-      }
-      localStorage.setItem('joshua_gallery_views', views);
-
       const allImages = getImages();
       const index = allImages.indexOf(element.src);
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
@@ -2100,7 +2091,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }' +
         '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }' +
         '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }' +
-        '.counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
+        '.counter { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
         '@media (max-width: 768px) { body { padding-top: 60px; } .nav-btn { display: none; } #close-x { font-size: 45px; top: 15px; right: 15px; } #mainImg { max-height: 60vh; } .close-btn-bottom { padding: 15px 45px; font-size: 15px; } }' +
         '</style></head><body>' +
         '<div id="close-x" onclick="window.close()">×</div>' +
@@ -2110,8 +2101,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '<div class="bottom-controls">' +
         '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
         '<div class="info-row">' +
-        '<div class="view-count"><span>👁</span> ' + views.toLocaleString() + '</div>' +
-        '<div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>' +
         '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
         '</div></div>' +
         '<script>' +
