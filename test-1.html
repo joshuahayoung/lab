@@ -1915,7 +1915,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
- <style>
+<style>
     #thumbWrapper {
       position: relative;
       overflow: hidden;
@@ -1968,18 +1968,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       .thumb-img {
         aspect-ratio: 1 / 1.2;
       }
-      /* 모바일 화살표 위치 미세 조정 */
+      /* 모바일 화살표 수직 중앙 정렬 유지 */
       .scroll-nav { 
         width: 32px !important; 
         height: 32px !important; 
-        top: calc(50% - 10px) !important; 
+        top: 50% !important;
+        transform: translateY(-50%) !important;
       }
     }
 
     .scroll-nav {
       position: absolute;
-      /* 하단 패딩 20px를 고려하여 중앙으로 상향 조정 */
-      top: calc(50% - 10px);
+      /* 하단 패딩을 제외한 그리드 콘텐츠의 수직 중앙 배치 */
+      top: 50%;
       transform: translateY(-50%);
       width: 44px;
       height: 44px;
