@@ -1918,16 +1918,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 <style>
     #thumbWrapper {
       position: relative;
-      overflow: hidden;
+      overflow: visible; /* 화살표 노출을 위해 변경 */
       width: 100%;
       box-sizing: border-box;
       touch-action: pan-y;
+      margin-bottom: 20px;
     }
     #thumbScroll {
       display: flex;
       transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
       will-change: transform;
       width: 100%;
+      overflow: hidden; /* 그리드 밖으로 나가는 페이지 숨김 */
+      border-radius: 16px;
     }
     .thumb-page {
       display: grid;
@@ -1937,7 +1940,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       flex: 0 0 100%;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 15px 20px;
+      padding: 0 15px; /* 하단 패딩 제거하여 수직 중앙 정렬 정확도 확보 */
     }
     .thumb-img {
       width: 100%;
@@ -1963,23 +1966,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 8px;
-        padding: 0 10px 20px;
+        padding: 0 10px;
       }
       .thumb-img {
         aspect-ratio: 1 / 1.2;
       }
-      /* 모바일 화살표 수직 중앙 정렬 유지 */
       .scroll-nav { 
         width: 32px !important; 
         height: 32px !important; 
-        top: 50% !important;
-        transform: translateY(-50%) !important;
       }
     }
 
     .scroll-nav {
       position: absolute;
-      /* 하단 패딩을 제외한 그리드 콘텐츠의 수직 중앙 배치 고정 */
       top: 50%;
       transform: translateY(-50%);
       width: 44px;
@@ -1991,24 +1990,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       color: #0c2340;
     }
     .scroll-nav:hover { background: #0c2340; color: #fff; }
-    .scroll-nav.prev { left: 5px; }
-    .scroll-nav.next { right: 5px; }
+    .scroll-nav.prev { left: -22px; } /* 그리드 살짝 바깥에 배치하여 가독성 증대 */
+    .scroll-nav.next { right: -22px; }
+
+    /* 모바일에서는 그리드 안쪽으로 화살표 이동 */
+    @media (max-width: 1200px) {
+      .scroll-nav.prev { left: 5px; }
+      .scroll-nav.next { right: 5px; }
+    }
   </style>
 
-  <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-  </div>
-  <div class="scroll-nav next" onclick="scrollThumbs(1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-  </div>
-
   <div id="thumbWrapper">
+    <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </div>
+    <div class="scroll-nav next" onclick="scrollThumbs(1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </div>
+
     <div id="thumbScroll">
       <div class="thumb-page">
         <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
