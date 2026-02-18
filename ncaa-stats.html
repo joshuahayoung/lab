@@ -2029,12 +2029,18 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       .thumb-img {
         aspect-ratio: 1 / 1.2;
       }
-      .scroll-nav { width: 32px !important; height: 32px !important; top: 50% !important; }
+      /* 모바일 화살표 위치 미세 조정 */
+      .scroll-nav { 
+        width: 32px !important; 
+        height: 32px !important; 
+        top: calc(50% - 10px) !important; 
+      }
     }
 
     .scroll-nav {
       position: absolute;
-      top: 50%;
+      /* 하단 패딩 20px를 고려하여 중앙으로 상향 조정 */
+      top: calc(50% - 10px);
       transform: translateY(-50%);
       width: 44px;
       height: 44px;
@@ -2125,9 +2131,13 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
+      // 카운트 초기화 및 1부터 시작하는 로직
       let views = localStorage.getItem('joshua_gallery_views');
-      if (!views) { views = 0; }
-      views = parseInt(views) + 1;
+      if (!views || views === "0") { 
+        views = 1; 
+      } else {
+        views = parseInt(views) + 1;
+      }
       localStorage.setItem('joshua_gallery_views', views);
 
       const allImages = getImages();
