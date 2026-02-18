@@ -360,108 +360,295 @@
   <div style="margin-bottom: 5px; width: 100%; box-sizing: border-box; padding: 0;">
     
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-left: 5px solid #E31837; padding-left: 15px; margin-left: 10px;">
-      <h3 style="color: #0c2340; margin: 0; text-transform: none; font-size: 1.3em; line-height: 1.2;">In Progress Tournament</h3>
-      <span style="font-family: 'Montserrat', sans-serif; font-size: 0.85em; color: #888; padding-right: 10px;">Internal Spring Qualifier</span>
+      <h3 style="color: #0c2340; margin: 0; text-transform: none; font-size: 1.3em; line-height: 1.2;">Up Coming Tournament</h3>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 0.85em; color: #888; padding-right: 10px;">Military Collegiate Home Field</span>
     </div>
+  </div>
+ 
+  
+<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <style>
+    /* 테이블 구조 최적화 */
+    .log-table { width: 100%; border-collapse: collapse; background: white; table-layout: fixed; margin-bottom: 0; border: none; }
+    .log-table th { background: #f8f9fa; font-size: 11px; color: #0c2340; text-transform: uppercase; padding: 12px 10px; border-bottom: 2px solid #0c2340; text-align: center; }
+    .log-table th.col-left { text-align: left; padding-left: 20px; }
+    .log-table td { padding: 15px 10px; border-bottom: 1px solid #edf2f7; vertical-align: middle; text-align: center; }
+    .log-table td.col-left { text-align: left; padding-left: 20px; }
+    .under-par { color: #e74c3c !important; font-weight: 800 !important; }
+    .over-par { color: #2c3e50 !important; font-weight: 700 !important; }
     
-    <div style="width: 100%; padding: 0 10px; box-sizing: border-box;">
-  <div style="background: #ffffff; border: 1.5px solid #0c2340; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); box-sizing: border-box;">
+    /* 테두리 끊김 방지를 위해 overflow: hidden 재적용 및 스크롤 간섭 제거 */
+    .live-event-card { 
+      background: #ffffff; 
+      border: 2px solid #0c2340; 
+      border-radius: 20px; 
+      padding: 0; 
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12); 
+      margin-bottom: 50px; 
+      position: relative; 
+      display: flex; 
+      flex-direction: column;
+      overflow: hidden; /* 모서리 끊김 해결 */
+    }
+
+    /* 실시간 상태 표시 점 애니메이션 추가 */
+    @keyframes live-pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      animation: live-pulse 2s infinite ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .log-table thead { display: none; }
+      .log-table, .log-table tbody, .log-table tr, .log-table td { display: block; width: 100%; box-sizing: border-box; }
+      .log-table tr { margin-bottom: 15px; border: 1px solid #eee !important; border-radius: 12px; padding: 12px; }
+      .log-table td { border: none !important; padding: 0 !important; text-align: left !important; }
+      .hide-mobile { display: none !important; }
+      .mobile-status-bar { display: flex !important; background: #fcfcfc; border-radius: 8px; margin-top: 10px; padding: 8px 5px; border: 1px dashed #e2e8f0; }
+      .ms-item { flex: 1; text-align: center; border-right: 1px solid #eee; }
+      .ms-item:last-child { border-right: none; }
+      .ms-label { display: block; font-size: 8px; color: #aaa; font-weight: 800; margin-bottom: 2px; }
+      .ms-value { display: block; font-size: 12px; font-weight: 800; }
+    }
     
-    <div style="text-align: center; border-bottom: 1px solid #eee; padding-top: 15px; padding-bottom: 15px;">
-      <div style="font-size: 1.2em; font-weight: 700; color: #0c2340; margin-bottom: 5px;">
-        TPC San Antonio / The Canyons Course
-      </div>
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 0.9em; color: #666;">
-        7,106 Yards | Rating: 74.5 | Slope: 139
-      </div>
-    </div>
-    
-    </div>  
+    @media (min-width: 769px) {
+      .mobile-status-bar { display: none !important; }
+      .col-info { width: 55%; }
+      .col-score { width: 10%; }
+      .col-par { width: 10%; }
+      .col-status { width: 15%; }
+      .col-finish { width: 10%; }
+    }
+  </style>
+
+  <style>
+  /* Pairing Modal 기본 스타일 */
+  .pairing-modal {
+    display: none;
+    position: fixed;
+    z-index: 10001;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-content-wrapper {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    text-align: center;
+  }
+  .pairing-modal img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    border: 3px solid #fff;
+  }
+  .close-x {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .close-btn-bottom {
+    margin-top: 15px;
+    padding: 8px 25px;
+    background: #fff;
+    color: #0c2340;
+    border: none;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  /* 라운드 페어링 버튼 공통 클래스 */
+  .pairing-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+  }
+  .pairing-btn:hover {
+    background: #e2e8f0;
+  }
+  .pairing-btn span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+</style>
+
+<div id="pairingModal" class="pairing-modal" onclick="closePairing()">
+  <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+    <span class="close-x" onclick="closePairing()">&times;</span>
+    <img id="pairingImg" src="" alt="Round Pairing">
+    <br>
+    <button class="close-btn-bottom" onclick="closePairing()">Close</button>
+  </div>
 </div>
-    
+
+<script>
+  function openPairing(imgSrc) {
+    document.getElementById('pairingImg').src = imgSrc;
+    document.getElementById('pairingModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+  }
+  function closePairing() {
+    document.getElementById('pairingModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // 스크롤 재개
+  }
+</script>
+
+<div class="live-event-card">
+  <div style="padding: 20px 25px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="background: #0c2340; color: white; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+        <span class="live-dot"></span>
+        UP COMING
+      </div>
+      <div>
+        <h2 style="color: #0c2340; margin: 0; font-size: 19px; font-weight: 800;">Military Collegiate (UTSA)</h2>
+        <div style="font-size: 12px; color: #7f8c8d; font-weight: 600;">TPC San Antonio | The Canyons Course | Par 72 | 7,106 Yards | Rating: 74.5 | Slope: 139</div>
+      </div>
+    </div> 
   </div>
 
-  <div style="width: 100%; box-sizing: border-box;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; padding: 0 10px;">
-      <h3 style="color: #0c2340; border-left: 5px solid #0c2340; padding-left: 15px; margin: 0; text-transform: none; font-size: 1.3em; line-height: 1.2;">Qualifier History Log</h3>
-      
-      <div style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; display: flex; gap: 10px; align-items: center;">
-        <span style="color: #0c2340; font-weight: 700; border-bottom: 2px solid #E31837; padding-bottom: 2px; cursor: default;">THE CANYONS</span>
-        <span style="color: #ccc; font-weight: 400; padding-bottom: 2px;">|</span>
-        <span style="color: #aaa; font-weight: 500; padding-bottom: 2px; cursor: default;">THE OAKS (INACTIVE SESSION)</span>
-      </div>
+  <div>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th class="col-info col-left">Round</th>
+          <th class="col-score">Score</th>
+          <th class="col-par">Par</th>
+          <th class="col-status">Status</th>
+          <th class="col-finish">Rank</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <tr>
+          <td class="col-left">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 1</div>
+            </div>
+            <div style="font-size: 11px; color: #7f8c8d;">Feb 23, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value under-par">-</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value under-par">-</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">-</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile under-par">-</td>
+          <td class="hide-mobile under-par">-</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6; font-weight: 700;">-</td>
+          <td class="hide-mobile" style="color: #0c2340; font-weight: 900; font-size: 15px;">-</td>
+        </tr>
+
+      <tr>
+          <td class="col-left">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 2</div>
+            </div>
+            <div style="font-size: 11px; color: #7f8c8d; margin-top: 2px;">Feb 23, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">-</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">-</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #10b981; font-weight: 700;">-</td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+        </tr>
+
+        <tr>
+          <td class="col-left">
+            <div style="font-weight: 800; color: #0c2340; font-size: 15px;">Round 3</div>
+            <div style="font-size: 11px; color: #7f8c8d;">Feb 24, 2026</div>
+            <div class="mobile-status-bar">
+              <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value">-</span></div>
+              <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value">-</span></div>
+              <div class="ms-item"><span class="ms-label">RANK</span><span class="ms-value">-</span></div>
+            </div>
+          </td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+          <td class="hide-mobile" style="font-size: 12px; color: #95a5a6;">-</td>
+          <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="background: #0c2340; padding: 15px 25px; display: flex; justify-content: flex-end; align-items: center; gap: 30px;">
+ <a href="https://scoreboard.clippd.com/tournaments/238654/scoring/team" target="_blank" style="margin-right: auto; display: flex; align-items: center; gap: 8px; color: #0c2340; text-decoration: none; font-size: 11px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border: 1.5px solid #0c2340; padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
+  <span style="display: flex; align-items: center; gap: 6px;">
+    <span style="width: 5px; height: 5px; background-color: #e74c3c; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite;"></span>
+    LIVE LEADERBOARD
+  </span>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+</a>
+
+<style>
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
+
+      <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Total Score</span>
+
+      <span style="color: #e74c3c; font-size: 18px; font-weight: 900;">-</span>
+
     </div>
 
-    <div style="overflow: hidden; width: 100%; box-sizing: border-box; padding: 0 10px;">
-      <div style="border: 1.5px solid #0c2340; border-radius: 12px; overflow: hidden;">
-        <table style="width: 100%; border-collapse: collapse; background: #ffffff; margin: 0; box-sizing: border-box;">
-          <thead>
-            <tr style="background: #0c2340; color: #ffffff;">
-              <th style="width: 20%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Date</th>
-              <th style="width: 45%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Course Name</th>
-              <th style="width: 17.5%; padding: 15px; border-right: 1px solid rgba(255,255,255,0.1); font-weight: 500; font-size: 0.9em; text-align: center;">Score</th>
-              <th style="width: 17.5%; padding: 15px; font-weight: 500; font-size: 0.9em; text-align: center;">To Par</th>
-            </tr>
-          </thead>
-       <tbody style="text-align: center; color: #333; font-family: 'Montserrat', sans-serif;">
-           <tr style="background: #fffaf0;">
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 800; color: #0c2340;">Feb 17, 2026</td>
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 800; color: #0c2340;">The Canyons Course</td>
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 800; color:  #0c2340; font-family: 'Oswald', sans-serif; font-size: 1.15em;">77</td>
-              <td style="padding: 12px; color:  #0c2340; font-weight: 800; font-size: 1.1em;">+5</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee; background: rgba(0, 0, 0, 0.02);">
-              <td style="padding: 12px; border-right: 1px solid #eee; color: #aaa;">Feb 12, 2026</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td>
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; 
-                font-family: 'Oswald', sans-serif; font-size: 1.15em;">67</td>
-              <td style="padding: 12px; color: #E31837; font-weight: 700; font-size: 1.1em;">-5</td>
-            </tr>
-            
-            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Feb 10, 2026</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td>
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; 
-                font-family: 'Oswald', sans-serif; font-size: 1.15em;">68</td>
-              <td style="padding: 12px; color: #E31837; font-weight: 700; font-size: 1.1em;">-4</td>
-            </tr>
-            
-            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Jan 22, 2026</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; 
-                 font-family: 'Oswald', sans-serif; font-size: 1.1em;">68</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-4</td></tr>
-            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Sep 26, 2025</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; 
-                 font-family: 'Oswald', sans-serif; font-size: 1.1em;">73</td><td style="padding: 12px; font-weight: 600;">+1</td></tr>
-            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Sep 01, 2025</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; 
-                 font-family: 'Oswald', sans-serif; font-size: 1.1em;">69</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-3</td></tr>
-            <tr style="border-bottom: 1px solid #eee;"><td style="padding: 12px; border-right: 1px solid #eee;">Aug 28, 2025</td>
-              <td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td><td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; 
-                 font-family: 'Oswald', sans-serif; font-size: 1.1em;">68</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-4</td></tr>
-            <tr><td style="padding: 12px; border-right: 1px solid #eee;">Aug 27, 2025</td><td style="padding: 12px; border-right: 1px solid #eee;">The Canyons Course</td>
-              <td style="padding: 12px; border-right: 1px solid #eee; font-weight: 700; color: #E31837; font-family: 'Oswald', sans-serif; font-size: 1.1em;">69</td><td style="padding: 12px; color: #E31837; font-weight: 600;">-3</td></tr>
-          </tbody>
-          <tfoot>
-          <tr style="background: #fafafa; border-top: 1.5px solid #0c2340;">
-  <td style="width: 20%; padding: 12px; border-right: 1px solid #eee;"></td>
-  <td style="width: 45%; padding: 12px 15px; text-align: center; border-right: 1px solid #eee; font-weight: 600; font-size: 0.85em; color: #888; font-family: 'Montserrat', sans-serif;">
-    AVG. Course Cumulative Performance:
-  </td>
-  <td style="width: 17.5%; padding: 12px; text-align: center; border-right: 1px solid #eee;">
-    <span style="font-weight: 700; font-size: 1.05em; font-family: 'Oswald', sans-serif; color: #E31837;">
-      69.87
-    </span>
-  </td>
-  <td style="width: 17.5%; padding: 12px; text-align: center;">
-    <span style="font-weight: 700; font-size: 1.05em; font-family: 'Oswald', sans-serif; color: #E31837;">
-      -2.13
-    </span>
-  </td>
-</tr>
-          </tfoot>
-        </table>
-      </div>
+    <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Cur. Par</span>
+
+      <span style="color: #e74c3c; font-size: 18px; font-weight: 900;">-</span>
+
     </div>
+
+    <div style="text-align: right;">
+
+      <span style="color: rgba(255,255,255,0.6); font-size: 9px; font-weight: 800; display: block; text-transform: uppercase;">Cur. Rank</span>
+
+      <span style="color: #ffffff; font-size: 18px; font-weight: 900;">-</span>
+
+    </div>
+
   </div>
+
 </div>
   
 
@@ -493,15 +680,15 @@
         <div class="legal-pad-content" style="background: #fff9c4; background-image: linear-gradient(#e5e0a3 1px, transparent 1px); background-size: 100% 28px; border-left: 1px solid #e5e0a3; border-right: 1px solid #e5e0a3; border-bottom: 4px solid #d4cf92; border-radius: 0 0 60px 60px; padding: 40px; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.07); display: flex; flex-direction: column; box-sizing: border-box; width: 100%;">
             
            <div style="margin-bottom: 45px; position: relative; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-              <div id="Current-Focus" style="margin-bottom: 8px; box-sizing: border-box;">
-                  <span style="font-size: 13px; color: #d32f2f; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-                      Posted: Feb 17, 2026
-                  </span>
-            </div>
+              <div id="Current-Focus" style="margin-bottom: 8px; box-sizing: border-box; text-align: center;">
+  <span style="font-size: 13px; color: #d32f2f; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+    Posted: Feb 17, 2026
+  </span>
+</div>
 
-  <h3 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 900; text-transform: uppercase; border-bottom: 3px solid #0c2340; display: table; line-height: 1.4; box-sizing: border-box; letter-spacing: 0.5px; padding-bottom: 5px;">
-    Technical Log (Updated: Feb. 17, 2026)
-  </h3>
+  <h3 style="margin: 0 auto; color: #0c2340; font-size: 20px; font-weight: 900; text-transform: uppercase; border-bottom: 3px solid #0c2340; display: table; line-height: 1.4; box-sizing: border-box; letter-spacing: 0.5px; padding-bottom: 5px; text-align: center;">
+  Technical Log
+</h3>
 </div>
 
          <div class="memo-body" style="display: flex; flex-direction: column; gap: 28px; max-width: 100%; position: relative; z-index: 1; margin-bottom: 50px; box-sizing: border-box;">
