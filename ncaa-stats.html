@@ -1915,19 +1915,22 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
-  <style>
+<style>
     #thumbWrapper {
       position: relative;
-      overflow: hidden;
+      overflow: visible; /* 화살표 노출을 위해 변경 */
       width: 100%;
       box-sizing: border-box;
       touch-action: pan-y;
+      margin-bottom: 20px;
     }
     #thumbScroll {
       display: flex;
       transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
       will-change: transform;
       width: 100%;
+      overflow: hidden; /* 그리드 밖으로 나가는 페이지 숨김 */
+      border-radius: 16px;
     }
     .thumb-page {
       display: grid;
@@ -1937,7 +1940,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       flex: 0 0 100%;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 15px 20px;
+      padding: 0 15px; /* 하단 패딩 제거하여 수직 중앙 정렬 정확도 확보 */
     }
     .thumb-img {
       width: 100%;
@@ -1963,23 +1966,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 8px;
-        padding: 0 10px 20px;
+        padding: 0 10px;
       }
       .thumb-img {
         aspect-ratio: 1 / 1.2;
       }
-      /* 모바일 화살표 위치 미세 조정 */
       .scroll-nav { 
         width: 32px !important; 
         height: 32px !important; 
-        top: calc(50% - 10px) !important; 
       }
     }
 
     .scroll-nav {
       position: absolute;
-      /* 하단 패딩 20px를 고려하여 중앙으로 상향 조정 */
-      top: calc(50% - 10px);
+      top: 50%;
       transform: translateY(-50%);
       width: 44px;
       height: 44px;
@@ -1990,24 +1990,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       color: #0c2340;
     }
     .scroll-nav:hover { background: #0c2340; color: #fff; }
-    .scroll-nav.prev { left: 5px; }
-    .scroll-nav.next { right: 5px; }
+    .scroll-nav.prev { left: -22px; } /* 그리드 살짝 바깥에 배치하여 가독성 증대 */
+    .scroll-nav.next { right: -22px; }
+
+    /* 모바일에서는 그리드 안쪽으로 화살표 이동 */
+    @media (max-width: 1200px) {
+      .scroll-nav.prev { left: 5px; }
+      .scroll-nav.next { right: 5px; }
+    }
   </style>
 
-  <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-  </div>
-  <div class="scroll-nav next" onclick="scrollThumbs(1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-  </div>
-
   <div id="thumbWrapper">
+    <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </div>
+    <div class="scroll-nav next" onclick="scrollThumbs(1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </div>
+
     <div id="thumbScroll">
       <div class="thumb-page">
         <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
@@ -2070,15 +2076,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
-      // 카운트 초기화 및 1부터 시작하는 로직
-      let views = localStorage.getItem('joshua_gallery_views');
-      if (!views || views === "0") { 
-        views = 1; 
-      } else {
-        views = parseInt(views) + 1;
-      }
-      localStorage.setItem('joshua_gallery_views', views);
-
       const allImages = getImages();
       const index = allImages.indexOf(element.src);
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
@@ -2100,7 +2097,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }' +
         '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }' +
         '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }' +
-        '.counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
+        '.counter { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
         '@media (max-width: 768px) { body { padding-top: 60px; } .nav-btn { display: none; } #close-x { font-size: 45px; top: 15px; right: 15px; } #mainImg { max-height: 60vh; } .close-btn-bottom { padding: 15px 45px; font-size: 15px; } }' +
         '</style></head><body>' +
         '<div id="close-x" onclick="window.close()">×</div>' +
@@ -2110,8 +2107,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '<div class="bottom-controls">' +
         '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
         '<div class="info-row">' +
-        '<div class="view-count"><span>👁</span> ' + views.toLocaleString() + '</div>' +
-        '<div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>' +
         '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
         '</div></div>' +
         '<script>' +
