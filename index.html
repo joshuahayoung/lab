@@ -300,142 +300,14 @@ gtag('config', 'G-H1JW8YBDZ8');
       display: block;
     }
 
+    /* 도트 애니메이션 활성화 */
     .status-dot-live {
       width: 8px;
       height: 8px;
-      background-color: #94a3b8; /* 회색으로 변경 */
+      background-color: #ff4d4d; /* 라이브 상태를 위해 레드 계열 유지 */
       border-radius: 50%;
       display: inline-block;
-      /* animation 제거하여 깜빡임 중지 */
-    }
-
-    .focus-container {
-      padding: 18px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .focus-container:hover {
-      background: #f8fafc;
-      transform: translateY(-2px);
-    }
-
-    .focus-badge {
-      background: #0c2340;
-      color: #ffffff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    /* 모바일에서 섹션 자체의 여백을 제거하여 배너와 너비를 맞춤 */
-    @media (max-width: 900px) {
-      .index-activity-section { 
-        padding: 0 !important; 
-      }
-    }
-
-    /* 모바일 정밀 레이아웃 */
-    @media (max-width: 768px) {
-      .activity-card-inner { 
-        flex-direction: column !important; 
-        align-items: center !important; 
-        padding: 25px 15px !important; 
-        text-align: center;
-      }
-      .tournament-info {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100%;
-      }
-      .tournament-info > div {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100%;
-      }
-      .tournament-info .date-container {
-        justify-content: center !important;
-        width: 100%;
-      }
-      .stats-container { 
-        width: 100% !important; 
-        justify-content: center !important; 
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #f1f5f9;
-        gap: 20px !important;
-      }
-      .score-group {
-        border-right: none !important;
-        padding-right: 0 !important;
-        align-items: center !important;
-      }
-      
-      .focus-container { 
-        flex-direction: column !important; 
-        align-items: center !important; 
-        text-align: center !important;
-        gap: 15px !important; 
-        padding: 25px 15px !important;
-      }
-      .focus-container > div:first-child {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100%;
-      }
-      .focus-container div[style*="flex-direction: column"] {
-        align-items: center !important;
-      }
-      .focus-arrow-svg {
-        display: block !important;
-        margin-top: 5px;
-      }
-      h2 { font-size: 20px !important; }
-    }
-  </style>
-
-
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
-  
-  <style>
-    @keyframes pulse-live {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    /* 기본 구조 - 너비 100% 강제 */
-    .activity-card, .focus-container {
-      background: #ffffff;
-      border: 2.5px solid #0c2340;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
-      margin-bottom: 20px;
-      box-sizing: border-box;
-      width: 100% !important;
-      display: block;
-    }
-
-    .status-dot-live {
-      width: 8px;
-      height: 8px;
-      background-color: #94a3b8; /* 회색으로 변경 */
-      border-radius: 50%;
-      display: inline-block;
+      animation: pulse-live 2s infinite;
     }
 
     .focus-container {
@@ -559,39 +431,39 @@ gtag('config', 'G-H1JW8YBDZ8');
   </style>
 
   <div class="ongoing-header-wrapper" style="width: 100%; margin-bottom: 10px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
-    <div style="box-sizing: border-box;">
-      <h2 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #c98a2e; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-          <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-        </svg>
-        UP COMING ACTIVITY
-      </h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
+      <div style="box-sizing: border-box;">
+        <h2 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #c98a2e; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+          </svg>
+          UP COMING ACTIVITY
+        </h2>
+      </div>
+      <div style="margin-left: 25px; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; background: #f8fafc; padding: 4px 10px; border-radius: 4px; border: 1px solid #edf2f7; box-sizing: border-box; flex-shrink: 0;">
+        Last Updated: Feb. 18, 2026
+      </div>
     </div>
-    <div style="margin-left: 25px; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; background: #f8fafc; padding: 4px 10px; border-radius: 4px; border: 1px solid #edf2f7; box-sizing: border-box; flex-shrink: 0;">
-      Last Updated: Feb. 18, 2026
-    </div>
+    <div style="width: 100%; height: 1px; background: #edf2f7; margin-top: 10px;"></div>
   </div>
-  <div style="width: 100%; height: 1px; background: #edf2f7; margin-top: 10px;"></div>
-</div>
 
   <div class="activity-card">
     <div style="padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
       <div style="display: flex; align-items: center; gap: 15px;">
         <div style="display: flex; align-items: center; gap: 8px; background: #0c2340; padding: 5px 10px; border-radius: 6px;">
-          <span class="status-dot"></span>
+          <span class="status-dot-live"></span>
           <span style="color: #ffffff; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Upcoming</span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 2px;">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="color: #0c2340; font-weight: 800; font-size: 15px;"Military Collegiate</span>
+            <span style="color: #0c2340; font-weight: 800; font-size: 15px;">Military Collegiate</span>
             <span style="color: #94a3b8; font-size: 12px; font-weight: 700;">(Feb 23-24)</span>
           </div>
           <span style="color: #64748b; font-size: 12px; font-weight: 500;">TPC San Antonio, The Canyons Course</span>
         </div>
       </div>
-     <a href="https://scoreboard.clippd.com/tournaments/238654/scoring/participants" class="icon-link" target="_blank" rel="noopener noreferrer" style="background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0;">
+      <a href="https://scoreboard.clippd.com/tournaments/238654/scoring/participants" class="icon-link" target="_blank" rel="noopener noreferrer" style="background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0; text-decoration: none; display: flex; align-items: center; gap: 8px;">
         <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
           View Participants
         </span>
@@ -602,6 +474,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       </a>
     </div>
   </div>
+</div>
 
 
 <div class="current-focus-header-wrapper" style="width: 100%; margin-top: 25px; margin-bottom: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
