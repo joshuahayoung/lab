@@ -1915,20 +1915,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <h3 style="margin: 0; color: #0c2340; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; font-weight: 900;">JOURNEY IN PHOTOS</h3>
   </div>
 
+
   <style>
+    /* 화살표 배치를 위한 기준점 컨테이너 */
     #thumbWrapper {
       position: relative;
-      overflow: hidden;
       width: 100%;
       box-sizing: border-box;
-      touch-action: pan-y;
+      margin-bottom: 20px;
     }
+    
+    /* 실제 슬라이드가 일어나는 창 (창 밖의 콘텐츠를 숨김) */
+    .scroll-viewport {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 16px;
+    }
+
     #thumbScroll {
       display: flex;
       transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
       will-change: transform;
       width: 100%;
     }
+
     .thumb-page {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1937,8 +1947,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       flex: 0 0 100%;
       width: 100%;
       box-sizing: border-box;
-      padding: 0 15px 20px;
+      padding: 0 15px; /* 수직 중앙 정렬을 위해 하단 여백 제거 */
     }
+
     .thumb-img {
       width: 100%;
       aspect-ratio: 1 / 1.1;
@@ -1951,6 +1962,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       transition: all 0.3s ease;
       display: block;
     }
+
     .thumb-img:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
@@ -1958,28 +1970,10 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     
     .pos-center { object-position: center center !important; }
 
-    @media (max-width: 768px) {
-      .thumb-page {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        gap: 8px;
-        padding: 0 10px 20px;
-      }
-      .thumb-img {
-        aspect-ratio: 1 / 1.2;
-      }
-      /* 모바일 화살표 위치 미세 조정 */
-      .scroll-nav { 
-        width: 32px !important; 
-        height: 32px !important; 
-        top: calc(50% - 10px) !important; 
-      }
-    }
-
+    /* 네비게이션 화살표 정밀 배치 */
     .scroll-nav {
       position: absolute;
-      /* 하단 패딩 20px를 고려하여 중앙으로 상향 조정 */
-      top: calc(50% - 10px);
+      top: 50%;
       transform: translateY(-50%);
       width: 44px;
       height: 44px;
@@ -1990,48 +1984,66 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
       color: #0c2340;
     }
     .scroll-nav:hover { background: #0c2340; color: #fff; }
-    .scroll-nav.prev { left: 5px; }
-    .scroll-nav.next { right: 5px; }
+    .scroll-nav.prev { left: -22px; }
+    .scroll-nav.next { right: -22px; }
+
+    @media (max-width: 1200px) {
+      .scroll-nav.prev { left: 5px; }
+      .scroll-nav.next { right: 5px; }
+    }
+
+    @media (max-width: 768px) {
+      .thumb-page {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 8px;
+        padding: 0 10px;
+      }
+      .thumb-img { aspect-ratio: 1 / 1.2; }
+      .scroll-nav { width: 32px !important; height: 32px !important; }
+    }
   </style>
 
-  <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-  </div>
-  <div class="scroll-nav next" onclick="scrollThumbs(1)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-  </div>
-
   <div id="thumbWrapper">
-    <div id="thumbScroll">
-      <div class="thumb-page">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(this)" class="thumb-img">
-      </div>
-      <div class="thumb-page">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(this)" class="thumb-img">
-        <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img">
-        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img">
+    <div class="scroll-nav prev" onclick="scrollThumbs(-1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </div>
+    <div class="scroll-nav next" onclick="scrollThumbs(1)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </div>
+
+    <div class="scroll-viewport">
+      <div id="thumbScroll">
+        <div class="thumb-page">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1lCIaCOrTusifqK1yezz7e2-lTta_EZMl" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1d3bKS9feh0jHSUc417oDk3Keiy2gmDSV" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1ttYQR6vJiaT6bn37kOv3NM-9iBMWq5mD" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1tmxnMytAdxGeKYfqZLtmRUu4WDjnVIcT" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1V8Xq_0vqHi59R0G4d5zQuJmgbC2c29Yb" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1QYoIC0eQs1aMsezqtEfqQIGfiG_xhGpI" onclick="popupGallery(this)" class="thumb-img">
+        </div>
+        <div class="thumb-page">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1oTK7qKQZBZPMy-RNaTu_czW7sYHEImJv" onclick="popupGallery(this)" class="thumb-img">
+          <img src="https://lh3.googleusercontent.com/u/0/d/1o66-D04s2dMwpWlBBcNC0HACsD-EqeZ7" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img">
+        </div>
       </div>
     </div>
   </div>
@@ -2070,15 +2082,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     }
 
     function popupGallery(element) {
-      // 카운트 초기화 및 1부터 시작하는 로직
-      let views = localStorage.getItem('joshua_gallery_views');
-      if (!views || views === "0") { 
-        views = 1; 
-      } else {
-        views = parseInt(views) + 1;
-      }
-      localStorage.setItem('joshua_gallery_views', views);
-
       const allImages = getImages();
       const index = allImages.indexOf(element.src);
       const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
@@ -2100,7 +2103,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 18px 60px; border-radius: 40px; font-weight: 900; font-size: 18px; cursor: pointer; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }' +
         '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.05); }' +
         '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.6; }' +
-        '.counter, .view-count { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
+        '.counter { font-size: 14px; letter-spacing: 2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }' +
         '@media (max-width: 768px) { body { padding-top: 60px; } .nav-btn { display: none; } #close-x { font-size: 45px; top: 15px; right: 15px; } #mainImg { max-height: 60vh; } .close-btn-bottom { padding: 15px 45px; font-size: 15px; } }' +
         '</style></head><body>' +
         '<div id="close-x" onclick="window.close()">×</div>' +
@@ -2110,8 +2113,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '<div class="bottom-controls">' +
         '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
         '<div class="info-row">' +
-        '<div class="view-count"><span>👁</span> ' + views.toLocaleString() + '</div>' +
-        '<div style="width: 1px; height: 12px; background: rgba(255,255,255,0.3);"></div>' +
         '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
         '</div></div>' +
         '<script>' +
