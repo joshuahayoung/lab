@@ -507,15 +507,30 @@ gtag('config', 'G-H1JW8YBDZ8');
           <span style="color: #64748b; font-size: 12px; font-weight: 500;">TPC San Antonio, The Canyons Course</span>
         </div>
       </div>
-      <a href="https://scoreboard.clippd.com/tournaments/238654/scoring/participants" class="icon-link" target="_blank" rel="noopener noreferrer" style="background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-        <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-          View Participants
-        </span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
+      <style>
+  /* 모바일에서 버튼 중앙 정렬을 위한 미디어 쿼리 */
+  @media (max-width: 768px) {
+    .mobile-center-btn {
+      justify-content: center !important;
+      margin: 0 auto !important;
+      width: fit-content !important;
+    }
+  }
+</style>
+
+<a href="https://scoreboard.clippd.com/tournaments/238654/scoring/participants" 
+   class="icon-link mobile-center-btn" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   style="background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0; text-decoration: none; display: flex; align-items: center; gap: 8px; box-sizing: border-box;">
+  <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+    View Participants
+  </span>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+</a>
     </div>
   </div>
 </div>
@@ -524,14 +539,15 @@ gtag('config', 'G-H1JW8YBDZ8');
 <div class="current-focus-header-wrapper" style="width: 100%; margin-top: 25px; margin-bottom: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <div style="display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; box-sizing: border-box;">
     
-    <div style="display: flex; align-items: center; gap: 12px; flex: 1; flex-wrap: wrap; min-width: 0;">
-      <h2 style="font-size: 17px; color: #0c2340; margin: 0; border-left: 5px solid #0c2340; padding-left: 15px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap;">
-        CURRENT FOCUS
-      </h2>
-      <p style="margin: 0; color: #64748b; font-size: 13px; font-weight: 500; letter-spacing: -0.1px; line-height: 1.4; word-break: keep-all;">
-        Current priorities & seasonal progress
-      </p>
-    </div>
+    <div style="display: block; flex: 1; min-width: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <h2 style="font-size: 17px; color: #0c2340; margin: 0; border-left: 5px solid #0c2340; padding-left: 15px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; white-space: nowrap; line-height: 1.2;">
+    CURRENT FOCUS
+  </h2>
+  
+  <p style="margin: 4px 0 0 0; padding-left: 20px; color: #64748b; font-size: 13px; font-weight: 500; letter-spacing: -0.1px; line-height: 1.4; word-break: keep-all;">
+    Current priorities & seasonal progress
+  </p>
+</div>
 
     <a href="ncaa-stats.html#Current-Focus" style="display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; background: #f8fafc; padding: 8px 15px; border-radius: 6px; border: 1px solid #e2e8f0; box-sizing: border-box;">
   <span style="color: #0c2340; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">SEE MORE</span>
