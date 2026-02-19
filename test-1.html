@@ -1,96 +1,453 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joshua Hong - Official Media Archive</title>
-</head>
-<body style="margin: 0; padding: 0; background-color: #f4f7f6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png" sizes="32x32">
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
 
-<div style="max-width: 900px; margin: 40px auto; background: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
-  
-  <div style="background: #0c2340; padding: 40px; color: white; text-align: center;">
-    <h1 style="margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 1px;">JOSHUA HONG</h1>
-    <p style="margin: 10px 0 0; font-size: 14px; opacity: 0.8; font-weight: 500;">Official Career Media Archive & Verified News Highlights</p>
+<title>News & Interviews Archive | Joshua Hong Golf | Korean-Mexican NCAA D1 Golfer</title>
+<meta name="description" content="A complete media archive of Joshua Hong, featuring news, interviews, and coverage from his Junior career through NCAA Division I at UTSA. Explore his full competitive journey.">
+<meta name="keywords" content="Joshua Hong Golf, Joshua Hong UTSA, 멕시코 골프 선수 자슈아 홍, 자슈아 홍 골프, Joshua Hong Mexico, NCAA D1 Golfer, UTSA Men's Golf">
+<link rel="canonical" href="https://www.joshuahonggolf.com/news-media.html">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Google Analytics 4 Configuration
+  gtag('config', 'G-H1JW8YBDZ8', {
+    'page_title': 'Joshua Hong Official Site',
+    'send_page_view': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+
+  // Bookmark & Return Visitor Tracking Logic
+  if (window.performance && window.performance.navigation.type === 0) {
+    gtag('event', 'visitor_entry', {
+      'method': 'direct_or_bookmark',
+      'event_category': 'Engagement',
+      'event_label': 'Direct Access Tracking'
+    });
+  }
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    /* 1. 기본 설정 */
+    html, body {
+      margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      scroll-behavior: smooth;
+    }
+    * { box-sizing: border-box; }
+
+    /* [상단 헤더 기본 스타일] */
+    .sticky-top {
+      position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
+      background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    }
+
+    .sticky-top.scrolled {
+      position: fixed; top: 0; transform: translateY(0); opacity: 1; visibility: visible;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .sticky-top.preparing {
+      position: fixed; top: 0; transform: translateY(-100%); opacity: 0; visibility: hidden;
+    }
+
+    .top-bar {
+      background-color: #F15A22; color: white; text-align: center;
+      padding: 10px 0; font-size: 11px;
+      font-family: 'Oswald', sans-serif; letter-spacing: 1.5px;
+      font-weight: 400;
+    }
+
+    .header-wrapper {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 80px;
+    }
+
+    .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
+    .logo-img { height: 50px; width: auto; display: block; }
+    .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
+
+    .nav-links { display: flex; gap: 30px; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
+      font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+      transition: 0.3s; padding: 8px 15px; border-radius: 4px;
+    }
+    .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
+
+    .menu-toggle {
+      display: none; font-size: 30px; cursor: pointer;
+      background: none; border: none; color: #F15A22;
+    }
+
+    #fixedTopBtn {
+      position: fixed !important; bottom: 25px !important; right: 20px !important;
+      width: 50px !important; height: 50px !important;
+      background-color: #F15A22 !important; color: #fff !important;
+      border: none !important; border-radius: 50% !important;
+      font-weight: 900 !important; font-size: 12px !important;
+      z-index: 9999 !important; cursor: pointer !important;
+      display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Section Navigation Buttons */
+    .section-nav {
+      display: flex; justify-content: center; gap: 15px; margin: 30px 0;
+    }
+    .section-nav a {
+      text-decoration: none; padding: 10px 25px; border-radius: 30px; font-family: 'Oswald', sans-serif;
+      font-size: 14px; font-weight: 500; text-transform: uppercase; transition: 0.3s;
+    }
+    .btn-ncaa { background: #0c2340; color: white; }
+    .btn-junior { background: #1b5e20; color: white; }
+    .btn-ncaa:hover, .btn-junior:hover { opacity: 0.8; transform: translateY(-2px); }
+
+    /* Timeline Design */
+    .timeline-container {
+      position: relative; padding-left: 30px; border-left: 2px solid #eee; margin-left: 10px;
+    }
+    .timeline-dot {
+      position: absolute; left: -7px; width: 12px; height: 12px; border-radius: 50%; top: 18px;
+    }
+    .ncaa-dot { background: #ff5a00; box-shadow: 0 0 0 4px rgba(255,90,0,0.1); }
+    .junior-dot { background: #1b5e20; box-shadow: 0 0 0 4px rgba(27,94,32,0.1); }
+
+    /* Summary See More */
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+
+    @media (max-width: 1024px) {
+      .header-wrapper { padding: 0 20px; height: 70px; }
+      .menu-toggle { display: block; order: 2; }
+      .logo-area { order: 1; }
+      .logo-text { display: none; }
+      .nav-links {
+        position: fixed; top: 0; right: -100%; width: 260px; height: 100vh;
+        background: #ffffff !important; flex-direction: column;
+        padding: 50px 25px; transition: 0.3s; z-index: 2000;
+        box-shadow: -10px 0 20px rgba(0,0,0,0.1); align-items: flex-start;
+      }
+      .nav-links.active { right: 0; }
+      .mobile-menu-logo { display: block; margin-bottom: 30px; }
+      .mobile-menu-logo img { height: 35px; }
+      .close-menu { display: block; position: absolute; top: 20px; right: 20px; font-size: 24px; color: #ccc; }
+      .menu-footer { display: block; margin-top: 60px; padding-top: 20px; border-top: 1px solid #eee; width: 100%; }
+    }
+</style>
+</head>
+
+<body>
+  <div class="sticky-top" id="mainHeader">
+    <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG | UTSA </div>
+    <header class="header-wrapper">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <a href="index.html" class="logo-area">
+        <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong Golf" class="logo-img"> 
+        <span class="logo-text">Joshua Hong Golf</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <span class="close-menu" onclick="toggleMenu()">✕</span>
+        <div class="mobile-menu-logo"><img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong"></div>
+        <a href="index.html">Home</a>
+        <a href="ncaa-stats.html">NCAA Stats</a>
+        <a href="news-media.html" class="active">News & Media</a>
+        <a href="reference-links.html">Reference & Links</a>
+        <a href="junior-career.html">Junior Career</a>
+        <div class="menu-footer">
+            <span style="display: block; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: #333;">JOSHUA HONG</span>
+            <span style="display: block; font-family: 'Oswald', sans-serif; font-size: 11px; color: #F15A22; margin-top: 4px;">UTSA MEN'S GOLF</span>
+        </div>
+      </nav>
+    </header>
   </div>
 
-  <div style="padding: 40px;">
-    
-    <div style="border-bottom: 2px solid #ff5a00; padding-bottom: 12px; margin-bottom: 30px;">
-      <h2 style="margin: 0; color: #0c2340; font-size: 20px; font-weight: 700; letter-spacing: 0.3px;">UNIVERSITY CAREER (UTSA)</h2>
-    </div>
+  <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 60px;">
-      <div style="flex: 1; min-width: 300px;">
-        <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
-          <span style="margin-right: 12px; display: flex; align-items: center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-              <line x1="7" y1="2" x2="7" y2="22"></line>
-              <line x1="17" y1="2" x2="17" y2="22"></line>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <line x1="2" y1="7" x2="7" y2="7"></line>
-              <line x1="2" y1="17" x2="7" y2="17"></line>
-              <line x1="17" y1="17" x2="22" y2="17"></line>
-              <line x1="17" y1="7" x2="22" y2="7"></line>
-            </svg>
-          </span>
-          Featured Video Highlights
-        </h3>
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-          <a href="https://www.youtube.com/watch?v=kLHtDp1yi2Q" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #f9f9f9; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-              <div style="position: relative; background: #000; height: 180px; display: flex; align-items: center; justify-content: center;">
-                <img src="https://img.youtube.com/vi/kLHtDp1yi2Q/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                <div style="position: absolute; width: 50px; height: 35px; background: rgba(255,0,0,0.9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">▶</div>
-              </div>
-              <div style="padding: 15px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                  <div style="font-size: 12px; color: #ff5a00; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">CGN PLAYER HIGHLIGHT</div>
-                  <div style="font-size: 11px; color: #94a3b8; font-weight: 700;">Nov 24, 2025</div>
-                </div>
-                <div style="font-size: 15px; font-weight: bold; color: #0c2340; line-height: 1.4;">Freshman Launch at UTSA: Joshua Hong Interview</div>
-              </div>
-            </div>
-          </a>
-        </div>
+  <div style="max-width: 900px; margin: auto; padding: 140px 15px 60px;">
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h1 style="font-size: 38px; font-weight: 800; color: #0c2340; margin: 0; letter-spacing: -1px; text-transform: uppercase;">NEWS & MEDIA</h1>
+      <p style="font-size: 15px; color: #666; margin-top: 10px; font-weight: 400; letter-spacing: 1px;">Official Press Coverage & Career Archives</p>
+      
+      <div class="section-nav">
+        <a href="#ncaa-section" class="btn-ncaa">NCAA Career</a>
+        <a href="#junior-section" class="btn-junior">Junior Period</a>
       </div>
     </div>
 
-    <div id="junior-section" style="border-bottom: 2px solid #1b5e20; padding-bottom: 12px; margin-top: 80px; margin-bottom: 30px;">
-      <h2 style="margin: 0; color: #1b5e20; font-size: 20px; font-weight: 700; letter-spacing: 0.3px;">JUNIOR CAREER ARCHIVE & MEDIA</h2>
+    <div id="ncaa-section" style="margin-bottom: 80px;">
+      <div style="border-bottom: 3px solid #ff5a00; padding-bottom: 10px; margin-bottom: 35px; display: flex; align-items: center; justify-content: space-between;">
+        <h2 style="margin: 0; color: #0c2340; font-size: 24px; font-weight: 800; font-family: 'Oswald', sans-serif;">NCAA CAREER <span style="color: #ff5a00; font-weight: 400;">| UTSA</span></h2>
+        <span style="font-size: 12px; background: #fff1eb; color: #ff5a00; padding: 4px 12px; border-radius: 20px; font-weight: 700;">CURRENT</span>
+      </div>
+
+      <div style="margin-bottom: 40px;">
+        <a href="https://cgnplus.com/2025/11/24/cgn-player-highlight-and-interview-joshua-hongs-freshman-launch-at-the-university-of-texas-at-san-antonio/" target="_blank" style="text-decoration: none; color: inherit;">
+          <div style="border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 1px solid #eee;">
+            <div style="position: relative; background: #000;">
+              <img src="https://img.youtube.com/vi/kLHtDp1yi2Q/maxresdefault.jpg" alt="Joshua Hong UTSA Launch" style="width: 100%; height: auto; display: block; opacity: 0.9;">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(241,90,34,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">▶</div>
+            </div>
+            <div style="padding: 30px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <span style="font-size: 11px; color: #ff5a00; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">CGN PLAYER HIGHLIGHT</span>
+                <span style="font-size: 11px; color: #999; font-weight: 600;">Nov 24, 2025</span>
+              </div>
+              <h3 style="font-size: 22px; font-weight: 800; color: #0c2340; margin: 0 0 12px 0; line-height: 1.3;">Joshua Hong’s Freshman Launch at UTSA: Exclusive Interview</h3>
+              <p style="font-size: 14px; color: #555; line-height: 1.7; margin: 0;">An exclusive deep-dive interview covering Joshua's transition to NCAA Division I, his early successes, and his vision for the road ahead with the UTSA Roadrunners.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="timeline-container">
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot ncaa-dot"></div>
+          <a href="https://goutsa.com/news/2026/02/3/roadrunners-register-top-finish-of-season-at-compadres-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px; transition: 0.2s;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #ff5a00; font-weight: 800;">UTSA ATHLETICS</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">Feb 3, 2026</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">Roadrunners register top finish of season at Compadres Collegiate</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot ncaa-dot"></div>
+          <a href="https://goutsa.com/news/2026/02/1/utsa-seizes-day-one-lead-at-compadres-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #ff5a00; font-weight: 800;">UTSA ATHLETICS</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">Feb 1, 2026</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">UTSA seizes day-one lead at Compadres Collegiate</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot ncaa-dot"></div>
+          <a href="https://goutsa.com/news/2025/09/22/hong-zurn-lead-utsa-on-day-one-of-badger-invitational" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #ff5a00; font-weight: 800;">UTSA ATHLETICS</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">Sep 22, 2025</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">Hong leads UTSA on day one of Badger Invitational</div>
+            </div>
+          </a>
+        </div>
+
+        <details>
+          <summary>
+            <div style="text-align: center; padding: 12px; color: #ff5a00; font-weight: 700; font-size: 13px; border: 1px dashed #ff5a00; border-radius: 12px; margin-top: 10px; background: #fff9f6;">
+              SEE MORE NCAA NEWS ▼
+            </div>
+          </summary>
+          <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+            <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" style="text-decoration: none; color: inherit;">
+              <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+                <div style="font-size: 10px; color: #999; margin-bottom: 4px;">Sep 16, 2025</div>
+                <div style="font-size: 14px; font-weight: 700; color: #0c2340;">Hong guides UTSA to seventh at Highlands Invitational</div>
+              </div>
+            </a>
+            <a href="https://goutsa.com/news/2025/09/9/bare-hong-lead-roadrunners-on-final-day-of-argent-financial-classic" target="_blank" style="text-decoration: none; color: inherit;">
+              <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+                <div style="font-size: 10px; color: #999; margin-bottom: 4px;">Sep 9, 2025</div>
+                <div style="font-size: 14px; font-weight: 700; color: #0c2340;">Hong was UTSA’s top finisher overall, earning T9 at 7-under 209</div>
+              </div>
+            </a>
+            <a href="https://goutsa.com/news/2024/11/14/utsa-inks-joshua-hong" target="_blank" style="text-decoration: none; color: inherit;">
+              <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+                <div style="font-size: 10px; color: #999; margin-bottom: 4px;">Nov 14, 2024</div>
+                <div style="font-size: 14px; font-weight: 700; color: #0c2340;">OFFICIAL: UTSA Men's Golf inks Joshua Hong to 2025 Class</div>
+              </div>
+            </a>
+          </div>
+        </details>
+      </div>
     </div>
 
-    <h3 style="color: #1b5e20; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
-      <span style="margin-right: 12px; display: flex; align-items: center;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1b5e20" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-      </span>
-      Featured Junior Highlights
-    </h3>
+    <div id="junior-section" style="margin-top: 100px;">
+      <div style="border-bottom: 3px solid #1b5e20; padding-bottom: 10px; margin-bottom: 35px; display: flex; align-items: center; justify-content: space-between;">
+        <h2 style="margin: 0; color: #0c2340; font-size: 24px; font-weight: 800; font-family: 'Oswald', sans-serif;">JUNIOR PERIOD <span style="color: #1b5e20; font-weight: 400;">| NATIONAL ARCHIVE</span></h2>
+        <span style="font-size: 12px; background: #e8f5e9; color: #1b5e20; padding: 4px 12px; border-radius: 20px; font-weight: 700;">HISTORY</span>
+      </div>
 
-    <div style="display: flex; flex-direction: column; gap: 15px;">
-      <a href="https://www.youtube.com/watch?v=z78Cf5i3bf4" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-        <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #f9f9f9; transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <div style="position: relative; background: #000; height: 200px; display: flex; align-items: center; justify-content: center;">
-            <img src="https://img.youtube.com/vi/z78Cf5i3bf4/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
-            <div style="position: absolute; width: 60px; height: 42px; background: rgba(255,0,0,0.95); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 22px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">▶</div>
-            <div style="position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: bold; backdrop-filter: blur(4px);">FEATURED INTERVIEW</div>
+      <div style="margin-bottom: 40px;">
+        <a href="https://www.youtube.com/watch?v=z78Cf5i3bf4" target="_blank" style="text-decoration: none; color: inherit;">
+          <div style="border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 1px solid #eee;">
+            <div style="position: relative; background: #000;">
+              <img src="https://img.youtube.com/vi/z78Cf5i3bf4/maxresdefault.jpg" alt="Joshua Hong Junior Interview" style="width: 100%; height: auto; display: block; opacity: 0.9;">
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(27,94,32,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">▶</div>
+            </div>
+            <div style="padding: 25px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #1b5e20; font-weight: 800; text-transform: uppercase;">INFOGOLF TV INTERVIEW</span>
+                <span style="font-size: 11px; color: #999; font-weight: 600;">Jan 23, 2025</span>
+              </div>
+              <h3 style="font-size: 20px; font-weight: 800; color: #0c2340; margin: 0;">Victoria en Copa Sur FMG: Joshua Hong Champion Interview</h3>
+            </div>
           </div>
-          <div style="padding: 18px; background: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <div style="font-size: 12px; color: #1b5e20; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">INFOGOLF TV</div>
+        </a>
+      </div>
+
+      <div class="timeline-container">
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot junior-dot"></div>
+          <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #1b5e20; font-weight: 800;">FMG OFFICIAL</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">Jun 25, 2025</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">Joshua Hong destaca en el Toyota Junior Golf World Cup</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot junior-dot"></div>
+          <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #1b5e20; font-weight: 800;">CHAMPIONSHIP</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">May 25, 2025</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">Hong y Lavalle se coronan en el Nacional de Parejas</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="margin-bottom: 25px; position: relative;">
+          <div class="timeline-dot junior-dot"></div>
+          <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
+            <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                <span style="font-size: 10px; color: #1b5e20; font-weight: 800;">GOLF.COM.MX</span>
+                <span style="font-size: 10px; color: #999; font-weight: 700;">Apr 24, 2025</span>
+              </div>
+              <div style="font-size: 15px; font-weight: 700; color: #0c2340;">México varonil triunfa en calificación del Toyota Junior</div>
+            </div>
+          </a>
+        </div>
+
+        <details>
+          <summary>
+            <div style="text-align: center; padding: 12px; color: #1b5e20; font-weight: 700; font-size: 13px; border: 1px dashed #1b5e20; border-radius: 12px; margin-top: 10px; background: #f1f8f1;">
+              EXPLORE FULL JUNIOR ARCHIVE ▼
+            </div>
+          </summary>
+          <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+            <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" style="text-decoration: none; color: inherit;">
+              <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+                <div style="font-size: 10px; color: #999; margin-bottom: 4px;">Jan 23, 2025</div>
+                <div style="font-size: 14px; font-weight: 700; color: #0c2340;">Joshua Hong gana la Copa Sur de la FMG</div>
+              </div>
+            </a>
+            <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
+              <div style="padding: 15px 20px; background: #fdfdfd; border: 1px solid #eee; border-radius: 12px;">
+                <div style="font-size: 10px; color: #999; margin-bottom: 4px;">Jan 20, 2025</div>
+                <div style="font-size: 14px; font-weight: 700; color: #0c2340;">Joshua Hong y Regina Roldán triunfan en Puebla</div>
+              </div>
+            </a>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    window.addEventListener('scroll', function() {
+      const btn = document.getElementById('fixedTopBtn');
+      const header = document.getElementById('mainHeader');
+      const currentScrollY = window.pageYOffset;
+
+      if (currentScrollY > 100) { btn.style.display = 'block'; } else { btn.style.display = 'none'; }
+
+      if (currentScrollY > 300) {
+        header.classList.add('scrolled');
+        header.classList.remove('preparing');
+      } else if (currentScrollY > 10) { 
+        header.classList.remove('scrolled');
+        header.classList.add('preparing');
+      } else {
+        header.classList.remove('scrolled', 'preparing');
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+
+
+
+   
+
+
+
+
+<div style="max-width: 800px; margin: 0 auto; background: #ffffff; min-height: 100vh;">
+  
+  <div id="junior-period" style="padding: 60px 20px 20px 20px; text-align: left;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+      <div style="width: 4px; height: 24px; background: #0c2340; border-radius: 2px;"></div>
+      <h2 style="font-size: 24px; font-weight: 900; color: #0c2340; margin: 0; letter-spacing: -0.5px; text-transform: uppercase;">Junior Period</h2>
+    </div>
+    <p style="font-size: 13px; color: #64748b; margin: 0 0 30px 16px; font-weight: 500;">Official Media & Tournament Highlights</p>
+  </div>
+
+  <div style="padding: 0 20px;">
+    
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 30px;">
+      <div style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: #0c2340; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 2px #e2e8f0;"></div>
+      
+      <a href="https://www.youtube.com/watch?v=z78Cf5i3bf4" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; background: #f9f9f9; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <div style="position: relative; background: #000; height: 180px; display: flex; align-items: center; justify-content: center;">
+            <img src="https://img.youtube.com/vi/z78Cf5i3bf4/maxresdefault.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <div style="position: absolute; width: 50px; height: 35px; background: rgba(255,0,0,0.9); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">▶</div>
+          </div>
+          <div style="padding: 15px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+              <div style="font-size: 12px; color: #1b5e20; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">INFOGOLF TV</div>
               <div style="font-size: 11px; color: #94a3b8; font-weight: 700;">Jan 23, 2025</div>
             </div>
-            <div style="font-size: 16px; font-weight: 800; color: #0c2340; line-height: 1.4;">Victoria en Copa Sur FMG: Joshua Hong Interview</div>
+            <div style="font-size: 15px; font-weight: bold; color: #0c2340; line-height: 1.4;">Victoria en Copa Sur FMG: Joshua Hong</div>
           </div>
         </div>
       </a>
+    </div>
 
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
       <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fffbeb; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #fef3c7; flex-shrink: 0;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fffbeb; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #fef3c7;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
               <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -108,14 +465,22 @@
               </div>
               <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jun 25, 2025</span>
             </div>
-            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5;">Joshua Hong destaca en el <span style="color: #806600;">Toyota Junior Golf World Cup</span></div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Joshua Hong destaca en el <span style="color: #806600;">Toyota Junior Golf World Cup</span>
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
           </div>
         </div>
       </a>
+    </div>
 
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
       <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7; flex-shrink: 0;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
@@ -129,151 +494,317 @@
               </div>
               <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">May 25, 2025</span>
             </div>
-            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5;">Hong y Lavalle se <span style="color: #15803d;">coronan</span> en el Nacional de Parejas</div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Hong y Lavalle se <span style="color: #15803d;">coronan</span> en el Nacional de Parejas
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
           </div>
         </div>
       </a>
-
-      <details style="width: 100%;">
-        <summary style="list-style: none; cursor: pointer; text-align: center; padding: 12px; color: #1b5e20; font-weight: 800; font-size: 13px; border: 1px dashed #1b5e20; border-radius: 12px; margin-top: 8px; background: #f0fdf4;">
-          See More Junior Career Highlights ▼
-        </summary>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
-          
-          <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0; flex-shrink: 0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900;">GOLF.COM.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Qualifier</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Apr 24, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">México varonil triunfa en calificación del Toyota Junior</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7; flex-shrink: 0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1b5e20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #1b5e20; padding: 2px 8px; border-radius: 4px; font-weight: 900;">GOLF.COM.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Victory</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 23, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Joshua Hong <span style="color: #1b5e20;">gana</span> la Copa Sur de la FMG</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; margin-top: 0px;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f8fafc; width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                  <span style="font-size: 10px; color: #15803d; font-weight: 800; text-transform: uppercase;">FMG Official</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Joshua Hong y Regina Roldán triunfan en Puebla</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; margin-top: 0px;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path></svg></div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900;">GOLFSHOT.MX</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Ellos son los <span style="color: #806600;">campeones</span> de la II Copa Sur</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; margin-top: 0px;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0f9ff; width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path></svg></div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900;">FMG Official</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Nov 3, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Joshua Hong <span style="color: #0369a1;">triunfan</span> en la Copa Pacífico</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; margin-top: 0px;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path></svg></div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900;">GOLF.COM.MX</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 30, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Copa Centro: <span style="color: #806600;">Gran nivel de golf</span> de Joshua Hong</div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://www.ajga.org/tournaments/2024/the-junior-players-championship-presented-by-rolex/coleman-becomes-first-time-invitational-champion-at-the-jrplayers" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #fee2e2; border-left: 5px solid #d32f2f; border-radius: 12px; padding: 15px; background: #fffafb; margin-top: 0px;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fee2e2; width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <span style="font-size: 9px; color: #ffffff; background: #d32f2f; padding: 2px 8px; border-radius: 4px; font-weight: 900;">Special Award</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 1, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340;">Billy Dettlaff Sportsmanship Award: <span style="color: #d32f2f;">Integrity</span></div>
-              </div>
-            </div>
-          </a>
-
-        </div>
-      </details>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">World Cup Qualifier</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Apr 24, 2025</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              México varonil <span style="color: #806600;">triunfa en calificación</span> del Toyota Junior Golf World Cup
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1b5e20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #1b5e20; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Victory</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 23, 2025</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Joshua Hong <span style="color: #1b5e20;">gana</span> la Copa Sur de la FMG
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f8fafc; width: 40px; height: 40px; border-radius: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 10px; color: #15803d; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
+                <span style="width: 3px; height: 3px; background: #cbd5e1; border-radius: 50%;"></span>
+                <span style="font-size: 10px; color: #64748b; font-weight: 600;">News Archive</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.4;">
+              Joshua Hong y Regina Roldán triunfan en la II Copa Sur en Puebla
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLFSHOT.MX</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Champion Spotlight</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Ellos son los <span style="color: #806600;">campeones</span> de la II Copa Sur en Puebla
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0f9ff; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e0f2fe;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6c.6.5 1.2 1 2.5 1C5.8 7 7 5.5 8.5 5.5c1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+              <path d="M2 12c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+              <path d="M2 18c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Victory</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Nov 3, 2024</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Joshua Hong y Regina Roldán <span style="color: #0369a1;">triunfan</span> en la Copa Pacífico
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+              <path d="M18 14h-8"></path>
+              <path d="M15 18h-5"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Media Coverage</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 30, 2024</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Copa Centro: <span style="color: #806600;">Gran nivel de golf</span> de Joshua Hong
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://golfshot.mx/2024/09/30/ellos-son-los-ganadores-de-la-copa-centro-del-mexico-junior-golf-tour/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+              <line x1="4" y1="22" x2="4" y2="15"></line>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLFSHOT.MX</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Result</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 30, 2024</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              <span style="color: #806600;">Ganadores</span> de la Copa Centro del Mexico Junior Golf Tour
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <div style="position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: #cbd5e1; border-radius: 50%; border: 3px solid #fff;"></div>
+      <a href="https://fmg.org.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fff7ed; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #ffedd5;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
+                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Wrap-up</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 29, 2024</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              <span style="color: #ea580c;">Éxito rotundo</span> en el cierre de la Copa Centro
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="position: relative; padding-left: 30px; border-left: 2px solid #e2e8f0; padding-bottom: 40px;">
+      <div style="position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: #d32f2f; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 2px #fee2e2;"></div>
+      <a href="https://www.ajga.org/tournaments/2024/the-junior-players-championship-presented-by-rolex/coleman-becomes-first-time-invitational-champion-at-the-jrplayers" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; border: 1px solid #fee2e2; border-left: 5px solid #d32f2f; border-radius: 12px; padding: 15px; background: #fffafb; box-shadow: 0 2px 8px rgba(211, 47, 47, 0.05); transition: all 0.2s;">
+          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fee2e2; width: 40px; height: 40px; border-radius: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <div style="flex-grow: 1;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 9px; color: #ffffff; background: #d32f2f; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">Special Award</span>
+                <span style="font-size: 10px; color: #b91c1c; font-weight: 700;">AJGA</span>
+              </div>
+              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 1, 2024</span>
+            </div>
+            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
+              Billy Dettlaff Sportsmanship Award: <span style="color: #d32f2f;">Honoring Integrity</span>
+            </div>
+          </div>
+          <div style="margin-left: 10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <div style="padding: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
       <a href="https://www.google.com/search?q=JOSHUA+HONG+GOLF" target="_blank" style="text-decoration: none;">
-        <div style="background-color: #0c2340; color: white; text-align: center; padding: 16px; border-radius: 12px; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(12, 35, 64, 0.25);">
+        <div style="background-color: #0c2340; color: white; text-align: center; padding: 16px; border-radius: 12px; font-weight: 800; transition: 0.3s; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(12, 35, 64, 0.25); letter-spacing: 0.3px;">
           <span style="margin-right: 12px; display: flex; align-items: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
           </span>
           Latest News on Google
         </div>
       </a>
       
       <a href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong#related" target="_blank" style="text-decoration: none;">
-        <div style="background-color: #ff5a00; color: white; text-align: center; padding: 16px; border-radius: 12px; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 90, 0, 0.2);">
+        <div style="background-color: #ff5a00; color: white; text-align: center; padding: 16px; border-radius: 10px; font-weight: bold; transition: 0.3s; font-size: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255, 90, 0, 0.2);">
           <span style="background: white; color: #ff5a00; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; margin-right: 10px;">UTSA</span>
           Official Joshua News
         </div>
       </a>
     </div>
-
-    <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 20px 20px; margin-top: 40px;">
-      <p style="color: #cbd5e1; font-size: 10px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 8px;">
-        멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
-      </p>
-      <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
-        Verified News Highlights<br>
-        Official Media Repository • Joshua Hong
-      </p>
-    </div>
-
   </div>
+
+  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px; background: #fafafa;">
+    <p style="color: #64748b; font-size: 11px; font-weight: 500; letter-spacing: -0.2px; margin-bottom: 8px;">
+      멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
+    </p>
+    <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8; font-weight: 700;">
+      Verified News Highlights<br>
+      Official Media Repository • Joshua Hong
+    </p>
+  </div>
+
 </div>
 
 </body>
