@@ -18,14 +18,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-H1JW8YBDZ8', {
         'page_title': 'Joshua Hong Official Site',
         'send_page_view': true,
         'cookie_flags': 'SameSite=None;Secure'
       });
-      if (window.performance && window.performance.navigation.type === 0) {
-        gtag('event', 'visitor_entry', { 'method': 'direct_or_bookmark', 'event_category': 'Engagement', 'event_label': 'Direct Access Tracking' });
-      }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,52 +31,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* 1. 기본 설정 및 전문적 톤의 변수 */
-        :root { --primary-navy: #0c2340; --accent-orange: #F15A22; --border-gray: #e2e8f0; --text-main: #333; }
-        html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; font-family: 'Montserrat', sans-serif; background-color: #fff; color: var(--text-main); line-height: 1.5; }
+        html, body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            background-color: #fff;
+            color: #333;
+        }
         * { box-sizing: border-box; }
 
-        /* [핵심 기능] Sticky Header & Navigation */
-        .sticky-top { position: absolute; top: 0; left: 0; z-index: 1000; width: 100%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; }
-        .sticky-top.scrolled { position: fixed; top: 0; transform: translateY(0); opacity: 1; background: rgba(255, 255, 255, 0.98); }
-        .top-bar { background-color: var(--accent-orange); color: white; text-align: center; padding: 10px 0; font-size: 11px; font-family: 'Oswald', sans-serif; letter-spacing: 1.5px; font-weight: 400; }
-        .header-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 80px; }
+        /* Header & Navigation */
+        .sticky-top {
+            position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
+            background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .sticky-top.scrolled {
+            position: fixed; top: 0; transform: translateY(0); opacity: 1;
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .top-bar {
+            background-color: #F15A22; color: white; text-align: center;
+            padding: 10px 0; font-size: 11px;
+            font-family: 'Oswald', sans-serif; letter-spacing: 1.5px;
+            font-weight: 400;
+        }
+        .header-wrapper {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 40px; height: 80px;
+        }
         .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
-        .logo-img { height: 50px; width: auto; }
+        .logo-img { height: 50px; width: auto; display: block; }
         .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: #444; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; padding: 8px 15px; }
-        .nav-links a.active { background-color: var(--accent-orange); color: #fff; border-radius: 4px; }
 
-        /* [모바일 최적화] Fluid Typography & Layout */
-        .content-wrapper { max-width: 900px; margin: auto; padding: 140px 20px 0; }
-        .main-title { font-size: 2.2rem; font-weight: 800; color: var(--primary-navy); text-transform: uppercase; text-align: center; margin-bottom: 40px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
+            font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+            transition: 0.3s; padding: 8px 15px; border-radius: 4px;
+        }
+        .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
+
+        /* Content Area */
+        .content-wrapper { max-width: 900px; margin: auto; padding: 140px 15px 0; }
         
-        /* [핵심 기능] Vertical Timeline Line */
-        .timeline-container { position: relative; padding-left: 30px; border-left: 2px solid var(--border-gray); margin-bottom: 60px; }
-        .stage-label { position: absolute; left: -11px; top: 0; width: 20px; height: 20px; background: var(--primary-navy); border-radius: 50%; border: 4px solid #fff; }
-        .stage-title { font-size: 20px; font-weight: 800; color: var(--primary-navy); margin-bottom: 25px; text-transform: uppercase; }
-
-        /* [핵심 기능] Hover & Focus State */
-        .article-item { 
-            display: flex; align-items: center; border: 1px solid var(--border-gray); border-radius: 12px; 
-            padding: 15px; background: #fff; margin-bottom: 12px; text-decoration: none; color: inherit;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* 썸네일 카드 스타일 */
+        .featured-media-card {
+            display: flex; flex-direction: column; border: 1px solid #e2e8f0; border-radius: 12px;
+            overflow: hidden; background: #fff; margin-bottom: 25px; text-decoration: none; color: inherit;
+            transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
-        @media (min-width: 1025px) {
-            .article-item:hover { transform: translateX(10px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-color: var(--primary-navy); }
+        .featured-media-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card-img-wrapper { width: 100%; height: 200px; background: #000; overflow: hidden; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; }
+        .card-body { padding: 15px; }
+
+        /* 기사 카드 */
+        .news-card {
+            display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; 
+            padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); 
+            transition: all 0.2s; margin-top: 12px; text-decoration: none; color: inherit;
+        }
+        .news-card:hover { transform: translateX(5px); border-color: #0c2340; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+        #fixedTopBtn {
+            position: fixed; bottom: 25px; right: 20px; width: 50px; height: 50px;
+            background-color: #F15A22; color: #fff; border: none; border-radius: 50%;
+            font-weight: 900; font-size: 12px; z-index: 9999; cursor: pointer;
+            display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        /* [핵심 기능] Special Award Highlighting */
-        .special-award { background: #fffaf0; border: 1px solid #fbd38d; border-left: 5px solid #d32f2f; }
-
-        #fixedTopBtn { position: fixed; bottom: 25px; right: 20px; width: 50px; height: 50px; background-color: var(--accent-orange); color: #fff; border: none; border-radius: 50%; font-weight: 900; z-index: 9999; cursor: pointer; display: none; }
-
-        @media (max-width: 768px) {
-            .main-title { font-size: 1.8rem; } /* Fluid Typography */
-            .header-wrapper { padding: 0 20px; height: 70px; }
-            .nav-links { display: none; } /* 모바일 햄버거 메뉴 생략 없이 구조 유지 */
-            .logo-text { display: none; }
+        @media (min-width: 768px) {
+            .featured-media-card { flex-direction: row; height: 180px; }
+            .card-img-wrapper { width: 30%; height: 100%; }
+            .card-body { width: 70%; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
         }
     </style>
 </head>
@@ -104,182 +129,66 @@
     <button id="fixedTopBtn" onclick="scrollToTop()">TOP</button>
 
     <div class="content-wrapper">
-        <h1 class="main-title">News & Media Archive</h1>
+        <div style="text-align: center; margin-bottom: 35px;">
+            <h1 style="font-size: 34px; font-weight: 800; color: #0c2340; margin: 0; letter-spacing: -0.5px; text-transform: uppercase;">NEWS & MEDIA</h1>
+            <p style="font-size: 14px; color: #777; margin: 6px 0 0 0; font-weight: 500; letter-spacing: 0.8px;">Official News, Interviews & Media Archive</p>
+        </div>
 
-        <div class="timeline-container">
-            <div class="stage-label"></div>
-            <h2 class="stage-title">University Stage (UTSA)</h2>
+        <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; font-weight: 800; border-bottom: 2px solid #0c2340; padding-bottom: 10px;">UNIVERSITY STAGE (UTSA)</h3>
+        
+        <a href="https://cgnplus.com/2025/11/24/cgn-player-highlight-and-interview-joshua-hongs-freshman-launch-at-the-university-of-texas-at-san-antonio/" target="_blank" class="featured-media-card">
+            <div class="card-img-wrapper">
+                <img src="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/cgn-thumbnail.jpg" alt="CGN Interview" class="card-img">
+            </div>
+            <div class="card-body">
+                <div style="font-size: 10px; color: #ff5a00; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px;">UNIVERSITY - CGN PLUS</div>
+                <div style="font-size: 16px; font-weight: bold; color: #0c2340; margin-bottom: 5px; line-height: 1.2;">Joshua Hong’s Freshman Launch at UTSA</div>
+                <div style="font-size: 12px; color: #666; line-height: 1.4;">An exclusive interview covering Joshua's transition to NCAA Division I.</div>
+            </div>
+        </a>
+
+        <h3 style="color: #15803d; font-size: 18px; margin: 40px 0 20px 0; font-weight: 800; border-bottom: 2px solid #15803d; padding-bottom: 10px;">JUNIOR STAGE (FMG/MEXICO)</h3>
+
+        <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" class="featured-media-card">
+            <div class="card-img-wrapper">
+                <img src="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/golfshot-thumbnail.jpg" alt="Golf Shot Trophy" class="card-img">
+            </div>
+            <div class="card-body">
+                <div style="font-size: 10px; color: #1b5e20; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px;">JUNIOR - GOLFSHOT.MX</div>
+                <div style="font-size: 16px; font-weight: bold; color: #0c2340; margin-bottom: 5px; line-height: 1.2;">Campeones de la II Copa Sur en Puebla</div>
+                <div style="font-size: 12px; color: #666; line-height: 1.4;">Joshua Hong and Regina Roldán triunfan en la Copa Sur.</div>
+            </div>
+        </a>
+
+        <h4 style="color: #0c2340; font-size: 16px; margin: 30px 0 15px 0; font-weight: 700;">
+            All Articles & Press
+        </h4>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 50px;">
+            <a href="https://goutsa.com/news/2026/02/3/roadrunners-register-top-finish-of-season-at-compadres-collegiate" target="_blank" class="news-card">
+                <div style="margin-right: 15px; width: 24px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%;"></div>
+                <div style="flex-grow: 1;">
+                    <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: bold;">
+                        <span style="color: #ff5a00;">UTSA ATHLETICS</span><span style="color: #94a3b8;">Feb 3, 2026</span>
+                    </div>
+                    <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Roadrunners register top finish of season at Compadres Collegiate</div>
+                </div>
+            </a>
             
-            <a href="https://goutsa.com/news/2026/02/3/roadrunners-register-top-finish-of-season-at-compadres-collegiate" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Feb 3, 2026</span></div>
-                    <div style="font-size:14px; font-weight:700;">Roadrunners register top finish of season at Compadres Collegiate</div>
+            <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" class="news-card">
+                <div style="margin-right: 15px; font-size: 20px;">🏆</div>
+                <div style="flex-grow: 1;">
+                    <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: bold;">
+                        <span style="color: #15803d;">FMG OFFICIAL</span><span style="color: #94a3b8;">Jun 25, 2025</span>
+                    </div>
+                    <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Joshua Hong destaca en el Toyota Junior Golf World Cup</div>
                 </div>
             </a>
+            </div>
 
-            <a href="https://goutsa.com/news/2026/02/1/utsa-seizes-day-one-lead-at-compadres-collegiate" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Feb 1, 2026</span></div>
-                    <div style="font-size:14px; font-weight:700;">UTSA seizes day-one lead at Compadres Collegiate</div>
-                </div>
-            </a>
-
-            <a href="https://cgnplus.com/2025/11/24/cgn-player-highlight-and-interview-joshua-hongs-freshman-launch-at-the-university-of-texas-at-san-antonio/" target="_blank" class="article-item">
-                <div style="margin-right:15px; font-size:20px;">🎤</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>FEATURED INTERVIEW</span><span>Nov 24, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Joshua Hong’s Freshman Launch at UTSA - CGN Plus Highlight</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2025/09/22/hong-zurn-lead-utsa-on-day-one-of-badger-invitational" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Sep 22, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong leads UTSA on day one of Badger Invitational</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Sep 16, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong guides UTSA to seventh at Highlands Invitational</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2025/09/9/bare-hong-lead-roadrunners-on-final-day-of-argent-financial-classic" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Sep 9, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong earns T9 at 7-under 209 at Argent Financial Classic</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2025/09/8/hong-posts-second-straight-70-at-argent-financial-classic" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Sep 8, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong posts second straight 70 at Argent Financial Classic</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2025/09/7/hongs-70-paces-roadrunners-in-opening-round-of-argent-financial-classic" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>UTSA ATHLETICS</span><span>Sep 7, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong’s 70 paces Roadrunners in opening round of Argent</div>
-                </div>
-            </a>
-
-            <a href="https://goutsa.com/news/2024/11/14/utsa-inks-joshua-hong" target="_blank" class="article-item">
-                <div style="margin-right:15px;"><img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" width="24"></div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--accent-orange);"><span>SIGNING DAY</span><span>Nov 14, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">UTSA Men's Golf inks Joshua Hong to 2025 Class</div>
-                </div>
-            </a>
-        </div>
-
-        <div class="timeline-container">
-            <div class="stage-label" style="background: #15803d;"></div>
-            <h2 class="stage-title">Junior & National Stage (FMG/Mexico)</h2>
-
-            <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🏆</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>FMG OFFICIAL</span><span>Jun 25, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Joshua Hong destaca en el Toyota Junior Golf World Cup</div>
-                </div>
-            </a>
-
-            <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🏆</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>FMG OFFICIAL</span><span>May 25, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Hong y Lavalle se coronan en el Nacional de Parejas</div>
-                </div>
-            </a>
-
-            <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🇲🇽</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--primary-navy);"><span>GOLF.COM.MX</span><span>Apr 24, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">México varonil triunfa en calificación del Toyota Junior Golf World Cup</div>
-                </div>
-            </a>
-
-            <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🏆</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>GOLF.COM.MX</span><span>Jan 23, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Joshua Hong gana la Copa Sur de la FMG</div>
-                </div>
-            </a>
-
-            <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🌍</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>FMG OFFICIAL</span><span>Jan 20, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Joshua Hong y Regina Roldán triunfan en la II Copa Sur en Puebla</div>
-                </div>
-            </a>
-
-            <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">👑</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--primary-navy);"><span>GOLFSHOT.MX</span><span>Jan 20, 2025</span></div>
-                    <div style="font-size:14px; font-weight:700;">Ellos son los campeones de la II Copa Sur en Puebla</div>
-                </div>
-            </a>
-
-            <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">🌊</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>FMG OFFICIAL</span><span>Nov 3, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">Joshua Hong y Regina Roldán triunfan en la Copa Pacífico</div>
-                </div>
-            </a>
-
-            <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">📰</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--primary-navy);"><span>GOLF.COM.MX</span><span>Sep 30, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">Copa Centro: Gran nivel de golf de Joshua Hong</div>
-                </div>
-            </a>
-
-            <a href="https://golfshot.mx/2024/09/30/ellos-son-los-ganadores-de-la-copa-centro-del-mexico-junior-golf-tour/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">⛳</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:var(--primary-navy);"><span>GOLFSHOT.MX</span><span>Sep 30, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">Ganadores de la Copa Centro del Mexico Junior Golf Tour</div>
-                </div>
-            </a>
-
-            <a href="https://fmg.org.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" class="article-item">
-                <div style="margin-right:15px;">⭐</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#15803d;"><span>FMG OFFICIAL</span><span>Sep 29, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">Éxito rotundo en el cierre de la Copa Centro</div>
-                </div>
-            </a>
-
-            <a href="https://www.ajga.org/tournaments/2024/the-junior-players-championship-presented-by-rolex/coleman-becomes-first-time-invitational-champion-at-the-jrplayers" target="_blank" class="article-item special-award">
-                <div style="margin-right:15px;">❤️</div>
-                <div style="flex:1;">
-                    <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:800; color:#d32f2f;"><span>AJGA SPECIAL AWARD</span><span>Sep 1, 2024</span></div>
-                    <div style="font-size:14px; font-weight:700;">Billy Dettlaff Sportsmanship Award: Honoring Joshua Hong</div>
-                </div>
-            </a>
-        </div>
-
-        <div style="text-align: center; border-top: 1px solid #eee; padding: 40px 20px 80px;">
-            <p style="color: #cbd5e1; font-size: 11px; margin-bottom: 10px;">멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지</p>
-            <p style="font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 2px;">
-                Verified Media Archive • Joshua Hong Official Site
+        <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
+            <p style="color: #cbd5e1; font-size: 10px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 8px;">
+                멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
             </p>
         </div>
     </div>
