@@ -877,6 +877,8 @@ async function updateMetrics() {
     const data = await response.json();
 
     // Individual Metrics
+    // '11 Par or Better(61.1%)' 문자열 전체를 안전하게 삽입하기 위해 innerText를 유지하되, 
+    // HTML 요소의 너비나 CSS 속성에 의해 잘리지 않는지 확인이 필요합니다.
     document.getElementById('sync-scoringAvg').innerText = data.individual.scoringAvg;
     document.getElementById('sync-rawAvg').innerText = data.individual.rawAvg;
     document.getElementById('sync-underPar').innerText = data.individual.underPar;
