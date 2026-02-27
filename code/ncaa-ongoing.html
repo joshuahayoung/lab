@@ -1776,13 +1776,31 @@
 <script>
 async function updateMetrics() {
   try {
-    const response = await fetch('data.json');
+    const response = await fetch('data.json?v=' + new Date().getTime());
     const data = await response.json();
 
     // Individual Metrics
     document.getElementById('sync-scoringAvg').innerText = data.individual.scoringAvg;
     document.getElementById('sync-rawAvg').innerText = data.individual.rawAvg;
-    document.getElementById('sync-underPar').innerText = data.individual.underPar;
+    
+    // sync-underPar 
+    const underParEl = document.getElementById('sync-underPar');
+    if (underParEl) {
+        const text = data.individual.underPar; // 예: "11 Par or Better(61.1%)"
+        if (text.includes('(')) {
+            const parts = text.split('(');
+            // display: block
+            underParEl.innerHTML = `
+                <div style="display: block; line-height: 1.2;">${parts[0]}</div>
+                <div style="display: block; font-size: 0.85em; font-weight: normal; opacity: 0.7; margin-top: 2px;">(${parts[1]}</div>
+            `;
+            
+            underParEl.style.textAlign = 'left';
+        } else {
+            underParEl.innerText = text;
+        }
+    }
+    
     document.getElementById('sync-gpa').innerText = data.individual.gpa;
 
     // Team Metrics
