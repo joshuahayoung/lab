@@ -880,14 +880,19 @@ async function updateMetrics() {
     document.getElementById('sync-scoringAvg').innerText = data.individual.scoringAvg;
     document.getElementById('sync-rawAvg').innerText = data.individual.rawAvg;
     
-    // sync-underPar 처리: 괄호 부분만 작게 만들기 위해 innerHTML을 사용합니다.
+    // sync-underPar 
     const underParEl = document.getElementById('sync-underPar');
     if (underParEl) {
         const text = data.individual.underPar; // 예: "11 Par or Better(61.1%)"
         if (text.includes('(')) {
             const parts = text.split('(');
-            // 앞부분은 그대로, 괄호부터는 0.8em 크기로 줄여서 출력 (스타일 유지)
-            underParEl.innerHTML = `${parts[0]}<span style="font-size: 0.8em; font-weight: normal; opacity: 0.8;">(${parts[1]}</span>`;
+            // display: block
+            underParEl.innerHTML = `
+                <div style="display: block; line-height: 1.2;">${parts[0]}</div>
+                <div style="display: block; font-size: 0.85em; font-weight: normal; opacity: 0.7; margin-top: 2px;">(${parts[1]}</div>
+            `;
+            
+            underParEl.style.textAlign = 'left';
         } else {
             underParEl.innerText = text;
         }
