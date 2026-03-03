@@ -1,17 +1,17 @@
 {
-  "status": "18-ROUND CUMULATIVE",
-  "scope": "18",
+  "status": "21-ROUND CUMULATIVE",
+  "scope": "21",
   "individual": {
-    "scoringAvg": "70.8",
-    "rawAvg": "71.9",
-    "underPar": "11 Par or Better(61.1%)",
+    "scoringAvg": "TBD(70.8)",
+    "rawAvg": "71.3",
+    "underPar": "14 Par or Better(66.7%)",
     "gpa": "3.4 GPA"
   },
   "teamMetrics": {
-    "winRate": "76.5",
-    "headToHead": "357-98-12",
-    "countingScore": "94.4",
-    "recordedRounds": "17/18",
+    "winRate": "79.1",
+    "headToHead": "423-100-12",
+    "countingScore": "95.2",
+    "recordedRounds": "20/21",
     "pointsShare": "33.0",
     "pointsValue": "224.15",
     "teamTotal": "679.31"
