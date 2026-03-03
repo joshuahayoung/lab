@@ -703,7 +703,7 @@
    padding: 5px 12px; border-radius: 6px; transition: all 0.2s ease; background: #ffffff;">
   <span style="display: flex; align-items: center; gap: 6px;">
     <span style="width: 5px; height: 5px; background-color: #e74c3c; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite;"></span>
-    LIVE LEADERBOARD
+    FINAL RESULTS
   </span>
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e74c3c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
     <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -872,7 +872,7 @@
                         <canvas id="archiveOfficialChart"></canvas>
                         <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
                             <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                            <span>CUMULATIVE: 7 EVENTOS / 21 RONDAS</span>
+                            <span>CUMULATIVE: 8 EVENTOS / 24 RONDAS</span>
                         </div>
                     </div>
                     <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #999; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
@@ -897,16 +897,17 @@
     new Chart(ctxOfficialArchive, {
         type: 'line',
         data: {
-            labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)*', '2/01 (Compadres)', '2/24 (Military)'],
+            labels: ['9/07 (Argent)', '9/15 (Highlands)', '9/22 (Badger)', '10/05 (Trinity)', '12/27 (Patriot)*', '2/01 (Compadres)', '2/24 (Military)', '3/03 (Golden)'],
             datasets: [{
                 label: 'Scoring Avg',
-                data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00, 71.66],
+                data: [69.66, 71.66, 72.66, 74.00, 72.00, 72.00, 71.66, 67.6],
                 borderColor: '#0c2340',
                 backgroundColor: 'rgba(12, 35, 64, 0.05)',
                 borderWidth: 2,
                 pointRadius: 6,
                 pointHoverRadius: 9,
                 pointBackgroundColor: '#0c2340',
+                pointHoverBackgroundColor: '#F15A22',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 tension: 0.3,
@@ -915,7 +916,7 @@
                     align: 'top', anchor: 'end', offset: 8, color: '#0c2340',
                     font: { weight: '700', size: 13 },
                     formatter: function(value, context) {
-                        return ['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1'][context.dataIndex];
+                        return ['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1', '3'][context.dataIndex];
                     }
                 }
             }]
@@ -946,16 +947,16 @@
                     backgroundColor: '#0c2340',
                     titleColor: '#F15A22',
                     padding: 12,
-                    displayColors: false, // 하얀 박스 제거
+                    displayColors: false,
                     callbacks: {
                         label: function(context) {
-                            return `● Scoring Avg: ${context.parsed.y}`; // 오렌지색 닷(폰트 색상 적용 예정)은 유니코드로 대체
+                            return `● Scoring Avg: ${context.parsed.y}`;
                         },
                         afterLabel: function(context) {
                             const i = context.dataIndex;
                             return [
-                                `● Rounds: ${['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)', '69-72-74 (-1)'][i]}`,
-                                `● Rank: ${['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1'][i]}`,
+                                `● Rounds: ${['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)', '69-72-74 (-1)', '64-70-69 (-13)'][i]}`,
+                                `● Pos: ${['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1', '3'][i]}`,
                                 [
                                     `● Rank Impact ▲ 151`,
                                     `● Rank Impact ▲ 28`,
@@ -963,11 +964,12 @@
                                     `● Rank Impact ▼ 98`,
                                     null,
                                     `● Rank Impact ▲ 142`,
-                                    `● Rank Impact ▲ 72`
+                                    `● Rank Impact ▲ 72`,
+                                    `● Rank Impact TBD`
                                 ][i],
                                 `-----------------------`,
-                                `● WAGR Pwr: ${['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033', ''][i]}`,
-                                `● Pts.: ${['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774', '9.2734'][i]}`
+                                `● WAGR Pwr: ${['230.8799', '232.6656', '129.0694', '360.1597', '806.3420', '145.6033', '', 'TBD'][i]}`,
+                                `● Pts Earned: ${['5.3735', '4.9097', '3.3178', '3.1971', '6.1052', '6.5774', '9.2734', 'TBD'][i]}`
                             ].filter(v => v !== null);
                         }
                     }
@@ -1133,19 +1135,22 @@
                  </svg>
                </a>
                   </div>
-              
-                  <div style="font-size: 12px; color: #7f8c8d;">The CC at Golden Nugget - LA</div>
+                  <div style="font-size: 12px; color: #7f8c8d;">The CC at Golden Nugget - LA | Par 72 | 6,909 Yards</div>
+              </div>
+              <div style="font-size: 11px; color: #777; font-weight: 700; margin-top: 2px;">
+              Rank Impact: <span style="color:#16a34a;">▲</span> TBD | SG: TBD | Weighted Pts: TBD<br>
+              WAGR Pwr: TBD / Pts.: TBD
               <div class="mobile-status-bar">
-                <div class="ms-item"><span class="ms-label" style="color: #333;">R1-R2-R3</span><span class="ms-value" style="color: #333; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">TOTAL</span><span class="ms-value" style="color: #333; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">PAR</span><span class="ms-value" style="color: #333; font-weight: 700;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">-</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">R1-R2-R3</span><span class="ms-value" style="color: #333; font-weight: 800;"><span style="color: #e11d48;">64</span>-<span style="color: #e11d48;">70</span>-<span style="color: #e11d48;">69</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">TOTAL</span><span class="ms-value" style="font-weight: 800; color: #e11d48;">203</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">PAR</span><span class="ms-value" style="font-weight: 700; color: #e11d48;">-13</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">3</span></div>
               </div>
             </td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 800;"><span style="color: #e11d48;">64</span>-<span style="color: #e11d48;">72</span>-<span style="color: #e11d48;">69</td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 800;">203</td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 800;">-13</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 800;">3</td>
           </tr>
           
           <tr style="background-color: #fcfdfe;">
