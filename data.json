@@ -2,7 +2,7 @@
   "status": "21-ROUND CUMULATIVE",
   "scope": "21",
   "individual": {
-    "scoringAvg": "TBD(70.8)",
+    "scoringAvg": "70.8",
     "rawAvg": "71.3",
     "underPar": "14 Par or Better(66.7%)",
     "gpa": "3.4 GPA"
@@ -12,8 +12,8 @@
     "headToHead": "423-100-12",
     "countingScore": "95.2",
     "recordedRounds": "20/21",
-    "pointsShare": "TBD(33.0)",
-    "pointsValue": "TBD(224.15)",
-    "teamTotal": "TBD(679.31)"
+    "pointsShare": "33.0",
+    "pointsValue": "224.15",
+    "teamTotal": "679.31"
   }
 }
