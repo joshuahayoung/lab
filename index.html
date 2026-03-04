@@ -988,9 +988,10 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       
 <div id="joshua-unique-section" style="max-width: 900px; margin: 0 auto 100px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
   
-  <details style="width: 100%; cursor: pointer;">
-    <summary style="list-style: none; outline: none;">
-      <div class="intro-section" style="width: 100%; margin-bottom: 25px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background: #0c2340; padding: 15px 25px; border-radius: 12px; border: 1px solid #c98a2e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+  <details style="width: 100%; cursor: pointer; transition: all 0.3s ease;" class="progress-details">
+    <summary style="list-style: none; outline: none; -webkit-details-marker: none;">
+      <div class="intro-section" style="width: 100%; margin-bottom: 25px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background: #0c2340; padding: 18px 25px; border-radius: 12px; border: 1px solid #c98a2e; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
+        
         <h2 style="font-size: 16px; color: #c98a2e; margin: 0; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 12px;">
           <div style="position: relative; display: flex; align-items: center; justify-content: center;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1001,14 +1002,39 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </div>
           Present Process & Progress
         </h2>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 11px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8;">Insight Archive</span>
-          <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.3s ease;">
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <span style="font-size: 10px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; background: #c98a2e; padding: 2px 6px; border-radius: 4px; color: #0c2340; margin-bottom: 2px;">Click to Expand</span>
+            <span style="font-size: 11px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6;">Insight Archive</span>
+          </div>
+          <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </div>
+
+        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #c98a2e, transparent); opacity: 0.3;"></div>
       </div>
     </summary>
+
+    <style>
+      /* 클릭 유도를 위한 애니메이션 및 상태 스타일 */
+      details[open] .arrow-icon {
+        transform: rotate(180deg);
+      }
+      .progress-details:hover .intro-section {
+        background: #122d52 !important;
+        border-color: #e5a545 !important;
+      }
+      @keyframes soft-pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .pulse-dot {
+        animation: soft-pulse 2s infinite ease-in-out;
+      }
+    </style>
 
     <div class="insight-scroll-container" style="display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px 25px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; cursor: default;">
 
@@ -1034,16 +1060,16 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 <p style="margin-bottom: 14px; line-height: 1.8;">
   <b>Scoring Record:</b> <br>
-  • <b>Round 1: 64 (−8)</b> — Tied UTSA program record for lowest single round. Multiple birdie/eagle opportunities created. <br>
-  • <b>Round 2: 70 (−2)</b> — Part of 36-hole day. Nutritional intake structured at regular intervals to stabilize concentration. <br>
-  • <b>Round 3: 69 (−3)</b> — Bogey-free final round. Several mid-range par saves preserved scoring position. <br>
-  • <b>Total: 203 (−13).</b>
+  <b>Round 1: 64 (−8)</b> — Tied UTSA program record for lowest single round. Multiple birdie/eagle opportunities created. <br>
+  <b>Round 2: 70 (−2)</b> — Part of 36-hole day. Nutritional intake structured at regular intervals to stabilize concentration. <br>
+  <b>Round 3: 69 (−3)</b> — Bogey-free final round. Several mid-range par saves preserved scoring position. <br>
+  <b>Total: 203 (−13).</b>
 </p>
 
 <p style="margin-bottom: 14px; line-height: 1.8;">
   <b>Final Result & Rank Impact:</b> <br>
-  • <b>Position:</b> Solo 3rd (1 stroke from 2nd, 3 strokes from 1st) | <b>Team:</b> 2nd Place. <br>
-  • <b>Clippd National Rank:</b> 311 (▲43) | <b>WAGR:</b> 425 (▲81). As of Mar 4, 2026.
+  <b>Position:</b> Solo 3rd (1 stroke from 2nd, 3 strokes from 1st) | <b>Team:</b> 2nd Place. <br>
+  <b>Clippd National Rank:</b> 311 (▲43) | <b>WAGR:</b> 425 (▲81). As of Mar 4, 2026.
 </p>
 
 <p style="margin-bottom: 14px; line-height: 1.8;">
