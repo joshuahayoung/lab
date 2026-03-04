@@ -15,5 +15,17 @@
     "pointsShare": "33.0",
     "pointsValue": "224.15",
     "teamTotal": "679.31"
+  },
+  "officialRank": {
+    "wagrRank": "425",
+    "wagrImpact": "▲38",
+    "wagrDate": "Mar 4, 2026",
+    "clippdRank": "354",
+    "clippdImpact": "▲38",
+    "clippdDate": "Mar 4, 2026",
+    "wins": "1",
+    "top3": "3",
+    "top10": "5",
+    "totalTournaments": "7"
   }
 }
