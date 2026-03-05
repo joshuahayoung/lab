@@ -884,6 +884,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 
+
 <script>
 (function() {
     if (typeof ChartDataLabels !== 'undefined') {
@@ -922,8 +923,8 @@
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            // 레이아웃 패딩 최적화: 좌우 여백 최소화
-            layout: { padding: { top: 35, bottom: 0, left: -5, right: 15 } },
+            // 하단 텍스트와의 거리를 위해 bottom 패딩 확보, 좌측 마진 손실을 줄이기 위해 left 조정
+            layout: { padding: { top: 35, bottom: 25, left: -5, right: 15 } },
             scales: {
                 y: { 
                     min: 65, 
@@ -932,7 +933,7 @@
                     ticks: { 
                         font: { size: 11, weight: '600' }, 
                         color: '#333',
-                        padding: 2 // Y축 숫자와 그래프 사이 간격 최소화
+                        padding: 0 // 좌측 여백 최소화
                     },
                     title: { display: false }
                 },
@@ -941,12 +942,11 @@
                     ticks: { 
                         color: '#333', 
                         font: { size: 10, weight: '500' },
-                        maxRotation: 0, // 가독성을 위해 회전 방지
-                        autoSkip: true
+                        autoSkip: false, // 모든 날짜 강제 출력
+                        maxRotation: 45, // 좁은 화면에서 날짜 겹침 방지
+                        minRotation: 45
                     },
-                    // 포인트가 끝까지 붙도록 설정
-                    offset: false,
-                    bounds: 'ticks'
+                    offset: false // 우측 및 좌측 끝단 공백 제거 (벽에 밀착)
                 }
             },
             plugins: {
@@ -965,7 +965,7 @@
                             const i = context.dataIndex;
                             return [
                                 `● Rounds: ${['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)', '69-72-74 (-1)', '64-70-69 (-13)'][i]}`,
-                                `● Pos: ${['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1', '3'][i]}`,
+                                `● Pos: ${['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3'][i]}`,
                                 [
                                     `● Rank Impact ▲ 151`,
                                     `● Rank Impact ▲ 28`,
