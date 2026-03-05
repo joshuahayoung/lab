@@ -685,7 +685,7 @@
             <div class="mobile-status-bar">
               <div class="ms-item"><span class="ms-label">SCORE</span><span class="ms-value" style="font-weight: bold; color: #e74c3c;">69</span></div>
               <div class="ms-item"><span class="ms-label">PAR</span><span class="ms-value" style="font-weight: bold; color: #e74c3c;">-3</span></div>
-              <div class="ms-item"><span class="ms-label">POS</span><span class="ms-value" style="font-weight: bold; color: #e74c3c;">3</span></div>
+              <div class="ms-item"><span class="ms-label">POS</span><span class="ms-value" style="font-weight: bold; color: #0C2340;">3</span></div>
             </div>
           </td>
           <td class="hide-mobile" style="font-weight: bold; color: #e74c3c;">69</td>
@@ -787,7 +787,7 @@
                             <strong>Conditions:</strong> Penalty area management and Bermuda grain control. Driver head structural issue monitored; ball speed and launch remained stable. <br>
                             <strong>Scoring Profile:</strong> R1 — 64 (−8) / R2 — 70 (−2) / R3 — 69 (−3). Total — 203 (−13). <br>
                             <strong>Finish:</strong> Solo 3rd (1 stroke from 2nd). Tied UTSA single-round record (64). Bogey-free final round. Team: 2nd.<br>
-                            <strong>Ranking Impact:</strong> Clippd National Rank: 311 (▲43). WAGR: 425 (▲81). As of Mar 4, 2026. <br>
+                            <strong>Ranking Impact:</strong> Clippd National Rank: 311 (▲43). WAGR: 425 (▲81). <br>
                             <strong>Ball Striking:</strong> Driver and long-iron dispersion stable with improved proximity control.<br>
                             <strong>Short Game:</strong> Mid-range par saves maintained scoring position. <br>
                             <strong>Putting:</strong> Conversion variance under Bermuda grain conditions limited scoring efficiency.
@@ -873,7 +873,7 @@
                             <span>CUMULATIVE: 8 EVENTOS / 24 RONDAS</span>
                         </div>
                     </div>
-                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #999; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #888; font-weight: 500; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
                 </div>
             </div>
         </div>
@@ -883,6 +883,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
 
 <script>
 (function() {
@@ -914,7 +915,7 @@
                     align: 'top', anchor: 'end', offset: 8, color: '#0c2340',
                     font: { weight: '700', size: 13 },
                     formatter: function(value, context) {
-                        return ['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1', '3'][context.dataIndex];
+                        return ['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3'][context.dataIndex];
                     }
                 }
             }]
@@ -922,21 +923,31 @@
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: { padding: { top: 30, bottom: 10, left: 0, right: 0 } },
+            // 하단 텍스트와의 거리를 위해 bottom 패딩 확보, 좌측 마진 손실을 줄이기 위해 left 조정
+            layout: { padding: { top: 35, bottom: 25, left: -5, right: 15 } },
             scales: {
                 y: { 
                     min: 65, 
                     max: 82, 
                     grid: { color: '#efefef', drawBorder: false }, 
-                    ticks: { font: { size: 11, weight: '600' }, color: '#333' },
-                    title: {
-                        display: false,
-                        text: 'Strokes',
+                    ticks: { 
+                        font: { size: 11, weight: '600' }, 
                         color: '#333',
-                        font: { size: 12, weight: '700' }
-                    }
+                        padding: 0 // 좌측 여백 최소화
+                    },
+                    title: { display: false }
                 },
-                x: { grid: { display: false }, ticks: { color: '#333', font: { size: 10, weight: '500' } } }
+                x: { 
+                    grid: { display: false }, 
+                    ticks: { 
+                        color: '#333', 
+                        font: { size: 10, weight: '500' },
+                        autoSkip: false, // 모든 날짜 강제 출력
+                        maxRotation: 45, // 좁은 화면에서 날짜 겹침 방지
+                        minRotation: 45
+                    },
+                    offset: false // 우측 및 좌측 끝단 공백 제거 (벽에 밀착)
+                }
             },
             plugins: {
                 legend: { display: false },
@@ -954,7 +965,7 @@
                             const i = context.dataIndex;
                             return [
                                 `● Rounds: ${['70-70-69 (-7)', '74-71-70 (-1)', '71-71-76 (+2)', '75-73-74 (+6)', '71-73-72 (+6)', '70-75-71 (E)', '69-72-74 (-1)', '64-70-69 (-13)'][i]}`,
-                                `● Pos: ${['T9', 'T12', 'T24', 'T55', 'T38', 'T3', '1', '3'][i]}`,
+                                `● Pos: ${['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3'][i]}`,
                                 [
                                     `● Rank Impact ▲ 151`,
                                     `● Rank Impact ▲ 28`,
@@ -1759,7 +1770,7 @@
 
         <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; box-sizing: border-box; min-width: 0; text-align: left; border-bottom: 4px solid #f15a22;">
           <div>
-            <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Points Share (Clippd w)</span>
+            <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Points Share (Clippd)</span>
             <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
               <span style="font-size: 30px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;" id="sync-pointsShare">32.80%</span>
             </div>
@@ -2176,6 +2187,8 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       <div id="thumbScroll">
         
 <div class="thumb-page">
+ 
+  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Player-of-the-week-article-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong American Conference POTW Honor Article" title="Joshua Hong American Conference POTW Honor Article" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-1-Stars-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Stars of The Week Honor" title="Joshua Hong UTSA Stars of The Week Honor" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA American Conference Player of The Week Honor" title="Joshua Hong UTSA American Conference Player of The Week Honor" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA American Conference Player of The Week Honor" title="Joshua Hong UTSA American Conference Player of The Week Honor" loading="lazy" decoding="async">
@@ -2187,11 +2200,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget UTSA School Record 64 (-8)" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" loading="lazy" decoding="async">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-FMG.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong celebrating his individual victory at the Military City Collegiate Photo by FMG" title="Joshua Hong Individual Champion - Military City Collegiate (FMG)" loading="lazy" decoding="async">
-  
+ 
  </div>
 
 <div class="thumb-page">
+  
+  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-FMG.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong celebrating his individual victory at the Military City Collegiate Photo by FMG" title="Joshua Hong Individual Champion - Military City Collegiate (FMG)" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Team-Win-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men’s Golf team holding the championship trophy at the Military City Collegiate event" title="UTSA Men's Golf Team Victory - Military City Collegiate" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong posing with the individual winner's trophy at the 2026 Military City Collegiate" title="Joshua Hong 2026 Military City Collegiate Individual Winner" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Team-Win-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Official team photo of UTSA Men’s Golf following their team title win at Military City" title="UTSA Men’s Golf Team Champions Photo - Military City Collegiate" loading="lazy" decoding="async">
@@ -2203,12 +2217,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" loading="lazy" decoding="async">   
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" loading="lazy" decoding="async">
- 
+  
 </div>
         
 <div class="thumb-page">
-
+  
+  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" title="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-collegiate debut-1-70-Argent.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong’s collegiate debut: Shooting a 70 at the Argent Financial Invitational" title="Joshua Hong’s collegiate debut: Shooting a 70 at the Argent Financial Invitational" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Official-Highlands-invitational.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" title="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" loading="lazy" decoding="async">
@@ -2220,12 +2234,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Team-Photoday-Fran-Sam.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" title="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" title="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" loading="lazy" decoding="async">     
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" loading="lazy" decoding="async">
-  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands" loading="lazy" decoding="async">     
- 
+  
 </div>
 
 <div class="thumb-page">
   
+  <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands" loading="lazy" decoding="async">     
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" title="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic" title="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic" loading="lazy" decoding="async">
   <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Argent Financial Classic Round Score 69" title="Joshua Hong UTSA Men's Golf Argent Financial Classic Round Score 69" loading="lazy" decoding="async">
