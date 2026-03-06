@@ -2160,17 +2160,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <script>
     const getImages = () => Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
     let currentThumbPage = 0;
+    
     function scrollThumbs(dir) {
       const scrollElement = document.getElementById('thumbScroll');
       const pages = document.querySelectorAll('.thumb-page');
       currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
       scrollElement.style.transform = "translateX(-" + (currentThumbPage * 100) + "%)";
     }
+    
     const wrapper = document.getElementById('thumbWrapper');
     let touchStartX = 0;
     let touchEndX = 0;
     wrapper.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
     wrapper.addEventListener('touchend', (e) => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
+    
     function handleSwipe() {
       const swipeThreshold = 50;
       if (touchStartX - touchEndX > swipeThreshold) scrollThumbs(1);
@@ -2194,51 +2197,50 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <style>
     body { margin: 0; background: #000; color: white; height: 100vh; font-family: sans-serif; overflow: hidden; display: flex; flex-direction: column; }
     
-    /* 전체 레이아웃: 화살표가 사진 밖 좌우에 고정되도록 설정 */
-    #galleryWrapper { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; padding: 0 80px; box-sizing: border-box; }
+    /* 메인 컨테이너: 사진과 버튼들을 포함 */
+    #mainLayout { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 20px; box-sizing: border-box; }
     
-    #imgBox { position: relative; max-width: 100%; max-height: 85vh; display: flex; justify-content: center; align-items: center; }
-    #mainImg { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 4px; transition: opacity 0.2s; }
+    /* 사진을 감싸는 핵심 박스: 화살표와 X버튼의 기준점 */
+    #photoContainer { position: relative; display: inline-block; max-width: 85%; max-height: 80vh; }
+    #mainImg { display: block; max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 2px; }
 
-    /* 버튼 스타일: 항상 사진 바깥 좌우 위치 */
-    .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 30px; background: rgba(255,255,255,0.1); border-radius: 50%; transition: 0.3s; user-select: none; z-index: 200; }
-    .nav-btn:hover { background: rgba(255,255,255,0.3); }
-    #prev { left: 15px; }
-    #next { right: 15px; }
-
-    /* 닫기 버튼: 우상단 고정 */
-    #close-x { position: fixed; top: 20px; right: 20px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 32px; cursor: pointer; z-index: 300; background: rgba(255,255,255,0.1); border-radius: 50%; line-height: 1; }
+    /* X 버튼: 사진의 오른쪽 상단 바깥쪽 고정 */
+    #close-x { position: absolute; top: -50px; right: -50px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 35px; cursor: pointer; color: #fff; background: rgba(255,255,255,0.1); border-radius: 50%; transition: 0.3s; z-index: 1000; }
     #close-x:hover { background: #ff4d4d; }
 
-    /* 하단 정보 */
-    .bottom-info { height: 60px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 14px; letter-spacing: 2px; }
+    /* 데스크탑 화살표: 사진 좌우 영역 바깥에 위치 */
+    .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(255,255,255,0.7); font-size: 40px; transition: 0.3s; user-select: none; }
+    .nav-btn:hover { color: #fff; transform: translateY(-50%) scale(1.1); }
+    #prev { left: -80px; }
+    #next { right: -80px; }
 
-    @media (max-width: 768px) {
-      #galleryWrapper { padding: 0 10px; flex-direction: column; }
-      #imgBox { max-height: 70vh; margin-top: 60px; }
-      #mainImg { max-height: 70vh; }
-      /* 모바일에서는 화살표를 사진 하단 좌우로 배치하여 사진 침범 방지 */
-      .nav-btn { position: static; transform: none; margin: 20px 30px; width: 60px; height: 60px; font-size: 26px; }
-      .mobile-ctrl { display: flex; justify-content: center; width: 100%; margin-top: 10px; }
-      #close-x { top: 10px; right: 10px; width: 40px; height: 40px; }
+    /* 하단 정보바 */
+    .bottom-bar { height: 60px; width: 100%; display: flex; align-items: center; justify-content: center; background: #111; border-top: 1px solid #222; }
+    #countDisplay { font-size: 14px; letter-spacing: 3px; color: #888; }
+
+    /* 모바일 환경 최적화 */
+    @media (max-width: 850px) {
+      #photoContainer { max-width: 95%; margin-top: 40px; }
+      #close-x { top: -50px; right: 0; } /* 모바일은 사진 상단 우측 정렬 */
+      #prev { left: -10px; font-size: 30px; } /* 침범 방지를 위해 크기 축소 */
+      #next { right: -10px; font-size: 30px; }
+      .nav-btn { background: rgba(0,0,0,0.5); border-radius: 50%; width: 44px; height: 44px; }
     }
   </style>
 </head>
 <body>
-  <div id="close-x" onclick="window.close()">×</div>
-  
-  <div id="galleryWrapper">
-    <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
-    <div id="imgBox">
+  <div id="mainLayout">
+    <div id="photoContainer">
+      <div id="close-x" onclick="window.close()">×</div>
+      <div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
       <img id="mainImg" src="${allImages[index]}">
+      <div id="next" class="nav-btn" onclick="move(1)">❯</div>
     </div>
-    <div id="next" class="nav-btn" onclick="move(1)">❯</div>
   </div>
 
-  <div class="mobile-ctrl">
-    </div>
-
-  <div class="bottom-info" id="countDisplay">${index + 1} / ${allImages.length}</div>
+  <div class="bottom-bar">
+    <div id="countDisplay">${index + 1} / ${allImages.length}</div>
+  </div>
 
   <script>
     let idx = ${index};
@@ -2247,21 +2249,21 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     function move(step) {
       idx = (idx + step + imgArray.length) % imgArray.length;
       const img = document.getElementById("mainImg");
-      img.style.opacity = 0;
+      img.style.opacity = 0.5;
       setTimeout(() => {
         img.src = imgArray[idx];
         document.getElementById("countDisplay").innerText = (idx + 1) + " / " + imgArray.length;
         img.style.opacity = 1;
-      }, 150);
+      }, 100);
     }
 
-    // 모바일 스와이프 지원
+    // 터치 스와이프 지원 (사진 영역)
     let sX = 0;
-    document.addEventListener('touchstart', e => sX = e.touches[0].clientX, false);
-    document.addEventListener('touchend', e => {
+    document.getElementById('photoContainer').addEventListener('touchstart', e => sX = e.touches[0].clientX, {passive: true});
+    document.getElementById('photoContainer').addEventListener('touchend', e => {
       let dX = sX - e.changedTouches[0].clientX;
-      if(Math.abs(dX) > 50) move(dX > 0 ? 1 : -1);
-    }, false);
+      if(Math.abs(dX) > 40) move(dX > 0 ? 1 : -1);
+    }, {passive: true});
 
     window.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") move(-1);
@@ -2274,8 +2276,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       popup.document.write(content);
       popup.document.close();
     }
-  </script>
-</div>
+</script>
 
   
 
