@@ -689,7 +689,7 @@
       <img src="./images/junior-year/21-Joshua-Hong-NCJGC-Bumgadner-Memorial-Jr-Win-2023.jpeg" onclick="popupJrGallery(20)" style="width:100%; height:120px; object-fit:cover; object-position: center 42%; border-radius:8px; cursor:pointer;" alt="Joshua Hong NCJGC Bumgadner Memorial Jr Win 2023" title="Joshua Hong NCJGC Bumgadner Memorial Jr Win 2023" loading="lazy" decoding="async">
       <img src="./images/junior-year/22-Joshua-Hong-Zona-Gado-Interzona-2024.jpeg" onclick="popupJrGallery(21)" style="width:100%; height:120px; object-fit:cover; object-position: center 55%; border-radius:8px; cursor:pointer;" alt="Joshua Hong Zona GADO INTERZONA 2024" title="Joshua Hong Zona GADO INTERZONA 2024" loading="lazy" decoding="async">
       <img src="./images/junior-year/23-Joshua-Hong-Selection-Mexico-Gabriel-Derbez-Lucca-Buenlostro-2025.jpeg" onclick="popupJrGallery(22)" style="width:100%; height:120px; object-fit:cover; object-position: center 15%; border-radius:8px; cursor:pointer;" alt="Joshua Hong Selection Mexico Gabriel Derbez Lucca Buenlostro 2025" title="Joshua Hong Selection Mexico Gabriel Derbez Lucca Buenlostro 2025" loading="lazy" decoding="async">
-      <img src="./images/junior-year/24-Joshua-Hong-Campeonato-Pareja-Zona-Centro-Leonardo-Lavalle-2025.jpeg" onclick="popupJrGallery(23)" style="width:100%; height:120px; object-fit:cover; object-position: center 15%; border-radius:8px; cursor:pointer;" alt="Joshua Hong Campeonato Pareja Zona Centro Leonardo Lavalle 2025" title="Joshua Hong Campeonato Pareja Zona Centro Leonardo Lavalle 2025" loading="lazy" decoding="async">
+      <img src="./images/junior-year/24-Joshua-Hong-Campeonato-Pareja-Zona-Centro-Leonardo-Lavalle-2025.jpeg" onclick="popupJrGallery(23)" style="width:100%; height:120px; object-fit:cover; object-position: center 15%; border-radius:8px; cursor:pointer;" alt="Joshua Hong Campeonato Pareja Zone Centro Leonardo Lavalle 2025" title="Joshua Hong Campeonato Pareja Zone Centro Leonardo Lavalle 2025" loading="lazy" decoding="async">
 </div>
 
 <script>
@@ -728,19 +728,19 @@
       const popup = window.open("", "JoshuaJrGallery", "width="+w+",height="+h+",top="+top+",left="+left+",resizable=yes");
       
       let htmlContent = '<html><head><title>Joshua Hong Junior Gallery</title><style>';
-      htmlContent += 'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; overflow-x: hidden; overflow-y: auto; font-family: sans-serif; padding: 10px 0 30px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }';
+      htmlContent += 'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 100vh; overflow-x: hidden; overflow-y: auto; font-family: sans-serif; padding: 10px 0 20px 0; box-sizing: border-box; -webkit-overflow-scrolling: touch; }';
       htmlContent += '.nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 70px; color: rgba(255,255,255,0.3); cursor: pointer; user-select: none; padding: 20px; transition: 0.3s; z-index: 10; font-weight: 200; text-decoration: none; }';
       htmlContent += '.nav-btn:hover { color: white; background: rgba(255,255,255,0.1); } #prev { left: 0; } #next { right: 0; }';
       htmlContent += '#close-x { position: fixed; top: 15px; right: 15px; font-size: 40px; cursor: pointer; opacity: 0.6; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 200; }';
       htmlContent += '#close-x:hover { opacity: 1; transform: rotate(90deg); color: #ff4d4d; }';
       htmlContent += '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; flex: 1; position: relative; margin: 10px 0; }';
       htmlContent += '#mainImg { max-width: 95%; max-height: 88vh; object-fit: contain; border-radius: 4px; transition: opacity 0.2s; box-shadow: 0 0 20px rgba(255,255,255,0.1); user-select: none; -webkit-user-drag: none; }';
-      htmlContent += '.bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; padding: 10px 0; margin-top: auto; }';
-      htmlContent += '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 10px 30px; border-radius: 30px; font-weight: 700; font-size: 13px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }';
+      htmlContent += '.bottom-controls { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; padding: 5px 0; margin-top: auto; }';
+      htmlContent += '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 7px 20px; border-radius: 20px; font-weight: 600; font-size: 11px; cursor: pointer; letter-spacing: 0.5px; transition: 0.3s; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }';
       htmlContent += '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; transform: scale(1.02); }';
       htmlContent += '.info-row { display: flex; align-items: center; gap: 20px; opacity: 0.5; }';
-      htmlContent += '.counter { font-size: 12px; letter-spacing: 1.5px; font-weight: 600; display: flex; align-items: center; gap: 8px; }';
-      htmlContent += '@media (max-width: 768px) { body { padding-top: 50px; } .nav-btn { display: none; } #close-x { font-size: 35px; top: 10px; right: 10px; } #mainImg { max-height: 75vh; } .close-btn-bottom { padding: 10px 30px; font-size: 12px; } }';
+      htmlContent += '.counter { font-size: 11px; letter-spacing: 1.2px; font-weight: 600; display: flex; align-items: center; gap: 8px; }';
+      htmlContent += '@media (max-width: 768px) { body { padding-top: 50px; } .nav-btn { display: none; } #close-x { font-size: 35px; top: 10px; right: 10px; } #mainImg { max-height: 75vh; } .close-btn-bottom { padding: 8px 25px; font-size: 11px; } }';
       htmlContent += '</style></head><body>';
       htmlContent += '<div id="close-x" onclick="window.close()">×</div>';
       htmlContent += '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>';
