@@ -2164,7 +2164,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </div>
   </div>
 
-    <script>
+   <script>
     const getImages = () => Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
     let currentThumbPage = 0;
     
@@ -2178,64 +2178,64 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     const wrapper = document.getElementById('thumbWrapper');
     let touchStartX = 0;
     let touchEndX = 0;
-
-    wrapper.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    wrapper.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
+    wrapper.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    wrapper.addEventListener('touchend', (e) => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }, { passive: true });
 
     function handleSwipe() {
       const swipeThreshold = 50;
-      if (touchStartX - touchEndX > swipeThreshold) {
-        scrollThumbs(1);
-      } else if (touchEndX - touchStartX > swipeThreshold) {
-        scrollThumbs(-1);
-      }
+      if (touchStartX - touchEndX > swipeThreshold) scrollThumbs(1);
+      else if (touchEndX - touchStartX > swipeThreshold) scrollThumbs(-1);
     }
 
     function popupGallery(element) {
       const allImages = getImages();
       const index = allImages.indexOf(element.src);
-      const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
-      const h = window.innerHeight > 950 ? 950 : window.innerHeight;
+      const w = Math.min(window.innerWidth, 1100);
+      const h = Math.min(window.innerHeight, 950);
       const left = (screen.width / 2) - (w / 2);
       const top = (screen.height / 2) - (h / 2);
-      const popup = window.open("", "JoshuaGallery", "width=" + w + ",height=" + h + ",top=" + top + ",left=" + left + ",resizable=yes");
+      const popup = window.open("", "JoshuaGallery", `width=${w},height=${h},top=${top},left=${left},resizable=yes`);
       
       const content = '<html><head><title>Joshua Hong - Gallery</title><style>' +
-        'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: "Segoe UI", Roboto, sans-serif; overflow: hidden; padding: 0; box-sizing: border-box; }' +
-        '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; position: relative; height: 85vh; padding: 0 80px; box-sizing: border-box; }' +
-        '#mainImg { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 4px; transition: 0.2s; opacity: 1; user-select: none; -webkit-user-drag: none; }' +
-        '.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); font-size: 60px; color: rgba(255,255,255,0.3); cursor: pointer; padding: 20px; user-select: none; transition: 0.3s; z-index: 10; font-weight: 100; }' +
-        '.nav-btn:hover { color: #fff; }' +
-        '#prev { left: 10px; } #next { right: 10px; }' +
-        '#close-x { position: fixed; top: 25px; right: 25px; width: 44px; height: 44px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; z-index: 100; transition: 0.3s; font-weight: 300; }' +
-        '#close-x:hover { background: #ff4d4d; color: #fff; transform: rotate(90deg); }' +
-        '.bottom-controls { display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%; height: 10vh; background: rgba(0,0,0,0.5); }' +
-        '.counter { font-size: 14px; letter-spacing: 2px; font-weight: 600; color: rgba(255,255,255,0.5); }' +
-        '.close-btn-bottom { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 10px 30px; border-radius: 4px; font-size: 12px; cursor: pointer; letter-spacing: 1px; transition: 0.3s; }' +
-        '.close-btn-bottom:hover { background: #fff; color: #000; }' +
-        '@media (max-width: 768px) { ' +
-        '  #imgContainer { height: 70vh; padding: 0 10px; } ' +
-        '  #mainImg { max-height: 70vh; } ' +
-        '  .nav-btn { display: none; } ' +
-        '  #close-x { top: 15px; right: 15px; font-size: 30px; } ' +
-        '  .bottom-controls { flex-direction: column; gap: 10px; height: auto; padding: 20px 0; } ' +
+        'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; height: 100vh; font-family: sans-serif; overflow: hidden; }' +
+        '#topArea { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; box-sizing: border-box; }' +
+        '#imgWrapper { position: relative; display: inline-block; max-width: 100%; max-height: 100%; }' +
+        '#mainImg { display: block; max-width: 100%; max-height: 75vh; object-fit: contain; border-radius: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }' +
+        
+        /* X 버튼: 사진 오른쪽 상단 바깥에 위치 */
+        '#close-x { position: absolute; top: -10px; right: -50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 30px; cursor: pointer; color: #fff; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 100; transition: 0.2s; }' +
+        '#close-x:hover { background: #ff4d4d; }' +
+
+        /* 화살표: 사진 좌우 바깥에 확실히 배치 */
+        '.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 50px; color: rgba(255,255,255,0.4); cursor: pointer; user-select: none; z-index: 90; transition: 0.3s; }' +
+        '.nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); border-radius: 50%; }' +
+        '#prev { left: -75px; } #next { right: -75px; }' +
+
+        /* 하단 컨트롤 영역: 잘리지 않도록 고정 높이 할당 */
+        '#bottomArea { height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #111; gap: 15px; border-top: 1px solid #222; }' +
+        '.counter { font-size: 14px; letter-spacing: 2px; color: #888; }' +
+        '.close-btn-bottom { background: #fff; color: #000; border: none; padding: 12px 40px; border-radius: 25px; font-weight: bold; cursor: pointer; transition: 0.2s; }' +
+        '.close-btn-bottom:hover { background: #ff4d4d; color: #fff; }' +
+
+        /* 모바일 대응 */
+        '@media (max-width: 768px) {' +
+        '  #topArea { padding: 20px; }' +
+        '  #prev, #next { display: none; }' +
+        '  #close-x { right: 0; top: -45px; }' +
+        '  #mainImg { max-height: 65vh; }' +
         '}' +
         '</style></head><body>' +
-        '<div id="close-x" onclick="window.close()">×</div>' +
-        '<div id="imgContainer">' +
-        '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>' +
-        '<img id="mainImg" src="' + allImages[index] + '">' +
-        '<div id="next" class="nav-btn" onclick="move(1)">❯</div>' +
+        '<div id="topArea">' +
+          '<div id="imgWrapper">' +
+            '<div id="close-x" onclick="window.close()">×</div>' +
+            '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>' +
+            '<img id="mainImg" src="' + allImages[index] + '">' +
+            '<div id="next" class="nav-btn" onclick="move(1)">❯</div>' +
+          '</div>' +
         '</div>' +
-        '<div class="bottom-controls">' +
-        '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
-        '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
+        '<div id="bottomArea">' +
+          '<div class="counter" id="countDisplay">' + (index + 1) + ' / ' + allImages.length + '</div>' +
+          '<button class="close-btn-bottom" onclick="window.close()">CLOSE WINDOW</button>' +
         '</div>' +
         '<script>' +
         'let idx = ' + index + ';' +
