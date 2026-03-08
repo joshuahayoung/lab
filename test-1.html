@@ -403,7 +403,7 @@
  
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div id="latest-tournament-root"></div>
+  <div id="latest-upcoming-ongoing-tournament-root"></div>
 
   <style>
     .jt-wrap {
@@ -428,10 +428,14 @@
       align-items: center;
       gap: 12px;
       margin-bottom: 25px;
-      border-left: 5px solid #F15A22;
       padding-left: 20px;
       flex-wrap: wrap;
     }
+
+    .jt-header-row.upcoming { border-left: 5px solid #1e3a8a; }
+    .jt-header-row.ongoing { border-left: 5px solid #22c55e; }
+    .jt-header-row.final { border-left: 5px solid #e74c3c; }
+    .jt-header-row.cancelled { border-left: 5px solid #7f1d1d; }
 
     .jt-header-row h3 {
       color: #0C2340;
@@ -872,7 +876,7 @@
     const eventData = {
       eventNo: "7th Event",
       eventLabel: "Golden Nugget Invitational",
-      status: "upcoming", // upcoming | ongoing | final | cancelled
+      status: "final", // upcoming | ongoing | final | cancelled
 
       title: "Golden Nugget Invitational (LAMAR)",
       date: "Mar 2-3",
@@ -885,45 +889,45 @@
 
       mainLink: {
         url: "https://scoreboard.clippd.com/tournaments/239284/scoring/team",
-        label: "LIVE LEADERBOARD"
+        label: "FINAL RESULTS"
       },
 
       summary: {
-        total: "—",
-        par: "—",
-        pos: "—"
+        total: "203",
+        par: "-13",
+        pos: "3"
       },
 
       rounds: [
         {
           round: "Round 1",
           date: "Mar 3, 2026",
-          score: "TBD",
-          par: "TBD",
-          status: "SCHEDULED",
-          pos: "—",
-          pairingImg: "",
-          scorecardImg: ""
+          score: "64",
+          par: "-8",
+          status: "FINISH",
+          pos: "1",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-paring-1.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Scorecard.jpg"
         },
         {
           round: "Round 2",
           date: "Mar 3, 2026",
-          score: "—",
-          par: "—",
-          status: "SCHEDULED",
-          pos: "—",
-          pairingImg: "",
-          scorecardImg: ""
+          score: "70",
+          par: "-2",
+          status: "FINISH",
+          pos: "3",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-paring-2.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Scorecard.jpg"
         },
         {
           round: "Round 3",
           date: "Mar 4, 2026",
-          score: "—",
-          par: "—",
-          status: "SCHEDULED",
-          pos: "—",
-          pairingImg: "",
-          scorecardImg: ""
+          score: "69",
+          par: "-3",
+          status: "FINISH",
+          pos: "3",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-pairing-3.jpeg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Scorecard.jpg"
         }
       ]
     };
@@ -1121,7 +1125,7 @@
       return `
         <div class="jt-wrap">
           <div class="jt-header-top">
-            <div class="jt-header-row">
+            <div class="jt-header-row ${data.status}">
               <h3>LATEST TOURNAMENT RESULTS</h3>
               <span>${data.eventNo}: ${data.eventLabel}</span>
             </div>
@@ -1192,7 +1196,7 @@
       `;
     }
 
-    document.getElementById("latest-tournament-root").innerHTML = renderEventCard(eventData);
+    document.getElementById("latest-upcoming-ongoing-tournament-root").innerHTML = renderEventCard(eventData);
   </script>
 </div>
   
