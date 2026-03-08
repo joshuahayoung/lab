@@ -533,6 +533,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       font-weight: 800;
       text-align: center;
       white-space: nowrap;
+      letter-spacing: 0.3px;
     }
 
     .iac-stat-values {
@@ -631,36 +632,44 @@ gtag('config', 'G-H1JW8YBDZ8');
       .iac-stats {
         width: 100%;
         margin-left: 0;
-        display: grid;
-        grid-template-columns: 1fr auto auto;
-        align-items: end;
-        gap: 12px;
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
         padding-top: 14px;
         border-top: 1px solid #f1f5f9;
+        flex-wrap: nowrap;
       }
 
       .iac-round-block {
         border-right: none;
         padding-right: 0;
         min-width: 0;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        flex: 1;
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
       }
 
       .iac-stat-col {
-        align-items: flex-start;
+        flex: 1;
         min-width: 0;
+        align-items: flex-start;
+        justify-content: center;
+        background: #f8fafc;
+        border: 1px solid #e9eef5;
+        border-radius: 10px;
+        padding: 10px 10px 9px;
+        gap: 5px;
       }
 
       .iac-stat-label {
-        font-size: 9px;
+        font-size: 10px;
         text-align: left;
+        line-height: 1.1;
       }
 
       .iac-stat-values {
-        gap: 8px;
+        gap: 7px;
         justify-content: flex-start;
         flex-wrap: nowrap;
         overflow: hidden;
@@ -670,27 +679,33 @@ gtag('config', 'G-H1JW8YBDZ8');
       .iac-value-even,
       .iac-value-over,
       .iac-value-neutral {
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1;
       }
 
       .iac-pos-box {
+        min-width: 58px;
         align-items: center;
-        justify-self: center;
-        min-width: 40px;
+        justify-content: center;
+        background: #f8fafc;
+        border: 1px solid #e9eef5;
+        border-radius: 10px;
+        padding: 10px 8px 9px;
+        gap: 4px;
       }
 
       .iac-pos-label {
-        font-size: 9px;
+        font-size: 10px;
       }
 
       .iac-pos-value {
-        font-size: 17px;
+        font-size: 18px;
       }
 
       .iac-link {
-        justify-self: end;
-        padding: 0;
-        margin-left: 0;
+        align-self: center;
+        justify-content: center;
+        padding: 0 2px;
       }
 
       .iac-header-title {
@@ -811,7 +826,7 @@ gtag('config', 'G-H1JW8YBDZ8');
                   </div>
 
                   <div class="iac-stat-col">
-                    <div class="iac-stat-label">PAR / TOTAL</div>
+                    <div class="iac-stat-label">PAR (TOTAL)</div>
                     <div class="iac-stat-values">
                       ${iacRenderParTotal(data.totalPar, data.total)}
                     </div>
