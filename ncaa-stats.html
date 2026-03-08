@@ -2164,148 +2164,202 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </div>
   </div>
 
-    <script>
-/* =========================
-   Thumbnail carousel logic
-   ========================= */
+
+<script>
+
+/* ================================
+   Thumbnail carousel
+================================ */
 
 const getImages = () =>
-  Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
+Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
 
 let currentThumbPage = 0;
 
-function scrollThumbs(dir) {
-  const scrollElement = document.getElementById('thumbScroll');
-  const pages = document.querySelectorAll('.thumb-page');
-  if (!scrollElement || pages.length === 0) return;
-  currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
-  scrollElement.style.transform = "translateX(-" + (currentThumbPage * 100) + "%)";
+function scrollThumbs(dir){
+const scrollElement = document.getElementById('thumbScroll');
+const pages = document.querySelectorAll('.thumb-page');
+if(!scrollElement || pages.length===0) return;
+
+currentThumbPage=(currentThumbPage+dir+pages.length)%pages.length;
+scrollElement.style.transform="translateX(-"+(currentThumbPage*100)+"%)";
 }
 
-const wrapper = document.getElementById('thumbWrapper');
-let touchStartX = 0;
-let touchEndX = 0;
+const wrapper=document.getElementById('thumbWrapper');
 
-if (wrapper) {
-  wrapper.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
+let touchStartX=0;
+let touchEndX=0;
 
-  wrapper.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-}
+if(wrapper){
 
-function handleSwipe() {
-  const swipeThreshold = 50;
-  if (touchStartX - touchEndX > swipeThreshold) {
-    scrollThumbs(1);
-  } else if (touchEndX - touchStartX > swipeThreshold) {
-    scrollThumbs(-1);
-  }
-}
+wrapper.addEventListener('touchstart',(e)=>{
+touchStartX=e.changedTouches[0].screenX;
+},{passive:true});
 
-/* =========================
-   Overlay Gallery (Lightbox)
-   ========================= */
-
-let galleryImages = [];
-let galleryIndex = 0;
-
-let overlay, overlayImg, overlayCounter, btnPrev, btnNext, btnClose;
-
-function createOverlay() {
-
-  overlay = document.createElement("div");
-  overlay.id = "galleryOverlay";
-
-  overlay.innerHTML = `
-    <div id="galleryClose">✕</div>
-    <div id="galleryPrev">&#10094;</div>
-    <img id="galleryImage">
-    <div id="galleryNext">&#10095;</div>
-    <div id="galleryCounter"></div>
-  `;
-
-  document.body.appendChild(overlay);
-
-  overlayImg = document.getElementById("galleryImage");
-  overlayCounter = document.getElementById("galleryCounter");
-  btnPrev = document.getElementById("galleryPrev");
-  btnNext = document.getElementById("galleryNext");
-  btnClose = document.getElementById("galleryClose");
-
-  btnPrev.onclick = prevImage;
-  btnNext.onclick = nextImage;
-  btnClose.onclick = closeGallery;
-
-  overlay.addEventListener("click", (e)=>{
-    if(e.target === overlay) closeGallery();
-  });
-
-  window.addEventListener("keydown", (e)=>{
-    if(overlay.style.display !== "flex") return;
-    if(e.key==="ArrowRight") nextImage();
-    if(e.key==="ArrowLeft") prevImage();
-    if(e.key==="Escape") closeGallery();
-  });
+wrapper.addEventListener('touchend',(e)=>{
+touchEndX=e.changedTouches[0].screenX;
+handleSwipe();
+},{passive:true});
 
 }
 
-/* =========================
-   Open Gallery
-   ========================= */
+function handleSwipe(){
+const swipeThreshold=50;
 
-function popupGallery(element) {
+if(touchStartX-touchEndX>swipeThreshold) scrollThumbs(1);
+else if(touchEndX-touchStartX>swipeThreshold) scrollThumbs(-1);
+}
 
-  if(!overlay) createOverlay();
+/* ================================
+   Overlay Gallery
+================================ */
 
-  galleryImages = getImages();
-  galleryIndex = galleryImages.indexOf(element.src);
-  if(galleryIndex < 0) galleryIndex = 0;
+let galleryImages=[];
+let galleryIndex=0;
 
-  overlay.style.display = "flex";
+let overlay;
+let overlayImg;
+let overlayCounter;
 
-  updateImage();
+let btnPrev;
+let btnNext;
+let btnClose;
+
+let swipeStartX=0;
+let swipeEndX=0;
+
+function createOverlay(){
+
+overlay=document.createElement("div");
+overlay.id="galleryOverlay";
+
+overlay.innerHTML=`
+<div id="galleryClose">✕</div>
+<div id="galleryPrev">&#10094;</div>
+<img id="galleryImage">
+<div id="galleryNext">&#10095;</div>
+<div id="galleryCounter"></div>
+`;
+
+document.body.appendChild(overlay);
+
+overlayImg=document.getElementById("galleryImage");
+overlayCounter=document.getElementById("galleryCounter");
+
+btnPrev=document.getElementById("galleryPrev");
+btnNext=document.getElementById("galleryNext");
+btnClose=document.getElementById("galleryClose");
+
+btnPrev.onclick=prevImage;
+btnNext.onclick=nextImage;
+btnClose.onclick=closeGallery;
+
+overlay.addEventListener("click",(e)=>{
+if(e.target===overlay) closeGallery();
+});
+
+/* 모바일 스와이프 */
+
+overlay.addEventListener("touchstart",(e)=>{
+swipeStartX=e.changedTouches[0].screenX;
+},{passive:true});
+
+overlay.addEventListener("touchend",(e)=>{
+swipeEndX=e.changedTouches[0].screenX;
+
+const diff=swipeStartX-swipeEndX;
+
+if(Math.abs(diff)>50){
+
+if(diff>0) nextImage();
+else prevImage();
 
 }
 
-/* =========================
+},{passive:true});
+
+/* 키보드 */
+
+window.addEventListener("keydown",(e)=>{
+
+if(overlay.style.display!=="flex") return;
+
+if(e.key==="ArrowRight") nextImage();
+if(e.key==="ArrowLeft") prevImage();
+if(e.key==="Escape") closeGallery();
+
+});
+
+}
+
+/* ================================
+   Open gallery
+================================ */
+
+function popupGallery(element){
+
+if(!overlay) createOverlay();
+
+galleryImages=getImages();
+
+galleryIndex=galleryImages.indexOf(element.src);
+if(galleryIndex<0) galleryIndex=0;
+
+overlay.style.display="flex";
+
+updateImage();
+
+}
+
+/* ================================
    Navigation
-   ========================= */
+================================ */
 
-function updateImage() {
-  overlayImg.style.opacity = 0;
+function updateImage(){
 
-  setTimeout(()=>{
-    overlayImg.src = galleryImages[galleryIndex];
-    overlayCounter.textContent =
-      (galleryIndex + 1) + " / " + galleryImages.length;
-    overlayImg.style.opacity = 1;
-  },120);
+overlayImg.style.opacity=0;
+
+setTimeout(()=>{
+
+overlayImg.src=galleryImages[galleryIndex];
+
+overlayCounter.textContent=
+(galleryIndex+1)+" / "+galleryImages.length;
+
+overlayImg.style.opacity=1;
+
+},120);
+
 }
 
-function nextImage() {
-  galleryIndex = (galleryIndex + 1) % galleryImages.length;
-  updateImage();
+function nextImage(){
+
+galleryIndex=(galleryIndex+1)%galleryImages.length;
+updateImage();
+
 }
 
-function prevImage() {
-  galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
-  updateImage();
+function prevImage(){
+
+galleryIndex=(galleryIndex-1+galleryImages.length)%galleryImages.length;
+updateImage();
+
 }
 
-function closeGallery() {
-  overlay.style.display = "none";
+function closeGallery(){
+
+overlay.style.display="none";
+
 }
 
-/* =========================
-   Overlay CSS Injection
-   ========================= */
+/* ================================
+   CSS Injection
+================================ */
 
-const style = document.createElement("style");
-style.innerHTML = `
+const style=document.createElement("style");
+
+style.innerHTML=`
+
 #galleryOverlay{
 position:fixed;
 top:0;
@@ -2338,7 +2392,9 @@ cursor:pointer;
 opacity:.8;
 }
 
-#galleryClose:hover{opacity:1;}
+#galleryClose:hover{
+opacity:1;
+}
 
 #galleryPrev,
 #galleryNext{
@@ -2349,11 +2405,13 @@ font-size:60px;
 color:white;
 cursor:pointer;
 padding:20px;
-opacity:.6;
+opacity:.7;
 }
 
 #galleryPrev:hover,
-#galleryNext:hover{opacity:1;}
+#galleryNext:hover{
+opacity:1;
+}
 
 #galleryPrev{left:20px;}
 #galleryNext{right:20px;}
@@ -2368,11 +2426,23 @@ font-size:14px;
 letter-spacing:2px;
 }
 
+/* 모바일 */
+
 @media(max-width:768px){
-#galleryPrev,#galleryNext{display:none;}
-#galleryOverlay img{max-height:80vh;}
+
+#galleryOverlay img{
+max-height:85vh;
 }
+
+#galleryPrev,
+#galleryNext{
+font-size:48px;
+}
+
+}
+
 `;
+
 document.head.appendChild(style);
 
 </script>
