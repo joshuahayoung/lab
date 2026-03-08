@@ -2165,219 +2165,320 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   </div>
 
 <script>
-
 const getImages = () => Array.from(document.querySelectorAll('.thumb-img')).map(img => img.src);
 let currentThumbPage = 0;
 
-function scrollThumbs(dir){
-const scrollElement = document.getElementById('thumbScroll');
-const pages = document.querySelectorAll('.thumb-page');
-currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
-scrollElement.style.transform = "translateX(-" + (currentThumbPage * 100) + "%)";
+function scrollThumbs(dir) {
+  const scrollElement = document.getElementById('thumbScroll');
+  const pages = document.querySelectorAll('.thumb-page');
+  currentThumbPage = (currentThumbPage + dir + pages.length) % pages.length;
+  scrollElement.style.transform = "translateX(-" + (currentThumbPage * 100) + "%)";
 }
 
 const wrapper = document.getElementById('thumbWrapper');
 let touchStartX = 0;
 let touchEndX = 0;
 
-wrapper.addEventListener('touchstart',(e)=>{
-touchStartX = e.changedTouches[0].screenX;
-},{ passive:true });
+if (wrapper) {
+  wrapper.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
 
-wrapper.addEventListener('touchend',(e)=>{
-touchEndX = e.changedTouches[0].screenX;
-handleSwipe();
-},{ passive:true });
-
-function handleSwipe(){
-const swipeThreshold = 50;
-if(touchStartX - touchEndX > swipeThreshold){ scrollThumbs(1); }
-else if(touchEndX - touchStartX > swipeThreshold){ scrollThumbs(-1); }
+  wrapper.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
 }
 
-function popupGallery(element){
+function handleSwipe() {
+  const swipeThreshold = 50;
+  if (touchStartX - touchEndX > swipeThreshold) {
+    scrollThumbs(1);
+  } else if (touchEndX - touchStartX > swipeThreshold) {
+    scrollThumbs(-1);
+  }
+}
 
-const allImages = getImages();
-const index = allImages.indexOf(element.src);
+function popupGallery(element) {
+  const allImages = getImages();
+  const index = allImages.indexOf(element.src);
 
-const w = Math.min(window.innerWidth * 0.9, 1500);
-const h = Math.min(window.innerHeight * 0.9, 1000);
+  const w = Math.min(Math.floor(window.innerWidth * 0.96), 1600);
+  const h = Math.min(Math.floor(window.innerHeight * 0.94), 1100);
+  const left = Math.max(0, Math.floor((screen.width - w) / 2));
+  const top = Math.max(0, Math.floor((screen.height - h) / 2));
 
-const left = (screen.width / 2) - (w / 2);
-const top = (screen.height / 2) - (h / 2);
+  const popup = window.open(
+    "",
+    "JoshuaGallery",
+    "width=" + w + ",height=" + h + ",top=" + top + ",left=" + left + ",resizable=yes,scrollbars=no"
+  );
 
-const popup = window.open("", "JoshuaGallery",
-"width="+w+",height="+h+",top="+top+",left="+left+",resizable=yes");
+  if (!popup) return;
 
-const content = `
+  const content = `
+<!doctype html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>Joshua Hong - Gallery</title>
-
 <style>
+  * { box-sizing: border-box; }
 
-body{
-margin:0;
-background:#000;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-height:100vh;
-font-family:sans-serif;
-overflow:hidden;
-}
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+  }
 
-#imgContainer{
-display:flex;
-align-items:center;
-justify-content:center;
-width:100%;
-height:100%;
-}
+  body {
+    display: grid;
+    grid-template-rows: 56px 1fr 72px;
+  }
 
-#mainImg{
-max-width:96vw;
-max-height:92vh;
-object-fit:contain;
-border-radius:8px;
-box-shadow:0 0 40px rgba(255,255,255,0.1);
-}
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 18px;
+  }
 
-.nav-btn{
-position:fixed;
-top:50%;
-transform:translateY(-50%);
-font-size:70px;
-color:rgba(255,255,255,0.5);
-cursor:pointer;
-user-select:none;
-z-index:10;
-transition:0.25s;
-padding:10px 20px;
-}
+  #close-x {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.9;
+  }
 
-.nav-btn:hover{
-color:#fff;
-}
+  #close-x:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
 
-#prev{ left:25px; }
-#next{ right:25px; }
+  .viewer {
+    position: relative;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 88px;
+  }
 
-#close-x{
-position:fixed;
-top:18px;
-right:20px;
-font-size:28px;
-cursor:pointer;
-color:#fff;
-opacity:0.7;
-z-index:20;
-}
+  #imgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-#close-x:hover{
-opacity:1;
-}
+  #mainImg {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 36px rgba(255,255,255,0.10);
+    transition: opacity 0.15s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 
-.bottom-controls{
-position:fixed;
-bottom:20px;
-left:0;
-right:0;
-display:flex;
-justify-content:center;
-}
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.88);
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
 
-.close-btn-bottom{
-background:#fff;
-color:#000;
-border:none;
-padding:10px 28px;
-border-radius:30px;
-font-weight:600;
-font-size:14px;
-cursor:pointer;
-}
+  .nav-btn:hover {
+    background: rgba(255,255,255,0.16);
+    color: #fff;
+    transform: translateY(-50%) scale(1.03);
+  }
 
-.counter{
-position:fixed;
-bottom:20px;
-left:25px;
-color:#aaa;
-font-size:13px;
-}
+  #prev { left: 20px; }
+  #next { right: 20px; }
 
-@media (max-width:768px){
+  .bottombar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 20px 16px;
+  }
 
-.nav-btn{ display:none; }
+  .counter {
+    font-size: 14px;
+    color: rgba(255,255,255,0.70);
+    letter-spacing: 0.5px;
+    min-width: 70px;
+  }
 
-#mainImg{
-max-height:70vh;
-}
+  .bottom-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 
-}
+  .close-btn-bottom {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
 
+  .close-btn-bottom:hover {
+    transform: scale(1.02);
+    background: #f2f2f2;
+  }
+
+  .spacer {
+    min-width: 70px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      grid-template-rows: 52px 1fr 64px;
+    }
+
+    .viewer {
+      padding: 8px 14px;
+    }
+
+    .nav-btn {
+      display: none;
+    }
+
+    #close-x {
+      width: 32px;
+      height: 32px;
+      font-size: 22px;
+    }
+
+    .bottombar {
+      padding: 0 14px 12px;
+    }
+
+    .counter {
+      font-size: 13px;
+      min-width: 56px;
+    }
+
+    .close-btn-bottom {
+      padding: 9px 18px;
+      font-size: 13px;
+    }
+
+    .spacer {
+      min-width: 56px;
+    }
+  }
 </style>
 </head>
-
 <body>
 
-<div id="close-x" onclick="window.close()">✕</div>
+  <div class="topbar">
+    <div id="close-x" onclick="window.close()" aria-label="Close">×</div>
+  </div>
 
-<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>
+  <div class="viewer">
+    <button id="prev" class="nav-btn" onclick="move(-1)" aria-label="Previous">&#10094;</button>
 
-<div id="imgContainer">
-<img id="mainImg" src="${allImages[index]}">
-</div>
+    <div id="imgContainer">
+      <img id="mainImg" src="${allImages[index]}" alt="Gallery image">
+    </div>
 
-<div id="next" class="nav-btn" onclick="move(1)">❯</div>
+    <button id="next" class="nav-btn" onclick="move(1)" aria-label="Next">&#10095;</button>
+  </div>
 
-<div class="counter" id="countDisplay">${index+1} / ${allImages.length}</div>
-
-<div class="bottom-controls">
-<button class="close-btn-bottom" onclick="window.close()">Close</button>
-</div>
+  <div class="bottombar">
+    <div class="counter" id="countDisplay">${index + 1} / ${allImages.length}</div>
+    <div class="bottom-center">
+      <button class="close-btn-bottom" onclick="window.close()">Close</button>
+    </div>
+    <div class="spacer"></div>
+  </div>
 
 <script>
+  let idx = ${index};
+  const imgArray = ${JSON.stringify(allImages)};
+  let sX = 0;
+  let eX = 0;
 
-let idx=${index};
-const imgArray=${JSON.stringify(allImages)};
+  const container = document.getElementById("imgContainer");
+  const img = document.getElementById("mainImg");
+  const countDisplay = document.getElementById("countDisplay");
 
-function move(step){
+  container.addEventListener("touchstart", (e) => {
+    sX = e.changedTouches[0].screenX;
+  }, { passive: true });
 
-idx=(idx+step+imgArray.length)%imgArray.length;
+  container.addEventListener("touchend", (e) => {
+    eX = e.changedTouches[0].screenX;
+    const dist = sX - eX;
+    if (Math.abs(dist) > 50) {
+      move(dist > 0 ? 1 : -1);
+    }
+  }, { passive: true });
 
-const img=document.getElementById("mainImg");
+  function move(step) {
+    idx = (idx + step + imgArray.length) % imgArray.length;
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = imgArray[idx];
+      countDisplay.textContent = (idx + 1) + " / " + imgArray.length;
+      img.style.opacity = 1;
+    }, 120);
+  }
 
-img.style.opacity=0;
-
-setTimeout(()=>{
-img.src=imgArray[idx];
-document.getElementById("countDisplay").innerText=(idx+1)+" / "+imgArray.length;
-img.style.opacity=1;
-},120);
-
-}
-
-window.addEventListener("keydown",(e)=>{
-
-if(e.key==="ArrowLeft") move(-1);
-if(e.key==="ArrowRight") move(1);
-if(e.key==="Escape") window.close();
-
-});
-
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") move(-1);
+    if (e.key === "ArrowRight") move(1);
+    if (e.key === "Escape") window.close();
+  });
 <\/script>
 
 </body>
 </html>
 `;
 
-popup.document.write(content);
-popup.document.close();
-
+  popup.document.open();
+  popup.document.write(content);
+  popup.document.close();
 }
-
 </script>
   
 
