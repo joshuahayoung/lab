@@ -532,6 +532,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       font-size: 10px;
       font-weight: 800;
       text-align: center;
+      white-space: nowrap;
     }
 
     .iac-stat-values {
@@ -540,6 +541,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      white-space: nowrap;
     }
 
     .iac-value-under {
@@ -572,6 +574,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       align-items: center;
       gap: 2px;
       min-width: 45px;
+      white-space: nowrap;
     }
 
     .iac-pos-label {
@@ -594,6 +597,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       align-items: center;
       justify-content: center;
       padding: 5px;
+      flex-shrink: 0;
     }
 
     .iac-link svg {
@@ -610,7 +614,8 @@ gtag('config', 'G-H1JW8YBDZ8');
       .iac-card-inner {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px 15px;
+        padding: 18px 14px;
+        gap: 14px;
       }
 
       .iac-info {
@@ -626,27 +631,74 @@ gtag('config', 'G-H1JW8YBDZ8');
       .iac-stats {
         width: 100%;
         margin-left: 0;
-        justify-content: space-between;
-        gap: 16px;
-        padding-top: 16px;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: end;
+        gap: 12px;
+        padding-top: 14px;
         border-top: 1px solid #f1f5f9;
       }
 
       .iac-round-block {
         border-right: none;
         padding-right: 0;
+        min-width: 0;
         width: 100%;
-        justify-content: space-between;
-        gap: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .iac-stat-col {
+        align-items: flex-start;
+        min-width: 0;
+      }
+
+      .iac-stat-label {
+        font-size: 9px;
+        text-align: left;
+      }
+
+      .iac-stat-values {
+        gap: 8px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      .iac-value-under,
+      .iac-value-even,
+      .iac-value-over,
+      .iac-value-neutral {
+        font-size: 15px;
+      }
+
+      .iac-pos-box {
+        align-items: center;
+        justify-self: center;
+        min-width: 40px;
+      }
+
+      .iac-pos-label {
+        font-size: 9px;
+      }
+
+      .iac-pos-value {
+        font-size: 17px;
       }
 
       .iac-link {
+        justify-self: end;
         padding: 0;
-        margin-left: auto;
+        margin-left: 0;
       }
 
       .iac-header-title {
         font-size: 17px;
+      }
+
+      .iac-updated {
+        margin-left: 0;
       }
     }
   </style>
@@ -659,7 +711,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       date: "Mar 2-3",
       location: "Lake Charles, LA / The CC At The Golden Nugget",
       rounds: ["64", "70", "69"],
-      roundPars: ["-8", "-2", "-3"], 
+      roundPars: ["-8", "-2", "-3"],
       total: "203",
       totalPar: "-13",
       pos: "3",
