@@ -693,94 +693,242 @@
 </div>
 
 <script>
-    const jrImages = [
-      "./images/junior-year/1-joshua-hong-Club-Record-CCQ-62-Sep-2024.jpeg",
-      "./images/junior-year/2-Joshua-Hong-Copa-Centro-Champion-Sep-2024.jpeg",
-      "./images/junior-year/3-joshua-hong-Copa-Centro-Win-Maria-Alcocer-2024.jpeg",
-      "./images/junior-year/4-joshua-hong-San-Gil-Zona-Centro-Win-2024.jpeg",
-      "./images/junior-year/5-Joshua-Hong-Copa-Pacifico-Win-2024.jpeg",
-      "./images/junior-year/6-joshua-hong-Club-Guadalajara-Anual-2024.jpeg",
-      "./images/junior-year/7-Joshua-Hong-UTSA-Sigend-Nov-2024.jpeg",
-      "./images/junior-year/8-joshua-hong-Tailhade-Argentina-2024.jpeg",
-      "./images/junior-year/9-Joshua-Hong-Copa-Sur-Win-2025.jpeg",
-      "./images/junior-year/10-Joshua-Hong-Junior-Toyota-Golf-Worldcup-Qualify-2025.jpeg",
-      "./images/junior-year/11-Joshua-Hong-Junior-America-Cup-Inauguration-2025.jpeg",
-      "./images/junior-year/12-Joshua-Hong-Junior-America-Cup-Team-Green-2025.jpeg",
-      "./images/junior-year/13-Joshua-Hong-Junior-America-Cup-with-Andres-Manllo-2025.jpeg",
-      "./images/junior-year/14-Joshua-Hong-Zona-Gado-Interzona-2023.jpeg",
-      "./images/junior-year/15-joshua-hong-Interzona-2025.jpeg",
-      "./images/junior-year/16-Joshua-Hong-Campeonato-Parejas-Win-Leonardo-Lavalle-2025.jpeg",
-      "./images/junior-year/17-Joshua-Hong-Toyota-Golf-Worldcup-Qualify-Win-2025.jpeg",
-      "./images/junior-year/18-Joshua-Hong-City-Qro-Megazine-Interview.jpeg",
-      "./images/junior-year/19-joshua-hong-Billy-Dettlaff-Sportsmanship-Award-The-Jr-Players-2024.jpeg",
-      "./images/junior-year/20-joshua-hong-Nacional-Conade-Olympic-Silver-Medal-2024.jpeg",
-      "./images/junior-year/21-Joshua-Hong-NCJGC-Bumgadner-Memorial-Jr-Win-2023.jpeg",
-      "./images/junior-year/22-Joshua-Hong-Zona-Gado-Interzona-2024.jpeg",
-      "./images/junior-year/23-Joshua-Hong-Selection-Mexico-Gabriel-Derbez-Lucca-Buenlostro-2025.jpeg",
-      "./images/junior-year/24-Joshua-Hong-Campeonato-Pareja-Zona-Centro-Leonardo-Lavalle-2025.jpeg"
-    ];
 
-    function popupJrGallery(index) {
-      const w = window.innerWidth > 1100 ? 1100 : window.innerWidth;
-      const h = window.innerHeight > 950 ? 950 : window.innerHeight;
-      const left = (screen.width / 2) - (w / 2);
-      const top = (screen.height / 2) - (h / 2);
-      const popup = window.open("", "JoshuaJrGallery", "width="+w+",height="+h+",top="+top+",left="+left+",resizable=yes");
-      
-      let htmlContent = '<html><head><title>Joshua Hong Junior Gallery</title>';
-      htmlContent += '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-      htmlContent += '<style>';
-      htmlContent += 'body { margin: 0; background: #000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 0; box-sizing: border-box; }';
-      htmlContent += '.nav-btn { position: fixed; top: 50%; transform: translateY(-50%); font-size: 60px; color: rgba(255,255,255,0.2); cursor: pointer; user-select: none; padding: 30px; transition: 0.3s; z-index: 10; font-weight: 100; text-decoration: none; }';
-      htmlContent += '.nav-btn:hover { color: white; background: rgba(255,255,255,0.05); } #prev { left: 0; } #next { right: 0; }';
-      htmlContent += '#wrapper { position: relative; display: inline-block; line-height: 0; }';
-      htmlContent += '#close-x { position: absolute; top: -45px; right: -45px; font-size: 32px; cursor: pointer; opacity: 0.6; z-index: 20; transition: 0.3s; line-height: 1; font-weight: 200; padding: 10px; }';
-      htmlContent += '#close-x:hover { opacity: 1; color: #ff4d4d; transform: scale(1.1); }';
-      htmlContent += '#imgContainer { width: 100%; display: flex; justify-content: center; align-items: center; flex: 1; position: relative; padding: 32px; }';
-      htmlContent += '#mainImg { max-width: 90vw; max-height: 80vh; object-fit: contain; border-radius: 2px; transition: opacity 0.2s; box-shadow: 0 0 40px rgba(0,0,0,0.8); user-select: none; -webkit-user-drag: none; }';
-      htmlContent += '.footer-info { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; opacity: 0.5; pointer-events: none; }';
-      htmlContent += '.counter { font-size: 12px; letter-spacing: 2px; font-weight: 400; }';
-      htmlContent += '@media (max-width: 768px) { #imgContainer { padding: 20px; } #close-x { top: -40px; right: -10px; font-size: 36px; opacity: 0.8; } .nav-btn { font-size: 40px; padding: 15px; } #mainImg { max-height: 75vh; max-width: 95vw; } }';
-      htmlContent += '</style></head><body>';
-      htmlContent += '<div id="imgContainer">';
-      htmlContent += '  <div id="wrapper">';
-      htmlContent += '    <div id="close-x" onclick="window.close()">×</div>';
-      htmlContent += '    <img id="mainImg" src="' + jrImages[index] + '">';
-      htmlContent += '  </div>';
-      htmlContent += '</div>';
-      htmlContent += '<div id="prev" class="nav-btn" onclick="move(-1)">❮</div>';
-      htmlContent += '<div id="next" class="nav-btn" onclick="move(1)">❯</div>';
-      htmlContent += '<div class="footer-info">';
-      htmlContent += '  <div class="counter" id="countDisplay">' + (index + 1) + ' / ' + jrImages.length + '</div>';
-      htmlContent += '</div>';
-      htmlContent += '<script>';
-      htmlContent += 'let idx = ' + index + ';';
-      htmlContent += 'const imgArray = ' + JSON.stringify(jrImages) + ';';
-      htmlContent += 'let sX = 0; let eX = 0;';
-      htmlContent += 'const container = document.getElementById("imgContainer");';
-      htmlContent += 'container.addEventListener("touchstart", (e) => { sX = e.changedTouches[0].screenX; }, {passive: true});';
-      htmlContent += 'container.addEventListener("touchend", (e) => { eX = e.changedTouches[0].screenX; handleSwipe(); }, {passive: true});';
-      htmlContent += 'function handleSwipe() { if (sX - eX > 50) move(1); else if (eX - sX > 50) move(-1); }';
-      htmlContent += 'function move(step) {';
-      htmlContent += '  idx = (idx + step + imgArray.length) % imgArray.length;';
-      htmlContent += '  const img = document.getElementById("mainImg");';
-      htmlContent += '  img.style.opacity = 0;';
-      htmlContent += '  setTimeout(() => {';
-      htmlContent += '    img.src = imgArray[idx];';
-      htmlContent += '    document.getElementById("countDisplay").innerText = (idx + 1) + " / " + imgArray.length;';
-      htmlContent += '    img.style.opacity = 1;';
-      htmlContent += '  }, 150);';
-      htmlContent += '}';
-      htmlContent += 'window.addEventListener("keydown", (e) => {';
-      htmlContent += '  if (e.key === "ArrowLeft") move(-1);';
-      htmlContent += '  if (e.key === "ArrowRight") move(1);';
-      htmlContent += '  if (e.key === "Escape") window.close();';
-      htmlContent += '});';
-      htmlContent += '<\/script></body></html>';
+/* ================================
+   Junior Gallery Images (unchanged)
+================================ */
 
-      popup.document.write(htmlContent);
-      popup.document.close();
-    }
+const jrImages = [
+"./images/junior-year/1-joshua-hong-Club-Record-CCQ-62-Sep-2024.jpeg",
+"./images/junior-year/2-Joshua-Hong-Copa-Centro-Champion-Sep-2024.jpeg",
+"./images/junior-year/3-joshua-hong-Copa-Centro-Win-Maria-Alcocer-2024.jpeg",
+"./images/junior-year/4-joshua-hong-San-Gil-Zona-Centro-Win-2024.jpeg",
+"./images/junior-year/5-Joshua-Hong-Copa-Pacifico-Win-2024.jpeg",
+"./images/junior-year/6-joshua-hong-Club-Guadalajara-Anual-2024.jpeg",
+"./images/junior-year/7-Joshua-Hong-UTSA-Sigend-Nov-2024.jpeg",
+"./images/junior-year/8-joshua-hong-Tailhade-Argentina-2024.jpeg",
+"./images/junior-year/9-Joshua-Hong-Copa-Sur-Win-2025.jpeg",
+"./images/junior-year/10-Joshua-Hong-Junior-Toyota-Golf-Worldcup-Qualify-2025.jpeg",
+"./images/junior-year/11-Joshua-Hong-Junior-America-Cup-Inauguration-2025.jpeg",
+"./images/junior-year/12-Joshua-Hong-Junior-America-Cup-Team-Green-2025.jpeg",
+"./images/junior-year/13-Joshua-Hong-Junior-America-Cup-with-Andres-Manllo-2025.jpeg",
+"./images/junior-year/14-Joshua-Hong-Zona-Gado-Interzona-2023.jpeg",
+"./images/junior-year/15-joshua-hong-Interzona-2025.jpeg",
+"./images/junior-year/16-Joshua-Hong-Campeonato-Parejas-Win-Leonardo-Lavalle-2025.jpeg",
+"./images/junior-year/17-Joshua-Hong-Toyota-Golf-Worldcup-Qualify-Win-2025.jpeg",
+"./images/junior-year/18-Joshua-Hong-City-Qro-Megazine-Interview.jpeg",
+"./images/junior-year/19-joshua-hong-Billy-Dettlaff-Sportsmanship-Award-The-Jr-Players-2024.jpeg",
+"./images/junior-year/20-joshua-hong-Nacional-Conade-Olympic-Silver-Medal-2024.jpeg",
+"./images/junior-year/21-Joshua-Hong-NCJGC-Bumgadner-Memorial-Jr-Win-2023.jpeg",
+"./images/junior-year/22-Joshua-Hong-Zona-Gado-Interzona-2024.jpeg",
+"./images/junior-year/23-Joshua-Hong-Selection-Mexico-Gabriel-Derbez-Lucca-Buenlostro-2025.jpeg",
+"./images/junior-year/24-Joshua-Hong-Campeonato-Pareja-Zona-Centro-Leonardo-Lavalle-2025.jpeg"
+];
+
+/* ================================
+   Overlay engine
+================================ */
+
+let jrOverlay;
+let jrImg;
+let jrCounter;
+let jrIndex=0;
+
+let swipeStartX=0;
+let swipeEndX=0;
+
+function createJrOverlay(){
+
+jrOverlay=document.createElement("div");
+jrOverlay.id="jrGalleryOverlay";
+
+jrOverlay.innerHTML=`
+
+<div id="jrViewer">
+<img id="jrImage">
+</div>
+
+<div id="jrPrev">&#10094;</div>
+<div id="jrNext">&#10095;</div>
+
+<div id="jrClose">✕</div>
+
+<div id="jrCounter"></div>
+
+`;
+
+document.body.appendChild(jrOverlay);
+
+jrImg=document.getElementById("jrImage");
+jrCounter=document.getElementById("jrCounter");
+
+document.getElementById("jrPrev").onclick=jrPrev;
+document.getElementById("jrNext").onclick=jrNext;
+document.getElementById("jrClose").onclick=jrClose;
+
+/* swipe */
+
+jrOverlay.addEventListener("touchstart",(e)=>{
+swipeStartX=e.changedTouches[0].screenX;
+},{passive:true});
+
+jrOverlay.addEventListener("touchend",(e)=>{
+
+swipeEndX=e.changedTouches[0].screenX;
+
+if(Math.abs(swipeStartX-swipeEndX)>50){
+
+if(swipeStartX>swipeEndX)jrNext();
+else jrPrev();
+
+}
+
+},{passive:true});
+
+/* keyboard */
+
+window.addEventListener("keydown",(e)=>{
+
+if(!jrOverlay||jrOverlay.style.display!=="flex")return;
+
+if(e.key==="ArrowRight")jrNext();
+if(e.key==="ArrowLeft")jrPrev();
+if(e.key==="Escape")jrClose();
+
+});
+
+}
+
+/* ================================
+   open
+================================ */
+
+function popupJrGallery(index){
+
+if(!jrOverlay)createJrOverlay();
+
+jrIndex=index;
+
+jrOverlay.style.display="flex";
+
+jrUpdate();
+
+}
+
+/* ================================
+   navigation
+================================ */
+
+function jrUpdate(){
+
+jrImg.src=jrImages[jrIndex];
+
+jrCounter.textContent=(jrIndex+1)+" / "+jrImages.length;
+
+}
+
+function jrNext(){
+
+jrIndex=(jrIndex+1)%jrImages.length;
+jrUpdate();
+
+}
+
+function jrPrev(){
+
+jrIndex=(jrIndex-1+jrImages.length)%jrImages.length;
+jrUpdate();
+
+}
+
+function jrClose(){
+
+jrOverlay.style.display="none";
+
+}
+
+/* ================================
+   CSS
+================================ */
+
+const jrStyle=document.createElement("style");
+
+jrStyle.innerHTML=`
+
+#jrGalleryOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:#000;
+display:none;
+z-index:9999;
+overflow:hidden;
+}
+
+#jrViewer{
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+#jrImage{
+max-width:95vw;
+max-height:90vh;
+object-fit:contain;
+}
+
+#jrPrev,#jrNext{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:#fff;
+cursor:pointer;
+padding:20px;
+opacity:.7;
+}
+
+#jrPrev{left:10px;}
+#jrNext{right:10px;}
+
+#jrClose{
+position:absolute;
+top:18px;
+right:22px;
+font-size:32px;
+color:#fff;
+cursor:pointer;
+}
+
+#jrCounter{
+position:absolute;
+bottom:18px;
+left:50%;
+transform:translateX(-50%);
+color:#aaa;
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+#jrPrev,#jrNext{
+font-size:44px;
+}
+
+#jrImage{
+max-height:85vh;
+}
+
+}
+
+`;
+
+document.head.appendChild(jrStyle);
+
 </script>
 
     
