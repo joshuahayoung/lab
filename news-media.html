@@ -422,15 +422,83 @@
 
 <style>
   #metrics-slider::-webkit-scrollbar { display: none; }
-  #metrics-slider { -ms-overflow-style: none; scrollbar-width: none; }
+  #metrics-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 5px;
+    scroll-padding-right: 5px;
+  }
 </style>
 
 <script>
-  function scrollMetrics(direction) {
-    const slider = document.getElementById('metrics-slider');
-    const scrollAmount = slider.offsetWidth * 0.8; 
-    slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  function getMetricsSlider() {
+    return document.getElementById('metrics-slider');
   }
+
+  function getMetricCards() {
+    const slider = getMetricsSlider();
+    return slider ? Array.from(slider.children).filter(el => el.nodeType === 1) : [];
+  }
+
+  function getCenteredCardIndex() {
+    const slider = getMetricsSlider();
+    const cards = getMetricCards();
+    if (!slider || !cards.length) return 0;
+
+    const sliderCenter = slider.scrollLeft + (slider.clientWidth / 2);
+    let closestIndex = 0;
+    let smallestDiff = Infinity;
+
+    cards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+      const diff = Math.abs(cardCenter - sliderCenter);
+
+      if (diff < smallestDiff) {
+        smallestDiff = diff;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  function centerMetricCard(index, behavior = 'smooth') {
+    const slider = getMetricsSlider();
+    const cards = getMetricCards();
+    if (!slider || !cards.length) return;
+
+    const safeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    const card = cards[safeIndex];
+    const targetLeft = card.offsetLeft - ((slider.clientWidth - card.offsetWidth) / 2);
+
+    slider.scrollTo({
+      left: targetLeft,
+      behavior
+    });
+  }
+
+  function scrollMetrics(direction) {
+    const cards = getMetricCards();
+    if (!cards.length) return;
+
+    const currentIndex = getCenteredCardIndex();
+    const nextIndex = Math.max(0, Math.min(currentIndex + direction, cards.length - 1));
+
+    centerMetricCard(nextIndex, 'smooth');
+  }
+
+  window.addEventListener('load', function () {
+    centerMetricCard(getCenteredCardIndex(), 'auto');
+  });
+
+  let metricsResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(metricsResizeTimer);
+    metricsResizeTimer = setTimeout(function () {
+      centerMetricCard(getCenteredCardIndex(), 'auto');
+    }, 120);
+  });
 </script>
 
   
