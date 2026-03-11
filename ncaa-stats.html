@@ -1822,7 +1822,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </summary>
 
     <style>
-      /* 클릭 유도를 위한 애니메이션 및 상태 스타일 */
       details[open] .arrow-icon {
         transform: rotate(180deg);
       }
@@ -1838,11 +1837,98 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       .pulse-dot {
         animation: soft-pulse 2s infinite ease-in-out;
       }
+
+      summary::-webkit-details-marker { display: none; }
+
+      #jup-slider-track::-webkit-scrollbar { height: 6px; }
+      #jup-slider-track::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+      #jup-slider-track::-webkit-scrollbar-thumb { background: #c98a2e; border-radius: 10px; }
+
+      .jup-slider-shell {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .jup-slider-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 10px 5px 25px 5px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        cursor: default;
+        box-sizing: border-box;
+      }
+
+      .jup-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(201,138,46,0.55);
+        background: rgba(12,35,64,0.94);
+        color: #c98a2e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 20;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+        transition: all 0.22s ease;
+      }
+
+      .jup-arrow:hover {
+        background: #173662;
+        border-color: #e5a545;
+      }
+
+      .jup-arrow:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+
+      .jup-arrow-left {
+        left: -16px;
+      }
+
+      .jup-arrow-right {
+        right: -16px;
+      }
+
+      @media (max-width: 768px) {
+        .jup-arrow-left {
+          left: -8px;
+        }
+
+        .jup-arrow-right {
+          right: -8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .insight-card-item { flex: 0 0 92%; padding: 25px 20px; }
+
+        .jup-arrow {
+          width: 38px;
+          height: 38px;
+        }
+      }
     </style>
 
-    <div class="insight-scroll-container" style="display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px 25px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; cursor: default;">
+    <div class="jup-slider-shell">
+      <button type="button" class="jup-arrow jup-arrow-left" id="jup-prev" aria-label="Previous insight card">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
 
-    <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+      <div class="insight-scroll-container jup-slider-track" id="jup-slider-track">
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
 <div>
 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
 <div style="display: flex; align-items: center;">
@@ -1991,21 +2077,108 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       </div>
 
     </div>
-  </details>
 
-  <style>
-    /* Summary 화살표 숨기기 (크롬/사파리) */
-    summary::-webkit-details-marker { display: none; }
-    
-    .insight-scroll-container::-webkit-scrollbar { height: 6px; }
-    .insight-scroll-container::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-    .insight-scroll-container::-webkit-scrollbar-thumb { background: #c98a2e; border-radius: 10px; }
-    
-    @media (max-width: 480px) {
-      .insight-card-item { flex: 0 0 92%; padding: 25px 20px; }
-    }
-  </style>
+      <button type="button" class="jup-arrow jup-arrow-right" id="jup-next" aria-label="Next insight card">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </details>
 </div>
+
+<script>
+(function() {
+  const slider = document.getElementById('jup-slider-track');
+  const prevBtn = document.getElementById('jup-prev');
+  const nextBtn = document.getElementById('jup-next');
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  function getCards() {
+    return Array.from(slider.children).filter(el => el.classList.contains('insight-card-item'));
+  }
+
+  function getCurrentIndex() {
+    const cards = getCards();
+    if (!cards.length) return 0;
+
+    const sliderLeft = slider.scrollLeft;
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.offsetLeft - sliderLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  function scrollToCard(index, behavior) {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    const safeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    slider.scrollTo({
+      left: cards[safeIndex].offsetLeft,
+      behavior: behavior || 'smooth'
+    });
+  }
+
+  function updateButtons() {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    const current = getCurrentIndex();
+    prevBtn.disabled = current <= 0;
+    nextBtn.disabled = current >= cards.length - 1;
+  }
+
+  prevBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const current = getCurrentIndex();
+    scrollToCard(current - 1, 'smooth');
+  });
+
+  nextBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const current = getCurrentIndex();
+    scrollToCard(current + 1, 'smooth');
+  });
+
+  let scrollTimer;
+  slider.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateButtons, 90);
+  }, { passive: true });
+
+  window.addEventListener('resize', function() {
+    updateButtons();
+  });
+
+  const detailsEl = document.querySelector('#joshua-unique-section details');
+  if (detailsEl) {
+    detailsEl.addEventListener('toggle', function() {
+      if (detailsEl.open) {
+        setTimeout(function() {
+          scrollToCard(getCurrentIndex(), 'auto');
+          updateButtons();
+        }, 120);
+      }
+    });
+  }
+
+  updateButtons();
+})();
+</script>
+
+
+  
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
