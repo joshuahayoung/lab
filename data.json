@@ -2,7 +2,7 @@
   "status": "21-ROUND CUMULATIVE",
   "scope": "21",
   "individual": {
-    "scoringAvg": "70.70",
+    "scoringAvg": "70.60",
     "rawAvg": "71.33",
     "underPar": "14 Par or Better(66.7%)",
     "gpa": "3.4 GPA"
@@ -17,12 +17,12 @@
     "teamTotal": "838.75"
   },
   "officialRank": {
-    "wagrRank": "425",
-    "wagrImpact": "▲83",
-    "wagrDate": "Mar 4, 2026",
-    "clippdRank": "311",
-    "clippdImpact": "▲43",
-    "clippdDate": "Mar 4, 2026",
+    "wagrRank": "407",
+    "wagrImpact": "▲18",
+    "wagrDate": "Mar 11, 2026",
+    "clippdRank": "294",
+    "clippdImpact": "▲17",
+    "clippdDate": "Mar 11, 2026",
     "wins": "1",
     "top3": "3",
     "top10": "4",
