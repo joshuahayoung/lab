@@ -321,98 +321,29 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 
    <div style="position: relative; text-align: center; margin-bottom: 25px; padding: 10px 0; overflow: hidden;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; 
+        color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
     </div>
 
 
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
+<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 30px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
   <div id="latest-summary-card-root"></div>
 
   <style>
-    .iac-wrap {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .iac-header {
-      width: 100%;
-      margin-bottom: 12px;
-      box-sizing: border-box;
-    }
-
-    .iac-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .iac-header-title {
-      font-size: 18px;
-      color: #0c2340;
-      margin: 0;
-      padding-left: 20px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      box-sizing: border-box;
-      border-left: 5px solid #e74c3c;
-    }
-
-    .iac-header-title.upcoming { border-left-color: #1e3a8a; }
-    .iac-header-title.ongoing { border-left-color: #22c55e; }
-    .iac-header-title.final { border-left-color: #e74c3c; }
+    .iac-wrap {width: 100%; box-sizing: border-box; }
+    .iac-header {      width: 100%;       margin-bottom: 12px;       box-sizing: border-box;     }
+    .iac-header-row {      display: flex;      justify-content: space-between;      align-items: center;      gap: 10px;      flex-wrap: wrap;    }
+    .iac-header-title {font-size: 18px;  color: #0c2340; margin: 0;  padding-left: 20px;   font-weight: 900;   letter-spacing: 0.5px;   text-transform: uppercase;   display: flex;       align-items: center;
+      flex-wrap: wrap;      gap: 8px;       box-sizing: border-box;       border-left: 5px solid #e74c3c;    }
+    .iac-header-title.upcoming { border-left-color: #1e3a8a; }    .iac-header-title.ongoing { border-left-color: #22c55e; }    .iac-header-title.final { border-left-color: #e74c3c; }
     .iac-header-title.cancelled { border-left-color: #7f1d1d; }
-
-    .iac-updated {
-      margin-left: 25px;
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      background: #f8fafc;
-      padding: 4px 10px;
-      border-radius: 4px;
-      border: 1px solid #edf2f7;
-      box-sizing: border-box;
-      flex-shrink: 0;
-    }
-
-    .iac-divider {
-      width: 100%;
-      height: 1px;
-      background: #edf2f7;
-      margin-top: 10px;
-    }
-
-    .iac-card {
-      background: #ffffff;
-      border: 2.5px solid #0c2340;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .iac-card-inner {
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-      box-sizing: border-box;
-    }
-
-    .iac-info {
-      display: flex;
-      align-items: center;
+    .iac-updated {      margin-left: 25px;       color: #64748b;       font-size: 11px;       font-weight: 700;       letter-spacing: 0.3px;       background: #f8fafc;       padding: 4px 10px;
+      border-radius: 4px;       border: 1px solid #edf2f7;      box-sizing: border-box;      flex-shrink: 0;    }
+    .iac-divider {      width: 100%;      height: 1px;      background: #edf2f7;      margin-top: 10px;    }
+    .iac-card {      background: #ffffff;      border: 2.5px solid #0c2340;      border-radius: 14px;      overflow: hidden;      box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);      width: 100%;
+      box-sizing: border-box;    }
+    .iac-card-inner {      padding: 14px 20px;      display: flex;      align-items: center;      justify-content: space-between;      gap: 15px;      flex-wrap: wrap;      box-sizing: border-box;    }
+    .iac-info {      display: flex;       align-items: center;
       gap: 12px;
       flex: 1;
       min-width: 250px;
@@ -725,7 +656,7 @@ gtag('config', 'G-H1JW8YBDZ8');
   <script>
     const latestSummaryCard = {
       status: "final", // upcoming | ongoing | final | cancelled
-      updated: "Mar 11, 2026",
+      updated: "Mar 12, 2026",
       title: "Golden Nugget Invitational",
       date: "Mar 2-3",
       location: "Lake Charles, LA / The CC At The Golden Nugget",
@@ -861,11 +792,57 @@ gtag('config', 'G-H1JW8YBDZ8');
 
 
 
-    
 
-  
+<div style="max-width: 900px; margin: 15px auto 10px; padding: 0 0px; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box;">
 
-    <div style="position: relative; z-index: 2; text-align: center; margin-top: -20px;">
+  <div style="
+    border: 2.5px solid #0c2340;
+    border-left: 4px solid #F15A22;
+    border-radius: 12px;
+    padding: 22px 28px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  ">
+
+    <div style="flex: 1; min-width: 280px; font-size: 14.5px; color: #4a5568; line-height: 1.6;">
+      <b style="color:#0c2340; font-size: 16px; display: block; margin-bottom: 4px; font-weight: 600;">Full NCAA Statistics</b>
+      Complete tournament results, scoring metrics, and season performance data are available in the NCAA statistics archive.
+    </div>
+
+    <div style="margin: 0 auto;">
+      <a href="ncaa-stats.html" style="
+        display: inline-block;
+        background: #0c2340;
+        color: #ffffff;
+        padding: 12px 24px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all .25s ease;
+        white-space: nowrap;
+        text-transform: uppercase;
+      "
+      onmouseover="this.style.background='#F15A22'; this.style.transform='translateY(-1px)';"
+      onmouseout="this.style.background='#0c2340'; this.style.transform='translateY(0)';"
+      >
+        VIEW NCAA STATS &rarr;
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+       
+
+    <div style="position: relative; z-index: 2; text-align: center; margin-top: 20px;">
   <h2 style="font-size: clamp(28px, 5vw, 36px); color: #0c2340; margin: 0; line-height: 1.05; font-weight: 800; display: inline-block;">
     Schedule <span style="font-weight: 300; color: #777;">&</span> Results
   </h2>
@@ -1028,9 +1005,14 @@ gtag('config', 'G-H1JW8YBDZ8');
         <h3 style="font-size: 17px; color: #0c2340; margin: 0; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase;">Current Season Context</h3>
       </div>
 
-      <p style="font-size: 16.5px; margin: 0; line-height: 1.85; color: #2d3748;">
-        After completing his first fall season adjustment, Hong began the 2026 spring schedule with a sequence of results<br>(T3 – 1 – 3), including his first collegiate individual victory.
-      </p>
+      <p style="font-size: 16.5px; margin: 0; line-height: 1.85; color: #2d3748; text-align: left;">
+  Having completed his first fall season (4 events) and now 3 events into the spring schedule, Joshua has established a dominant performance trend with a recent sequence of <b>T3–1–3</b>, including his first collegiate individual victory.
+  <br>
+  <span style="display: block; margin-top: 10px; color: #0c2340; font-weight: 200;">
+    As of March 11, 2026, he is currently ranked No. 294 in Clippd (NCAA DI) and No. 407 in WAGR.
+  </span>
+  He is set to compete in the <b>Arizona Thunderbirds Intercollegiate</b> (Tucson, AZ) on March 16–17, featuring a high-power field.
+</p>
     </div>
   
 
@@ -1221,47 +1203,259 @@ gtag('config', 'G-H1JW8YBDZ8');
       </div>
       <div style="background: white; padding: 20px 15px; border-radius: 18px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
         <div style="font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Scoring Avg.</div>
-        <div style="font-size: 28px; font-weight: 900; color: #0c2340;">71.0</div>
+        <div style="font-size: 28px; font-weight: 900; color: #0c2340;">70.60(Scoreboard Adj.)</div>
       </div>
     </div>
   </div>
 
-      <div style="text-align: center;">
-    <div style="margin-bottom: 35px;">
-      <h2 style="font-size: clamp(20px, 5vw, 26px); color: #0c2340; font-weight: 900; margin: 0; line-height: 1.3;">
-        Billy Dettlaff Sportsmanship Award
-      </h2>
-      <p style="font-size: 18px; color: #c98a2e; margin: 8px 0 0 0; font-weight: 600;">
-        at The Junior Players Championship (TPC Sawgrass)
+
+
+<style>
+  .stats-honor-section {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .honor-title-wrap {
+    text-align: center;
+    margin-bottom: 38px;
+  }
+
+  .honor-title-wrap h2 {
+    font-size: clamp(20px, 5vw, 26px);
+    color: #0c2340;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .honor-title-wrap p {
+    font-size: 18px;
+    color: #c98a2e;
+    margin: 8px 0 0 0;
+    font-weight: 600;
+  }
+
+  .honor-divider {
+    width: 60px;
+    height: 3px;
+    background: #c98a2e;
+    margin: 15px auto 0;
+    border-radius: 2px;
+  }
+
+  .honor-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .honor-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .honor-image-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 18px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+    background: #fff;
+  }
+
+  .honor-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .honor-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+  }
+
+  .honor-label.gold {
+    background: #c98a2e;
+  }
+
+  .honor-label.navy {
+    background: #0c2340;
+  }
+
+  .honor-copy {
+    margin: 0;
+    font-size: 15px;
+    color: #455a64;
+    line-height: 1.75;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .honor-grid-2 {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-honor-section {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+</style>
+
+<div class="stats-honor-section" style="max-width: 1100px; margin: 0 auto 55px; padding: 0 20px;">
+
+  <div class="honor-title-wrap">
+    <h2>
+      Billy Dettlaff Sportsmanship Award
+    </h2>
+    <p>
+      at The Junior Players Championship (TPC Sawgrass)
+    </p>
+    <div class="honor-divider"></div>
+  </div>
+
+  <div class="honor-grid-2">
+    
+    <div class="honor-card">
+      <div class="honor-image-box" style="border: 4px solid #c98a2e;">
+        <img src="https://lh3.googleusercontent.com/d/1OGsiHtOY3dFr9yJsjWb5UEgxQKdVtbFy" alt="Sportsmanship Award">
+        <div class="honor-label gold">
+          HONOR
+        </div>
+      </div>
+      <p class="honor-copy">
+        This award is given in recognition of <b>conduct and sportsmanship</b> observed throughout the event.
       </p>
-      <div style="width: 60px; height: 3px; background: #c98a2e; margin: 15px auto 0;"></div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; justify-content: center;">
-      <div style="width: 100%; max-width: 320px; margin: 0 auto;">
-        <div style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; border: 4px solid #c98a2e; overflow: hidden; position: relative; margin-bottom: 18px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
-          <img src="https://lh3.googleusercontent.com/d/1OGsiHtOY3dFr9yJsjWb5UEgxQKdVtbFy" style="width: 100%; height: 100%; object-fit: cover;" alt="Sportsmanship Award">
-          <div style="position: absolute; top: 15px; left: 15px; background: #c98a2e; color: white; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">HONOR</div>
+    <div class="honor-card">
+      <div class="honor-image-box" style="border: 4px solid #0c2340;">
+        <img src="https://lh3.googleusercontent.com/d/1GP046f-FyrCVwL6HhlYtGmr0E2IT1efY" alt="TPC Sawgrass Competition">
+        <div class="honor-label navy">
+          THE JR. PLAYERS
         </div>
-<p style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500; text-align: center;">
-  This award is given in recognition of <b>conduct and sportsmanship</b> observed throughout the event.
-</p>
       </div>
-
-      <div style="width: 100%; max-width: 320px; margin: 0 auto;">
-        <div style="width: 100%; aspect-ratio: 1/1; border-radius: 20px; border: 4px solid #0c2340; overflow: hidden; position: relative; margin-bottom: 18px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
-          <img src="https://lh3.googleusercontent.com/d/1GP046f-FyrCVwL6HhlYtGmr0E2IT1efY" style="width: 100%; height: 100%; object-fit: cover;" alt="TPC Sawgrass Competition">
-          <div style="position: absolute; top: 15px; left: 15px; background: #0c2340; color: white; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; letter-spacing: 1px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">THE JR. PLAYERS</div>
-        </div>
-        <p style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500; text-align: center;">
-  The championship is held at <b>TPC Sawgrass</b> and features an <b>invited field</b> of junior competitors.
-</p>
-      </div>
+      <p class="honor-copy">
+        The championship is held at <b>TPC Sawgrass</b> and features an <b>invited field</b> of junior competitors.
+      </p>
     </div>
+
   </div>
+
 </div>
 
 
+<div class="stats-honor-section" style="max-width: 1100px; margin: 0 auto 60px; padding: 0 20px;">
+
+  <div class="honor-title-wrap">
+    <h2>
+      American Conference Recognition & Collegiate Milestones
+    </h2>
+    <p>
+      Conference honors and early collegiate milestones
+    </p>
+    <div class="honor-divider"></div>
+  </div>
+
+  <div class="honor-grid-2">
+
+<div class="honor-card" style="display: none;">
+    
+   <!-- POTM -->
+    <div class="honor-card">
+      <div class="honor-image-box" style="border: 4px solid #c98a2e;">
+        <img src="IMAGE_LINK_POTM" alt="POTM">
+        <div class="honor-label gold">
+          POTM
+        </div>
+      </div>
+      <p class="honor-copy" style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500; text-align: left;">
+    Named <b>The American Conference Player of the Month (February 2026)</b> for performance across the opening stretch of the spring season.
+  </p>
+    </div>
+    
+</div>
+      
+    <!-- Record -->
+  <div class="honor-card">
+  <div class="honor-image-box" style="border: 4px solid #c98a2e;">
+    <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-R1-R2-article.jpeg" alt="School Record Tie">
+    <div class="honor-label gold">
+      RECORD
+    </div>
+  </div>
+  <p class="honor-copy" style="margin: 0; font-size: 15px; color: #455a64; line-height: 1.7; font-weight: 500; text-align: left;">
+    Matched two UTSA program records at the Golden Nugget Invitational: <b>8-under 64</b> (18-hole record) and <b>10-under 134</b> (36-hole record).
+  </p>
+</div> 
+      
+    <!-- POTW -->
+   <div style="width: 100%; max-width: 320px; margin: 0 auto;">
+  <div style="width: 100%; aspect-ratio: 1 / 1; border-radius: 22px; overflow: hidden; position: relative; margin-bottom: 18px; box-shadow: 0 14px 28px rgba(0,0,0,0.10); background: #0c2340;">
+    
+    <div style="position: absolute; inset: 0; background: url('./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-2.jpeg') center center / cover no-repeat; transform: scale(1.02);"></div>
+
+    <div style="position: absolute; inset: 0; border-radius: 22px; box-shadow: inset 0 0 0 4px #0c2340; pointer-events: none;"></div>
+
+    <div class="honor-label navy">
+      POTW
+    </div>
+  </div>
+
+  <p class="honor-copy">
+    Awarded following a win at the Military City Collegiate and a third-place finish at the Golden Nugget Invitational.
+  </p>
+</div>
+
+
+
+    <!-- 1ST WIN -->
+    <div class="honor-card">
+      <div class="honor-image-box" style="border: 4px solid #c98a2e;">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-1.jpeg" alt="First Collegiate Win">
+        <div class="honor-label gold">
+          1ST WIN
+        </div>
+      </div>
+      <p class="honor-copy">
+        Recorded at the Military City Collegiate, where Hong finished at 1-under-par 215 as the only player under par in the field.
+      </p>
+    </div>
+
+    <!-- PROGRAM RECORD ROUND -->
+    <div class="honor-card">
+      <div class="honor-image-box" style="border: 4px solid #0c2340;">
+        <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" alt="Program Record Round">
+        <div class="honor-label navy">
+          PROGRAM RECORD
+        </div>
+      </div>
+      <p class="honor-copy">
+        Opened the Golden Nugget Invitational with an <b>8-under-par 64</b>, tying the <b>UTSA program record</b> for the lowest single round.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+    
 
 <div class="partnership-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
