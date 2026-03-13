@@ -889,7 +889,7 @@
       venue: "Tucson CC",
       location: "Tucson, Arizona",
       par: 72,
-      yards: "7,533",
+      yards: 7,533,
       rating: 76.2,
       slope: 133,
 
@@ -1119,7 +1119,7 @@
         data.venue,
         data.location,
         `Par ${data.par}`,
-        `${Number(data.yards).toLocaleString()} Yards`,
+        `${jtIsUsableValue(data.yards) ? (String(data.yards).includes(',') ? data.yards : Number(data.yards).toLocaleString()) : "—"} Yards`,
         `Rating: ${data.rating}`,
         `Slope: ${data.slope}`
       ].join(" | ");
