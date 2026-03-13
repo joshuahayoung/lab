@@ -1797,35 +1797,67 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 <div class="round-distribution-wrapper" style="width: 100%; margin: 24px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
   <style>
-    @media (max-width: 768px) {
-      .rd-main-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .rd-left-stack,
-      .rd-right-stack {
-        gap: 14px !important;
-      }
-      .rd-header-title {
-        font-size: 20px !important;
-      }
-      .rd-subtitle {
-        font-size: 0.75em !important;
-      }
-      .rd-table th,
-      .rd-table td {
-        font-size: 11px !important;
-        padding: 9px 8px !important;
-      }
-      .rd-summary-grid,
-      .rd-structure-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-      .rd-summary-value,
-      .rd-structure-value {
-        font-size: 20px !important;
-      }
+  @media (max-width: 768px) {
+    .rd-main-grid {
+      grid-template-columns: 1fr !important;
     }
-  </style>
+
+    .rd-left-stack,
+    .rd-right-stack {
+      gap: 14px !important;
+    }
+
+    .rd-header-title {
+      font-size: 20px !important;
+    }
+
+    .rd-subtitle {
+      font-size: 0.75em !important;
+    }
+
+    .rd-table th,
+    .rd-table td {
+      font-size: 11px !important;
+      padding: 9px 8px !important;
+    }
+
+    .rd-summary-grid,
+    .rd-structure-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .rd-summary-grid > div,
+    .rd-structure-grid > div {
+      min-width: 0 !important;
+    }
+
+    .rd-summary-value,
+    .rd-structure-value {
+      font-size: 20px !important;
+    }
+
+    .rd-summary-value {
+      text-align: center !important;
+    }
+
+    .rd-summary-main {
+      font-size: 22px !important;
+      line-height: 1.02 !important;
+    }
+
+    .rd-summary-subline {
+      font-size: 9px !important;
+      line-height: 1.15 !important;
+      letter-spacing: 0.55px !important;
+      margin-top: 4px !important;
+      white-space: nowrap !important;
+    }
+
+    .rd-summary-subvalue {
+      font-size: 15px !important;
+    }
+  }
+</style>
 
   <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
     
@@ -1911,17 +1943,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </div>
 
           <div class="rd-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">24-Round Avg.</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
-                71.25
-              <div style="margin-top: 4px; display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap;">
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px;">Raw</span>
-                <span style="font-size: 18px; color: #ffffff; font-weight: 900;">70.60</span>
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px;">Clippd</span>
-              </div>
-              </div>
-            </div>
+  <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
+    <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">24-Round Avg.</div>
+
+    <div class="rd-summary-value" style="color: #ffffff; font-weight: 900; margin-top: 4px;">
+      <div class="rd-summary-main" style="font-size: 24px; line-height: 1.02; color: #ffffff; font-weight: 900;">
+        71.25
+      </div>
+      <div class="rd-summary-subline" style="margin-top: 4px; font-size: 10px; line-height: 1.2; font-weight: 800; letter-spacing: 0.7px; text-transform: uppercase; color: #94a3b8;">
+        Raw <span class="rd-summary-subvalue" style="font-size: 17px; color: #ffffff; font-weight: 900; letter-spacing: 0;">70.60</span> Clippd
+      </div>
+    </div>
+  </div>
+            
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Low Round</div>
               <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">64</div>
