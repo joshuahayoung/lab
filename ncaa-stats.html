@@ -1990,8 +1990,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
             <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
                 <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-                <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; 
-                  font-weight: 400; text-transform: uppercase; margin-top: 8px;">Official Tournament Metrics</p>
+                <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+                7 NCAA Regular Season Events + 1 Winter Event (<span style="color:#F15A22; font-weight:700;">Patriot</span><span style="color:#F15A22; font-weight:700;">*</span>) / 24 Competitive Rounds
+            </p>
                 
                 <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
@@ -2006,9 +2007,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                         </div>
                         <canvas id="archiveOfficialChart"></canvas>
                         <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
-                            <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                            <span>CUMULATIVE: 8 EVENTOS / 24 RONDAS</span>
-                        </div>
+                        <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
+                        <span>CUMULATIVE: 8 EVENTOS / 24 RONDAS</span>
+                    </div>
                     </div>
                     <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #888; font-weight: 500; margin-top: 10px; padding-left: 5px;">* Special Invitational Event (Non-NCAA D1 Regular Season)</p>
                 </div>
@@ -2127,18 +2128,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 tension: 0.3,
                 fill: true,
                 datalabels: {
-                    align: 'top',
-                    anchor: 'end',
-                    offset: isMobile ? 4 : 8,
-                    color: '#0c2340',
-                    font: {
-                        weight: '700',
-                        size: isMobile ? 10 : 13
-                    },
-                    formatter: function(value, context) {
-                        return archivePositions[context.dataIndex];
-                    }
-                }
+    align: 'top',
+    anchor: 'end',
+    offset: isMobile ? 4 : 8,
+    color: function(context) {
+        return context.dataIndex === 4 ? '#F15A22' : '#0c2340';
+    },
+    font: {
+        weight: '700',
+        size: isMobile ? 10 : 13
+    },
+    formatter: function(value, context) {
+        return archivePositions[context.dataIndex];
+    }
+}
             }]
         },
         options: {
@@ -2164,7 +2167,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 x: {
                     grid: { display: false },
                     ticks: {
-                        color: '#333',
+                            color: function(context) {
+        return context.index === 4 ? '#F15A22' : '#333';
+    },
                         font: { size: isMobile ? 8 : 10, weight: '500' },
                         autoSkip: false,
                         maxRotation: isMobile ? 60 : 45,
@@ -2214,229 +2219,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
 
-<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
-    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
-            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-                7 NCAA Regular Season Events + 1 Winter Event (<span style="color:#F15A22; font-weight:700;">Patriot</span><span style="color:#F15A22; font-weight:700;">*</span>) / 24 Competitive Rounds
-            </p>
-            
-            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
-                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
-                </div>
-                
-                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
-                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
-                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.60</span>
-                    </div>
-                    <canvas id="archiveOfficialChart"></canvas>
-                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
-                        <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                        <span>CUMULATIVE: 8 EVENTOS / 24 RONDAS</span>
-                    </div>
-                </div>
-                <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #888; font-weight: 500; margin-top: 10px; padding-left: 5px;"><span style="color:#F15A22; font-weight:700;">*</span> Special Invitational Event (<span style="color:#F15A22; font-weight:700;">Patriot</span><span style="color:#F15A22; font-weight:700;">*</span>, Non-NCAA D1 Regular Season)</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
-<script>
-(function() {
-    if (typeof ChartDataLabels !== 'undefined') {
-        try { Chart.register(ChartDataLabels); } catch (e) {}
-    }
-
-    Chart.defaults.font.family = "'Oswald', sans-serif";
-
-    const isMobile = window.innerWidth <= 768;
-
-    // ===== DATA (값은 원본 그대로 유지) =====
-    const archiveLabels = [
-        '9/07 (Argent)',
-        '9/15 (Highlands)',
-        '9/22 (Badger)',
-        '10/05 (Trinity)',
-        '12/27 (Patriot)*',
-        '2/01 (Compadres)',
-        '2/24 (Military)',
-        '3/03 (Golden)'
-    ];
-
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 72.00, 71.66, 67.6];
-
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3'];
-
-    const archiveRounds = [
-        '70-70-69 (-7)',
-        '74-71-70 (-1)',
-        '71-71-76 (+2)',
-        '75-73-74 (+6)',
-        '71-73-72 (+6)',
-        '70-75-71 (E)',
-        '69-72-74 (-1)',
-        '64-70-69 (-13)'
-    ];
-
-    const archiveRankImpact = [
-        '● Rank Impact ▲ 151',
-        '● Rank Impact ▲ 28',
-        '● Rank Impact ▼ 38',
-        '● Rank Impact ▼ 98',
-        null,
-        '● Rank Impact ▲ 142',
-        '● Rank Impact ▲ 72',
-        '● Rank Impact ▲ 43'
-    ];
-
-    const archiveWagrPower = [
-        '230.8799',
-        '232.6656',
-        '129.0694',
-        '360.1597',
-        '806.3420',
-        '145.6033',
-        '',
-        '135.0209'
-    ];
-
-    const archivePtsEarned = [
-        '5.3735',
-        '4.9097',
-        '3.3178',
-        '3.1971',
-        '6.1052',
-        '6.5774',
-        '9.2734',
-        '6.7817'
-    ];
-
-    // 모바일에서 표시만 짧게 (원본 데이터는 그대로 유지)
-    function mobileLabel(label) {
-        if (!isMobile) return label;
-        return label
-            .replace(' (Argent)', '')
-            .replace(' (Highlands)', '')
-            .replace(' (Badger)', '')
-            .replace(' (Trinity)', '')
-            .replace(' (Patriot)*', '*')
-            .replace(' (Compadres)', '')
-            .replace(' (Military)', '')
-            .replace(' (Golden)', '');
-    }
-
-    const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
-
-    new Chart(ctxOfficialArchive, {
-        type: 'line',
-        data: {
-            labels: archiveLabels,
-            datasets: [{
-                label: 'Scoring Avg',
-                data: archiveScores,
-                borderColor: '#0c2340',
-                backgroundColor: 'rgba(12, 35, 64, 0.05)',
-                borderWidth: 2,
-                pointRadius: isMobile ? 4 : 6,
-                pointHoverRadius: isMobile ? 6 : 9,
-                pointBackgroundColor: '#0c2340',
-                pointHoverBackgroundColor: '#F15A22',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                tension: 0.3,
-                fill: true,
-                datalabels: {
-                    align: 'top',
-                    anchor: 'end',
-                    offset: isMobile ? 4 : 8,
-                    color: '#0c2340',
-                    font: {
-                        weight: '700',
-                        size: isMobile ? 10 : 13
-                    },
-                    formatter: function(value, context) {
-                        return archivePositions[context.dataIndex];
-                    }
-                }
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            layout: {
-                padding: isMobile
-                    ? { top: 20, bottom: 18, left: 0, right: 0 }
-                    : { top: 35, bottom: 25, left: -5, right: 15 }
-            },
-            scales: {
-                y: {
-                    min: 65,
-                    max: 82,
-                    grid: { color: '#efefef', drawBorder: false },
-                    ticks: {
-                        font: { size: isMobile ? 10 : 11, weight: '600' },
-                        color: '#333',
-                        padding: 0
-                    },
-                    title: { display: false }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: {
-                        color: '#333',
-                        font: { size: isMobile ? 8 : 10, weight: '500' },
-                        autoSkip: false,
-                        maxRotation: isMobile ? 60 : 45,
-                        minRotation: isMobile ? 60 : 45,
-                        callback: function(value) {
-                            const label = this.getLabelForValue(value);
-                            return mobileLabel(label);
-                        }
-                    },
-                    offset: false
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    enabled: true,
-                    backgroundColor: '#0c2340',
-                    titleColor: '#F15A22',
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        title: function(context) {
-                            return archiveLabels[context[0].dataIndex];
-                        },
-                        label: function(context) {
-                            return `● Scoring Avg: ${context.parsed.y}`;
-                        },
-                        afterLabel: function(context) {
-                            const i = context.dataIndex;
-                            return [
-                                `● Rounds: ${archiveRounds[i]}`,
-                                `● Pos: ${archivePositions[i]}`,
-                                archiveRankImpact[i],
-                                `-----------------------`,
-                                `● WAGR Pwr: ${archiveWagrPower[i]}`,
-                                `● Pts Earned: ${archivePtsEarned[i]}`
-                            ].filter(v => v !== null);
-                        }
-                    }
-                }
-            }
-        }
-    });
-})();
-</script>
 
 
   
