@@ -842,135 +842,314 @@ gtag('config', 'G-H1JW8YBDZ8');
 
        
 
-    <div style="position: relative; z-index: 2; text-align: center; margin-top: 40px;">
-  <h2 style="font-size: clamp(28px, 5vw, 36px); color: #0c2340; margin: 0; line-height: 1.05; font-weight: 800; display: inline-block;">
-    Schedule <span style="font-weight: 300; color: #777;">&</span> Results
+   <style>
+  .sr-section-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 28px;
+  }
+
+  .sr-section-title h2 {
+    font-size: clamp(28px, 5vw, 36px);
+    color: #0c2340;
+    margin: 0;
+    line-height: 1.05;
+    font-weight: 800;
+    display: inline-block;
+  }
+
+  .sr-section-title .sr-amp {
+    font-weight: 300;
+    color: #777;
+  }
+
+  .sr-section-title .sr-underline {
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #c98a2e;
+    margin: 4px auto 0;
+    border-radius: 2px;
+  }
+
+  .sr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  .sr-link-wrap {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .sr-link-wrap:hover {
+    transform: translateY(-4px);
+  }
+
+  .sr-card {
+    --accent: #c98a2e;
+    --badge-bg: #c98a2e;
+    --badge-shadow: rgba(201,138,46,0.2);
+    --host-color: var(--accent);
+
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 24px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    border-top: 6px solid var(--accent);
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sr-badge {
+    background: var(--badge-bg);
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 0 0 10px 10px;
+    font-size: 11px;
+    font-weight: 800;
+    position: absolute;
+    top: 0;
+    left: 25px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px var(--badge-shadow);
+    text-transform: uppercase;
+  }
+
+  .sr-title-row {
+    min-height: 54px;
+    margin: 10px 0 4px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .sr-title {
+    font-size: 20px;
+    color: #0c2340;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .sr-host {
+    margin: 0;
+    font-weight: 700;
+    color: var(--host-color);
+    font-size: 15px;
+  }
+
+  .sr-meta {
+    margin-top: 25px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    color: #444;
+    font-size: 14px;
+    line-height: 1.8;
+    flex-grow: 1;
+  }
+
+  .sr-meta-row {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sr-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+  }
+
+  .sr-meta-text {
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .sr-meta-text b {
+    color: #0c2340;
+  }
+
+  .sr-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+  }
+
+  .sr-footer-link {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 800;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .sr-footer-link .sr-arrow {
+    font-size: 16px;
+    margin-left: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .sr-section-title {
+      margin-top: 32px;
+      margin-bottom: 22px;
+    }
+
+    .sr-grid {
+      margin-top: 0;
+      gap: 18px;
+    }
+
+    .sr-card {
+      padding: 28px 20px;
+      border-radius: 20px;
+    }
+
+    .sr-badge {
+      left: 20px;
+    }
+
+    .sr-title {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<div class="sr-section-title">
+  <h2>
+    Schedule <span class="sr-amp">&</span> Results
   </h2>
-  <span style="display: block; width: 80px; height: 4px; background: #c98a2e; margin: 4px auto 0; border-radius: 2px;"></span>
-</div>
-    
-  </div>
-  
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; width: 100%; margin-top: -30px; margin-bottom: 30px;">
-    
-  <div style="position: relative; transition: transform 0.3s ease; display: block;">
-    <a href="https://scoreboard.clippd.com/tournaments/239371/scoring/participants" target="_blank" style="text-decoration: none; display: block; height: 100%;">
-      <div style="background: #ffffff; padding: 30px 25px; border-radius: 24px; border: 1px solid #e1e8ed; box-shadow: 0 15px 35px rgba(0,0,0,0.06); position: relative; overflow: hidden; border-top: 6px solid #c98a2e; height: 100%; box-sizing: border-box; display: flex; flex-direction: column;">
-        <div style="background: #c98a2e; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-size: 11px; font-weight: 800; position: absolute; top: 0; left: 25px; letter-spacing: 1px; box-shadow: 0 2px 5px rgba(201,138,46,0.2);">UPCOMING</div>
-        
-        <div style="min-height: 54px; margin: 10px 0 4px 0; display: flex; align-items: center;">
-          <h3 style="font-size: 20px; color: #0c2340; font-weight: 800; line-height: 1.2; margin: 0;">
-            Arizona Thunderbirds Intercollegiate
-          </h3>
-        </div>
-        <p style="margin: 0; font-weight: 700; color: #c98a2e; font-size: 15px;">Hosted by Arizona</p>
-        
-        <div style="margin-top: 25px; padding-top: 10px; border-top: 1px dashed #eee; color: #444; font-size: 14px; line-height: 1.8; flex-grow: 1;">
-          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-            <div style="font-size: 14px; color: #475569;">
-              <b style="color: #0c2340;">Tucson CC</b>
-            </div>
-          </div>
-          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 9l5 5 5-5"></path>
-                <path d="M12 3v11"></path>
-                <path d="M22 20H2"></path>
-                <path d="M7 16l-4 4"></path>
-                <path d="M17 16l4 4"></path>
-              </svg>            
-            </div>
-            <div style="font-size: 14px; color: #475569;">Tucson, AZ</div>
-          </div>
-          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>          
-            </div>
-            <div style="font-size: 14px; color: #475569;">
-              <b>Mar 16 - Mar 17, 2026</b>
-            </div>
-          </div>
-          <div style="font-size: 12px; color: #999; margin-top: 10px;">*NCAA Division I Event</div>
-        </div>
-        
-        <div style="margin-top: 20px; font-size: 13px; color: #c98a2e; font-weight: 800; text-align: right; text-transform: uppercase; letter-spacing: 0.5px;">
-          VIEW PARTICIPANTS <span style="font-size: 16px; margin-left: 3px;">↗</span>
-        </div>
-      </div>
-    </a>
-  </div>
-
-  <a href="https://scoreboard.clippd.com/tournaments/239284/scoring/team" target="_blank" style="text-decoration: none; display: block; transition: transform 0.3s ease; height: 100%;">
-    <div style="background: #ffffff; padding: 30px 25px; border-radius: 24px; border: 1px solid #e1e8ed; box-shadow: 0 15px 35px rgba(0,0,0,0.06); position: relative; overflow: hidden; border-top: 6px solid #2c3e50; height: 100%; box-sizing: border-box; display: flex; flex-direction: column;">
-      <div style="background: #2c3e50; color: white; padding: 5px 15px; border-radius: 0 0 10px 10px; font-size: 11px; font-weight: 800; position: absolute; top: 0; left: 25px; letter-spacing: 1px; box-shadow: 0 2px 5px rgba(44,62,80,0.2);">RECENT</div>
-      
-      <div style="min-height: 54px; margin: 10px 0 4px 0; display: flex; align-items: center; justify-content: space-between;">
-        <h3 style="font-size: 20px; color: #0c2340; font-weight: 800; line-height: 1.2; margin: 0;">
-          Golden Nugget Invitational
-        </h3>
-      </div>
-      <p style="margin: 0; font-weight: 700; color: #F15A22; font-size: 15px;">Hosted by Lamar</p>
-      
-      <div style="margin-top: 25px; padding-top: 10px; border-top: 1px dashed #eee; color: #444; font-size: 14px; line-height: 1.8; flex-grow: 1;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-          </div>
-          <div style="font-size: 14px; color: #475569;">
-            <b style="color: #0c2340;">The CC At The Golden Nugget</b>
-          </div>
-        </div>
-        <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 9l5 5 5-5"></path>
-              <path d="M12 3v11"></path>
-              <path d="M22 20H2"></path>
-              <path d="M7 16l-4 4"></path>
-              <path d="M17 16l4 4"></path>
-            </svg>            
-          </div>
-          <div style="font-size: 14px; color: #475569;">Lake Charles, LA</div>
-        </div>
-        <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          <div style="display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 24px; height: 24px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>          
-          </div>
-          <div style="font-size: 14px; color: #475569;">
-            <b>Mar 2 - Mar 3, 2026</b>
-          </div>
-        </div>
-        <div style="font-size: 12px; color: #999; margin-top: 10px;">*NCAA Division I Event</div>
-      </div>
-      
-      <div style="margin-top: 20px; font-size: 13px; color: #2c3e50; font-weight: 800; text-align: right; text-transform: uppercase; letter-spacing: 0.5px;">
-        View Results <span style="font-size: 16px; margin-left: 3px;">↗</span>
-      </div>
-    </div>
-  </a>
-
+  <span class="sr-underline"></span>
 </div>
 
+<div id="sr-cards-root" class="sr-grid"></div>
+
+<script>
+  const srCards = [
+    {
+      url: "https://scoreboard.clippd.com/tournaments/239371/scoring/participants",
+      badge: "UPCOMING",
+      title: "Arizona Thunderbirds Intercollegiate",
+      host: "Hosted by Arizona",
+      course: "Tucson CC",
+      location: "Tucson, AZ",
+      date: "Mar 16 - Mar 17, 2026",
+      note: "*NCAA Division I Event",
+      footerLabel: "VIEW PARTICIPANTS",
+      accent: "#c98a2e",
+      badgeBg: "#c98a2e",
+      badgeShadow: "rgba(201,138,46,0.2)",
+      hostColor: "#c98a2e"
+    },
+    {
+      url: "https://scoreboard.clippd.com/tournaments/239284/scoring/team",
+      badge: "RECENT",
+      title: "Golden Nugget Invitational",
+      host: "Hosted by Lamar",
+      course: "The CC At The Golden Nugget",
+      location: "Lake Charles, LA",
+      date: "Mar 2 - Mar 3, 2026",
+      note: "*NCAA Division I Event",
+      footerLabel: "View Results",
+      accent: "#2c3e50",
+      badgeBg: "#2c3e50",
+      badgeShadow: "rgba(44,62,80,0.2)",
+      hostColor: "#F15A22"
+    }
+  ];
+
+  const srIcons = {
+    course: `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+    `,
+    location: `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 9l5 5 5-5"></path>
+        <path d="M12 3v11"></path>
+        <path d="M22 20H2"></path>
+        <path d="M7 16l-4 4"></path>
+        <path d="M17 16l4 4"></path>
+      </svg>
+    `,
+    date: `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+    `
+  };
+
+  function srMetaRow(icon, text, isBold = false) {
+    return `
+      <div class="sr-meta-row">
+        <div class="sr-icon-box">${icon}</div>
+        <div class="sr-meta-text">${isBold ? `<b>${text}</b>` : text}</div>
+      </div>
+    `;
+  }
+
+  function srRenderCard(card) {
+    return `
+      <a href="${card.url}" target="_blank" class="sr-link-wrap">
+        <div class="sr-card"
+             style="
+               --accent:${card.accent};
+               --badge-bg:${card.badgeBg};
+               --badge-shadow:${card.badgeShadow};
+               --host-color:${card.hostColor};
+             ">
+          <div class="sr-badge">${card.badge}</div>
+
+          <div class="sr-title-row">
+            <h3 class="sr-title">${card.title}</h3>
+          </div>
+
+          <p class="sr-host">${card.host}</p>
+
+          <div class="sr-meta">
+            ${srMetaRow(srIcons.course, card.course, true)}
+            ${srMetaRow(srIcons.location, card.location, false)}
+            ${srMetaRow(srIcons.date, card.date, true)}
+            <div class="sr-note">${card.note}</div>
+          </div>
+
+          <div class="sr-footer-link">
+            ${card.footerLabel} <span class="sr-arrow">↗</span>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  document.getElementById("sr-cards-root").innerHTML = srCards.map(srRenderCard).join("");
+</script>
+</div>
 
   
 <div class="intro-section" style="width: 100%; max-width: 900px; margin: -10px auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
