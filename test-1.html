@@ -1513,6 +1513,8 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   
 
 <div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+  <!-- Title Box -->
   <div style="width:100%; margin:30px 0 36px 0; padding:0; box-sizing:border-box; text-align:center;">
     <a id="current-focus" style="display:block; position:relative; top:-100px; visibility:hidden;"></a>
 
@@ -1526,14 +1528,15 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       </p>
     </div>
   </div>
-</div>
 
+  <!-- Main Shell -->
   <div style="width:100%; margin:0 0 40px 0; box-sizing:border-box;">
     <div class="jhcf-shell" style="width:100%; background:#ffffff; border:1px solid #d9e2ec; border-radius:20px; box-shadow:0 14px 34px rgba(12,35,64,0.08); overflow:hidden; box-sizing:border-box;">
 
-      <div class="jhcf-header" style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding:24px 28px 20px 28px; border-top:4px solid #0c2340; border-bottom:1px solid #e9eef5; box-sizing:border-box; flex-wrap:wrap;">
+      <!-- Header -->
+      <div class="jhcf-header" style="display:flex; align-items:flex-start; justify-content:flex-start; gap:20px; padding:24px 28px 20px 28px; border-top:4px solid #0c2340; border-bottom:1px solid #e9eef5; box-sizing:border-box; flex-wrap:wrap;">
         <div style="min-width:0; box-sizing:border-box;">
-           <div id="Current-Focus" style="margin-top:8px; box-sizing:border-box;">
+          <div id="Current-Focus" style="margin-top:0; box-sizing:border-box;">
             <span style="display:inline-block; font-size:12px; color:#7a1f1f; font-weight:800; text-transform:uppercase; letter-spacing:0.6px; background:#fdf2f2; border:1px solid #f3d1d1; border-radius:999px; padding:6px 10px; box-sizing:border-box;">
               Posted On: Mar 4, 2026
             </span>
@@ -1541,11 +1544,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         </div>
       </div>
 
+      <!-- Body -->
       <div class="jhcf-body" style="padding:26px 28px 24px 28px; box-sizing:border-box;">
 
         <!-- Section 01 -->
-        <div class="jhcf-section" style="margin:0 0 28px 0; box-sizing:border-box;">
-          <div class="jhcf-section-head" style="display:flex; align-items:center; gap:14px; margin:0 0 14px 0; box-sizing:border-box;">
+        <div class="jhcf-section" style="margin:0 0 30px 0; box-sizing:border-box;">
+          <div class="jhcf-section-head" style="display:flex; align-items:center; gap:14px; margin:0 0 16px 0; box-sizing:border-box;">
             <div class="jhcf-no" style="flex:0 0 auto; width:48px; height:48px; border-radius:14px; background:#0c2340; color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900; letter-spacing:0.5px; box-sizing:border-box;">
               01
             </div>
@@ -1555,53 +1559,67 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </h4>
           </div>
 
-          <div class="jhcf-grid" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; box-sizing:border-box;">
+          <div class="jhcf-lines" style="width:100%; border-top:1px solid #e9eef5; box-sizing:border-box;">
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Conditions</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Conditions
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Penalty area management and Bermuda grain control. Driver head structural issue monitored; ball speed and launch remained stable.
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Scoring Profile</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Scoring Profile
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 R1 — 64 (−8) / R2 — 70 (−2) / R3 — 69 (−3). Total — 203 (−13).
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Finish</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Finish
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Solo 3rd (1 stroke from 2nd). Tied UTSA single-round record (64). Bogey-free final round. Team: 2nd.
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Ranking Impact</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Ranking Impact
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Clippd National Rank: 311 (▲43). WAGR: 425 (▲81).
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Ball Striking</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Ball Striking
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Driver and long-iron dispersion stable with improved proximity control.
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Short Game</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Short Game
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Mid-range par saves maintained scoring position.
               </div>
             </div>
 
-            <div class="jhcf-card jhcf-card-wide" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:14px 15px; box-sizing:border-box; grid-column:span 2;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Putting</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#64748b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Putting
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Conversion variance under Bermuda grain conditions limited scoring efficiency.
               </div>
             </div>
@@ -1611,7 +1629,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
         <!-- Section 02 -->
         <div class="jhcf-section" style="margin:0 0 24px 0; box-sizing:border-box;">
-          <div class="jhcf-section-head" style="display:flex; align-items:center; gap:14px; margin:0 0 14px 0; box-sizing:border-box;">
+          <div class="jhcf-section-head" style="display:flex; align-items:center; gap:14px; margin:0 0 16px 0; box-sizing:border-box;">
             <div class="jhcf-no" style="flex:0 0 auto; width:48px; height:48px; border-radius:14px; background:#c98a2e; color:#ffffff; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900; letter-spacing:0.5px; box-sizing:border-box;">
               02
             </div>
@@ -1621,20 +1639,26 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </h4>
           </div>
 
-          <div class="jhcf-grid" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; box-sizing:border-box;">
-            <div class="jhcf-card" style="background:#fffdf7; border:1px solid #f0e0bf; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#7c5a1b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Physical</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+          <div class="jhcf-lines" style="width:100%; border-top:1px solid #e9eef5; box-sizing:border-box;">
+
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#7c5a1b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Physical
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Nutritional intake protocol structured at 3-hole intervals during 36-hole day to stabilize concentration. Physical stamina maintained through final round.
               </div>
             </div>
 
-            <div class="jhcf-card" style="background:#fffdf7; border:1px solid #f0e0bf; border-radius:14px; padding:14px 15px; box-sizing:border-box;">
-              <div style="margin:0 0 6px 0; font-size:11px; color:#7c5a1b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; box-sizing:border-box;">Academic</div>
-              <div style="margin:0; font-size:14px; color:#243447; line-height:1.7; font-weight:500; box-sizing:border-box;">
+            <div class="jhcf-line" style="display:flex; align-items:flex-start; gap:18px; padding:14px 0; border-bottom:1px solid #e9eef5; box-sizing:border-box;">
+              <div class="jhcf-label" style="flex:0 0 170px; font-size:11px; color:#7c5a1b; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; line-height:1.5; box-sizing:border-box;">
+                Academic
+              </div>
+              <div class="jhcf-value" style="flex:1 1 auto; min-width:0; font-size:14px; color:#243447; line-height:1.75; font-weight:500; box-sizing:border-box;">
                 Post-event completion of deferred coursework and laundry tasks following 6-hour transit. Academic schedule alignment prioritized for upcoming window.
               </div>
             </div>
+
           </div>
         </div>
 
@@ -1655,33 +1679,18 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
           </div>
 
-          <div class="jhcf-upcoming-grid" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px 14px; box-sizing:border-box;">
-            <div style="display:flex; align-items:flex-start; gap:10px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px 13px; box-sizing:border-box;">
-              <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#c98a2e; margin-top:6px; box-sizing:border-box;"></span>
-              <div style="font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.6; box-sizing:border-box;">
-                Short-game proximity refinement
-              </div>
+          <div class="jhcf-upcoming-lines" style="width:100%; border-top:1px solid #e9eef5; box-sizing:border-box;">
+            <div style="padding:13px 0; border-bottom:1px solid #e9eef5; font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.65; box-sizing:border-box;">
+              Short-game proximity refinement
             </div>
-
-            <div style="display:flex; align-items:flex-start; gap:10px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px 13px; box-sizing:border-box;">
-              <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#c98a2e; margin-top:6px; box-sizing:border-box;"></span>
-              <div style="font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.6; box-sizing:border-box;">
-                Bermuda/Desert green-speed adaptation
-              </div>
+            <div style="padding:13px 0; border-bottom:1px solid #e9eef5; font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.65; box-sizing:border-box;">
+              Bermuda/Desert green-speed adaptation
             </div>
-
-            <div style="display:flex; align-items:flex-start; gap:10px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px 13px; box-sizing:border-box;">
-              <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#c98a2e; margin-top:6px; box-sizing:border-box;"></span>
-              <div style="font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.6; box-sizing:border-box;">
-                Putting consistency & conversion drills
-              </div>
+            <div style="padding:13px 0; border-bottom:1px solid #e9eef5; font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.65; box-sizing:border-box;">
+              Putting consistency & conversion drills
             </div>
-
-            <div style="display:flex; align-items:flex-start; gap:10px; background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:12px 13px; box-sizing:border-box;">
-              <span style="flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:#c98a2e; margin-top:6px; box-sizing:border-box;"></span>
-              <div style="font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.6; box-sizing:border-box;">
-                Driver/Iron dispersion stability check
-              </div>
+            <div style="padding:13px 0 0 0; font-size:13.5px; color:#0c2340; font-weight:700; line-height:1.65; box-sizing:border-box;">
+              Driver/Iron dispersion stability check
             </div>
           </div>
         </div>
@@ -1717,15 +1726,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     padding: 20px 18px 18px 18px !important;
   }
 
-  #jh-current-focus-block .jhcf-grid,
-  #jh-current-focus-block .jhcf-upcoming-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  #jh-current-focus-block .jhcf-card-wide {
-    grid-column: span 1 !important;
-  }
-
   #jh-current-focus-block .jhcf-no {
     width: 42px !important;
     height: 42px !important;
@@ -1733,13 +1733,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     font-size: 14px !important;
   }
 
+  #jh-current-focus-block .jhcf-section-head {
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
   #jh-current-focus-block .jhcf-upcoming {
     padding: 16px !important;
   }
 
-  #jh-current-focus-block .jhcf-section-head {
-    gap: 12px !important;
-    margin-bottom: 12px !important;
+  #jh-current-focus-block .jhcf-line {
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 12px 0 !important;
+  }
+
+  #jh-current-focus-block .jhcf-label {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  #jh-current-focus-block .jhcf-value {
+    width: 100% !important;
+    font-size: 13.5px !important;
+    line-height: 1.7 !important;
   }
 }
 
@@ -1749,7 +1766,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   }
 }
 </style>
-
 
 
 
