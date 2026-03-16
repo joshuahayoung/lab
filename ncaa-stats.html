@@ -1209,19 +1209,19 @@
 <div class="analysis-section" style="max-width: 900px; margin: 0 auto 20px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <style>
-    /* 모바일 전용 스타일: 화면 폭이 600px 이하일 때 적용 */
+    /* mobile style 600px o less */
     @media (max-width: 600px) {
       .archive-btn-container {
-        justify-content: center !important; /* 모바일에서 중앙 정렬 */
+        justify-content: center !important; /* mobile center align */
         margin-bottom: 10px !important;
       }
       .archive-btn {
-        padding: 8px 16px !important; /* 모바일에서 크기 축소 */
-        font-size: 11px !important;    /* 폰트 크기 축소 */
+        padding: 8px 16px !important; /* mobile size */
+        font-size: 11px !important;    /* font lighter */
         gap: 8px !important;
       }
       .archive-btn svg {
-        width: 15px !important;       /* 아이콘 크기 축소 */
+        width: 15px !important;       /* icon lighter */
         height: 15px !important;
       }
     }
@@ -1529,7 +1529,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
     <!-- Header-post date -->
     <div class="jhcf-header">
-      <div id="Current-Focus" style="margin-left: auto; width: fit-content; margin-right: 23px;">
+      <div id="Current-Focus" style="margin-left: auto; width: fit-content; margin-right: 18px;">
         <span class="jhcf-posted-pill">Posted On: Mar 4, 2026</span>
       </div>
     </div>
@@ -1700,17 +1700,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   overflow: hidden;
 }
 
-#jh-current-focus-block .jhcf-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 24px 28px 20px 28px;
-  border-top: 4px solid #0c2340;
-  border-bottom: 1px solid #e9eef5;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(250,252,255,0.85) 100%);
-  flex-wrap: wrap;
+#jh-current-focus-block .jhcf-posted-pill {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 #jh-current-focus-block .jhcf-posted-pill {
@@ -2035,7 +2037,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
     const isMobile = window.innerWidth <= 768;
 
-    // ===== DATA (값은 원본 그대로 유지) =====
+    // ===== DATA =====
     const archiveLabels = [
         '9/07 (Argent)',
         '9/15 (Highlands)',
@@ -2095,7 +2097,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '6.7817'
     ];
 
-    // 모바일에서 표시만 짧게 (원본 데이터는 그대로 유지)
+    // Mobile
     function mobileLabel(label) {
         if (!isMobile) return label;
         return label
