@@ -881,7 +881,7 @@
     const eventData = {
       eventNo: "8th Event",
       eventLabel: "Arizona Thunderbirds Intercollegiate",
-      status: "ongoing", // upcoming | ongoing | final | cancelled
+      status: "final", // upcoming | ongoing | final | cancelled
 
       title: "Arizona Thunderbirds Intercollegiate (Arizona)",
       date: "Mar 16-17",
@@ -894,12 +894,12 @@
 
       mainLink: {
         url: "https://scoreboard.clippd.com/tournaments/239371/scoring/team",
-        label: "LIVE LEADERBOARD"
+        label: "FINAL RESLULTS"
       },
 
       summary: {
-        total: "148",
-        par: "+4",
+        total: "221",
+        par: "+5",
         pos: "T48"
       },
 
@@ -922,17 +922,17 @@
           status: "FINISH",
           pos: "T48",
           pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
-          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         },
         {
           round: "Round 3",
           date: "Mar 17, 2026",
-          score: "TBD",
-          par: "TBD",
-          status: "IN PROGRESS",
-          pos: "TBD",
+          score: "73",
+          par: "+1",
+          status: "FINISH",
+          pos: "T48",
           pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Scorecard.jpg"
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         }
       ]
     };
@@ -1131,7 +1131,7 @@
         <div class="jt-wrap">
           <div class="jt-header-top">
             <div class="jt-header-row ${data.status}">
-              <h3>ONGOING TOURNAMENT</h3>
+              <h3>LATEST TOURNAMENT RESULTS</h3>
               <span>${data.eventNo}: ${data.eventLabel}</span>
             </div>
           </div>
