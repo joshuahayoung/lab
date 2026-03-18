@@ -1910,8 +1910,19 @@ gtag('config', 'G-H1JW8YBDZ8');
 #jh-index-key-metrics-panel .jhikm-impact {
   font-size: 15px;
   font-weight: 800;
-  color: #10b981;
   line-height: 1;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-up {
+  color: #10b981;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-down {
+  color: #d32f2f;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-flat {
+  color: #64748b;
 }
 
 @media (max-width: 768px) {
@@ -1973,6 +1984,22 @@ gtag('config', 'G-H1JW8YBDZ8');
     }
   }
 
+  function setImpact(id, value) {
+    const el = root.querySelector('#' + id);
+    if (!el || value === undefined || value === null) return;
+
+    el.textContent = value;
+    el.classList.remove('jhikm-impact-up', 'jhikm-impact-down', 'jhikm-impact-flat');
+
+    if (String(value).trim().startsWith('▲')) {
+      el.classList.add('jhikm-impact-up');
+    } else if (String(value).trim().startsWith('▼')) {
+      el.classList.add('jhikm-impact-down');
+    } else {
+      el.classList.add('jhikm-impact-flat');
+    }
+  }
+
   async function syncIndexKeyMetrics9() {
     try {
       const response = await fetch('data.json?v=' + new Date().getTime());
@@ -1995,11 +2022,11 @@ gtag('config', 'G-H1JW8YBDZ8');
       setText('jhikm-teamTotal', data.teamMetrics.teamTotal);
 
       setText('jhikm-wagrRank', data.officialRank.wagrRank);
-      setText('jhikm-wagrImpact', data.officialRank.wagrImpact);
+      setImpact('jhikm-wagrImpact', data.officialRank.wagrImpact);
       setText('jhikm-wagrDate', data.officialRank.wagrDate);
 
       setText('jhikm-clippdRank', data.officialRank.clippdRank);
-      setText('jhikm-clippdImpact', data.officialRank.clippdImpact);
+      setImpact('jhikm-clippdImpact', data.officialRank.clippdImpact);
       setText('jhikm-clippdDate', data.officialRank.clippdDate);
 
       setText('jhikm-wins', data.officialRank.wins);
@@ -2014,7 +2041,6 @@ gtag('config', 'G-H1JW8YBDZ8');
   window.addEventListener('DOMContentLoaded', syncIndexKeyMetrics9);
 })();
 </script>
-
 
 
 
