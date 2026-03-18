@@ -1,28 +1,28 @@
 {
-  "status": "21 OFFICIAL ROUNDS",
-  "scope": "21",
+  "status": "24 OFFICIAL ROUNDS",
+  "scope": "24",
   "individual": {
-    "scoringAvg": "70.60",
-    "rawAvg": "71.33",
-    "underPar": "14 Par or Better(66.7%)",
+    "scoringAvg": "70.90",
+    "rawAvg": "71.63",
+    "underPar": "15 Par or Better(62.50%)",
     "gpa": "3.4 GPA"
   },
   "teamMetrics": {
-    "winRate": "79.1",
-    "headToHead": "423-100-12",
-    "countingScore": "95.2",
-    "recordedRounds": "20 / 21",
-    "pointsShare": "32.34",
-    "pointsValue": "274.37",
-    "teamTotal": "848.42"
+    "winRate": "73.98",
+    "headToHead": "455-147-13",
+    "countingScore": "95.83",
+    "recordedRounds": "23 / 24",
+    "pointsShare": "29.70",
+    "pointsValue": "302.12",
+    "teamTotal": "1017.28"
   },
   "officialRank": {
     "wagrRank": "407",
     "wagrImpact": "▲18",
     "wagrDate": "Mar 11, 2026",
-    "clippdRank": "294",
-    "clippdImpact": "▲17",
-    "clippdDate": "Mar 11, 2026",
+    "clippdRank": "337",
+    "clippdImpact": "▼43",
+    "clippdDate": "Mar 18, 2026",
     "wins": "1",
     "top3": "3",
     "top10": "4",
