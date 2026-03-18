@@ -1588,6 +1588,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 </div>
 
     
+
 <div id="jh-index-key-metrics-panel" style="max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <div style="margin-bottom: 20px; background-color: #f8f9fa; border-radius: 25px; padding: 25px 25px 20px 25px; border: 1px solid #edf2f7; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); box-sizing: border-box;">
 
@@ -1606,126 +1607,128 @@ gtag('config', 'G-H1JW8YBDZ8');
       Auto-Synced from data.json
     </p>
 
-    <div class="jhikm-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: 16px;">
+    <div class="jhikm-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
 
-      <!-- status -->
+      <!-- 1. Status / Scope -->
       <div class="jhikm-card">
         <div class="jhikm-label">Status</div>
-        <div class="jhikm-value" data-bind="status">24 OFFICIAL ROUNDS</div>
+        <div class="jhikm-value jhikm-value-small" id="jhikm-status">24 OFFICIAL ROUNDS</div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">Scope</span>
+          <span class="jhikm-sub-v" id="jhikm-scope">24</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">Scope</div>
-        <div class="jhikm-value" data-bind="scope">24</div>
-      </div>
-
-      <!-- individual -->
+      <!-- 2. Scoring Avg -->
       <div class="jhikm-card jhikm-card-navy">
-        <div class="jhikm-label">Scoring Avg.</div>
-        <div class="jhikm-value" data-bind="individual.scoringAvg">70.90</div>
+        <div class="jhikm-label">Scoring Average</div>
+        <div class="jhikm-value" id="jhikm-scoringAvg">70.90</div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">Raw Avg</span>
+          <span class="jhikm-sub-v" id="jhikm-rawAvg">71.63</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">Raw Avg.</div>
-        <div class="jhikm-value" data-bind="individual.rawAvg">71.63</div>
-      </div>
-
+      <!-- 3. Par or Better / GPA -->
       <div class="jhikm-card jhikm-card-blue">
-        <div class="jhikm-label">Par or Better</div>
-        <div class="jhikm-value jhikm-value-small" data-bind="individual.underPar">15 Par or Better(62.50%)</div>
+        <div class="jhikm-label">Consistency / Academic</div>
+        <div class="jhikm-stack">
+          <div class="jhikm-stack-row">
+            <span class="jhikm-stack-k">Par or Better</span>
+            <span class="jhikm-stack-v" id="jhikm-underPar">15 Par or Better(62.50%)</span>
+          </div>
+          <div class="jhikm-stack-row">
+            <span class="jhikm-stack-k">GPA</span>
+            <span class="jhikm-stack-v" id="jhikm-gpa">3.4 GPA</span>
+          </div>
+        </div>
       </div>
 
-      <div class="jhikm-card jhikm-card-green">
-        <div class="jhikm-label">GPA</div>
-        <div class="jhikm-value" data-bind="individual.gpa">3.4 GPA</div>
-      </div>
-
-      <!-- team metrics -->
+      <!-- 4. Head-to-Head -->
       <div class="jhikm-card">
         <div class="jhikm-label">Head-to-Head</div>
-        <div class="jhikm-value jhikm-value-small" data-bind="teamMetrics.headToHead">455-147-13</div>
+        <div class="jhikm-value jhikm-value-small" id="jhikm-headToHead">455-147-13</div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">Win Rate</span>
+          <span class="jhikm-sub-v"><span id="jhikm-winRate">73.98</span>%</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">Win Rate</div>
-        <div class="jhikm-value" data-bind="teamMetrics.winRate">73.98</div>
-      </div>
-
+      <!-- 5. Counting Score -->
       <div class="jhikm-card jhikm-card-navy">
         <div class="jhikm-label">Counting Score</div>
-        <div class="jhikm-value" data-bind="teamMetrics.countingScore">95.83</div>
+        <div class="jhikm-value"><span id="jhikm-countingScore">95.83</span>%</div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">Recorded</span>
+          <span class="jhikm-sub-v" id="jhikm-recordedRounds">23 / 24</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">Recorded Rounds</div>
-        <div class="jhikm-value jhikm-value-small" data-bind="teamMetrics.recordedRounds">23 / 24</div>
-      </div>
-
+      <!-- 6. Points Share -->
       <div class="jhikm-card jhikm-card-orange">
         <div class="jhikm-label">Points Share</div>
-        <div class="jhikm-value" data-bind="teamMetrics.pointsShare">29.70</div>
+        <div class="jhikm-value"><span id="jhikm-pointsShare">29.70</span>%</div>
+        <div class="jhikm-mini-grid">
+          <div>
+            <div class="jhikm-mini-k">(w) Points</div>
+            <div class="jhikm-mini-v" id="jhikm-pointsValue">302.12</div>
+          </div>
+          <div>
+            <div class="jhikm-mini-k">Team Total</div>
+            <div class="jhikm-mini-v" id="jhikm-teamTotal">1017.28</div>
+          </div>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">(w) Points</div>
-        <div class="jhikm-value" data-bind="teamMetrics.pointsValue">302.12</div>
-      </div>
-
-      <div class="jhikm-card">
-        <div class="jhikm-label">Team Total</div>
-        <div class="jhikm-value" data-bind="teamMetrics.teamTotal">1017.28</div>
-      </div>
-
-      <!-- official rank -->
+      <!-- 7. WAGR -->
       <div class="jhikm-card">
         <div class="jhikm-label">WAGR Rank</div>
-        <div class="jhikm-value" data-bind="officialRank.wagrRank">407</div>
+        <div class="jhikm-rankline">
+          <span class="jhikm-value" id="jhikm-wagrRank">407</span>
+          <span class="jhikm-impact" id="jhikm-wagrImpact">▲18</span>
+        </div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">As of</span>
+          <span class="jhikm-sub-v" id="jhikm-wagrDate">Mar 11, 2026</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">WAGR Impact</div>
-        <div class="jhikm-value" data-bind="officialRank.wagrImpact">▲18</div>
-      </div>
-
-      <div class="jhikm-card">
-        <div class="jhikm-label">WAGR Date</div>
-        <div class="jhikm-value jhikm-value-small" data-bind="officialRank.wagrDate">Mar 11, 2026</div>
-      </div>
-
-      <div class="jhikm-card">
+      <!-- 8. Clippd -->
+      <div class="jhikm-card jhikm-card-navy">
         <div class="jhikm-label">Clippd Rank</div>
-        <div class="jhikm-value" data-bind="officialRank.clippdRank">337</div>
+        <div class="jhikm-rankline">
+          <span class="jhikm-value" id="jhikm-clippdRank">337</span>
+          <span class="jhikm-impact" id="jhikm-clippdImpact">▼43</span>
+        </div>
+        <div class="jhikm-subline">
+          <span class="jhikm-sub-k">As of</span>
+          <span class="jhikm-sub-v" id="jhikm-clippdDate">Mar 18, 2026</span>
+        </div>
       </div>
 
-      <div class="jhikm-card">
-        <div class="jhikm-label">Clippd Impact</div>
-        <div class="jhikm-value" data-bind="officialRank.clippdImpact">▼43</div>
-      </div>
-
-      <div class="jhikm-card">
-        <div class="jhikm-label">Clippd Date</div>
-        <div class="jhikm-value jhikm-value-small" data-bind="officialRank.clippdDate">Mar 18, 2026</div>
-      </div>
-
+      <!-- 9. Performance Profile -->
       <div class="jhikm-card jhikm-card-gold">
-        <div class="jhikm-label">Wins</div>
-        <div class="jhikm-value" data-bind="officialRank.wins">1</div>
+        <div class="jhikm-label">Performance Profile</div>
+        <div class="jhikm-mini-grid jhikm-mini-grid-4">
+          <div>
+            <div class="jhikm-mini-k">Wins</div>
+            <div class="jhikm-mini-v" id="jhikm-wins">1</div>
+          </div>
+          <div>
+            <div class="jhikm-mini-k">Top 3</div>
+            <div class="jhikm-mini-v" id="jhikm-top3">3</div>
+          </div>
+          <div>
+            <div class="jhikm-mini-k">Top 10</div>
+            <div class="jhikm-mini-v" id="jhikm-top10">4</div>
+          </div>
+          <div>
+            <div class="jhikm-mini-k">Events</div>
+            <div class="jhikm-mini-v" id="jhikm-totalTournaments">7</div>
+          </div>
+        </div>
       </div>
 
-      <div class="jhikm-card jhikm-card-gold">
-        <div class="jhikm-label">Top 3</div>
-        <div class="jhikm-value" data-bind="officialRank.top3">3</div>
-      </div>
-
-      <div class="jhikm-card jhikm-card-gold">
-        <div class="jhikm-label">Top 10</div>
-        <div class="jhikm-value" data-bind="officialRank.top10">4</div>
-      </div>
-
-      <div class="jhikm-card">
-        <div class="jhikm-label">Tournaments</div>
-        <div class="jhikm-value" data-bind="officialRank.totalTournaments">7</div>
-      </div>
     </div>
   </div>
 </div>
@@ -1748,6 +1751,22 @@ gtag('config', 'G-H1JW8YBDZ8');
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
   min-width: 0;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy {
+  background: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-blue {
+  background: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-orange {
+  background: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold {
+  background: #ffffff;
 }
 
 #jh-index-key-metrics-panel .jhikm-label {
@@ -1778,27 +1797,124 @@ gtag('config', 'G-H1JW8YBDZ8');
   color: #0c2340;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-value {
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-v {
   color: #2b6cb0;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-green .jhikm-value {
-  color: #166534;
-}
-
-#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-value {
+#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-mini-v {
   color: #F15A22;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-value {
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-v {
   color: #806600;
 }
 
-@media (max-width: 768px) {
-  #jh-index-key-metrics-panel {
-    padding: 0;
-  }
+#jh-index-key-metrics-panel .jhikm-subline {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
 
+#jh-index-key-metrics-panel .jhikm-sub-k {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+#jh-index-key-metrics-panel .jhikm-sub-v {
+  font-size: 13px;
+  color: #0c2340;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: right;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-row {
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-k {
+  display: block;
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 5px;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-v {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #0c2340;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-grid {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-k {
+  font-size: 8px;
+  color: #64748b;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-v {
+  font-size: 13px;
+  color: #0c2340;
+  font-weight: 900;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhikm-rankline {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact {
+  font-size: 15px;
+  font-weight: 800;
+  color: #10b981;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
   #jh-index-key-metrics-panel .jhikm-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 12px !important;
@@ -1815,13 +1931,16 @@ gtag('config', 'G-H1JW8YBDZ8');
 
   #jh-index-key-metrics-panel .jhikm-value-small {
     font-size: 13px !important;
-    line-height: 1.4 !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-mini-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
 @media (max-width: 520px) {
   #jh-index-key-metrics-panel .jhikm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns: 1fr !important;
   }
 
   #jh-index-key-metrics-panel .jhikm-label {
@@ -1833,7 +1952,10 @@ gtag('config', 'G-H1JW8YBDZ8');
     font-size: 20px !important;
   }
 
-  #jh-index-key-metrics-panel .jhikm-value-small {
+  #jh-index-key-metrics-panel .jhikm-value-small,
+  #jh-index-key-metrics-panel .jhikm-sub-v,
+  #jh-index-key-metrics-panel .jhikm-stack-v,
+  #jh-index-key-metrics-panel .jhikm-mini-v {
     font-size: 12px !important;
   }
 }
@@ -1844,31 +1966,52 @@ gtag('config', 'G-H1JW8YBDZ8');
   const root = document.getElementById('jh-index-key-metrics-panel');
   if (!root) return;
 
-  function getValueByPath(obj, path) {
-    return path.split('.').reduce((acc, key) => {
-      return (acc && acc[key] !== undefined) ? acc[key] : '';
-    }, obj);
+  function setText(id, value) {
+    const el = root.querySelector('#' + id);
+    if (el && value !== undefined && value !== null) {
+      el.textContent = value;
+    }
   }
 
-  async function syncIndexKeyMetrics() {
+  async function syncIndexKeyMetrics9() {
     try {
       const response = await fetch('data.json?v=' + new Date().getTime());
       const data = await response.json();
 
-      const nodes = root.querySelectorAll('[data-bind]');
-      nodes.forEach(node => {
-        const path = node.getAttribute('data-bind');
-        const value = getValueByPath(data, path);
-        if (value !== '') {
-          node.textContent = value;
-        }
-      });
+      setText('jhikm-status', data.status);
+      setText('jhikm-scope', data.scope);
+
+      setText('jhikm-scoringAvg', data.individual.scoringAvg);
+      setText('jhikm-rawAvg', data.individual.rawAvg);
+      setText('jhikm-underPar', data.individual.underPar);
+      setText('jhikm-gpa', data.individual.gpa);
+
+      setText('jhikm-headToHead', data.teamMetrics.headToHead);
+      setText('jhikm-winRate', data.teamMetrics.winRate);
+      setText('jhikm-countingScore', data.teamMetrics.countingScore);
+      setText('jhikm-recordedRounds', data.teamMetrics.recordedRounds);
+      setText('jhikm-pointsShare', data.teamMetrics.pointsShare);
+      setText('jhikm-pointsValue', data.teamMetrics.pointsValue);
+      setText('jhikm-teamTotal', data.teamMetrics.teamTotal);
+
+      setText('jhikm-wagrRank', data.officialRank.wagrRank);
+      setText('jhikm-wagrImpact', data.officialRank.wagrImpact);
+      setText('jhikm-wagrDate', data.officialRank.wagrDate);
+
+      setText('jhikm-clippdRank', data.officialRank.clippdRank);
+      setText('jhikm-clippdImpact', data.officialRank.clippdImpact);
+      setText('jhikm-clippdDate', data.officialRank.clippdDate);
+
+      setText('jhikm-wins', data.officialRank.wins);
+      setText('jhikm-top3', data.officialRank.top3);
+      setText('jhikm-top10', data.officialRank.top10);
+      setText('jhikm-totalTournaments', data.officialRank.totalTournaments);
     } catch (error) {
       console.error('Index metrics sync error:', error);
     }
   }
 
-  window.addEventListener('DOMContentLoaded', syncIndexKeyMetrics);
+  window.addEventListener('DOMContentLoaded', syncIndexKeyMetrics9);
 })();
 </script>
 
