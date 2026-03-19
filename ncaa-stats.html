@@ -406,28 +406,35 @@
 
 
  
-  
-<div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div id="latest-upcoming-ongoing-tournament-root"></div>
+나는 이코드가 더 좋았어. 
+
+대신에 
+
+
+
+
+<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 60px; padding:0 15px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-    .jt-wrap {
+    #jh-tournament-card-block,
+    #jh-tournament-card-block *,
+    #jh-tournament-card-block *::before,
+    #jh-tournament-card-block *::after {
+      box-sizing: border-box;
+    }
+
+    #jh-tournament-card-block .jtc-wrap {
       width: 100%;
       max-width: 900px;
-      margin: 10px auto 60px;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      clear: both;
+      margin: 0 auto;
     }
 
-    .jt-header-top {
+    #jh-tournament-card-block .jtc-header-top {
       margin-bottom: 20px;
       width: 100%;
-      box-sizing: border-box;
     }
 
-    .jt-header-row {
+    #jh-tournament-card-block .jtc-header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -435,29 +442,30 @@
       margin-bottom: 25px;
       padding-left: 20px;
       flex-wrap: wrap;
+      border-left: 5px solid #1e3a8a;
     }
 
-    .jt-header-row.upcoming { border-left: 5px solid #1e3a8a; }
-    .jt-header-row.ongoing { border-left: 5px solid #22c55e; }
-    .jt-header-row.final { border-left: 5px solid #e74c3c; }
-    .jt-header-row.cancelled { border-left: 5px solid #7f1d1d; }
+    #jh-tournament-card-block .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
+    #jh-tournament-card-block .jtc-header-row.ongoing  { border-left-color: #22c55e; }
+    #jh-tournament-card-block .jtc-header-row.final    { border-left-color: #e74c3c; }
+    #jh-tournament-card-block .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
 
-    .jt-header-row h3 {
+    #jh-tournament-card-block .jtc-header-row h3 {
       color: #0C2340;
       margin: 0;
-      text-transform: none;
       font-size: 1.3em;
       line-height: 1.2;
       font-family: 'Oswald', sans-serif;
+      text-transform: none;
     }
 
-    .jt-header-row span {
+    #jh-tournament-card-block .jtc-header-row span {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.85em;
       color: #888;
     }
 
-    .jt-card {
+    #jh-tournament-card-block .jtc-card {
       background: #ffffff;
       border: 2px solid #0c2340;
       border-radius: 20px;
@@ -466,7 +474,7 @@
       overflow: hidden;
     }
 
-    .jt-card-head {
+    #jh-tournament-card-block .jtc-card-head {
       padding: 20px 25px;
       display: flex;
       align-items: center;
@@ -476,14 +484,14 @@
       background: #f8fafc;
     }
 
-    .jt-head-left {
+    #jh-tournament-card-block .jtc-head-left {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
     }
 
-    .jt-badge {
+    #jh-tournament-card-block .jtc-badge {
       color: white;
       padding: 4px 12px;
       border-radius: 4px;
@@ -496,12 +504,12 @@
       text-transform: uppercase;
     }
 
-    .jt-badge.upcoming { background: #64748b; }
-    .jt-badge.ongoing { background: #0c2340; }
-    .jt-badge.final { background: #0c2340; }
-    .jt-badge.cancelled { background: #7f1d1d; }
+    #jh-tournament-card-block .jtc-badge.upcoming { background: #64748b; }
+    #jh-tournament-card-block .jtc-badge.ongoing { background: #0c2340; }
+    #jh-tournament-card-block .jtc-badge.final { background: #0c2340; }
+    #jh-tournament-card-block .jtc-badge.cancelled { background: #7f1d1d; }
 
-    .jt-dot {
+    #jh-tournament-card-block .jtc-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
@@ -509,53 +517,46 @@
       flex-shrink: 0;
     }
 
-    .jt-dot.upcoming {
+    #jh-tournament-card-block .jtc-dot.upcoming {
       background-color: #94a3b8;
-      opacity: 1;
-      animation: none;
       box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
     }
 
-    .jt-dot.ongoing {
+    #jh-tournament-card-block .jtc-dot.ongoing {
       background-color: #22c55e;
-      animation: jt-live-pulse-green 1.6s infinite ease-in-out;
+      animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
     }
 
-    .jt-dot.final {
+    #jh-tournament-card-block .jtc-dot.final {
       background-color: #e74c3c;
-      opacity: 0.95;
-      animation: none;
-      box-shadow: none;
     }
 
-    .jt-dot.cancelled {
+    #jh-tournament-card-block .jtc-dot.cancelled {
       background-color: #7f1d1d;
       opacity: 0.7;
-      animation: none;
-      box-shadow: none;
     }
 
-    @keyframes jt-live-pulse-green {
+    @keyframes jtc-live-pulse-green {
       0%   { opacity: 1; transform: scale(1); }
       50%  { opacity: 0.35; transform: scale(0.9); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    .jt-title {
+    #jh-tournament-card-block .jtc-title {
       color: #0c2340;
       margin: 0;
       font-size: 19px;
       font-weight: 800;
     }
 
-    .jt-meta {
+    #jh-tournament-card-block .jtc-meta {
       font-size: 12px;
       color: #7f8c8d;
       font-weight: 600;
     }
 
-    .jt-table {
+    #jh-tournament-card-block .jtc-table {
       width: 100%;
       border-collapse: collapse;
       background: white;
@@ -564,7 +565,7 @@
       border: none;
     }
 
-    .jt-table th {
+    #jh-tournament-card-block .jtc-table th {
       background: #f8f9fa;
       font-size: 11px;
       color: #0c2340;
@@ -574,58 +575,65 @@
       text-align: center;
     }
 
-    .jt-table th.col-left,
-    .jt-table td.col-left {
+    #jh-tournament-card-block .jtc-table th.jtc-col-left,
+    #jh-tournament-card-block .jtc-table td.jtc-col-left {
       text-align: left;
       padding-left: 20px;
     }
 
-    .jt-table td {
+    #jh-tournament-card-block .jtc-table td {
       padding: 15px 10px;
       border-bottom: 1px solid #edf2f7;
       vertical-align: middle;
       text-align: center;
     }
 
-    .jt-col-info { width: 55%; }
-    .jt-col-score { width: 10%; }
-    .jt-col-par { width: 10%; }
-    .jt-col-status { width: 15%; }
-    .jt-col-finish { width: 10%; }
+    #jh-tournament-card-block .jtc-col-info   { width: 43%; }
+    #jh-tournament-card-block .jtc-col-score  { width: 11%; }
+    #jh-tournament-card-block .jtc-col-par    { width: 11%; }
+    #jh-tournament-card-block .jtc-col-status { width: 20%; }
+    #jh-tournament-card-block .jtc-col-finish { width: 15%; }
 
-    .jt-round-title {
+    #jh-tournament-card-block .jtc-round-title {
       font-weight: 800;
       color: #0c2340;
       font-size: 15px;
     }
 
-    .jt-round-date {
+    #jh-tournament-card-block .jtc-round-date {
       font-size: 11px;
       color: #7f8c8d;
       margin-top: 2px;
     }
 
-    .jt-score-under {
+    #jh-tournament-card-block .jtc-score-under {
       color: #e74c3c;
       font-weight: 800;
     }
 
-    .jt-score-even {
+    #jh-tournament-card-block .jtc-score-even {
       color: #2563eb;
       font-weight: 800;
     }
 
-    .jt-score-over {
+    #jh-tournament-card-block .jtc-score-over {
       color: #1e3a8a;
       font-weight: 800;
     }
 
-    .jt-text-neutral {
+    #jh-tournament-card-block .jtc-text-neutral {
       color: #0c2340;
       font-weight: 800;
     }
 
-    .jt-pairing-btn {
+    #jh-tournament-card-block .jtc-row-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    #jh-tournament-card-block .jtc-tool-btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -637,11 +645,11 @@
       transition: all 0.2s ease;
     }
 
-    .jt-pairing-btn:hover {
+    #jh-tournament-card-block .jtc-tool-btn:hover {
       background: #e2e8f0;
     }
 
-    .jt-pairing-btn span {
+    #jh-tournament-card-block .jtc-tool-btn span {
       font-size: 10px;
       font-weight: 800;
       color: #64748b;
@@ -649,14 +657,7 @@
       letter-spacing: 0.5px;
     }
 
-    .jt-row-tools {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .jt-footer {
+    #jh-tournament-card-block .jtc-footer {
       background: #0c2340;
       padding: 15px 25px;
       display: flex;
@@ -666,7 +667,7 @@
       flex-wrap: wrap;
     }
 
-    .jt-main-link {
+    #jh-tournament-card-block .jtc-main-link {
       margin-right: auto;
       display: inline-flex;
       align-items: center;
@@ -684,7 +685,7 @@
       background: #ffffff;
     }
 
-    .jt-main-link-dot {
+    #jh-tournament-card-block .jtc-main-link-dot {
       width: 5px;
       height: 5px;
       border-radius: 50%;
@@ -692,37 +693,22 @@
       flex-shrink: 0;
     }
 
-    .jt-main-link-dot.upcoming {
-      background-color: #94a3b8;
-      animation: none;
-    }
+    #jh-tournament-card-block .jtc-main-link-dot.upcoming  { background-color: #94a3b8; }
+    #jh-tournament-card-block .jtc-main-link-dot.ongoing   { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
+    #jh-tournament-card-block .jtc-main-link-dot.final     { background-color: #e74c3c; }
+    #jh-tournament-card-block .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
 
-    .jt-main-link-dot.ongoing {
-      background-color: #22c55e;
-      animation: jt-link-pulse-green 1.5s infinite;
-    }
-
-    .jt-main-link-dot.final {
-      background-color: #e74c3c;
-      animation: none;
-    }
-
-    .jt-main-link-dot.cancelled {
-      background-color: #7f1d1d;
-      animation: none;
-    }
-
-    @keyframes jt-link-pulse-green {
+    @keyframes jtc-link-pulse-green {
       0%   { opacity: 1; transform: scale(1); }
       50%  { opacity: 0.35; transform: scale(1.2); }
       100% { opacity: 1; transform: scale(1); }
     }
 
-    .jt-summary {
+    #jh-tournament-card-block .jtc-summary {
       text-align: right;
     }
 
-    .jt-summary-label {
+    #jh-tournament-card-block .jtc-summary-label {
       color: rgba(255,255,255,0.6);
       font-size: 9px;
       font-weight: 800;
@@ -730,21 +716,17 @@
       text-transform: uppercase;
     }
 
-    .jt-summary-value {
+    #jh-tournament-card-block .jtc-summary-value {
       font-size: 18px;
       font-weight: 900;
     }
 
-    .jt-summary-value.red { color: #e74c3c; }
-    .jt-summary-value.blue { color: #60a5fa; }
-    .jt-summary-value.navy { color: #bfdbfe; }
-    .jt-summary-value.white { color: #ffffff; }
+    #jh-tournament-card-block .jtc-summary-value.red   { color: #e74c3c; }
+    #jh-tournament-card-block .jtc-summary-value.blue  { color: #60a5fa; }
+    #jh-tournament-card-block .jtc-summary-value.navy  { color: #bfdbfe; }
+    #jh-tournament-card-block .jtc-summary-value.white { color: #ffffff; }
 
-    .jt-mobile-bar {
-      display: none;
-    }
-
-    .jt-modal {
+    #jh-tournament-card-block .jtc-modal {
       display: none;
       position: fixed;
       z-index: 10001;
@@ -758,14 +740,14 @@
       padding: 20px;
     }
 
-    .jt-modal-wrap {
+    #jh-tournament-card-block .jtc-modal-wrap {
       position: relative;
       max-width: 90%;
       max-height: 90vh;
       text-align: center;
     }
 
-    .jt-modal img {
+    #jh-tournament-card-block .jtc-modal img {
       max-width: 100%;
       max-height: 80vh;
       border-radius: 8px;
@@ -773,7 +755,7 @@
       border: 3px solid #fff;
     }
 
-    .jt-modal-close-x {
+    #jh-tournament-card-block .jtc-modal-close-x {
       position: absolute;
       top: -40px;
       right: 0;
@@ -783,7 +765,7 @@
       font-weight: bold;
     }
 
-    .jt-modal-close-btn {
+    #jh-tournament-card-block .jtc-modal-close-btn {
       margin-top: 15px;
       padding: 8px 25px;
       background: #fff;
@@ -797,90 +779,158 @@
     }
 
     @media (max-width: 768px) {
-      .jt-table thead { display: none; }
-
-      .jt-table,
-      .jt-table tbody,
-      .jt-table tr,
-      .jt-table td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
+      #jh-tournament-card-block {
+        padding: 0 12px;
       }
 
-      .jt-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #eee !important;
-        border-radius: 12px;
-        padding: 12px;
+      #jh-tournament-card-block .jtc-card-head {
+        padding: 18px 16px;
       }
 
-      .jt-table td {
-        border: none !important;
-        padding: 0 !important;
-        text-align: left !important;
-      }
-
-      .jt-hide-mobile { display: none !important; }
-
-      .jt-mobile-bar {
-        display: flex !important;
-        background: #fcfcfc;
-        border-radius: 8px;
-        margin-top: 10px;
-        padding: 8px 5px;
-        border: 1px dashed #e2e8f0;
-      }
-
-      .jt-ms-item {
-        flex: 1;
-        text-align: center;
-        border-right: 1px solid #eee;
-      }
-
-      .jt-ms-item:last-child {
-        border-right: none;
-      }
-
-      .jt-ms-label {
-        display: block;
-        font-size: 8px;
-        color: #aaa;
-        font-weight: 800;
-        margin-bottom: 2px;
-      }
-
-      .jt-ms-value {
-        display: block;
-        font-size: 12px;
-        font-weight: 800;
-      }
-
-      .jt-footer {
+      #jh-tournament-card-block .jtc-footer {
         gap: 18px;
+        padding: 14px 16px;
       }
 
-      .jt-main-link {
+      #jh-tournament-card-block .jtc-main-link {
         margin-right: auto;
         width: auto;
         justify-content: flex-start;
       }
+
+      #jh-tournament-card-block .jtc-table thead {
+        display: none;
+      }
+
+      #jh-tournament-card-block .jtc-table,
+      #jh-tournament-card-block .jtc-table tbody,
+      #jh-tournament-card-block .jtc-table tr,
+      #jh-tournament-card-block .jtc-table td {
+        display: block;
+        width: 100%;
+      }
+
+      #jh-tournament-card-block .jtc-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 12px;
+      }
+
+      #jh-tournament-card-block .jtc-table td {
+        border: none !important;
+        padding: 7px 0 !important;
+        text-align: left !important;
+      }
+
+      #jh-tournament-card-block .jtc-table td.jtc-col-left {
+        padding-left: 0 !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 8px;
+        border-bottom: 1px dashed #e2e8f0 !important;
+      }
+
+      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
+        content: attr(data-label);
+        display: inline-block;
+        min-width: 54px;
+        margin-right: 10px;
+        font-size: 10px;
+        color: #94a3b8;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+      }
+
+      #jh-tournament-card-block .jtc-summary {
+        min-width: 62px;
+      }
     }
   </style>
 
-  <div id="jtPairingModal" class="jt-modal" onclick="jtCloseModal()">
-    <div class="jt-modal-wrap" onclick="event.stopPropagation()">
-      <span class="jt-modal-close-x" onclick="jtCloseModal()">&times;</span>
-      <img id="jtModalImg" src="" alt="Tournament image">
+  <div class="jtc-wrap">
+    <div class="jtc-header-top">
+      <div id="jtc-section-header" class="jtc-header-row">
+        <h3 id="jtc-section-title">UPCOMING TOURNAMENT</h3>
+        <span id="jtc-section-meta">9th Event: Bell Bank-Pay It Forward-Collegiate</span>
+      </div>
+    </div>
+
+    <div class="jtc-card">
+      <div class="jtc-card-head">
+        <div class="jtc-head-left">
+          <div id="jtc-badge" class="jtc-badge final">
+            <span id="jtc-badge-dot" class="jtc-dot final"></span>
+            <span id="jtc-badge-label">FINAL</span>
+          </div>
+          <div>
+            <h2 id="jtc-title" class="jtc-title">Tournament Title</h2>
+            <div id="jtc-meta" class="jtc-meta">Venue | Location | Par | Yardage</div>
+          </div>
+        </div>
+      </div>
+
+      <table class="jtc-table">
+        <thead>
+          <tr>
+            <th class="jtc-col-info jtc-col-left">Round</th>
+            <th class="jtc-col-score">Score</th>
+            <th class="jtc-col-par">Par</th>
+            <th class="jtc-col-status">Status</th>
+            <th class="jtc-col-finish">Pos</th>
+          </tr>
+        </thead>
+        <tbody id="jtc-rounds-body"></tbody>
+      </table>
+
+      <div class="jtc-footer">
+        <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
+          <span style="display:flex; align-items:center; gap:6px;">
+            <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
+            <span id="jtc-main-link-label">VIEW DETAILS</span>
+          </span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Total</span>
+          <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
+        </div>
+
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Par</span>
+          <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
+        </div>
+
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Pos</span>
+          <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="jtcModal" class="jtc-modal" onclick="jtcCloseModal()">
+    <div class="jtc-modal-wrap" onclick="event.stopPropagation()">
+      <span class="jtc-modal-close-x" onclick="jtcCloseModal()">&times;</span>
+      <img id="jtcModalImg" src="" alt="Tournament image">
       <br>
-      <button class="jt-modal-close-btn" onclick="jtCloseModal()">Close</button>
+      <button class="jtc-modal-close-btn" onclick="jtcCloseModal()">Close</button>
     </div>
   </div>
 
   <script>
-    const eventData = {
+    /* =========================================================
+       UPDATE ONLY THIS OBJECT
+       ========================================================= */
+    const TOURNAMENT_CONFIG = {
+      sectionTitle: "UPCOMING TOURNAMENT",
       eventNo: "9th Event",
       eventLabel: "Bell Bank-Pay It Forward-Collegiate",
+
       status: "upcoming", // upcoming | ongoing | final | cancelled
 
       title: "Bell Bank Collegiate (Minnesota)",
@@ -911,8 +961,8 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-1.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-1.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         },
         {
           round: "Round 2",
@@ -921,8 +971,8 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         },
         {
           round: "Round 3",
@@ -931,34 +981,33 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         }
       ]
     };
 
-    function jtIsUsableValue(value) {
+    function jtcIsUsableValue(value) {
       if (value === null || value === undefined) return false;
       const cleaned = String(value).trim();
       return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
     }
 
-    function jtOpenModal(imgSrc) {
-      if (!jtIsUsableValue(imgSrc)) return;
-      document.getElementById("jtModalImg").src = imgSrc;
-      document.getElementById("jtPairingModal").style.display = "flex";
+    function jtcOpenModal(imgSrc) {
+      if (!jtcIsUsableValue(imgSrc)) return;
+      document.getElementById("jtcModalImg").src = imgSrc;
+      document.getElementById("jtcModal").style.display = "flex";
       document.body.style.overflow = "hidden";
     }
 
-    function jtCloseModal() {
-      document.getElementById("jtPairingModal").style.display = "none";
-      document.getElementById("jtModalImg").src = "";
+    function jtcCloseModal() {
+      document.getElementById("jtcModal").style.display = "none";
+      document.getElementById("jtcModalImg").src = "";
       document.body.style.overflow = "auto";
     }
 
-    function getScoreClass(parValue) {
-      if (parValue === null || parValue === undefined) return "jt-score-even";
-
+    function jtcScoreClass(parValue) {
+      if (parValue === null || parValue === undefined) return "jtc-score-even";
       const value = String(parValue).trim().toUpperCase();
 
       if (
@@ -970,240 +1019,188 @@
         value === "EVEN" ||
         value === "PAR" ||
         value === "0"
-      ) {
-        return "jt-score-even";
-      }
+      ) return "jtc-score-even";
 
-      if (value.startsWith("-")) return "jt-score-under";
-      if (value.startsWith("+")) return "jt-score-over";
-
-      return "jt-score-even";
+      if (value.startsWith("-")) return "jtc-score-under";
+      if (value.startsWith("+")) return "jtc-score-over";
+      return "jtc-score-even";
     }
 
-    function getSummaryClass(parValue) {
-      const scoreClass = getScoreClass(parValue);
-      if (scoreClass === "jt-score-under") return "red";
-      if (scoreClass === "jt-score-over") return "navy";
-      if (scoreClass === "jt-score-even") return "blue";
+    function jtcSummaryClass(parValue) {
+      const scoreClass = jtcScoreClass(parValue);
+      if (scoreClass === "jtc-score-under") return "red";
+      if (scoreClass === "jtc-score-over") return "navy";
+      if (scoreClass === "jtc-score-even") return "blue";
       return "white";
     }
 
-    function getStatusBadge(status) {
+    function jtcBadgeMap(status) {
       const map = {
-        upcoming: {
-          label: "UPCOMING",
-          className: "upcoming",
-          dotClass: "upcoming"
-        },
-        ongoing: {
-          label: "ONGOING",
-          className: "ongoing",
-          dotClass: "ongoing"
-        },
-        final: {
-          label: "FINAL",
-          className: "final",
-          dotClass: "final"
-        },
-        cancelled: {
-          label: "CANCELLED",
-          className: "cancelled",
-          dotClass: "cancelled"
-        }
+        upcoming:  { label: "UPCOMING", className: "upcoming" },
+        ongoing:   { label: "ONGOING", className: "ongoing" },
+        final:     { label: "FINAL", className: "final" },
+        cancelled: { label: "CANCELLED", className: "cancelled" }
       };
       return map[status] || map.final;
     }
 
-    function getDefaultRoundValuesByEventStatus(status, round) {
-      if (status === "upcoming") {
+    function jtcRoundDefaults(eventStatus, round) {
+      if (eventStatus === "upcoming") {
         return {
-          score: jtIsUsableValue(round.score) ? round.score : "—",
-          par: jtIsUsableValue(round.par) ? round.par : "—",
-          status: jtIsUsableValue(round.status) ? round.status : "SCHEDULED",
-          pos: jtIsUsableValue(round.pos) ? round.pos : "—"
+          score: jtcIsUsableValue(round.score) ? round.score : "—",
+          par: jtcIsUsableValue(round.par) ? round.par : "—",
+          status: jtcIsUsableValue(round.status) ? round.status : "SCHEDULED",
+          pos: jtcIsUsableValue(round.pos) ? round.pos : "—"
         };
       }
 
-      if (status === "ongoing") {
+      if (eventStatus === "ongoing") {
         return {
-          score: jtIsUsableValue(round.score) ? round.score : "—",
-          par: jtIsUsableValue(round.par) ? round.par : "—",
-          status: jtIsUsableValue(round.status) ? round.status : "IN PROGRESS",
-          pos: jtIsUsableValue(round.pos) ? round.pos : "—"
+          score: jtcIsUsableValue(round.score) ? round.score : "—",
+          par: jtcIsUsableValue(round.par) ? round.par : "—",
+          status: jtcIsUsableValue(round.status) ? round.status : "IN PROGRESS",
+          pos: jtcIsUsableValue(round.pos) ? round.pos : "—"
         };
       }
 
-      if (status === "final") {
+      if (eventStatus === "final") {
         return {
-          score: jtIsUsableValue(round.score) ? round.score : "—",
-          par: jtIsUsableValue(round.par) ? round.par : "—",
-          status: jtIsUsableValue(round.status) ? round.status : "FINISH",
-          pos: jtIsUsableValue(round.pos) ? round.pos : "—"
+          score: jtcIsUsableValue(round.score) ? round.score : "—",
+          par: jtcIsUsableValue(round.par) ? round.par : "—",
+          status: jtcIsUsableValue(round.status) ? round.status : "FINISH",
+          pos: jtcIsUsableValue(round.pos) ? round.pos : "—"
         };
       }
 
       return {
-        score: jtIsUsableValue(round.score) ? round.score : "—",
-        par: jtIsUsableValue(round.par) ? round.par : "—",
-        status: jtIsUsableValue(round.status) ? round.status : "—",
-        pos: jtIsUsableValue(round.pos) ? round.pos : "—"
+        score: jtcIsUsableValue(round.score) ? round.score : "—",
+        par: jtcIsUsableValue(round.par) ? round.par : "—",
+        status: jtcIsUsableValue(round.status) ? round.status : "—",
+        pos: jtcIsUsableValue(round.pos) ? round.pos : "—"
       };
     }
 
-    function renderRoundRow(round, eventStatus) {
-      const values = getDefaultRoundValuesByEventStatus(eventStatus, round);
-      const parClass = getScoreClass(values.par);
-      const hasPairing = jtIsUsableValue(round.pairingImg);
-      const hasScorecard = jtIsUsableValue(round.scorecardImg);
+    function jtcRoundTools(round) {
+      const tools = [];
+
+      if (jtcIsUsableValue(round.pairingImg)) {
+        tools.push(`
+          <div class="jtc-tool-btn" onclick="jtcOpenModal('${round.pairingImg}')">
+            <span>Pairing</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h6v6"></path>
+              <path d="M10 14L21 3"></path>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            </svg>
+          </div>
+        `);
+      }
+
+      if (jtcIsUsableValue(round.scorecardImg)) {
+        tools.push(`
+          <div class="jtc-tool-btn" onclick="jtcOpenModal('${round.scorecardImg}')">
+            <span>Scorecard</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h6v6"></path>
+              <path d="M10 14L21 3"></path>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            </svg>
+          </div>
+        `);
+      }
+
+      return tools.join("");
+    }
+
+    function jtcRoundRow(round, eventStatus) {
+      const values = jtcRoundDefaults(eventStatus, round);
+      const parClass = jtcScoreClass(values.par);
 
       return `
         <tr>
-          <td class="col-left">
-            <div class="jt-row-tools">
-              <div class="jt-round-title">${round.round}</div>
-
-              ${hasPairing ? `
-                <div class="jt-pairing-btn" onclick="jtOpenModal('${round.pairingImg}')">
-                  <span>Pairing</span>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 3h6v6"></path>
-                    <path d="M10 14L21 3"></path>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  </svg>
-                </div>
-              ` : ""}
-
-              ${hasScorecard ? `
-                <div class="jt-pairing-btn" onclick="jtOpenModal('${round.scorecardImg}')">
-                  <span>Scorecard</span>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 3h6v6"></path>
-                    <path d="M10 14L21 3"></path>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  </svg>
-                </div>
-              ` : ""}
+          <td class="jtc-col-left">
+            <div class="jtc-row-tools">
+              <div class="jtc-round-title">${round.round}</div>
+              ${jtcRoundTools(round)}
             </div>
-
-            <div class="jt-round-date">${jtIsUsableValue(round.date) ? round.date : "TBD"}</div>
-
-            <div class="jt-mobile-bar">
-              <div class="jt-ms-item">
-                <span class="jt-ms-label">SCORE</span>
-                <span class="jt-ms-value ${parClass}">${values.score}</span>
-              </div>
-              <div class="jt-ms-item">
-                <span class="jt-ms-label">PAR</span>
-                <span class="jt-ms-value ${parClass}">${values.par}</span>
-              </div>
-              <div class="jt-ms-item">
-                <span class="jt-ms-label">POS</span>
-                <span class="jt-ms-value jt-text-neutral">${values.pos}</span>
-              </div>
-            </div>
+            <div class="jtc-round-date">${jtcIsUsableValue(round.date) ? round.date : "TBD"}</div>
           </td>
-
-          <td class="jt-hide-mobile ${parClass}">${values.score}</td>
-          <td class="jt-hide-mobile ${parClass}">${values.par}</td>
-          <td class="jt-hide-mobile jt-text-neutral">${values.status}</td>
-          <td class="jt-hide-mobile jt-text-neutral">${values.pos}</td>
+          <td data-label="Score" class="${parClass}">${values.score}</td>
+          <td data-label="Par" class="${parClass}">${values.par}</td>
+          <td data-label="Status" class="jtc-text-neutral">${values.status}</td>
+          <td data-label="Pos" class="jtc-text-neutral">${values.pos}</td>
         </tr>
       `;
     }
 
-    function renderEventCard(data) {
-      const badge = getStatusBadge(data.status);
-
+    function jtcRenderCard(data) {
+      const badge = jtcBadgeMap(data.status);
       const metaText = [
         data.venue,
         data.location,
         `Par ${data.par}`,
-        `${jtIsUsableValue(data.yards) ? (String(data.yards).includes(',') ? data.yards : Number(data.yards).toLocaleString()) : "—"} Yards`,
+        `${jtcIsUsableValue(data.yards) ? (String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()) : "—"} Yards`,
         `Rating: ${data.rating}`,
         `Slope: ${data.slope}`
       ].join(" | ");
 
-      const roundsHtml = data.rounds.map(round => renderRoundRow(round, data.status)).join("");
-      const mainLinkDotClass = data.status || "final";
-      const summaryClass = getSummaryClass(data.summary.par);
+      document.getElementById("jtc-section-title").textContent = data.sectionTitle || "TOURNAMENT";
+      document.getElementById("jtc-section-meta").textContent = `${data.eventNo}: ${data.eventLabel}`;
 
-      return `
-        <div class="jt-wrap">
-          <div class="jt-header-top">
-            <div class="jt-header-row ${data.status}">
-              <h3>UPCOMING TOURNAMENT</h3>
-              <span>${data.eventNo}: ${data.eventLabel}</span>
-            </div>
-          </div>
+      const headerRow = document.getElementById("jtc-section-header");
+      headerRow.className = `jtc-header-row ${data.status}`;
 
-          <div class="jt-card">
-            <div class="jt-card-head">
-              <div class="jt-head-left">
-                <div class="jt-badge ${badge.className}">
-                  <span class="jt-dot ${badge.dotClass}"></span>
-                  ${badge.label}
-                </div>
-                <div>
-                  <h2 class="jt-title">${data.title} | ${data.date}</h2>
-                  <div class="jt-meta">${metaText}</div>
-                </div>
-              </div>
-            </div>
+      const badgeEl = document.getElementById("jtc-badge");
+      badgeEl.className = `jtc-badge ${badge.className}`;
 
-            <div>
-              <table class="jt-table">
-                <thead>
-                  <tr>
-                    <th class="jt-col-info col-left">Round</th>
-                    <th class="jt-col-score">Score</th>
-                    <th class="jt-col-par">Par</th>
-                    <th class="jt-col-status">Status</th>
-                    <th class="jt-col-finish">Pos</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${roundsHtml}
-                </tbody>
-              </table>
-            </div>
+      const badgeDotEl = document.getElementById("jtc-badge-dot");
+      badgeDotEl.className = `jtc-dot ${badge.className}`;
 
-            <div class="jt-footer">
-              ${jtIsUsableValue(data.mainLink?.url) ? `
-                <a href="${data.mainLink.url}" target="_blank" class="jt-main-link">
-                  <span style="display:flex; align-items:center; gap:6px;">
-                    <span class="jt-main-link-dot ${mainLinkDotClass}"></span>
-                    ${jtIsUsableValue(data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"}
-                  </span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
-              ` : ""}
+      document.getElementById("jtc-badge-label").textContent = badge.label;
+      document.getElementById("jtc-title").textContent = `${data.title} | ${data.date}`;
+      document.getElementById("jtc-meta").textContent = metaText;
 
-              <div class="jt-summary">
-                <span class="jt-summary-label">Total</span>
-                <span class="jt-summary-value ${summaryClass}">${jtIsUsableValue(data.summary.total) ? data.summary.total : "—"}</span>
-              </div>
+      const roundsHtml = (data.rounds || []).map(round => jtcRoundRow(round, data.status)).join("");
+      document.getElementById("jtc-rounds-body").innerHTML = roundsHtml;
 
-              <div class="jt-summary">
-                <span class="jt-summary-label">Par</span>
-                <span class="jt-summary-value ${summaryClass}">${jtIsUsableValue(data.summary.par) ? data.summary.par : "—"}</span>
-              </div>
+      const mainLink = document.getElementById("jtc-main-link");
+      const mainLinkDot = document.getElementById("jtc-main-link-dot");
+      const mainLinkLabel = document.getElementById("jtc-main-link-label");
 
-              <div class="jt-summary">
-                <span class="jt-summary-label">POS</span>
-                <span class="jt-summary-value white">${jtIsUsableValue(data.summary.pos) ? data.summary.pos : "—"}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+      if (jtcIsUsableValue(data.mainLink?.url)) {
+        mainLink.href = data.mainLink.url;
+        mainLink.style.display = "inline-flex";
+        mainLinkDot.className = `jtc-main-link-dot ${data.status}`;
+        mainLinkLabel.textContent = jtcIsUsableValue(data.mainLink?.label) ? data.mainLink.label : "VIEW DETAILS";
+      } else {
+        mainLink.style.display = "none";
+      }
+
+      const summaryColor = jtcSummaryClass(data.summary?.par);
+
+      const totalEl = document.getElementById("jtc-summary-total");
+      const parEl = document.getElementById("jtc-summary-par");
+      const posEl = document.getElementById("jtc-summary-pos");
+
+      totalEl.className = `jtc-summary-value ${summaryColor}`;
+      parEl.className = `jtc-summary-value ${summaryColor}`;
+      posEl.className = `jtc-summary-value white`;
+
+      totalEl.textContent = jtcIsUsableValue(data.summary?.total) ? data.summary.total : "—";
+      parEl.textContent = jtcIsUsableValue(data.summary?.par) ? data.summary.par : "—";
+      posEl.textContent = jtcIsUsableValue(data.summary?.pos) ? data.summary.pos : "—";
     }
 
-    document.getElementById("latest-upcoming-ongoing-tournament-root").innerHTML = renderEventCard(eventData);
+    document.addEventListener("DOMContentLoaded", function () {
+      jtcRenderCard(TOURNAMENT_CONFIG);
+    });
   </script>
 </div>
+  
+
+
+
+  
   
 
 <div class="analysis-section" style="max-width: 900px; margin: 0 auto 20px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
