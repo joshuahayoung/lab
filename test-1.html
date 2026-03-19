@@ -405,6 +405,7 @@
 </div>
 
 
+
 <div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 60px; padding:0 0px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
@@ -548,6 +549,20 @@
       font-weight: 600;
     }
 
+    /* scroll layer: keeps PC layout identical on mobile */
+    #jh-tournament-card-block .jtc-scroll-shell {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    #jh-tournament-card-block .jtc-scroll-inner {
+      min-width: 760px;
+      width: 100%;
+    }
+
     #jh-tournament-card-block .jtc-table {
       width: 100%;
       border-collapse: collapse;
@@ -656,7 +671,8 @@
       justify-content: flex-end;
       align-items: center;
       gap: 30px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-main-link {
@@ -675,6 +691,7 @@
       border-radius: 6px;
       transition: all 0.2s ease;
       background: #ffffff;
+      flex: 0 0 auto;
     }
 
     #jh-tournament-card-block .jtc-main-link-dot {
@@ -698,6 +715,8 @@
 
     #jh-tournament-card-block .jtc-summary {
       text-align: right;
+      flex: 0 0 auto;
+      min-width: 62px;
     }
 
     #jh-tournament-card-block .jtc-summary-label {
@@ -779,63 +798,12 @@
         padding: 18px 16px;
       }
 
+      #jh-tournament-card-block .jtc-scroll-inner {
+        min-width: 760px;
+      }
+
       #jh-tournament-card-block .jtc-footer {
-        gap: 18px;
         padding: 14px 16px;
-      }
-
-      #jh-tournament-card-block .jtc-main-link {
-        margin-right: auto;
-        width: auto;
-        justify-content: flex-start;
-      }
-
-      #jh-tournament-card-block .jtc-table thead {
-        display: none;
-      }
-
-      #jh-tournament-card-block .jtc-table,
-      #jh-tournament-card-block .jtc-table tbody,
-      #jh-tournament-card-block .jtc-table tr,
-      #jh-tournament-card-block .jtc-table td {
-        display: block;
-        width: 100%;
-      }
-
-      #jh-tournament-card-block .jtc-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 12px;
-      }
-
-      #jh-tournament-card-block .jtc-table td {
-        border: none !important;
-        padding: 7px 0 !important;
-        text-align: left !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td.jtc-col-left {
-        padding-left: 0 !important;
-        padding-bottom: 10px !important;
-        margin-bottom: 8px;
-        border-bottom: 1px dashed #e2e8f0 !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
-        content: attr(data-label);
-        display: inline-block;
-        min-width: 54px;
-        margin-right: 10px;
-        font-size: 10px;
-        color: #94a3b8;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
-      }
-
-      #jh-tournament-card-block .jtc-summary {
-        min-width: 62px;
       }
     }
   </style>
@@ -862,44 +830,48 @@
         </div>
       </div>
 
-      <table class="jtc-table">
-        <thead>
-          <tr>
-            <th class="jtc-col-info jtc-col-left">Round</th>
-            <th class="jtc-col-score">Score</th>
-            <th class="jtc-col-par">Par</th>
-            <th class="jtc-col-status">Status</th>
-            <th class="jtc-col-finish">Pos</th>
-          </tr>
-        </thead>
-        <tbody id="jtc-rounds-body"></tbody>
-      </table>
+      <div class="jtc-scroll-shell">
+        <div class="jtc-scroll-inner">
+          <table class="jtc-table">
+            <thead>
+              <tr>
+                <th class="jtc-col-info jtc-col-left">Round</th>
+                <th class="jtc-col-score">Score</th>
+                <th class="jtc-col-par">Par</th>
+                <th class="jtc-col-status">Status</th>
+                <th class="jtc-col-finish">Pos</th>
+              </tr>
+            </thead>
+            <tbody id="jtc-rounds-body"></tbody>
+          </table>
 
-      <div class="jtc-footer">
-        <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
-          <span style="display:flex; align-items:center; gap:6px;">
-            <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
-            <span id="jtc-main-link-label">VIEW DETAILS</span>
-          </span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
+          <div class="jtc-footer">
+            <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
+              <span style="display:flex; align-items:center; gap:6px;">
+                <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
+                <span id="jtc-main-link-label">VIEW DETAILS</span>
+              </span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Total</span>
-          <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
-        </div>
+            <div class="jtc-summary">
+              <span class="jtc-summary-label">Total</span>
+              <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
+            </div>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Par</span>
-          <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
-        </div>
+            <div class="jtc-summary">
+              <span class="jtc-summary-label">Par</span>
+              <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
+            </div>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Pos</span>
-          <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
+            <div class="jtc-summary">
+              <span class="jtc-summary-label">Pos</span>
+              <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -915,9 +887,6 @@
   </div>
 
   <script>
-    /* =========================================================
-       UPDATE ONLY THIS OBJECT
-       ========================================================= */
     const TOURNAMENT_CONFIG = {
       sectionTitle: "ONGOING TOURNAMENT",
       eventNo: "9th Event",
@@ -953,8 +922,8 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-1.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-1.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         },
         {
           round: "Round 2",
@@ -963,8 +932,8 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         },
         {
           round: "Round 3",
@@ -973,8 +942,8 @@
           par: "TBD",
           status: "SCHEDULED",
           pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
         }
       ]
     };
@@ -1117,10 +1086,10 @@
             </div>
             <div class="jtc-round-date">${jtcIsUsableValue(round.date) ? round.date : "TBD"}</div>
           </td>
-          <td data-label="Score" class="${parClass}">${values.score}</td>
-          <td data-label="Par" class="${parClass}">${values.par}</td>
-          <td data-label="Status" class="jtc-text-neutral">${values.status}</td>
-          <td data-label="Pos" class="jtc-text-neutral">${values.pos}</td>
+          <td class="${parClass}">${values.score}</td>
+          <td class="${parClass}">${values.par}</td>
+          <td class="jtc-text-neutral">${values.status}</td>
+          <td class="jtc-text-neutral">${values.pos}</td>
         </tr>
       `;
     }
@@ -1187,8 +1156,7 @@
       jtcRenderCard(TOURNAMENT_CONFIG);
     });
   </script>
-</div>
-  
+</div>  
 
 
 
