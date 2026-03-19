@@ -405,6 +405,7 @@
 </div>
 
 
+
 <div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 60px; padding:0 0px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
@@ -656,7 +657,8 @@
       justify-content: flex-end;
       align-items: center;
       gap: 30px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-main-link {
@@ -675,6 +677,7 @@
       border-radius: 6px;
       transition: all 0.2s ease;
       background: #ffffff;
+      flex: 0 0 auto;
     }
 
     #jh-tournament-card-block .jtc-main-link-dot {
@@ -698,6 +701,8 @@
 
     #jh-tournament-card-block .jtc-summary {
       text-align: right;
+      flex: 0 0 auto;
+      min-width: 62px;
     }
 
     #jh-tournament-card-block .jtc-summary-label {
@@ -779,17 +784,7 @@
         padding: 18px 16px;
       }
 
-      #jh-tournament-card-block .jtc-footer {
-        gap: 18px;
-        padding: 14px 16px;
-      }
-
-      #jh-tournament-card-block .jtc-main-link {
-        margin-right: auto;
-        width: auto;
-        justify-content: flex-start;
-      }
-
+      /* 모바일에서는 완전 표시 우선: 표를 카드형 행으로 전환 */
       #jh-tournament-card-block .jtc-table thead {
         display: none;
       }
@@ -825,7 +820,7 @@
       #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
         content: attr(data-label);
         display: inline-block;
-        min-width: 54px;
+        min-width: 58px;
         margin-right: 10px;
         font-size: 10px;
         color: #94a3b8;
@@ -834,8 +829,25 @@
         letter-spacing: 0.7px;
       }
 
+      /* footer는 모바일에서 2단 구조로 재배치 */
+      #jh-tournament-card-block .jtc-footer {
+        padding: 14px 16px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px 12px;
+        white-space: normal;
+      }
+
+      #jh-tournament-card-block .jtc-main-link {
+        grid-column: 1 / -1;
+        margin-right: 0;
+        justify-content: center;
+        width: 100%;
+      }
+
       #jh-tournament-card-block .jtc-summary {
-        min-width: 62px;
+        min-width: 0;
+        text-align: center;
       }
     }
   </style>
@@ -915,9 +927,11 @@
   </div>
 
   <script>
-    /* =========================================================
+    
+     /* =========================================================
        UPDATE ONLY THIS OBJECT
        ========================================================= */
+    
     const TOURNAMENT_CONFIG = {
       sectionTitle: "UPCOMING TOURNAMENT",
       eventNo: "9th Event",
@@ -1188,7 +1202,6 @@
     });
   </script>
 </div>
-  
 
 
 
