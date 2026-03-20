@@ -536,17 +536,49 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
+    #jh-tournament-card-block .jtc-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    #jh-tournament-card-block .jtc-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
     #jh-tournament-card-block .jtc-title {
       color: #0c2340;
       margin: 0;
       font-size: 19px;
       font-weight: 800;
+      line-height: 1.25;
+      min-width: 0;
+    }
+
+    #jh-tournament-card-block .jtc-title-sep {
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    #jh-tournament-card-block .jtc-date {
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-meta {
       font-size: 12px;
       color: #7f8c8d;
       font-weight: 600;
+      line-height: 1.45;
     }
 
     #jh-tournament-card-block .jtc-table {
@@ -784,7 +816,6 @@
         padding: 18px 16px;
       }
 
-      /* 모바일에서는 완전 표시 우선: 표를 카드형 행으로 전환 */
       #jh-tournament-card-block .jtc-table thead {
         display: none;
       }
@@ -829,7 +860,41 @@
         letter-spacing: 0.7px;
       }
 
-      /* footer는 모바일에서 2단 구조로 재배치 */
+      #jh-tournament-card-block .jtc-title-wrap {
+        gap: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-title-line {
+        display: block;
+      }
+
+      #jh-tournament-card-block .jtc-title {
+        display: block;
+        font-size: 18px;
+        line-height: 1.28;
+      }
+
+      #jh-tournament-card-block .jtc-title-sep {
+        display: none;
+      }
+
+      #jh-tournament-card-block .jtc-date {
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+        font-weight: 800;
+        color: #8b5e1a;
+        line-height: 1.25;
+        white-space: normal;
+      }
+
+      #jh-tournament-card-block .jtc-meta {
+        font-size: 13px;
+        color: #5b6b7f;
+        font-weight: 700;
+        line-height: 1.45;
+      }
+
       #jh-tournament-card-block .jtc-footer {
         padding: 14px 16px;
         display: grid;
@@ -867,8 +932,12 @@
             <span id="jtc-badge-dot" class="jtc-dot final"></span>
             <span id="jtc-badge-label">FINAL</span>
           </div>
-          <div>
-            <h2 id="jtc-title" class="jtc-title">Tournament Title</h2>
+          <div class="jtc-title-wrap">
+            <div class="jtc-title-line">
+              <h2 id="jtc-title-text" class="jtc-title" style="display:inline; margin:0;">Tournament Title</h2>
+              <span class="jtc-title-sep">|</span>
+              <span id="jtc-date" class="jtc-date">Mar 23-24</span>
+            </div>
             <div id="jtc-meta" class="jtc-meta">Venue | Location | Par | Yardage</div>
           </div>
         </div>
@@ -927,11 +996,6 @@
   </div>
 
   <script>
-    
-     /* =========================================================
-       UPDATE ONLY THIS OBJECT
-       ========================================================= */
-    
     const TOURNAMENT_CONFIG = {
       sectionTitle: "UPCOMING TOURNAMENT",
       eventNo: "9th Event",
@@ -1163,7 +1227,8 @@
       badgeDotEl.className = `jtc-dot ${badge.className}`;
 
       document.getElementById("jtc-badge-label").textContent = badge.label;
-      document.getElementById("jtc-title").textContent = `${data.title} | ${data.date}`;
+      document.getElementById("jtc-title-text").textContent = data.title;
+      document.getElementById("jtc-date").textContent = data.date;
       document.getElementById("jtc-meta").textContent = metaText;
 
       const roundsHtml = (data.rounds || []).map(round => jtcRoundRow(round, data.status)).join("");
