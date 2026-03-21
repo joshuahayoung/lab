@@ -404,7 +404,7 @@ gtag('config', 'G-H1JW8YBDZ8');
   .iac-card-inner {
     padding: 14px 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 15px;
     flex-wrap: wrap;
@@ -413,7 +413,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
   .iac-info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     flex: 1;
     min-width: 250px;
@@ -428,6 +428,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     gap: 8px;
     white-space: nowrap;
     flex-shrink: 0;
+    margin-top: 1px;
   }
 
   .iac-badge-text {
@@ -480,7 +481,8 @@ gtag('config', 'G-H1JW8YBDZ8');
     align-items: flex-start;
     gap: 4px;
     min-width: 0;
-    width: 100%;
+    flex: 1;
+    width: auto;
   }
 
   .iac-title-line {
@@ -489,7 +491,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     gap: 6px;
     flex-wrap: wrap;
     min-width: 0;
-    width: 100%;
+    width: auto;
   }
 
   .iac-title {
@@ -521,6 +523,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     width: 100%;
     overflow-wrap: anywhere;
     word-break: break-word;
+    text-align: left;
   }
 
   .iac-stats {
@@ -648,6 +651,7 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     .iac-badge {
       align-self: flex-start;
+      margin-top: 0;
     }
 
     .iac-texts {
@@ -777,6 +781,9 @@ gtag('config', 'G-H1JW8YBDZ8');
 </style>
 
 <script>
+    
+    /* Tournament Change INFORMATION */
+    
   const latestSummaryCard = {
     status: "upcoming", // upcoming | ongoing | final | cancelled
     updated: "Mar 19, 2026",
@@ -911,7 +918,6 @@ gtag('config', 'G-H1JW8YBDZ8');
 
   document.getElementById("latest-summary-card-root").innerHTML = iacRenderCard(latestSummaryCard);
 </script>
-
 
 
 
