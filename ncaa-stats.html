@@ -2067,35 +2067,31 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
   
   
-    <div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
-        <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-            <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
-                <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-                <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-                9 NCAA Regular Season Events + 1 Winter Event (<span style="color:#F15A22; font-weight:700;">Patriot</span><span style="color:#F15A22; font-weight:700;">*</span>) / 30 Competitive Rounds
+<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
+    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
+        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
+            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+                9 NCAA Regular Season Events / 27 Competitive Rounds
             </p>
                 
-                <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-                        <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
-                        <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
-                    </div>
+            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
+                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
+                </div>
                     
-                    <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
-                        <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
-                            <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
-                        </div>
-                        <canvas id="archiveOfficialChart"></canvas>
-                        <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; 
-                          color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
+                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
+                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
+                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
+                    </div>
+                    <canvas id="archiveOfficialChart"></canvas>
+                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; 
+                      color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
                         <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                        <span>CUMULATIVE: 10 EVENTS / 30 ROUNDS</span>
+                        <span>CUMULATIVE: 9 EVENTS / 27 ROUNDS</span>
                     </div>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #888; font-weight: 500; margin-top: 10px; padding-left: 5px;">
-  <span style="color: #F15A22; font-weight: 700;">Patriot*</span> Special Invitational Event (Non-NCAA D1 Regular Season)
-</p>
                 </div>
             </div>
         </div>
@@ -2105,7 +2101,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
 
 <script>
 (function() {
@@ -2123,7 +2118,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '9/15 (Highlands)',
         '9/22 (Badger)',
         '10/05 (Trinity)',
-        '12/27 (Patriot)*',
         '2/01 (Compadres)',
         '2/24 (Military)',
         '3/03 (Golden)',
@@ -2131,22 +2125,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '3/24 (Bellbank)'
     ];
 
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 72.00, 71.66, 67.6, 73.66, 70.66];
+    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
 
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3', 'T48', 'T10'];
+    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
 
     const archiveRounds = [
         '70-70-69 (-7)',
         '74-71-70 (-1)',
         '71-71-76 (+2)',
         '75-73-74 (+6)',
-        '71-73-72 (+6)',
         '70-75-71 (E)',
         '69-72-74 (-1)',
         '64-70-69 (-13)',
         '72-76-73 (+5)',
         '73-68-71 (-4)'
-
     ];
 
     const archiveRankImpact = [
@@ -2154,7 +2146,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '● Rank Impact ▲ 28',
         '● Rank Impact ▼ 38',
         '● Rank Impact ▼ 98',
-        null,
         '● Rank Impact ▲ 142',
         '● Rank Impact ▲ 72',
         '● Rank Impact ▲ 43',
@@ -2167,13 +2158,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '232.6656',
         '129.0694',
         '360.1597',
-        '806.3420',
         '145.6033',
         '101.3382',
         '135.0209',
         '670.0102',
         'TBD'
-
     ];
 
     const archivePtsEarned = [
@@ -2181,13 +2170,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '4.9097',
         '3.3178',
         '3.1971',
-        '6.1052',
         '6.5774',
         '9.2734',
         '6.7817',
         '4.8345',
         'TBD'
-
     ];
 
     // Mobile
@@ -2198,7 +2185,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             .replace(' (Highlands)', '')
             .replace(' (Badger)', '')
             .replace(' (Trinity)', '')
-            .replace(' (Patriot)*', '*')
             .replace(' (Compadres)', '')
             .replace(' (Military)', '')
             .replace(' (Golden)', '')
@@ -2226,20 +2212,18 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 tension: 0.3,
                 fill: true,
                 datalabels: {
-    align: 'top',
-    anchor: 'end',
-    offset: isMobile ? 4 : 8,
-    color: function(context) {
-        return context.dataIndex === 4 ? '#F15A22' : '#0c2340';
-    },
-    font: {
-        weight: '700',
-        size: isMobile ? 10 : 13
-    },
-    formatter: function(value, context) {
-        return archivePositions[context.dataIndex];
-    }
-}
+                    align: 'top',
+                    anchor: 'end',
+                    offset: isMobile ? 4 : 8,
+                    color: '#0c2340',
+                    font: {
+                        weight: '700',
+                        size: isMobile ? 10 : 13
+                    },
+                    formatter: function(value, context) {
+                        return archivePositions[context.dataIndex];
+                    }
+                }
             }]
         },
         options: {
@@ -2265,9 +2249,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 x: {
                     grid: { display: false },
                     ticks: {
-                            color: function(context) {
-        return context.index === 4 ? '#F15A22' : '#333';
-    },
+                        color: '#333',
                         font: { size: isMobile ? 8 : 10, weight: '500' },
                         autoSkip: false,
                         maxRotation: isMobile ? 60 : 45,
@@ -2373,13 +2355,13 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
     
     <div style="padding: 10px 24px 18px 24px; box-sizing: border-box; text-align: center; width: 100%;">
-  <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
-    Round Distribution & Scoring Pattern
-  </h2>
-  <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-  9 NCAA Regular Season Events + 1 Winter Event (<span style="color: #F15A22; font-weight: 700;">*Patriot</span>) / 30 Competitive Rounds
-</p>
-</div>
+      <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
+        Round Distribution & Scoring Pattern
+      </h2>
+      <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+        9 NCAA Regular Season Events / 27 Competitive Rounds
+      </p>
+    </div>
 
     <div class="rd-main-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 20px 22px 20px; box-sizing: border-box; align-items: stretch;">
       
@@ -2389,7 +2371,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         <!-- ROUND LOG -->
         <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-sizing: border-box;">
           <div style="padding: 14px 18px; background: #0c2340; color: #ffffff; font-family: 'Oswald', sans-serif; font-size: 1em; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;">
-            30-Round Competitive Distribution
+            27-Round Competitive Distribution
           </div>
 
           <div style="padding: 14px 16px 12px 16px; box-sizing: border-box;">
@@ -2404,35 +2386,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
               <tbody>
                
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">10<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">73 • 68 • 71</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">70.66</td>
-               </tr>
+                </tr>
                 
-               <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9</td>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">72 • 76 • 73</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">73.66</td>
                 </tr>
 
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">64 • 70 • 69</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">67.67</td>
                 </tr>
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">69 • 72 • 74</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
                 </tr>
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 75 • 71</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5 <span style="color:#f15a22; font-weight:900;">*Patriot</span></td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">71 • 73 • 72</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
                 </tr>
                 <tr>
@@ -2457,10 +2434,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 </tr>
               </tbody>
             </table>
-
-            <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #d1d5db; font-family: 'Montserrat', sans-serif; font-size: 10px; color: #888; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase;">
-              <span style="color:#f15a22; font-weight:900;">*Patriot</span>: Special Invitational Event (Non-NCAA Division I Regular-Season Event)
-            </div>
           </div>
         </div>
 
@@ -2472,22 +2445,22 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
           <div class="rd-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">30-Round Avg.</div>
+              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">27-Round Avg.</div>
 
               <div class="rd-summary-value rd-avg-stack-desktop" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
-                <div>71.56</div>
+                <div>71.52</div>
                 <div style="margin-top: 4px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</div>
-                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.90</div>
+                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.80</div>
                 <div style="margin-top: 3px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</div>
               </div>
 
               <div class="rd-summary-value rd-avg-stack-mobile" style="font-size: 20px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05; display: none;">
                 <div style="display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.56</span>
+                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.52</span>
                   <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</span>
                 </div>
                 <div style="margin-top: 4px; display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.90</span>
+                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.80</span>
                   <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</span>
                 </div>
               </div>
@@ -2499,7 +2472,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Par or Better</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">19 / 30</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">17 / 27</div>
             </div>
             <div style="background: #f15a22; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: rgba(255,255,255,0.82); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Primary Band</div>
@@ -2520,22 +2493,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </div>
 
           <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
-              <div style="margin-bottom: 10px;">
-  Across the 30 competitive rounds included in this section, most recorded scores fall between 68 and 72.
-</div>
-<div style="margin-bottom: 10px;">
-  The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
-</div>
-<div style="margin-bottom: 10px;">
-  This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
-</div>
-<div style="margin-bottom: 10px;">
-  The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
-</div>
-<div>
-  Patriot is retained for continuity of record and is listed separately from the NCAA Division I regular-season event schedule.
-</div>
-              </div>
+            <div style="margin-bottom: 10px;">
+              Across the 27 competitive rounds included in this section, most recorded scores fall between 68 and 72.
+            </div>
+            <div style="margin-bottom: 10px;">
+              The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
+            </div>
+            <div style="margin-bottom: 10px;">
+              This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
+            </div>
+            <div>
+              The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
+            </div>
+          </div>
         </div>
 
         <!-- SCORING STRUCTURE -->
@@ -2547,11 +2517,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <div class="rd-structure-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Events</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">10</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">9</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Rounds</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">30</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">27</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Range</div>
@@ -2563,23 +2533,21 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">70–72</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">14</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">12</div>
             </div>
-      <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
-    
-    <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
-      <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
-      <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">7</div>
-    </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
+                </div>
 
-        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
-      <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75-76</div>
-      <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
-    </div>
-    
-  </div>
-</div>
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75-76</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2588,7 +2556,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </div>
   </div>
 </div>
-
 
 
   
