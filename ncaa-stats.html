@@ -677,20 +677,20 @@
       line-height: 1.1;
     }
 
+    /* footer를 테이블 열과 동일한 5열 grid로 */
     #jh-tournament-card-block .jtc-footer {
       background: #0c2340;
-      padding: 16px 22px;
-      display: flex;
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: 30% 16% 14% 18% 22%;
       align-items: stretch;
-      gap: 18px;
-      flex-wrap: nowrap;
-      white-space: nowrap;
+      gap: 0;
     }
 
     #jh-tournament-card-block .jtc-main-link {
-      margin-right: auto;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       color: #0c2340;
       text-decoration: none;
@@ -699,12 +699,29 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       border: 1.5px solid #0c2340;
-      padding: 5px 12px;
+      padding: 6px 12px;
       border-radius: 6px;
       transition: all 0.2s ease;
       background: #ffffff;
-      flex: 0 0 auto;
+      justify-self: start;
       align-self: center;
+      max-width: max-content;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-label-stack {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-label-stack .line2 {
+      display: none;
     }
 
     #jh-tournament-card-block .jtc-main-link-dot {
@@ -726,25 +743,14 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* footer 요약 영역 재배분 */
-    #jh-tournament-card-block .jtc-summary-wrap {
-      margin-left: auto;
-      display: grid;
-      grid-template-columns: 1.25fr 1.1fr 0.9fr;
-      align-items: stretch;
-      gap: 12px;
-      min-width: 320px;
-    }
-
     #jh-tournament-card-block .jtc-summary {
       text-align: center;
       min-width: 0;
-      background: rgba(255,255,255,0.06);
-      border-radius: 10px;
-      padding: 10px 8px 9px 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      padding: 8px 6px 6px 6px;
     }
 
     #jh-tournament-card-block .jtc-summary-label {
@@ -759,7 +765,7 @@
     }
 
     #jh-tournament-card-block .jtc-summary-value {
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 900;
       line-height: 1.02;
     }
@@ -768,12 +774,6 @@
     #jh-tournament-card-block .jtc-summary-value.blue  { color: #60a5fa; }
     #jh-tournament-card-block .jtc-summary-value.navy  { color: #bfdbfe; }
     #jh-tournament-card-block .jtc-summary-value.white { color: #ffffff; }
-
-    /* POS는 오른쪽 끝 정렬감 강조 */
-    #jh-tournament-card-block .jtc-summary.jtc-summary-pos {
-      justify-self: end;
-      width: 100%;
-    }
 
     #jh-tournament-card-block .jtc-modal {
       display: none;
@@ -956,22 +956,20 @@
       }
 
       #jh-tournament-card-block .jtc-footer {
-        padding: 10px 10px;
-        gap: 10px;
-        align-items: stretch;
+        padding: 10px 8px;
+        grid-template-columns: 31% 17% 14% 18% 20%;
       }
 
       #jh-tournament-card-block .jtc-main-link {
         font-size: 8px;
-        letter-spacing: 0.45px;
-        padding: 4px 7px;
+        letter-spacing: 0.4px;
+        padding: 4px 6px;
         gap: 5px;
-        align-self: center;
       }
 
       #jh-tournament-card-block .jtc-main-link svg {
-        width: 10px;
-        height: 10px;
+        width: 9px;
+        height: 9px;
       }
 
       #jh-tournament-card-block .jtc-main-link-dot {
@@ -979,15 +977,27 @@
         height: 4px;
       }
 
-      #jh-tournament-card-block .jtc-summary-wrap {
-        min-width: 0;
-        gap: 8px;
-        grid-template-columns: 1.25fr 1.1fr 0.9fr;
+      /* 모바일에서는 라이트 옆 텍스트를 2줄 */
+      #jh-tournament-card-block .jtc-main-link-content {
+        align-items: center;
+        gap: 5px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-label-stack {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        line-height: 0.95;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-label-stack .line1,
+      #jh-tournament-card-block .jtc-main-link-label-stack .line2 {
+        display: block;
       }
 
       #jh-tournament-card-block .jtc-summary {
-        padding: 8px 5px 7px 5px;
-        border-radius: 8px;
+        padding: 6px 3px 5px 3px;
       }
 
       #jh-tournament-card-block .jtc-summary-label {
@@ -997,7 +1007,7 @@
       }
 
       #jh-tournament-card-block .jtc-summary-value {
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.05;
       }
 
@@ -1072,9 +1082,12 @@
 
       <div class="jtc-footer">
         <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
-          <span style="display:flex; align-items:center; gap:6px;">
+          <span class="jtc-main-link-content">
             <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
-            <span id="jtc-main-link-label">VIEW DETAILS</span>
+            <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
+              <span class="line1">VIEW</span>
+              <span class="line2">DETAILS</span>
+            </span>
           </span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -1082,21 +1095,24 @@
           </svg>
         </a>
 
-        <div class="jtc-summary-wrap">
-          <div class="jtc-summary">
-            <span class="jtc-summary-label">Total</span>
-            <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
-          </div>
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Total</span>
+          <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
+        </div>
 
-          <div class="jtc-summary">
-            <span class="jtc-summary-label">Par</span>
-            <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
-          </div>
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Par</span>
+          <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
+        </div>
 
-          <div class="jtc-summary jtc-summary-pos">
-            <span class="jtc-summary-label">Pos</span>
-            <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
-          </div>
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Status</span>
+          <span id="jtc-summary-status" class="jtc-summary-value white">—</span>
+        </div>
+
+        <div class="jtc-summary">
+          <span class="jtc-summary-label">Pos</span>
+          <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
         </div>
       </div>
     </div>
@@ -1230,6 +1246,36 @@
       return map[status] || map.final;
     }
 
+    function jtcFooterStatus(status) {
+      const map = {
+        upcoming: "SCHEDULED",
+        ongoing: "LIVE",
+        final: "FINISH",
+        cancelled: "CANCELLED"
+      };
+      return map[status] || "—";
+    }
+
+    function jtcSplitMainLinkLabel(label) {
+      const clean = (label || "").trim();
+      if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+
+      const upper = clean.toUpperCase();
+
+      if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
+      if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
+
+      const parts = upper.split(/\s+/);
+      if (parts.length >= 2) {
+        return {
+          line1: parts[0],
+          line2: parts.slice(1).join(" ")
+        };
+      }
+
+      return { line1: upper, line2: "" };
+    }
+
     function jtcRoundDefaults(eventStatus, round) {
       if (eventStatus === "upcoming") {
         return {
@@ -1244,7 +1290,7 @@
         return {
           score: jtcIsUsableValue(round.score) ? round.score : "—",
           par: jtcIsUsableValue(round.par) ? round.par : "—",
-          status: jtcIsUsableValue(round.status) ? round.status : "IN PROGRESS",
+          status: jtcIsUsableValue(round.status) ? round.status : "LIVE",
           pos: jtcIsUsableValue(round.pos) ? round.pos : "—"
         };
       }
@@ -1317,13 +1363,21 @@
 
       const mainLink = document.getElementById("jtc-main-link");
       const mainLinkDot = document.getElementById("jtc-main-link-dot");
-      const mainLinkLabel = document.getElementById("jtc-main-link-label");
+      const labelContainer = document.getElementById("jtc-main-link-label");
 
       if (jtcIsUsableValue(data.mainLink?.url)) {
         mainLink.href = data.mainLink.url;
         mainLink.style.display = "inline-flex";
         mainLinkDot.className = `jtc-main-link-dot ${data.status}`;
-        mainLinkLabel.textContent = jtcIsUsableValue(data.mainLink?.label) ? data.mainLink.label : "VIEW DETAILS";
+
+        const split = jtcSplitMainLinkLabel(
+          jtcIsUsableValue(data.mainLink?.label) ? data.mainLink.label : "VIEW DETAILS"
+        );
+
+        labelContainer.innerHTML = `
+          <span class="line1">${split.line1}</span>
+          <span class="line2">${split.line2}</span>
+        `;
       } else {
         mainLink.style.display = "none";
       }
@@ -1332,14 +1386,17 @@
 
       const totalEl = document.getElementById("jtc-summary-total");
       const parEl = document.getElementById("jtc-summary-par");
+      const statusEl = document.getElementById("jtc-summary-status");
       const posEl = document.getElementById("jtc-summary-pos");
 
       totalEl.className = `jtc-summary-value ${summaryColor}`;
       parEl.className = `jtc-summary-value ${summaryColor}`;
+      statusEl.className = `jtc-summary-value white`;
       posEl.className = `jtc-summary-value white`;
 
       totalEl.textContent = jtcIsUsableValue(data.summary?.total) ? data.summary.total : "—";
       parEl.textContent = jtcIsUsableValue(data.summary?.par) ? data.summary.par : "—";
+      statusEl.textContent = jtcFooterStatus(data.status);
       posEl.textContent = jtcIsUsableValue(data.summary?.pos) ? data.summary.pos : "—";
     }
 
