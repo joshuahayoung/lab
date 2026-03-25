@@ -406,6 +406,11 @@
 
 
 
+
+
+
+
+
 <div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 60px; padding:0 0px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
@@ -581,6 +586,12 @@
       line-height: 1.45;
     }
 
+    #jh-tournament-card-block .jtc-table-scroll {
+      width: 100%;
+      overflow: visible;
+      background: #ffffff;
+    }
+
     #jh-tournament-card-block .jtc-table {
       width: 100%;
       border-collapse: collapse;
@@ -598,6 +609,7 @@
       padding: 12px 10px;
       border-bottom: 2px solid #0c2340;
       text-align: center;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-table th.jtc-col-left,
@@ -611,6 +623,7 @@
       border-bottom: 1px solid #edf2f7;
       vertical-align: middle;
       text-align: center;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-col-info   { width: 43%; }
@@ -651,6 +664,7 @@
       font-weight: 800;
     }
 
+    /* desktop: 기존처럼 가로 배치 유지 */
     #jh-tournament-card-block .jtc-row-tools {
       display: flex;
       align-items: center;
@@ -658,10 +672,18 @@
       flex-wrap: wrap;
     }
 
+    #jh-tournament-card-block .jtc-tool-stack {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 6px;
+    }
+
     #jh-tournament-card-block .jtc-tool-btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 4px;
       background: #f1f5f9;
       padding: 2px 6px;
@@ -809,110 +831,223 @@
 
     @media (max-width: 768px) {
       #jh-tournament-card-block {
-        padding: 0 12px;
+        padding: 0 8px;
+      }
+
+      #jh-tournament-card-block .jtc-header-top {
+        margin-bottom: 12px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 14px;
+        padding-left: 10px;
+        border-left-width: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row h3 {
+        font-size: 0.92em;
+        line-height: 1.12;
+      }
+
+      #jh-tournament-card-block .jtc-header-row span {
+        font-size: 0.66em;
+        line-height: 1.18;
+      }
+
+      #jh-tournament-card-block .jtc-card {
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
       }
 
       #jh-tournament-card-block .jtc-card-head {
-        padding: 18px 16px;
-      }
-
-      #jh-tournament-card-block .jtc-table thead {
-        display: none;
-      }
-
-      #jh-tournament-card-block .jtc-table,
-      #jh-tournament-card-block .jtc-table tbody,
-      #jh-tournament-card-block .jtc-table tr,
-      #jh-tournament-card-block .jtc-table td {
-        display: block;
-        width: 100%;
-      }
-
-      #jh-tournament-card-block .jtc-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 12px;
-      }
-
-      #jh-tournament-card-block .jtc-table td {
-        border: none !important;
-        padding: 7px 0 !important;
-        text-align: left !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td.jtc-col-left {
-        padding-left: 0 !important;
-        padding-bottom: 10px !important;
-        margin-bottom: 8px;
-        border-bottom: 1px dashed #e2e8f0 !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
-        content: attr(data-label);
-        display: inline-block;
-        min-width: 58px;
-        margin-right: 10px;
-        font-size: 10px;
-        color: #94a3b8;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
-      }
-
-      #jh-tournament-card-block .jtc-title-wrap {
+        padding: 12px 10px 10px 10px;
         gap: 6px;
       }
 
+      #jh-tournament-card-block .jtc-head-left {
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      #jh-tournament-card-block .jtc-badge {
+        padding: 3px 8px;
+        font-size: 8px;
+        letter-spacing: 0.75px;
+        gap: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-title-wrap {
+        gap: 4px;
+        flex: 1 1 100%;
+      }
+
       #jh-tournament-card-block .jtc-title-line {
-        display: block;
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        flex-wrap: wrap;
       }
 
       #jh-tournament-card-block .jtc-title {
-        display: block;
-        font-size: 18px;
-        line-height: 1.28;
+        font-size: 14px;
+        line-height: 1.18;
       }
 
       #jh-tournament-card-block .jtc-title-sep {
-        display: none;
+        display: inline;
+        font-size: 12px;
       }
 
       #jh-tournament-card-block .jtc-date {
-        display: block;
-        margin-top: 2px;
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 800;
-        color: #8b5e1a;
-        line-height: 1.25;
-        white-space: normal;
+        line-height: 1.15;
+        white-space: nowrap;
       }
 
       #jh-tournament-card-block .jtc-meta {
-        font-size: 13px;
-        color: #5b6b7f;
+        font-size: 9px;
+        line-height: 1.28;
         font-weight: 700;
-        line-height: 1.45;
+      }
+
+      #jh-tournament-card-block .jtc-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+      }
+
+      #jh-tournament-card-block .jtc-col-info   { width: 40%; }
+      #jh-tournament-card-block .jtc-col-score  { width: 12%; }
+      #jh-tournament-card-block .jtc-col-par    { width: 11%; }
+      #jh-tournament-card-block .jtc-col-status { width: 21%; }
+      #jh-tournament-card-block .jtc-col-finish { width: 16%; }
+
+      #jh-tournament-card-block .jtc-table th {
+        font-size: 8px;
+        padding: 7px 3px;
+        letter-spacing: 0.45px;
+      }
+
+      #jh-tournament-card-block .jtc-table td {
+        font-size: 10px;
+        padding: 8px 3px;
+      }
+
+      #jh-tournament-card-block .jtc-table th.jtc-col-left,
+      #jh-tournament-card-block .jtc-table td.jtc-col-left {
+        padding-left: 8px;
+      }
+
+      #jh-tournament-card-block .jtc-round-title {
+        font-size: 11px;
+        line-height: 1.1;
+      }
+
+      #jh-tournament-card-block .jtc-round-date {
+        font-size: 8px;
+        line-height: 1.15;
+        margin-top: 1px;
+      }
+
+      /* mobile: 제목 옆에서 자연스럽게 세로 정렬 */
+      #jh-tournament-card-block .jtc-row-tools {
+        gap: 6px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+      }
+
+      #jh-tournament-card-block .jtc-tool-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3px;
+        margin-left: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn {
+        min-width: 56px;
+        padding: 1px 4px;
+        gap: 3px;
+        border-radius: 3px;
+        justify-content: center;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn span {
+        font-size: 7px;
+        letter-spacing: 0.35px;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn svg {
+        width: 8px;
+        height: 8px;
       }
 
       #jh-tournament-card-block .jtc-footer {
-        padding: 14px 16px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px 12px;
-        white-space: normal;
+        padding: 10px 10px;
+        gap: 10px;
       }
 
       #jh-tournament-card-block .jtc-main-link {
-        grid-column: 1 / -1;
-        margin-right: 0;
-        justify-content: center;
-        width: 100%;
+        font-size: 8px;
+        letter-spacing: 0.45px;
+        padding: 4px 7px;
+        gap: 5px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-dot {
+        width: 4px;
+        height: 4px;
       }
 
       #jh-tournament-card-block .jtc-summary {
-        min-width: 0;
-        text-align: center;
+        min-width: 38px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-label {
+        font-size: 6px;
+        line-height: 1;
+      }
+
+      #jh-tournament-card-block .jtc-summary-value {
+        font-size: 11px;
+        line-height: 1.02;
+      }
+
+      /* 모바일에서 숫자 가독성 조금 확대 */
+      #jh-tournament-card-block .jtc-table tbody td:nth-child(2),
+      #jh-tournament-card-block .jtc-table tbody td:nth-child(3),
+      #jh-tournament-card-block .jtc-table tbody td:nth-child(5) {
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      #jh-tournament-card-block .jtc-modal-wrap {
+        max-width: 96%;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-x {
+        top: -34px;
+        font-size: 26px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-btn {
+        font-size: 11px;
+        padding: 8px 20px;
       }
     }
   </style>
@@ -943,18 +1078,20 @@
         </div>
       </div>
 
-      <table class="jtc-table">
-        <thead>
-          <tr>
-            <th class="jtc-col-info jtc-col-left">Round</th>
-            <th class="jtc-col-score">Score</th>
-            <th class="jtc-col-par">Par</th>
-            <th class="jtc-col-status">Status</th>
-            <th class="jtc-col-finish">Pos</th>
-          </tr>
-        </thead>
-        <tbody id="jtc-rounds-body"></tbody>
-      </table>
+      <div class="jtc-table-scroll">
+        <table class="jtc-table">
+          <thead>
+            <tr>
+              <th class="jtc-col-info jtc-col-left">Round</th>
+              <th class="jtc-col-score">Score</th>
+              <th class="jtc-col-par">Par</th>
+              <th class="jtc-col-status">Status</th>
+              <th class="jtc-col-finish">Pos</th>
+            </tr>
+          </thead>
+          <tbody id="jtc-rounds-body"></tbody>
+        </table>
+      </div>
 
       <div class="jtc-footer">
         <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
@@ -1179,7 +1316,9 @@
         `);
       }
 
-      return tools.join("");
+      if (!tools.length) return "";
+
+      return `<div class="jtc-tool-stack">${tools.join("")}</div>`;
     }
 
     function jtcRoundRow(round, eventStatus) {
@@ -1195,10 +1334,10 @@
             </div>
             <div class="jtc-round-date">${jtcIsUsableValue(round.date) ? round.date : "TBD"}</div>
           </td>
-          <td data-label="Score" class="${parClass}">${values.score}</td>
-          <td data-label="Par" class="${parClass}">${values.par}</td>
-          <td data-label="Status" class="jtc-text-neutral">${values.status}</td>
-          <td data-label="Pos" class="jtc-text-neutral">${values.pos}</td>
+          <td class="${parClass}">${values.score}</td>
+          <td class="${parClass}">${values.par}</td>
+          <td class="jtc-text-neutral">${values.status}</td>
+          <td class="jtc-text-neutral">${values.pos}</td>
         </tr>
       `;
     }
