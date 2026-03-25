@@ -2322,17 +2322,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
     // Mobile
     function mobileLabel(label) {
-        if (!isMobile) return label;
-        return label
-            .replace(' (Argent)', '')
-            .replace(' (Highlands)', '')
-            .replace(' (Badger)', '')
-            .replace(' (Trinity)', '')
-            .replace(' (Compadres)', '')
-            .replace(' (Military)', '')
-            .replace(' (Golden)', '')
-            .replace(' (Thunderbirds)', '')
-            .replace(' (Bellbank)', '');
+        return label;
     }
 
     const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
