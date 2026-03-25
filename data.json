@@ -1,31 +1,31 @@
 {
-  "status": "24 OFFICIAL ROUNDS",
-  "scope": "24",
+  "status": "27 OFFICIAL ROUNDS",
+  "scope": "27",
   "individual": {
-    "scoringAvg": "70.90",
-    "rawAvg": "71.63",
-    "underPar": "15 Par or Better(62.50%)",
+    "scoringAvg": "70.80",
+    "rawAvg": "71.52",
+    "underPar": "17 Par or Better(62.96%)",
     "gpa": "3.4 GPA"
   },
   "teamMetrics": {
-    "winRate": "73.98",
-    "headToHead": "455-147-13",
-    "countingScore": "95.83",
-    "recordedRounds": "23 / 24",
-    "pointsShare": "29.70",
-    "pointsValue": "302.12",
-    "teamTotal": "1017.28"
+    "winRate": "75.28",
+    "headToHead": "530-156-18",
+    "countingScore": "96.30",
+    "recordedRounds": "26 / 27",
+    "pointsShare": "29.84",
+    "pointsValue": "350.25",
+    "teamTotal": "1173.93"
   },
   "officialRank": {
-    "wagrRank": "409",
-    "wagrImpact": "▼2",
+    "wagrRank": "416",
+    "wagrImpact": "▼7",
     "wagrDate": "Mar 18, 2026",
-    "clippdRank": "337",
-    "clippdImpact": "▼43",
-    "clippdDate": "Mar 18, 2026",
+    "clippdRank": "311",
+    "clippdImpact": "▲26",
+    "clippdDate": "Mar 25, 2026",
     "wins": "1",
     "top3": "3",
-    "top10": "4",
-    "totalTournaments": "8"
+    "top10": "5",
+    "totalTournaments": "9"
   }
 }
