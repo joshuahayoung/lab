@@ -663,7 +663,6 @@
       font-weight: 800;
     }
 
-    /* desktop: 기존처럼 가로 배치 유지 */
     #jh-tournament-card-block .jtc-row-tools {
       display: flex;
       align-items: center;
@@ -923,11 +922,12 @@
         table-layout: fixed;
       }
 
-      #jh-tournament-card-block .jtc-col-info   { width: 40%; }
-      #jh-tournament-card-block .jtc-col-score  { width: 12%; }
+      /* status 폭 약간 축소 */
+      #jh-tournament-card-block .jtc-col-info   { width: 41%; }
+      #jh-tournament-card-block .jtc-col-score  { width: 13%; }
       #jh-tournament-card-block .jtc-col-par    { width: 11%; }
-      #jh-tournament-card-block .jtc-col-status { width: 21%; }
-      #jh-tournament-card-block .jtc-col-finish { width: 16%; }
+      #jh-tournament-card-block .jtc-col-status { width: 18%; }
+      #jh-tournament-card-block .jtc-col-finish { width: 17%; }
 
       #jh-tournament-card-block .jtc-table th {
         font-size: 8px;
@@ -956,7 +956,6 @@
         margin-top: 1px;
       }
 
-      /* mobile: 제목 옆에서 자연스럽게 세로 정렬 */
       #jh-tournament-card-block .jtc-row-tools {
         gap: 6px;
         align-items: flex-start;
@@ -964,21 +963,22 @@
         flex-wrap: nowrap;
       }
 
+      /* 모바일에서 버튼 왼쪽 정렬 */
       #jh-tournament-card-block .jtc-tool-stack {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         gap: 3px;
         margin-left: 6px;
       }
 
       #jh-tournament-card-block .jtc-tool-btn {
-        min-width: 56px;
+        min-width: 58px;
         padding: 1px 4px;
         gap: 3px;
         border-radius: 3px;
-        justify-content: center;
+        justify-content: flex-start;
       }
 
       #jh-tournament-card-block .jtc-tool-btn span {
@@ -1014,25 +1014,33 @@
       }
 
       #jh-tournament-card-block .jtc-summary {
-        min-width: 38px;
+        min-width: 44px;
       }
 
+      /* footer 라벨 키움 */
       #jh-tournament-card-block .jtc-summary-label {
-        font-size: 6px;
+        font-size: 7px;
         line-height: 1;
       }
 
+      /* footer 숫자 키움 */
       #jh-tournament-card-block .jtc-summary-value {
-        font-size: 11px;
-        line-height: 1.02;
+        font-size: 13px;
+        line-height: 1.05;
       }
 
-
+      /* 모바일 숫자 가독성 확대 */
       #jh-tournament-card-block .jtc-table tbody td:nth-child(2),
       #jh-tournament-card-block .jtc-table tbody td:nth-child(3),
       #jh-tournament-card-block .jtc-table tbody td:nth-child(5) {
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 900;
+      }
+
+      /* status는 숫자보다 조금 작게 유지 */
+      #jh-tournament-card-block .jtc-table tbody td:nth-child(4) {
+        font-size: 9px;
+        font-weight: 800;
       }
 
       #jh-tournament-card-block .jtc-modal-wrap {
@@ -2230,10 +2238,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                         <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
                     </div>
                     <canvas id="archiveOfficialChart"></canvas>
-                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; 
-                      color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
+                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; 
+                        padding-top: 10px; font-weight: 600; text-transform: uppercase; text-align: center;">
                         <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                        <span>2025–26 Competitive Record</span>
                     </div>
                 </div>
             </div>
