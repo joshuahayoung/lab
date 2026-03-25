@@ -397,7 +397,7 @@
   </h1>
   
   <span style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; white-space: nowrap;">
-    Last Updated: Mar 19, 2026
+    Last Updated: Mar 25, 2026
   </span>
 </div>
 
@@ -581,8 +581,25 @@
       line-height: 1.45;
     }
 
+    #jh-tournament-card-block .jtc-table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      background: #ffffff;
+    }
+
+    #jh-tournament-card-block .jtc-table-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    #jh-tournament-card-block .jtc-table-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 999px;
+    }
+
     #jh-tournament-card-block .jtc-table {
       width: 100%;
+      min-width: 720px;
       border-collapse: collapse;
       background: white;
       table-layout: fixed;
@@ -598,6 +615,7 @@
       padding: 12px 10px;
       border-bottom: 2px solid #0c2340;
       text-align: center;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-table th.jtc-col-left,
@@ -611,6 +629,7 @@
       border-bottom: 1px solid #edf2f7;
       vertical-align: middle;
       text-align: center;
+      white-space: nowrap;
     }
 
     #jh-tournament-card-block .jtc-col-info   { width: 43%; }
@@ -812,56 +831,52 @@
         padding: 0 12px;
       }
 
+      #jh-tournament-card-block .jtc-header-top {
+        margin-bottom: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row {
+        gap: 8px;
+        margin-bottom: 16px;
+        padding-left: 12px;
+        border-left-width: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row h3 {
+        font-size: 1.02em;
+        line-height: 1.15;
+      }
+
+      #jh-tournament-card-block .jtc-header-row span {
+        font-size: 0.74em;
+        line-height: 1.25;
+      }
+
+      #jh-tournament-card-block .jtc-card {
+        border-radius: 16px;
+        box-shadow: 0 10px 26px rgba(12, 35, 64, 0.10);
+      }
+
       #jh-tournament-card-block .jtc-card-head {
-        padding: 18px 16px;
+        padding: 14px 14px 12px 14px;
+        gap: 8px;
       }
 
-      #jh-tournament-card-block .jtc-table thead {
-        display: none;
-      }
-
-      #jh-tournament-card-block .jtc-table,
-      #jh-tournament-card-block .jtc-table tbody,
-      #jh-tournament-card-block .jtc-table tr,
-      #jh-tournament-card-block .jtc-table td {
-        display: block;
+      #jh-tournament-card-block .jtc-head-left {
+        gap: 10px;
         width: 100%;
+        align-items: flex-start;
       }
 
-      #jh-tournament-card-block .jtc-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 12px;
-      }
-
-      #jh-tournament-card-block .jtc-table td {
-        border: none !important;
-        padding: 7px 0 !important;
-        text-align: left !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td.jtc-col-left {
-        padding-left: 0 !important;
-        padding-bottom: 10px !important;
-        margin-bottom: 8px;
-        border-bottom: 1px dashed #e2e8f0 !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
-        content: attr(data-label);
-        display: inline-block;
-        min-width: 58px;
-        margin-right: 10px;
-        font-size: 10px;
-        color: #94a3b8;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
+      #jh-tournament-card-block .jtc-badge {
+        padding: 4px 10px;
+        font-size: 9px;
+        letter-spacing: 0.85px;
       }
 
       #jh-tournament-card-block .jtc-title-wrap {
-        gap: 6px;
+        gap: 5px;
+        flex: 1 1 100%;
       }
 
       #jh-tournament-card-block .jtc-title-line {
@@ -870,8 +885,8 @@
 
       #jh-tournament-card-block .jtc-title {
         display: block;
-        font-size: 18px;
-        line-height: 1.28;
+        font-size: 16px;
+        line-height: 1.24;
       }
 
       #jh-tournament-card-block .jtc-title-sep {
@@ -880,39 +895,89 @@
 
       #jh-tournament-card-block .jtc-date {
         display: block;
-        margin-top: 2px;
-        font-size: 13px;
+        margin-top: 3px;
+        font-size: 12px;
         font-weight: 800;
         color: #8b5e1a;
-        line-height: 1.25;
+        line-height: 1.22;
         white-space: normal;
       }
 
       #jh-tournament-card-block .jtc-meta {
-        font-size: 13px;
+        font-size: 11px;
         color: #5b6b7f;
         font-weight: 700;
-        line-height: 1.45;
+        line-height: 1.38;
+      }
+
+      #jh-tournament-card-block .jtc-table {
+        min-width: 720px;
+      }
+
+      #jh-tournament-card-block .jtc-table th {
+        font-size: 10px;
+        padding: 10px 8px;
+      }
+
+      #jh-tournament-card-block .jtc-table td {
+        font-size: 13px;
+        padding: 12px 8px;
+      }
+
+      #jh-tournament-card-block .jtc-table th.jtc-col-left,
+      #jh-tournament-card-block .jtc-table td.jtc-col-left {
+        padding-left: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-round-title {
+        font-size: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-round-date {
+        font-size: 10px;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn span {
+        font-size: 9px;
       }
 
       #jh-tournament-card-block .jtc-footer {
-        padding: 14px 16px;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px 12px;
-        white-space: normal;
+        padding: 12px 14px;
+        gap: 14px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       #jh-tournament-card-block .jtc-main-link {
-        grid-column: 1 / -1;
-        margin-right: 0;
-        justify-content: center;
-        width: 100%;
+        font-size: 10px;
+        letter-spacing: 0.65px;
+        padding: 6px 10px;
       }
 
       #jh-tournament-card-block .jtc-summary {
-        min-width: 0;
-        text-align: center;
+        min-width: 52px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-label {
+        font-size: 8px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-value {
+        font-size: 16px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-wrap {
+        max-width: 96%;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-x {
+        top: -34px;
+        font-size: 26px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-btn {
+        font-size: 11px;
+        padding: 8px 20px;
       }
     }
   </style>
@@ -920,7 +985,7 @@
   <div class="jtc-wrap">
     <div class="jtc-header-top">
       <div id="jtc-section-header" class="jtc-header-row">
-        <h3 id="jtc-section-title">UPCOMING TOURNAMENT</h3>
+        <h3 id="jtc-section-title">LATEST TOURNAMENT RESULTS</h3>
         <span id="jtc-section-meta">9th Event: Bell Bank-Pay It Forward-Collegiate</span>
       </div>
     </div>
@@ -943,18 +1008,20 @@
         </div>
       </div>
 
-      <table class="jtc-table">
-        <thead>
-          <tr>
-            <th class="jtc-col-info jtc-col-left">Round</th>
-            <th class="jtc-col-score">Score</th>
-            <th class="jtc-col-par">Par</th>
-            <th class="jtc-col-status">Status</th>
-            <th class="jtc-col-finish">Pos</th>
-          </tr>
-        </thead>
-        <tbody id="jtc-rounds-body"></tbody>
-      </table>
+      <div class="jtc-table-scroll">
+        <table class="jtc-table">
+          <thead>
+            <tr>
+              <th class="jtc-col-info jtc-col-left">Round</th>
+              <th class="jtc-col-score">Score</th>
+              <th class="jtc-col-par">Par</th>
+              <th class="jtc-col-status">Status</th>
+              <th class="jtc-col-finish">Pos</th>
+            </tr>
+          </thead>
+          <tbody id="jtc-rounds-body"></tbody>
+        </table>
+      </div>
 
       <div class="jtc-footer">
         <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
@@ -997,62 +1064,62 @@
 
   <script>
     const TOURNAMENT_CONFIG = {
-      sectionTitle: "UPCOMING TOURNAMENT",
+      sectionTitle: "LATEST TOURNAMENT RESULTS",
       eventNo: "9th Event",
       eventLabel: "Bell Bank-Pay It Forward-Collegiate",
 
-      status: "upcoming", // upcoming | ongoing | final | cancelled
+      status: "final", // upcoming | ongoing | final | cancelled
 
       title: "Bell Bank Collegiate (Minnesota)",
       date: "Mar 23-24",
       venue: "Wigwam Resort",
       location: "Litchfield Park, Arizona",
       par: 72,
-      yards: "7,345",
+      yards: "7,322",
       rating: 75.0,
       slope: 137,
 
       mainLink: {
         url: "https://scoreboard.clippd.com/tournaments/239256/scoring/team",
-        label: "LIVE LEADERBOARD"
+        label: "FINAL RESULTS"
       },
 
       summary: {
-        total: "TBD",
-        par: "TBD",
-        pos: "TBD"
+        total: "212",
+        par: "-4",
+        pos: "T10"
       },
 
       rounds: [
         {
           round: "Round 1",
           date: "Mar 23, 2026",
-          score: "TBD",
-          par: "TBD",
-          status: "SCHEDULED",
-          pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-1.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          score: "73",
+          par: "+1",
+          status: "FINISH",
+          pos: "T42",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-1.jpg",
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
         },
         {
           round: "Round 2",
           date: "Mar 23, 2026",
-          score: "TBD",
-          par: "TBD",
-          status: "SCHEDULED",
-          pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-2.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          score: "68",
+          par: "-4",
+          status: "FINISH",
+          pos: "T8",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-2.jpg",
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
         },
         {
           round: "Round 3",
           date: "Mar 24, 2026",
-          score: "TBD",
-          par: "TBD",
-          status: "SCHEDULED",
-          pos: "TBD",
-          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Pairing-3.jpg",
-          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Scorecard.jpg"
+          score: "71",
+          par: "-1",
+          status: "FINISH",
+          pos: "T10",
+          pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-3.jpg",
+          scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
         }
       ]
     };
@@ -1195,10 +1262,10 @@
             </div>
             <div class="jtc-round-date">${jtcIsUsableValue(round.date) ? round.date : "TBD"}</div>
           </td>
-          <td data-label="Score" class="${parClass}">${values.score}</td>
-          <td data-label="Par" class="${parClass}">${values.par}</td>
-          <td data-label="Status" class="jtc-text-neutral">${values.status}</td>
-          <td data-label="Pos" class="jtc-text-neutral">${values.pos}</td>
+          <td class="${parClass}">${values.score}</td>
+          <td class="${parClass}">${values.par}</td>
+          <td class="jtc-text-neutral">${values.status}</td>
+          <td class="jtc-text-neutral">${values.pos}</td>
         </tr>
       `;
     }
@@ -1307,8 +1374,12 @@
     
 <div class="master-container" style="width: 100%; margin-top: 25px; box-sizing: border-box;">
 
-  <div style="margin: -6px 0 20px 0; padding-left: 2px; font-size: 10px; color: #94a3b8; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; box-sizing: border-box;">
-  Auto-Synced from data.json
+<div style="margin: -6px 0 20px 0; padding-left: 2px; font-family: 'Montserrat', sans-serif; box-sizing: border-box;">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 10px; color: #94a3b8; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">
+    <span>Auto-Synced from data.json</span>
+    <span style="opacity: 0.55;">|</span>
+    <span>2025–26 Competitive Record</span>
+  </div>
 </div>
   
     <div class="roster-standings-section" style="width: 100%; margin-bottom: 40px; box-sizing: border-box;">
@@ -1622,7 +1693,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <!-- Header-post date -->
     <div class="jhcf-header">
       <div id="Current-Focus" style="margin-left: auto; width: fit-content; margin-right: 18px;">
-        <span class="jhcf-posted-pill">Posted On: Mar 17, 2026</span>
+        <span class="jhcf-posted-pill">Posted On: Mar 24, 2026</span>
       </div>
     </div>
 
@@ -1638,31 +1709,31 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
         <div class="jhcf-text-block">
           <p class="jhcf-text-line">
-            <strong>Current Technical Baseline:</strong> Driver and long-iron dispersion remain on a better trend than in earlier events, and overall tee-to-green control improved through the latest Arizona sample.
+            <strong>Current Technical Baseline:</strong> Driver and long-iron dispersion remain stable, and overall tee-to-green control continues to trend at a competitive level relative to the field.
           </p>
 
           <p class="jhcf-text-line">
-            <strong>Firm-Green Adjustment:</strong> Current emphasis is on front-edge landing patterns, release control, and distance management into small, fast greens where standard approach windows do not hold consistently.
+            <strong>Ball-Striking Status:</strong> Approach quality and green-in-regulation frequency remained sufficient to generate scoring opportunities across all three rounds.
           </p>
 
           <p class="jhcf-text-line">
-            <strong>Wedge Calibration:</strong> Wedge feel improved relative to prior events, but distance control into tighter target zones remains an active carry-forward point ahead of the next start.
+            <strong>Putting Conversion:</strong> The primary scoring gap remains short- to mid-range birdie conversion. A high number of makeable opportunities did not convert, resulting in a scoreline below the level of opportunity created.
+          </p>
+
+<p class="jhcf-text-line">
+  <strong>Surface &amp; Condition Factors:</strong> Firm, dry desert conditions remained a management variable throughout the event, particularly in green pace, release, and overall adaptation.
+</p>
+
+          <p class="jhcf-text-line">
+            <strong>Round Pattern:</strong> R1 showed strong ball-striking with limited scoring return due to putting. R2 reflected temporary improvement in conversion and scoring output. R3 began with early scoring but returned to reduced conversion despite continued ball-striking stability.
           </p>
 
           <p class="jhcf-text-line">
-            <strong>Ball-Striking Retention:</strong> Final-round control indicators, including 16 greens in regulation, support keeping the current full-swing pattern stable rather than making unnecessary technical changes.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Green Adaptation:</strong> Read speed, release recognition, and surface adjustment improved late in the week. The focus now is to transfer that adjustment earlier in the tournament cycle.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Putting Priority:</strong> The main scoring gap remains short-range birdie conversion. Makeable chances were created often enough; the immediate requirement is better finish rate once opportunities are inside realistic range.
+            <strong>Performance Interpretation:</strong> The scoring outcome did not fully align with the underlying tee-to-green sample. The gap between opportunity creation and conversion remains the primary technical focus.
           </p>
 
           <p class="jhcf-text-line jhcf-text-line-last">
-            <strong>Immediate Priority:</strong> Preserve current ball-striking gains while improving scoring conversion on firm, fast desert greens before the next Arizona event.
+            <strong>Immediate Priority:</strong> Maintain current ball-striking structure while improving short-range conversion efficiency on fast, firm greens.
           </p>
         </div>
       </div>
@@ -1675,12 +1746,13 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         </div>
 
         <div class="jhcf-text-block">
-          <p class="jhcf-text-line">
-            <strong class="jhcf-gold-strong">Physical:</strong> Illness symptoms were managed through the week, and the present focus is basic recovery, hydration, and maintaining stable preparation through another short Arizona turnaround.
-          </p>
+          
+<p class="jhcf-text-line">
+  <strong class="jhcf-gold-strong">Physical:</strong> Hydration, recovery, and overall physical management remained ongoing priorities throughout the event.
+</p>
 
           <p class="jhcf-text-line jhcf-text-line-last">
-            <strong class="jhcf-gold-strong">Academic:</strong> Immediate off-course priorities remain coursework, class preparation, and reset tasks before returning to tournament preparation in the next three-day window.
+            <strong class="jhcf-gold-strong">Academic:</strong> Coursework and off-course responsibilities accumulated during consecutive tournament weeks and require immediate catch-up before the next event cycle.
           </p>
         </div>
       </div>
@@ -1694,7 +1766,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         <div class="jhcf-upcoming">
           <div class="jhcf-upcoming-head">
             <div class="jhcf-upcoming-title-wrap">
-              <h5>Upcoming Focus — Bell Bank “Pay It Forward” Collegiate (Mar 23–24)</h5>
+              <h5>Upcoming Focus — Tiger Invitational (Apr 6–7)</h5>
             </div>
 
             <div class="jhcf-upcoming-pill">
@@ -2066,35 +2138,31 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
   
   
-    <div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
-        <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-            <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
-                <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-                <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-                9 NCAA Regular Season Events + 1 Winter Event (<span style="color:#F15A22; font-weight:700;">Patriot</span><span style="color:#F15A22; font-weight:700;">*</span>) / 30 Competitive Rounds
+<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
+    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
+        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
+            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+                2025–26 Competitive Record
             </p>
                 
-                <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-                        <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
-                        <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
-                    </div>
+            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
+                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
+                </div>
                     
-                    <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
-                        <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
-                            <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">TBD</span>
-                        </div>
-                        <canvas id="archiveOfficialChart"></canvas>
-                        <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; 
-                          color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
+                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
+                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
+                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
+                    </div>
+                    <canvas id="archiveOfficialChart"></canvas>
+                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif; font-size: 0.72em; 
+                      color: #888; border-top: 1px dashed #ccc; padding-top: 10px; font-weight: 600; text-transform: uppercase;">
                         <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                        <span>CUMULATIVE: 10 EVENTS / 30 ROUNDS</span>
+                        <span>2025–26 Competitive Record</span>
                     </div>
-                    </div>
-                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7em; color: #888; font-weight: 500; margin-top: 10px; padding-left: 5px;">
-  <span style="color: #F15A22; font-weight: 700;">Patriot*</span> Special Invitational Event (Non-NCAA D1 Regular Season)
-</p>
                 </div>
             </div>
         </div>
@@ -2104,7 +2172,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
 
 <script>
 (function() {
@@ -2122,7 +2189,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '9/15 (Highlands)',
         '9/22 (Badger)',
         '10/05 (Trinity)',
-        '12/27 (Patriot)*',
         '2/01 (Compadres)',
         '2/24 (Military)',
         '3/03 (Golden)',
@@ -2130,22 +2196,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '3/24 (Bellbank)'
     ];
 
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 72.00, 71.66, 67.6, 73.66, 71.0];
+    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
 
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T38*', 'T3', '1', '3', 'T48', 'T5'];
+    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
 
     const archiveRounds = [
         '70-70-69 (-7)',
         '74-71-70 (-1)',
         '71-71-76 (+2)',
         '75-73-74 (+6)',
-        '71-73-72 (+6)',
         '70-75-71 (E)',
         '69-72-74 (-1)',
         '64-70-69 (-13)',
         '72-76-73 (+5)',
-        '70-72-71 (-3)'
-
+        '73-68-71 (-4)'
     ];
 
     const archiveRankImpact = [
@@ -2153,12 +2217,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '● Rank Impact ▲ 28',
         '● Rank Impact ▼ 38',
         '● Rank Impact ▼ 98',
-        null,
         '● Rank Impact ▲ 142',
         '● Rank Impact ▲ 72',
         '● Rank Impact ▲ 43',
         '● Rank Impact ▼ 43',
-        '● Rank Impact TBD'
+        '● Rank Impact ▲ 26'
     ];
 
     const archiveWagrPower = [
@@ -2166,13 +2229,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '232.6656',
         '129.0694',
         '360.1597',
-        '806.3420',
         '145.6033',
         '101.3382',
         '135.0209',
         '670.0102',
         'TBD'
-
     ];
 
     const archivePtsEarned = [
@@ -2180,13 +2241,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         '4.9097',
         '3.3178',
         '3.1971',
-        '6.1052',
         '6.5774',
         '9.2734',
         '6.7817',
         '4.8345',
         'TBD'
-
     ];
 
     // Mobile
@@ -2197,7 +2256,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             .replace(' (Highlands)', '')
             .replace(' (Badger)', '')
             .replace(' (Trinity)', '')
-            .replace(' (Patriot)*', '*')
             .replace(' (Compadres)', '')
             .replace(' (Military)', '')
             .replace(' (Golden)', '')
@@ -2225,20 +2283,18 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 tension: 0.3,
                 fill: true,
                 datalabels: {
-    align: 'top',
-    anchor: 'end',
-    offset: isMobile ? 4 : 8,
-    color: function(context) {
-        return context.dataIndex === 4 ? '#F15A22' : '#0c2340';
-    },
-    font: {
-        weight: '700',
-        size: isMobile ? 10 : 13
-    },
-    formatter: function(value, context) {
-        return archivePositions[context.dataIndex];
-    }
-}
+                    align: 'top',
+                    anchor: 'end',
+                    offset: isMobile ? 4 : 8,
+                    color: '#0c2340',
+                    font: {
+                        weight: '700',
+                        size: isMobile ? 10 : 13
+                    },
+                    formatter: function(value, context) {
+                        return archivePositions[context.dataIndex];
+                    }
+                }
             }]
         },
         options: {
@@ -2264,9 +2320,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 x: {
                     grid: { display: false },
                     ticks: {
-                            color: function(context) {
-        return context.index === 4 ? '#F15A22' : '#333';
-    },
+                        color: '#333',
                         font: { size: isMobile ? 8 : 10, weight: '500' },
                         autoSkip: false,
                         maxRotation: isMobile ? 60 : 45,
@@ -2312,7 +2366,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     });
 })();
 </script>
-
 
 
 
@@ -2373,13 +2426,13 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
     
     <div style="padding: 10px 24px 18px 24px; box-sizing: border-box; text-align: center; width: 100%;">
-  <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
-    Round Distribution & Scoring Pattern
-  </h2>
-  <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-  9 NCAA Regular Season Events + 1 Winter Event (<span style="color: #F15A22; font-weight: 700;">*Patriot</span>) / 30 Competitive Rounds
-</p>
-</div>
+      <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
+        Round Distribution & Scoring Pattern
+      </h2>
+      <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+        2025–26 Competitive Record
+      </p>
+    </div>
 
     <div class="rd-main-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 20px 22px 20px; box-sizing: border-box; align-items: stretch;">
       
@@ -2389,7 +2442,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         <!-- ROUND LOG -->
         <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-sizing: border-box;">
           <div style="padding: 14px 18px; background: #0c2340; color: #ffffff; font-family: 'Oswald', sans-serif; font-size: 1em; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;">
-            30-Round Competitive Distribution
+            27-Round Competitive Distribution
           </div>
 
           <div style="padding: 14px 16px 12px 16px; box-sizing: border-box;">
@@ -2404,35 +2457,30 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
               <tbody>
                
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">10<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 72 • 71</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.0</td>
-               </tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">73 • 68 • 71</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">70.66</td>
+                </tr>
                 
-               <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9</td>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">72 • 76 • 73</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">73.66</td>
                 </tr>
 
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">64 • 70 • 69</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">67.67</td>
                 </tr>
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">69 • 72 • 74</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
                 </tr>
                 <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 75 • 71</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5 <span style="color:#f15a22; font-weight:900;">*Patriot</span></td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">71 • 73 • 72</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
                 </tr>
                 <tr>
@@ -2457,10 +2505,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
                 </tr>
               </tbody>
             </table>
-
-            <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #d1d5db; font-family: 'Montserrat', sans-serif; font-size: 10px; color: #888; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase;">
-              <span style="color:#f15a22; font-weight:900;">*Patriot</span>: Special Invitational Event (Non-NCAA Division I Regular-Season Event)
-            </div>
           </div>
         </div>
 
@@ -2475,19 +2519,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
               <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">27-Round Avg.</div>
 
               <div class="rd-summary-value rd-avg-stack-desktop" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
-                <div>71.25</div>
+                <div>71.52</div>
                 <div style="margin-top: 4px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</div>
-                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.60</div>
+                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.80</div>
                 <div style="margin-top: 3px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</div>
               </div>
 
               <div class="rd-summary-value rd-avg-stack-mobile" style="font-size: 20px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05; display: none;">
                 <div style="display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.66</span>
+                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.52</span>
                   <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</span>
                 </div>
                 <div style="margin-top: 4px; display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.60</span>
+                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.80</span>
                   <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</span>
                 </div>
               </div>
@@ -2499,11 +2543,11 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Par or Better</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">15 / 27</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">17 / 27</div>
             </div>
             <div style="background: #f15a22; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: rgba(255,255,255,0.82); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Primary Band</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">69–72</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">68–72</div>
             </div>
           </div>
         </div>
@@ -2520,22 +2564,19 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </div>
 
           <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
-              <div style="margin-bottom: 10px;">
-  Across the 27 competitive rounds included in this section, most recorded scores fall between 69 and 72.
-</div>
-<div style="margin-bottom: 10px;">
-  The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
-</div>
-<div style="margin-bottom: 10px;">
-  This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
-</div>
-<div style="margin-bottom: 10px;">
-  The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
-</div>
-<div>
-  Patriot is retained for continuity of record and is listed separately from the NCAA Division I regular-season event schedule.
-</div>
-              </div>
+            <div style="margin-bottom: 10px;">
+              Across the 27 competitive rounds included in this section, most recorded scores fall between 68 and 72.
+            </div>
+            <div style="margin-bottom: 10px;">
+              The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
+            </div>
+            <div style="margin-bottom: 10px;">
+              This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
+            </div>
+            <div>
+              The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
+            </div>
+          </div>
         </div>
 
         <!-- SCORING STRUCTURE -->
@@ -2559,15 +2600,24 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">60s</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">5</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">70–72</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">15</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">12</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75+</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
+              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
+                </div>
+
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75-76</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2577,7 +2627,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </div>
   </div>
 </div>
-
 
 
   
@@ -2719,6 +2768,53 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
       <div class="insight-scroll-container jup-slider-track" id="jup-slider-track">
 
+
+<div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+  <div>
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+      <div style="display: flex; align-items: center;">
+        <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+      </div>
+      <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">9th Event</span>
+    </div>
+
+    <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+      <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Bell Bank “Pay It Forward” Collegiate — Litchfield Park, Arizona</p>
+
+      <p style="margin-bottom: 10px;">
+        The event was played under <b>high-temperature desert conditions</b> with <b>firm surfaces and fast greens</b>, requiring precise distance control and early adaptation to surface speed and release patterns.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        Across three rounds, the recorded scores were <b>73, 68, and 71</b>, finishing at <b>4-under-par</b> and inside the <b>top 10 of a 96-player field</b>.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The scoreline reflects partial conversion of available opportunities. <b>Tee-to-green control remained consistent</b> throughout the event, with repeated creation of birdie chances. However, a significant portion of those opportunities did not convert, particularly within makeable range.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The first round showed stable ball-striking with limited scoring return due to reduced putting efficiency. The second round reflected improved confidence on the greens and produced a lower score. The final round began with early scoring but returned to lower conversion rates despite continued control in ball striking.
+      </p>
+
+<p style="margin-bottom: 10px;">
+  Dry and high-temperature conditions remained a management factor throughout the event.
+</p>
+
+      <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+        From a performance perspective, the event presents a clear separation between opportunity creation and scoring output. The underlying ball-striking level supported a lower scoring range than the final result indicates. The primary limiting factor was not approach instability but <b>conversion efficiency on the greens</b>, creating a gap between performance indicators and recorded score.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 17, 2026</div>
+</div>
+
+        
+
 <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
   <div>
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
@@ -2760,7 +2856,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     </div>
   </div>
 
-  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 17, 2026</div>
+  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 24, 2026</div>
 </div>
 
 
@@ -3094,9 +3190,10 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </tr>
         </thead>
         <tbody style="color: #2d3436;">      
-     
-  
+   
           
+          
+                   
           <tr style="background-color: #fcfdfe;">
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px; color: #333;">Apr 6-7, 2026</div>
@@ -3186,12 +3283,14 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           </tr>
 
 
+
+
         <tr>
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px; color: #333;">Mar 23-24, 2026</div>
               <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px;">
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">Bell Bank Collegiate (Minnesota)</div>
-             <a href="https://scoreboard.clippd.com/tournaments/239256/scoring/participants" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+             <a href="https://scoreboard.clippd.com/tournaments/239256/scoring/player" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>
@@ -3204,21 +3303,21 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
               </div>
     
                <div style="font-size: 11px; color: #777; font-weight: 600; margin-top: 2px;">
-              Rank Impact: <span style="color:#16a34a;"> </span> TBD | SG: TBD | Weighted Pts: TBD<br>
+              Rank Impact: <span style="color:#16a34a;">▲</span> 26 | SG: -0.12 | Weighted Pts: 48.13<br>
               WAGR Pwr: TBD | Pts Earned: TBD
                  
               <div class="mobile-status-bar">
                 <div class="ms-item"><span class="ms-label" style="color: #333;">R1-R2-R3</span><span class="ms-value" style="color: #333; font-weight: 800;">
-                  <span style="color:#e11d48;">70</span>-<span style="color: #0047AB;">72</span>-<span style="color:#e11d48;">71</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">TOTAL</span><span class="ms-value" style="color: #e11d48; font-weight: 800;">213</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">PAR</span><span class="ms-value" style="color: #e11d48; font-weight: 700;">-3</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">T5</span></div>
+                  <span style="color:#333;">73</span>-<span style="color: #e11d48;">68</span>-<span style="color:#e11d48;">71</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">TOTAL</span><span class="ms-value" style="color: #e11d48; font-weight: 800;">212</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">PAR</span><span class="ms-value" style="color: #e11d48; font-weight: 700;">-4</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #333;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">T10</span></div>
               </div>
             </td>
-            <td class="hide-mobile" style="color: #333; font-weight: 800;"><span style="color: #e11d48;">70</span>-<span style="color:#0047AB;">72</span>-<span style="color:#e11d48;">71</span></td>
-            <td class="hide-mobile" style="color: #e11d48; font-weight: 800;">213</td>
-            <td class="hide-mobile" style="color: #e11d48; font-weight: 700;">-3</td>
-            <td class="hide-mobile" style="color: #333; font-weight: 700;">T5</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 800;"><span style="color: #333;">73</span>-<span style="color: #e11d48;">68</span>-<span style="color:#e11d48;">71</span></td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 800;">212</td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 700;">-4</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 700;">T10</td>
           </tr>
 
                  
@@ -3461,72 +3560,124 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
 
-  <div style="margin-bottom: 50px;">
+<div style="margin-bottom: 50px;">
 
-    <div style="display: flex; align-items: center; margin-bottom: 20px; border-left: 6px solid #c98a2e; padding-left: 15px;">
-
-      <h4 style="margin: 0; color: #c98a2e; font-size: 20px; font-weight: 800;">Off-Season / Special Invitational</h4>
-
+  <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; border-left: 6px solid #c98a2e; padding-left: 15px;">
+    <div>
+      <h4 style="margin: 0; color: #c98a2e; font-size: 20px; font-weight: 800; line-height: 1.2;">
+        Winter Special Event Benchmark
+      </h4>
+      <div style="margin-top: 6px; font-size: 12px; color: #64748b; font-weight: 700; line-height: 1.5;">
+        Separate from the NCAA Division I regular-season event sequence and retained as an independent competitive benchmark record.
+      </div>
     </div>
-
-    
-
-    <div style="border-radius: 15px; border: 1px solid #eee; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-
-      <table class="res-table">
-
-        <thead>
-
-          <tr>
-
-            <th class="col-tour col-left">Date / Tournament</th>
-
-            <th class="col-score">R1-R2-R3</th>
-
-            <th class="col-val">Total</th>
-
-            <th class="col-val">Par</th>
-
-            <th class="col-val">Finish</th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-            <td class="col-left">
-              <div style="color: #333; font-weight: 700; font-size: 11px;">Dec 29-31, 2025</div>
-              <div style="display: flex; align-items: center; flex-wrap: wrap;">
-                <span style="font-weight: 800; color: #0c2340; font-size: 16px;">Patriot All-America Invitational</span>
-                <a href="https://www.golfgenius.com/pages/5776911" target="_blank" class="leaderboard-btn">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
-              </div>
-              <div style="font-size: 11px; color: #c98a2e; font-weight: 700; letter-spacing: -0.2px;">WAGR Pwr: 806.3420 | Pts Earned: 6.1052</div>
-              <div style="font-size: 11px; color: #475569; font-weight: 800; margin-top: 2px;">Head-to-Head: 42-37-5</div>
-              <div class="mobile-score-bar">
-                <div class="m-item"><span class="m-label" style="color: #333;">R1-R2-R3</span><span class="m-value" style="color: #333; font-weight: 800;">71-73-72</span></div>
-                <div class="m-item"><span class="m-label" style="color: #333;">TOTAL</span><span class="m-value" style="color: #333; font-weight: 800;">216</span></div>
-                <div class="m-item"><span class="m-label" style="color: #333;">PAR</span><span class="m-value" style="color: #333; font-weight: 700;">+6</span></div>
-                <div class="m-item"><span class="m-label" style="color: #333;">FINISH</span><span class="m-value" style="color:#0c2340; font-weight: 700;">T38</span></div>
-              </div>
-            </td>
-            <td class="hide-on-mobile">71-73-72</td>
-            <td class="hide-on-mobile" style="font-weight: 700;">216</td>
-            <td class="hide-on-mobile" style="font-weight: 800;">+6</td>
-            <td class="hide-on-mobile" style="font-weight: 800; color: #0c2340;">T38</td>
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
   </div>
 
+  <div style="border-radius: 15px; border: 1px solid #ead9bd; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); background: linear-gradient(to bottom, #fffdf8 0%, #ffffff 100%);">
+
+    <div style="padding: 12px 16px; border-bottom: 1px solid #f1e6d2; background: rgba(201,138,46,0.06);">
+      <div style="font-size: 11px; color: #8a5a12; font-weight: 800; text-transform: uppercase; letter-spacing: 0.9px;">
+        Special Event Record
+      </div>
+    </div>
+
+    <table class="res-table">
+      <thead>
+        <tr>
+          <th class="col-tour col-left">Date / Tournament</th>
+          <th class="col-score">R1-R2-R3</th>
+          <th class="col-val">Total</th>
+          <th class="col-val">Par</th>
+          <th class="col-val">Finish</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="col-left">
+            <div style="color: #333; font-weight: 700; font-size: 11px;">Dec 29-31, 2025</div>
+
+<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 2px;">
+  <span style="font-weight: 800; color: #0c2340; font-size: 16px;">Patriot All-America Invitational</span>
+
+  <span style="font-size: 10px; color: #8a5a12; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; background: rgba(201,138,46,0.10); border: 1px solid rgba(201,138,46,0.22); border-radius: 999px; padding: 4px 8px;">
+    Winter Special Event
+  </span>
+
+  <a href="https://www.golfgenius.com/pages/5776911" target="_blank" class="leaderboard-btn" aria-label="Official Results" title="Official Results">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  </a>
+
+  <a
+    href="https://patriotallamerica.com/players/patriot_players-men/"
+    target="_blank"
+    aria-label="2025 Field"
+    title="2025 Field"
+    style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 999px; text-decoration: none; background: #0c2340; border: 1px solid #0c2340; box-sizing: border-box;"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 7h18"></path>
+      <path d="M6 3v8"></path>
+      <path d="M18 3v8"></path>
+      <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+      <path d="M8 14h8"></path>
+      <path d="M8 18h5"></path>
+    </svg>
+    <span style="font-size: 10px; color: #ffffff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; line-height: 1;">
+      2025 Field
+    </span>
+  </a>
+</div>
+
+            <div style="margin-top: 6px; font-size: 12px; color: #475569; line-height: 1.5;">
+              Elite winter invitational retained separately from the regular-season table as an independent field-strength benchmark.
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+              <span style="font-size: 11px; color: #8a5a12; font-weight: 800; background: #fff8ec; border: 1px solid #efd9b3; border-radius: 999px; padding: 5px 9px;">
+                WAGR Pwr: 806.3420
+              </span>
+              <span style="font-size: 11px; color: #8a5a12; font-weight: 800; background: #fff8ec; border: 1px solid #efd9b3; border-radius: 999px; padding: 5px 9px;">
+                Pts Earned: 6.1052
+              </span>
+              <span style="font-size: 11px; color: #475569; font-weight: 800; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 999px; padding: 5px 9px;">
+                Head-to-Head: 42-37-5
+              </span>
+            </div>
+
+            <div class="mobile-score-bar">
+              <div class="m-item">
+                <span class="m-label" style="color: #333;">R1-R2-R3</span>
+                <span class="m-value" style="color: #333; font-weight: 800;">71-73-72</span>
+              </div>
+              <div class="m-item">
+                <span class="m-label" style="color: #333;">TOTAL</span>
+                <span class="m-value" style="color: #333; font-weight: 800;">216</span>
+              </div>
+              <div class="m-item">
+                <span class="m-label" style="color: #333;">PAR</span>
+                <span class="m-value" style="color: #333; font-weight: 700;">+6</span>
+              </div>
+              <div class="m-item">
+                <span class="m-label" style="color: #333;">FINISH</span>
+                <span class="m-value" style="color:#0c2340; font-weight: 700;">T38</span>
+              </div>
+            </div>
+          </td>
+
+          <td class="hide-on-mobile">71-73-72</td>
+          <td class="hide-on-mobile" style="font-weight: 700;">216</td>
+          <td class="hide-on-mobile" style="font-weight: 800;">+6</td>
+          <td class="hide-on-mobile" style="font-weight: 800; color: #0c2340;">T38</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
   <div style="margin-bottom: 40px;">
@@ -3704,22 +3855,28 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       
  <div style="margin: 0; font-size: 14px; color: #4a5568; line-height: 1.8; text-align: justify; word-break: keep-all;">
 <p style="margin: 0 0 12px 0;">
-  <b>8th Event: Arizona Thunderbirds Intercollegiate</b> (Mar 16-17, 2026)<br>
+  <b>9th Event: Bell Bank “Pay It Forward” Collegiate</b> (Mar 23-24, 2026)<br>
 </p>
 <p style="margin: 0 0 12px 0;">
-  <b>Performance Summary:</b> This event added a strong power-field sample under a demanding Division I setup and is best logged as a context-heavy evaluation rather than a pure scoreline result.
+  <b>Performance Summary:</b> Finished at 4-under-par (73-68-71) in a 96-player field, recording a top-10 result under a power-field Division I setup.
 </p>
 <p style="margin: 0 0 12px 0;">
-  <b>Technical Summary:</b> Ball striking improved through the week. Driver / long-iron dispersion held its recent gains, and final-round approach control produced <b>16 greens in regulation.</b>
+  <b>Technical Summary:</b> Ball-striking remained stable across all rounds, with consistent opportunity creation. Driver and long-iron dispersion held recent gains.
 </p>
 <p style="margin: 0 0 12px 0;">
-  <b>Scoring Summary:</b> Score underperformed opportunity level. The primary limiting factor was <b>putting conversion</b>, especially on makeable birdie chances.
+  <b>Scoring Summary:</b> Score did not fully reflect opportunity level. The primary limitation was reduced <b>putting conversion</b>, particularly on makeable birdie chances.
+</p>
+<p style="margin: 0 0 12px 0;">
+  <b>Performance Context:</b> Underlying control indicators suggest a higher scoring potential than the recorded result. The gap between opportunity and conversion remains the key performance variable.
 </p>
 <p style="margin: 0;">
-  <b>Forward View:</b> The main carry-forward priorities are <b>firm-green scoring conversion, short-range putting, and continued control into small, fast targets.</b>
+  <b>Forward View:</b> Primary focus remains <b>short-range putting, scoring conversion, and maintaining current ball-striking structure into the final event of the season.</b>
 </p>
       </div>
-    </div>
+
+
+      
+</div>
 
 
     
@@ -3879,6 +4036,9 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     <div class="scroll-viewport">
       <div id="thumbScroll">
         <div class="thumb-page">
+          
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Round-2-68.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Round 2 68 (-4)" title="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Round 2 68 (-4)" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Lineup" title="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Thunderbirds Lineup" title="UTSA Men's Golf Arizona Thunderbirds Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Player-of-the-week-article-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong American Conference POTW Honor Article" title="Joshua Hong American Conference POTW Honor Article" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-1-Stars-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Stars of The Week Honor" title="Joshua Hong UTSA Stars of The Week Honor" loading="lazy" decoding="async">
@@ -3889,12 +4049,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Final-Article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Golden Nugget Final Article" title="Joshua Hong UTSA Men's Golf Golden Nugget Final Article" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round3-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Round 3 69" title="Joshua Hong UTSA Men's Golf Round 3 69" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-R1-R2-article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf R1 R2 Official Article" title="Joshua Hong UTSA Men's Golf R1 R2 Official Article" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget UTSA School Record 64 (-8)" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" loading="lazy" decoding="async">
-          
+   
         </div>
         <div class="thumb-page">
-        
+          
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget UTSA School Record 64 (-8)" loading="lazy" decoding="async">         
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" loading="lazy" decoding="async">     
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-FMG.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong celebrating his individual victory at the Military City Collegiate Photo by FMG" title="Joshua Hong Individual Champion - Military City Collegiate (FMG)" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Team-Win-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men’s Golf team holding the championship trophy at the Military City Collegiate event" title="UTSA Men's Golf Team Victory - Military City Collegiate" loading="lazy" decoding="async">
@@ -3905,12 +4065,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-R1-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua hong UTSA Military City R1 Score" title="Joshua hong UTSA Military City R1 Score" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Lineup" title="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Poster" title="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Poster" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" loading="lazy" decoding="async">
-           
+         
          </div>
         <div class="thumb-page">
-          
+
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" loading="lazy" decoding="async">          
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" loading="lazy" decoding="async">   
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" loading="lazy" decoding="async">   
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" title="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" loading="lazy" decoding="async">
@@ -3921,11 +4081,12 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Get-To-Know.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong's student-athlete profile information." title="Joshua Hong's student-athlete profile information." loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Patriot-All-America-2025-Winter.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong competing at the 2025 Winter Patriot All-America Invitational" title="Joshua Hong competing at the 2025 Winter Patriot All-America Invitational" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/Joshua-Hong-UTSA-CGN-HIGHLIGHT.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong's CGN Player Highlight feature poster" title="Joshua Hong's CGN Player Highlight feature poster" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Team-Photoday-Fran-Sam.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" title="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" title="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" loading="lazy" decoding="async">      
-          
+         
         </div>
         <div class="thumb-page">
+          
+           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Team-Photoday-Fran-Sam.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" title="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" title="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" loading="lazy" decoding="async">      
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands" loading="lazy" decoding="async">      
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" title="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" loading="lazy" decoding="async">
