@@ -677,7 +677,6 @@
       line-height: 1.1;
     }
 
-    /* footer를 테이블 열과 동일한 5열 grid로 */
     #jh-tournament-card-block .jtc-footer {
       background: #0c2340;
       padding: 14px 18px;
@@ -714,14 +713,18 @@
       gap: 6px;
     }
 
+    /* 수정 핵심: 데스크탑에서는 두 줄을 한 줄처럼 같이 보이게 */
     #jh-tournament-card-block .jtc-main-link-label-stack {
       display: inline-flex;
       align-items: center;
+      gap: 4px;
       line-height: 1;
+      white-space: nowrap;
     }
 
+    #jh-tournament-card-block .jtc-main-link-label-stack .line1,
     #jh-tournament-card-block .jtc-main-link-label-stack .line2 {
-      display: none;
+      display: inline;
     }
 
     #jh-tournament-card-block .jtc-main-link-dot {
@@ -977,7 +980,7 @@
         height: 4px;
       }
 
-      /* 모바일에서는 라이트 옆 텍스트를 2줄 */
+      /* 모바일에서만 세로 2줄 */
       #jh-tournament-card-block .jtc-main-link-content {
         align-items: center;
         gap: 5px;
@@ -988,7 +991,9 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        gap: 1px;
         line-height: 0.95;
+        white-space: normal;
       }
 
       #jh-tournament-card-block .jtc-main-link-label-stack .line1,
