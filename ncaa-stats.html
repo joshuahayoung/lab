@@ -623,7 +623,6 @@
       white-space: nowrap;
     }
 
-    /* 데스크탑: Round 폭 축소, 나머지 더 균등 분배 */
     #jh-tournament-card-block .jtc-col-info   { width: 30%; }
     #jh-tournament-card-block .jtc-col-score  { width: 16%; }
     #jh-tournament-card-block .jtc-col-par    { width: 14%; }
@@ -664,7 +663,6 @@
       font-weight: 800;
     }
 
-    /* 데스크탑 숫자/텍스트 확대 */
     #jh-tournament-card-block .jtc-table tbody td:nth-child(2),
     #jh-tournament-card-block .jtc-table tbody td:nth-child(3),
     #jh-tournament-card-block .jtc-table tbody td:nth-child(5) {
@@ -683,9 +681,8 @@
       background: #0c2340;
       padding: 16px 22px;
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 24px;
+      align-items: stretch;
+      gap: 18px;
       flex-wrap: nowrap;
       white-space: nowrap;
     }
@@ -707,6 +704,7 @@
       transition: all 0.2s ease;
       background: #ffffff;
       flex: 0 0 auto;
+      align-self: center;
     }
 
     #jh-tournament-card-block .jtc-main-link-dot {
@@ -728,30 +726,54 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
+    /* footer 요약 영역 재배분 */
+    #jh-tournament-card-block .jtc-summary-wrap {
+      margin-left: auto;
+      display: grid;
+      grid-template-columns: 1.25fr 1.1fr 0.9fr;
+      align-items: stretch;
+      gap: 12px;
+      min-width: 320px;
+    }
+
     #jh-tournament-card-block .jtc-summary {
-      text-align: right;
-      flex: 0 0 auto;
-      min-width: 64px;
+      text-align: center;
+      min-width: 0;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 10px 8px 9px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     #jh-tournament-card-block .jtc-summary-label {
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.68);
       font-size: 10px;
       font-weight: 800;
       display: block;
       text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 5px;
     }
 
     #jh-tournament-card-block .jtc-summary-value {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
-      line-height: 1.05;
+      line-height: 1.02;
     }
 
     #jh-tournament-card-block .jtc-summary-value.red   { color: #e74c3c; }
     #jh-tournament-card-block .jtc-summary-value.blue  { color: #60a5fa; }
     #jh-tournament-card-block .jtc-summary-value.navy  { color: #bfdbfe; }
     #jh-tournament-card-block .jtc-summary-value.white { color: #ffffff; }
+
+    /* POS는 오른쪽 끝 정렬감 강조 */
+    #jh-tournament-card-block .jtc-summary.jtc-summary-pos {
+      justify-self: end;
+      width: 100%;
+    }
 
     #jh-tournament-card-block .jtc-modal {
       display: none;
@@ -900,7 +922,6 @@
         table-layout: fixed;
       }
 
-      /* 모바일도 더 균등하게 재배분 */
       #jh-tournament-card-block .jtc-col-info   { width: 31%; }
       #jh-tournament-card-block .jtc-col-score  { width: 17%; }
       #jh-tournament-card-block .jtc-col-par    { width: 14%; }
@@ -937,6 +958,7 @@
       #jh-tournament-card-block .jtc-footer {
         padding: 10px 10px;
         gap: 10px;
+        align-items: stretch;
       }
 
       #jh-tournament-card-block .jtc-main-link {
@@ -944,6 +966,7 @@
         letter-spacing: 0.45px;
         padding: 4px 7px;
         gap: 5px;
+        align-self: center;
       }
 
       #jh-tournament-card-block .jtc-main-link svg {
@@ -956,17 +979,25 @@
         height: 4px;
       }
 
+      #jh-tournament-card-block .jtc-summary-wrap {
+        min-width: 0;
+        gap: 8px;
+        grid-template-columns: 1.25fr 1.1fr 0.9fr;
+      }
+
       #jh-tournament-card-block .jtc-summary {
-        min-width: 46px;
+        padding: 8px 5px 7px 5px;
+        border-radius: 8px;
       }
 
       #jh-tournament-card-block .jtc-summary-label {
         font-size: 7px;
         line-height: 1;
+        margin-bottom: 4px;
       }
 
       #jh-tournament-card-block .jtc-summary-value {
-        font-size: 15px;
+        font-size: 17px;
         line-height: 1.05;
       }
 
@@ -1051,19 +1082,21 @@
           </svg>
         </a>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Total</span>
-          <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
-        </div>
+        <div class="jtc-summary-wrap">
+          <div class="jtc-summary">
+            <span class="jtc-summary-label">Total</span>
+            <span id="jtc-summary-total" class="jtc-summary-value white">—</span>
+          </div>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Par</span>
-          <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
-        </div>
+          <div class="jtc-summary">
+            <span class="jtc-summary-label">Par</span>
+            <span id="jtc-summary-par" class="jtc-summary-value white">—</span>
+          </div>
 
-        <div class="jtc-summary">
-          <span class="jtc-summary-label">Pos</span>
-          <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
+          <div class="jtc-summary jtc-summary-pos">
+            <span class="jtc-summary-label">Pos</span>
+            <span id="jtc-summary-pos" class="jtc-summary-value white">—</span>
+          </div>
         </div>
       </div>
     </div>
