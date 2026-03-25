@@ -812,56 +812,52 @@
         padding: 0 12px;
       }
 
+      #jh-tournament-card-block .jtc-header-top {
+        margin-bottom: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 16px;
+        padding-left: 12px;
+        border-left-width: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row h3 {
+        font-size: 1.02em;
+        line-height: 1.15;
+      }
+
+      #jh-tournament-card-block .jtc-header-row span {
+        font-size: 0.72em;
+        line-height: 1.25;
+      }
+
+      #jh-tournament-card-block .jtc-card {
+        border-radius: 16px;
+        box-shadow: 0 10px 26px rgba(12, 35, 64, 0.10);
+      }
+
       #jh-tournament-card-block .jtc-card-head {
-        padding: 18px 16px;
+        padding: 14px 14px 12px 14px;
+        gap: 8px;
       }
 
-      #jh-tournament-card-block .jtc-table thead {
-        display: none;
-      }
-
-      #jh-tournament-card-block .jtc-table,
-      #jh-tournament-card-block .jtc-table tbody,
-      #jh-tournament-card-block .jtc-table tr,
-      #jh-tournament-card-block .jtc-table td {
-        display: block;
+      #jh-tournament-card-block .jtc-head-left {
+        gap: 10px;
         width: 100%;
+        align-items: flex-start;
       }
 
-      #jh-tournament-card-block .jtc-table tr {
-        margin-bottom: 15px;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 12px;
-      }
-
-      #jh-tournament-card-block .jtc-table td {
-        border: none !important;
-        padding: 7px 0 !important;
-        text-align: left !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td.jtc-col-left {
-        padding-left: 0 !important;
-        padding-bottom: 10px !important;
-        margin-bottom: 8px;
-        border-bottom: 1px dashed #e2e8f0 !important;
-      }
-
-      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
-        content: attr(data-label);
-        display: inline-block;
-        min-width: 58px;
-        margin-right: 10px;
-        font-size: 10px;
-        color: #94a3b8;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
+      #jh-tournament-card-block .jtc-badge {
+        padding: 4px 10px;
+        font-size: 9px;
+        letter-spacing: 0.85px;
       }
 
       #jh-tournament-card-block .jtc-title-wrap {
-        gap: 6px;
+        gap: 5px;
+        flex: 1 1 100%;
       }
 
       #jh-tournament-card-block .jtc-title-line {
@@ -870,8 +866,8 @@
 
       #jh-tournament-card-block .jtc-title {
         display: block;
-        font-size: 18px;
-        line-height: 1.28;
+        font-size: 16px;
+        line-height: 1.24;
       }
 
       #jh-tournament-card-block .jtc-title-sep {
@@ -880,27 +876,121 @@
 
       #jh-tournament-card-block .jtc-date {
         display: block;
-        margin-top: 2px;
-        font-size: 13px;
+        margin-top: 3px;
+        font-size: 12px;
         font-weight: 800;
         color: #8b5e1a;
-        line-height: 1.25;
+        line-height: 1.22;
         white-space: normal;
       }
 
       #jh-tournament-card-block .jtc-meta {
-        font-size: 13px;
+        font-size: 11px;
         color: #5b6b7f;
         font-weight: 700;
-        line-height: 1.45;
+        line-height: 1.38;
+      }
+
+      #jh-tournament-card-block .jtc-table thead {
+        display: none;
+      }
+
+      #jh-tournament-card-block .jtc-table,
+      #jh-tournament-card-block .jtc-table tbody {
+        display: block;
+        width: 100%;
+      }
+
+      #jh-tournament-card-block .jtc-table tr {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin: 0;
+        padding: 12px 14px;
+        border-top: 1px solid #edf2f7;
+      }
+
+      #jh-tournament-card-block .jtc-table tbody tr:first-child {
+        border-top: 1px solid #edf2f7;
+      }
+
+      #jh-tournament-card-block .jtc-table td {
+        display: block;
+        width: 100%;
+        border: none !important;
+        padding: 0 !important;
+        text-align: left !important;
+        min-width: 0;
+      }
+
+      #jh-tournament-card-block .jtc-table td.jtc-col-left {
+        grid-column: 1 / -1;
+        padding-left: 0 !important;
+        padding-bottom: 2px !important;
+        margin-bottom: 0;
+        border-bottom: none !important;
+      }
+
+      #jh-tournament-card-block .jtc-row-tools {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin-bottom: 2px;
+      }
+
+      #jh-tournament-card-block .jtc-round-title {
+        font-size: 14px;
+        line-height: 1.2;
+      }
+
+      #jh-tournament-card-block .jtc-round-date {
+        font-size: 10px;
+        line-height: 1.25;
+        margin-top: 0;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn {
+        padding: 2px 6px;
+        border-radius: 5px;
+      }
+
+      #jh-tournament-card-block .jtc-tool-btn span {
+        font-size: 9px;
+      }
+
+      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left) {
+        background: #f8fafc;
+        border: 1px solid #e5edf5 !important;
+        border-radius: 10px;
+        padding: 8px 10px !important;
+        min-height: 54px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-table td[data-label]:not(.jtc-col-left)::before {
+        content: attr(data-label);
+        display: block;
+        min-width: 0;
+        margin-right: 0;
+        font-size: 9px;
+        color: #94a3b8;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        line-height: 1;
       }
 
       #jh-tournament-card-block .jtc-footer {
-        padding: 14px 16px;
+        padding: 12px 14px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 14px 12px;
+        gap: 10px 8px;
         white-space: normal;
+        align-items: stretch;
       }
 
       #jh-tournament-card-block .jtc-main-link {
@@ -908,11 +998,43 @@
         margin-right: 0;
         justify-content: center;
         width: 100%;
+        min-height: 38px;
+        padding: 7px 10px;
+        font-size: 10px;
+        letter-spacing: 0.65px;
       }
 
       #jh-tournament-card-block .jtc-summary {
         min-width: 0;
         text-align: center;
+        background: rgba(255,255,255,0.06);
+        border-radius: 10px;
+        padding: 8px 6px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-label {
+        font-size: 8px;
+        line-height: 1;
+        margin-bottom: 3px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-value {
+        font-size: 16px;
+        line-height: 1.05;
+      }
+
+      #jh-tournament-card-block .jtc-modal-wrap {
+        max-width: 96%;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-x {
+        top: -34px;
+        font-size: 26px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-btn {
+        font-size: 11px;
+        padding: 8px 20px;
       }
     }
   </style>
