@@ -320,884 +320,884 @@ gtag('config', 'G-H1JW8YBDZ8');
 </div>
 
 
-<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; 
-        color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
-    </div>
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
+</div>
 
-<div style="display: flex; justify-content: flex-end; align-items: center; width: 100%; max-width: 900px; margin: 0 auto 10px; padding-right: 15px; box-sizing: border-box;">
+<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
-<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0 0px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div id="jh-pga-table-shared"></div>
 
-<div id="jh-pga-table-shared"></div>
+  <style>
+    #jh-pga-table-shared,
+    #jh-pga-table-shared *,
+    #jh-pga-table-shared *::before,
+    #jh-pga-table-shared *::after {
+      box-sizing: border-box;
+    }
 
-<style>
-  #jh-pga-table-shared,
-  #jh-pga-table-shared *,
-  #jh-pga-table-shared *::before,
-  #jh-pga-table-shared *::after {
-    box-sizing: border-box;
-  }
-
-  #jh-pga-table-shared {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 24px;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  #jh-pga-table-shared .jtc-last-updated-wrap {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 10px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-
-  #jh-pga-table-shared .jtc-last-updated {
-    color: #64748b;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding-bottom: 2px;
-    white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-wrap {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  #jh-pga-table-shared .jtc-header-top {
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  #jh-pga-table-shared .jtc-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 15px;
-    flex-wrap: wrap;
-    border-left: 5px solid #1e3a8a;
-  }
-
-  #jh-pga-table-shared .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
-  #jh-pga-table-shared .jtc-header-row.ongoing { border-left-color: #22c55e; }
-  #jh-pga-table-shared .jtc-header-row.final { border-left-color: #e74c3c; }
-  #jh-pga-table-shared .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
-
-  #jh-pga-table-shared .jtc-header-row h3 {
-    color: #0C2340;
-    margin: 0;
-    font-size: 1.3em;
-    line-height: 1.2;
-    font-family: 'Oswald', sans-serif;
-    text-transform: none;
-  }
-
-  #jh-pga-table-shared .jtc-header-row span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85em;
-    color: #888;
-  }
-
-  #jh-pga-table-shared .jtc-card {
-    background: #ffffff;
-    border: 2px solid #0c2340;
-    border-radius: 20px;
-    padding: 0;
-    box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
-    overflow: hidden;
-  }
-
-  #jh-pga-table-shared .jtc-card-head {
-    padding: 20px 25px 18px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    background: #f8fafc;
-  }
-
-  #jh-pga-table-shared .jtc-head-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  #jh-pga-table-shared .jtc-badge {
-    color: white;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-transform: uppercase;
-    margin-left: 4px;
-  }
-
-  #jh-pga-table-shared .jtc-badge.upcoming { background: #64748b; }
-  #jh-pga-table-shared .jtc-badge.ongoing { background: #0c2340; }
-  #jh-pga-table-shared .jtc-badge.final { background: #0c2340; }
-  #jh-pga-table-shared .jtc-badge.cancelled { background: #7f1d1d; }
-
-  #jh-pga-table-shared .jtc-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-
-  #jh-pga-table-shared .jtc-dot.upcoming {
-    background-color: #94a3b8;
-    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
-  }
-
-  #jh-pga-table-shared .jtc-dot.ongoing {
-    background-color: #22c55e;
-    animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
-    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
-  }
-
-  #jh-pga-table-shared .jtc-dot.final { background-color: #e74c3c; }
-  #jh-pga-table-shared .jtc-dot.cancelled {
-    background-color: #7f1d1d;
-    opacity: 0.7;
-  }
-
-  @keyframes jtc-live-pulse-green {
-    0%   { opacity: 1; transform: scale(1); }
-    50%  { opacity: 0.35; transform: scale(0.9); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
-  #jh-pga-table-shared .jtc-title-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    min-width: 0;
-    flex: 1 1 auto;
-  }
-
-  #jh-pga-table-shared .jtc-title-line {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    flex-wrap: wrap;
-    min-width: 0;
-  }
-
-  #jh-pga-table-shared .jtc-title {
-    color: #0c2340;
-    margin: 0;
-    font-size: 19px;
-    font-weight: 800;
-    line-height: 1.25;
-    min-width: 0;
-  }
-
-  #jh-pga-table-shared .jtc-title-sep {
-    color: #94a3b8;
-    font-weight: 700;
-  }
-
-  #jh-pga-table-shared .jtc-date {
-    color: #64748b;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-meta {
-    font-size: 12px;
-    color: #7f8c8d;
-    font-weight: 600;
-    line-height: 1.45;
-  }
-
-  #jh-pga-table-shared .jtc-result-band {
-    background: #0c2340;
-    display: grid;
-    grid-template-columns: 156px minmax(0, 1fr) 176px 86px;
-    align-items: stretch;
-    gap: 0;
-    padding: 14px 18px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  #jh-pga-table-shared .jtc-link-summary,
-  #jh-pga-table-shared .jtc-rounds-summary,
-  #jh-pga-table-shared .jtc-total-summary,
-  #jh-pga-table-shared .jtc-pos-summary {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 6px 8px;
-    text-align: center;
-  }
-
-  #jh-pga-table-shared .jtc-summary-label {
-    color: rgba(255,255,255,0.68);
-    font-size: 10px;
-    font-weight: 800;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    line-height: 1;
-    margin-bottom: 6px;
-    min-height: 10px;
-  }
-
-  #jh-pga-table-shared .jtc-summary-label.jtc-label-ghost {
-    visibility: hidden;
-  }
-
-  #jh-pga-table-shared .jtc-band-body {
-    min-height: 52px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #jh-pga-table-shared .jtc-main-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #0c2340;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    border: 1.5px solid #0c2340;
-    padding: 8px 10px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    background: #ffffff;
-    width: 100%;
-    max-width: 134px;
-    min-height: 42px;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-content {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-label-stack {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-label-stack .line1,
-  #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
-    display: inline;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.upcoming { background-color: #94a3b8; }
-  #jh-pga-table-shared .jtc-main-link-dot.ongoing { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
-  #jh-pga-table-shared .jtc-main-link-dot.final { background-color: #e74c3c; }
-  #jh-pga-table-shared .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
-
-  @keyframes jtc-link-pulse-green {
-    0%   { opacity: 1; transform: scale(1); }
-    50%  { opacity: 0.35; transform: scale(1.2); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
-  #jh-pga-table-shared .jtc-rounds-grid {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 6px;
-    flex-wrap: nowrap;
-    min-width: 0;
-    width: 100%;
-  }
-
-  #jh-pga-table-shared .jtc-round-chip {
-    min-width: 0;
-    flex: 1 1 0;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 7px;
-    padding: 6px 5px 5px 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-  }
-
-  #jh-pga-table-shared .jtc-round-chip-label {
-    color: rgba(255,255,255,0.68);
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.55px;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  #jh-pga-table-shared .jtc-round-chip-value {
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1;
-    color: #ffffff;
-    white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-round-chip-value.red { color: #e74c3c; }
-  #jh-pga-table-shared .jtc-round-chip-value.blue { color: #60a5fa; }
-  #jh-pga-table-shared .jtc-round-chip-value.navy { color: #bfdbfe; }
-  #jh-pga-table-shared .jtc-round-chip-value.white { color: #ffffff; }
-
-  #jh-pga-table-shared .jtc-total-line {
-    display: inline-flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 4px;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-total-score {
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1.02;
-    color: #ffffff;
-    letter-spacing: -0.2px;
-  }
-
-  #jh-pga-table-shared .jtc-total-par-wrap {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0;
-    font-size: 22px;
-    font-weight: 900;
-    line-height: 1.02;
-    color: #ffffff;
-  }
-
-  #jh-pga-table-shared .jtc-total-par-wrap .paren { color: #ffffff; }
-  #jh-pga-table-shared .jtc-total-par-wrap .delta.red { color: #e74c3c; }
-  #jh-pga-table-shared .jtc-total-par-wrap .delta.blue { color: #60a5fa; }
-  #jh-pga-table-shared .jtc-total-par-wrap .delta.navy { color: #bfdbfe; }
-  #jh-pga-table-shared .jtc-total-par-wrap .delta.white { color: #ffffff; }
-
-  #jh-pga-table-shared .jtc-pos-value {
-    font-size: 27px;
-    font-weight: 900;
-    line-height: 1;
-    color: #ffffff;
-    white-space: nowrap;
-    letter-spacing: -0.3px;
-  }
-
-  @media (max-width: 768px) {
     #jh-pga-table-shared {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 24px;
       padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     #jh-pga-table-shared .jtc-last-updated-wrap {
-      padding-right: 8px;
-      margin-bottom: 8px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 10px;
+      padding-right: 15px;
+      box-sizing: border-box;
     }
 
     #jh-pga-table-shared .jtc-last-updated {
-      font-size: 11px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     #jh-pga-table-shared .jtc-header-top {
-      margin-bottom: 10px;
+      margin-bottom: 16px;
+      width: 100%;
     }
 
     #jh-pga-table-shared .jtc-header-row {
-      gap: 6px;
-      margin-bottom: 12px;
-      padding-left: 10px;
-      border-left-width: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 15px;
+      flex-wrap: wrap;
+      border-left: 5px solid #1e3a8a;
     }
 
+    #jh-pga-table-shared .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
+    #jh-pga-table-shared .jtc-header-row.ongoing { border-left-color: #22c55e; }
+    #jh-pga-table-shared .jtc-header-row.final { border-left-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
+
     #jh-pga-table-shared .jtc-header-row h3 {
-      font-size: 0.92em;
-      line-height: 1.12;
+      color: #0C2340;
+      margin: 0;
+      font-size: 1.3em;
+      line-height: 1.2;
+      font-family: 'Oswald', sans-serif;
+      text-transform: none;
     }
 
     #jh-pga-table-shared .jtc-header-row span {
-      font-size: 0.66em;
-      line-height: 1.18;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85em;
+      color: #888;
     }
 
     #jh-pga-table-shared .jtc-card {
-      border-radius: 14px;
-      box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
+      background: #ffffff;
+      border: 2px solid #0c2340;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
+      overflow: hidden;
     }
 
     #jh-pga-table-shared .jtc-card-head {
-      padding: 12px 10px 10px 10px;
-      gap: 6px;
+      padding: 20px 25px 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #f8fafc;
     }
 
     #jh-pga-table-shared .jtc-head-left {
-      gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
       width: 100%;
-      align-items: flex-start;
     }
 
     #jh-pga-table-shared .jtc-badge {
-      padding: 3px 8px;
-      font-size: 8px;
-      letter-spacing: 0.75px;
-      gap: 6px;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      margin-left: 4px;
     }
 
+    #jh-pga-table-shared .jtc-badge.upcoming { background: #64748b; }
+    #jh-pga-table-shared .jtc-badge.ongoing { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.final { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.cancelled { background: #7f1d1d; }
+
     #jh-pga-table-shared .jtc-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #jh-pga-table-shared .jtc-dot.upcoming {
+      background-color: #94a3b8;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
+    }
+
+    #jh-pga-table-shared .jtc-dot.ongoing {
+      background-color: #22c55e;
+      animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
+
+    #jh-pga-table-shared .jtc-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-dot.cancelled {
+      background-color: #7f1d1d;
+      opacity: 0.7;
+    }
+
+    @keyframes jtc-live-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     #jh-pga-table-shared .jtc-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 4px;
-      flex: 1 1 100%;
+      min-width: 0;
+      flex: 1 1 auto;
     }
 
     #jh-pga-table-shared .jtc-title-line {
       display: flex;
       align-items: baseline;
-      gap: 5px;
+      gap: 8px;
       flex-wrap: wrap;
+      min-width: 0;
     }
 
     #jh-pga-table-shared .jtc-title {
-      font-size: 14px;
-      line-height: 1.18;
+      color: #0c2340;
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.25;
+      min-width: 0;
     }
 
     #jh-pga-table-shared .jtc-title-sep {
-      display: inline;
-      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 700;
     }
 
     #jh-pga-table-shared .jtc-date {
-      font-size: 11px;
-      font-weight: 800;
-      line-height: 1.15;
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
       white-space: nowrap;
     }
 
     #jh-pga-table-shared .jtc-meta {
-      font-size: 9px;
-      line-height: 1.28;
-      font-weight: 700;
+      font-size: 12px;
+      color: #7f8c8d;
+      font-weight: 600;
+      line-height: 1.45;
     }
 
     #jh-pga-table-shared .jtc-result-band {
-      grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
-      padding: 10px 7px;
+      background: #0c2340;
+      display: grid;
+      grid-template-columns: 156px minmax(0, 1fr) 176px 86px;
+      align-items: stretch;
+      gap: 0;
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     #jh-pga-table-shared .jtc-link-summary,
     #jh-pga-table-shared .jtc-rounds-summary,
     #jh-pga-table-shared .jtc-total-summary,
     #jh-pga-table-shared .jtc-pos-summary {
-      padding: 4px 3px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 8px;
+      text-align: center;
     }
 
     #jh-pga-table-shared .jtc-summary-label {
-      font-size: 7px;
-      margin-bottom: 4px;
-      min-height: 7px;
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      font-weight: 800;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 10px;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label.jtc-label-ghost {
+      visibility: hidden;
     }
 
     #jh-pga-table-shared .jtc-band-body {
-      min-height: 38px;
+      min-height: 52px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #jh-pga-table-shared .jtc-main-link {
-      font-size: 6px;
-      letter-spacing: 0.22px;
-      padding: 5px 4px;
-      gap: 3px;
-      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      border: 1.5px solid #0c2340;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      background: #ffffff;
       width: 100%;
-      max-width: 60px;
-    }
-
-    #jh-pga-table-shared .jtc-main-link svg {
-      width: 8px;
-      height: 8px;
-    }
-
-    #jh-pga-table-shared .jtc-main-link-dot {
-      width: 4px;
-      height: 4px;
+      max-width: 134px;
+      min-height: 42px;
     }
 
     #jh-pga-table-shared .jtc-main-link-content {
+      display: inline-flex;
       align-items: center;
-      gap: 3px;
+      gap: 6px;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack {
       display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 1px;
-      line-height: 0.92;
-      white-space: normal;
+      align-items: center;
+      gap: 4px;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack .line1,
     #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
-      display: block;
+      display: inline;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-dot.upcoming { background-color: #94a3b8; }
+    #jh-pga-table-shared .jtc-main-link-dot.ongoing { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
+    #jh-pga-table-shared .jtc-main-link-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
+
+    @keyframes jtc-link-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     #jh-pga-table-shared .jtc-rounds-grid {
-      gap: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 6px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      width: 100%;
     }
 
     #jh-pga-table-shared .jtc-round-chip {
-      padding: 4px 2px 4px 2px;
-      border-radius: 6px;
-      gap: 3px;
+      min-width: 0;
+      flex: 1 1 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 7px;
+      padding: 6px 5px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
 
     #jh-pga-table-shared .jtc-round-chip-label {
-      font-size: 6px;
-      letter-spacing: 0.45px;
+      color: rgba(255,255,255,0.68);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.55px;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     #jh-pga-table-shared .jtc-round-chip-value {
-      font-size: 12px;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-round-chip-value.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-round-chip-value.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-round-chip-value.white { color: #ffffff; }
+
+    #jh-pga-table-shared .jtc-total-line {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
     #jh-pga-table-shared .jtc-total-score {
-      font-size: 16px;
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+      letter-spacing: -0.2px;
     }
 
     #jh-pga-table-shared .jtc-total-par-wrap {
-      font-size: 14px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
     }
+
+    #jh-pga-table-shared .jtc-total-par-wrap .paren { color: #ffffff; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.white { color: #ffffff; }
 
     #jh-pga-table-shared .jtc-pos-value {
-      font-size: 17px;
-    }
-  }
-</style>
-
-<script>
-  (function () {
-    const container = document.getElementById("jh-pga-table-shared");
-    if (!container) return;
-
-    function isUsableValue(value) {
-      if (value === null || value === undefined) return false;
-      const cleaned = String(value).trim();
-      return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
     }
 
-    function parseNumber(value) {
-      if (!isUsableValue(value)) return null;
-      const num = Number(String(value).replace(/,/g, "").trim());
-      return Number.isFinite(num) ? num : null;
+    @media (max-width: 768px) {
+      #jh-pga-table-shared {
+        padding: 0;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated-wrap {
+        padding-right: 15px;
+        margin-bottom: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated {
+        font-size: 11px;
+      }
+
+      #jh-pga-table-shared .jtc-header-top {
+        margin-bottom: 10px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        padding-right: 15px;
+        border-left-width: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row h3 {
+        font-size: 0.92em;
+        line-height: 1.12;
+      }
+
+      #jh-pga-table-shared .jtc-header-row span {
+        font-size: 0.66em;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-card {
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
+      }
+
+      #jh-pga-table-shared .jtc-card-head {
+        padding: 12px 10px 10px 10px;
+        gap: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-head-left {
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      #jh-pga-table-shared .jtc-badge {
+        padding: 3px 8px;
+        font-size: 8px;
+        letter-spacing: 0.75px;
+        gap: 6px;
+        margin-left: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-title-wrap {
+        gap: 4px;
+        flex: 1 1 100%;
+      }
+
+      #jh-pga-table-shared .jtc-title-line {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      #jh-pga-table-shared .jtc-title {
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-title-sep {
+        display: inline;
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-date {
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      #jh-pga-table-shared .jtc-meta {
+        font-size: 9px;
+        line-height: 1.28;
+        font-weight: 700;
+      }
+
+      #jh-pga-table-shared .jtc-result-band {
+        grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
+        padding: 10px 7px;
+      }
+
+      #jh-pga-table-shared .jtc-link-summary,
+      #jh-pga-table-shared .jtc-rounds-summary,
+      #jh-pga-table-shared .jtc-total-summary,
+      #jh-pga-table-shared .jtc-pos-summary {
+        padding: 4px 3px;
+      }
+
+      #jh-pga-table-shared .jtc-summary-label {
+        font-size: 7px;
+        margin-bottom: 4px;
+        min-height: 7px;
+      }
+
+      #jh-pga-table-shared .jtc-band-body {
+        min-height: 38px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link {
+        font-size: 6px;
+        letter-spacing: 0.22px;
+        padding: 5px 4px;
+        gap: 3px;
+        min-height: 32px;
+        width: 100%;
+        max-width: 60px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-dot {
+        width: 4px;
+        height: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-content {
+        align-items: center;
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1px;
+        line-height: 0.92;
+        white-space: normal;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack .line1,
+      #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+        display: block;
+      }
+
+      #jh-pga-table-shared .jtc-rounds-grid {
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip {
+        padding: 4px 2px 4px 2px;
+        border-radius: 6px;
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-label {
+        font-size: 6px;
+        letter-spacing: 0.45px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-value {
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-total-score {
+        font-size: 16px;
+      }
+
+      #jh-pga-table-shared .jtc-total-par-wrap {
+        font-size: 14px;
+      }
+
+      #jh-pga-table-shared .jtc-pos-value {
+        font-size: 17px;
+      }
     }
+  </style>
 
-    function scoreClass(parValue) {
-      if (parValue === null || parValue === undefined) return "blue";
-      const value = String(parValue).trim().toUpperCase();
+  <script>
+    (function () {
+      const container = document.getElementById("jh-pga-table-shared");
+      if (!container) return;
 
-      if (
-        value === "" ||
-        value === "-" ||
-        value === "—" ||
-        value === "TBD" ||
-        value === "E" ||
-        value === "EVEN" ||
-        value === "PAR" ||
-        value === "0"
-      ) return "blue";
+      function isUsableValue(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+      }
 
-      if (value.startsWith("-")) return "red";
-      if (value.startsWith("+")) return "navy";
-      return "blue";
-    }
+      function parseNumber(value) {
+        if (!isUsableValue(value)) return null;
+        const num = Number(String(value).replace(/,/g, "").trim());
+        return Number.isFinite(num) ? num : null;
+      }
 
-    function badgeMap(status) {
-      const map = {
-        upcoming:  { label: "UPCOMING", className: "upcoming" },
-        ongoing:   { label: "ONGOING", className: "ongoing" },
-        final:     { label: "FINAL", className: "final" },
-        cancelled: { label: "CANCELLED", className: "cancelled" }
-      };
-      return map[status] || map.final;
-    }
+      function scoreClass(parValue) {
+        if (parValue === null || parValue === undefined) return "blue";
+        const value = String(parValue).trim().toUpperCase();
 
-    function splitMainLinkLabel(label) {
-      const clean = (label || "").trim();
-      if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+        if (
+          value === "" ||
+          value === "-" ||
+          value === "—" ||
+          value === "TBD" ||
+          value === "E" ||
+          value === "EVEN" ||
+          value === "PAR" ||
+          value === "0"
+        ) return "blue";
 
-      const upper = clean.toUpperCase();
+        if (value.startsWith("-")) return "red";
+        if (value.startsWith("+")) return "navy";
+        return "blue";
+      }
 
-      if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
-      if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
-      if (upper === "TOURNAMENT DETAILS") return { line1: "TOURNAMENT", line2: "DETAILS" };
+      function badgeMap(status) {
+        const map = {
+          upcoming:  { label: "UPCOMING", className: "upcoming" },
+          ongoing:   { label: "ONGOING", className: "ongoing" },
+          final:     { label: "FINAL", className: "final" },
+          cancelled: { label: "CANCELLED", className: "cancelled" }
+        };
+        return map[status] || map.final;
+      }
 
-      const parts = upper.split(/\s+/);
-      if (parts.length >= 2) {
+      function splitMainLinkLabel(label) {
+        const clean = (label || "").trim();
+        if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+
+        const upper = clean.toUpperCase();
+
+        if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
+        if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
+        if (upper === "TOURNAMENT DETAILS") return { line1: "TOURNAMENT", line2: "DETAILS" };
+
+        const parts = upper.split(/\s+/);
+        if (parts.length >= 2) {
+          return {
+            line1: parts[0],
+            line2: parts.slice(1).join(" ")
+          };
+        }
+
+        return { line1: upper, line2: "" };
+      }
+
+      function roundShortLabel(round, index) {
+        const raw = String(round.round || "").trim();
+        const match = raw.match(/(\d+)/);
+        if (match) return `R${match[1]}`;
+        return `R${index + 1}`;
+      }
+
+      function getAllRounds(rounds) {
+        return Array.isArray(rounds) ? rounds : [];
+      }
+
+      function formatParDelta(delta) {
+        if (delta === 0) return "E";
+        if (delta > 0) return `+${delta}`;
+        return `${delta}`;
+      }
+
+      function resolveSummary(data) {
+        const rounds = getAllRounds(data.rounds);
+        const playedRounds = rounds.filter(round => isUsableValue(round.score));
+        const configPar = parseNumber(data.par);
+
+        const summaryTotalRaw = data.summary && data.summary.total;
+        const summaryParRaw = data.summary && data.summary.par;
+        const summaryPosRaw = data.summary && data.summary.pos;
+
+        let resolvedTotal = isUsableValue(summaryTotalRaw) ? String(summaryTotalRaw).trim() : "—";
+        let resolvedPar = isUsableValue(summaryParRaw) ? String(summaryParRaw).trim() : "—";
+        let resolvedPos = isUsableValue(summaryPosRaw) ? String(summaryPosRaw).trim() : "—";
+
+        if (!isUsableValue(summaryTotalRaw) && playedRounds.length > 0) {
+          const totalScore = playedRounds.reduce((sum, round) => {
+            const scoreNum = parseNumber(round.score);
+            return sum + (scoreNum !== null ? scoreNum : 0);
+          }, 0);
+          resolvedTotal = String(totalScore);
+        }
+
+        if (!isUsableValue(summaryParRaw) && playedRounds.length > 0 && configPar !== null) {
+          const totalScoreNum = parseNumber(resolvedTotal);
+          if (totalScoreNum !== null) {
+            const expectedPar = configPar * playedRounds.length;
+            resolvedPar = formatParDelta(totalScoreNum - expectedPar);
+          }
+        }
+
         return {
-          line1: parts[0],
-          line2: parts.slice(1).join(" ")
+          total: resolvedTotal,
+          par: resolvedPar,
+          pos: resolvedPos
         };
       }
 
-      return { line1: upper, line2: "" };
-    }
+      function composeMetaText(data) {
+        const parts = [];
 
-    function roundShortLabel(round, index) {
-      const raw = String(round.round || "").trim();
-      const match = raw.match(/(\d+)/);
-      if (match) return `R${match[1]}`;
-      return `R${index + 1}`;
-    }
+        if (isUsableValue(data.venue)) parts.push(data.venue);
+        if (isUsableValue(data.location)) parts.push(data.location);
+        if (isUsableValue(data.par)) parts.push(`Par ${data.par}`);
+        if (isUsableValue(data.yards)) parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
+        if (isUsableValue(data.rating)) parts.push(`Rating: ${data.rating}`);
+        if (isUsableValue(data.slope)) parts.push(`Slope: ${data.slope}`);
 
-    function getAllRounds(rounds) {
-      return Array.isArray(rounds) ? rounds : [];
-    }
-
-    function formatParDelta(delta) {
-      if (delta === 0) return "E";
-      if (delta > 0) return `+${delta}`;
-      return `${delta}`;
-    }
-
-    function resolveSummary(data) {
-      const rounds = getAllRounds(data.rounds);
-      const playedRounds = rounds.filter(round => isUsableValue(round.score));
-      const configPar = parseNumber(data.par);
-
-      const summaryTotalRaw = data.summary && data.summary.total;
-      const summaryParRaw = data.summary && data.summary.par;
-      const summaryPosRaw = data.summary && data.summary.pos;
-
-      let resolvedTotal = isUsableValue(summaryTotalRaw) ? String(summaryTotalRaw).trim() : "—";
-      let resolvedPar = isUsableValue(summaryParRaw) ? String(summaryParRaw).trim() : "—";
-      let resolvedPos = isUsableValue(summaryPosRaw) ? String(summaryPosRaw).trim() : "—";
-
-      if (!isUsableValue(summaryTotalRaw) && playedRounds.length > 0) {
-        const totalScore = playedRounds.reduce((sum, round) => {
-          const scoreNum = parseNumber(round.score);
-          return sum + (scoreNum !== null ? scoreNum : 0);
-        }, 0);
-        resolvedTotal = String(totalScore);
+        return parts.join(" | ");
       }
 
-      if (!isUsableValue(summaryParRaw) && playedRounds.length > 0 && configPar !== null) {
-        const totalScoreNum = parseNumber(resolvedTotal);
-        if (totalScoreNum !== null) {
-          const expectedPar = configPar * playedRounds.length;
-          resolvedPar = formatParDelta(totalScoreNum - expectedPar);
-        }
+      function buildRoundSlots(rounds) {
+        const allRounds = getAllRounds(rounds);
+
+        return allRounds.map((round, index) => {
+          const label = roundShortLabel(round, index);
+          const value = isUsableValue(round.score) ? String(round.score).trim() : "—";
+          const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
+
+          return `
+            <div class="jtc-round-chip">
+              <span class="jtc-round-chip-label">${label}</span>
+              <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+            </div>
+          `;
+        }).join("");
       }
 
-      return {
-        total: resolvedTotal,
-        par: resolvedPar,
-        pos: resolvedPos
-      };
-    }
+      function buildCardHtml(data) {
+        const badge = badgeMap(data.status);
+        const split = splitMainLinkLabel(
+          isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
+        );
+        const summary = resolveSummary(data);
+        const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
 
-    function composeMetaText(data) {
-      const parts = [];
+        const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
+          ? `
+            <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
+              <span class="jtc-main-link-content">
+                <span class="jtc-main-link-dot ${badge.className}"></span>
+                <span class="jtc-main-link-label-stack">
+                  <span class="line1">${split.line1}</span>
+                  <span class="line2">${split.line2}</span>
+                </span>
+              </span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          `
+          : "";
 
-      if (isUsableValue(data.venue)) parts.push(data.venue);
-      if (isUsableValue(data.location)) parts.push(data.location);
-      if (isUsableValue(data.par)) parts.push(`Par ${data.par}`);
-      if (isUsableValue(data.yards)) parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
-      if (isUsableValue(data.rating)) parts.push(`Rating: ${data.rating}`);
-      if (isUsableValue(data.slope)) parts.push(`Slope: ${data.slope}`);
-
-      return parts.join(" | ");
-    }
-
-    function buildRoundSlots(rounds) {
-      const allRounds = getAllRounds(rounds);
-
-      return allRounds.map((round, index) => {
-        const label = roundShortLabel(round, index);
-        const value = isUsableValue(round.score) ? String(round.score).trim() : "—";
-        const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
+        const lastUpdatedHtml = isUsableValue(data.lastUpdated)
+          ? `
+            <div class="jtc-last-updated-wrap">
+              <span class="jtc-last-updated">Last Updated: ${data.lastUpdated}</span>
+            </div>
+          `
+          : "";
 
         return `
-          <div class="jtc-round-chip">
-            <span class="jtc-round-chip-label">${label}</span>
-            <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+          ${lastUpdatedHtml}
+
+          <div class="jtc-wrap">
+            <div class="jtc-header-top">
+              <div class="jtc-header-row ${badge.className}">
+                <h3>${data.sectionTitle || "TOURNAMENT"}</h3>
+                <span>${isUsableValue(data.eventNo) ? data.eventNo : ""}${isUsableValue(data.eventLabel) ? `: ${data.eventLabel}` : ""}</span>
+              </div>
+            </div>
+
+            <div class="jtc-card">
+              <div class="jtc-card-head">
+                <div class="jtc-head-left">
+                  <div class="jtc-badge ${badge.className}">
+                    <span class="jtc-dot ${badge.className}"></span>
+                    <span>${badge.label}</span>
+                  </div>
+
+                  <div class="jtc-title-wrap">
+                    <div class="jtc-title-line">
+                      <h2 class="jtc-title" style="display:inline; margin:0;">${data.title || "Tournament Title"}</h2>
+                      <span class="jtc-title-sep">|</span>
+                      <span class="jtc-date">${data.date || "TBD"}</span>
+                    </div>
+                    <div class="jtc-meta">${composeMetaText(data)}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jtc-result-band">
+                <div class="jtc-link-summary">
+                  <span class="jtc-summary-label jtc-label-ghost">Action</span>
+                  <div class="jtc-band-body">
+                    ${mainLinkHtml}
+                  </div>
+                </div>
+
+                <div class="jtc-rounds-summary">
+                  <span class="jtc-summary-label">Rounds</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-rounds-grid">
+                      ${buildRoundSlots(data.rounds)}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-total-summary">
+                  <span class="jtc-summary-label">Total</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-total-line">
+                      <span class="jtc-total-score">${isUsableValue(summary.total) ? summary.total : "—"}</span>
+                      <span class="jtc-total-par-wrap">
+                        <span class="paren">(</span><span class="delta ${deltaClass}">${isUsableValue(summary.par) ? summary.par : "—"}</span><span class="paren">)</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-pos-summary">
+                  <span class="jtc-summary-label">Pos</span>
+                  <div class="jtc-band-body">
+                    <span class="jtc-pos-value">${isUsableValue(summary.pos) ? summary.pos : "—"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         `;
-      }).join("");
-    }
-
-    function buildCardHtml(data) {
-      const badge = badgeMap(data.status);
-      const split = splitMainLinkLabel(
-        isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
-      );
-      const summary = resolveSummary(data);
-      const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
-
-      const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
-        ? `
-          <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
-            <span class="jtc-main-link-content">
-              <span class="jtc-main-link-dot ${badge.className}"></span>
-              <span class="jtc-main-link-label-stack">
-                <span class="line1">${split.line1}</span>
-                <span class="line2">${split.line2}</span>
-              </span>
-            </span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        `
-        : "";
-
-      const lastUpdatedHtml = isUsableValue(data.lastUpdated)
-        ? `
-          <div class="jtc-last-updated-wrap">
-            <span class="jtc-last-updated">Last Updated: ${data.lastUpdated}</span>
-          </div>
-        `
-        : "";
-
-      return `
-        ${lastUpdatedHtml}
-
-        <div class="jtc-wrap">
-          <div class="jtc-header-top">
-            <div class="jtc-header-row ${badge.className}">
-              <h3>${data.sectionTitle || "TOURNAMENT"}</h3>
-              <span>${isUsableValue(data.eventNo) ? data.eventNo : ""}${isUsableValue(data.eventLabel) ? `: ${data.eventLabel}` : ""}</span>
-            </div>
-          </div>
-
-          <div class="jtc-card">
-            <div class="jtc-card-head">
-              <div class="jtc-head-left">
-                <div class="jtc-badge ${badge.className}">
-                  <span class="jtc-dot ${badge.className}"></span>
-                  <span>${badge.label}</span>
-                </div>
-
-                <div class="jtc-title-wrap">
-                  <div class="jtc-title-line">
-                    <h2 class="jtc-title" style="display:inline; margin:0;">${data.title || "Tournament Title"}</h2>
-                    <span class="jtc-title-sep">|</span>
-                    <span class="jtc-date">${data.date || "TBD"}</span>
-                  </div>
-                  <div class="jtc-meta">${composeMetaText(data)}</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="jtc-result-band">
-              <div class="jtc-link-summary">
-                <span class="jtc-summary-label jtc-label-ghost">Action</span>
-                <div class="jtc-band-body">
-                  ${mainLinkHtml}
-                </div>
-              </div>
-
-              <div class="jtc-rounds-summary">
-                <span class="jtc-summary-label">Rounds</span>
-                <div class="jtc-band-body">
-                  <div class="jtc-rounds-grid">
-                    ${buildRoundSlots(data.rounds)}
-                  </div>
-                </div>
-              </div>
-
-              <div class="jtc-total-summary">
-                <span class="jtc-summary-label">Total</span>
-                <div class="jtc-band-body">
-                  <div class="jtc-total-line">
-                    <span class="jtc-total-score">${isUsableValue(summary.total) ? summary.total : "—"}</span>
-                    <span class="jtc-total-par-wrap">
-                      <span class="paren">(</span><span class="delta ${deltaClass}">${isUsableValue(summary.par) ? summary.par : "—"}</span><span class="paren">)</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="jtc-pos-summary">
-                <span class="jtc-summary-label">Pos</span>
-                <div class="jtc-band-body">
-                  <span class="jtc-pos-value">${isUsableValue(summary.pos) ? summary.pos : "—"}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    async function renderSharedPgaTable() {
-      try {
-        const res = await fetch("./data2.json?v=" + Date.now());
-        if (!res.ok) throw new Error("Failed to load data2.json");
-
-        const data = await res.json();
-        const pgaData = data.pgaTableShared;
-
-        if (!pgaData) {
-          container.innerHTML = "";
-          return;
-        }
-
-        container.innerHTML = buildCardHtml(pgaData);
-      } catch (error) {
-        console.error("PGA TABLE render error:", error);
-        container.innerHTML = "";
       }
-    }
 
-    document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
-  })();
-</script>
-    
+      async function renderSharedPgaTable() {
+        try {
+          const res = await fetch("./data2.json?v=" + Date.now());
+          if (!res.ok) throw new Error("Failed to load data2.json");
+
+          const data = await res.json();
+          const pgaData = data.pgaTableShared;
+
+          if (!pgaData) {
+            container.innerHTML = "";
+            return;
+          }
+
+          container.innerHTML = buildCardHtml(pgaData);
+        } catch (error) {
+          console.error("PGA TABLE render error:", error);
+          container.innerHTML = "";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
+    })();
+  </script>
+
 </div>
 
        
