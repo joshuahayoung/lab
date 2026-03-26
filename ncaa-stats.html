@@ -402,8 +402,8 @@
   </h1>
   
   <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
-    Last Updated: —
-  </span>
+  Last Updated: —
+</span>
 </div>
 
 <div id="jh-pga-table-shared"></div>
@@ -1147,33 +1147,42 @@
     }
 
     function buildCardHtml(data) {
-      const badge = badgeMap(data.status);
-      const split = splitMainLinkLabel(
-        isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
-      );
-      const summary = resolveSummary(data);
-      const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
+  const badge = badgeMap(data.status);
+  const split = splitMainLinkLabel(
+    isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
+  );
+  const summary = resolveSummary(data);
+  const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
 
-      const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
-        ? `
-          <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
-            <span class="jtc-main-link-content">
-              <span class="jtc-main-link-dot ${badge.className}"></span>
-              <span class="jtc-main-link-label-stack">
-                <span class="line1">${split.line1}</span>
-                <span class="line2">${split.line2}</span>
-              </span>
-            </span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        `
-        : "";
+  const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+  if (topLastUpdated) {
+    topLastUpdated.textContent = isUsableValue(data.lastUpdated)
+      ? `Last Updated: ${data.lastUpdated}`
+      : "Last Updated: —";
+  }
 
-      
-      return `
+  const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
+    ? `
+      <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
+        <span class="jtc-main-link-content">
+          <span class="jtc-main-link-dot ${badge.className}"></span>
+          <span class="jtc-main-link-label-stack">
+            <span class="line1">${split.line1}</span>
+            <span class="line2">${split.line2}</span>
+          </span>
+        </span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    `
+    : "";
+
+  return `
+    ...
+  `;
+}
 
         <div class="jtc-wrap">
           <div class="jtc-header-top">
