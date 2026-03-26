@@ -585,11 +585,11 @@
       line-height: 1.45;
     }
 
-    /* PGA-style result band */
+    /* RESULT BAND */
     #jh-tournament-card-block .jtc-result-band {
       background: #0c2340;
       display: grid;
-      grid-template-columns: 128px minmax(0, 1fr) 168px 78px;
+      grid-template-columns: 156px minmax(0, 1fr) 176px 86px;
       align-items: stretch;
       gap: 0;
       padding: 14px 18px;
@@ -625,6 +625,15 @@
       visibility: hidden;
     }
 
+    /* 핵심: 모든 body의 높이를 동일화 */
+    #jh-tournament-card-block .jtc-band-body {
+      min-height: 52px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     #jh-tournament-card-block .jtc-main-link {
       display: inline-flex;
       align-items: center;
@@ -641,10 +650,9 @@
       border-radius: 6px;
       transition: all 0.2s ease;
       background: #ffffff;
-      align-self: center;
       width: 100%;
-      max-width: 110px;
-      min-height: 44px;
+      max-width: 134px;
+      min-height: 42px;
     }
 
     #jh-tournament-card-block .jtc-main-link-content {
@@ -917,7 +925,7 @@
         font-weight: 700;
       }
 
-      /* 모바일도 같은 구조 유지, 비율만 조정 */
+      /* 모바일도 같은 구조 유지 */
       #jh-tournament-card-block .jtc-result-band {
         grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
         padding: 10px 7px;
@@ -936,14 +944,18 @@
         min-height: 7px;
       }
 
+      #jh-tournament-card-block .jtc-band-body {
+        min-height: 38px;
+      }
+
       #jh-tournament-card-block .jtc-main-link {
         font-size: 6px;
         letter-spacing: 0.22px;
         padding: 5px 4px;
         gap: 3px;
-        min-height: 34px;
+        min-height: 32px;
         width: 100%;
-        max-width: 64px;
+        max-width: 60px;
       }
 
       #jh-tournament-card-block .jtc-main-link svg {
@@ -1052,39 +1064,47 @@
       <div class="jtc-result-band">
         <div class="jtc-link-summary">
           <span class="jtc-summary-label jtc-label-ghost">Action</span>
-          <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
-            <span class="jtc-main-link-content">
-              <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
-              <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
-                <span class="line1">FINAL</span>
-                <span class="line2">RESULTS</span>
+          <div class="jtc-band-body">
+            <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
+              <span class="jtc-main-link-content">
+                <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
+                <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
+                  <span class="line1">FINAL</span>
+                  <span class="line2">RESULTS</span>
+                </span>
               </span>
-            </span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div class="jtc-rounds-summary">
           <span class="jtc-summary-label">Rounds</span>
-          <div id="jtc-rounds-grid" class="jtc-rounds-grid"></div>
+          <div class="jtc-band-body">
+            <div id="jtc-rounds-grid" class="jtc-rounds-grid"></div>
+          </div>
         </div>
 
         <div class="jtc-total-summary">
           <span class="jtc-summary-label">Total</span>
-          <div id="jtc-total-line" class="jtc-total-line">
-            <span id="jtc-total-score" class="jtc-total-score">—</span>
-            <span id="jtc-total-par-wrap" class="jtc-total-par-wrap">
-              <span class="paren">(</span><span id="jtc-total-par-delta" class="delta white">—</span><span class="paren">)</span>
-            </span>
+          <div class="jtc-band-body">
+            <div id="jtc-total-line" class="jtc-total-line">
+              <span id="jtc-total-score" class="jtc-total-score">—</span>
+              <span id="jtc-total-par-wrap" class="jtc-total-par-wrap">
+                <span class="paren">(</span><span id="jtc-total-par-delta" class="delta white">—</span><span class="paren">)</span>
+              </span>
+            </div>
           </div>
         </div>
 
         <div class="jtc-pos-summary">
           <span class="jtc-summary-label">Pos</span>
-          <span id="jtc-summary-pos" class="jtc-pos-value">—</span>
+          <div class="jtc-band-body">
+            <span id="jtc-summary-pos" class="jtc-pos-value">—</span>
+          </div>
         </div>
       </div>
     </div>
