@@ -402,8 +402,8 @@
   </h1>
   
   <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
-  Last Updated: —
-</span>
+    Last Updated: —
+  </span>
 </div>
 
 <div id="jh-pga-table-shared"></div>
@@ -421,26 +421,6 @@
     max-width: 900px;
     margin: 0 auto 24px;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  #jh-pga-table-shared .jtc-last-updated-wrap {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 10px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-
-  #jh-pga-table-shared .jtc-last-updated {
-    color: #64748b;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding-bottom: 2px;
-    white-space: nowrap;
   }
 
   #jh-pga-table-shared .jtc-wrap {
@@ -807,15 +787,6 @@
       padding: 0;
     }
 
-    #jh-pga-table-shared .jtc-last-updated-wrap {
-      padding-right: 8px;
-      margin-bottom: 8px;
-    }
-
-    #jh-pga-table-shared .jtc-last-updated {
-      font-size: 11px;
-    }
-
     #jh-pga-table-shared .jtc-header-top {
       margin-bottom: 10px;
     }
@@ -824,6 +795,7 @@
       gap: 6px;
       margin-bottom: 12px;
       padding-left: 10px;
+      padding-right: 10px;
       border-left-width: 4px;
     }
 
@@ -1034,9 +1006,9 @@
 
     function badgeMap(status) {
       const map = {
-        upcoming:  { label: "UPCOMING", className: "upcoming" },
-        ongoing:   { label: "ONGOING", className: "ongoing" },
-        final:     { label: "FINAL", className: "final" },
+        upcoming: { label: "UPCOMING", className: "upcoming" },
+        ongoing: { label: "ONGOING", className: "ongoing" },
+        final: { label: "FINAL", className: "final" },
         cancelled: { label: "CANCELLED", className: "cancelled" }
       };
       return map[status] || map.final;
@@ -1122,7 +1094,9 @@
       if (isUsableValue(data.venue)) parts.push(data.venue);
       if (isUsableValue(data.location)) parts.push(data.location);
       if (isUsableValue(data.par)) parts.push(`Par ${data.par}`);
-      if (isUsableValue(data.yards)) parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
+      if (isUsableValue(data.yards)) {
+        parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
+      }
       if (isUsableValue(data.rating)) parts.push(`Rating: ${data.rating}`);
       if (isUsableValue(data.slope)) parts.push(`Slope: ${data.slope}`);
 
@@ -1147,43 +1121,39 @@
     }
 
     function buildCardHtml(data) {
-  const badge = badgeMap(data.status);
-  const split = splitMainLinkLabel(
-    isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
-  );
-  const summary = resolveSummary(data);
-  const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
+      const badge = badgeMap(data.status);
+      const split = splitMainLinkLabel(
+        isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
+      );
+      const summary = resolveSummary(data);
+      const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
 
-  const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
-  if (topLastUpdated) {
-    topLastUpdated.textContent = isUsableValue(data.lastUpdated)
-      ? `Last Updated: ${data.lastUpdated}`
-      : "Last Updated: —";
-  }
+      const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+      if (topLastUpdated) {
+        topLastUpdated.textContent = isUsableValue(data.lastUpdated)
+          ? `Last Updated: ${data.lastUpdated}`
+          : "Last Updated: —";
+      }
 
-  const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
-    ? `
-      <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
-        <span class="jtc-main-link-content">
-          <span class="jtc-main-link-dot ${badge.className}"></span>
-          <span class="jtc-main-link-label-stack">
-            <span class="line1">${split.line1}</span>
-            <span class="line2">${split.line2}</span>
-          </span>
-        </span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
-    `
-    : "";
+      const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
+        ? `
+          <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
+            <span class="jtc-main-link-content">
+              <span class="jtc-main-link-dot ${badge.className}"></span>
+              <span class="jtc-main-link-label-stack">
+                <span class="line1">${split.line1}</span>
+                <span class="line2">${split.line2}</span>
+              </span>
+            </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        `
+        : "";
 
-  return `
-    ...
-  `;
-}
-
+      return `
         <div class="jtc-wrap">
           <div class="jtc-header-top">
             <div class="jtc-header-row ${badge.className}">
@@ -1261,6 +1231,8 @@
         const pgaData = data.pgaTableShared;
 
         if (!pgaData) {
+          const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+          if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
           container.innerHTML = "";
           return;
         }
@@ -1268,6 +1240,8 @@
         container.innerHTML = buildCardHtml(pgaData);
       } catch (error) {
         console.error("PGA TABLE render error:", error);
+        const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+        if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
         container.innerHTML = "";
       }
     }
