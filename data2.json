@@ -1,0 +1,58 @@
+{
+  "pgaTableShared": {
+    "lastUpdated": "Mar 25, 2026",
+
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
+    "eventNo": "9th Event",
+    "eventLabel": "Bell Bank-Pay It Forward-Collegiate",
+
+    "status": "final",
+
+    "title": "Bell Bank Collegiate (Minnesota)",
+    "date": "Mar 23-24",
+    "venue": "Wigwam Resort",
+    "location": "Litchfield Park, Arizona",
+    "par": 72,
+    "yards": "7,322",
+    "rating": 75.0,
+    "slope": 137,
+
+    "mainLink": {
+      "url": "https://scoreboard.clippd.com/tournaments/239256/scoring/team",
+      "label": "FINAL RESULTS"
+    },
+
+    "summary": {
+      "total": "212",
+      "par": "-4",
+      "pos": "T10"
+    },
+
+    "rounds": [
+      {
+        "round": "Round 1",
+        "date": "Mar 23, 2026",
+        "score": "73",
+        "par": "+1",
+        "status": "FINISH",
+        "pos": "T42"
+      },
+      {
+        "round": "Round 2",
+        "date": "Mar 23, 2026",
+        "score": "68",
+        "par": "-4",
+        "status": "FINISH",
+        "pos": "T8"
+      },
+      {
+        "round": "Round 3",
+        "date": "Mar 24, 2026",
+        "score": "71",
+        "par": "-1",
+        "status": "FINISH",
+        "pos": "T10"
+      }
+    ]
+  }
+}
