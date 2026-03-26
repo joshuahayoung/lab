@@ -326,603 +326,997 @@ gtag('config', 'G-H1JW8YBDZ8');
     </div>
 
 
-<div class="index-activity-section" style="max-width: 900px; margin: 0 auto 30px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%;">
-  <div id="latest-summary-card-root"></div>
+<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0 0px; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
   <style>
-  .iac-wrap {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .iac-header {
-    width: 100%;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-  }
-
-  .iac-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .iac-header-title {
-    font-size: 18px;
-    color: #0c2340;
-    margin: 0;
-    padding-left: 20px;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    box-sizing: border-box;
-    border-left: 5px solid #e74c3c;
-  }
-
-  .iac-header-title.upcoming { border-left-color: #1e3a8a; }
-  .iac-header-title.ongoing { border-left-color: #22c55e; }
-  .iac-header-title.final { border-left-color: #e74c3c; }
-  .iac-header-title.cancelled { border-left-color: #7f1d1d; }
-
-  .iac-updated {
-    margin-left: 25px;
-    color: #64748b;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    background: #f8fafc;
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid #edf2f7;
-    box-sizing: border-box;
-    flex-shrink: 0;
-  }
-
-  .iac-divider {
-    width: 100%;
-    height: 1px;
-    background: #edf2f7;
-    margin-top: 10px;
-  }
-
-  .iac-card {
-    background: #ffffff;
-    border: 2.5px solid #0c2340;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(12, 35, 64, 0.08);
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .iac-card-inner {
-    padding: 14px 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-  }
-
-  .iac-info {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    flex: 1;
-    min-width: 250px;
-  }
-
-  .iac-badge {
-    background: #0c2340;
-    padding: 6px 12px;
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .iac-badge-text {
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  .iac-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-
-  .iac-dot.upcoming {
-    background-color: #94a3b8;
-    animation: none;
-    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
-  }
-
-  .iac-dot.ongoing {
-    background-color: #22c55e;
-    animation: iac-pulse-green 1.6s infinite ease-in-out;
-    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
-  }
-
-  .iac-dot.final {
-    background-color: #e74c3c;
-    animation: none;
-  }
-
-  .iac-dot.cancelled {
-    background-color: #7f1d1d;
-    animation: none;
-    opacity: 0.75;
-  }
-
-  @keyframes iac-pulse-green {
-    0%   { opacity: 1; transform: scale(1); }
-    50%  { opacity: 0.35; transform: scale(0.88); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
-  .iac-texts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    min-width: 0;
-    flex: 1;
-    width: auto;
-  }
-
-  .iac-title-line {
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 6px;
-    flex-wrap: wrap;
-    min-width: 0;
-    width: auto;
-  }
-
-  .iac-title {
-    color: #0c2340;
-    font-weight: 900;
-    font-size: 17px;
-    line-height: 1.2;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  .iac-date {
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
-
-  .iac-location {
-    color: #64748b;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.35;
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    text-align: left;
-  }
-
-  .iac-stats {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-left: auto;
-    flex-wrap: wrap;
-  }
-
-  .iac-round-block {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    border-right: 1px solid #f1f5f9;
-    padding-right: 20px;
-  }
-
-  .iac-stat-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-
-  .iac-stat-label {
-    color: #0c2340;
-    font-size: 10px;
-    font-weight: 800;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 0.3px;
-  }
-
-  .iac-stat-values {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    white-space: nowrap;
-  }
-
-  .iac-value-under {
-    color: #e74c3c;
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  .iac-value-even {
-    color: #2563eb;
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  .iac-value-over {
-    color: #1e3a8a;
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  .iac-value-neutral {
-    color: #0C2340;
-    font-size: 16px;
-    font-weight: 900;
-  }
-
-  .iac-pos-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    min-width: 45px;
-    white-space: nowrap;
-  }
-
-  .iac-pos-label {
-    color: #0C2340;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-
-  .iac-pos-value {
-    color: #0C2340;
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1;
-  }
-
-  .iac-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    flex-shrink: 0;
-  }
-
-  .iac-link svg {
-    display: block;
-  }
-
-  @media (max-width: 900px) {
-    .index-activity-section {
-      padding: 0 !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .iac-card-inner {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 18px 14px;
-      gap: 14px;
+    #jh-tournament-card-block,
+    #jh-tournament-card-block *,
+    #jh-tournament-card-block *::before,
+    #jh-tournament-card-block *::after {
+      box-sizing: border-box;
     }
 
-    .iac-info {
+    #jh-tournament-card-block .jtc-wrap {
       width: 100%;
-      min-width: 0;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .iac-badge {
-      align-self: center;
-      margin-top: 0;
+    #jh-tournament-card-block .jtc-header-top {
+      margin-bottom: 16px;
+      width: 100%;
     }
 
-    .iac-texts {
+    #jh-tournament-card-block .jtc-header-row {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      width: 100%;
-      min-width: 0;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      flex-wrap: wrap;
+      border-left: 5px solid #1e3a8a;
     }
 
-    .iac-title-line {
-      display: block;
-      width: 100%;
-      text-align: center;
+    #jh-tournament-card-block .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
+    #jh-tournament-card-block .jtc-header-row.ongoing  { border-left-color: #22c55e; }
+    #jh-tournament-card-block .jtc-header-row.final    { border-left-color: #e74c3c; }
+    #jh-tournament-card-block .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
+
+    #jh-tournament-card-block .jtc-header-row h3 {
+      color: #0C2340;
+      margin: 0;
+      font-size: 1.3em;
+      line-height: 1.2;
+      font-family: 'Oswald', sans-serif;
+      text-transform: none;
     }
 
-    .iac-title {
-      display: block;
-      font-size: 18px;
-      line-height: 1.25;
-      text-align: center;
+    #jh-tournament-card-block .jtc-header-row span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85em;
+      color: #888;
     }
 
-    .iac-date {
-      display: block;
-      margin-top: 4px;
-      white-space: normal;
-      font-size: 12px;
-      line-height: 1.25;
-      text-align: center;
-    }
-
-    .iac-location {
-      margin-top: 6px;
-      font-size: 13px;
-      line-height: 1.4;
-      text-align: center;
-    }
-
-    .iac-stats {
-      width: 100%;
-      margin-left: 0;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto auto;
-      align-items: stretch;
-      gap: 8px;
-      padding-top: 14px;
-      border-top: 1px solid #f1f5f9;
-      flex-wrap: nowrap;
-    }
-
-    .iac-round-block {
-      border-right: none;
-      padding-right: 0;
-      min-width: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
-      gap: 8px;
-    }
-
-    .iac-stat-col {
-      min-width: 0;
-      align-items: center;
-      justify-content: center;
-      background: #f8fafc;
-      border: 1px solid #e9eef5;
-      border-radius: 10px;
-      padding: 10px 10px 9px;
-      gap: 5px;
-    }
-
-    .iac-stat-label {
-      font-size: 10px;
-      text-align: center;
-      line-height: 1.1;
-      white-space: normal;
-    }
-
-    .iac-stat-values {
-      gap: 7px;
-      justify-content: center;
-      flex-wrap: nowrap;
+    #jh-tournament-card-block .jtc-card {
+      background: #ffffff;
+      border: 2px solid #0c2340;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
       overflow: hidden;
     }
 
-    .iac-value-under,
-    .iac-value-even,
-    .iac-value-over,
-    .iac-value-neutral {
-      font-size: 16px;
-      line-height: 1;
+    #jh-tournament-card-block .jtc-card-head {
+      padding: 20px 25px 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #f8fafc;
     }
 
-    .iac-pos-box {
-      min-width: 58px;
+    #jh-tournament-card-block .jtc-head-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    #jh-tournament-card-block .jtc-badge {
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+    }
+
+    #jh-tournament-card-block .jtc-badge.upcoming { background: #64748b; }
+    #jh-tournament-card-block .jtc-badge.ongoing { background: #0c2340; }
+    #jh-tournament-card-block .jtc-badge.final { background: #0c2340; }
+    #jh-tournament-card-block .jtc-badge.cancelled { background: #7f1d1d; }
+
+    #jh-tournament-card-block .jtc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #jh-tournament-card-block .jtc-dot.upcoming {
+      background-color: #94a3b8;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
+    }
+
+    #jh-tournament-card-block .jtc-dot.ongoing {
+      background-color: #22c55e;
+      animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
+
+    #jh-tournament-card-block .jtc-dot.final {
+      background-color: #e74c3c;
+    }
+
+    #jh-tournament-card-block .jtc-dot.cancelled {
+      background-color: #7f1d1d;
+      opacity: 0.7;
+    }
+
+    @keyframes jtc-live-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #jh-tournament-card-block .jtc-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    #jh-tournament-card-block .jtc-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    #jh-tournament-card-block .jtc-title {
+      color: #0c2340;
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.25;
+      min-width: 0;
+    }
+
+    #jh-tournament-card-block .jtc-title-sep {
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    #jh-tournament-card-block .jtc-date {
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    #jh-tournament-card-block .jtc-meta {
+      font-size: 12px;
+      color: #7f8c8d;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    /* RESULT BAND */
+    #jh-tournament-card-block .jtc-result-band {
+      background: #0c2340;
+      display: grid;
+      grid-template-columns: 156px minmax(0, 1fr) 176px 86px;
+      align-items: stretch;
+      gap: 0;
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #jh-tournament-card-block .jtc-link-summary,
+    #jh-tournament-card-block .jtc-rounds-summary,
+    #jh-tournament-card-block .jtc-total-summary,
+    #jh-tournament-card-block .jtc-pos-summary {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    #jh-tournament-card-block .jtc-summary-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      font-weight: 800;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 10px;
+    }
+
+    #jh-tournament-card-block .jtc-summary-label.jtc-label-ghost {
+      visibility: hidden;
+    }
+
+    /* 핵심: 모든 body의 높이를 동일화 */
+    #jh-tournament-card-block .jtc-band-body {
+      min-height: 52px;
+      width: 100%;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #f8fafc;
-      border: 1px solid #e9eef5;
-      border-radius: 10px;
-      padding: 10px 8px 9px;
+    }
+
+    #jh-tournament-card-block .jtc-main-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      border: 1.5px solid #0c2340;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      width: 100%;
+      max-width: 134px;
+      min-height: 42px;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-label-stack {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-label-stack .line1,
+    #jh-tournament-card-block .jtc-main-link-label-stack .line2 {
+      display: inline;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #jh-tournament-card-block .jtc-main-link-dot.upcoming  { background-color: #94a3b8; }
+    #jh-tournament-card-block .jtc-main-link-dot.ongoing   { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
+    #jh-tournament-card-block .jtc-main-link-dot.final     { background-color: #e74c3c; }
+    #jh-tournament-card-block .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
+
+    @keyframes jtc-link-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #jh-tournament-card-block .jtc-rounds-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 6px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #jh-tournament-card-block .jtc-round-chip {
+      min-width: 0;
+      flex: 1 1 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 7px;
+      padding: 6px 5px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 4px;
     }
 
-    .iac-pos-label {
-      font-size: 10px;
+    #jh-tournament-card-block .jtc-round-chip-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.55px;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
-    .iac-pos-value {
+    #jh-tournament-card-block .jtc-round-chip-value {
       font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
     }
 
-    .iac-link {
-      align-self: stretch;
+    #jh-tournament-card-block .jtc-round-chip-value.red { color: #e74c3c; }
+    #jh-tournament-card-block .jtc-round-chip-value.blue { color: #60a5fa; }
+    #jh-tournament-card-block .jtc-round-chip-value.navy { color: #bfdbfe; }
+    #jh-tournament-card-block .jtc-round-chip-value.white { color: #ffffff; }
+
+    #jh-tournament-card-block .jtc-total-line {
+      display: inline-flex;
+      align-items: baseline;
       justify-content: center;
-      background: #f8fafc;
-      border: 1px solid #e9eef5;
-      border-radius: 10px;
-      padding: 0 10px;
-      min-width: 42px;
+      gap: 4px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
 
-    .iac-header-title {
-      font-size: 17px;
-      line-height: 1.15;
+    #jh-tournament-card-block .jtc-total-score {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+      letter-spacing: -0.2px;
     }
 
-    .iac-updated {
-      margin-left: 0;
+    #jh-tournament-card-block .jtc-total-par-wrap {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
     }
-  }
-</style>
 
-<script>
-    
-    /* Tournament Change INFORMATION */
-    
-  const latestSummaryCard = {
-    status: "final", // upcoming | ongoing | final | cancelled
-    updated: "Mar 25, 2026",
-    title: "Bell Bank Collegiate (Minnesota)",
-    date: "Mar 23-24",
-    location: "Wigwam Resort | Litchfield Park, AZ",
-    rounds: ["73", "68", "71"],
-    roundPars: ["+1", "-4", "-1"],
-    total: "212",
-    totalPar: "-4",
-    pos: "T10",
-    link: "ncaa-stats.html#Tournament-Schedule-Scoring"
-  };
+    #jh-tournament-card-block .jtc-total-par-wrap .paren {
+      color: #ffffff;
+    }
 
-  function iacGetScoreClass(value) {
-    if (value === null || value === undefined) return "iac-value-even";
-    const v = String(value).trim().toUpperCase();
+    #jh-tournament-card-block .jtc-total-par-wrap .delta.red { color: #e74c3c; }
+    #jh-tournament-card-block .jtc-total-par-wrap .delta.blue { color: #60a5fa; }
+    #jh-tournament-card-block .jtc-total-par-wrap .delta.navy { color: #bfdbfe; }
+    #jh-tournament-card-block .jtc-total-par-wrap .delta.white { color: #ffffff; }
 
-    if (
-      v === "" ||
-      v === "-" ||
-      v === "—" ||
-      v === "TBD" ||
-      v === "E" ||
-      v === "EVEN" ||
-      v === "PAR" ||
-      v === "0"
-    ) return "iac-value-even";
+    #jh-tournament-card-block .jtc-pos-value {
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
+    }
 
-    if (v.startsWith("-")) return "iac-value-under";
-    if (v.startsWith("+")) return "iac-value-over";
+    #jh-tournament-card-block .jtc-modal {
+      display: none;
+      position: fixed;
+      z-index: 10001;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-    return "iac-value-neutral";
-  }
+    #jh-tournament-card-block .jtc-modal-wrap {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      text-align: center;
+    }
 
-  function iacRenderRounds(rounds, roundPars) {
-    return rounds.map((score, index) => {
-      const parValue = Array.isArray(roundPars) ? roundPars[index] : "";
-      const cls = iacGetScoreClass(parValue);
-      return `<span class="${cls}">${score}</span>`;
-    }).join("");
-  }
+    #jh-tournament-card-block .jtc-modal img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+      border: 3px solid #fff;
+    }
 
-  function iacRenderParTotal(totalPar, total) {
-    const parClass = iacGetScoreClass(totalPar);
-    return `
-      <span class="${parClass}">${totalPar}</span>
-      <span class="iac-value-neutral">(<span class="${parClass}">${total}</span>)</span>
-    `;
-  }
+    #jh-tournament-card-block .jtc-modal-close-x {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-  function iacGetStatusLabel(status) {
-    const map = {
-      upcoming: "UPCOMING",
-      ongoing: "ONGOING",
-      final: "FINAL",
-      cancelled: "CANCELLED"
-    };
-    return map[status] || "FINAL";
-  }
+    #jh-tournament-card-block .jtc-modal-close-btn {
+      margin-top: 15px;
+      padding: 8px 25px;
+      background: #fff;
+      color: #0c2340;
+      border: none;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
 
-  function iacRenderCard(data) {
-    return `
-      <div class="iac-wrap">
-        <div class="iac-header">
-          <div class="iac-header-row">
-            <div>
-              <h2 class="iac-header-title ${data.status}">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-                </svg>
-                LATEST TOURNAMENT RESULTS
-              </h2>
-            </div>
-            <div class="iac-updated">Last Updated: ${data.updated}</div>
+    @media (max-width: 768px) {
+      #jh-tournament-card-block {
+        padding: 0 8px;
+      }
+
+      #jh-tournament-card-block .jtc-header-top {
+        margin-bottom: 10px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        border-left-width: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-header-row h3 {
+        font-size: 0.92em;
+        line-height: 1.12;
+      }
+
+      #jh-tournament-card-block .jtc-header-row span {
+        font-size: 0.66em;
+        line-height: 1.18;
+      }
+
+      #jh-tournament-card-block .jtc-card {
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
+      }
+
+      #jh-tournament-card-block .jtc-card-head {
+        padding: 12px 10px 10px 10px;
+        gap: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-head-left {
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      #jh-tournament-card-block .jtc-badge {
+        padding: 3px 8px;
+        font-size: 8px;
+        letter-spacing: 0.75px;
+        gap: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      #jh-tournament-card-block .jtc-title-wrap {
+        gap: 4px;
+        flex: 1 1 100%;
+      }
+
+      #jh-tournament-card-block .jtc-title-line {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      #jh-tournament-card-block .jtc-title {
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      #jh-tournament-card-block .jtc-title-sep {
+        display: inline;
+        font-size: 12px;
+      }
+
+      #jh-tournament-card-block .jtc-date {
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      #jh-tournament-card-block .jtc-meta {
+        font-size: 9px;
+        line-height: 1.28;
+        font-weight: 700;
+      }
+
+      /* 모바일도 같은 구조 유지 */
+      #jh-tournament-card-block .jtc-result-band {
+        grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
+        padding: 10px 7px;
+      }
+
+      #jh-tournament-card-block .jtc-link-summary,
+      #jh-tournament-card-block .jtc-rounds-summary,
+      #jh-tournament-card-block .jtc-total-summary,
+      #jh-tournament-card-block .jtc-pos-summary {
+        padding: 4px 3px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-label {
+        font-size: 7px;
+        margin-bottom: 4px;
+        min-height: 7px;
+      }
+
+      #jh-tournament-card-block .jtc-band-body {
+        min-height: 38px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link {
+        font-size: 6px;
+        letter-spacing: 0.22px;
+        padding: 5px 4px;
+        gap: 3px;
+        min-height: 32px;
+        width: 100%;
+        max-width: 60px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-dot {
+        width: 4px;
+        height: 4px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-content {
+        align-items: center;
+        gap: 3px;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-label-stack {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1px;
+        line-height: 0.92;
+        white-space: normal;
+      }
+
+      #jh-tournament-card-block .jtc-main-link-label-stack .line1,
+      #jh-tournament-card-block .jtc-main-link-label-stack .line2 {
+        display: block;
+      }
+
+      #jh-tournament-card-block .jtc-rounds-grid {
+        gap: 3px;
+      }
+
+      #jh-tournament-card-block .jtc-round-chip {
+        padding: 4px 2px 4px 2px;
+        border-radius: 6px;
+        gap: 3px;
+      }
+
+      #jh-tournament-card-block .jtc-round-chip-label {
+        font-size: 6px;
+        letter-spacing: 0.45px;
+      }
+
+      #jh-tournament-card-block .jtc-round-chip-value {
+        font-size: 12px;
+      }
+
+      #jh-tournament-card-block .jtc-total-score {
+        font-size: 16px;
+      }
+
+      #jh-tournament-card-block .jtc-total-par-wrap {
+        font-size: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-pos-value {
+        font-size: 17px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-wrap {
+        max-width: 96%;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-x {
+        top: -34px;
+        font-size: 26px;
+      }
+
+      #jh-tournament-card-block .jtc-modal-close-btn {
+        font-size: 11px;
+        padding: 8px 20px;
+      }
+    }
+  </style>
+
+  <div class="jtc-wrap">
+    <div class="jtc-header-top">
+      <div id="jtc-section-header" class="jtc-header-row">
+        <h3 id="jtc-section-title">LATEST TOURNAMENT RESULTS</h3>
+        <span id="jtc-section-meta">9th Event: Bell Bank-Pay It Forward-Collegiate</span>
+      </div>
+    </div>
+
+    <div class="jtc-card">
+      <div class="jtc-card-head">
+        <div class="jtc-head-left">
+          <div id="jtc-badge" class="jtc-badge final">
+            <span id="jtc-badge-dot" class="jtc-dot final"></span>
+            <span id="jtc-badge-label">FINAL</span>
           </div>
-          <div class="iac-divider"></div>
-        </div>
-
-        <div class="iac-card">
-          <div class="iac-card-inner">
-            <div class="iac-info">
-              <div class="iac-badge">
-                <span class="iac-dot ${data.status}"></span>
-                <span class="iac-badge-text">${iacGetStatusLabel(data.status)}</span>
-              </div>
-
-              <div class="iac-texts">
-                <div class="iac-title-line">
-                  <span class="iac-title">${data.title}</span>
-                  <span class="iac-date">(${data.date})</span>
-                </div>
-                <span class="iac-location">${data.location}</span>
-              </div>
+          <div class="jtc-title-wrap">
+            <div class="jtc-title-line">
+              <h2 id="jtc-title-text" class="jtc-title" style="display:inline; margin:0;">Tournament Title</h2>
+              <span class="jtc-title-sep">|</span>
+              <span id="jtc-date" class="jtc-date">Mar 23-24</span>
             </div>
-
-            <div class="iac-stats">
-              <div class="iac-round-block">
-                <div class="iac-stat-col">
-                  <div class="iac-stat-label">R1 - R2 - R3</div>
-                  <div class="iac-stat-values">
-                    ${iacRenderRounds(data.rounds, data.roundPars)}
-                  </div>
-                </div>
-
-                <div class="iac-stat-col">
-                  <div class="iac-stat-label">PAR (TOTAL)</div>
-                  <div class="iac-stat-values">
-                    ${iacRenderParTotal(data.totalPar, data.total)}
-                  </div>
-                </div>
-              </div>
-
-              <div class="iac-pos-box">
-                <span class="iac-pos-label">POS</span>
-                <div class="iac-pos-value">${data.pos}</div>
-              </div>
-
-              <a href="${data.link}" class="iac-link" aria-label="View tournament details">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </a>
-            </div>
+            <div id="jtc-meta" class="jtc-meta">Venue | Location | Par | Yardage</div>
           </div>
         </div>
       </div>
-    `;
-  }
 
-  document.getElementById("latest-summary-card-root").innerHTML = iacRenderCard(latestSummaryCard);
-</script>
+      <div class="jtc-result-band">
+        <div class="jtc-link-summary">
+          <span class="jtc-summary-label jtc-label-ghost">Action</span>
+          <div class="jtc-band-body">
+            <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
+              <span class="jtc-main-link-content">
+                <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
+                <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
+                  <span class="line1">FINAL</span>
+                  <span class="line2">RESULTS</span>
+                </span>
+              </span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="jtc-rounds-summary">
+          <span class="jtc-summary-label">Rounds</span>
+          <div class="jtc-band-body">
+            <div id="jtc-rounds-grid" class="jtc-rounds-grid"></div>
+          </div>
+        </div>
+
+        <div class="jtc-total-summary">
+          <span class="jtc-summary-label">Total</span>
+          <div class="jtc-band-body">
+            <div id="jtc-total-line" class="jtc-total-line">
+              <span id="jtc-total-score" class="jtc-total-score">—</span>
+              <span id="jtc-total-par-wrap" class="jtc-total-par-wrap">
+                <span class="paren">(</span><span id="jtc-total-par-delta" class="delta white">—</span><span class="paren">)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="jtc-pos-summary">
+          <span class="jtc-summary-label">Pos</span>
+          <div class="jtc-band-body">
+            <span id="jtc-summary-pos" class="jtc-pos-value">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="jtcModal" class="jtc-modal" onclick="jtcCloseModal()">
+    <div class="jtc-modal-wrap" onclick="event.stopPropagation()">
+      <span class="jtc-modal-close-x" onclick="jtcCloseModal()">&times;</span>
+      <img id="jtcModalImg" src="" alt="Tournament image">
+      <br>
+      <button class="jtc-modal-close-btn" onclick="jtcCloseModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const TOURNAMENT_CONFIG = {
+      sectionTitle: "LATEST TOURNAMENT RESULTS",
+      eventNo: "9th Event",
+      eventLabel: "Bell Bank-Pay It Forward-Collegiate",
+
+      status: "final", // upcoming | ongoing | final | cancelled
+
+      title: "Bell Bank Collegiate (Minnesota)",
+      date: "Mar 23-24",
+      venue: "Wigwam Resort",
+      location: "Litchfield Park, Arizona",
+      par: 72,
+      yards: "7,322",
+      rating: 75.0,
+      slope: 137,
+
+      mainLink: {
+        url: "https://scoreboard.clippd.com/tournaments/239256/scoring/team",
+        label: "FINAL RESULTS"
+      },
+
+      summary: {
+        total: "212",
+        par: "-4",
+        pos: "T10"
+      },
+
+      rounds: [
+        {
+          round: "Round 1",
+          date: "Mar 23, 2026",
+          score: "73",
+          par: "+1",
+          status: "FINISH",
+          pos: "T42",
+          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-1.jpg",
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
+        },
+        {
+          round: "Round 2",
+          date: "Mar 23, 2026",
+          score: "68",
+          par: "-4",
+          status: "FINISH",
+          pos: "T8",
+          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-2.jpg",
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
+        },
+        {
+          round: "Round 3",
+          date: "Mar 24, 2026",
+          score: "71",
+          par: "-1",
+          status: "FINISH",
+          pos: "T10",
+          _pairingImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Pairing-3.jpg",
+          _scorecardImg: "./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Scorecard.jpg"
+        }
+      ]
+    };
+
+    function jtcIsUsableValue(value) {
+      if (value === null || value === undefined) return false;
+      const cleaned = String(value).trim();
+      return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+    }
+
+    function jtcOpenModal(imgSrc) {
+      if (!jtcIsUsableValue(imgSrc)) return;
+      document.getElementById("jtcModalImg").src = imgSrc;
+      document.getElementById("jtcModal").style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function jtcCloseModal() {
+      document.getElementById("jtcModal").style.display = "none";
+      document.getElementById("jtcModalImg").src = "";
+      document.body.style.overflow = "auto";
+    }
+
+    function jtcScoreClass(parValue) {
+      if (parValue === null || parValue === undefined) return "blue";
+      const value = String(parValue).trim().toUpperCase();
+
+      if (
+        value === "" ||
+        value === "-" ||
+        value === "—" ||
+        value === "TBD" ||
+        value === "E" ||
+        value === "EVEN" ||
+        value === "PAR" ||
+        value === "0"
+      ) return "blue";
+
+      if (value.startsWith("-")) return "red";
+      if (value.startsWith("+")) return "navy";
+      return "blue";
+    }
+
+    function jtcBadgeMap(status) {
+      const map = {
+        upcoming:  { label: "UPCOMING", className: "upcoming" },
+        ongoing:   { label: "ONGOING", className: "ongoing" },
+        final:     { label: "FINAL", className: "final" },
+        cancelled: { label: "CANCELLED", className: "cancelled" }
+      };
+      return map[status] || map.final;
+    }
+
+    function jtcSplitMainLinkLabel(label) {
+      const clean = (label || "").trim();
+      if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+
+      const upper = clean.toUpperCase();
+
+      if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
+      if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
+      if (upper === "TOURNAMENT DETAILS") return { line1: "TOURNAMENT", line2: "DETAILS" };
+
+      const parts = upper.split(/\s+/);
+      if (parts.length >= 2) {
+        return {
+          line1: parts[0],
+          line2: parts.slice(1).join(" ")
+        };
+      }
+
+      return { line1: upper, line2: "" };
+    }
+
+    function jtcFormatParDelta(delta) {
+      if (delta === 0) return "E";
+      if (delta > 0) return `+${delta}`;
+      return `${delta}`;
+    }
+
+    function jtcParseNumber(value) {
+      if (!jtcIsUsableValue(value)) return null;
+      const num = Number(String(value).replace(/,/g, "").trim());
+      return Number.isFinite(num) ? num : null;
+    }
+
+    function jtcRoundShortLabel(round, index) {
+      const raw = String(round.round || "").trim();
+      const match = raw.match(/(\d+)/);
+      if (match) return `R${match[1]}`;
+      return `R${index + 1}`;
+    }
+
+    function jtcGetAllRounds(rounds) {
+      return Array.isArray(rounds) ? rounds : [];
+    }
+
+    function jtcResolveSummary(data) {
+      const rounds = jtcGetAllRounds(data.rounds);
+      const playedRounds = rounds.filter(round => jtcIsUsableValue(round.score));
+      const configPar = jtcParseNumber(data.par);
+      const summaryTotalRaw = data.summary && data.summary.total;
+      const summaryParRaw = data.summary && data.summary.par;
+      const summaryPosRaw = data.summary && data.summary.pos;
+
+      let resolvedTotal = jtcIsUsableValue(summaryTotalRaw) ? String(summaryTotalRaw).trim() : "—";
+      let resolvedPar = jtcIsUsableValue(summaryParRaw) ? String(summaryParRaw).trim() : "—";
+      let resolvedPos = jtcIsUsableValue(summaryPosRaw) ? String(summaryPosRaw).trim() : "—";
+
+      if (!jtcIsUsableValue(summaryTotalRaw) && playedRounds.length > 0) {
+        const totalScore = playedRounds.reduce((sum, round) => {
+          const scoreNum = jtcParseNumber(round.score);
+          return sum + (scoreNum !== null ? scoreNum : 0);
+        }, 0);
+        resolvedTotal = String(totalScore);
+      }
+
+      if (!jtcIsUsableValue(summaryParRaw) && playedRounds.length > 0 && configPar !== null) {
+        const totalScoreNum = jtcParseNumber(resolvedTotal);
+        if (totalScoreNum !== null) {
+          const expectedPar = configPar * playedRounds.length;
+          resolvedPar = jtcFormatParDelta(totalScoreNum - expectedPar);
+        }
+      }
+
+      return {
+        total: resolvedTotal,
+        par: resolvedPar,
+        pos: resolvedPos
+      };
+    }
+
+    function jtcComposeMetaText(data) {
+      const parts = [
+        data.venue,
+        data.location,
+        `Par ${data.par}`,
+        `${jtcIsUsableValue(data.yards) ? (String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()) : "—"} Yards`,
+        `Rating: ${data.rating}`,
+        `Slope: ${data.slope}`
+      ];
+      return parts.join(" | ");
+    }
+
+    function jtcBuildRoundSlots(rounds) {
+      const allRounds = jtcGetAllRounds(rounds);
+      return allRounds.map((round, index) => {
+        const label = jtcRoundShortLabel(round, index);
+        const value = jtcIsUsableValue(round.score) ? String(round.score).trim() : "—";
+        const colorClass = jtcIsUsableValue(round.par) ? jtcScoreClass(round.par) : "white";
+
+        return `
+          <div class="jtc-round-chip">
+            <span class="jtc-round-chip-label">${label}</span>
+            <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function jtcRenderCard(data) {
+      const badge = jtcBadgeMap(data.status);
+
+      document.getElementById("jtc-section-title").textContent = data.sectionTitle || "TOURNAMENT";
+      document.getElementById("jtc-section-meta").textContent = `${data.eventNo}: ${data.eventLabel}`;
+
+      const headerRow = document.getElementById("jtc-section-header");
+      headerRow.className = `jtc-header-row ${data.status}`;
+
+      const badgeEl = document.getElementById("jtc-badge");
+      badgeEl.className = `jtc-badge ${badge.className}`;
+
+      const badgeDotEl = document.getElementById("jtc-badge-dot");
+      badgeDotEl.className = `jtc-dot ${badge.className}`;
+
+      document.getElementById("jtc-badge-label").textContent = badge.label;
+      document.getElementById("jtc-title-text").textContent = data.title;
+      document.getElementById("jtc-date").textContent = data.date;
+      document.getElementById("jtc-meta").textContent = jtcComposeMetaText(data);
+
+      const mainLink = document.getElementById("jtc-main-link");
+      const mainLinkDot = document.getElementById("jtc-main-link-dot");
+      const labelContainer = document.getElementById("jtc-main-link-label");
+
+      if (jtcIsUsableValue(data.mainLink?.url)) {
+        mainLink.href = data.mainLink.url;
+        mainLink.style.display = "inline-flex";
+        mainLinkDot.className = `jtc-main-link-dot ${data.status}`;
+
+        const split = jtcSplitMainLinkLabel(
+          jtcIsUsableValue(data.mainLink?.label) ? data.mainLink.label : "VIEW DETAILS"
+        );
+
+        labelContainer.innerHTML = `
+          <span class="line1">${split.line1}</span>
+          <span class="line2">${split.line2}</span>
+        `;
+      } else {
+        mainLink.style.display = "none";
+      }
+
+      document.getElementById("jtc-rounds-grid").innerHTML = jtcBuildRoundSlots(data.rounds);
+
+      const resolvedSummary = jtcResolveSummary(data);
+      const deltaClass = jtcIsUsableValue(resolvedSummary.par) ? jtcScoreClass(resolvedSummary.par) : "white";
+
+      document.getElementById("jtc-total-score").textContent =
+        jtcIsUsableValue(resolvedSummary.total) ? resolvedSummary.total : "—";
+
+      const deltaEl = document.getElementById("jtc-total-par-delta");
+      deltaEl.textContent = jtcIsUsableValue(resolvedSummary.par) ? resolvedSummary.par : "—";
+      deltaEl.className = `delta ${deltaClass}`;
+
+      document.getElementById("jtc-summary-pos").textContent =
+        jtcIsUsableValue(resolvedSummary.pos) ? resolvedSummary.pos : "—";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      jtcRenderCard(TOURNAMENT_CONFIG);
+    });
+  </script>
+</div>
 
 
 
