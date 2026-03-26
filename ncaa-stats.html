@@ -585,14 +585,44 @@
       line-height: 1.45;
     }
 
+    /* PGA-style result band */
     #jh-tournament-card-block .jtc-result-band {
       background: #0c2340;
       display: grid;
-      grid-template-columns: minmax(120px, 160px) minmax(0, 1fr) minmax(100px, 150px) minmax(64px, 84px);
+      grid-template-columns: 128px minmax(0, 1fr) 168px 78px;
       align-items: stretch;
       gap: 0;
       padding: 14px 18px;
       border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #jh-tournament-card-block .jtc-link-summary,
+    #jh-tournament-card-block .jtc-rounds-summary,
+    #jh-tournament-card-block .jtc-total-summary,
+    #jh-tournament-card-block .jtc-pos-summary {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    #jh-tournament-card-block .jtc-summary-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      font-weight: 800;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 10px;
+    }
+
+    #jh-tournament-card-block .jtc-summary-label.jtc-label-ghost {
+      visibility: hidden;
     }
 
     #jh-tournament-card-block .jtc-main-link {
@@ -602,19 +632,19 @@
       gap: 8px;
       color: #0c2340;
       text-decoration: none;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 900;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
       border: 1.5px solid #0c2340;
-      padding: 8px 12px;
+      padding: 8px 10px;
       border-radius: 6px;
       transition: all 0.2s ease;
       background: #ffffff;
-      justify-self: start;
       align-self: center;
-      max-width: max-content;
-      min-height: 52px;
+      width: 100%;
+      max-width: 110px;
+      min-height: 44px;
     }
 
     #jh-tournament-card-block .jtc-main-link-content {
@@ -655,34 +685,11 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    #jh-tournament-card-block .jtc-rounds-summary,
-    #jh-tournament-card-block .jtc-total-summary,
-    #jh-tournament-card-block .jtc-pos-summary {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 6px 10px;
-      text-align: center;
-    }
-
-    #jh-tournament-card-block .jtc-summary-label {
-      color: rgba(255,255,255,0.68);
-      font-size: 10px;
-      font-weight: 800;
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
     #jh-tournament-card-block .jtc-rounds-grid {
       display: flex;
       justify-content: center;
       align-items: stretch;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: nowrap;
       min-width: 0;
       width: 100%;
@@ -693,8 +700,8 @@
       flex: 1 1 0;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 8px;
-      padding: 7px 6px 6px 6px;
+      border-radius: 7px;
+      padding: 6px 5px 5px 5px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -704,15 +711,15 @@
 
     #jh-tournament-card-block .jtc-round-chip-label {
       color: rgba(255,255,255,0.68);
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.55px;
       line-height: 1;
       text-transform: uppercase;
     }
 
     #jh-tournament-card-block .jtc-round-chip-value {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 900;
       line-height: 1;
       color: #ffffff;
@@ -738,13 +745,14 @@
       font-weight: 900;
       line-height: 1.02;
       color: #ffffff;
+      letter-spacing: -0.2px;
     }
 
     #jh-tournament-card-block .jtc-total-par-wrap {
       display: inline-flex;
       align-items: baseline;
       gap: 0;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
       line-height: 1.02;
       color: #ffffff;
@@ -760,11 +768,12 @@
     #jh-tournament-card-block .jtc-total-par-wrap .delta.white { color: #ffffff; }
 
     #jh-tournament-card-block .jtc-pos-value {
-      font-size: 24px;
+      font-size: 27px;
       font-weight: 900;
-      line-height: 1.02;
+      line-height: 1;
       color: #ffffff;
       white-space: nowrap;
+      letter-spacing: -0.3px;
     }
 
     #jh-tournament-card-block .jtc-modal {
@@ -908,26 +917,38 @@
         font-weight: 700;
       }
 
-      /* 모바일에서도 데스크탑과 동일한 4블록 구조 유지 */
+      /* 모바일도 같은 구조 유지, 비율만 조정 */
       #jh-tournament-card-block .jtc-result-band {
-        grid-template-columns: minmax(88px, 112px) minmax(0, 1fr) minmax(86px, 108px) minmax(50px, 60px);
-        padding: 10px 8px;
+        grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
+        padding: 10px 7px;
+      }
+
+      #jh-tournament-card-block .jtc-link-summary,
+      #jh-tournament-card-block .jtc-rounds-summary,
+      #jh-tournament-card-block .jtc-total-summary,
+      #jh-tournament-card-block .jtc-pos-summary {
+        padding: 4px 3px;
+      }
+
+      #jh-tournament-card-block .jtc-summary-label {
+        font-size: 7px;
+        margin-bottom: 4px;
+        min-height: 7px;
       }
 
       #jh-tournament-card-block .jtc-main-link {
-        font-size: 7px;
-        letter-spacing: 0.35px;
-        padding: 5px 5px;
-        gap: 4px;
-        min-height: 42px;
+        font-size: 6px;
+        letter-spacing: 0.22px;
+        padding: 5px 4px;
+        gap: 3px;
+        min-height: 34px;
         width: 100%;
-        max-width: none;
-        justify-self: stretch;
+        max-width: 64px;
       }
 
       #jh-tournament-card-block .jtc-main-link svg {
-        width: 9px;
-        height: 9px;
+        width: 8px;
+        height: 8px;
       }
 
       #jh-tournament-card-block .jtc-main-link-dot {
@@ -937,7 +958,7 @@
 
       #jh-tournament-card-block .jtc-main-link-content {
         align-items: center;
-        gap: 4px;
+        gap: 3px;
       }
 
       #jh-tournament-card-block .jtc-main-link-label-stack {
@@ -946,7 +967,7 @@
         align-items: flex-start;
         justify-content: center;
         gap: 1px;
-        line-height: 0.95;
+        line-height: 0.92;
         white-space: normal;
       }
 
@@ -955,40 +976,35 @@
         display: block;
       }
 
-      #jh-tournament-card-block .jtc-rounds-summary,
-      #jh-tournament-card-block .jtc-total-summary,
-      #jh-tournament-card-block .jtc-pos-summary {
-        padding: 4px 4px;
-      }
-
-      #jh-tournament-card-block .jtc-summary-label {
-        font-size: 7px;
-        margin-bottom: 4px;
-      }
-
       #jh-tournament-card-block .jtc-rounds-grid {
-        gap: 4px;
+        gap: 3px;
       }
 
       #jh-tournament-card-block .jtc-round-chip {
-        padding: 5px 3px 5px 3px;
+        padding: 4px 2px 4px 2px;
         border-radius: 6px;
         gap: 3px;
       }
 
       #jh-tournament-card-block .jtc-round-chip-label {
-        font-size: 7px;
+        font-size: 6px;
+        letter-spacing: 0.45px;
       }
 
       #jh-tournament-card-block .jtc-round-chip-value {
-        font-size: 13px;
+        font-size: 12px;
       }
 
-      #jh-tournament-card-block .jtc-total-score,
-      #jh-tournament-card-block .jtc-total-par-wrap,
-      #jh-tournament-card-block .jtc-pos-value {
+      #jh-tournament-card-block .jtc-total-score {
         font-size: 16px;
-        line-height: 1.05;
+      }
+
+      #jh-tournament-card-block .jtc-total-par-wrap {
+        font-size: 14px;
+      }
+
+      #jh-tournament-card-block .jtc-pos-value {
+        font-size: 17px;
       }
 
       #jh-tournament-card-block .jtc-modal-wrap {
@@ -1034,19 +1050,22 @@
       </div>
 
       <div class="jtc-result-band">
-        <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
-          <span class="jtc-main-link-content">
-            <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
-            <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
-              <span class="line1">FINAL</span>
-              <span class="line2">RESULTS</span>
+        <div class="jtc-link-summary">
+          <span class="jtc-summary-label jtc-label-ghost">Action</span>
+          <a id="jtc-main-link" href="#" target="_blank" class="jtc-main-link">
+            <span class="jtc-main-link-content">
+              <span id="jtc-main-link-dot" class="jtc-main-link-dot final"></span>
+              <span id="jtc-main-link-label" class="jtc-main-link-label-stack">
+                <span class="line1">FINAL</span>
+                <span class="line2">RESULTS</span>
+              </span>
             </span>
-          </span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
 
         <div class="jtc-rounds-summary">
           <span class="jtc-summary-label">Rounds</span>
