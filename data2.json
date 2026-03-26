@@ -1,6 +1,11 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "Mar 25, 2026",
+  "pageHeader": {
+    "enabled": true,
+    "title": "ACTIVE SEASON LOG & METRICS"
+  },
+  "lastUpdated": "Mar 25, 2026"
+}
 
     "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "9th Event",
