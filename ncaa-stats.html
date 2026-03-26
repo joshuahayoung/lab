@@ -401,8 +401,8 @@
     ACTIVE SEASON LOG &amp; METRICS
   </h1>
   
-  <span style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
-    Last Updated: Mar 25, 2026
+  <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
+    Last Updated: —
   </span>
 </div>
 
@@ -1172,16 +1172,8 @@
         `
         : "";
 
-      const lastUpdatedHtml = isUsableValue(data.lastUpdated)
-        ? `
-          <div class="jtc-last-updated-wrap">
-            <span class="jtc-last-updated">Last Updated: ${data.lastUpdated}</span>
-          </div>
-        `
-        : "";
-
+      
       return `
-        ${lastUpdatedHtml}
 
         <div class="jtc-wrap">
           <div class="jtc-header-top">
