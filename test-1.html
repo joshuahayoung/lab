@@ -1973,7 +1973,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   background: linear-gradient(180deg, #ffffff 0%, #fffdf7 100%);
 }
 
-/* default cards slightly differentiated */
+/* default cards */
 #jh-index-key-metrics-panel .jhikm-card:not(.jhikm-card-navy):not(.jhikm-card-blue):not(.jhikm-card-orange):not(.jhikm-card-gold) {
   background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
 }
@@ -2136,6 +2136,20 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   word-break: break-word;
 }
 
+/* GPA row only */
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child {
+  background: #eaf3ff;
+  border-color: #cfe0fb;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child .jhikm-stack-k {
+  color: #4a6fa5;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child .jhikm-stack-v {
+  color: #1d4f91;
+}
+
 /* =========================
    MINI GRID CARDS
    ========================= */
@@ -2155,7 +2169,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 }
 
 #jh-index-key-metrics-panel .jhikm-mini-grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 #jh-index-key-metrics-panel .jhikm-mini-k {
@@ -2174,6 +2188,26 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   font-weight: 900;
   line-height: 1.15;
   word-break: break-word;
+}
+
+/* Performance Profile 2x2 boxed tiles */
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-grid-4 > div {
+  background: #fffaf0;
+  border: 1px solid #ecdba7;
+  border-radius: 12px;
+  min-height: 54px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-k {
+  color: #8a6a00;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-v {
+  color: #6e5600;
 }
 
 /* =========================
@@ -2203,6 +2237,48 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
 #jh-index-key-metrics-panel .jhikm-impact-flat {
   color: #64748b;
+}
+
+/* =========================
+   TARGETED CARD OVERRIDES
+   ========================= */
+
+/* Status */
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(1) .jhikm-value {
+  font-size: 19px;
+  line-height: 1.22;
+  letter-spacing: -0.15px;
+}
+
+/* Head-to-Head */
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
+  font-size: 24px;
+  line-height: 1.12;
+  letter-spacing: -0.35px;
+}
+
+/* Counting Score full hero orange */
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) {
+  background: linear-gradient(135deg, #F15A22 0%, #ff7a2f 100%);
+  border-color: #e85a1c;
+  box-shadow: 0 10px 24px rgba(241, 90, 34, 0.18);
+}
+
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-label {
+  color: rgba(12, 35, 64, 0.78);
+}
+
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-sub-v {
+  color: #0c2340;
+}
+
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-sub-k {
+  color: rgba(12, 35, 64, 0.68);
+}
+
+#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-subline {
+  border-top-color: rgba(12, 35, 64, 0.14);
 }
 
 /* =========================
@@ -2241,16 +2317,16 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     line-height: 1.35 !important;
   }
 
+  #jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
+    font-size: 21px !important;
+  }
+
   #jh-index-key-metrics-panel .jhikm-stack {
     min-height: 68px !important;
   }
 
   #jh-index-key-metrics-panel .jhikm-stack-row {
     min-height: 48px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-mini-grid-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
@@ -2272,6 +2348,10 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     font-size: 22px !important;
   }
 
+  #jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
+    font-size: 22px !important;
+  }
+
   #jh-index-key-metrics-panel .jhikm-value-small,
   #jh-index-key-metrics-panel .jhikm-sub-v,
   #jh-index-key-metrics-panel .jhikm-stack-v,
@@ -2282,7 +2362,8 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   #jh-index-key-metrics-panel .jhikm-subline {
     min-height: 38px !important;
   }
-}</style>
+}
+</style>
 
 <script>
 (function() {
