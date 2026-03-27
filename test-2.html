@@ -1589,468 +1589,1853 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   </div>
 </div>
 
-  
 
-<div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
- 
-  <!-- Title Box -->
-  <div class="jhcf-title-wrap">
-    <a id="current-focus"></a>
-
-    <div class="jhcf-title-box">
-      <h1>Current Focus</h1>
-      <p>Technical Log</p>
-    </div>
-  </div>
-
-  <!-- Main Shell -->
-  <div class="jhcf-shell">
-
-    <!-- Header-post date -->
-    <div class="jhcf-header">
-      <div id="Current-Focus" style="margin-left: auto; width: fit-content; margin-right: 18px;">
-        <span class="jhcf-posted-pill">Posted On: Mar 24, 2026</span>
-      </div>
-    </div>
-
-    <!-- Body -->
-    <div class="jhcf-body">
-
-      <!-- Section 01 -->
-      <div class="jhcf-section">
-        <div class="jhcf-section-head">
-          <div class="jhcf-no jhcf-no-navy">01</div>
-          <h4>Technical Notes (Field-Relative)</h4>
-        </div>
-
-        <div class="jhcf-text-block">
-          <p class="jhcf-text-line">
-            <strong>Current Technical Baseline:</strong> Driver and long-iron dispersion remain stable, and overall tee-to-green control continues to trend at a competitive level relative to the field.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Ball-Striking Status:</strong> Approach quality and green-in-regulation frequency remained sufficient to generate scoring opportunities across all three rounds.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Putting Conversion:</strong> The primary scoring gap remains short- to mid-range birdie conversion. A high number of makeable opportunities did not convert, resulting in a scoreline below the level of opportunity created.
-          </p>
-
-<p class="jhcf-text-line">
-  <strong>Surface &amp; Condition Factors:</strong> Firm, dry desert conditions remained a management variable throughout the event, particularly in green pace, release, and overall adaptation.
-</p>
-
-          <p class="jhcf-text-line">
-            <strong>Round Pattern:</strong> R1 showed strong ball-striking with limited scoring return due to putting. R2 reflected temporary improvement in conversion and scoring output. R3 began with early scoring but returned to reduced conversion despite continued ball-striking stability.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Performance Interpretation:</strong> The scoring outcome did not fully align with the underlying tee-to-green sample. The gap between opportunity creation and conversion remains the primary technical focus.
-          </p>
-
-          <p class="jhcf-text-line jhcf-text-line-last">
-            <strong>Immediate Priority:</strong> Maintain current ball-striking structure while improving short-range conversion efficiency on fast, firm greens.
-          </p>
-        </div>
-      </div>
-
-      <!-- Section 02 -->
-      <div class="jhcf-section">
-        <div class="jhcf-section-head">
-          <div class="jhcf-no jhcf-no-gold">02</div>
-          <h4>Conditioning &amp; Academic Status</h4>
-        </div>
-
-        <div class="jhcf-text-block">
-          
-<p class="jhcf-text-line">
-  <strong class="jhcf-gold-strong">Physical:</strong> Hydration, recovery, and overall physical management remained ongoing priorities throughout the event.
-</p>
-
-          <p class="jhcf-text-line jhcf-text-line-last">
-            <strong class="jhcf-gold-strong">Academic:</strong> Coursework and off-course responsibilities accumulated during consecutive tournament weeks and require immediate catch-up before the next event cycle.
-          </p>
-        </div>
-      </div>
-
-      <div class="jhcf-divider"></div>
-
-      <!-- Upcoming Focus -->
-      <div class="jhcf-upcoming-wrap">
-        <div class="jhcf-upcoming-tab">Inserted Focus Note</div>
-
-        <div class="jhcf-upcoming">
-          <div class="jhcf-upcoming-head">
-            <div class="jhcf-upcoming-title-wrap">
-              <h5>Upcoming Focus — Tiger Invitational (Apr 6–7)</h5>
-            </div>
-
-            <div class="jhcf-upcoming-pill">
-              Tournament Prep — Technical Memo
-            </div>
-          </div>
-
-          <div class="jhcf-upcoming-lines">
-            <p>Short-range birdie-putt conversion</p>
-            <p>Firm-green distance and release control</p>
-            <p>Wedge calibration into small targets</p>
-            <p class="jhcf-upcoming-last">Maintaining current driver / long-iron dispersion gains</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="jhcf-footer-note">Joshua's Memo Note</div>
-
-    </div>
-  </div>
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
 </div>
 
-<style>
-#jh-current-focus-block,
-#jh-current-focus-block * {
-  box-sizing: border-box;
-}
+<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
-#jh-current-focus-block {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
+  <div id="jh-pga-table-shared"></div>
 
-/* anchor */
-#jh-current-focus-block #current-focus {
-  display: block;
-  position: relative;
-  top: -100px;
-  visibility: hidden;
-}
+  <style>
+    #jh-pga-table-shared,
+    #jh-pga-table-shared *,
+    #jh-pga-table-shared *::before,
+    #jh-pga-table-shared *::after {
+      box-sizing: border-box;
+    }
 
-/* title */
-#jh-current-focus-block .jhcf-title-wrap {
-  width: 100%;
-  margin: 30px 0 36px 0;
-  text-align: center;
-}
+    #jh-pga-table-shared {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 24px;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
 
-#jh-current-focus-block .jhcf-title-box {
-  display: inline-block;
-  min-width: 260px;
-  max-width: 100%;
-  padding: 18px 26px 16px 26px;
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
-  border: 1px solid #d9e2ec;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(12,35,64,0.06);
-}
+    #jh-pga-table-shared .jtc-last-updated-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 10px;
+      padding-right: 15px;
+      box-sizing: border-box;
+    }
 
-#jh-current-focus-block .jhcf-title-box h1 {
-  margin: 0;
-  color: #0c2340;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
+    #jh-pga-table-shared .jtc-last-updated {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
 
-#jh-current-focus-block .jhcf-title-box p {
-  margin: 8px 0 0 0;
-  font-size: 12px;
-  color: #64748b;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.4;
-  text-align: center;
-}
+    #jh-pga-table-shared .jtc-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-/* shell */
-#jh-current-focus-block .jhcf-shell {
-  width: 100%;
-  margin: 0 0 40px 0;
-  background: linear-gradient(180deg, #fffdf8 0%, #fffefb 100%);
-  border: 1px solid #d9e2ec;
-  border-radius: 20px;
-  box-shadow: 0 14px 34px rgba(12,35,64,0.08);
-  overflow: hidden;
-}
+    #jh-pga-table-shared .jtc-header-top {
+      margin-bottom: 16px;
+      width: 100%;
+    }
 
-#jh-current-focus-block .jhcf-posted-pill {
-  display: inline;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  color: #000;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-}
+    #jh-pga-table-shared .jtc-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 15px;
+      flex-wrap: wrap;
+      border-left: 5px solid #1e3a8a;
+      width: 100%;
+    }
 
-#jh-current-focus-block .jhcf-body {
-  padding: 26px 28px 24px 28px;
-}
+    #jh-pga-table-shared .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
+    #jh-pga-table-shared .jtc-header-row.ongoing { border-left-color: #22c55e; }
+    #jh-pga-table-shared .jtc-header-row.final { border-left-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
 
-/* sections */
-#jh-current-focus-block .jhcf-section {
-  margin: 0 0 30px 0;
-}
+    #jh-pga-table-shared .jtc-header-row h3 {
+      color: #0C2340;
+      margin: 0;
+      font-size: 1.3em;
+      line-height: 1.2;
+      font-family: 'Oswald', sans-serif;
+      text-transform: none;
+    }
 
-#jh-current-focus-block .jhcf-section-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 0 0 16px 0;
-}
+    #jh-pga-table-shared .jtc-header-row span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85em;
+      color: #888;
+    }
 
-#jh-current-focus-block .jhcf-no {
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.14);
-}
+    #jh-pga-table-shared .jtc-card {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #0c2340;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
+      overflow: hidden;
+    }
 
-#jh-current-focus-block .jhcf-no-navy {
-  background: linear-gradient(180deg, #153357 0%, #0c2340 100%);
-}
+    #jh-pga-table-shared .jtc-card-head {
+      width: 100%;
+      padding: 20px 25px 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #f8fafc;
+    }
 
-#jh-current-focus-block .jhcf-no-gold {
-  background: linear-gradient(180deg, #d6a24b 0%, #c98a2e 100%);
-}
+    #jh-pga-table-shared .jtc-head-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
 
-#jh-current-focus-block .jhcf-section-head h4 {
-  margin: 0;
-  font-size: 15px;
-  color: #0c2340;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  line-height: 1.35;
-}
+    #jh-pga-table-shared .jtc-badge {
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
 
-/* memo text area */
-#jh-current-focus-block .jhcf-text-block {
-  width: 100%;
-  border: 1px solid #e7ebf2;
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,246,0.96) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
-  overflow: hidden;
-}
+    #jh-pga-table-shared .jtc-badge.upcoming { background: #64748b; }
+    #jh-pga-table-shared .jtc-badge.ongoing { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.final { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.cancelled { background: #7f1d1d; }
 
-#jh-current-focus-block .jhcf-text-line {
-  margin: 0;
-  padding: 14px 16px;
-  border-bottom: 1px solid #eceff4;
-  font-size: 14px;
-  color: #243447;
-  line-height: 1.8;
-  font-weight: 500;
-  position: relative;
-  background-image: linear-gradient(to right, rgba(12,35,64,0.035), rgba(12,35,64,0));
-  background-size: 6px 100%;
-  background-repeat: no-repeat;
-}
+    #jh-pga-table-shared .jtc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
 
-#jh-current-focus-block .jhcf-text-line-last {
-  border-bottom: none;
-}
+    #jh-pga-table-shared .jtc-dot.upcoming {
+      background-color: #94a3b8;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
+    }
 
-#jh-current-focus-block .jhcf-text-line strong {
-  color: #0c2340;
-  font-weight: 800;
-}
+    #jh-pga-table-shared .jtc-dot.ongoing {
+      background-color: #22c55e;
+      animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
 
-#jh-current-focus-block .jhcf-text-line .jhcf-gold-strong,
-#jh-current-focus-block .jhcf-gold-strong {
-  color: #7c5a1b;
-  font-weight: 800;
-}
+    #jh-pga-table-shared .jtc-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-dot.cancelled {
+      background-color: #7f1d1d;
+      opacity: 0.7;
+    }
 
-/* divider */
-#jh-current-focus-block .jhcf-divider {
-  height: 1px;
-  background: #e9eef5;
-  margin: 0 0 24px 0;
-}
+    @keyframes jtc-live-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-/* upcoming inserted memo */
-#jh-current-focus-block .jhcf-upcoming-wrap {
-  position: relative;
-  margin-top: 2px;
-  padding-top: 16px;
-}
+    #jh-pga-table-shared .jtc-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-tab {
-  position: absolute;
-  top: 0;
-  left: 22px;
-  z-index: 2;
-  padding: 6px 12px 7px 12px;
-  font-size: 10px;
-  color: #0c2340;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  background: linear-gradient(180deg, #f7e7bf 0%, #efd79f 100%);
-  border: 1px solid #e0c88c;
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.5) inset;
-}
+    #jh-pga-table-shared .jtc-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
 
-#jh-current-focus-block .jhcf-upcoming {
-  position: relative;
-  background: linear-gradient(180deg, #fffdfa 0%, #fff8eb 100%);
-  border: 1px solid #e6d7b3;
-  border-left: 5px solid #c98a2e;
-  border-radius: 18px;
-  padding: 22px 20px 18px 20px;
-  box-shadow: 0 10px 20px rgba(90,70,20,0.07);
-}
+    #jh-pga-table-shared .jtc-title {
+      color: #0c2340;
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.25;
+      min-width: 0;
+    }
 
-#jh-current-focus-block .jhcf-upcoming::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 18px;
-  width: 34px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(201,138,46,0.10);
-}
+    #jh-pga-table-shared .jtc-title-sep {
+      color: #94a3b8;
+      font-weight: 700;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
+    #jh-pga-table-shared .jtc-date {
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-title-wrap h5 {
-  margin: 0;
-  font-size: 14px;
-  color: #0c2340;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
-}
+    #jh-pga-table-shared .jtc-meta {
+      font-size: 12px;
+      color: #7f8c8d;
+      font-weight: 600;
+      line-height: 1.45;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-pill {
-  flex: 0 0 auto;
-  font-size: 10px;
-  color: #7c5a1b;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 9px;
-  border: 1px solid #e4d2a6;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.7);
-}
+    /* 핵심: 카드 전체 폭을 쓰되, 컬럼만 비율로 조정 */
+    #jh-pga-table-shared .jtc-result-band {
+      width: 100%;
+      background: #0c2340;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr) 176px 86px;
+      align-items: stretch;
+      gap: 0;
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
 
-#jh-current-focus-block .jhcf-upcoming-lines {
-  width: 100%;
-  border-top: 1px solid rgba(124,90,27,0.16);
-}
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 8px;
+      text-align: center;
+      width: 100%;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-lines p {
-  margin: 0;
-  padding: 13px 0;
-  border-bottom: 1px solid rgba(124,90,27,0.12);
-  font-size: 13.5px;
-  color: #0c2340;
-  font-weight: 700;
-  line-height: 1.7;
-}
+    #jh-pga-table-shared .jtc-summary-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      font-weight: 800;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 10px;
+    }
 
-#jh-current-focus-block .jhcf-upcoming-lines .jhcf-upcoming-last {
-  border-bottom: none;
-  padding-bottom: 0;
-}
+    #jh-pga-table-shared .jtc-summary-label.jtc-label-ghost {
+      visibility: hidden;
+    }
 
-/* footer note */
-#jh-current-focus-block .jhcf-footer-note {
-  width: 100%;
-  margin-top: 14px;
-  padding-right: 23px;
-  text-align: right;
-  font-size: 10px;
-  color: #94a3b8;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+    #jh-pga-table-shared .jtc-band-body {
+      min-height: 52px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* responsive */
-@media (max-width: 768px) {
-  #jh-current-focus-block .jhcf-header {
-    padding: 20px 18px 18px 18px !important;
-  }
+    /* 핵심: 버튼이 부모 컬럼 폭을 그대로 사용 */
+    #jh-pga-table-shared .jtc-main-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.65px;
+      text-transform: uppercase;
+      border: 1.5px solid #0c2340;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      width: 100%;
+      max-width: 100%;
+      min-height: 42px;
+    }
 
-  #jh-current-focus-block .jhcf-body {
-    padding: 20px 18px 18px 18px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(12, 35, 64, 0.16);
+    }
 
-  #jh-current-focus-block .jhcf-no {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 12px !important;
-    font-size: 14px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link-content {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 8px minmax(0, 1fr) 12px;
+      align-items: center;
+      column-gap: 6px;
+    }
 
-  #jh-current-focus-block .jhcf-section-head {
-    gap: 12px !important;
-    margin-bottom: 12px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link-label-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      line-height: 0.96;
+      text-align: center;
+      min-width: 0;
+      white-space: normal;
+    }
 
-  #jh-current-focus-block .jhcf-text-line {
-    font-size: 13.5px !important;
-    line-height: 1.75 !important;
-    padding: 12px 14px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link-label-stack .line1,
+    #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
 
-  #jh-current-focus-block .jhcf-upcoming {
-    padding: 20px 16px 16px 16px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+      font-size: 1em;
+      letter-spacing: 0.7px;
+    }
 
-  #jh-current-focus-block .jhcf-upcoming-tab {
-    left: 16px !important;
-    font-size: 9px !important;
-    padding: 5px 10px 6px 10px !important;
-  }
-}
+    #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+      font-size: 0.92em;
+      letter-spacing: 0.45px;
+    }
 
-@media (max-width: 560px) {
-  #jh-current-focus-block .jhcf-upcoming-head {
-    gap: 10px !important;
-  }
+    #jh-pga-table-shared .jtc-main-link-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+      justify-self: start;
+      align-self: center;
+    }
 
-  #jh-current-focus-block .jhcf-title-box {
-    min-width: 0 !important;
-    width: 100% !important;
-  }
-}
-</style>
+    #jh-pga-table-shared .jtc-main-link-dot.upcoming { background-color: #94a3b8; }
+    #jh-pga-table-shared .jtc-main-link-dot.ongoing { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
+    #jh-pga-table-shared .jtc-main-link-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
+
+    #jh-pga-table-shared .jtc-main-link-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    @keyframes jtc-link-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #jh-pga-table-shared .jtc-rounds-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 6px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip {
+      min-width: 0;
+      flex: 1 1 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 7px;
+      padding: 6px 5px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.55px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-round-chip-value.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-round-chip-value.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-round-chip-value.white { color: #ffffff; }
+
+    #jh-pga-table-shared .jtc-total-line {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-total-score {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap .paren { color: #ffffff; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.white { color: #ffffff; }
+
+    #jh-pga-table-shared .jtc-pos-value {
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
+    }
+
+    @media (max-width: 768px) {
+      #jh-pga-table-shared {
+        padding: 0;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated-wrap {
+        padding-right: 15px;
+        margin-bottom: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated {
+        font-size: 11px;
+      }
+
+      #jh-pga-table-shared .jtc-header-top {
+        margin-bottom: 10px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        padding-right: 15px;
+        border-left-width: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row h3 {
+        font-size: 0.92em;
+        line-height: 1.12;
+      }
+
+      #jh-pga-table-shared .jtc-header-row span {
+        font-size: 0.66em;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-card {
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
+      }
+
+      #jh-pga-table-shared .jtc-card-head {
+        padding: 12px 10px 10px 10px;
+        gap: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-head-left {
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      #jh-pga-table-shared .jtc-badge {
+        padding: 3px 8px;
+        font-size: 8px;
+        letter-spacing: 0.75px;
+        gap: 6px;
+        margin-left: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-title-wrap {
+        gap: 4px;
+        flex: 1 1 100%;
+      }
+
+      #jh-pga-table-shared .jtc-title-line {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      #jh-pga-table-shared .jtc-title {
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-title-sep {
+        display: inline;
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-date {
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      #jh-pga-table-shared .jtc-meta {
+        font-size: 9px;
+        line-height: 1.28;
+        font-weight: 700;
+      }
+
+      /* 핵심: 모바일도 같은 논리로 100% 폭 사용 */
+      #jh-pga-table-shared .jtc-result-band {
+        grid-template-columns: 96px minmax(0, 1fr) 96px 52px;
+        padding: 10px 7px;
+      }
+
+      #jh-pga-table-shared .jtc-link-summary,
+      #jh-pga-table-shared .jtc-rounds-summary,
+      #jh-pga-table-shared .jtc-total-summary,
+      #jh-pga-table-shared .jtc-pos-summary {
+        padding: 4px 3px;
+      }
+
+      #jh-pga-table-shared .jtc-summary-label {
+        font-size: 7px;
+        margin-bottom: 4px;
+        min-height: 7px;
+      }
+
+      #jh-pga-table-shared .jtc-band-body {
+        min-height: 38px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link {
+        font-size: 6.4px;
+        letter-spacing: 0.2px;
+        padding: 5px 5px;
+        min-height: 32px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-content {
+        grid-template-columns: 6px minmax(0, 1fr) 8px;
+        column-gap: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-dot {
+        width: 4px;
+        height: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack {
+        gap: 0;
+        line-height: 0.9;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+        font-size: 1em;
+        letter-spacing: 0.35px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+        font-size: 0.84em;
+        letter-spacing: 0.18px;
+      }
+
+      #jh-pga-table-shared .jtc-rounds-grid {
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip {
+        padding: 4px 2px 4px 2px;
+        border-radius: 6px;
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-label {
+        font-size: 6px;
+        letter-spacing: 0.45px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-value {
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-total-score {
+        font-size: 16px;
+      }
+
+      #jh-pga-table-shared .jtc-total-par-wrap {
+        font-size: 14px;
+      }
+
+      #jh-pga-table-shared .jtc-pos-value {
+        font-size: 17px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      const container = document.getElementById("jh-pga-table-shared");
+      if (!container) return;
+
+      function isUsableValue(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+      }
+
+      function parseNumber(value) {
+        if (!isUsableValue(value)) return null;
+        const num = Number(String(value).replace(/,/g, "").trim());
+        return Number.isFinite(num) ? num : null;
+      }
+
+      function scoreClass(parValue) {
+        if (parValue === null || parValue === undefined) return "blue";
+        const value = String(parValue).trim().toUpperCase();
+
+        if (
+          value === "" ||
+          value === "-" ||
+          value === "—" ||
+          value === "TBD" ||
+          value === "E" ||
+          value === "EVEN" ||
+          value === "PAR" ||
+          value === "0"
+        ) return "blue";
+
+        if (value.startsWith("-")) return "red";
+        if (value.startsWith("+")) return "navy";
+        return "blue";
+      }
+
+      function badgeMap(status) {
+        const map = {
+          upcoming:  { label: "UPCOMING", className: "upcoming" },
+          ongoing:   { label: "ONGOING", className: "ongoing" },
+          final:     { label: "FINAL", className: "final" },
+          cancelled: { label: "CANCELLED", className: "cancelled" }
+        };
+        return map[status] || map.final;
+      }
+
+      function splitMainLinkLabel(label) {
+        const clean = (label || "").trim();
+        if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+
+        const upper = clean.toUpperCase();
+
+        if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
+        if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
+        if (upper === "TOURNAMENT DETAILS") return { line1: "TOURNAMENT", line2: "DETAILS" };
+
+        const parts = upper.split(/\s+/);
+        if (parts.length >= 2) {
+          return {
+            line1: parts[0],
+            line2: parts.slice(1).join(" ")
+          };
+        }
+
+        return { line1: upper, line2: "" };
+      }
+
+      function roundShortLabel(round, index) {
+        const raw = String(round.round || "").trim();
+        const match = raw.match(/(\d+)/);
+        if (match) return `R${match[1]}`;
+        return `R${index + 1}`;
+      }
+
+      function getAllRounds(rounds) {
+        return Array.isArray(rounds) ? rounds : [];
+      }
+
+      function formatParDelta(delta) {
+        if (delta === 0) return "E";
+        if (delta > 0) return `+${delta}`;
+        return `${delta}`;
+      }
+
+      function resolveSummary(data) {
+        const rounds = getAllRounds(data.rounds);
+        const playedRounds = rounds.filter(round => isUsableValue(round.score));
+        const configPar = parseNumber(data.par);
+
+        const summaryTotalRaw = data.summary && data.summary.total;
+        const summaryParRaw = data.summary && data.summary.par;
+        const summaryPosRaw = data.summary && data.summary.pos;
+
+        let resolvedTotal = isUsableValue(summaryTotalRaw) ? String(summaryTotalRaw).trim() : "—";
+        let resolvedPar = isUsableValue(summaryParRaw) ? String(summaryParRaw).trim() : "—";
+        let resolvedPos = isUsableValue(summaryPosRaw) ? String(summaryPosRaw).trim() : "—";
+
+        if (!isUsableValue(summaryTotalRaw) && playedRounds.length > 0) {
+          const totalScore = playedRounds.reduce((sum, round) => {
+            const scoreNum = parseNumber(round.score);
+            return sum + (scoreNum !== null ? scoreNum : 0);
+          }, 0);
+          resolvedTotal = String(totalScore);
+        }
+
+        if (!isUsableValue(summaryParRaw) && playedRounds.length > 0 && configPar !== null) {
+          const totalScoreNum = parseNumber(resolvedTotal);
+          if (totalScoreNum !== null) {
+            const expectedPar = configPar * playedRounds.length;
+            resolvedPar = formatParDelta(totalScoreNum - expectedPar);
+          }
+        }
+
+        return {
+          total: resolvedTotal,
+          par: resolvedPar,
+          pos: resolvedPos
+        };
+      }
+
+      function composeMetaText(data) {
+        const parts = [];
+
+        if (isUsableValue(data.venue)) parts.push(data.venue);
+        if (isUsableValue(data.location)) parts.push(data.location);
+        if (isUsableValue(data.par)) parts.push(`Par ${data.par}`);
+        if (isUsableValue(data.yards)) parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
+        if (isUsableValue(data.rating)) parts.push(`Rating: ${data.rating}`);
+        if (isUsableValue(data.slope)) parts.push(`Slope: ${data.slope}`);
+
+        return parts.join(" | ");
+      }
+
+      function buildRoundSlots(rounds) {
+        const allRounds = getAllRounds(rounds);
+
+        return allRounds.map((round, index) => {
+          const label = roundShortLabel(round, index);
+          const value = isUsableValue(round.score) ? String(round.score).trim() : "—";
+          const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
+
+          return `
+            <div class="jtc-round-chip">
+              <span class="jtc-round-chip-label">${label}</span>
+              <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      function buildCardHtml(data) {
+        const badge = badgeMap(data.status);
+        const split = splitMainLinkLabel(
+          isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
+        );
+        const summary = resolveSummary(data);
+        const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
+
+        const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
+          ? `
+            <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
+              <span class="jtc-main-link-content">
+                <span class="jtc-main-link-dot ${badge.className}"></span>
+                <span class="jtc-main-link-label-stack">
+                  <span class="line1">${split.line1}</span>
+                  <span class="line2">${split.line2}</span>
+                </span>
+                <span class="jtc-main-link-arrow" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </span>
+            </a>
+          `
+          : "";
+
+        const lastUpdatedHtml = isUsableValue(data.lastUpdated)
+          ? `
+            <div class="jtc-last-updated-wrap">
+              <span class="jtc-last-updated">Last Updated: ${data.lastUpdated}</span>
+            </div>
+          `
+          : "";
+
+        return `
+          ${lastUpdatedHtml}
+
+          <div class="jtc-wrap">
+            <div class="jtc-header-top">
+              <div class="jtc-header-row ${badge.className}">
+                <h3>${data.sectionTitle || "TOURNAMENT"}</h3>
+                <span>${isUsableValue(data.eventNo) ? data.eventNo : ""}${isUsableValue(data.eventLabel) ? `: ${data.eventLabel}` : ""}</span>
+              </div>
+            </div>
+
+            <div class="jtc-card">
+              <div class="jtc-card-head">
+                <div class="jtc-head-left">
+                  <div class="jtc-badge ${badge.className}">
+                    <span class="jtc-dot ${badge.className}"></span>
+                    <span>${badge.label}</span>
+                  </div>
+
+                  <div class="jtc-title-wrap">
+                    <div class="jtc-title-line">
+                      <h2 class="jtc-title" style="display:inline; margin:0;">${data.title || "Tournament Title"}</h2>
+                      <span class="jtc-title-sep">|</span>
+                      <span class="jtc-date">${data.date || "TBD"}</span>
+                    </div>
+                    <div class="jtc-meta">${composeMetaText(data)}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jtc-result-band">
+                <div class="jtc-link-summary">
+                  <span class="jtc-summary-label jtc-label-ghost">Action</span>
+                  <div class="jtc-band-body">
+                    ${mainLinkHtml}
+                  </div>
+                </div>
+
+                <div class="jtc-rounds-summary">
+                  <span class="jtc-summary-label">Rounds</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-rounds-grid">
+                      ${buildRoundSlots(data.rounds)}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-total-summary">
+                  <span class="jtc-summary-label">Total</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-total-line">
+                      <span class="jtc-total-score">${isUsableValue(summary.total) ? summary.total : "—"}</span>
+                      <span class="jtc-total-par-wrap">
+                        <span class="paren">(</span><span class="delta ${deltaClass}">${isUsableValue(summary.par) ? summary.par : "—"}</span><span class="paren">)</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-pos-summary">
+                  <span class="jtc-summary-label">Pos</span>
+                  <div class="jtc-band-body">
+                    <span class="jtc-pos-value">${isUsableValue(summary.pos) ? summary.pos : "—"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      async function renderSharedPgaTable() {
+        try {
+          const res = await fetch("./data2.json?v=" + Date.now());
+          if (!res.ok) throw new Error("Failed to load data2.json");
+
+          const data = await res.json();
+          const pgaData = data.pgaTableShared;
+
+          if (!pgaData) {
+            container.innerHTML = "";
+            return;
+          }
+
+          container.innerHTML = buildCardHtml(pgaData);
+        } catch (error) {
+          console.error("PGA TABLE render error:", error);
+          container.innerHTML = "";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
+    })();
+  </script>
+
+</div>
+
+  
+  
+
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
+</div>
+
+<div id="jh-tournament-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+  <div id="jh-pga-table-shared"></div>
+
+  <style>
+    #jh-pga-table-shared,
+    #jh-pga-table-shared *,
+    #jh-pga-table-shared *::before,
+    #jh-pga-table-shared *::after {
+      box-sizing: border-box;
+    }
+
+    #jh-pga-table-shared {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 24px;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-pga-table-shared .jtc-last-updated-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 10px;
+      padding-right: 15px;
+      box-sizing: border-box;
+    }
+
+    #jh-pga-table-shared .jtc-last-updated {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #jh-pga-table-shared .jtc-header-top {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 15px;
+      flex-wrap: wrap;
+      border-left: 5px solid #1e3a8a;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-header-row.upcoming { border-left-color: #1e3a8a; }
+    #jh-pga-table-shared .jtc-header-row.ongoing { border-left-color: #22c55e; }
+    #jh-pga-table-shared .jtc-header-row.final { border-left-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-header-row.cancelled { border-left-color: #7f1d1d; }
+
+    #jh-pga-table-shared .jtc-header-row h3 {
+      color: #0C2340;
+      margin: 0;
+      font-size: 1.3em;
+      line-height: 1.2;
+      font-family: 'Oswald', sans-serif;
+      text-transform: none;
+    }
+
+    #jh-pga-table-shared .jtc-header-row span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85em;
+      color: #888;
+    }
+
+    #jh-pga-table-shared .jtc-card {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #0c2340;
+      border-radius: 20px;
+      padding: 0;
+      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
+      overflow: hidden;
+    }
+
+    #jh-pga-table-shared .jtc-card-head {
+      width: 100%;
+      padding: 20px 25px 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: #f8fafc;
+    }
+
+    #jh-pga-table-shared .jtc-head-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-badge {
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    #jh-pga-table-shared .jtc-badge.upcoming { background: #64748b; }
+    #jh-pga-table-shared .jtc-badge.ongoing { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.final { background: #0c2340; }
+    #jh-pga-table-shared .jtc-badge.cancelled { background: #7f1d1d; }
+
+    #jh-pga-table-shared .jtc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #jh-pga-table-shared .jtc-dot.upcoming {
+      background-color: #94a3b8;
+      box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.18);
+    }
+
+    #jh-pga-table-shared .jtc-dot.ongoing {
+      background-color: #22c55e;
+      animation: jtc-live-pulse-green 1.6s infinite ease-in-out;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
+
+    #jh-pga-table-shared .jtc-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-dot.cancelled {
+      background-color: #7f1d1d;
+      opacity: 0.7;
+    }
+
+    @keyframes jtc-live-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #jh-pga-table-shared .jtc-title-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    #jh-pga-table-shared .jtc-title-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    #jh-pga-table-shared .jtc-title {
+      color: #0c2340;
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.25;
+      min-width: 0;
+    }
+
+    #jh-pga-table-shared .jtc-title-sep {
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    #jh-pga-table-shared .jtc-date {
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-meta {
+      font-size: 12px;
+      color: #7f8c8d;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    /* 핵심: 카드 전체 폭을 쓰되, 컬럼만 비율로 조정 */
+    #jh-pga-table-shared .jtc-result-band {
+      width: 100%;
+      background: #0c2340;
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr) 176px 86px;
+      align-items: stretch;
+      gap: 0;
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 6px 8px;
+      text-align: center;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      font-weight: 800;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      margin-bottom: 6px;
+      min-height: 10px;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label.jtc-label-ghost {
+      visibility: hidden;
+    }
+
+    #jh-pga-table-shared .jtc-band-body {
+      min-height: 52px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 핵심: 버튼이 부모 컬럼 폭을 그대로 사용 */
+    #jh-pga-table-shared .jtc-main-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.65px;
+      text-transform: uppercase;
+      border: 1.5px solid #0c2340;
+      padding: 8px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      width: 100%;
+      max-width: 100%;
+      min-height: 42px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(12, 35, 64, 0.16);
+    }
+
+    #jh-pga-table-shared .jtc-main-link-content {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 8px minmax(0, 1fr) 12px;
+      align-items: center;
+      column-gap: 6px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      line-height: 0.96;
+      text-align: center;
+      min-width: 0;
+      white-space: normal;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack .line1,
+    #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+      font-size: 1em;
+      letter-spacing: 0.7px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+      font-size: 0.92em;
+      letter-spacing: 0.45px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+      justify-self: start;
+      align-self: center;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-dot.upcoming { background-color: #94a3b8; }
+    #jh-pga-table-shared .jtc-main-link-dot.ongoing { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
+    #jh-pga-table-shared .jtc-main-link-dot.final { background-color: #e74c3c; }
+    #jh-pga-table-shared .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
+
+    #jh-pga-table-shared .jtc-main-link-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    @keyframes jtc-link-pulse-green {
+      0%   { opacity: 1; transform: scale(1); }
+      50%  { opacity: 0.35; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    #jh-pga-table-shared .jtc-rounds-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 6px;
+      flex-wrap: nowrap;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip {
+      min-width: 0;
+      flex: 1 1 0;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 7px;
+      padding: 6px 5px 5px 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-label {
+      color: rgba(255,255,255,0.68);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.55px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value {
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-round-chip-value.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-round-chip-value.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-round-chip-value.white { color: #ffffff; }
+
+    #jh-pga-table-shared .jtc-total-line {
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    #jh-pga-table-shared .jtc-total-score {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #ffffff;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap .paren { color: #ffffff; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.red { color: #e74c3c; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.blue { color: #60a5fa; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.navy { color: #bfdbfe; }
+    #jh-pga-table-shared .jtc-total-par-wrap .delta.white { color: #ffffff; }
+
+    #jh-pga-table-shared .jtc-pos-value {
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+      letter-spacing: -0.3px;
+    }
+
+    @media (max-width: 768px) {
+      #jh-pga-table-shared {
+        padding: 0;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated-wrap {
+        padding-right: 15px;
+        margin-bottom: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-last-updated {
+        font-size: 11px;
+      }
+
+      #jh-pga-table-shared .jtc-header-top {
+        margin-bottom: 10px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row {
+        gap: 6px;
+        margin-bottom: 12px;
+        padding-left: 10px;
+        padding-right: 15px;
+        border-left-width: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-header-row h3 {
+        font-size: 0.92em;
+        line-height: 1.12;
+      }
+
+      #jh-pga-table-shared .jtc-header-row span {
+        font-size: 0.66em;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-card {
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
+      }
+
+      #jh-pga-table-shared .jtc-card-head {
+        padding: 12px 10px 10px 10px;
+        gap: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-head-left {
+        gap: 8px;
+        width: 100%;
+        align-items: flex-start;
+      }
+
+      #jh-pga-table-shared .jtc-badge {
+        padding: 3px 8px;
+        font-size: 8px;
+        letter-spacing: 0.75px;
+        gap: 6px;
+        margin-left: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      #jh-pga-table-shared .jtc-title-wrap {
+        gap: 4px;
+        flex: 1 1 100%;
+      }
+
+      #jh-pga-table-shared .jtc-title-line {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      #jh-pga-table-shared .jtc-title {
+        font-size: 14px;
+        line-height: 1.18;
+      }
+
+      #jh-pga-table-shared .jtc-title-sep {
+        display: inline;
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-date {
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      #jh-pga-table-shared .jtc-meta {
+        font-size: 9px;
+        line-height: 1.28;
+        font-weight: 700;
+      }
+
+      /* 핵심: 모바일도 같은 논리로 100% 폭 사용 */
+      #jh-pga-table-shared .jtc-result-band {
+        grid-template-columns: 96px minmax(0, 1fr) 96px 52px;
+        padding: 10px 7px;
+      }
+
+      #jh-pga-table-shared .jtc-link-summary,
+      #jh-pga-table-shared .jtc-rounds-summary,
+      #jh-pga-table-shared .jtc-total-summary,
+      #jh-pga-table-shared .jtc-pos-summary {
+        padding: 4px 3px;
+      }
+
+      #jh-pga-table-shared .jtc-summary-label {
+        font-size: 7px;
+        margin-bottom: 4px;
+        min-height: 7px;
+      }
+
+      #jh-pga-table-shared .jtc-band-body {
+        min-height: 38px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link {
+        font-size: 6.4px;
+        letter-spacing: 0.2px;
+        padding: 5px 5px;
+        min-height: 32px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-content {
+        grid-template-columns: 6px minmax(0, 1fr) 8px;
+        column-gap: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link svg {
+        width: 8px;
+        height: 8px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-dot {
+        width: 4px;
+        height: 4px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack {
+        gap: 0;
+        line-height: 0.9;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+        font-size: 1em;
+        letter-spacing: 0.35px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+        font-size: 0.84em;
+        letter-spacing: 0.18px;
+      }
+
+      #jh-pga-table-shared .jtc-rounds-grid {
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip {
+        padding: 4px 2px 4px 2px;
+        border-radius: 6px;
+        gap: 3px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-label {
+        font-size: 6px;
+        letter-spacing: 0.45px;
+      }
+
+      #jh-pga-table-shared .jtc-round-chip-value {
+        font-size: 12px;
+      }
+
+      #jh-pga-table-shared .jtc-total-score {
+        font-size: 16px;
+      }
+
+      #jh-pga-table-shared .jtc-total-par-wrap {
+        font-size: 14px;
+      }
+
+      #jh-pga-table-shared .jtc-pos-value {
+        font-size: 17px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      const container = document.getElementById("jh-pga-table-shared");
+      if (!container) return;
+
+      function isUsableValue(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+      }
+
+      function parseNumber(value) {
+        if (!isUsableValue(value)) return null;
+        const num = Number(String(value).replace(/,/g, "").trim());
+        return Number.isFinite(num) ? num : null;
+      }
+
+      function scoreClass(parValue) {
+        if (parValue === null || parValue === undefined) return "blue";
+        const value = String(parValue).trim().toUpperCase();
+
+        if (
+          value === "" ||
+          value === "-" ||
+          value === "—" ||
+          value === "TBD" ||
+          value === "E" ||
+          value === "EVEN" ||
+          value === "PAR" ||
+          value === "0"
+        ) return "blue";
+
+        if (value.startsWith("-")) return "red";
+        if (value.startsWith("+")) return "navy";
+        return "blue";
+      }
+
+      function badgeMap(status) {
+        const map = {
+          upcoming:  { label: "UPCOMING", className: "upcoming" },
+          ongoing:   { label: "ONGOING", className: "ongoing" },
+          final:     { label: "FINAL", className: "final" },
+          cancelled: { label: "CANCELLED", className: "cancelled" }
+        };
+        return map[status] || map.final;
+      }
+
+      function splitMainLinkLabel(label) {
+        const clean = (label || "").trim();
+        if (!clean) return { line1: "VIEW", line2: "DETAILS" };
+
+        const upper = clean.toUpperCase();
+
+        if (upper === "FINAL RESULTS") return { line1: "FINAL", line2: "RESULTS" };
+        if (upper === "LIVE LEADERBOARD") return { line1: "LIVE", line2: "LEADERBOARD" };
+        if (upper === "TOURNAMENT DETAILS") return { line1: "TOURNAMENT", line2: "DETAILS" };
+
+        const parts = upper.split(/\s+/);
+        if (parts.length >= 2) {
+          return {
+            line1: parts[0],
+            line2: parts.slice(1).join(" ")
+          };
+        }
+
+        return { line1: upper, line2: "" };
+      }
+
+      function roundShortLabel(round, index) {
+        const raw = String(round.round || "").trim();
+        const match = raw.match(/(\d+)/);
+        if (match) return `R${match[1]}`;
+        return `R${index + 1}`;
+      }
+
+      function getAllRounds(rounds) {
+        return Array.isArray(rounds) ? rounds : [];
+      }
+
+      function formatParDelta(delta) {
+        if (delta === 0) return "E";
+        if (delta > 0) return `+${delta}`;
+        return `${delta}`;
+      }
+
+      function resolveSummary(data) {
+        const rounds = getAllRounds(data.rounds);
+        const playedRounds = rounds.filter(round => isUsableValue(round.score));
+        const configPar = parseNumber(data.par);
+
+        const summaryTotalRaw = data.summary && data.summary.total;
+        const summaryParRaw = data.summary && data.summary.par;
+        const summaryPosRaw = data.summary && data.summary.pos;
+
+        let resolvedTotal = isUsableValue(summaryTotalRaw) ? String(summaryTotalRaw).trim() : "—";
+        let resolvedPar = isUsableValue(summaryParRaw) ? String(summaryParRaw).trim() : "—";
+        let resolvedPos = isUsableValue(summaryPosRaw) ? String(summaryPosRaw).trim() : "—";
+
+        if (!isUsableValue(summaryTotalRaw) && playedRounds.length > 0) {
+          const totalScore = playedRounds.reduce((sum, round) => {
+            const scoreNum = parseNumber(round.score);
+            return sum + (scoreNum !== null ? scoreNum : 0);
+          }, 0);
+          resolvedTotal = String(totalScore);
+        }
+
+        if (!isUsableValue(summaryParRaw) && playedRounds.length > 0 && configPar !== null) {
+          const totalScoreNum = parseNumber(resolvedTotal);
+          if (totalScoreNum !== null) {
+            const expectedPar = configPar * playedRounds.length;
+            resolvedPar = formatParDelta(totalScoreNum - expectedPar);
+          }
+        }
+
+        return {
+          total: resolvedTotal,
+          par: resolvedPar,
+          pos: resolvedPos
+        };
+      }
+
+      function composeMetaText(data) {
+        const parts = [];
+
+        if (isUsableValue(data.venue)) parts.push(data.venue);
+        if (isUsableValue(data.location)) parts.push(data.location);
+        if (isUsableValue(data.par)) parts.push(`Par ${data.par}`);
+        if (isUsableValue(data.yards)) parts.push(`${String(data.yards).includes(",") ? data.yards : Number(data.yards).toLocaleString()} Yards`);
+        if (isUsableValue(data.rating)) parts.push(`Rating: ${data.rating}`);
+        if (isUsableValue(data.slope)) parts.push(`Slope: ${data.slope}`);
+
+        return parts.join(" | ");
+      }
+
+      function buildRoundSlots(rounds) {
+        const allRounds = getAllRounds(rounds);
+
+        return allRounds.map((round, index) => {
+          const label = roundShortLabel(round, index);
+          const value = isUsableValue(round.score) ? String(round.score).trim() : "—";
+          const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
+
+          return `
+            <div class="jtc-round-chip">
+              <span class="jtc-round-chip-label">${label}</span>
+              <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+            </div>
+          `;
+        }).join("");
+      }
+
+      function buildCardHtml(data) {
+        const badge = badgeMap(data.status);
+        const split = splitMainLinkLabel(
+          isUsableValue(data.mainLink && data.mainLink.label) ? data.mainLink.label : "VIEW DETAILS"
+        );
+        const summary = resolveSummary(data);
+        const deltaClass = isUsableValue(summary.par) ? scoreClass(summary.par) : "white";
+
+        const mainLinkHtml = isUsableValue(data.mainLink && data.mainLink.url)
+          ? `
+            <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
+              <span class="jtc-main-link-content">
+                <span class="jtc-main-link-dot ${badge.className}"></span>
+                <span class="jtc-main-link-label-stack">
+                  <span class="line1">${split.line1}</span>
+                  <span class="line2">${split.line2}</span>
+                </span>
+                <span class="jtc-main-link-arrow" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </span>
+            </a>
+          `
+          : "";
+
+        const lastUpdatedHtml = isUsableValue(data.lastUpdated)
+          ? `
+            <div class="jtc-last-updated-wrap">
+              <span class="jtc-last-updated">Last Updated: ${data.lastUpdated}</span>
+            </div>
+          `
+          : "";
+
+        return `
+          ${lastUpdatedHtml}
+
+          <div class="jtc-wrap">
+            <div class="jtc-header-top">
+              <div class="jtc-header-row ${badge.className}">
+                <h3>${data.sectionTitle || "TOURNAMENT"}</h3>
+                <span>${isUsableValue(data.eventNo) ? data.eventNo : ""}${isUsableValue(data.eventLabel) ? `: ${data.eventLabel}` : ""}</span>
+              </div>
+            </div>
+
+            <div class="jtc-card">
+              <div class="jtc-card-head">
+                <div class="jtc-head-left">
+                  <div class="jtc-badge ${badge.className}">
+                    <span class="jtc-dot ${badge.className}"></span>
+                    <span>${badge.label}</span>
+                  </div>
+
+                  <div class="jtc-title-wrap">
+                    <div class="jtc-title-line">
+                      <h2 class="jtc-title" style="display:inline; margin:0;">${data.title || "Tournament Title"}</h2>
+                      <span class="jtc-title-sep">|</span>
+                      <span class="jtc-date">${data.date || "TBD"}</span>
+                    </div>
+                    <div class="jtc-meta">${composeMetaText(data)}</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="jtc-result-band">
+                <div class="jtc-link-summary">
+                  <span class="jtc-summary-label jtc-label-ghost">Action</span>
+                  <div class="jtc-band-body">
+                    ${mainLinkHtml}
+                  </div>
+                </div>
+
+                <div class="jtc-rounds-summary">
+                  <span class="jtc-summary-label">Rounds</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-rounds-grid">
+                      ${buildRoundSlots(data.rounds)}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-total-summary">
+                  <span class="jtc-summary-label">Total</span>
+                  <div class="jtc-band-body">
+                    <div class="jtc-total-line">
+                      <span class="jtc-total-score">${isUsableValue(summary.total) ? summary.total : "—"}</span>
+                      <span class="jtc-total-par-wrap">
+                        <span class="paren">(</span><span class="delta ${deltaClass}">${isUsableValue(summary.par) ? summary.par : "—"}</span><span class="paren">)</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="jtc-pos-summary">
+                  <span class="jtc-summary-label">Pos</span>
+                  <div class="jtc-band-body">
+                    <span class="jtc-pos-value">${isUsableValue(summary.pos) ? summary.pos : "—"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      async function renderSharedPgaTable() {
+        try {
+          const res = await fetch("./data2.json?v=" + Date.now());
+          if (!res.ok) throw new Error("Failed to load data2.json");
+
+          const data = await res.json();
+          const pgaData = data.pgaTableShared;
+
+          if (!pgaData) {
+            container.innerHTML = "";
+            return;
+          }
+
+          container.innerHTML = buildCardHtml(pgaData);
+        } catch (error) {
+          console.error("PGA TABLE render error:", error);
+          container.innerHTML = "";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
+    })();
+  </script>
+
+</div>
 
   
   
@@ -3405,17 +4790,26 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         </tr>
 
          <tr style="border-bottom: 1px solid #edf2f7;">
-          <td style="padding: 20px 25px; vertical-align: top;">
-            <div style="font-weight: 700; font-size: 14px; color: #1a202c;">Jul 16 - 19</div>
-          </td>
-          <td style="padding: 20px 25px;">
-            <div style="font-weight: 800; color: #2d3748; font-size: 16px;">Mexican Amateur Championship</div>
-            <div style="font-size: 12px; color: #718096; margin-top: 4px;">USGA | FMG, Club Campestre de la CD. Mexico</div>
-          </td>
-          <td style="padding: 20px 25px; text-align: center;">
-            <span style="font-size: 12px; font-weight: 700; color: #4a5568;">CONFIRMED</span>
-          </td>
-        </tr>
+  <td style="padding: 20px 25px; vertical-align: top;">
+    <div style="font-weight: 700; font-size: 14px; color: #1a202c;">Jul 16 - 19</div>
+  </td>
+  <td style="padding: 20px 25px;">
+    <div style="font-weight: 800; color: #2d3748; font-size: 16px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <span>Mexican Amateur Championship</span>
+      <a href="https://www.golfgenius.com/pages/5885276" target="_blank" rel="noopener noreferrer" aria-label="Mexican Amateur Championship external link" style="display: inline-flex; align-items: center; color: #4a5568; text-decoration: none; line-height: 1;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" style="display: block;">
+          <path d="M14 5H19V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10 14L19 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 14V18C19 18.5304 18.7893 19.0391 18.4142 19.4142C18.0391 19.7893 17.5304 20 17 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18V7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div style="font-size: 12px; color: #718096; margin-top: 4px;">USGA | FMG, Club Campestre de la CD. Mexico</div>
+  </td>
+  <td style="padding: 20px 25px; text-align: center;">
+    <span style="font-size: 12px; font-weight: 700; color: #2f855a;">CONFIRMED</span>
+  </td>
+</tr>
 
         <tr style="border-bottom: 1px solid #edf2f7;">
           <td style="padding: 20px 25px; vertical-align: top;">
