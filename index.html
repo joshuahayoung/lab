@@ -2927,6 +2927,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 </div>
     
 
+
 <div class="Billy-dettlaff-section" style="max-width: 900px; margin: 0 auto 20px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <div style="background: #ffffff; border-radius: 30px; border: 1px solid #e1e8ed; padding: 20px 25px 10px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); margin-bottom: 0px; box-sizing: border-box; overflow: hidden;">
 
@@ -2966,22 +2967,15 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
       .honor-grid-2 {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr);
-        row-gap: 30px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
         align-items: start;
-      }
-
-      .honor-grid-2 > .honor-card:nth-child(odd) {
-        grid-column: 2;
-      }
-
-      .honor-grid-2 > .honor-card:nth-child(even) {
-        grid-column: 4;
+        justify-content: stretch;
       }
 
       .honor-card {
         width: 100%;
-        max-width: 320px;
+        max-width: none;
         margin: 0;
       }
 
@@ -3036,12 +3030,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       @media (max-width: 768px) {
         .honor-grid-2 {
           grid-template-columns: 1fr;
-          row-gap: 30px;
-        }
-
-        .honor-grid-2 > .honor-card:nth-child(odd),
-        .honor-grid-2 > .honor-card:nth-child(even) {
-          grid-column: auto;
+          gap: 30px;
         }
 
         .honor-card {
@@ -3170,6 +3159,8 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
   </div>
 </div>
+
+
 
     
        
