@@ -1792,7 +1792,10 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       <!-- 1. Status / Scope -->
       <div class="jhikm-card">
         <div class="jhikm-label">Status</div>
-        <div class="jhikm-value jhikm-value-small" id="jhikm-status">24 OFFICIAL ROUNDS</div>
+        <div class="jhikm-status-wrap">
+          <div class="jhikm-status-number" id="jhikm-status-number">24</div>
+          <div class="jhikm-status-text" id="jhikm-status-text">OFFICIAL ROUNDS</div>
+        </div>
         <div class="jhikm-subline">
           <span class="jhikm-sub-k">Scope</span>
           <span class="jhikm-sub-v" id="jhikm-scope">24</span>
@@ -1819,7 +1822,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
           </div>
           <div class="jhikm-stack-row">
             <span class="jhikm-stack-k">GPA</span>
-            <span class="jhikm-stack-v" id="jhikm-gpa">- GPA</span>
+            <span class="jhikm-stack-v" id="jhikm-gpa">-</span>
           </div>
         </div>
       </div>
@@ -1827,7 +1830,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       <!-- 4. Head-to-Head -->
       <div class="jhikm-card">
         <div class="jhikm-label">Head-to-Head</div>
-        <div class="jhikm-value jhikm-value-small" id="jhikm-headToHead">-</div>
+        <div class="jhikm-value" id="jhikm-headToHead">-</div>
         <div class="jhikm-subline">
           <span class="jhikm-sub-k">Win Rate</span>
           <span class="jhikm-sub-v"><span id="jhikm-winRate">-</span>%</span>
@@ -1835,12 +1838,16 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       </div>
 
       <!-- 5. Counting Score -->
-      <div class="jhikm-card jhikm-card-navy">
-        <div class="jhikm-label">Counting Score</div>
+      <div class="jhikm-card jhikm-card-counting">
+        <div class="jhikm-label">Counting Score Record</div>
         <div class="jhikm-value"><span id="jhikm-countingScore">-</span>%</div>
-        <div class="jhikm-subline">
-          <span class="jhikm-sub-k">Recorded</span>
-          <span class="jhikm-sub-v" id="jhikm-recordedRounds">-</span>
+        <div class="jhikm-counting-caption">Counting Score</div>
+        <div class="jhikm-subline jhikm-subline-counting">
+          <span class="jhikm-counting-pill">
+            <span class="jhikm-counting-pill-label">Metric:</span>
+            <span class="jhikm-counting-pill-value" id="jhikm-recordedRounds">-</span>
+            <span class="jhikm-counting-pill-tail">Rounds Recorded</span>
+          </span>
         </div>
       </div>
 
@@ -1937,7 +1944,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 172px;
+  min-height: 182px;
   height: 100%;
   overflow: hidden;
 }
@@ -1973,8 +1980,13 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   background: linear-gradient(180deg, #ffffff 0%, #fffdf7 100%);
 }
 
-/* default cards */
-#jh-index-key-metrics-panel .jhikm-card:not(.jhikm-card-navy):not(.jhikm-card-blue):not(.jhikm-card-orange):not(.jhikm-card-gold) {
+#jh-index-key-metrics-panel .jhikm-card-counting {
+  background: linear-gradient(135deg, #0c2340 0%, #17365f 100%);
+  border-color: #0c2340;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.16);
+}
+
+#jh-index-key-metrics-panel .jhikm-card:not(.jhikm-card-navy):not(.jhikm-card-blue):not(.jhikm-card-orange):not(.jhikm-card-gold):not(.jhikm-card-counting) {
   background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
 }
 
@@ -1996,8 +2008,9 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   justify-content: center;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-label {
-  color: rgba(255,255,255,0.78);
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-label,
+#jh-index-key-metrics-panel .jhikm-card-counting .jhikm-label {
+  color: rgba(255,255,255,0.72);
 }
 
 /* =========================
@@ -2021,13 +2034,6 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   word-break: break-word;
 }
 
-#jh-index-key-metrics-panel .jhikm-value-small {
-  font-size: 16px;
-  line-height: 1.35;
-  font-weight: 800;
-  letter-spacing: -0.1px;
-}
-
 #jh-index-key-metrics-panel .jhikm-card-navy .jhikm-value {
   color: #ffffff;
 }
@@ -2044,6 +2050,87 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
 #jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-v {
   color: #806600;
+}
+
+/* Counting Score specific */
+#jh-index-key-metrics-panel .jhikm-card-counting .jhikm-value {
+  color: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-counting-caption {
+  margin-top: -2px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #b7c9e4;
+}
+
+#jh-index-key-metrics-panel .jhikm-subline-counting {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#jh-index-key-metrics-panel .jhikm-counting-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #F15A22;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(241, 90, 34, 0.28);
+}
+
+#jh-index-key-metrics-panel .jhikm-counting-pill-label,
+#jh-index-key-metrics-panel .jhikm-counting-pill-value,
+#jh-index-key-metrics-panel .jhikm-counting-pill-tail {
+  color: #ffffff;
+}
+
+/* Status special */
+#jh-index-key-metrics-panel .jhikm-status-wrap {
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+#jh-index-key-metrics-panel .jhikm-status-number {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  color: #0c2340;
+  letter-spacing: -0.7px;
+}
+
+#jh-index-key-metrics-panel .jhikm-status-text {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #64748b;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+/* Head-to-Head bigger */
+#jh-index-key-metrics-panel #jhikm-headToHead {
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.45px;
 }
 
 /* =========================
@@ -2101,7 +2188,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   display: grid;
   gap: 10px;
   margin-top: 2px;
-  min-height: 74px;
+  min-height: 76px;
   align-content: center;
 }
 
@@ -2240,48 +2327,6 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 }
 
 /* =========================
-   TARGETED CARD OVERRIDES
-   ========================= */
-
-/* Status */
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(1) .jhikm-value {
-  font-size: 19px;
-  line-height: 1.22;
-  letter-spacing: -0.15px;
-}
-
-/* Head-to-Head */
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
-  font-size: 24px;
-  line-height: 1.12;
-  letter-spacing: -0.35px;
-}
-
-/* Counting Score full hero orange */
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) {
-  background: linear-gradient(135deg, #F15A22 0%, #ff7a2f 100%);
-  border-color: #e85a1c;
-  box-shadow: 0 10px 24px rgba(241, 90, 34, 0.18);
-}
-
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-label {
-  color: rgba(12, 35, 64, 0.78);
-}
-
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-value,
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-sub-v {
-  color: #0c2340;
-}
-
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-sub-k {
-  color: rgba(12, 35, 64, 0.68);
-}
-
-#jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(5) .jhikm-subline {
-  border-top-color: rgba(12, 35, 64, 0.14);
-}
-
-/* =========================
    RESPONSIVE
    ========================= */
 
@@ -2294,7 +2339,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   #jh-index-key-metrics-panel .jhikm-card {
     padding: 15px 12px 13px !important;
     border-radius: 16px !important;
-    min-height: 162px !important;
+    min-height: 168px !important;
   }
 
   #jh-index-key-metrics-panel .jhikm-label {
@@ -2304,7 +2349,8 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   }
 
   #jh-index-key-metrics-panel .jhikm-value,
-  #jh-index-key-metrics-panel .jhikm-rankline {
+  #jh-index-key-metrics-panel .jhikm-rankline,
+  #jh-index-key-metrics-panel .jhikm-status-wrap {
     min-height: 56px !important;
   }
 
@@ -2312,13 +2358,26 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     font-size: 24px !important;
   }
 
-  #jh-index-key-metrics-panel .jhikm-value-small {
-    font-size: 13px !important;
-    line-height: 1.35 !important;
+  #jh-index-key-metrics-panel .jhikm-status-number {
+    font-size: 27px !important;
   }
 
-  #jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
-    font-size: 21px !important;
+  #jh-index-key-metrics-panel .jhikm-status-text {
+    font-size: 10px !important;
+  }
+
+  #jh-index-key-metrics-panel #jhikm-headToHead {
+    font-size: 22px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-counting-caption {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-counting-pill {
+    font-size: 9px !important;
+    padding: 5px 9px !important;
   }
 
   #jh-index-key-metrics-panel .jhikm-stack {
@@ -2348,11 +2407,14 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     font-size: 22px !important;
   }
 
-  #jh-index-key-metrics-panel .jhikm-grid > .jhikm-card:nth-child(4) .jhikm-value {
-    font-size: 22px !important;
+  #jh-index-key-metrics-panel .jhikm-status-number {
+    font-size: 26px !important;
   }
 
-  #jh-index-key-metrics-panel .jhikm-value-small,
+  #jh-index-key-metrics-panel #jhikm-headToHead {
+    font-size: 23px !important;
+  }
+
   #jh-index-key-metrics-panel .jhikm-sub-v,
   #jh-index-key-metrics-panel .jhikm-stack-v,
   #jh-index-key-metrics-panel .jhikm-mini-v {
@@ -2361,6 +2423,13 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
   #jh-index-key-metrics-panel .jhikm-subline {
     min-height: 38px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-counting-pill {
+    white-space: normal !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
   }
 }
 </style>
@@ -2393,18 +2462,37 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     }
   }
 
+  function formatStatusDisplay(value) {
+    const raw = String(value || '').trim();
+    const numberMatch = raw.match(/\d+/);
+    const number = numberMatch ? numberMatch[0] : raw;
+    const text = raw.replace(number, '').trim() || 'OFFICIAL ROUNDS';
+
+    const numberEl = root.querySelector('#jhikm-status-number');
+    const textEl = root.querySelector('#jhikm-status-text');
+
+    if (numberEl) numberEl.textContent = number;
+    if (textEl) textEl.textContent = text;
+  }
+
+  function formatGpaDisplay(value) {
+    const raw = String(value || '').trim();
+    const cleaned = raw.replace(/\bGPA\b/gi, '').trim();
+    setText('jhikm-gpa', cleaned || raw);
+  }
+
   async function syncIndexKeyMetrics9() {
     try {
       const response = await fetch('data.json?v=' + new Date().getTime());
       const data = await response.json();
 
-      setText('jhikm-status', data.status);
+      formatStatusDisplay(data.status);
       setText('jhikm-scope', data.scope);
 
       setText('jhikm-scoringAvg', data.individual.scoringAvg);
       setText('jhikm-rawAvg', data.individual.rawAvg);
       setText('jhikm-underPar', data.individual.underPar);
-      setText('jhikm-gpa', data.individual.gpa);
+      formatGpaDisplay(data.individual.gpa);
 
       setText('jhikm-headToHead', data.teamMetrics.headToHead);
       setText('jhikm-winRate', data.teamMetrics.winRate);
@@ -2434,6 +2522,11 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   window.addEventListener('DOMContentLoaded', syncIndexKeyMetrics9);
 })();
 </script>
+
+
+    
+
+    
 
 
 <div style="margin: 20px 0 30px 0; border-radius: 14px; background: #ffffff; border: 1px solid #dbe4ee; padding: 20px; box-shadow: 0 6px 18px rgba(12,35,64,0.06); width: 100%; box-sizing: border-box;">
