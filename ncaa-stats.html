@@ -393,6 +393,8 @@
 
 
   
+
+
 <div id="Tournament-Schedule-Scoring" style="padding-top: 5px;">
 </div>
 
@@ -421,6 +423,17 @@
     max-width: 900px;
     margin: 0 auto 24px;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* 안전장치: 내부 중복 Last Updated 완전 제거 */
+  #jh-pga-table-shared .jtc-last-updated-wrap,
+  #jh-pga-table-shared .jtc-last-updated {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
   }
 
   #jh-pga-table-shared .jtc-wrap {
@@ -1249,7 +1262,6 @@
     document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
   })();
 </script>
-  
 
   
   
