@@ -2966,11 +2966,17 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 
       .honor-grid-2 {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 320px));
-        column-gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr) minmax(0, 320px) minmax(0, 1fr);
         row-gap: 30px;
         align-items: start;
-        justify-content: center;
+      }
+
+      .honor-grid-2 > .honor-card:nth-child(odd) {
+        grid-column: 2;
+      }
+
+      .honor-grid-2 > .honor-card:nth-child(even) {
+        grid-column: 4;
       }
 
       .honor-card {
@@ -3030,8 +3036,12 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       @media (max-width: 768px) {
         .honor-grid-2 {
           grid-template-columns: 1fr;
-          column-gap: 0;
           row-gap: 30px;
+        }
+
+        .honor-grid-2 > .honor-card:nth-child(odd),
+        .honor-grid-2 > .honor-card:nth-child(even) {
+          grid-column: auto;
         }
 
         .honor-card {
