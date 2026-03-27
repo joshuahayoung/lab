@@ -2,20 +2,20 @@
   "pgaTableShared": {
     "lastUpdated": "Mar 27, 2026",
 
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "9th Event",
-    "eventLabel": "Bell Bank-Pay It Forward-Collegiate",
+    "sectionTitle": "UPCOMING TOURNAMENT",
+    "eventNo": "10th Event",
+    "eventLabel": "Tiger Invitational",
 
-    "status": "final",
+    "status": "upcoming",
 
-    "title": "Bell Bank Collegiate (Minnesota)",
-    "date": "Mar 23-24",
-    "venue": "Wigwam Resort",
-    "location": "Litchfield Park, Arizona",
-    "par": 72,
-    "yards": "7,322",
-    "rating": 75.0,
-    "slope": 137,
+    "title": "Tiger Invitational (Missouri)",
+    "date": "Apr 6-7",
+    "venue": "The Club At Old Hawthorne",
+    "location": "Columbia - MO",
+    "par": 70,
+    "yards": "7,158",
+    "rating": 74.9,
+    "slope": 131,
 
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/239256/scoring/team",
@@ -23,35 +23,35 @@
     },
 
     "summary": {
-      "total": "212",
-      "par": "-4",
-      "pos": "T10"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
 
     "rounds": [
       {
         "round": "Round 1",
-        "date": "Mar 23, 2026",
-        "score": "73",
-        "par": "+1",
-        "status": "FINISH",
-        "pos": "T42"
+        "date": "Apr 6, 2026",
+        "score": "-",
+        "par": "-",
+        "status": "-",
+        "pos": "-"
       },
       {
         "round": "Round 2",
-        "date": "Mar 23, 2026",
-        "score": "68",
-        "par": "-4",
-        "status": "FINISH",
-        "pos": "T8"
+        "date": "Apr 6, 2026",
+        "score": "-",
+        "par": "-",
+        "status": "-",
+        "pos": "-"
       },
       {
         "round": "Round 3",
-        "date": "Mar 24, 2026",
-        "score": "71",
-        "par": "-1",
-        "status": "FINISH",
-        "pos": "T10"
+        "date": "Apr 7, 2026",
+        "score": "-",
+        "par": "-",
+        "status": "-",
+        "pos": "-"
       }
     ]
   }
