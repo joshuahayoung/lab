@@ -1839,24 +1839,25 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       <!-- 2. Scoring Avg -->
       <div class="jhikm-card jhikm-card-navy">
         <div class="jhikm-label">Clippd Adj.</div>
-        <div class="jhikm-value" id="jhikm-scoringAvg">70.90</div>
-        <div class="jhikm-subline">
-          <span class="jhikm-sub-k">Raw Avg</span>
-          <span class="jhikm-sub-v" id="jhikm-rawAvg">71.63</span>
+        <div class="jhikm-value jhikm-value-scoring" id="jhikm-scoringAvg">70.90</div>
+        <div class="jhikm-raw-pill-wrap">
+          <div class="jhikm-raw-pill">
+            <span class="jhikm-raw-pill-k">RAW AVG</span>
+            <span class="jhikm-raw-pill-v" id="jhikm-rawAvg">71.63</span>
+          </div>
         </div>
       </div>
 
       <!-- 3. Par or Better / GPA -->
       <div class="jhikm-card jhikm-card-blue">
         <div class="jhikm-label">Consistency / Academic</div>
-        <div class="jhikm-stack">
-          <div class="jhikm-stack-row">
-            <span class="jhikm-stack-k">Par or Better</span>
-            <span class="jhikm-stack-v" id="jhikm-underPar">- Par or Better(-%)</span>
+        <div class="jhikm-stack jhikm-stack-academic">
+          <div class="jhikm-stack-row jhikm-stack-row-performance">
+            <span class="jhikm-stack-v jhikm-stack-v-primary" id="jhikm-underPar">- Par or Better(-%)</span>
           </div>
-          <div class="jhikm-stack-row">
-            <span class="jhikm-stack-k">GPA</span>
-            <span class="jhikm-stack-v" id="jhikm-gpa">-</span>
+          <div class="jhikm-stack-row jhikm-stack-row-gpa">
+            <span class="jhikm-gpa-k">GPA</span>
+            <span class="jhikm-gpa-v" id="jhikm-gpa">-</span>
           </div>
         </div>
       </div>
@@ -1892,11 +1893,11 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
         <div class="jhikm-mini-grid">
           <div>
             <div class="jhikm-mini-k">(w) Points</div>
-            <div class="jhikm-mini-v" id="jhikm-pointsValue">-</div>
+            <div class="jhikm-mini-v jhikm-mini-v-navy" id="jhikm-pointsValue">-</div>
           </div>
           <div>
             <div class="jhikm-mini-k">Team Total</div>
-            <div class="jhikm-mini-v" id="jhikm-teamTotal">-</div>
+            <div class="jhikm-mini-v jhikm-mini-v-navy" id="jhikm-teamTotal">-</div>
           </div>
         </div>
       </div>
@@ -2086,7 +2087,58 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   color: #806600;
 }
 
-/* Counting Score specific */
+/* =========================
+   SCORING AVG RAW PILL
+   ========================= */
+
+#jh-index-key-metrics-panel .jhikm-value-scoring {
+  min-height: 66px;
+  margin-bottom: 8px;
+}
+
+#jh-index-key-metrics-panel .jhikm-raw-pill-wrap {
+  margin-top: auto;
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+}
+
+#jh-index-key-metrics-panel .jhikm-raw-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #F15A22;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 6px 16px rgba(241, 90, 34, 0.28);
+  text-align: center;
+  white-space: nowrap;
+}
+
+#jh-index-key-metrics-panel .jhikm-raw-pill-k {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-raw-pill-v {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* =========================
+   COUNTING SCORE specific
+   ========================= */
+
 #jh-index-key-metrics-panel .jhikm-card-counting .jhikm-value {
   color: #ffffff;
 }
@@ -2107,7 +2159,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   min-height: 48px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 #jh-index-key-metrics-panel .jhikm-counting-pill {
@@ -2237,38 +2289,55 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   justify-content: center;
 }
 
-#jh-index-key-metrics-panel .jhikm-stack-k {
-  display: block;
-  font-size: 10px;
-  color: #64748b;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 5px;
-  line-height: 1.15;
+#jh-index-key-metrics-panel .jhikm-stack-academic {
+  gap: 12px;
+  min-height: 98px;
 }
 
-#jh-index-key-metrics-panel .jhikm-stack-v {
+#jh-index-key-metrics-panel .jhikm-stack-row-performance {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+  border: 1px solid #dbeafe;
+  min-height: 62px;
+  padding: 12px 12px;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-v-primary {
   display: block;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.35;
-  color: #0c2340;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #1d4f91;
+  text-align: center;
   word-break: break-word;
 }
 
-/* GPA row only */
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child {
-  background: #eaf3ff;
-  border-color: #cfe0fb;
+#jh-index-key-metrics-panel .jhikm-stack-row-gpa {
+  min-height: 54px;
+  padding: 0 14px;
+  background: linear-gradient(135deg, #1d4f91 0%, #2b6cb0 100%);
+  border: 1px solid #1d4f91;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 18px rgba(43, 108, 176, 0.18);
 }
 
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child .jhikm-stack-k {
-  color: #4a6fa5;
+#jh-index-key-metrics-panel .jhikm-gpa-k {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-row:last-child .jhikm-stack-v {
-  color: #1d4f91;
+#jh-index-key-metrics-panel .jhikm-gpa-v {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.3px;
 }
 
 /* =========================
@@ -2311,6 +2380,10 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   word-break: break-word;
 }
 
+#jh-index-key-metrics-panel .jhikm-mini-v-navy {
+  color: #0c2340 !important;
+}
+
 /* Performance Profile 2x2 boxed tiles */
 #jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-grid-4 > div {
   background: #fffaf0;
@@ -2321,6 +2394,17 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-grid-4 > div:first-child {
+  background: linear-gradient(135deg, #f15a22 0%, #ff844f 100%);
+  border-color: #f15a22;
+  box-shadow: 0 8px 16px rgba(241, 90, 34, 0.18);
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-grid-4 > div:first-child .jhikm-mini-k,
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-grid-4 > div:first-child .jhikm-mini-v {
+  color: #ffffff;
 }
 
 #jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-k {
@@ -2421,6 +2505,22 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   #jh-index-key-metrics-panel .jhikm-stack-row {
     min-height: 48px !important;
   }
+
+  #jh-index-key-metrics-panel .jhikm-stack-v-primary {
+    font-size: 16px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-gpa-v {
+    font-size: 18px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-subline-counting {
+    justify-content: center !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-raw-pill {
+    padding: 7px 12px !important;
+  }
 }
 
 @media (max-width: 520px) {
@@ -2464,6 +2564,28 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     justify-content: center !important;
     text-align: center !important;
     line-height: 1.2 !important;
+    margin: 0 auto !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-subline-counting {
+    justify-content: center !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-raw-pill {
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-stack-v-primary {
+    font-size: 17px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-gpa-k {
+    font-size: 10px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-gpa-v {
+    font-size: 19px !important;
   }
 }
 </style>
@@ -2515,6 +2637,17 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
     setText('jhikm-gpa', cleaned || raw);
   }
 
+  function formatNumberString(value, decimals) {
+    if (value === undefined || value === null || value === '') return value;
+    const normalized = String(value).replace(/,/g, '').trim();
+    const num = Number(normalized);
+    if (Number.isNaN(num)) return value;
+    return num.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
   async function syncIndexKeyMetrics9() {
     try {
       const response = await fetch('data.json?v=' + new Date().getTime());
@@ -2524,7 +2657,7 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       setText('jhikm-scope', data.scope);
 
       setText('jhikm-scoringAvg', data.individual.scoringAvg);
-      setText('jhikm-rawAvg', data.individual.rawAvg);
+      setText('jhikm-rawAvg', formatNumberString(data.individual.rawAvg, 2));
       setText('jhikm-underPar', data.individual.underPar);
       formatGpaDisplay(data.individual.gpa);
 
@@ -2533,8 +2666,8 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
       setText('jhikm-countingScore', data.teamMetrics.countingScore);
       setText('jhikm-recordedRounds', data.teamMetrics.recordedRounds);
       setText('jhikm-pointsShare', data.teamMetrics.pointsShare);
-      setText('jhikm-pointsValue', data.teamMetrics.pointsValue);
-      setText('jhikm-teamTotal', data.teamMetrics.teamTotal);
+      setText('jhikm-pointsValue', formatNumberString(data.teamMetrics.pointsValue, 2));
+      setText('jhikm-teamTotal', formatNumberString(data.teamMetrics.teamTotal, 2));
 
       setText('jhikm-wagrRank', data.officialRank.wagrRank);
       setImpact('jhikm-wagrImpact', data.officialRank.wagrImpact);
