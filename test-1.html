@@ -1914,14 +1914,9 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 </div>
 
 <style>
-#jh-index-key-metrics-panel,
-#jh-index-key-metrics-panel * {
-  box-sizing: border-box;
-}
-
-#jh-index-key-metrics-panel .jhikm-grid {
-  width: 100%;
-}
+/* =========================
+   PGA LEVEL VISUAL SYSTEM
+   ========================= */
 
 #jh-index-key-metrics-panel .jhikm-card {
   background: #ffffff;
@@ -1931,23 +1926,59 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.03);
   min-width: 0;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
+/* Hover interaction */
+#jh-index-key-metrics-panel .jhikm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CARD TYPE SYSTEM
+   ========================= */
+
+/* PRIMARY (Scoring Avg) */
 #jh-index-key-metrics-panel .jhikm-card-navy {
-  background: #ffffff;
+  background: linear-gradient(135deg, #0c2340, #1a365d);
+  color: #fff;
 }
 
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-value {
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-sub-v {
+  color: #cbd5e1;
+}
+
+/* SECONDARY (Blue Accent) */
 #jh-index-key-metrics-panel .jhikm-card-blue {
-  background: #ffffff;
+  border-right: 5px solid #2b6cb0;
 }
 
+/* IMPACT (Orange Accent) */
 #jh-index-key-metrics-panel .jhikm-card-orange {
-  background: #ffffff;
+  border-left: 5px solid #F15A22;
 }
 
+/* SUMMARY (Gold subtle) */
 #jh-index-key-metrics-panel .jhikm-card-gold {
-  background: #ffffff;
+  border-top: 4px solid #c98a2e;
 }
+
+/* DEFAULT subtle differentiation */
+#jh-index-key-metrics-panel .jhikm-card:not(.jhikm-card-navy):not(.jhikm-card-blue):not(.jhikm-card-orange):not(.jhikm-card-gold) {
+  background: #f8fafc;
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+   ========================= */
 
 #jh-index-key-metrics-panel .jhikm-label {
   font-size: 10px;
@@ -1956,40 +1987,25 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   letter-spacing: 1px;
   margin-bottom: 8px;
   font-weight: 700;
-  line-height: 1.35;
 }
 
+/* MAIN KPI */
 #jh-index-key-metrics-panel .jhikm-value {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 900;
-  color: #2d3748;
-  line-height: 1.2;
-  word-break: break-word;
+  color: #1a202c;
+  letter-spacing: -0.3px;
 }
 
+/* SMALL VALUE */
 #jh-index-key-metrics-panel .jhikm-value-small {
   font-size: 15px;
-  line-height: 1.45;
   font-weight: 800;
 }
 
-#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-value {
-  color: #0c2340;
-}
-
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-value,
-#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-v {
-  color: #2b6cb0;
-}
-
-#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-value,
-#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-mini-v {
-  color: #F15A22;
-}
-
-#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-v {
-  color: #806600;
-}
+/* =========================
+   SUBLINE REFINEMENT
+   ========================= */
 
 #jh-index-key-metrics-panel .jhikm-subline {
   margin-top: 10px;
@@ -1998,7 +2014,6 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
 }
 
 #jh-index-key-metrics-panel .jhikm-sub-k {
@@ -2006,206 +2021,37 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   color: #64748b;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
 }
 
 #jh-index-key-metrics-panel .jhikm-sub-v {
   font-size: 13px;
   color: #0c2340;
   font-weight: 800;
-  line-height: 1.35;
-  text-align: right;
 }
 
-#jh-index-key-metrics-panel .jhikm-stack {
-  display: grid;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-#jh-index-key-metrics-panel .jhikm-stack-row {
-  padding: 9px 10px;
-  border-radius: 12px;
-  background: #f8fafc;
-  border: 1px solid #edf2f7;
-}
-
-#jh-index-key-metrics-panel .jhikm-stack-k {
-  display: block;
-  font-size: 10px;
-  color: #64748b;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 5px;
-}
-
-#jh-index-key-metrics-panel .jhikm-stack-v {
-  display: block;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.4;
-  color: #0c2340;
-  word-break: break-word;
-}
-
-#jh-index-key-metrics-panel .jhikm-mini-grid {
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid #edf2f7;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-#jh-index-key-metrics-panel .jhikm-mini-grid-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-#jh-index-key-metrics-panel .jhikm-mini-k {
-  font-size: 8px;
-  color: #64748b;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 4px;
-  line-height: 1.25;
-}
+/* =========================
+   MINI GRID IMPROVEMENT
+   ========================= */
 
 #jh-index-key-metrics-panel .jhikm-mini-v {
-  font-size: 13px;
-  color: #0c2340;
+  font-size: 14px;
   font-weight: 900;
-  line-height: 1.2;
-  word-break: break-word;
 }
 
-#jh-index-key-metrics-panel .jhikm-rankline {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 8px;
-}
-
-#jh-index-key-metrics-panel .jhikm-impact {
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1;
-}
+/* =========================
+   RANK IMPACT VISUAL
+   ========================= */
 
 #jh-index-key-metrics-panel .jhikm-impact-up {
   color: #10b981;
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-down {
-  color: #d32f2f;
+  color: #ef4444;
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-flat {
   color: #64748b;
-}
-
-@media (max-width: 768px) {
-  #jh-index-key-metrics-panel .jhikm-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-card {
-    padding: 16px 12px !important;
-    border-radius: 16px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-value {
-    font-size: 22px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-value-small {
-    font-size: 13px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-mini-grid-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-
-@media (max-width: 520px) {
-  #jh-index-key-metrics-panel .jhikm-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-label {
-    font-size: 9px !important;
-    letter-spacing: 0.8px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-value {
-    font-size: 20px !important;
-  }
-
-  #jh-index-key-metrics-panel .jhikm-value-small,
-  #jh-index-key-metrics-panel .jhikm-sub-v,
-  #jh-index-key-metrics-panel .jhikm-stack-v,
-  #jh-index-key-metrics-panel .jhikm-mini-v {
-    font-size: 12px !important;
-  }
-}
-
-/* =========================
-   NCAA ALIGNMENT SYSTEM
-   ========================= */
-
-#jh-index-key-metrics-panel .jhikm-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  min-height: 150px; 
-}
-
-
-#jh-index-key-metrics-panel .jhikm-label {
-  margin-bottom: 6px;
-}
-
-
-#jh-index-key-metrics-panel .jhikm-value,
-#jh-index-key-metrics-panel .jhikm-stack,
-#jh-index-key-metrics-panel .jhikm-rankline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px; 
-}
-
-
-#jh-index-key-metrics-panel .jhikm-stack {
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-#jh-index-key-metrics-panel .jhikm-rankline {
-  justify-content: center;
-}
-
-
-#jh-index-key-metrics-panel .jhikm-subline,
-#jh-index-key-metrics-panel .jhikm-mini-grid {
-  margin-top: auto;
-}
-
-
-#jh-index-key-metrics-panel .jhikm-mini-grid {
-  align-items: end;
-}
-
-
-#jh-index-key-metrics-panel .jhikm-stack-row {
-  min-height: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 </style>
 
