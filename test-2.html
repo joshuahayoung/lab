@@ -1592,24 +1592,22 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
 <div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
- 
-  <!-- Title Box -->
-  <div class="jhcf-title-wrap">
-    <a id="current-focus"></a>
+  <a id="current-focus"></a>
 
-    <div class="jhcf-title-box">
-      <h1>Current Focus</h1>
-      <p>Technical Log</p>
-    </div>
-  </div>
-
-  <!-- Main Shell -->
+  <!-- Unified Shell -->
   <div class="jhcf-shell">
 
-    <!-- Header-post date -->
-    <div class="jhcf-header">
-      <div id="Current-Focus" style="margin-left: auto; width: fit-content; margin-right: 18px;">
-        <span class="jhcf-posted-pill">Posted On: Mar 24, 2026</span>
+    <!-- Unified Header -->
+    <div class="jhcf-card-head">
+      <div class="jhcf-card-head-top">
+        <div class="jhcf-card-title-group">
+          <h1>Current Focus</h1>
+          <p>Technical Log</p>
+        </div>
+
+        <div id="Current-Focus" class="jhcf-posted-wrap">
+          <span class="jhcf-posted-pill">Posted On: Mar 24, 2026</span>
+        </div>
       </div>
     </div>
 
@@ -1727,54 +1725,10 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   visibility: hidden;
 }
 
-/* title */
-#jh-current-focus-block .jhcf-title-wrap {
-  width: 100%;
-  margin: 20px 0 30px 0;
-  text-align: left;
-}
-
-#jh-current-focus-block .jhcf-title-box {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  max-width: none;
-  margin: 0;
-  padding: 20px;
-  background: #ffffff;
-  border: 1px solid #dbe4ee;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(12,35,64,0.06);
-  vertical-align: top;
-}
-
-#jh-current-focus-block .jhcf-title-box h1 {
-  margin: 0;
-  color: #0c2340;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: center;
-}
-
-#jh-current-focus-block .jhcf-title-box p {
-  margin: 8px 0 0 0;
-  font-size: 12px;
-  color: #64748b;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* shell */
+/* unified shell */
 #jh-current-focus-block .jhcf-shell {
   width: 100%;
-  margin: 0 0 40px 0;
+  margin: 20px 0 40px 0;
   background: linear-gradient(180deg, #fffdf8 0%, #fffefb 100%);
   border: 1px solid #d9e2ec;
   border-radius: 20px;
@@ -1782,26 +1736,84 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   overflow: hidden;
 }
 
-#jh-current-focus-block .jhcf-header {
+/* unified header */
+#jh-current-focus-block .jhcf-card-head {
   width: 100%;
-  padding: 22px 28px 0 28px;
+  padding: 24px 28px 18px 28px;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f9fbfe 100%);
+  border-bottom: 1px solid #e7edf5;
+  position: relative;
+}
+
+#jh-current-focus-block .jhcf-card-head::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0c2340 0%, #355d8a 42%, rgba(53,93,138,0.08) 100%);
+}
+
+#jh-current-focus-block .jhcf-card-head-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+#jh-current-focus-block .jhcf-card-title-group {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+#jh-current-focus-block .jhcf-card-title-group h1 {
+  margin: 0;
+  color: #0c2340;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+#jh-current-focus-block .jhcf-card-title-group p {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+#jh-current-focus-block .jhcf-posted-wrap {
+  flex: 0 0 auto;
+  align-self: flex-start;
 }
 
 #jh-current-focus-block .jhcf-posted-pill {
-  display: inline;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
   margin: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  color: #000;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0;
+  background: #ffffff;
+  border: 1px solid #dbe4ee;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(12,35,64,0.05);
+  color: #425466;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
   text-transform: none;
+  white-space: nowrap;
 }
 
+/* body */
 #jh-current-focus-block .jhcf-body {
   width: 100%;
   padding: 26px 28px 24px 28px;
@@ -2012,8 +2024,31 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 /* responsive */
 @media (max-width: 768px) {
-  #jh-current-focus-block .jhcf-header {
-    padding: 20px 18px 0 18px !important;
+  #jh-current-focus-block .jhcf-shell {
+    margin: 18px 0 36px 0 !important;
+    border-radius: 16px !important;
+  }
+
+  #jh-current-focus-block .jhcf-card-head {
+    padding: 20px 18px 16px 18px !important;
+  }
+
+  #jh-current-focus-block .jhcf-card-head::after {
+    left: 18px !important;
+    right: 18px !important;
+  }
+
+  #jh-current-focus-block .jhcf-card-title-group h1 {
+    font-size: 21px !important;
+  }
+
+  #jh-current-focus-block .jhcf-card-title-group p {
+    font-size: 11px !important;
+  }
+
+  #jh-current-focus-block .jhcf-posted-pill {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
   }
 
   #jh-current-focus-block .jhcf-body {
@@ -2050,14 +2085,20 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 }
 
 @media (max-width: 560px) {
-  #jh-current-focus-block .jhcf-upcoming-head {
+  #jh-current-focus-block .jhcf-card-head-top {
     gap: 10px !important;
   }
 
-  #jh-current-focus-block .jhcf-title-box {
+  #jh-current-focus-block .jhcf-posted-wrap {
     width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
+  }
+
+  #jh-current-focus-block .jhcf-posted-pill {
+    white-space: normal !important;
+  }
+
+  #jh-current-focus-block .jhcf-upcoming-head {
+    gap: 10px !important;
   }
 }
 </style>
