@@ -1914,70 +1914,72 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
 </div>
 
 <style>
-/* =========================
-   PGA LEVEL VISUAL SYSTEM
-   ========================= */
+#jh-index-key-metrics-panel,
+#jh-index-key-metrics-panel * {
+  box-sizing: border-box;
+}
+
+#jh-index-key-metrics-panel .jhikm-grid {
+  width: 100%;
+  align-items: stretch;
+}
 
 #jh-index-key-metrics-panel .jhikm-card {
   background: #ffffff;
-  padding: 18px 14px;
-  border-radius: 18px;
   border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px 15px 14px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  box-shadow: 0 6px 18px rgba(12, 35, 64, 0.045);
   min-width: 0;
   position: relative;
-  transition: all 0.25s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 172px;
+  height: 100%;
+  overflow: hidden;
 }
 
-/* Hover interaction */
 #jh-index-key-metrics-panel .jhikm-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  box-shadow: 0 14px 28px rgba(12, 35, 64, 0.09);
+  border-color: #d8e2ee;
 }
 
 /* =========================
-   CARD TYPE SYSTEM
+   CARD VARIANTS
    ========================= */
 
-/* PRIMARY (Scoring Avg) */
 #jh-index-key-metrics-panel .jhikm-card-navy {
-  background: linear-gradient(135deg, #0c2340, #1a365d);
-  color: #fff;
+  background: linear-gradient(135deg, #0c2340 0%, #17365f 100%);
+  border-color: #0c2340;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.16);
 }
 
-#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-value {
-  color: #fff;
-  font-size: 30px;
-  letter-spacing: -0.5px;
-}
-
-#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-sub-v {
-  color: #cbd5e1;
-}
-
-/* SECONDARY (Blue Accent) */
 #jh-index-key-metrics-panel .jhikm-card-blue {
   border-right: 5px solid #2b6cb0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
-/* IMPACT (Orange Accent) */
 #jh-index-key-metrics-panel .jhikm-card-orange {
   border-left: 5px solid #F15A22;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
 }
 
-/* SUMMARY (Gold subtle) */
 #jh-index-key-metrics-panel .jhikm-card-gold {
-  border-top: 4px solid #c98a2e;
+  border-top: 4px solid #806600;
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf7 100%);
 }
 
-/* DEFAULT subtle differentiation */
+/* default cards slightly differentiated */
 #jh-index-key-metrics-panel .jhikm-card:not(.jhikm-card-navy):not(.jhikm-card-blue):not(.jhikm-card-orange):not(.jhikm-card-gold) {
-  background: #f8fafc;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
 }
 
 /* =========================
-   TYPOGRAPHY SYSTEM
+   LABEL ZONE
    ========================= */
 
 #jh-index-key-metrics-panel .jhikm-label {
@@ -1986,34 +1988,85 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 8px;
-  font-weight: 700;
-}
-
-/* MAIN KPI */
-#jh-index-key-metrics-panel .jhikm-value {
-  font-size: 28px;
-  font-weight: 900;
-  color: #1a202c;
-  letter-spacing: -0.3px;
-}
-
-/* SMALL VALUE */
-#jh-index-key-metrics-panel .jhikm-value-small {
-  font-size: 15px;
   font-weight: 800;
+  line-height: 1.35;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-label {
+  color: rgba(255,255,255,0.78);
 }
 
 /* =========================
-   SUBLINE REFINEMENT
+   VALUE ZONE
    ========================= */
 
+#jh-index-key-metrics-panel .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-rankline {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-value {
+  font-size: 30px;
+  font-weight: 900;
+  color: #1a202c;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhikm-value-small {
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.1px;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-value {
+  color: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-card-blue .jhikm-stack-v {
+  color: #2b6cb0;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-value,
+#jh-index-key-metrics-panel .jhikm-card-orange .jhikm-mini-v {
+  color: #F15A22;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-gold .jhikm-mini-v {
+  color: #806600;
+}
+
+/* =========================
+   FOOTER / SUBLINE ZONE
+   ========================= */
+
+#jh-index-key-metrics-panel .jhikm-subline,
+#jh-index-key-metrics-panel .jhikm-mini-grid {
+  margin-top: auto;
+}
+
 #jh-index-key-metrics-panel .jhikm-subline {
-  margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #edf2f7;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  min-height: 42px;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-subline {
+  border-top-color: rgba(255,255,255,0.14);
 }
 
 #jh-index-key-metrics-panel .jhikm-sub-k {
@@ -2021,39 +2074,215 @@ The next event on the schedule is the <b>Tiger Invitational</b> (Apr 6–7, 2026
   color: #64748b;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-sub-k {
+  color: rgba(255,255,255,0.64);
 }
 
 #jh-index-key-metrics-panel .jhikm-sub-v {
   font-size: 13px;
   color: #0c2340;
   font-weight: 800;
+  line-height: 1.35;
+  text-align: right;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-sub-v {
+  color: #e2e8f0;
 }
 
 /* =========================
-   MINI GRID IMPROVEMENT
+   STACK CARD
    ========================= */
+
+#jh-index-key-metrics-panel .jhikm-stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+  min-height: 74px;
+  align-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-row {
+  min-height: 52px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-k {
+  display: block;
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 5px;
+  line-height: 1.15;
+}
+
+#jh-index-key-metrics-panel .jhikm-stack-v {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #0c2340;
+  word-break: break-word;
+}
+
+/* =========================
+   MINI GRID CARDS
+   ========================= */
+
+#jh-index-key-metrics-panel .jhikm-mini-grid {
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  min-height: 58px;
+  align-items: end;
+}
+
+#jh-index-key-metrics-panel .jhikm-card-navy .jhikm-mini-grid {
+  border-top-color: rgba(255,255,255,0.14);
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#jh-index-key-metrics-panel .jhikm-mini-k {
+  font-size: 8px;
+  color: #64748b;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
 
 #jh-index-key-metrics-panel .jhikm-mini-v {
   font-size: 14px;
+  color: #0c2340;
   font-weight: 900;
+  line-height: 1.15;
+  word-break: break-word;
 }
 
 /* =========================
-   RANK IMPACT VISUAL
+   RANKLINE
    ========================= */
+
+#jh-index-key-metrics-panel .jhikm-rankline {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
 
 #jh-index-key-metrics-panel .jhikm-impact-up {
   color: #10b981;
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-down {
-  color: #ef4444;
+  color: #d32f2f;
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-flat {
   color: #64748b;
 }
-</style>
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  #jh-index-key-metrics-panel .jhikm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-card {
+    padding: 15px 12px 13px !important;
+    border-radius: 16px !important;
+    min-height: 162px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-label {
+    min-height: 24px !important;
+    font-size: 9px !important;
+    margin-bottom: 7px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-value,
+  #jh-index-key-metrics-panel .jhikm-rankline {
+    min-height: 56px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-value {
+    font-size: 24px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-value-small {
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-stack {
+    min-height: 68px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-stack-row {
+    min-height: 48px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-mini-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #jh-index-key-metrics-panel .jhikm-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-card {
+    min-height: auto !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-label {
+    font-size: 9px !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-value {
+    font-size: 22px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-value-small,
+  #jh-index-key-metrics-panel .jhikm-sub-v,
+  #jh-index-key-metrics-panel .jhikm-stack-v,
+  #jh-index-key-metrics-panel .jhikm-mini-v {
+    font-size: 12px !important;
+  }
+
+  #jh-index-key-metrics-panel .jhikm-subline {
+    min-height: 38px !important;
+  }
+}</style>
 
 <script>
 (function() {
