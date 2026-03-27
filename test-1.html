@@ -532,7 +532,7 @@ gtag('config', 'G-H1JW8YBDZ8');
     #jh-pga-table-shared .jtc-result-band {
       background: #0c2340;
       display: grid;
-      grid-template-columns: 156px minmax(0, 1fr) 176px 86px;
+      grid-template-columns: 164px minmax(0, 1fr) 176px 86px;
       align-items: stretch;
       gap: 0;
       padding: 14px 18px;
@@ -580,12 +580,11 @@ gtag('config', 'G-H1JW8YBDZ8');
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       color: #0c2340;
       text-decoration: none;
       font-size: 10px;
       font-weight: 900;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.65px;
       text-transform: uppercase;
       border: 1.5px solid #0c2340;
       padding: 8px 10px;
@@ -593,27 +592,50 @@ gtag('config', 'G-H1JW8YBDZ8');
       transition: all 0.2s ease;
       background: #ffffff;
       width: 100%;
-      max-width: 134px;
+      max-width: 142px;
       min-height: 42px;
     }
 
+    #jh-pga-table-shared .jtc-main-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(12, 35, 64, 0.16);
+    }
+
     #jh-pga-table-shared .jtc-main-link-content {
-      display: inline-flex;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 8px minmax(0, 1fr) 12px;
       align-items: center;
-      gap: 6px;
+      column-gap: 6px;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 4px;
-      line-height: 1;
-      white-space: nowrap;
+      justify-content: center;
+      gap: 1px;
+      line-height: 0.96;
+      text-align: center;
+      min-width: 0;
+      white-space: normal;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack .line1,
     #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
-      display: inline;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+      font-size: 1em;
+      letter-spacing: 0.7px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
+      font-size: 0.92em;
+      letter-spacing: 0.45px;
     }
 
     #jh-pga-table-shared .jtc-main-link-dot {
@@ -622,12 +644,23 @@ gtag('config', 'G-H1JW8YBDZ8');
       border-radius: 50%;
       display: inline-block;
       flex-shrink: 0;
+      justify-self: start;
+      align-self: center;
     }
 
     #jh-pga-table-shared .jtc-main-link-dot.upcoming { background-color: #94a3b8; }
     #jh-pga-table-shared .jtc-main-link-dot.ongoing { background-color: #22c55e; animation: jtc-link-pulse-green 1.5s infinite; }
     #jh-pga-table-shared .jtc-main-link-dot.final { background-color: #e74c3c; }
     #jh-pga-table-shared .jtc-main-link-dot.cancelled { background-color: #7f1d1d; }
+
+    #jh-pga-table-shared .jtc-main-link-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: end;
+      align-self: center;
+      flex-shrink: 0;
+    }
 
     @keyframes jtc-link-pulse-green {
       0%   { opacity: 1; transform: scale(1); }
@@ -824,7 +857,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       }
 
       #jh-pga-table-shared .jtc-result-band {
-        grid-template-columns: 74px minmax(0, 1fr) 102px 48px;
+        grid-template-columns: 84px minmax(0, 1fr) 96px 46px;
         padding: 10px 7px;
       }
 
@@ -846,13 +879,17 @@ gtag('config', 'G-H1JW8YBDZ8');
       }
 
       #jh-pga-table-shared .jtc-main-link {
-        font-size: 6px;
-        letter-spacing: 0.22px;
-        padding: 5px 4px;
-        gap: 3px;
+        font-size: 6.4px;
+        letter-spacing: 0.2px;
+        padding: 5px 5px;
         min-height: 32px;
         width: 100%;
-        max-width: 60px;
+        max-width: 72px;
+      }
+
+      #jh-pga-table-shared .jtc-main-link-content {
+        grid-template-columns: 6px minmax(0, 1fr) 8px;
+        column-gap: 4px;
       }
 
       #jh-pga-table-shared .jtc-main-link svg {
@@ -865,24 +902,19 @@ gtag('config', 'G-H1JW8YBDZ8');
         height: 4px;
       }
 
-      #jh-pga-table-shared .jtc-main-link-content {
-        align-items: center;
-        gap: 3px;
-      }
-
       #jh-pga-table-shared .jtc-main-link-label-stack {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 1px;
-        line-height: 0.92;
-        white-space: normal;
+        gap: 0;
+        line-height: 0.9;
       }
 
-      #jh-pga-table-shared .jtc-main-link-label-stack .line1,
+      #jh-pga-table-shared .jtc-main-link-label-stack .line1 {
+        font-size: 1em;
+        letter-spacing: 0.35px;
+      }
+
       #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
-        display: block;
+        font-size: 0.84em;
+        letter-spacing: 0.18px;
       }
 
       #jh-pga-table-shared .jtc-rounds-grid {
@@ -1086,11 +1118,13 @@ gtag('config', 'G-H1JW8YBDZ8');
                   <span class="line1">${split.line1}</span>
                   <span class="line2">${split.line2}</span>
                 </span>
+                <span class="jtc-main-link-arrow" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
               </span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
             </a>
           `
           : "";
