@@ -1454,18 +1454,18 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     <!-- Tier 1 -->
     <div class="jhkm-tier1">
-      <!-- Adj Avg -->
-      <div class="jhkm-card jhkm-card-primary">
+      <!-- Clippd Adj Avg -->
+      <div class="jhkm-card jhkm-card-primary-white">
         <div class="jhkm-label">Clippd Adj. Avg</div>
-        <div class="jhkm-primary-value" id="jhikm-scoringAvg">70.90</div>
+        <div class="jhkm-primary-value jhkm-primary-value-dark" id="jhikm-scoringAvg">70.90</div>
 
         <div class="jhkm-primary-sub">
           <span class="jhkm-primary-sub-k">Raw Avg</span>
-          <span class="jhkm-primary-sub-v" id="jhikm-rawAvg">71.63</span>
+          <span class="jhkm-primary-sub-v jhkm-primary-sub-v-dark" id="jhikm-rawAvg">71.63</span>
         </div>
       </div>
 
-      <!-- Win Rate / H2H -->
+      <!-- Win Rate -->
       <div class="jhkm-card jhkm-card-core">
         <div class="jhkm-label">Win Rate</div>
         <div class="jhkm-primary-value jhkm-primary-value-dark">
@@ -1474,11 +1474,11 @@ gtag('config', 'G-H1JW8YBDZ8');
 
         <div class="jhkm-primary-sub">
           <span class="jhkm-primary-sub-k">Head-to-Head</span>
-          <span class="jhkm-primary-sub-v" id="jhikm-headToHead">-</span>
+          <span class="jhkm-primary-sub-v jhkm-primary-sub-v-dark" id="jhikm-headToHead">-</span>
         </div>
       </div>
 
-      <!-- Top 10 / Profile -->
+      <!-- Top 10 -->
       <div class="jhkm-card jhkm-card-accent">
         <div class="jhkm-label">Top 10 Finishes</div>
         <div class="jhkm-primary-value jhkm-primary-value-accent" id="jhikm-top10">-</div>
@@ -1503,10 +1503,10 @@ gtag('config', 'G-H1JW8YBDZ8');
     <!-- Tier 2 -->
     <div class="jhkm-tier2">
       <!-- WAGR -->
-      <div class="jhkm-card">
+      <div class="jhkm-card jhkm-card-navy">
         <div class="jhkm-label">WAGR Rank</div>
         <div class="jhkm-rankline">
-          <span class="jhkm-rank-value" id="jhikm-wagrRank">-</span>
+          <span class="jhkm-rank-value jhkm-rank-value-light" id="jhikm-wagrRank">-</span>
           <span class="jhkm-impact" id="jhikm-wagrImpact">-</span>
         </div>
         <div class="jhkm-foot">
@@ -1519,7 +1519,7 @@ gtag('config', 'G-H1JW8YBDZ8');
       <div class="jhkm-card jhkm-card-navy">
         <div class="jhkm-label">Clippd Rank</div>
         <div class="jhkm-rankline">
-          <span class="jhkm-rank-value" id="jhikm-clippdRank">-</span>
+          <span class="jhkm-rank-value jhkm-rank-value-light" id="jhikm-clippdRank">-</span>
           <span class="jhkm-impact" id="jhikm-clippdImpact">-</span>
         </div>
         <div class="jhkm-foot">
@@ -1542,16 +1542,19 @@ gtag('config', 'G-H1JW8YBDZ8');
 
     <!-- Tier 3 -->
     <div class="jhkm-tier3">
-      <!-- Status -->
-      <div class="jhkm-card">
-        <div class="jhkm-label">Status</div>
-        <div class="jhkm-status-wrap">
-          <div class="jhkm-status-number" id="jhikm-status-number">24</div>
-          <div class="jhkm-status-text" id="jhikm-status-text">OFFICIAL ROUNDS</div>
-        </div>
-        <div class="jhkm-foot">
-          <span class="jhkm-foot-k">Scope</span>
-          <span class="jhkm-foot-v" id="jhikm-scope">24</span>
+      <!-- Points Share (moved first) -->
+      <div class="jhkm-card jhkm-card-orange">
+        <div class="jhkm-label">Points Share</div>
+        <div class="jhkm-rank-value jhkm-rank-value-accent"><span id="jhikm-pointsShare">-</span>%</div>
+        <div class="jhkm-mini-grid">
+          <div>
+            <div class="jhkm-mini-k">(W) Points</div>
+            <div class="jhkm-mini-v" id="jhikm-pointsValue">-</div>
+          </div>
+          <div>
+            <div class="jhkm-mini-k">Team Total</div>
+            <div class="jhkm-mini-v" id="jhikm-teamTotal">-</div>
+          </div>
         </div>
       </div>
 
@@ -1569,19 +1572,16 @@ gtag('config', 'G-H1JW8YBDZ8');
         </div>
       </div>
 
-      <!-- Points Share -->
-      <div class="jhkm-card jhkm-card-orange">
-        <div class="jhkm-label">Points Share</div>
-        <div class="jhkm-rank-value jhkm-rank-value-accent"><span id="jhikm-pointsShare">-</span>%</div>
-        <div class="jhkm-mini-grid">
-          <div>
-            <div class="jhkm-mini-k">(W) Points</div>
-            <div class="jhkm-mini-v" id="jhikm-pointsValue">-</div>
-          </div>
-          <div>
-            <div class="jhkm-mini-k">Team Total</div>
-            <div class="jhkm-mini-v" id="jhikm-teamTotal">-</div>
-          </div>
+      <!-- Status (moved last and emphasized) -->
+      <div class="jhkm-card jhkm-card-status-emphasis">
+        <div class="jhkm-label">Status</div>
+        <div class="jhkm-status-wrap">
+          <div class="jhkm-status-number" id="jhikm-status-number">24</div>
+          <div class="jhkm-status-text" id="jhikm-status-text">OFFICIAL ROUNDS</div>
+        </div>
+        <div class="jhkm-foot">
+          <span class="jhkm-foot-k">Scope</span>
+          <span class="jhkm-foot-v jhkm-foot-v-dark" id="jhikm-scope">24</span>
         </div>
       </div>
     </div>
@@ -1656,11 +1656,6 @@ gtag('config', 'G-H1JW8YBDZ8');
   display: grid;
   gap: 16px;
   width: 100%;
-}
-
-#jh-index-key-metrics-panel .jhkm-tier1,
-#jh-index-key-metrics-panel .jhkm-tier2,
-#jh-index-key-metrics-panel .jhkm-tier3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -1693,7 +1688,12 @@ gtag('config', 'G-H1JW8YBDZ8');
   border-color: #d8e2ee;
 }
 
-#jh-index-key-metrics-panel .jhkm-card-primary,
+/* variants */
+#jh-index-key-metrics-panel .jhkm-card-primary-white {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+  border: 2px solid #dbe5ef;
+}
+
 #jh-index-key-metrics-panel .jhkm-card-navy,
 #jh-index-key-metrics-panel .jhkm-card-counting {
   background: linear-gradient(135deg, #0c2340 0%, #17365f 100%);
@@ -1721,6 +1721,12 @@ gtag('config', 'G-H1JW8YBDZ8');
   background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
 }
 
+#jh-index-key-metrics-panel .jhkm-card-status-emphasis {
+  background: linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+  border: 2px solid #0c2340;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.11);
+}
+
 #jh-index-key-metrics-panel .jhkm-label {
   font-size: 10px;
   color: #718096;
@@ -1735,7 +1741,6 @@ gtag('config', 'G-H1JW8YBDZ8');
   justify-content: center;
 }
 
-#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-label,
 #jh-index-key-metrics-panel .jhkm-card-navy .jhkm-label,
 #jh-index-key-metrics-panel .jhkm-card-counting .jhkm-label {
   color: rgba(255,255,255,0.72);
@@ -1798,7 +1803,6 @@ gtag('config', 'G-H1JW8YBDZ8');
   min-height: 42px;
 }
 
-#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub,
 #jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot,
 #jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot {
   border-top-color: rgba(255,255,255,0.14);
@@ -1813,7 +1817,6 @@ gtag('config', 'G-H1JW8YBDZ8');
   letter-spacing: 0.8px;
 }
 
-#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub-k,
 #jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot-k,
 #jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot-k {
   color: rgba(255,255,255,0.64);
@@ -1828,7 +1831,11 @@ gtag('config', 'G-H1JW8YBDZ8');
   text-align: right;
 }
 
-#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub-v,
+#jh-index-key-metrics-panel .jhkm-primary-sub-v-dark,
+#jh-index-key-metrics-panel .jhkm-foot-v-dark {
+  color: #0c2340;
+}
+
 #jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot-v,
 #jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot-v {
   color: #e2e8f0;
@@ -1897,11 +1904,11 @@ gtag('config', 'G-H1JW8YBDZ8');
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-down {
-  color: #d32f2f;
+  color: #ff8a8a;
 }
 
 #jh-index-key-metrics-panel .jhikm-impact-flat {
-  color: #64748b;
+  color: #cbd5e1;
 }
 
 #jh-index-key-metrics-panel .jhkm-counting-caption {
@@ -2030,7 +2037,7 @@ gtag('config', 'G-H1JW8YBDZ8');
   }
 
   #jh-index-key-metrics-panel .jhkm-primary-value,
-  #jh-index-key-metrics-panel .jhkm-rankvalue,
+  #jh-index-key-metrics-panel .jhkm-rank-value,
   #jh-index-key-metrics-panel .jhkm-rankline,
   #jh-index-key-metrics-panel .jhkm-status-wrap {
     min-height: 56px;
