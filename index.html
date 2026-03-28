@@ -1430,98 +1430,769 @@ gtag('config', 'G-H1JW8YBDZ8');
     
     
        
-<!-- =========================
-   KEY METRICS RESTRUCTURED (COACH VIEW)
-   ========================= -->
+<div id="jh-index-key-metrics-panel" style="max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div class="jhkm-shell">
 
-<div id="jh-index-key-metrics-panel" style="max-width: 900px; margin: 0 auto 20px; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <div class="jhkm-head">
+      <h2 class="jhkm-title">
+        <span class="jhkm-title-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h18"></path>
+            <path d="M12 3v18"></path>
+            <circle cx="12" cy="12" r="8"></circle>
+          </svg>
+        </span>
+        <span>Freshman Season Key Metrics</span>
+      </h2>
 
-  <div style="background:#f8f9fa; border-radius:25px; padding:25px; border:1px solid #edf2f7;">
-
-    <!-- TITLE -->
-    <h2 style="font-size:24px; color:#0c2340; font-weight:800; margin-bottom:15px;">
-      Freshman Season Key Metrics
-    </h2>
-
-    <!-- =========================
-         TIER 1 (PRIMARY KPI)
-         ========================= -->
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px;">
-
-      <!-- Adj Avg -->
-      <div style="background:#0c2340; color:#fff; padding:20px; border-radius:16px; text-align:center;">
-        <div style="font-size:11px; opacity:.7;">CLIPPD ADJ AVG</div>
-        <div id="jhikm-scoringAvg" style="font-size:34px; font-weight:900;">-</div>
+      <div class="jhkm-subhead">
+        <span>Auto-Synced from data.json</span>
+        <span class="jhkm-subhead-divider">|</span>
+        <span>2025–26 Competitive Record</span>
       </div>
+    </div>
 
-      <!-- Win Rate -->
-      <div style="background:#ffffff; border:2px solid #0c2340; padding:20px; border-radius:16px; text-align:center;">
-        <div style="font-size:11px;">WIN RATE</div>
-        <div style="font-size:28px; font-weight:900;">
-          <span id="jhikm-winRate">-</span>%
+    <!-- Tier 1 -->
+    <div class="jhkm-tier1">
+      <!-- Adj Avg -->
+      <div class="jhkm-card jhkm-card-primary">
+        <div class="jhkm-label">Clippd Adj. Avg</div>
+        <div class="jhkm-primary-value" id="jhikm-scoringAvg">70.90</div>
+
+        <div class="jhkm-primary-sub">
+          <span class="jhkm-primary-sub-k">Raw Avg</span>
+          <span class="jhkm-primary-sub-v" id="jhikm-rawAvg">71.63</span>
         </div>
       </div>
 
-      <!-- Top 10 -->
-      <div style="background:#fffaf7; border:2px solid #F15A22; padding:20px; border-radius:16px; text-align:center;">
-        <div style="font-size:11px;">TOP 10</div>
-        <div id="jhikm-top10" style="font-size:28px; font-weight:900;">-</div>
+      <!-- Win Rate / H2H -->
+      <div class="jhkm-card jhkm-card-core">
+        <div class="jhkm-label">Win Rate</div>
+        <div class="jhkm-primary-value jhkm-primary-value-dark">
+          <span id="jhikm-winRate">-</span><span class="jhkm-percent">%</span>
+        </div>
+
+        <div class="jhkm-primary-sub">
+          <span class="jhkm-primary-sub-k">Head-to-Head</span>
+          <span class="jhkm-primary-sub-v" id="jhikm-headToHead">-</span>
+        </div>
       </div>
 
+      <!-- Top 10 / Profile -->
+      <div class="jhkm-card jhkm-card-accent">
+        <div class="jhkm-label">Top 10 Finishes</div>
+        <div class="jhkm-primary-value jhkm-primary-value-accent" id="jhikm-top10">-</div>
+
+        <div class="jhkm-profile-row">
+          <div>
+            <div class="jhkm-mini-k">Wins</div>
+            <div class="jhkm-mini-v" id="jhikm-wins">-</div>
+          </div>
+          <div>
+            <div class="jhkm-mini-k">Top 3</div>
+            <div class="jhkm-mini-v" id="jhikm-top3">-</div>
+          </div>
+          <div>
+            <div class="jhkm-mini-k">Events</div>
+            <div class="jhkm-mini-v" id="jhikm-totalTournaments">-</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- =========================
-         TIER 2
-         ========================= -->
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:18px;">
-
+    <!-- Tier 2 -->
+    <div class="jhkm-tier2">
       <!-- WAGR -->
-      <div style="background:#ffffff; border:1px solid #e2e8f0; padding:16px; border-radius:14px; text-align:center;">
-        <div style="font-size:11px;">WAGR</div>
-        <div id="jhikm-wagrRank" style="font-size:24px; font-weight:900;">-</div>
+      <div class="jhkm-card">
+        <div class="jhkm-label">WAGR Rank</div>
+        <div class="jhkm-rankline">
+          <span class="jhkm-rank-value" id="jhikm-wagrRank">-</span>
+          <span class="jhkm-impact" id="jhikm-wagrImpact">-</span>
+        </div>
+        <div class="jhkm-foot">
+          <span class="jhkm-foot-k">As of</span>
+          <span class="jhkm-foot-v" id="jhikm-wagrDate">-</span>
+        </div>
       </div>
 
       <!-- Clippd -->
-      <div style="background:#0c2340; color:#fff; padding:16px; border-radius:14px; text-align:center;">
-        <div style="font-size:11px;">CLIPPD</div>
-        <div id="jhikm-clippdRank" style="font-size:24px; font-weight:900;">-</div>
+      <div class="jhkm-card jhkm-card-navy">
+        <div class="jhkm-label">Clippd Rank</div>
+        <div class="jhkm-rankline">
+          <span class="jhkm-rank-value" id="jhikm-clippdRank">-</span>
+          <span class="jhkm-impact" id="jhikm-clippdImpact">-</span>
+        </div>
+        <div class="jhkm-foot">
+          <span class="jhkm-foot-k">As of</span>
+          <span class="jhkm-foot-v" id="jhikm-clippdDate">-</span>
+        </div>
       </div>
 
-      <!-- Head to Head -->
-      <div style="background:#ffffff; border:1px solid #e2e8f0; padding:16px; border-radius:14px; text-align:center;">
-        <div style="font-size:11px;">HEAD-TO-HEAD</div>
-        <div id="jhikm-headToHead" style="font-size:20px; font-weight:900;">-</div>
+      <!-- Counting Score -->
+      <div class="jhkm-card jhkm-card-counting">
+        <div class="jhkm-label">Counting Score</div>
+        <div class="jhkm-rank-value jhkm-rank-value-light"><span id="jhikm-countingScore">-</span>%</div>
+        <div class="jhkm-counting-caption">Team lineup contribution rate</div>
+        <div class="jhkm-foot">
+          <span class="jhkm-foot-k">Metric</span>
+          <span class="jhkm-foot-v" id="jhikm-recordedRounds">-</span>
+        </div>
       </div>
-
     </div>
 
-    <!-- =========================
-         TIER 3
-         ========================= -->
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
-
-      <!-- Points -->
-      <div style="background:#ffffff; border:1px solid #e2e8f0; padding:14px; border-radius:12px; text-align:center;">
-        <div style="font-size:10px;">POINTS SHARE</div>
-        <div><span id="jhikm-pointsShare">-</span>%</div>
+    <!-- Tier 3 -->
+    <div class="jhkm-tier3">
+      <!-- Status -->
+      <div class="jhkm-card">
+        <div class="jhkm-label">Status</div>
+        <div class="jhkm-status-wrap">
+          <div class="jhkm-status-number" id="jhikm-status-number">24</div>
+          <div class="jhkm-status-text" id="jhikm-status-text">OFFICIAL ROUNDS</div>
+        </div>
+        <div class="jhkm-foot">
+          <span class="jhkm-foot-k">Scope</span>
+          <span class="jhkm-foot-v" id="jhikm-scope">24</span>
+        </div>
       </div>
 
-      <!-- Counting -->
-      <div style="background:#ffffff; border:1px solid #e2e8f0; padding:14px; border-radius:12px; text-align:center;">
-        <div style="font-size:10px;">COUNTING SCORE</div>
-        <div><span id="jhikm-countingScore">-</span>%</div>
+      <!-- Consistency / GPA -->
+      <div class="jhkm-card jhkm-card-blue">
+        <div class="jhkm-label">Consistency / Academic</div>
+        <div class="jhkm-stack">
+          <div class="jhkm-stack-box">
+            <div class="jhkm-stack-main" id="jhikm-underPar">- Par or Better(-%)</div>
+          </div>
+          <div class="jhkm-stack-gpa">
+            <span class="jhkm-stack-gpa-k">GPA</span>
+            <span class="jhkm-stack-gpa-v" id="jhikm-gpa">-</span>
+          </div>
+        </div>
       </div>
 
-      <!-- GPA -->
-      <div style="background:#ffffff; border:1px solid #e2e8f0; padding:14px; border-radius:12px; text-align:center;">
-        <div style="font-size:10px;">GPA</div>
-        <div id="jhikm-gpa">-</div>
+      <!-- Points Share -->
+      <div class="jhkm-card jhkm-card-orange">
+        <div class="jhkm-label">Points Share</div>
+        <div class="jhkm-rank-value jhkm-rank-value-accent"><span id="jhikm-pointsShare">-</span>%</div>
+        <div class="jhkm-mini-grid">
+          <div>
+            <div class="jhkm-mini-k">(W) Points</div>
+            <div class="jhkm-mini-v" id="jhikm-pointsValue">-</div>
+          </div>
+          <div>
+            <div class="jhkm-mini-k">Team Total</div>
+            <div class="jhkm-mini-v" id="jhikm-teamTotal">-</div>
+          </div>
+        </div>
       </div>
-
     </div>
 
   </div>
 </div>
+
+<style>
+#jh-index-key-metrics-panel,
+#jh-index-key-metrics-panel * {
+  box-sizing: border-box;
+}
+
+#jh-index-key-metrics-panel .jhkm-shell {
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  padding: 25px 25px 20px 25px;
+  border: 1px solid #edf2f7;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+#jh-index-key-metrics-panel .jhkm-head {
+  margin-bottom: 22px;
+}
+
+#jh-index-key-metrics-panel .jhkm-title {
+  font-size: 24px;
+  color: #0c2340;
+  margin: 0 0 10px 0;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  letter-spacing: -0.5px;
+}
+
+#jh-index-key-metrics-panel .jhkm-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  flex: 0 0 42px;
+}
+
+#jh-index-key-metrics-panel .jhkm-subhead {
+  padding-left: 54px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#jh-index-key-metrics-panel .jhkm-subhead-divider {
+  opacity: 0.55;
+}
+
+#jh-index-key-metrics-panel .jhkm-tier1,
+#jh-index-key-metrics-panel .jhkm-tier2,
+#jh-index-key-metrics-panel .jhkm-tier3 {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+}
+
+#jh-index-key-metrics-panel .jhkm-tier1,
+#jh-index-key-metrics-panel .jhkm-tier2,
+#jh-index-key-metrics-panel .jhkm-tier3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#jh-index-key-metrics-panel .jhkm-tier1,
+#jh-index-key-metrics-panel .jhkm-tier2 {
+  margin-bottom: 16px;
+}
+
+#jh-index-key-metrics-panel .jhkm-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 16px 15px 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(12, 35, 64, 0.045);
+  min-width: 0;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 182px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#jh-index-key-metrics-panel .jhkm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(12, 35, 64, 0.09);
+  border-color: #d8e2ee;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-primary,
+#jh-index-key-metrics-panel .jhkm-card-navy,
+#jh-index-key-metrics-panel .jhkm-card-counting {
+  background: linear-gradient(135deg, #0c2340 0%, #17365f 100%);
+  border-color: #0c2340;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.16);
+}
+
+#jh-index-key-metrics-panel .jhkm-card-core {
+  border: 2px solid #0c2340;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+}
+
+#jh-index-key-metrics-panel .jhkm-card-accent {
+  border: 2px solid #F15A22;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+}
+
+#jh-index-key-metrics-panel .jhkm-card-blue {
+  border-right: 5px solid #2b6cb0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+#jh-index-key-metrics-panel .jhkm-card-orange {
+  border-left: 5px solid #F15A22;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf7 100%);
+}
+
+#jh-index-key-metrics-panel .jhkm-label {
+  font-size: 10px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  line-height: 1.35;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-label,
+#jh-index-key-metrics-panel .jhkm-card-navy .jhkm-label,
+#jh-index-key-metrics-panel .jhkm-card-counting .jhkm-label {
+  color: rgba(255,255,255,0.72);
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-value,
+#jh-index-key-metrics-panel .jhkm-rank-value,
+#jh-index-key-metrics-panel .jhkm-rankline {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-value {
+  font-size: 34px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.02;
+  letter-spacing: -0.6px;
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-value-dark {
+  color: #0c2340;
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-value-accent,
+#jh-index-key-metrics-panel .jhkm-rank-value-accent {
+  color: #F15A22;
+}
+
+#jh-index-key-metrics-panel .jhkm-rank-value {
+  font-size: 30px;
+  font-weight: 900;
+  color: #1a202c;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhkm-rank-value-light {
+  color: #ffffff;
+}
+
+#jh-index-key-metrics-panel .jhkm-percent {
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 2px;
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-sub,
+#jh-index-key-metrics-panel .jhkm-foot {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub,
+#jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot,
+#jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot {
+  border-top-color: rgba(255,255,255,0.14);
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-sub-k,
+#jh-index-key-metrics-panel .jhkm-foot-k {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub-k,
+#jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot-k,
+#jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot-k {
+  color: rgba(255,255,255,0.64);
+}
+
+#jh-index-key-metrics-panel .jhkm-primary-sub-v,
+#jh-index-key-metrics-panel .jhkm-foot-v {
+  font-size: 13px;
+  color: #0c2340;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: right;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-primary .jhkm-primary-sub-v,
+#jh-index-key-metrics-panel .jhkm-card-navy .jhkm-foot-v,
+#jh-index-key-metrics-panel .jhkm-card-counting .jhkm-foot-v {
+  color: #e2e8f0;
+}
+
+#jh-index-key-metrics-panel .jhkm-profile-row,
+#jh-index-key-metrics-panel .jhkm-mini-grid {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #edf2f7;
+  display: grid;
+  gap: 10px;
+  min-height: 58px;
+  align-items: end;
+}
+
+#jh-index-key-metrics-panel .jhkm-profile-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#jh-index-key-metrics-panel .jhkm-mini-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#jh-index-key-metrics-panel .jhkm-mini-k {
+  font-size: 8px;
+  color: #64748b;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+#jh-index-key-metrics-panel .jhkm-mini-v {
+  font-size: 14px;
+  color: #0c2340;
+  font-weight: 900;
+  line-height: 1.15;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-accent .jhkm-mini-k {
+  color: #b45309;
+}
+
+#jh-index-key-metrics-panel .jhkm-card-accent .jhkm-mini-v {
+  color: #7c2d12;
+}
+
+#jh-index-key-metrics-panel .jhkm-rankline {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+}
+
+#jh-index-key-metrics-panel .jhkm-impact {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-up {
+  color: #10b981;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-down {
+  color: #d32f2f;
+}
+
+#jh-index-key-metrics-panel .jhikm-impact-flat {
+  color: #64748b;
+}
+
+#jh-index-key-metrics-panel .jhkm-counting-caption {
+  margin-top: -2px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #b7c9e4;
+}
+
+#jh-index-key-metrics-panel .jhkm-status-wrap {
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+#jh-index-key-metrics-panel .jhkm-status-number {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  color: #0c2340;
+  letter-spacing: -0.7px;
+}
+
+#jh-index-key-metrics-panel .jhkm-status-text {
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #64748b;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+
+#jh-index-key-metrics-panel .jhkm-stack {
+  display: grid;
+  gap: 12px;
+  margin-top: 2px;
+  min-height: 98px;
+  align-content: center;
+}
+
+#jh-index-key-metrics-panel .jhkm-stack-box {
+  min-height: 62px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+  border: 1px solid #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#jh-index-key-metrics-panel .jhkm-stack-main {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #1d4f91;
+  text-align: center;
+  word-break: break-word;
+}
+
+#jh-index-key-metrics-panel .jhkm-stack-gpa {
+  min-height: 54px;
+  padding: 0 14px;
+  background: linear-gradient(135deg, #1d4f91 0%, #2b6cb0 100%);
+  border: 1px solid #1d4f91;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 18px rgba(43, 108, 176, 0.18);
+}
+
+#jh-index-key-metrics-panel .jhkm-stack-gpa-k {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1;
+}
+
+#jh-index-key-metrics-panel .jhkm-stack-gpa-v {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  #jh-index-key-metrics-panel .jhkm-subhead {
+    padding-left: 54px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-subhead-divider {
+    display: none;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-tier1,
+  #jh-index-key-metrics-panel .jhkm-tier2,
+  #jh-index-key-metrics-panel .jhkm-tier3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-card {
+    padding: 15px 12px 13px;
+    border-radius: 16px;
+    min-height: 168px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-label {
+    min-height: 24px;
+    font-size: 9px;
+    margin-bottom: 7px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-primary-value,
+  #jh-index-key-metrics-panel .jhkm-rankvalue,
+  #jh-index-key-metrics-panel .jhkm-rankline,
+  #jh-index-key-metrics-panel .jhkm-status-wrap {
+    min-height: 56px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-primary-value,
+  #jh-index-key-metrics-panel .jhkm-rank-value {
+    font-size: 24px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-status-number {
+    font-size: 27px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-status-text {
+    font-size: 10px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-stack-main {
+    font-size: 16px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-stack-gpa-v {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  #jh-index-key-metrics-panel .jhkm-tier1,
+  #jh-index-key-metrics-panel .jhkm-tier2,
+  #jh-index-key-metrics-panel .jhkm-tier3 {
+    grid-template-columns: 1fr;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-card {
+    min-height: auto;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-primary-value,
+  #jh-index-key-metrics-panel .jhkm-rank-value {
+    font-size: 22px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-foot-v,
+  #jh-index-key-metrics-panel .jhkm-mini-v,
+  #jh-index-key-metrics-panel .jhkm-primary-sub-v {
+    font-size: 12px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-stack-main {
+    font-size: 17px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-stack-gpa-k {
+    font-size: 10px;
+  }
+
+  #jh-index-key-metrics-panel .jhkm-stack-gpa-v {
+    font-size: 19px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  const root = document.getElementById('jh-index-key-metrics-panel');
+  if (!root) return;
+
+  function setText(id, value) {
+    const el = root.querySelector('#' + id);
+    if (el && value !== undefined && value !== null) {
+      el.textContent = value;
+    }
+  }
+
+  function setImpact(id, value) {
+    const el = root.querySelector('#' + id);
+    if (!el || value === undefined || value === null) return;
+
+    el.textContent = value;
+    el.classList.remove('jhikm-impact-up', 'jhikm-impact-down', 'jhikm-impact-flat');
+
+    if (String(value).trim().startsWith('▲')) {
+      el.classList.add('jhikm-impact-up');
+    } else if (String(value).trim().startsWith('▼')) {
+      el.classList.add('jhikm-impact-down');
+    } else {
+      el.classList.add('jhikm-impact-flat');
+    }
+  }
+
+  function formatStatusDisplay(value) {
+    const raw = String(value || '').trim();
+    const numberMatch = raw.match(/\d+/);
+    const number = numberMatch ? numberMatch[0] : raw;
+    const text = raw.replace(number, '').trim() || 'OFFICIAL ROUNDS';
+
+    const numberEl = root.querySelector('#jhikm-status-number');
+    const textEl = root.querySelector('#jhikm-status-text');
+
+    if (numberEl) numberEl.textContent = number;
+    if (textEl) textEl.textContent = text;
+  }
+
+  function formatGpaDisplay(value) {
+    const raw = String(value || '').trim();
+    const cleaned = raw.replace(/\bGPA\b/gi, '').trim();
+    setText('jhikm-gpa', cleaned || raw);
+  }
+
+  function formatNumberString(value, decimals) {
+    if (value === undefined || value === null || value === '') return value;
+    const normalized = String(value).replace(/,/g, '').trim();
+    const num = Number(normalized);
+    if (Number.isNaN(num)) return value;
+    return num.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+  }
+
+  async function syncIndexKeyMetrics9() {
+    try {
+      const response = await fetch('data.json?v=' + new Date().getTime());
+      const data = await response.json();
+
+      formatStatusDisplay(data.status);
+      setText('jhikm-scope', data.scope);
+
+      setText('jhikm-scoringAvg', data.individual.scoringAvg);
+      setText('jhikm-rawAvg', formatNumberString(data.individual.rawAvg, 2));
+      setText('jhikm-underPar', data.individual.underPar);
+      formatGpaDisplay(data.individual.gpa);
+
+      setText('jhikm-headToHead', data.teamMetrics.headToHead);
+      setText('jhikm-winRate', data.teamMetrics.winRate);
+      setText('jhikm-countingScore', data.teamMetrics.countingScore);
+      setText('jhikm-recordedRounds', data.teamMetrics.recordedRounds);
+      setText('jhikm-pointsShare', data.teamMetrics.pointsShare);
+      setText('jhikm-pointsValue', formatNumberString(data.teamMetrics.pointsValue, 2));
+      setText('jhikm-teamTotal', formatNumberString(data.teamMetrics.teamTotal, 2));
+
+      setText('jhikm-wagrRank', data.officialRank.wagrRank);
+      setImpact('jhikm-wagrImpact', data.officialRank.wagrImpact);
+      setText('jhikm-wagrDate', data.officialRank.wagrDate);
+
+      setText('jhikm-clippdRank', data.officialRank.clippdRank);
+      setImpact('jhikm-clippdImpact', data.officialRank.clippdImpact);
+      setText('jhikm-clippdDate', data.officialRank.clippdDate);
+
+      setText('jhikm-wins', data.officialRank.wins);
+      setText('jhikm-top3', data.officialRank.top3);
+      setText('jhikm-top10', data.officialRank.top10);
+      setText('jhikm-totalTournaments', data.officialRank.totalTournaments);
+    } catch (error) {
+      console.error('Index metrics sync error:', error);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', syncIndexKeyMetrics9);
+})();
+</script>
  
 
 
