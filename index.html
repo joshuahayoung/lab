@@ -63,33 +63,25 @@
 </script>
     
 <script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
 
-// Google Analytics 4 Configuration
-gtag('config', 'G-H1JW8YBDZ8', {
-'page_title': 'Joshua Hong Official Site',
-'send_page_view': true,
-'cookie_flags': 'SameSite=None;Secure'
-});
+  gtag('js', new Date());
 
-// Bookmark & Return Visitor Tracking Logic
-if (window.performance && window.performance.navigation.type === 0) {
-// Type 0: Direct access (Potential Bookmark or URL entry)
-gtag('event', 'visitor_entry', {
-'method': 'direct_or_bookmark',
-'event_category': 'Engagement',
-'event_label': 'Direct Access Tracking'
-});
-}
-</script>
+  gtag('config', 'G-H1JW8YBDZ8', {
+    page_title: 'Joshua Hong Official Site',
+    send_page_view: true,
+    cookie_flags: 'SameSite=None;Secure'
+  });
 
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-H1JW8YBDZ8');
+  // Direct / bookmark-style entry tracking
+  if (window.performance && window.performance.navigation && window.performance.navigation.type === 0) {
+    gtag('event', 'visitor_entry', {
+      method: 'direct_or_bookmark',
+      event_category: 'Engagement',
+      event_label: 'Direct Access Tracking'
+    });
+  }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
