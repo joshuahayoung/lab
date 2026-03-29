@@ -1270,9 +1270,486 @@
   })();
 </script>
 
+
+<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
+    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
+        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
+            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
+            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+                2025–26 Competitive Record
+            </p>
+                
+            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
+                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
+                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
+                </div>
+                    
+                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
+                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
+                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
+                    </div>
+                    <canvas id="archiveOfficialChart"></canvas>
+                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; 
+                        padding-top: 10px; font-weight: 600; text-transform: uppercase; text-align: center;">
+                        <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
+<script>
+(function() {
+    if (typeof ChartDataLabels !== 'undefined') {
+        try { Chart.register(ChartDataLabels); } catch (e) {}
+    }
+
+    Chart.defaults.font.family = "'Oswald', sans-serif";
+
+    const isMobile = window.innerWidth <= 768;
+
+    // ===== DATA =====
+    const archiveLabels = [
+        '9/07 (Argent)',
+        '9/15 (Highlands)',
+        '9/22 (Badger)',
+        '10/05 (Trinity)',
+        '2/01 (Compadres)',
+        '2/24 (Military)',
+        '3/03 (Golden)',
+        '3/17 (Thunderbirds)',
+        '3/24 (Bellbank)'
+    ];
+
+    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
+
+    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
+
+    const archiveRounds = [
+        '70-70-69 (-7)',
+        '74-71-70 (-1)',
+        '71-71-76 (+2)',
+        '75-73-74 (+6)',
+        '70-75-71 (E)',
+        '69-72-74 (-1)',
+        '64-70-69 (-13)',
+        '72-76-73 (+5)',
+        '73-68-71 (-4)'
+    ];
+
+    const archiveRankImpact = [
+        '● Rank Impact ▲ 151',
+        '● Rank Impact ▲ 28',
+        '● Rank Impact ▼ 38',
+        '● Rank Impact ▼ 98',
+        '● Rank Impact ▲ 142',
+        '● Rank Impact ▲ 72',
+        '● Rank Impact ▲ 43',
+        '● Rank Impact ▼ 43',
+        '● Rank Impact ▲ 26'
+    ];
+
+    const archiveWagrPower = [
+        '230.8799',
+        '232.6656',
+        '129.0694',
+        '360.1597',
+        '145.6033',
+        '101.3382',
+        '135.0209',
+        '670.0102',
+        '221.2814'
+    ];
+
+    const archivePtsEarned = [
+        '5.3735',
+        '4.9097',
+        '3.3178',
+        '3.1971',
+        '6.5774',
+        '9.2734',
+        '6.7817',
+        '4.8345',
+        '4.9385'
+    ];
+
+    // Mobile
+    function mobileLabel(label) {
+        return label;
+    }
+
+    const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
+
+    new Chart(ctxOfficialArchive, {
+        type: 'line',
+        data: {
+            labels: archiveLabels,
+            datasets: [{
+                label: 'Scoring Avg',
+                data: archiveScores,
+                borderColor: '#0c2340',
+                backgroundColor: 'rgba(12, 35, 64, 0.05)',
+                borderWidth: 2,
+                pointRadius: isMobile ? 4 : 6,
+                pointHoverRadius: isMobile ? 6 : 9,
+                pointBackgroundColor: '#0c2340',
+                pointHoverBackgroundColor: '#F15A22',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                datalabels: {
+                    align: 'top',
+                    anchor: 'end',
+                    offset: isMobile ? 4 : 8,
+                    color: '#0c2340',
+                    font: {
+                        weight: '700',
+                        size: isMobile ? 10 : 13
+                    },
+                    formatter: function(value, context) {
+                        return archivePositions[context.dataIndex];
+                    }
+                }
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: isMobile
+                    ? { top: 20, bottom: 18, left: 0, right: 0 }
+                    : { top: 35, bottom: 25, left: -5, right: 15 }
+            },
+            scales: {
+                y: {
+                    min: 65,
+                    max: 82,
+                    grid: { color: '#efefef', drawBorder: false },
+                    ticks: {
+                        font: { size: isMobile ? 10 : 11, weight: '600' },
+                        color: '#333',
+                        padding: 0
+                    },
+                    title: { display: false }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: {
+                        color: '#333',
+                        font: { size: isMobile ? 8 : 10, weight: '500' },
+                        autoSkip: false,
+                        maxRotation: isMobile ? 60 : 45,
+                        minRotation: isMobile ? 60 : 45,
+                        callback: function(value) {
+                            const label = this.getLabelForValue(value);
+                            return mobileLabel(label);
+                        }
+                    },
+                    offset: false
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: '#0c2340',
+                    titleColor: '#F15A22',
+                    padding: 12,
+                    displayColors: false,
+                    callbacks: {
+                        title: function(context) {
+                            return archiveLabels[context[0].dataIndex];
+                        },
+                        label: function(context) {
+                            return `● Scoring Avg: ${context.parsed.y}`;
+                        },
+                        afterLabel: function(context) {
+                            const i = context.dataIndex;
+                            return [
+                                `● Rounds: ${archiveRounds[i]}`,
+                                `● Pos: ${archivePositions[i]}`,
+                                archiveRankImpact[i],
+                                `-----------------------`,
+                                `● WAGR Pwr: ${archiveWagrPower[i]}`,
+                                `● Pts Earned: ${archivePtsEarned[i]}`
+                            ].filter(v => v !== null);
+                        }
+                    }
+                }
+            }
+        }
+    });
+})();
+</script>  
+  
+
+
+
+<div class="round-distribution-wrapper" style="width: 100%; margin: 15px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
+  <style>
+    @media (max-width: 768px) {
+      .rd-main-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .rd-left-stack,
+      .rd-right-stack {
+        gap: 14px !important;
+      }
+      .rd-header-title {
+        font-size: 20px !important;
+      }
+      .rd-subtitle {
+        font-size: 0.75em !important;
+      }
+      .rd-table th,
+      .rd-table td {
+        font-size: 11px !important;
+        padding: 9px 8px !important;
+      }
+      .rd-summary-grid,
+      .rd-structure-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .rd-summary-value,
+      .rd-structure-value {
+        font-size: 20px !important;
+      }
+
+      .rd-avg-stack-desktop {
+        display: none !important;
+      }
+      .rd-avg-stack-mobile {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .rd-avg-stack-desktop {
+        display: block !important;
+      }
+      .rd-avg-stack-mobile {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
+    
+    <div style="padding: 10px 24px 18px 24px; box-sizing: border-box; text-align: center; width: 100%;">
+      <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
+        Round Distribution & Scoring Pattern
+      </h2>
+      <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
+        2025–26 Competitive Record
+      </p>
+    </div>
+
+    <div class="rd-main-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 20px 22px 20px; box-sizing: border-box; align-items: stretch;">
+      
+      <!-- LEFT COLUMN -->
+      <div class="rd-left-stack" style="display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box;">
+        
+        <!-- ROUND LOG -->
+        <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-sizing: border-box;">
+          <div style="padding: 14px 18px; background: #0c2340; color: #ffffff; font-family: 'Oswald', sans-serif; font-size: 1em; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;">
+            27-Round Competitive Distribution
+          </div>
+
+          <div style="padding: 14px 16px 12px 16px; box-sizing: border-box;">
+            <table class="rd-table" style="width: 100%; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
+              <thead>
+                <tr>
+                  <th style="text-align: left; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Event</th>
+                  <th style="text-align: left; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Round Scores</th>
+                  <th style="text-align: right; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Event Avg.</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">73 • 68 • 71</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">70.66</td>
+                </tr>
+                
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">72 • 76 • 73</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">73.66</td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">64 • 70 • 69</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">67.67</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">69 • 72 • 74</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 75 • 71</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">4</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">75 • 73 • 74</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">74.00</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">3</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">71 • 71 • 76</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.67</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">2</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">74 • 71 • 70</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800;">1 <span style="color:#64748b; font-weight:700;">(Earliest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700;">70 • 70 • 69</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right;">69.67</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SNAPSHOT -->
+        <div style="background: #0c2340; border-radius: 10px; padding: 18px 18px 16px 18px; box-shadow: 0 8px 20px rgba(12,35,64,0.12); box-sizing: border-box;">
+          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #ffffff; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px;">
+            Distribution Snapshot
+          </div>
+
+          <div class="rd-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">27-Round Avg.</div>
+
+              <div class="rd-summary-value rd-avg-stack-desktop" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
+                <div>71.52</div>
+                <div style="margin-top: 4px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</div>
+                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.80</div>
+                <div style="margin-top: 3px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</div>
+              </div>
+
+              <div class="rd-summary-value rd-avg-stack-mobile" style="font-size: 20px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05; display: none;">
+                <div style="display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
+                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.52</span>
+                  <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</span>
+                </div>
+                <div style="margin-top: 4px; display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
+                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.80</span>
+                  <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</span>
+                </div>
+              </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Low Round</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">64</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Par or Better</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">17 / 27</div>
+            </div>
+            <div style="background: #f15a22; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: rgba(255,255,255,0.82); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Primary Band</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">68–72</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="rd-right-stack" style="display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box;">
+
+        <!-- TECHNICAL READING -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 4px solid #f15a22; border-radius: 10px; padding: 18px 18px 16px 18px; box-sizing: border-box; flex: 1 1 auto;">
+          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #0c2340; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px;">
+            Technical Reading
+          </div>
+
+          <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
+            <div style="margin-bottom: 10px;">
+              Across the 27 competitive rounds included in this section, most recorded scores fall between 68 and 72.
+            </div>
+            <div style="margin-bottom: 10px;">
+              The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
+            </div>
+            <div style="margin-bottom: 10px;">
+              This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
+            </div>
+            <div>
+              The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
+            </div>
+          </div>
+        </div>
+
+        <!-- SCORING STRUCTURE -->
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 4px solid #0c2340; border-radius: 10px; padding: 18px 18px 16px 18px; box-sizing: border-box;">
+          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #0c2340; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px;">
+            Scoring Structure
+          </div>
+
+          <div class="rd-structure-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Events</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">9</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Rounds</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">27</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Range</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">64–76</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">60s</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">5</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">70–72</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">12</div>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
+                </div>
+
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
+                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75-76</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
   
   
 
+  
 <div class="analysis-section" style="max-width: 900px; margin: 0 auto 10px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   
   <style>
@@ -1610,519 +2087,6 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
 
-<div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <a id="current-focus"></a>
-
-  <!-- Unified Shell -->
-  <div class="jhcf-shell">
-
-    <!-- Unified Header -->
-    <div class="jhcf-card-head">
-      <div class="jhcf-card-head-top">
-        <div class="jhcf-card-title-group">
-          <h1>Current Focus</h1>
-          <p>Technical Log</p>
-        </div>
-
-        <div id="Current-Focus" class="jhcf-posted-wrap">
-          <span class="jhcf-posted-pill">Posted On: Mar 24, 2026</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Body -->
-    <div class="jhcf-body">
-
-      <!-- Section 01 -->
-      <div class="jhcf-section">
-        <div class="jhcf-section-head">
-          <div class="jhcf-no jhcf-no-navy">01</div>
-          <h4>Technical Notes (Field-Relative)</h4>
-        </div>
-
-        <div class="jhcf-text-block">
-          <p class="jhcf-text-line">
-            <strong>Current Technical Baseline:</strong> Driver and long-iron dispersion remain stable, and overall tee-to-green control continues to trend at a competitive level relative to the field.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Ball-Striking Status:</strong> Approach quality and green-in-regulation frequency remained sufficient to generate scoring opportunities across all three rounds.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Putting Conversion:</strong> The primary scoring gap remains short- to mid-range birdie conversion. A high number of makeable opportunities did not convert, resulting in a scoreline below the level of opportunity created.
-          </p>
-
-<p class="jhcf-text-line">
-  <strong>Surface &amp; Condition Factors:</strong> Firm, dry desert conditions remained a management variable throughout the event, particularly in green pace, release, and overall adaptation.
-</p>
-
-          <p class="jhcf-text-line">
-            <strong>Round Pattern:</strong> R1 showed strong ball-striking with limited scoring return due to putting. R2 reflected temporary improvement in conversion and scoring output. R3 began with early scoring but returned to reduced conversion despite continued ball-striking stability.
-          </p>
-
-          <p class="jhcf-text-line">
-            <strong>Performance Interpretation:</strong> The scoring outcome did not fully align with the underlying tee-to-green sample. The gap between opportunity creation and conversion remains the primary technical focus.
-          </p>
-
-          <p class="jhcf-text-line jhcf-text-line-last">
-            <strong>Immediate Priority:</strong> Maintain current ball-striking structure while improving short-range conversion efficiency on fast, firm greens.
-          </p>
-        </div>
-      </div>
-
-      <!-- Section 02 -->
-      <div class="jhcf-section">
-        <div class="jhcf-section-head">
-          <div class="jhcf-no jhcf-no-gold">02</div>
-          <h4>Conditioning &amp; Academic Status</h4>
-        </div>
-
-        <div class="jhcf-text-block">
-          
-<p class="jhcf-text-line">
-  <strong class="jhcf-gold-strong">Physical:</strong> Hydration, recovery, and overall physical management remained ongoing priorities throughout the event.
-</p>
-
-          <p class="jhcf-text-line jhcf-text-line-last">
-            <strong class="jhcf-gold-strong">Academic:</strong> Coursework and off-course responsibilities accumulated during consecutive tournament weeks and require immediate catch-up before the next event cycle.
-          </p>
-        </div>
-      </div>
-
-      <div class="jhcf-divider"></div>
-
-      <!-- Upcoming Focus -->
-      <div class="jhcf-upcoming-wrap">
-        <div class="jhcf-upcoming-tab">Inserted Focus Note</div>
-
-        <div class="jhcf-upcoming">
-          <div class="jhcf-upcoming-head">
-            <div class="jhcf-upcoming-title-wrap">
-              <h5>Upcoming Focus — Tiger Invitational (Apr 6–7)</h5>
-            </div>
-
-            <div class="jhcf-upcoming-pill">
-              Tournament Prep — Technical Memo
-            </div>
-          </div>
-
-          <div class="jhcf-upcoming-lines">
-            <p>Short-range birdie-putt conversion</p>
-            <p>Firm-green distance and release control</p>
-            <p>Wedge calibration into small targets</p>
-            <p class="jhcf-upcoming-last">Maintaining current driver / long-iron dispersion gains</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="jhcf-footer-note">Joshua's Memo Note</div>
-
-    </div>
-  </div>
-</div>
-
-<style>
-#jh-current-focus-block,
-#jh-current-focus-block * {
-  box-sizing: border-box;
-}
-
-#jh-current-focus-block {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* anchor */
-#jh-current-focus-block #current-focus {
-  display: block;
-  position: relative;
-  top: -100px;
-  visibility: hidden;
-}
-
-/* unified shell */
-#jh-current-focus-block .jhcf-shell {
-  width: 100%;
-  margin: 20px 0 40px 0;
-  background: linear-gradient(180deg, #fffdf8 0%, #fffefb 100%);
-  border: 1px solid #d9e2ec;
-  border-radius: 20px;
-  box-shadow: 0 14px 34px rgba(12,35,64,0.08);
-  overflow: hidden;
-}
-
-/* unified header */
-#jh-current-focus-block .jhcf-card-head {
-  width: 100%;
-  padding: 24px 28px 18px 28px;
-  background:
-    linear-gradient(180deg, #ffffff 0%, #f9fbfe 100%);
-  border-bottom: 1px solid #e7edf5;
-  position: relative;
-}
-
-#jh-current-focus-block .jhcf-card-head::after {
-  content: "";
-  position: absolute;
-  left: 28px;
-  right: 28px;
-  bottom: 0;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #0c2340 0%, #355d8a 42%, rgba(53,93,138,0.08) 100%);
-}
-
-#jh-current-focus-block .jhcf-card-head-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-#jh-current-focus-block .jhcf-card-title-group {
-  min-width: 0;
-  flex: 1 1 auto;
-}
-
-#jh-current-focus-block .jhcf-card-title-group h1 {
-  margin: 0;
-  color: #0c2340;
-  font-size: 24px;
-  letter-spacing: 1px;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 1.15;
-}
-
-#jh-current-focus-block .jhcf-card-title-group p {
-  margin: 8px 0 0 0;
-  font-size: 12px;
-  color: #64748b;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.35;
-}
-
-#jh-current-focus-block .jhcf-posted-wrap {
-  flex: 0 0 auto;
-  align-self: flex-start;
-}
-
-#jh-current-focus-block .jhcf-posted-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 12px;
-  margin: 0;
-  background: #ffffff;
-  border: 1px solid #dbe4ee;
-  border-radius: 999px;
-  box-shadow: 0 4px 10px rgba(12,35,64,0.05);
-  color: #425466;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  text-transform: none;
-  white-space: nowrap;
-}
-
-/* body */
-#jh-current-focus-block .jhcf-body {
-  width: 100%;
-  padding: 26px 28px 24px 28px;
-}
-
-/* sections */
-#jh-current-focus-block .jhcf-section {
-  margin: 0 0 30px 0;
-}
-
-#jh-current-focus-block .jhcf-section-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 0 0 16px 0;
-}
-
-#jh-current-focus-block .jhcf-no {
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.14);
-}
-
-#jh-current-focus-block .jhcf-no-navy {
-  background: linear-gradient(180deg, #153357 0%, #0c2340 100%);
-}
-
-#jh-current-focus-block .jhcf-no-gold {
-  background: linear-gradient(180deg, #d6a24b 0%, #c98a2e 100%);
-}
-
-#jh-current-focus-block .jhcf-section-head h4 {
-  margin: 0;
-  font-size: 15px;
-  color: #0c2340;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  line-height: 1.35;
-}
-
-/* memo text area */
-#jh-current-focus-block .jhcf-text-block {
-  width: 100%;
-  border: 1px solid #e7ebf2;
-  border-radius: 14px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,246,0.96) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
-  overflow: hidden;
-}
-
-#jh-current-focus-block .jhcf-text-line {
-  margin: 0;
-  padding: 14px 16px;
-  border-bottom: 1px solid #eceff4;
-  font-size: 14px;
-  color: #243447;
-  line-height: 1.8;
-  font-weight: 500;
-  position: relative;
-  background-image: linear-gradient(to right, rgba(12,35,64,0.035), rgba(12,35,64,0));
-  background-size: 6px 100%;
-  background-repeat: no-repeat;
-}
-
-#jh-current-focus-block .jhcf-text-line-last {
-  border-bottom: none;
-}
-
-#jh-current-focus-block .jhcf-text-line strong {
-  color: #0c2340;
-  font-weight: 800;
-}
-
-#jh-current-focus-block .jhcf-text-line .jhcf-gold-strong,
-#jh-current-focus-block .jhcf-gold-strong {
-  color: #7c5a1b;
-  font-weight: 800;
-}
-
-/* divider */
-#jh-current-focus-block .jhcf-divider {
-  height: 1px;
-  background: #e9eef5;
-  margin: 0 0 24px 0;
-}
-
-/* upcoming inserted memo */
-#jh-current-focus-block .jhcf-upcoming-wrap {
-  position: relative;
-  margin-top: 2px;
-  padding-top: 16px;
-}
-
-#jh-current-focus-block .jhcf-upcoming-tab {
-  position: absolute;
-  top: 0;
-  left: 22px;
-  z-index: 2;
-  padding: 6px 12px 7px 12px;
-  font-size: 10px;
-  color: #0c2340;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  background: linear-gradient(180deg, #f7e7bf 0%, #efd79f 100%);
-  border: 1px solid #e0c88c;
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.5) inset;
-}
-
-#jh-current-focus-block .jhcf-upcoming {
-  position: relative;
-  background: linear-gradient(180deg, #fffdfa 0%, #fff8eb 100%);
-  border: 1px solid #e6d7b3;
-  border-left: 5px solid #c98a2e;
-  border-radius: 18px;
-  padding: 22px 20px 18px 20px;
-  box-shadow: 0 10px 20px rgba(90,70,20,0.07);
-}
-
-#jh-current-focus-block .jhcf-upcoming::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  right: 18px;
-  width: 34px;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(201,138,46,0.10);
-}
-
-#jh-current-focus-block .jhcf-upcoming-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
-
-#jh-current-focus-block .jhcf-upcoming-title-wrap h5 {
-  margin: 0;
-  font-size: 14px;
-  color: #0c2340;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
-}
-
-#jh-current-focus-block .jhcf-upcoming-pill {
-  flex: 0 0 auto;
-  font-size: 10px;
-  color: #7c5a1b;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 9px;
-  border: 1px solid #e4d2a6;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.7);
-}
-
-#jh-current-focus-block .jhcf-upcoming-lines {
-  width: 100%;
-  border-top: 1px solid rgba(124,90,27,0.16);
-}
-
-#jh-current-focus-block .jhcf-upcoming-lines p {
-  margin: 0;
-  padding: 13px 0;
-  border-bottom: 1px solid rgba(124,90,27,0.12);
-  font-size: 13.5px;
-  color: #0c2340;
-  font-weight: 700;
-  line-height: 1.7;
-}
-
-#jh-current-focus-block .jhcf-upcoming-lines .jhcf-upcoming-last {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-/* footer note */
-#jh-current-focus-block .jhcf-footer-note {
-  width: 100%;
-  margin-top: 14px;
-  padding-right: 23px;
-  text-align: right;
-  font-size: 10px;
-  color: #94a3b8;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* responsive */
-@media (max-width: 768px) {
-  #jh-current-focus-block .jhcf-shell {
-    margin: 18px 0 36px 0 !important;
-    border-radius: 16px !important;
-  }
-
-  #jh-current-focus-block .jhcf-card-head {
-    padding: 20px 18px 16px 18px !important;
-  }
-
-  #jh-current-focus-block .jhcf-card-head::after {
-    left: 18px !important;
-    right: 18px !important;
-  }
-
-  #jh-current-focus-block .jhcf-card-title-group h1 {
-    font-size: 21px !important;
-  }
-
-  #jh-current-focus-block .jhcf-card-title-group p {
-    font-size: 11px !important;
-  }
-
-  #jh-current-focus-block .jhcf-posted-pill {
-    font-size: 11px !important;
-    padding: 6px 10px !important;
-  }
-
-  #jh-current-focus-block .jhcf-body {
-    padding: 20px 18px 18px 18px !important;
-  }
-
-  #jh-current-focus-block .jhcf-no {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 12px !important;
-    font-size: 14px !important;
-  }
-
-  #jh-current-focus-block .jhcf-section-head {
-    gap: 12px !important;
-    margin-bottom: 12px !important;
-  }
-
-  #jh-current-focus-block .jhcf-text-line {
-    font-size: 13.5px !important;
-    line-height: 1.75 !important;
-    padding: 12px 14px !important;
-  }
-
-  #jh-current-focus-block .jhcf-upcoming {
-    padding: 20px 16px 16px 16px !important;
-  }
-
-  #jh-current-focus-block .jhcf-upcoming-tab {
-    left: 16px !important;
-    font-size: 9px !important;
-    padding: 5px 10px 6px 10px !important;
-  }
-}
-
-@media (max-width: 560px) {
-  #jh-current-focus-block .jhcf-card-head-top {
-    gap: 10px !important;
-  }
-
-  #jh-current-focus-block .jhcf-posted-wrap {
-    width: 100% !important;
-  }
-
-  #jh-current-focus-block .jhcf-posted-pill {
-    white-space: normal !important;
-  }
-
-  #jh-current-focus-block .jhcf-upcoming-head {
-    gap: 10px !important;
-  }
-}
-</style>
-
-
 
   
 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
@@ -3974,224 +3938,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
   
   
-<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
-    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
-            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-                2025–26 Competitive Record
-            </p>
-                
-            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
-                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
-                </div>
-                    
-                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
-                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
-                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">70.80</span>
-                    </div>
-                    <canvas id="archiveOfficialChart"></canvas>
-                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; 
-                        padding-top: 10px; font-weight: 600; text-transform: uppercase; text-align: center;">
-                        <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
-<script>
-(function() {
-    if (typeof ChartDataLabels !== 'undefined') {
-        try { Chart.register(ChartDataLabels); } catch (e) {}
-    }
-
-    Chart.defaults.font.family = "'Oswald', sans-serif";
-
-    const isMobile = window.innerWidth <= 768;
-
-    // ===== DATA =====
-    const archiveLabels = [
-        '9/07 (Argent)',
-        '9/15 (Highlands)',
-        '9/22 (Badger)',
-        '10/05 (Trinity)',
-        '2/01 (Compadres)',
-        '2/24 (Military)',
-        '3/03 (Golden)',
-        '3/17 (Thunderbirds)',
-        '3/24 (Bellbank)'
-    ];
-
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
-
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
-
-    const archiveRounds = [
-        '70-70-69 (-7)',
-        '74-71-70 (-1)',
-        '71-71-76 (+2)',
-        '75-73-74 (+6)',
-        '70-75-71 (E)',
-        '69-72-74 (-1)',
-        '64-70-69 (-13)',
-        '72-76-73 (+5)',
-        '73-68-71 (-4)'
-    ];
-
-    const archiveRankImpact = [
-        '● Rank Impact ▲ 151',
-        '● Rank Impact ▲ 28',
-        '● Rank Impact ▼ 38',
-        '● Rank Impact ▼ 98',
-        '● Rank Impact ▲ 142',
-        '● Rank Impact ▲ 72',
-        '● Rank Impact ▲ 43',
-        '● Rank Impact ▼ 43',
-        '● Rank Impact ▲ 26'
-    ];
-
-    const archiveWagrPower = [
-        '230.8799',
-        '232.6656',
-        '129.0694',
-        '360.1597',
-        '145.6033',
-        '101.3382',
-        '135.0209',
-        '670.0102',
-        '221.2814'
-    ];
-
-    const archivePtsEarned = [
-        '5.3735',
-        '4.9097',
-        '3.3178',
-        '3.1971',
-        '6.5774',
-        '9.2734',
-        '6.7817',
-        '4.8345',
-        '4.9385'
-    ];
-
-    // Mobile
-    function mobileLabel(label) {
-        return label;
-    }
-
-    const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
-
-    new Chart(ctxOfficialArchive, {
-        type: 'line',
-        data: {
-            labels: archiveLabels,
-            datasets: [{
-                label: 'Scoring Avg',
-                data: archiveScores,
-                borderColor: '#0c2340',
-                backgroundColor: 'rgba(12, 35, 64, 0.05)',
-                borderWidth: 2,
-                pointRadius: isMobile ? 4 : 6,
-                pointHoverRadius: isMobile ? 6 : 9,
-                pointBackgroundColor: '#0c2340',
-                pointHoverBackgroundColor: '#F15A22',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2,
-                tension: 0.3,
-                fill: true,
-                datalabels: {
-                    align: 'top',
-                    anchor: 'end',
-                    offset: isMobile ? 4 : 8,
-                    color: '#0c2340',
-                    font: {
-                        weight: '700',
-                        size: isMobile ? 10 : 13
-                    },
-                    formatter: function(value, context) {
-                        return archivePositions[context.dataIndex];
-                    }
-                }
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            layout: {
-                padding: isMobile
-                    ? { top: 20, bottom: 18, left: 0, right: 0 }
-                    : { top: 35, bottom: 25, left: -5, right: 15 }
-            },
-            scales: {
-                y: {
-                    min: 65,
-                    max: 82,
-                    grid: { color: '#efefef', drawBorder: false },
-                    ticks: {
-                        font: { size: isMobile ? 10 : 11, weight: '600' },
-                        color: '#333',
-                        padding: 0
-                    },
-                    title: { display: false }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: {
-                        color: '#333',
-                        font: { size: isMobile ? 8 : 10, weight: '500' },
-                        autoSkip: false,
-                        maxRotation: isMobile ? 60 : 45,
-                        minRotation: isMobile ? 60 : 45,
-                        callback: function(value) {
-                            const label = this.getLabelForValue(value);
-                            return mobileLabel(label);
-                        }
-                    },
-                    offset: false
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    enabled: true,
-                    backgroundColor: '#0c2340',
-                    titleColor: '#F15A22',
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        title: function(context) {
-                            return archiveLabels[context[0].dataIndex];
-                        },
-                        label: function(context) {
-                            return `● Scoring Avg: ${context.parsed.y}`;
-                        },
-                        afterLabel: function(context) {
-                            const i = context.dataIndex;
-                            return [
-                                `● Rounds: ${archiveRounds[i]}`,
-                                `● Pos: ${archivePositions[i]}`,
-                                archiveRankImpact[i],
-                                `-----------------------`,
-                                `● WAGR Pwr: ${archiveWagrPower[i]}`,
-                                `● Pts Earned: ${archivePtsEarned[i]}`
-                            ].filter(v => v !== null);
-                        }
-                    }
-                }
-            }
-        }
-    });
-})();
-</script>
 
 
 
@@ -4201,258 +3948,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   
 
 
-<div class="round-distribution-wrapper" style="width: 100%; margin: 15px 0 20px 0; padding: 0; background: transparent; box-sizing: border-box;">
-  <style>
-    @media (max-width: 768px) {
-      .rd-main-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .rd-left-stack,
-      .rd-right-stack {
-        gap: 14px !important;
-      }
-      .rd-header-title {
-        font-size: 20px !important;
-      }
-      .rd-subtitle {
-        font-size: 0.75em !important;
-      }
-      .rd-table th,
-      .rd-table td {
-        font-size: 11px !important;
-        padding: 9px 8px !important;
-      }
-      .rd-summary-grid,
-      .rd-structure-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-      .rd-summary-value,
-      .rd-structure-value {
-        font-size: 20px !important;
-      }
 
-      .rd-avg-stack-desktop {
-        display: none !important;
-      }
-      .rd-avg-stack-mobile {
-        display: block !important;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .rd-avg-stack-desktop {
-        display: block !important;
-      }
-      .rd-avg-stack-mobile {
-        display: none !important;
-      }
-    }
-  </style>
-
-  <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-    
-    <div style="padding: 10px 24px 18px 24px; box-sizing: border-box; text-align: center; width: 100%;">
-      <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
-        Round Distribution & Scoring Pattern
-      </h2>
-      <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-        2025–26 Competitive Record
-      </p>
-    </div>
-
-    <div class="rd-main-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 0 20px 22px 20px; box-sizing: border-box; align-items: stretch;">
-      
-      <!-- LEFT COLUMN -->
-      <div class="rd-left-stack" style="display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box;">
-        
-        <!-- ROUND LOG -->
-        <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-sizing: border-box;">
-          <div style="padding: 14px 18px; background: #0c2340; color: #ffffff; font-family: 'Oswald', sans-serif; font-size: 1em; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;">
-            27-Round Competitive Distribution
-          </div>
-
-          <div style="padding: 14px 16px 12px 16px; box-sizing: border-box;">
-            <table class="rd-table" style="width: 100%; border-collapse: collapse; font-family: 'Montserrat', sans-serif;">
-              <thead>
-                <tr>
-                  <th style="text-align: left; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Event</th>
-                  <th style="text-align: left; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Round Scores</th>
-                  <th style="text-align: right; padding: 10px 10px; font-size: 11px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1px solid #e5e7eb;">Event Avg.</th>
-                </tr>
-              </thead>
-              <tbody>
-               
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">9<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">73 • 68 • 71</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">70.66</td>
-                </tr>
-                
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">8</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">72 • 76 • 73</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">73.66</td>
-                </tr>
-
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">7</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">64 • 70 • 69</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">67.67</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">6</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">69 • 72 • 74</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">5</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 75 • 71</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.00</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">4</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">75 • 73 • 74</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">74.00</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">3</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">71 • 71 • 76</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">72.67</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">2</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">74 • 71 • 70</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.67</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800;">1 <span style="color:#64748b; font-weight:700;">(Earliest)</span></td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700;">70 • 70 • 69</td>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right;">69.67</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- SNAPSHOT -->
-        <div style="background: #0c2340; border-radius: 10px; padding: 18px 18px 16px 18px; box-shadow: 0 8px 20px rgba(12,35,64,0.12); box-sizing: border-box;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #ffffff; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px;">
-            Distribution Snapshot
-          </div>
-
-          <div class="rd-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">27-Round Avg.</div>
-
-              <div class="rd-summary-value rd-avg-stack-desktop" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
-                <div>71.52</div>
-                <div style="margin-top: 4px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</div>
-                <div style="margin-top: 3px; font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.05;">70.80</div>
-                <div style="margin-top: 3px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</div>
-              </div>
-
-              <div class="rd-summary-value rd-avg-stack-mobile" style="font-size: 20px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05; display: none;">
-                <div style="display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 24px; color: #ffffff; font-weight: 900; line-height: 1.02;">71.52</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Raw</span>
-                </div>
-                <div style="margin-top: 4px; display: flex; align-items: baseline; gap: 5px; flex-wrap: nowrap;">
-                  <span style="font-size: 18px; color: #ffffff; font-weight: 900; line-height: 1.02;">70.80</span>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.1;">Clippd</span>
-                </div>
-              </div>
-            </div>
-            
-            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Low Round</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">64</div>
-            </div>
-            <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Par or Better</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">17 / 27</div>
-            </div>
-            <div style="background: #f15a22; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: rgba(255,255,255,0.82); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Primary Band</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">68–72</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <div class="rd-right-stack" style="display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box;">
-
-        <!-- TECHNICAL READING -->
-        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 4px solid #f15a22; border-radius: 10px; padding: 18px 18px 16px 18px; box-sizing: border-box; flex: 1 1 auto;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #0c2340; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px;">
-            Technical Reading
-          </div>
-
-          <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
-            <div style="margin-bottom: 10px;">
-              Across the 27 competitive rounds included in this section, most recorded scores fall between 68 and 72.
-            </div>
-            <div style="margin-bottom: 10px;">
-              The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
-            </div>
-            <div style="margin-bottom: 10px;">
-              This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
-            </div>
-            <div>
-              The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
-            </div>
-          </div>
-        </div>
-
-        <!-- SCORING STRUCTURE -->
-        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 4px solid #0c2340; border-radius: 10px; padding: 18px 18px 16px 18px; box-sizing: border-box;">
-          <div style="font-family: 'Oswald', sans-serif; font-size: 1em; color: #0c2340; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px;">
-            Scoring Structure
-          </div>
-
-          <div class="rd-structure-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Events</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">9</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Rounds</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">27</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Range</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">64–76</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">60s</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">5</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">70–72</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">12</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
-                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
-                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
-                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
-                </div>
-
-                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
-                  <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">75-76</div>
-                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">4</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
   
