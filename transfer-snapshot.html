@@ -610,6 +610,46 @@
     font-weight: 700;
   }
 
+  .ts-role-wide-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.95fr;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 24px 22px 22px;
+}
+
+.ts-role-wide-main h3 {
+  margin: 0 0 10px;
+  color: #0c2340;
+  font-size: 19px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+
+.ts-role-wide-main p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.ts-role-wide-side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 1024px) {
+  .ts-role-wide-card {
+    grid-template-columns: 1fr;
+  }
+}
+
   .ts-link-item {
     display: block;
     text-decoration: none;
@@ -963,28 +1003,25 @@
     </section>
 
     <section class="ts-section">
-      <div class="ts-half-grid">
-        <div class="ts-half-card">
-          <h3>Underlying Value Indicators</h3>
-          <ul id="underlying-list"></ul>
-        </div>
+  <div class="ts-role-wide-card">
+    <div class="ts-role-wide-main">
+      <h3>Projected College Role</h3>
+      <p id="projected-role-body"></p>
+    </div>
 
-        <div class="ts-half-card">
-          <h3>Projected College Role</h3>
-          <p id="projected-role-body"></p>
-
-          <div class="ts-role-box">
-            <div class="ts-role-label" id="translation-label">Roster Translation</div>
-            <p class="ts-role-text" id="translation-text"></p>
-          </div>
-
-          <div class="ts-role-box">
-            <div class="ts-role-label" id="development-label">Development Outlook</div>
-            <p class="ts-role-text" id="development-text"></p>
-          </div>
-        </div>
+    <div class="ts-role-wide-side">
+      <div class="ts-role-box">
+        <div class="ts-role-label" id="translation-label">Roster Translation</div>
+        <p class="ts-role-text" id="translation-text"></p>
       </div>
-    </section>
+
+      <div class="ts-role-box">
+        <div class="ts-role-label" id="development-label">Development Outlook</div>
+        <p class="ts-role-text" id="development-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section class="ts-section">
       <div class="ts-half-grid">
@@ -1178,15 +1215,7 @@
         });
       }
 
-      const underlyingList = document.getElementById('underlying-list');
-      if (underlyingList) {
-        underlyingList.innerHTML = '';
-        (data.underlyingIndicators || []).forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          underlyingList.appendChild(li);
-        });
-      }
+
 
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
