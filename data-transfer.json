@@ -3,6 +3,7 @@
     "lastUpdated": "April 2, 2026",
     "status": "in-season"
   },
+  
   "hero": {
     "eyebrow": "Transfer Snapshot",
     "title": "Joshua Hong",
@@ -10,12 +11,32 @@
     "definition": "High-reliability freshman scorer with proven lineup value and Power 4 transfer upside.",
     "supporting": "Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling."
   },
+  
   "quickSummary": [
    "Immediate lineup-value freshman with high counting reliability and low floor risk.",
   "Proven winner with repeat top-3 and top-10 finishes across the season.",
   "Performs well in difficult scoring environments and shows clear score-protection value.",
   "Projects as a realistic 3–5 slot competition profile in a stronger program, with upside beyond baseline stability."
   ],
+
+  "heroStrip": [
+  {
+    "label": "Official Rounds",
+    "value": "27"
+  },
+  {
+    "label": "Counting",
+    "value": "26 / 27"
+  },
+  {
+    "label": "Points Share",
+    "value": "29.84%"
+  },
+  {
+    "label": "Academic GPA",
+    "value": "3.4"
+  }
+],
   
   "metrics": [
   {
@@ -41,8 +62,8 @@
   },
   {
     "label": "Points Share",
-    "value": "~30%",
-    "note": "Approximate team contribution share across the season."
+    "value": "29.84%",
+    "note": "350.25 of 1,173.93 weighted team points."
   },
   {
     "label": "Top Finishes",
@@ -50,14 +71,14 @@
     "note": "Win, podium, and top-10 volume across 9 freshman events."
   },
   {
-    "label": "Ranking Snapshot",
-    "value": "311 / 430",
-    "note": "Clippd rank. / WAGR Useful market markers alongside deeper profile context."
+    "label": "WAGR",
+    "value": "416",
+    "note": "Current world amateur ranking."
   },
   {
-    "label": "Par-or-Better",
-    "value": "17",
-    "note": "Seventeen rounds at par or better during the freshman season."
+    "label": "Clippd Rank",
+    "value": "311",
+    "note": "Current Clippd ranking."
   }
 ],
   
