@@ -7,7 +7,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="keywords" content="Joshua Hong Golf, Joshua Hong UTSA, Joshua Hong Transfer Snapshot, Joshua Hong NCAA Golfer, Joshua Hong Mexico, NCAA D1 Golfer, UTSA Men's Golf">
+<meta name="keywords" content="Joshua Hong Golf, Joshua Hong UTSA, Joshua Hong Transfer Snapshot, NCAA D1 Golfer, UTSA Men's Golf">
 <title>Transfer Snapshot | Joshua Hong Golf</title>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
@@ -52,7 +52,7 @@
       "abbreviation": "UTSA"
     }
   },
-  "description": "Transfer Snapshot page for Joshua Hong, NCAA Division I golfer at UTSA. Competitive profile, core metrics, progression, and verified links.",
+  "description": "Transfer Snapshot page for Joshua Hong, NCAA Division I golfer at UTSA.",
   "url": "https://joshuahonggolf.com"
 }
 </script>
@@ -77,15 +77,12 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     -webkit-text-size-adjust: 100%;
-    background: #f7f9fc;
+    background: #f6f8fb;
     color: #1f2937;
   }
 
   * { box-sizing: border-box; }
 
-  a { color: inherit; }
-
-  /* HEADER */
   .sticky-top {
     position: absolute;
     top: 0;
@@ -157,7 +154,7 @@
 
   .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 18px;
     align-items: center;
   }
 
@@ -168,14 +165,20 @@
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: 0.3s;
-    padding: 8px 15px;
-    border-radius: 4px;
+    transition: 0.25s ease;
+    padding: 10px 16px;
+    border-radius: 999px;
   }
 
   .nav-links a:hover {
-    background: rgba(241, 90, 34, 0.08);
-    color: #F15A22;
+    background-color: #F15A22 !important;
+    color: #fff !important;
+  }
+
+  .nav-links a.active {
+    background-color: #F15A22 !important;
+    color: #fff !important;
+    border: none;
   }
 
   .mobile-menu-logo,
@@ -211,81 +214,28 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
-  /* GLOBAL */
-  .ts-container {
+  .ts-page {
     width: 100%;
-    max-width: 1120px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 0 18px;
+    padding: 140px 15px 50px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
-  .ts-section {
+  .ts-hero {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    overflow: hidden;
     margin-bottom: 28px;
   }
 
-  .ts-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 24px;
-    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
-  }
-
-  .ts-section-title-wrap {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-
-  .ts-section-bar {
-    width: 6px;
-    height: 42px;
-    border-radius: 999px;
-    background: #F15A22;
-    flex-shrink: 0;
-  }
-
-  .ts-section-title {
-    margin: 0;
-    font-size: 28px;
-    font-weight: 900;
-    line-height: 1.05;
-    color: #0c2340;
-    letter-spacing: -0.6px;
-    text-transform: uppercase;
-  }
-
-  .ts-section-subtitle {
-    margin: 6px 0 0;
-    font-size: 13px;
-    color: #64748b;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-  }
-
-  /* HERO */
-  .ts-hero {
-    padding-top: 145px;
-    margin-bottom: 30px;
-  }
-
-  .ts-hero-shell {
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    background:
-      linear-gradient(135deg, rgba(12,35,64,0.96) 0%, rgba(18,52,95,0.94) 58%, rgba(241,90,34,0.16) 100%);
-    color: white;
-    box-shadow: 0 24px 55px rgba(12, 35, 64, 0.24);
-  }
-
-  .ts-hero-grid {
-    display: grid;
-    grid-template-columns: 1.25fr 0.95fr;
-    gap: 30px;
-    padding: 48px 42px 40px;
-    align-items: stretch;
+  .ts-hero-top {
+    background: linear-gradient(180deg, #0c2340 0%, #12335d 100%);
+    padding: 30px 28px 26px;
+    color: #fff;
   }
 
   .ts-eyebrow {
@@ -294,147 +244,177 @@
     gap: 8px;
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
-    letter-spacing: 1.8px;
-    color: #ffd7c5;
-    margin-bottom: 14px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 12px;
   }
 
-  .ts-eyebrow-dot {
+  .ts-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background: #F15A22;
-    box-shadow: 0 0 0 6px rgba(241,90,34,0.14);
+    display: inline-block;
   }
 
-  .ts-player-name {
-    font-size: 48px;
-    line-height: 0.95;
-    margin: 0 0 12px;
+  .ts-title {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1;
     font-weight: 900;
-    letter-spacing: -2px;
+    letter-spacing: -1.4px;
     text-transform: uppercase;
   }
 
-  .ts-player-meta {
+  .ts-meta {
+    margin: 10px 0 0;
     font-size: 14px;
     font-weight: 600;
     color: rgba(255,255,255,0.82);
-    letter-spacing: 0.4px;
-    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .ts-definition-wrap {
+    padding: 24px 28px 24px;
+    background: #ffffff;
   }
 
   .ts-definition {
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 1.18;
-    color: #ffffff;
-    max-width: 700px;
-    margin-bottom: 18px;
+    margin: 0 0 14px;
+    font-size: 27px;
+    line-height: 1.22;
+    color: #0c2340;
+    font-weight: 900;
+    letter-spacing: -0.7px;
   }
 
   .ts-supporting {
+    margin: 0;
     font-size: 15px;
     line-height: 1.75;
-    color: rgba(255,255,255,0.86);
-    max-width: 760px;
-    margin: 0;
-  }
-
-  .ts-hero-side {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .ts-side-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 22px;
-    padding: 20px 20px 18px;
-    backdrop-filter: blur(4px);
-  }
-
-  .ts-side-label {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #c9d6e6;
-    margin-bottom: 10px;
-  }
-
-  .ts-side-list {
-    margin: 0;
-    padding-left: 18px;
-  }
-
-  .ts-side-list li {
-    margin-bottom: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #ffffff;
+    color: #475569;
     font-weight: 500;
   }
 
-  .ts-link-row {
+  .ts-links-inline {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 18px;
   }
 
-  .ts-pill-link {
+  .ts-links-inline a {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
     text-decoration: none;
-    padding: 11px 14px;
+    padding: 10px 14px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.16);
-    color: #ffffff;
+    border: 1px solid #d7dee8;
+    background: #f8fafc;
+    color: #0c2340;
     font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0.8px;
     text-transform: uppercase;
+    letter-spacing: 0.7px;
     transition: 0.25s ease;
   }
 
-  .ts-pill-link:hover {
+  .ts-links-inline a:hover {
     background: #F15A22;
     border-color: #F15A22;
-    transform: translateY(-1px);
+    color: #fff;
   }
 
-  /* QUICK SUMMARY */
-  .ts-quick-card {
-    padding: 24px 24px 22px;
+  .ts-section {
+    margin-bottom: 28px;
   }
 
-  .ts-quick-grid {
+  .ts-section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    border-left: 6px solid #F15A22;
+    padding-left: 15px;
+  }
+
+  .ts-section-header h2 {
+    margin: 0;
+    color: #0c2340;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .ts-section-header p {
+    margin: 7px 0 0;
+    color: #7f8c8d;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .ts-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .ts-meta-strip {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+
+  .ts-last-updated {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.4px;
+  }
+
+  .ts-quick-grid,
+  .ts-metrics-grid,
+  .ts-type-grid,
+  .ts-timeline-grid,
+  .ts-signature-grid,
+  .ts-links-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 16px;
+  }
+
+  .ts-quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ts-metrics-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .ts-type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ts-timeline-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ts-signature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ts-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .ts-quick-item,
+  .ts-metric,
+  .ts-type-item,
+  .ts-timeline-item,
+  .ts-signature-item,
+  .ts-link-item,
+  .ts-half-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
 
   .ts-quick-item {
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
-    padding: 16px 16px;
+    padding: 18px 18px;
     font-size: 14px;
-    line-height: 1.55;
+    line-height: 1.65;
+    color: #334155;
     font-weight: 600;
-    color: #0f172a;
-  }
-
-  /* METRICS */
-  .ts-metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
   }
 
   .ts-metric {
@@ -444,14 +424,14 @@
   .ts-metric-label {
     font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.9px;
     text-transform: uppercase;
     color: #64748b;
     margin-bottom: 10px;
   }
 
   .ts-metric-value {
-    font-size: 32px;
+    font-size: 31px;
     font-weight: 900;
     color: #0c2340;
     line-height: 1;
@@ -459,107 +439,60 @@
     margin-bottom: 8px;
   }
 
-  .ts-metric-note {
-    font-size: 13px;
-    color: #475569;
-    line-height: 1.5;
-    font-weight: 600;
-  }
-
   .ts-metric-value.accent {
     color: #F15A22;
   }
 
-  /* PLAYER TYPE */
-  .ts-type-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+  .ts-metric-note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #475569;
+    font-weight: 600;
   }
 
-  .ts-type-card {
+  .ts-type-item,
+  .ts-timeline-item,
+  .ts-signature-item {
     padding: 22px 20px 20px;
   }
 
-  .ts-type-title {
-    margin: 0 0 8px;
+  .ts-type-item h3,
+  .ts-timeline-item h3,
+  .ts-signature-item h3,
+  .ts-half-card h3 {
+    margin: 0 0 10px;
     color: #0c2340;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.15;
+    font-weight: 900;
     letter-spacing: -0.3px;
   }
 
-  .ts-type-desc {
+  .ts-type-item p,
+  .ts-timeline-item p,
+  .ts-half-card p {
     margin: 0;
     color: #475569;
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.7;
     font-weight: 500;
   }
 
-  /* TIMELINE */
-  .ts-timeline-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .ts-timeline-card {
-    position: relative;
-    padding: 24px 20px 20px;
-    overflow: hidden;
-  }
-
-  .ts-timeline-phase {
+  .ts-phase {
     font-size: 11px;
     font-weight: 800;
     color: #F15A22;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
 
-  .ts-timeline-title {
-    margin: 0 0 10px;
-    font-size: 20px;
-    font-weight: 900;
-    color: #0c2340;
-    line-height: 1.1;
-  }
-
-  .ts-timeline-desc {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.65;
-    color: #475569;
-    font-weight: 500;
-  }
-
-  /* SIGNATURE */
-  .ts-signature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .ts-result-card {
-    padding: 24px 20px 20px;
-  }
-
-  .ts-result-event {
-    margin: 0 0 10px;
-    color: #0c2340;
-    font-size: 20px;
-    line-height: 1.1;
-    font-weight: 900;
-  }
-
-  .ts-result-badge {
+  .ts-badge {
     display: inline-block;
     margin-bottom: 12px;
     padding: 6px 10px;
     border-radius: 999px;
-    background: rgba(241,90,34,0.09);
+    background: rgba(241,90,34,0.08);
     color: #F15A22;
     font-size: 11px;
     font-weight: 800;
@@ -567,12 +500,14 @@
     text-transform: uppercase;
   }
 
-  .ts-result-list {
+  .ts-signature-item ul,
+  .ts-half-card ul {
     margin: 0;
     padding-left: 18px;
   }
 
-  .ts-result-list li {
+  .ts-signature-item li,
+  .ts-half-card li {
     margin-bottom: 10px;
     color: #475569;
     font-size: 14px;
@@ -580,51 +515,21 @@
     font-weight: 500;
   }
 
-  /* VALUE / ROLE / CULTURE / TRANSFER */
-  .ts-two-col {
+  .ts-half-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 16px;
   }
 
-  .ts-list-card {
+  .ts-half-card {
     padding: 24px 22px 22px;
   }
 
-  .ts-mini-title {
-    margin: 0 0 12px;
-    color: #0c2340;
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 1.15;
-  }
-
-  .ts-body-copy {
-    margin: 0;
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.75;
-    font-weight: 500;
-  }
-
-  .ts-bullet-list {
-    margin: 0;
-    padding-left: 18px;
-  }
-
-  .ts-bullet-list li {
-    margin-bottom: 10px;
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.55;
-    font-weight: 500;
-  }
-
   .ts-role-box {
-    padding: 20px 18px;
+    padding: 18px 16px;
     background: #f8fafc;
-    border-radius: 18px;
     border: 1px solid #e2e8f0;
+    border-radius: 16px;
     margin-top: 14px;
   }
 
@@ -638,29 +543,23 @@
   }
 
   .ts-role-text {
+    margin: 0;
     color: #0f172a;
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.6;
     font-weight: 700;
-    margin: 0;
   }
 
-  /* LINKS */
-  .ts-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
-
-  .ts-link-card {
-    padding: 20px 20px 18px;
+  .ts-link-item {
+    display: block;
     text-decoration: none;
+    padding: 20px 20px 18px;
     transition: 0.25s ease;
   }
 
-  .ts-link-card:hover {
+  .ts-link-item:hover {
+    border-color: rgba(241,90,34,0.45);
     transform: translateY(-2px);
-    border-color: rgba(241,90,34,0.35);
   }
 
   .ts-link-top {
@@ -671,36 +570,29 @@
     margin-bottom: 10px;
   }
 
-  .ts-link-name {
+  .ts-link-top h3 {
     margin: 0;
-    font-size: 18px;
-    font-weight: 800;
     color: #0c2340;
+    font-size: 18px;
+    font-weight: 900;
     line-height: 1.15;
   }
 
   .ts-link-arrow {
-    font-size: 22px;
-    font-weight: 800;
     color: #F15A22;
+    font-size: 22px;
+    font-weight: 900;
     line-height: 1;
-    flex-shrink: 0;
   }
 
   .ts-link-desc {
     margin: 0;
-    font-size: 14px;
-    line-height: 1.6;
     color: #475569;
+    font-size: 14px;
+    line-height: 1.65;
     font-weight: 500;
   }
 
-  /* FOOT SPACE */
-  .ts-bottom-space {
-    height: 40px;
-  }
-
-  /* MOBILE */
   @media (max-width: 1024px) {
     .header-wrapper {
       padding: 0 20px;
@@ -737,6 +629,13 @@
       width: 100%;
       padding: 12px 20px;
       border-bottom: none;
+      border-radius: 14px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background-color: #F15A22 !important;
+      color: #fff !important;
     }
 
     .mobile-menu-logo { display: block; margin-bottom: 30px; }
@@ -774,69 +673,37 @@
       margin-top: 4px;
     }
 
-    .ts-hero-grid,
-    .ts-two-col,
-    .ts-quick-grid,
-    .ts-metrics-grid,
-    .ts-type-grid,
-    .ts-timeline-grid,
-    .ts-signature-grid,
-    .ts-links-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+    .ts-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ts-signature-grid { grid-template-columns: 1fr; }
+    .ts-half-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 768px) {
-    .ts-hero {
-      padding-top: 128px;
+    .ts-page {
+      padding: 128px 15px 40px;
     }
 
-    .ts-hero-grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 28px 18px 22px;
-    }
-
-    .ts-player-name {
-      font-size: 34px;
-      letter-spacing: -1.2px;
+    .ts-title {
+      font-size: 31px;
+      letter-spacing: -1px;
     }
 
     .ts-definition {
-      font-size: 21px;
-    }
-
-    .ts-supporting {
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .ts-section-title {
-      font-size: 23px;
+      font-size: 22px;
     }
 
     .ts-quick-grid,
-    .ts-metrics-grid,
     .ts-type-grid,
     .ts-timeline-grid,
-    .ts-signature-grid,
-    .ts-two-col,
-    .ts-links-grid {
+    .ts-links-grid,
+    .ts-metrics-grid {
       grid-template-columns: 1fr;
     }
 
-    .ts-metric-value {
-      font-size: 28px;
-    }
-
-    .ts-link-row {
-      gap: 8px;
-    }
-
-    .ts-pill-link {
-      font-size: 11px;
-      width: 100%;
-      justify-content: center;
+    .ts-hero-top,
+    .ts-definition-wrap {
+      padding-left: 18px;
+      padding-right: 18px;
     }
   }
 
@@ -866,7 +733,7 @@
           <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
         </div>
 
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
@@ -914,432 +781,267 @@
     }
   </script>
 
-  <!-- HERO -->
-  <section class="ts-hero">
-    <div class="ts-container">
-      <div class="ts-hero-shell">
-        <div class="ts-hero-grid">
-          <div>
-            <div class="ts-eyebrow">
-              <span class="ts-eyebrow-dot"></span>
-              <span>Transfer Snapshot</span>
-            </div>
+  <main class="ts-page">
+    <div class="ts-meta-strip">
+      <span class="ts-last-updated" id="ts-last-updated">Last Updated: —</span>
+    </div>
 
-            <h1 class="ts-player-name">Joshua Hong</h1>
+    <section class="ts-hero">
+      <div class="ts-hero-top">
+        <div class="ts-eyebrow">
+          <span class="ts-dot"></span>
+          <span id="hero-eyebrow">Transfer Snapshot</span>
+        </div>
+        <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
+        <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
+      </div>
 
-            <div class="ts-player-meta">
-              Freshman | UTSA Men’s Golf | NCAA Division I
-            </div>
+      <div class="ts-definition-wrap">
+        <h2 class="ts-definition" id="hero-definition">Dominant mid-major freshman with Power 4 translation upside.</h2>
+        <p class="ts-supporting" id="hero-supporting">
+          Low-variance, high-reliability scorer with proven lineup value, strong counting-round consistency, difficult-condition performance, and early evidence of both floor stability and contention ceiling.
+        </p>
 
-            <div class="ts-definition">
-              Dominant mid-major freshman with Power 4 translation upside.
-            </div>
-
-            <p class="ts-supporting">
-              Low-variance, high-reliability scorer with proven lineup value, strong counting-round consistency,
-              difficult-condition performance, and early evidence of both floor stability and contention ceiling.
-            </p>
-
-            <div class="ts-link-row">
-              <a class="ts-pill-link" href="ncaa-stats.html">View NCAA Stats</a>
-              <a class="ts-pill-link" href="news-media.html">News & Media</a>
-              <a class="ts-pill-link" href="junior-career.html">Junior Career</a>
-              <a class="ts-pill-link" href="reference-links.html">Reference Links</a>
-            </div>
-          </div>
-
-          <div class="ts-hero-side">
-            <div class="ts-side-card">
-              <div class="ts-side-label">Quick Read</div>
-              <ul class="ts-side-list">
-                <li>Immediate lineup-value freshman profile</li>
-                <li>Elite counting reliability and low round-collapse risk</li>
-                <li>Proven win / top-3 / top-10 competitive evidence</li>
-                <li>Strong candidate for higher-level lineup competition</li>
-              </ul>
-            </div>
-
-            <div class="ts-side-card">
-              <div class="ts-side-label">Transfer Objective</div>
-              <ul class="ts-side-list">
-                <li>Seeking stronger daily lineup pressure</li>
-                <li>More frequent power-field schedule exposure</li>
-                <li>Long-term competitive environment aligned with professional goals</li>
-              </ul>
-            </div>
-          </div>
+        <div class="ts-links-inline">
+          <a href="ncaa-stats.html">View NCAA Stats</a>
+          <a href="news-media.html">News & Media</a>
+          <a href="junior-career.html">Junior Career</a>
+          <a href="reference-links.html">Reference Links</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CORE METRICS -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Core Metrics Snapshot</h2>
-          <p class="ts-section-subtitle">First-look numbers for coach evaluation</p>
+          <h2>Quick Read Summary</h2>
+          <p>Condensed coach-facing interpretation</p>
         </div>
       </div>
+      <div class="ts-quick-grid" id="quick-summary-grid"></div>
+    </section>
 
-      <div class="ts-metrics-grid">
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Clippd Adjusted Avg</div>
-          <div class="ts-metric-value">70.80</div>
-          <div class="ts-metric-note">Advanced scoring indicator showing clear Division I lineup value.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Raw Scoring Avg</div>
-          <div class="ts-metric-value">71.52</div>
-          <div class="ts-metric-note">Freshman-season scoring baseline with repeat competitive stability.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Counting Rate</div>
-          <div class="ts-metric-value accent">96.30%</div>
-          <div class="ts-metric-note">26 of 27 counting rounds. High-probability travel roster value.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Head-to-Head</div>
-          <div class="ts-metric-value">530-156-18</div>
-          <div class="ts-metric-note">Strong field-beating signal beyond simple ranking position.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Win Rate</div>
-          <div class="ts-metric-value">75.28%</div>
-          <div class="ts-metric-note">Consistent advantage over the field across the full season sample.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Top Finishes</div>
-          <div class="ts-metric-value">1 / 3 / 5</div>
-          <div class="ts-metric-note">Wins / Top-3s / Top-10s in 9 events as a freshman.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">WAGR</div>
-          <div class="ts-metric-value">416</div>
-          <div class="ts-metric-note">Current global ranking; should be read alongside deeper value indicators.</div>
-        </div>
-
-        <div class="ts-card ts-metric">
-          <div class="ts-metric-label">Clippd Rank</div>
-          <div class="ts-metric-value">311</div>
-          <div class="ts-metric-note">Market snapshot, with underlying profile stronger than rank alone suggests.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUICK READ SUMMARY -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Quick Read Summary</h2>
-          <p class="ts-section-subtitle">Condensed coach-facing interpretation</p>
+          <h2>Core Metrics Snapshot</h2>
+          <p>First-look numbers for coach evaluation</p>
         </div>
       </div>
+      <div class="ts-metrics-grid" id="metrics-grid"></div>
+    </section>
 
-      <div class="ts-card ts-quick-card">
-        <div class="ts-quick-grid">
-          <div class="ts-quick-item">Immediate lineup-value freshman with elite counting reliability and unusually low floor risk.</div>
-          <div class="ts-quick-item">Proven winner with repeat top-3 and top-10 evidence rather than one isolated spike result.</div>
-          <div class="ts-quick-item">Performs especially well in difficult scoring environments and has shown strong score-protection characteristics.</div>
-          <div class="ts-quick-item">Projects as a strong 3–5 slot competition candidate in a stronger program, with upside beyond simple stability value.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLAYER TYPE -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Player Type & Competitive Profile</h2>
-          <p class="ts-section-subtitle">What kind of scorer he is</p>
+          <h2>Player Type & Competitive Profile</h2>
+          <p>What kind of scorer he is</p>
         </div>
       </div>
+      <div class="ts-type-grid" id="player-type-grid"></div>
+    </section>
 
-      <div class="ts-type-grid">
-        <div class="ts-card ts-type-card">
-          <h3 class="ts-type-title">Low Variance</h3>
-          <p class="ts-type-desc">
-            Rarely loses team value through round collapse. The scoring pattern shows strong floor protection and week-to-week dependability.
-          </p>
-        </div>
-
-        <div class="ts-card ts-type-card">
-          <h3 class="ts-type-title">High Counting Reliability</h3>
-          <p class="ts-type-desc">
-            A 96.3% counting rate is not cosmetic. It reflects real travel-roster stability and a profile coaches can trust in lineup construction.
-          </p>
-        </div>
-
-        <div class="ts-card ts-type-card">
-          <h3 class="ts-type-title">Difficult-Condition Friendly</h3>
-          <p class="ts-type-desc">
-            Results indicate that tougher scoring environments may reveal more value, not less. He tends to protect score when fields get stretched.
-          </p>
-        </div>
-
-        <div class="ts-card ts-type-card">
-          <h3 class="ts-type-title">Ceiling Plus Floor</h3>
-          <p class="ts-type-desc">
-            Not only a safe scorer. He has already shown win equity, podium finishes, and the ability to convert strong form into high-end outcomes.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRESSION -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Progression & Upward Trend</h2>
-          <p class="ts-section-subtitle">Why the trajectory matters</p>
+          <h2>Progression & Upward Trend</h2>
+          <p>Why the trajectory matters</p>
         </div>
       </div>
+      <div class="ts-timeline-grid" id="timeline-grid"></div>
+    </section>
 
-      <div class="ts-timeline-grid">
-        <div class="ts-card ts-timeline-card">
-          <div class="ts-timeline-phase">Junior Phase 1</div>
-          <h3 class="ts-timeline-title">Season Champion Without a Win</h3>
-          <p class="ts-timeline-desc">
-            Early proof of consistency and cumulative scoring value. The profile first emerged as stable, reliable, and difficult to beat over time.
-          </p>
-        </div>
-
-        <div class="ts-card ts-timeline-card">
-          <div class="ts-timeline-phase">Junior Phase 2</div>
-          <h3 class="ts-timeline-title">Six Consecutive Wins</h3>
-          <p class="ts-timeline-desc">
-            The profile evolved from stable season-long performer into a player with real finishing power, win equity, and repeated first-place conversion.
-          </p>
-        </div>
-
-        <div class="ts-card ts-timeline-card">
-          <div class="ts-timeline-phase">Freshman NCAA Phase</div>
-          <h3 class="ts-timeline-title">Immediate NCAA Lineup Value</h3>
-          <p class="ts-timeline-desc">
-            Freshman season translated quickly into win, podium finishes, top-10 volume, and one of the clearest reliability profiles on the roster.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIGNATURE RESULTS -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Signature Results</h2>
-          <p class="ts-section-subtitle">Three pieces of fast evidence</p>
+          <h2>Signature Results</h2>
+          <p>Three pieces of fast evidence</p>
         </div>
       </div>
+      <div class="ts-signature-grid" id="signature-grid"></div>
+    </section>
 
-      <div class="ts-signature-grid">
-        <div class="ts-card ts-result-card">
-          <div class="ts-result-badge">Difficult-Condition Win</div>
-          <h3 class="ts-result-event">Military City Collegiate</h3>
-          <ul class="ts-result-list">
-            <li>Individual champion</li>
-            <li>Only player under par in the field</li>
-            <li>Tough scoring environment with high separation pressure</li>
-            <li>Clear evidence of difficult-condition win equity</li>
-          </ul>
+    <section class="ts-section">
+      <div class="ts-half-grid">
+        <div class="ts-half-card">
+          <h3>Underlying Value Indicators</h3>
+          <ul id="underlying-list"></ul>
         </div>
 
-        <div class="ts-card ts-result-card">
-          <div class="ts-result-badge">Ceiling / Conversion</div>
-          <h3 class="ts-result-event">Golden Nugget Invitational</h3>
-          <ul class="ts-result-list">
-            <li>Solo 3rd finish</li>
-            <li>Opening 64 tied school record</li>
-            <li>36-hole scoring burst with sustained contention</li>
-            <li>Evidence of top-end scoring gear, not just safe accumulation</li>
-          </ul>
-        </div>
-
-        <div class="ts-card ts-result-card">
-          <div class="ts-result-badge">Field Validation</div>
-          <h3 class="ts-result-event">Strong-Field Proof Point</h3>
-          <ul class="ts-result-list">
-            <li>Power-field exposure produced meaningful finishing signal</li>
-            <li>Supports translation beyond weak-field inflation concerns</li>
-            <li>Useful marker for higher-level schedule projection</li>
-            <li>Important context for portal-market interpretation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUE + ROLE -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-two-col">
-        <div class="ts-card ts-list-card">
-          <h3 class="ts-mini-title">Underlying Value Indicators</h3>
-          <ul class="ts-bullet-list">
-            <li>27 official rounds as a freshman</li>
-            <li>26 of 27 rounds counted toward team score</li>
-            <li>530–156–18 head-to-head record</li>
-            <li>75.28% field win rate</li>
-            <li>17 rounds at par or better</li>
-            <li>1 win / 3 top-3 / 5 top-10 in 9 events</li>
-            <li>School-record-tying 64 and strong low-round ceiling</li>
-          </ul>
-        </div>
-
-        <div class="ts-card ts-list-card">
-          <h3 class="ts-mini-title">Projected College Role</h3>
-          <p class="ts-body-copy">
-            Best read as an immediate lineup-competition player rather than a pure development-only add.
-            The profile suggests strong travel-roster value, high counting-round probability, and a realistic
-            pathway to 3–5 slot competition in a stronger program.
-          </p>
+        <div class="ts-half-card">
+          <h3>Projected College Role</h3>
+          <p id="projected-role-body"></p>
 
           <div class="ts-role-box">
-            <div class="ts-role-label">Roster Translation</div>
-            <p class="ts-role-text">
-              Reliable counting-round addition with upside beyond floor value.
-            </p>
+            <div class="ts-role-label" id="translation-label">Roster Translation</div>
+            <p class="ts-role-text" id="translation-text"></p>
           </div>
 
           <div class="ts-role-box">
-            <div class="ts-role-label">Development Outlook</div>
-            <p class="ts-role-text">
-              Stronger weekly field exposure and higher daily competition may accelerate further ranking movement.
-            </p>
+            <div class="ts-role-label" id="development-label">Development Outlook</div>
+            <p class="ts-role-text" id="development-text"></p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CULTURE + WHY TRANSFER -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-two-col">
-        <div class="ts-card ts-list-card">
-          <h3 class="ts-mini-title">Work Ethic & Culture Fit</h3>
-          <ul class="ts-bullet-list">
-            <li>Strong work ethic with consistent post-round practice habits</li>
-            <li>Comfortable in stronger fields and pressure environments</li>
-            <li>Steady competitive temperament and coachable profile</li>
-            <li>Professional conduct, team-oriented behavior, and sportsmanship value</li>
-            <li>Long-term development mindset rather than short-term comfort seeking</li>
-          </ul>
+    <section class="ts-section">
+      <div class="ts-half-grid">
+        <div class="ts-half-card">
+          <h3>Work Ethic & Culture Fit</h3>
+          <ul id="culture-list"></ul>
         </div>
 
-        <div class="ts-card ts-list-card">
-          <h3 class="ts-mini-title">Transfer Objective</h3>
-          <p class="ts-body-copy">
-            Seeking the next competitive step in an environment with stronger daily lineup pressure,
-            more frequent power-field scheduling, and a long-term development structure aligned with
-            professional golf goals.
-          </p>
+        <div class="ts-half-card">
+          <h3>Transfer Objective</h3>
+          <p id="transfer-body"></p>
 
           <div class="ts-role-box">
-            <div class="ts-role-label">Positioning Note</div>
-            <p class="ts-role-text">
-              This is a forward-looking competitive move, not a complaint-based narrative.
-            </p>
+            <div class="ts-role-label" id="transfer-note-label">Positioning Note</div>
+            <p class="ts-role-text" id="transfer-note-text"></p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VERIFICATION LINKS -->
-  <section class="ts-section">
-    <div class="ts-container">
-      <div class="ts-section-title-wrap">
-        <div class="ts-section-bar"></div>
+    <section class="ts-section">
+      <div class="ts-section-header">
         <div>
-          <h2 class="ts-section-title">Verification & Reference Links</h2>
-          <p class="ts-section-subtitle">Snapshot first, validation second</p>
+          <h2>Verification & Reference Links</h2>
+          <p>Snapshot first, validation second</p>
         </div>
       </div>
+      <div class="ts-links-grid" id="links-grid"></div>
+    </section>
+  </main>
 
-      <div class="ts-links-grid">
-        <a class="ts-card ts-link-card" href="ncaa-stats.html">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">NCAA Stats</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            Full freshman season log, event results, schedule structure, and detailed scoring archive.
-          </p>
-        </a>
+  <script>
+    async function renderTransferSnapshot() {
+      try {
+        const response = await fetch('./data-transfer.json?v=' + Date.now());
+        if (!response.ok) throw new Error('Failed to load data-transfer.json');
 
-        <a class="ts-card ts-link-card" href="news-media.html">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">News & Media</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            External validation, coverage, and public-facing references connected to performance milestones.
-          </p>
-        </a>
+        const data = await response.json();
 
-        <a class="ts-card ts-link-card" href="junior-career.html">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">Junior Career</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            Pre-college progression, season-champion track, win streak context, and growth history.
-          </p>
-        </a>
+        document.getElementById('ts-last-updated').textContent =
+          data.meta && data.meta.lastUpdated ? `Last Updated: ${data.meta.lastUpdated}` : 'Last Updated: —';
 
-        <a class="ts-card ts-link-card" href="reference-links.html">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">Reference & Links</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            Official external links for deeper review, independent verification, and follow-up evaluation.
-          </p>
-        </a>
+        document.getElementById('hero-eyebrow').textContent = data.hero?.eyebrow || 'Transfer Snapshot';
+        document.getElementById('hero-title').textContent = data.hero?.title || 'Joshua Hong';
+        document.getElementById('hero-meta').textContent = data.hero?.metaLine || '';
+        document.getElementById('hero-definition').textContent = data.hero?.definition || '';
+        document.getElementById('hero-supporting').textContent = data.hero?.supporting || '';
 
-        <a class="ts-card ts-link-card" href="https://www.wagr.com/" target="_blank">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">WAGR</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            Official world amateur ranking reference for current global positioning and external market context.
-          </p>
-        </a>
+        const quickGrid = document.getElementById('quick-summary-grid');
+        quickGrid.innerHTML = '';
+        (data.quickSummary || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-quick-item';
+          div.textContent = item;
+          quickGrid.appendChild(div);
+        });
 
-        <a class="ts-card ts-link-card" href="https://scoreboard.clippd.com/" target="_blank">
-          <div class="ts-link-top">
-            <h3 class="ts-link-name">Clippd / Scoreboard</h3>
-            <div class="ts-link-arrow">↗</div>
-          </div>
-          <p class="ts-link-desc">
-            Event-level scoring verification, player pages, and field-relative performance review.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
+        const metricsGrid = document.getElementById('metrics-grid');
+        metricsGrid.innerHTML = '';
+        (data.metrics || []).forEach(metric => {
+          const div = document.createElement('div');
+          div.className = 'ts-metric';
+          div.innerHTML = `
+            <div class="ts-metric-label">${metric.label || ''}</div>
+            <div class="ts-metric-value ${metric.accent ? 'accent' : ''}">${metric.value || ''}</div>
+            <div class="ts-metric-note">${metric.note || ''}</div>
+          `;
+          metricsGrid.appendChild(div);
+        });
 
-  <div class="ts-bottom-space"></div>
+        const typeGrid = document.getElementById('player-type-grid');
+        typeGrid.innerHTML = '';
+        (data.playerType || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-type-item';
+          div.innerHTML = `
+            <h3>${item.title || ''}</h3>
+            <p>${item.desc || ''}</p>
+          `;
+          typeGrid.appendChild(div);
+        });
+
+        const timelineGrid = document.getElementById('timeline-grid');
+        timelineGrid.innerHTML = '';
+        (data.timeline || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-timeline-item';
+          div.innerHTML = `
+            <div class="ts-phase">${item.phase || ''}</div>
+            <h3>${item.title || ''}</h3>
+            <p>${item.desc || ''}</p>
+          `;
+          timelineGrid.appendChild(div);
+        });
+
+        const signatureGrid = document.getElementById('signature-grid');
+        signatureGrid.innerHTML = '';
+        (data.signatureResults || []).forEach(item => {
+          const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
+          const div = document.createElement('div');
+          div.className = 'ts-signature-item';
+          div.innerHTML = `
+            <div class="ts-badge">${item.badge || ''}</div>
+            <h3>${item.event || ''}</h3>
+            <ul>${liItems}</ul>
+          `;
+          signatureGrid.appendChild(div);
+        });
+
+        const underlyingList = document.getElementById('underlying-list');
+        underlyingList.innerHTML = '';
+        (data.underlyingIndicators || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          underlyingList.appendChild(li);
+        });
+
+        document.getElementById('projected-role-body').textContent = data.projectedRole?.body || '';
+        document.getElementById('translation-label').textContent = data.projectedRole?.translationLabel || 'Roster Translation';
+        document.getElementById('translation-text').textContent = data.projectedRole?.translationText || '';
+        document.getElementById('development-label').textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
+        document.getElementById('development-text').textContent = data.projectedRole?.developmentText || '';
+
+        const cultureList = document.getElementById('culture-list');
+        cultureList.innerHTML = '';
+        (data.cultureFit || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          cultureList.appendChild(li);
+        });
+
+        document.getElementById('transfer-body').textContent = data.transferObjective?.body || '';
+        document.getElementById('transfer-note-label').textContent = data.transferObjective?.noteLabel || 'Positioning Note';
+        document.getElementById('transfer-note-text').textContent = data.transferObjective?.noteText || '';
+
+        const linksGrid = document.getElementById('links-grid');
+        linksGrid.innerHTML = '';
+        (data.links || []).forEach(link => {
+          const a = document.createElement('a');
+          a.className = 'ts-link-item';
+          a.href = link.url || '#';
+          if ((link.url || '').startsWith('http')) a.target = '_blank';
+          a.innerHTML = `
+            <div class="ts-link-top">
+              <h3>${link.name || ''}</h3>
+              <div class="ts-link-arrow">↗</div>
+            </div>
+            <p class="ts-link-desc">${link.desc || ''}</p>
+          `;
+          linksGrid.appendChild(a);
+        });
+
+      } catch (error) {
+        console.error('Transfer Snapshot render error:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
+  </script>
 </body>
 </html>
