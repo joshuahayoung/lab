@@ -737,6 +737,31 @@
     .nav-links { padding: 30px 25px; overflow-y: auto; }
     .menu-footer { margin-top: 30px; }
   }
+
+  .ts-hero-image-wrap {
+  width: 100%;
+  margin: 0 0 22px 0;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.10);
+  background: #ffffff;
+}
+
+.ts-hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .ts-hero-image-wrap {
+    margin-bottom: 18px;
+    border-radius: 18px;
+  }
+}
+  
 </style>
 </head>
 
@@ -779,29 +804,41 @@
     </div>
 
     <section class="ts-hero">
-      <div class="ts-hero-top">
-        <div class="ts-eyebrow">
-          <span class="ts-dot"></span>
-          <span id="hero-eyebrow">Transfer Snapshot</span>
-        </div>
-        <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
-        <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
-      </div>
+  <div class="ts-hero-top">
+    <div class="ts-eyebrow">
+      <span class="ts-dot"></span>
+      <span id="hero-eyebrow">Transfer Snapshot</span>
+    </div>
+    <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
+    <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
+  </div>
 
-      <div class="ts-definition-wrap">
-        <h2 class="ts-definition" id="hero-definition">High-reliability freshman scorer with proven lineup value and Power 4 transfer upside.</h2>
-        <p class="ts-supporting" id="hero-supporting">
-          Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
-        </p>
+  <div class="ts-definition-wrap">
+    <div class="ts-hero-image-wrap">
+      <img
+        src="./images/freshman-2025-2026/joshua-hong-UTSA-Transfer-Portal-1.jpg"
+        alt="Joshua Hong reading a putting line during the Military City Collegiate"
+        title="Joshua Hong reading a putting line during the Military City Collegiate"
+        class="ts-hero-image"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      >
+    </div>
 
-        <div class="ts-links-inline">
-          <a href="ncaa-stats.html">View NCAA Stats</a>
-          <a href="news-media.html">News & Media</a>
-          <a href="junior-career.html">Junior Career</a>
-          <a href="reference-links.html">Reference Links</a>
-        </div>
-      </div>
-    </section>
+    <h2 class="ts-definition" id="hero-definition">High-reliability freshman scorer with proven lineup value and Power 4 transfer upside.</h2>
+    <p class="ts-supporting" id="hero-supporting">
+      Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
+    </p>
+
+    <div class="ts-links-inline">
+      <a href="ncaa-stats.html">View NCAA Stats</a>
+      <a href="news-media.html">News & Media</a>
+      <a href="junior-career.html">Junior Career</a>
+      <a href="reference-links.html">Reference Links</a>
+    </div>
+  </div>
+</section>
 
     <section class="ts-section">
       <div class="ts-section-header">
