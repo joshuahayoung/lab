@@ -81,7 +81,9 @@
     color: #1f2937;
   }
 
-  * { box-sizing: border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
   .sticky-top {
     position: absolute;
@@ -327,73 +329,46 @@
     color: #fff;
   }
 
-.ts-hero-strip-section {
-  margin-top: -4px;
-  margin-bottom: 28px;
-}
-
-.ts-hero-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.ts-hero-strip-item {
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-  box-shadow: 0 14px 28px rgba(12, 35, 64, 0.18);
-  padding: 16px 14px 14px;
-  text-align: center;
-}
-
-.ts-hero-strip-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.9px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.ts-hero-strip-value {
-  display: block;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.6px;
-  color: #ffffff;
-}
-
-@media (max-width: 1024px) {
-  .ts-hero-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .ts-hero-strip-section {
+    margin-top: -4px;
+    margin-bottom: 28px;
   }
-}
 
-@media (max-width: 768px) {
   .ts-hero-strip {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .ts-hero-strip-item {
-    padding: 14px 12px 13px;
-    border-radius: 16px;
+    background: #0c2340;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    box-shadow: 0 14px 28px rgba(12, 35, 64, 0.18);
+    padding: 16px 14px 14px;
+    text-align: center;
   }
 
   .ts-hero-strip-label {
-    font-size: 10px;
-    margin-bottom: 7px;
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 8px;
+    line-height: 1.2;
   }
 
   .ts-hero-strip-value {
-    font-size: 21px;
+    display: block;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.6px;
+    color: #ffffff;
   }
-}
-  
+
   .ts-section {
     margin-bottom: 28px;
   }
@@ -449,12 +424,29 @@
     gap: 16px;
   }
 
-  .ts-quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ts-metrics-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .ts-type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ts-timeline-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .ts-signature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .ts-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ts-quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ts-metrics-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ts-type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ts-timeline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ts-signature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ts-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   .ts-quick-item,
   .ts-metric,
@@ -610,45 +602,69 @@
     font-weight: 700;
   }
 
-  .ts-role-wide-card {
-  display: grid;
-  grid-template-columns: 1.2fr 0.95fr;
-  gap: 18px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  padding: 24px 22px 22px;
-}
-
-.ts-role-wide-main h3 {
-  margin: 0 0 10px;
-  color: #0c2340;
-  font-size: 19px;
-  line-height: 1.15;
-  font-weight: 900;
-  letter-spacing: -0.3px;
-}
-
-.ts-role-wide-main p {
-  margin: 0;
-  color: #475569;
-  font-size: 14px;
-  line-height: 1.72;
-  font-weight: 500;
-}
-
-.ts-role-wide-side {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-@media (max-width: 1024px) {
-  .ts-role-wide-card {
-    grid-template-columns: 1fr;
+  .ts-role-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
-}
+
+  .ts-role-wide-main {
+    background: #ffffff;
+    border: 1px solid #e5ebf2;
+    border-radius: 20px;
+    padding: 28px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .ts-role-wide-main h3 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: #0c2340;
+    font-weight: 900;
+  }
+
+  .ts-role-wide-main p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #334155;
+    max-width: 980px;
+    font-weight: 500;
+  }
+
+  .ts-role-subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ts-role-subcard {
+    background: #ffffff;
+    border: 1px solid #e5ebf2;
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .ts-role-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0c2340;
+    font-weight: 800;
+  }
+
+  .ts-role-subcard p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #4b5a6d;
+    font-weight: 500;
+  }
 
   .ts-link-item {
     display: block;
@@ -724,6 +740,150 @@
     transform: translateY(-1px);
   }
 
+  .ts-hero-image-wrap {
+    width: 100%;
+    margin: 0 0 22px 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 14px 32px rgba(12, 35, 64, 0.10);
+    background: #ffffff;
+  }
+
+  .ts-hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .role-progression-block {
+    margin-top: 30px;
+    margin-bottom: 56px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(12, 35, 64, 0.10);
+  }
+
+  .role-progression-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .role-progression-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #f3f6fa;
+    border: 1px solid #e2e8f0;
+    color: #0c2340;
+    flex: 0 0 38px;
+  }
+
+  .role-progression-header h3 {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.2;
+    letter-spacing: -0.35px;
+    color: #0c2340;
+    font-weight: 800;
+  }
+
+  .role-progression-note {
+    margin: 0 0 18px 0;
+    max-width: 920px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #526074;
+  }
+
+  .role-progression-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e6edf5;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.05);
+  }
+
+  .role-progression-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  .role-progression-table thead tr {
+    background: #0c2340;
+    color: #ffffff;
+  }
+
+  .role-progression-table th {
+    padding: 13px 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .role-progression-table th:last-child {
+    border-right: none;
+  }
+
+  .role-progression-table td {
+    padding: 13px 12px;
+    font-size: 13px;
+    color: #263447;
+    border-top: 1px solid #edf2f7;
+  }
+
+  .role-progression-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .role-progression-table tbody tr.is-ncaa-current {
+    background: #fff4ec;
+  }
+
+  .role-progression-table tbody tr.is-current-junior {
+    background: #fffaf6;
+  }
+
+  .role-progression-table tbody tr.is-ncaa-current td:first-child,
+  .role-progression-table tbody tr.is-current-junior td:first-child {
+    font-weight: 800;
+    color: #0c2340;
+  }
+
+  .role-progression-table .avg-best,
+  .role-progression-table .round-best,
+  .role-progression-table .avg-strong,
+  .role-progression-table .round-strong {
+    color: #c2410c;
+    font-weight: 800;
+  }
+
+  .role-progression-table .metric-note {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a8798;
+  }
+
+  .role-progression-table .muted-cell {
+    color: #66758a;
+  }
+
+  .role-progression-table .muted-cell.lighter {
+    color: #8c98a8;
+  }
+
   @media (max-width: 1024px) {
     .header-wrapper {
       padding: 0 20px;
@@ -732,10 +892,22 @@
       gap: 0;
     }
 
-    .menu-toggle { display: block; order: 2; }
-    .logo-area { order: 1; }
-    .logo-text { display: none; }
-    .logo-img { height: 40px; }
+    .menu-toggle {
+      display: block;
+      order: 2;
+    }
+
+    .logo-area {
+      order: 1;
+    }
+
+    .logo-text {
+      display: none;
+    }
+
+    .logo-img {
+      height: 40px;
+    }
 
     .nav-links {
       position: fixed;
@@ -754,7 +926,10 @@
       gap: 10px;
     }
 
-    .nav-links.active { right: 0; left: auto; }
+    .nav-links.active {
+      right: 0;
+      left: auto;
+    }
 
     .nav-links a {
       width: 100%;
@@ -769,8 +944,15 @@
       color: #fff !important;
     }
 
-    .mobile-menu-logo { display: block; margin-bottom: 30px; }
-    .mobile-menu-logo img { height: 35px; }
+    .mobile-menu-logo {
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    .mobile-menu-logo img {
+      height: 35px;
+    }
+
     .close-menu {
       display: block;
       position: absolute;
@@ -804,9 +986,45 @@
       margin-top: 4px;
     }
 
-    .ts-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .ts-signature-grid { grid-template-columns: 1fr; }
-    .ts-half-grid { grid-template-columns: 1fr; }
+    .ts-hero-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ts-metrics-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ts-signature-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ts-half-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .ts-role-wide-main {
+      padding: 24px 22px;
+    }
+
+    .ts-role-wide-main h3 {
+      font-size: 22px;
+    }
+
+    .ts-role-wide-main p {
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .ts-role-subgrid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .ts-role-subcard {
+      padding: 20px 18px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -836,203 +1054,84 @@
       padding-left: 18px;
       padding-right: 18px;
     }
+
+    .ts-hero-strip {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ts-hero-strip-item {
+      padding: 14px 12px 13px;
+      border-radius: 16px;
+    }
+
+    .ts-hero-strip-label {
+      font-size: 10px;
+      margin-bottom: 7px;
+    }
+
+    .ts-hero-strip-value {
+      font-size: 21px;
+    }
+
+    .ts-hero-image-wrap {
+      margin-bottom: 18px;
+      border-radius: 18px;
+    }
+
+    .role-progression-block {
+      margin-top: 24px;
+      margin-bottom: 44px;
+      padding-top: 20px;
+    }
+
+    .role-progression-header {
+      align-items: flex-start;
+    }
+
+    .role-progression-header h3 {
+      font-size: 18px;
+    }
+
+    .role-progression-note {
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .role-progression-table {
+      min-width: 620px;
+    }
+
+    .role-progression-table th,
+    .role-progression-table td {
+      padding: 12px 10px;
+      font-size: 12px;
+    }
+
+    .role-progression-table .metric-note {
+      font-size: 10px;
+    }
   }
 
   @media (orientation: landscape) and (max-height: 500px) {
-    .header-wrapper { height: 55px; }
-    .logo-img { height: 35px !important; }
-    .nav-links { padding: 30px 25px; overflow-y: auto; }
-    .menu-footer { margin-top: 30px; }
+    .header-wrapper {
+      height: 55px;
+    }
+
+    .logo-img {
+      height: 35px !important;
+    }
+
+    .nav-links {
+      padding: 30px 25px;
+      overflow-y: auto;
+    }
+
+    .menu-footer {
+      margin-top: 30px;
+    }
   }
-
-  .ts-hero-image-wrap {
-  width: 100%;
-  margin: 0 0 22px 0;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.10);
-  background: #ffffff;
-}
-
-.ts-hero-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .ts-hero-image-wrap {
-    margin-bottom: 18px;
-    border-radius: 18px;
-  }
-}
-
-.role-progression-block {
-  margin-top: 30px;
-  margin-bottom: 56px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(12, 35, 64, 0.10);
-}
-
-.role-progression-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.role-progression-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: #f3f6fa;
-  border: 1px solid #e2e8f0;
-  color: #0c2340;
-  flex: 0 0 38px;
-}
-
-.role-progression-header h3 {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.2;
-  letter-spacing: -0.35px;
-  color: #0c2340;
-  font-weight: 800;
-}
-
-.role-progression-note {
-  margin: 0 0 18px 0;
-  max-width: 920px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #526074;
-}
-
-.role-progression-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  border: 1px solid #e6edf5;
-  border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 8px 22px rgba(12, 35, 64, 0.05);
-}
-
-.role-progression-table {
-  width: 100%;
-  min-width: 700px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  text-align: center;
-}
-
-.role-progression-table thead tr {
-  background: #0c2340;
-  color: #ffffff;
-}
-
-.role-progression-table th {
-  padding: 13px 12px;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.role-progression-table th:last-child {
-  border-right: none;
-}
-
-.role-progression-table td {
-  padding: 13px 12px;
-  font-size: 13px;
-  color: #263447;
-  border-top: 1px solid #edf2f7;
-}
-
-.role-progression-table tbody tr:nth-child(even) {
-  background: #f8fafc;
-}
-
-.role-progression-table tbody tr.is-ncaa-current {
-  background: #fff4ec;
-}
-
-.role-progression-table tbody tr.is-current-junior {
-  background: #fffaf6;
-}
-
-.role-progression-table tbody tr.is-ncaa-current td:first-child,
-.role-progression-table tbody tr.is-current-junior td:first-child {
-  font-weight: 800;
-  color: #0c2340;
-}
-
-.role-progression-table .avg-best,
-.role-progression-table .round-best,
-.role-progression-table .avg-strong,
-.role-progression-table .round-strong {
-  color: #c2410c;
-  font-weight: 800;
-}
-
-
-.role-progression-table .metric-note {
-  display: inline-block;
-  margin-left: 4px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #7a8798;
-}
-
-.role-progression-table .muted-cell {
-  color: #66758a;
-}
-
-.role-progression-table .muted-cell.lighter {
-  color: #8c98a8;
-}
-
-@media (max-width: 768px) {
-  .role-progression-block {
-    margin-top: 24px;
-    margin-bottom: 44px;
-    padding-top: 20px;
-  }
-
-  .role-progression-header {
-    align-items: flex-start;
-  }
-
-  .role-progression-header h3 {
-    font-size: 18px;
-  }
-
-  .role-progression-note {
-    font-size: 13px;
-    line-height: 1.65;
-    margin-bottom: 16px;
-  }
-
-  .role-progression-table {
-    min-width: 620px;
-  }
-
-  .role-progression-table th,
-  .role-progression-table td {
-    padding: 12px 10px;
-    font-size: 12px;
-  }
-
-  .role-progression-table .metric-note {
-    font-size: 10px;
-  }
-}
-  
 </style>
 </head>
 
@@ -1166,12 +1265,26 @@
       <div class="ts-signature-grid" id="signature-grid"></div>
     </section>
 
-    <section class="ts-section">
-  <div class="ts-role-wide-card">
+<section class="ts-section">
+  <div class="ts-role-layout">
     <div class="ts-role-wide-main">
       <h3>Projected College Role</h3>
       <p id="projected-role-body"></p>
     </div>
+
+    <div class="ts-role-subgrid">
+      <div class="ts-role-subcard">
+        <div class="ts-role-subtitle" id="projected-role-translation-label"></div>
+        <p id="projected-role-translation-text"></p>
+      </div>
+
+      <div class="ts-role-subcard">
+        <div class="ts-role-subtitle" id="projected-role-development-label"></div>
+        <p id="projected-role-development-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <div class="ts-role-wide-side">
       <div class="ts-role-box">
@@ -1321,20 +1434,24 @@
     const header = document.getElementById('mainHeader');
     const currentScrollY = window.pageYOffset;
 
-    if (currentScrollY > 100) {
-      btn.style.display = 'block';
-    } else {
-      btn.style.display = 'none';
+    if (btn) {
+      if (currentScrollY > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
     }
 
-    if (currentScrollY > 300) {
-      header.classList.add('scrolled');
-      header.classList.remove('preparing');
-    } else if (currentScrollY > 10) {
-      header.classList.remove('scrolled');
-      header.classList.add('preparing');
-    } else {
-      header.classList.remove('scrolled', 'preparing');
+    if (header) {
+      if (currentScrollY > 300) {
+        header.classList.add('scrolled');
+        header.classList.remove('preparing');
+      } else if (currentScrollY > 10) {
+        header.classList.remove('scrolled');
+        header.classList.add('preparing');
+      } else {
+        header.classList.remove('scrolled', 'preparing');
+      }
     }
   });
 
@@ -1453,19 +1570,32 @@
         });
       }
 
-
-
+      /* PROJECTED ROLE */
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
       const translationText = document.getElementById('translation-text');
       const developmentLabel = document.getElementById('development-label');
       const developmentText = document.getElementById('development-text');
 
-      if (projectedRoleBody) projectedRoleBody.textContent = data.projectedRole?.body || '';
-      if (translationLabel) translationLabel.textContent = data.projectedRole?.translationLabel || 'Roster Translation';
-      if (translationText) translationText.textContent = data.projectedRole?.translationText || '';
-      if (developmentLabel) developmentLabel.textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
-      if (developmentText) developmentText.textContent = data.projectedRole?.developmentText || '';
+      if (projectedRoleBody) {
+        projectedRoleBody.textContent = data.projectedRole?.body || '';
+      }
+
+      if (translationLabel) {
+        translationLabel.textContent = data.projectedRole?.translationLabel || 'Roster Translation';
+      }
+
+      if (translationText) {
+        translationText.textContent = data.projectedRole?.translationText || '';
+      }
+
+      if (developmentLabel) {
+        developmentLabel.textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
+      }
+
+      if (developmentText) {
+        developmentText.textContent = data.projectedRole?.developmentText || '';
+      }
 
       const cultureList = document.getElementById('culture-list');
       if (cultureList) {
@@ -1492,10 +1622,12 @@
           const a = document.createElement('a');
           a.className = 'ts-link-item';
           a.href = link.url || '#';
+
           if ((link.url || '').startsWith('http')) {
             a.target = '_blank';
             a.rel = 'noopener noreferrer';
           }
+
           a.innerHTML = `
             <div class="ts-link-top">
               <h3>${link.name || ''}</h3>
@@ -1521,7 +1653,9 @@
       }
 
       if (contactBody) {
-        contactBody.textContent = data.contact?.body || 'For direct program inquiries regarding transfer-related communication, use the contact button below.';
+        contactBody.textContent =
+          data.contact?.body ||
+          'For direct program inquiries regarding transfer-related communication, use the contact button below.';
       }
 
       if (contactBtn) {
@@ -1538,7 +1672,6 @@
           contactBtn.href = '#';
         }
       }
-
     } catch (error) {
       console.error('Transfer Snapshot render error:', error);
     }
@@ -1546,7 +1679,6 @@
 
   document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
 </script>
-
   
 </body>
 </html>
