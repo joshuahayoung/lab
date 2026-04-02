@@ -713,6 +713,40 @@
     .nav-links { padding: 30px 25px; overflow-y: auto; }
     .menu-footer { margin-top: 30px; }
   }
+
+
+.ts-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ts-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border: 1px solid #F15A22;
+  transition: 0.25s ease;
+}
+
+.ts-contact-btn:hover {
+  background: #d94d1a;
+  border-color: #d94d1a;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+  
+  
 </style>
 </head>
 
@@ -913,6 +947,27 @@
       </div>
       <div class="ts-links-grid" id="links-grid"></div>
     </section>
+
+<section class="ts-section">
+  <div class="ts-section-header">
+    <div>
+      <h2 id="contact-section-title">Program Contact</h2>
+      <p id="contact-section-subtitle">For direct program inquiries</p>
+    </div>
+  </div>
+
+  <div class="ts-half-card">
+    <h3>Direct Contact</h3>
+    <p id="contact-body">
+      For direct program inquiries regarding transfer-related communication, use the contact button below.
+    </p>
+
+    <div class="ts-contact-actions">
+      <a href="#" class="ts-contact-btn" id="contact-email-btn">Email Joshua Directly</a>
+    </div>
+  </div>
+</section>
+    
   </main>
 
   <script>
@@ -1041,6 +1096,26 @@
       }
     }
 
+        document.getElementById('contact-section-title').textContent =
+          data.contact?.sectionTitle || 'Program Contact';
+
+        document.getElementById('contact-section-subtitle').textContent =
+          data.contact?.sectionSubtitle || 'For direct program inquiries';
+
+        document.getElementById('contact-body').textContent =
+          data.contact?.body || 'For direct program inquiries regarding transfer-related communication, use the contact button below.';
+
+        const contactBtn = document.getElementById('contact-email-btn');
+        const localPart = data.contact?.localPart || '';
+        const domain = data.contact?.domain || '';
+        const subject = encodeURIComponent(data.contact?.subject || 'Joshua Hong Transfer Inquiry');
+
+        if (localPart && domain) {
+          const email = `${localPart}@${domain}`;
+          contactBtn.textContent = data.contact?.buttonLabel || 'Email Joshua Directly';
+          contactBtn.href = `mailto:${email}?subject=${subject}`;
+        }
+    
     document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
   </script>
 </body>
