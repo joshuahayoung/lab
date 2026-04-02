@@ -34,10 +34,10 @@
     "note": "26 of 27 counting rounds. Strong travel-roster reliability."
   },
   {
-    "label": "Head-to-Head",
-    "value": "530-156-18",
-    "note": "Strong field-beating signal beyond rank alone."
-  },
+  "label": "Head-to-Head",
+  "value": "530-156-18",
+  "note": "Strong field-beating record; 75.28% win rate across the full sample."
+},
   {
     "label": "Win Rate",
     "value": "75.28%",
@@ -112,11 +112,11 @@
     "badge": "Ceiling / Conversion",
     "event": "Golden Nugget Invitational",
     "points": [
-      "Solo 3rd finish",
-      "Opening 64 tied school record",
-      "36-hole scoring burst with sustained contention",
-      "Clear evidence of scoring ceiling and conversion ability"
-    ]
+  "Solo 3rd finish",
+  "64 (-8) tied the 18-hole school record",
+  "134 (-10) tied the 36-hole school record",
+  "Clear evidence of scoring ceiling and sustained contention"
+]
   },
   {
     "badge": "Field Validation",
