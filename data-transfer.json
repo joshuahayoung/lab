@@ -25,16 +25,16 @@
     "value": "27"
   },
   {
-    "label": "Academic GPA",
-    "value": "3.4"
-  },
-  {
     "label": "Low Score",
     "value": "64 (-8)"
   },
   {
     "label": "Par or Better",
     "value": "17 / 27 (62.96%)"
+  },
+     {
+    "label": "Academic GPA",
+    "value": "3.4"
   }
 ],
   
