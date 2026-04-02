@@ -327,6 +327,73 @@
     color: #fff;
   }
 
+.ts-hero-strip-section {
+  margin-top: -6px;
+  margin-bottom: 28px;
+}
+
+.ts-hero-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ts-hero-strip-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  padding: 16px 14px 14px;
+  text-align: center;
+}
+
+.ts-hero-strip-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.ts-hero-strip-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  color: #0c2340;
+}
+
+@media (max-width: 1024px) {
+  .ts-hero-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-hero-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .ts-hero-strip-item {
+    padding: 14px 12px 13px;
+    border-radius: 16px;
+  }
+
+  .ts-hero-strip-label {
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+
+  .ts-hero-strip-value {
+    font-size: 21px;
+  }
+}
+  
   .ts-section {
     margin-bottom: 28px;
   }
@@ -840,6 +907,11 @@
   </div>
 </section>
 
+<section class="ts-section ts-hero-strip-section">
+  <div class="ts-hero-strip" id="hero-strip-grid"></div>
+</section>
+
+    
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
@@ -964,233 +1036,250 @@
     </section>
   </main>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
+ <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('fixedTopBtn');
+    const header = document.getElementById('mainHeader');
+    const currentScrollY = window.pageYOffset;
+
+    if (currentScrollY > 100) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
     }
 
-    window.addEventListener('scroll', function() {
-      const btn = document.getElementById('fixedTopBtn');
-      const header = document.getElementById('mainHeader');
-      const currentScrollY = window.pageYOffset;
-
-      if (currentScrollY > 100) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
-      }
-
-      if (currentScrollY > 300) {
-        header.classList.add('scrolled');
-        header.classList.remove('preparing');
-      } else if (currentScrollY > 10) {
-        header.classList.remove('scrolled');
-        header.classList.add('preparing');
-      } else {
-        header.classList.remove('scrolled', 'preparing');
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (currentScrollY > 300) {
+      header.classList.add('scrolled');
+      header.classList.remove('preparing');
+    } else if (currentScrollY > 10) {
+      header.classList.remove('scrolled');
+      header.classList.add('preparing');
+    } else {
+      header.classList.remove('scrolled', 'preparing');
     }
+  });
 
-    async function renderTransferSnapshot() {
-      try {
-        const response = await fetch('./data-transfer.json?v=' + Date.now());
-        if (!response.ok) throw new Error('Failed to load data-transfer.json');
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-        const data = await response.json();
+  async function renderTransferSnapshot() {
+    try {
+      const response = await fetch('./data-transfer.json?v=' + Date.now());
+      if (!response.ok) throw new Error('Failed to load data-transfer.json');
 
-        const lastUpdatedEl = document.getElementById('ts-last-updated');
-        if (lastUpdatedEl) {
-          lastUpdatedEl.textContent =
-            data.meta && data.meta.lastUpdated ? `Last Updated: ${data.meta.lastUpdated}` : 'Last Updated: —';
-        }
+      const data = await response.json();
 
-        const heroEyebrow = document.getElementById('hero-eyebrow');
-        const heroTitle = document.getElementById('hero-title');
-        const heroMeta = document.getElementById('hero-meta');
-        const heroDefinition = document.getElementById('hero-definition');
-        const heroSupporting = document.getElementById('hero-supporting');
+      const lastUpdatedEl = document.getElementById('ts-last-updated');
+      if (lastUpdatedEl) {
+        lastUpdatedEl.textContent =
+          data.meta && data.meta.lastUpdated ? `Last Updated: ${data.meta.lastUpdated}` : 'Last Updated: —';
+      }
 
-        if (heroEyebrow) heroEyebrow.textContent = data.hero?.eyebrow || 'Transfer Snapshot';
-        if (heroTitle) heroTitle.textContent = data.hero?.title || 'Joshua Hong';
-        if (heroMeta) heroMeta.textContent = data.hero?.metaLine || '';
-        if (heroDefinition) heroDefinition.textContent = data.hero?.definition || '';
-        if (heroSupporting) heroSupporting.textContent = data.hero?.supporting || '';
+      const heroEyebrow = document.getElementById('hero-eyebrow');
+      const heroTitle = document.getElementById('hero-title');
+      const heroMeta = document.getElementById('hero-meta');
+      const heroDefinition = document.getElementById('hero-definition');
+      const heroSupporting = document.getElementById('hero-supporting');
 
-        const quickGrid = document.getElementById('quick-summary-grid');
-        if (quickGrid) {
-          quickGrid.innerHTML = '';
-          (data.quickSummary || []).forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'ts-quick-item';
-            div.textContent = item;
-            quickGrid.appendChild(div);
-          });
-        }
+      if (heroEyebrow) heroEyebrow.textContent = data.hero?.eyebrow || 'Transfer Snapshot';
+      if (heroTitle) heroTitle.textContent = data.hero?.title || 'Joshua Hong';
+      if (heroMeta) heroMeta.textContent = data.hero?.metaLine || '';
+      if (heroDefinition) heroDefinition.textContent = data.hero?.definition || '';
+      if (heroSupporting) heroSupporting.textContent = data.hero?.supporting || '';
 
-        const metricsGrid = document.getElementById('metrics-grid');
-        if (metricsGrid) {
-          metricsGrid.innerHTML = '';
-          (data.metrics || []).forEach(metric => {
-            const div = document.createElement('div');
-            div.className = 'ts-metric';
-            div.innerHTML = `
-              <div class="ts-metric-label">${metric.label || ''}</div>
-              <div class="ts-metric-value ${metric.accent ? 'accent' : ''}">${metric.value || ''}</div>
-              <div class="ts-metric-note">${metric.note || ''}</div>
-            `;
-            metricsGrid.appendChild(div);
-          });
-        }
+      /* HERO STRIP RENDER */
+      const heroStripGrid = document.getElementById('hero-strip-grid');
+      if (heroStripGrid) {
+        heroStripGrid.innerHTML = '';
+        (data.heroStrip || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-hero-strip-item';
+          div.innerHTML = `
+            <span class="ts-hero-strip-label">${item.label || ''}</span>
+            <span class="ts-hero-strip-value">${item.value || ''}</span>
+          `;
+          heroStripGrid.appendChild(div);
+        });
+      }
 
-        const typeGrid = document.getElementById('player-type-grid');
-        if (typeGrid) {
-          typeGrid.innerHTML = '';
-          (data.playerType || []).forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'ts-type-item';
-            div.innerHTML = `
-              <h3>${item.title || ''}</h3>
-              <p>${item.desc || ''}</p>
-            `;
-            typeGrid.appendChild(div);
-          });
-        }
+      const quickGrid = document.getElementById('quick-summary-grid');
+      if (quickGrid) {
+        quickGrid.innerHTML = '';
+        (data.quickSummary || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-quick-item';
+          div.textContent = item;
+          quickGrid.appendChild(div);
+        });
+      }
 
-        const timelineGrid = document.getElementById('timeline-grid');
-        if (timelineGrid) {
-          timelineGrid.innerHTML = '';
-          (data.timeline || []).forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'ts-timeline-item';
-            div.innerHTML = `
-              <div class="ts-phase">${item.phase || ''}</div>
-              <h3>${item.title || ''}</h3>
-              <p>${item.desc || ''}</p>
-            `;
-            timelineGrid.appendChild(div);
-          });
-        }
+      const metricsGrid = document.getElementById('metrics-grid');
+      if (metricsGrid) {
+        metricsGrid.innerHTML = '';
+        (data.metrics || []).forEach(metric => {
+          const div = document.createElement('div');
+          div.className = 'ts-metric';
+          div.innerHTML = `
+            <div class="ts-metric-label">${metric.label || ''}</div>
+            <div class="ts-metric-value ${metric.accent ? 'accent' : ''}">${metric.value || ''}</div>
+            <div class="ts-metric-note">${metric.note || ''}</div>
+          `;
+          metricsGrid.appendChild(div);
+        });
+      }
 
-        const signatureGrid = document.getElementById('signature-grid');
-        if (signatureGrid) {
-          signatureGrid.innerHTML = '';
-          (data.signatureResults || []).forEach(item => {
-            const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
-            const div = document.createElement('div');
-            div.className = 'ts-signature-item';
-            div.innerHTML = `
-              <div class="ts-badge">${item.badge || ''}</div>
-              <h3>${item.event || ''}</h3>
-              <ul>${liItems}</ul>
-            `;
-            signatureGrid.appendChild(div);
-          });
-        }
+      const typeGrid = document.getElementById('player-type-grid');
+      if (typeGrid) {
+        typeGrid.innerHTML = '';
+        (data.playerType || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-type-item';
+          div.innerHTML = `
+            <h3>${item.title || ''}</h3>
+            <p>${item.desc || ''}</p>
+          `;
+          typeGrid.appendChild(div);
+        });
+      }
 
-        const underlyingList = document.getElementById('underlying-list');
-        if (underlyingList) {
-          underlyingList.innerHTML = '';
-          (data.underlyingIndicators || []).forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            underlyingList.appendChild(li);
-          });
-        }
+      const timelineGrid = document.getElementById('timeline-grid');
+      if (timelineGrid) {
+        timelineGrid.innerHTML = '';
+        (data.timeline || []).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'ts-timeline-item';
+          div.innerHTML = `
+            <div class="ts-phase">${item.phase || ''}</div>
+            <h3>${item.title || ''}</h3>
+            <p>${item.desc || ''}</p>
+          `;
+          timelineGrid.appendChild(div);
+        });
+      }
 
-        const projectedRoleBody = document.getElementById('projected-role-body');
-        const translationLabel = document.getElementById('translation-label');
-        const translationText = document.getElementById('translation-text');
-        const developmentLabel = document.getElementById('development-label');
-        const developmentText = document.getElementById('development-text');
+      const signatureGrid = document.getElementById('signature-grid');
+      if (signatureGrid) {
+        signatureGrid.innerHTML = '';
+        (data.signatureResults || []).forEach(item => {
+          const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
+          const div = document.createElement('div');
+          div.className = 'ts-signature-item';
+          div.innerHTML = `
+            <div class="ts-badge">${item.badge || ''}</div>
+            <h3>${item.event || ''}</h3>
+            <ul>${liItems}</ul>
+          `;
+          signatureGrid.appendChild(div);
+        });
+      }
 
-        if (projectedRoleBody) projectedRoleBody.textContent = data.projectedRole?.body || '';
-        if (translationLabel) translationLabel.textContent = data.projectedRole?.translationLabel || 'Roster Translation';
-        if (translationText) translationText.textContent = data.projectedRole?.translationText || '';
-        if (developmentLabel) developmentLabel.textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
-        if (developmentText) developmentText.textContent = data.projectedRole?.developmentText || '';
+      const underlyingList = document.getElementById('underlying-list');
+      if (underlyingList) {
+        underlyingList.innerHTML = '';
+        (data.underlyingIndicators || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          underlyingList.appendChild(li);
+        });
+      }
 
-        const cultureList = document.getElementById('culture-list');
-        if (cultureList) {
-          cultureList.innerHTML = '';
-          (data.cultureFit || []).forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            cultureList.appendChild(li);
-          });
-        }
+      const projectedRoleBody = document.getElementById('projected-role-body');
+      const translationLabel = document.getElementById('translation-label');
+      const translationText = document.getElementById('translation-text');
+      const developmentLabel = document.getElementById('development-label');
+      const developmentText = document.getElementById('development-text');
 
-        const transferBody = document.getElementById('transfer-body');
-        const transferNoteLabel = document.getElementById('transfer-note-label');
-        const transferNoteText = document.getElementById('transfer-note-text');
+      if (projectedRoleBody) projectedRoleBody.textContent = data.projectedRole?.body || '';
+      if (translationLabel) translationLabel.textContent = data.projectedRole?.translationLabel || 'Roster Translation';
+      if (translationText) translationText.textContent = data.projectedRole?.translationText || '';
+      if (developmentLabel) developmentLabel.textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
+      if (developmentText) developmentText.textContent = data.projectedRole?.developmentText || '';
 
-        if (transferBody) transferBody.textContent = data.transferObjective?.body || '';
-        if (transferNoteLabel) transferNoteLabel.textContent = data.transferObjective?.noteLabel || 'Positioning Note';
-        if (transferNoteText) transferNoteText.textContent = data.transferObjective?.noteText || '';
+      const cultureList = document.getElementById('culture-list');
+      if (cultureList) {
+        cultureList.innerHTML = '';
+        (data.cultureFit || []).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          cultureList.appendChild(li);
+        });
+      }
 
-        const linksGrid = document.getElementById('links-grid');
-        if (linksGrid) {
-          linksGrid.innerHTML = '';
-          (data.links || []).forEach(link => {
-            const a = document.createElement('a');
-            a.className = 'ts-link-item';
-            a.href = link.url || '#';
-            if ((link.url || '').startsWith('http')) {
-              a.target = '_blank';
-              a.rel = 'noopener noreferrer';
-            }
-            a.innerHTML = `
-              <div class="ts-link-top">
-                <h3>${link.name || ''}</h3>
-                <div class="ts-link-arrow">↗</div>
-              </div>
-              <p class="ts-link-desc">${link.desc || ''}</p>
-            `;
-            linksGrid.appendChild(a);
-          });
-        }
+      const transferBody = document.getElementById('transfer-body');
+      const transferNoteLabel = document.getElementById('transfer-note-label');
+      const transferNoteText = document.getElementById('transfer-note-text');
 
-        const contactSectionTitle = document.getElementById('contact-section-title');
-        const contactSectionSubtitle = document.getElementById('contact-section-subtitle');
-        const contactBody = document.getElementById('contact-body');
-        const contactBtn = document.getElementById('contact-email-btn');
+      if (transferBody) transferBody.textContent = data.transferObjective?.body || '';
+      if (transferNoteLabel) transferNoteLabel.textContent = data.transferObjective?.noteLabel || 'Positioning Note';
+      if (transferNoteText) transferNoteText.textContent = data.transferObjective?.noteText || '';
 
-        if (contactSectionTitle) {
-          contactSectionTitle.textContent = data.contact?.sectionTitle || 'Program Contact';
-        }
-
-        if (contactSectionSubtitle) {
-          contactSectionSubtitle.textContent = data.contact?.sectionSubtitle || 'For direct program inquiries';
-        }
-
-        if (contactBody) {
-          contactBody.textContent = data.contact?.body || 'For direct program inquiries regarding transfer-related communication, use the contact button below.';
-        }
-
-        if (contactBtn) {
-          const localPart = data.contact?.localPart || '';
-          const domain = data.contact?.domain || '';
-          const subject = encodeURIComponent(data.contact?.subject || 'Joshua Hong Transfer Inquiry');
-
-          contactBtn.textContent = data.contact?.buttonLabel || 'Email Joshua Directly';
-
-          if (localPart && domain) {
-            const email = `${localPart}@${domain}`;
-            contactBtn.href = `mailto:${email}?subject=${subject}`;
-          } else {
-            contactBtn.href = '#';
+      const linksGrid = document.getElementById('links-grid');
+      if (linksGrid) {
+        linksGrid.innerHTML = '';
+        (data.links || []).forEach(link => {
+          const a = document.createElement('a');
+          a.className = 'ts-link-item';
+          a.href = link.url || '#';
+          if ((link.url || '').startsWith('http')) {
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
           }
-        }
-
-      } catch (error) {
-        console.error('Transfer Snapshot render error:', error);
+          a.innerHTML = `
+            <div class="ts-link-top">
+              <h3>${link.name || ''}</h3>
+              <div class="ts-link-arrow">↗</div>
+            </div>
+            <p class="ts-link-desc">${link.desc || ''}</p>
+          `;
+          linksGrid.appendChild(a);
+        });
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
-  </script>
+      const contactSectionTitle = document.getElementById('contact-section-title');
+      const contactSectionSubtitle = document.getElementById('contact-section-subtitle');
+      const contactBody = document.getElementById('contact-body');
+      const contactBtn = document.getElementById('contact-email-btn');
+
+      if (contactSectionTitle) {
+        contactSectionTitle.textContent = data.contact?.sectionTitle || 'Program Contact';
+      }
+
+      if (contactSectionSubtitle) {
+        contactSectionSubtitle.textContent = data.contact?.sectionSubtitle || 'For direct program inquiries';
+      }
+
+      if (contactBody) {
+        contactBody.textContent = data.contact?.body || 'For direct program inquiries regarding transfer-related communication, use the contact button below.';
+      }
+
+      if (contactBtn) {
+        const localPart = data.contact?.localPart || '';
+        const domain = data.contact?.domain || '';
+        const subject = encodeURIComponent(data.contact?.subject || 'Joshua Hong Transfer Inquiry');
+
+        contactBtn.textContent = data.contact?.buttonLabel || 'Email Joshua Directly';
+
+        if (localPart && domain) {
+          const email = `${localPart}@${domain}`;
+          contactBtn.href = `mailto:${email}?subject=${subject}`;
+        } else {
+          contactBtn.href = '#';
+        }
+      }
+
+    } catch (error) {
+      console.error('Transfer Snapshot render error:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
+</script>
+
+  
 </body>
 </html>
