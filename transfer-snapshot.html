@@ -868,6 +868,150 @@
     border-radius: 18px;
   }
 }
+
+.role-progression-block {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(12, 35, 64, 0.10);
+}
+
+.role-progression-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.role-progression-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #f3f6fa;
+  border: 1px solid #e2e8f0;
+  color: #0c2340;
+  flex: 0 0 38px;
+}
+
+.role-progression-header h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+  color: #0c2340;
+  font-weight: 800;
+}
+
+.role-progression-note {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #49566a;
+  max-width: 900px;
+}
+
+.role-progression-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.06);
+  border: 1px solid #e7edf4;
+  background: #ffffff;
+}
+
+.role-progression-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.role-progression-table thead tr {
+  background: #0c2340;
+  color: #ffffff;
+}
+
+.role-progression-table th {
+  padding: 13px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.role-progression-table th:last-child {
+  border-right: none;
+}
+
+.role-progression-table td {
+  padding: 13px 10px;
+  font-size: 13px;
+  color: #253246;
+  border-top: 1px solid #edf2f7;
+}
+
+.role-progression-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.role-progression-table tbody tr.is-current {
+  background: #fff7f2;
+}
+
+.role-progression-table tbody tr.is-current td:first-child {
+  font-weight: 800;
+  color: #0c2340;
+}
+
+.role-progression-table .avg-best,
+.role-progression-table .round-best {
+  color: #c2410c;
+  font-weight: 800;
+}
+
+.role-progression-table .avg-strong,
+.role-progression-table .round-strong {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.role-progression-table .muted-cell {
+  color: #66758a;
+}
+
+.role-progression-table .muted-cell.lighter {
+  color: #8a97a8;
+}
+
+@media (max-width: 768px) {
+  .role-progression-block {
+    margin-top: 26px;
+    padding-top: 22px;
+  }
+
+  .role-progression-header h3 {
+    font-size: 18px;
+  }
+
+  .role-progression-note {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .role-progression-table {
+    min-width: 560px;
+  }
+
+  .role-progression-table th,
+  .role-progression-table td {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+}
   
 </style>
 </head>
@@ -1022,6 +1166,75 @@
     </div>
   </div>
 </section>
+
+<div class="role-progression-block">
+  <div class="role-progression-header">
+    <div class="role-progression-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+        <polyline points="17 18 23 18 23 12"></polyline>
+      </svg>
+    </div>
+    <h3>Year-by-Year Scoring Progression</h3>
+  </div>
+
+  <p class="role-progression-note">
+    Current NCAA lineup value is supported by a longer scoring progression built over multiple seasons, with sustained improvement in scoring average and low-round capability over time.
+  </p>
+
+  <div class="role-progression-table-wrap">
+    <table class="role-progression-table">
+      <thead>
+        <tr>
+          <th>Season</th>
+          <th>Rounds</th>
+          <th>Scoring Avg</th>
+          <th>Low Round</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="is-current">
+          <td>2024–25</td>
+          <td>52</td>
+          <td class="avg-best">71.37</td>
+          <td class="round-best">62 (-10)</td>
+        </tr>
+        <tr>
+          <td>2023–24</td>
+          <td>47</td>
+          <td class="avg-strong">72.60</td>
+          <td class="round-strong">64 (-8)</td>
+        </tr>
+        <tr>
+          <td>2022–23</td>
+          <td>45</td>
+          <td>74.04</td>
+          <td class="round-strong">66 (-5)</td>
+        </tr>
+        <tr>
+          <td>2021–22</td>
+          <td>34</td>
+          <td>77.88</td>
+          <td class="round-strong">70 (-2)</td>
+        </tr>
+        <tr>
+          <td>2020–21</td>
+          <td>18</td>
+          <td class="muted-cell">79.39</td>
+          <td class="muted-cell">74</td>
+        </tr>
+        <tr>
+          <td>2019–20</td>
+          <td>17</td>
+          <td class="muted-cell lighter">86.88</td>
+          <td class="muted-cell lighter">75</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    
 
     <section class="ts-section">
       <div class="ts-half-grid">
