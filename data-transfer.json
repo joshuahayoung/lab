@@ -16,6 +16,7 @@
   "Performs well in difficult scoring environments and shows clear score-protection value.",
   "Projects as a realistic 3–5 slot competition profile in a stronger program, with upside beyond baseline stability."
   ],
+  
   "metrics": [
   {
     "label": "Clippd Adjusted Avg",
@@ -34,14 +35,14 @@
     "note": "26 of 27 counting rounds. Strong travel-roster reliability."
   },
   {
-  "label": "Head-to-Head",
-  "value": "530-156-18",
-  "note": "Strong field-beating record; 75.28% win rate across the full sample."
-},
+    "label": "Head-to-Head",
+    "value": "530-156-18",
+    "note": "Strong field-beating record; 75.28% win rate across the full sample."
+  },
   {
-    "label": "Win Rate",
-    "value": "75.28%",
-    "note": "Season-long evidence of consistent field advantage."
+    "label": "Points Share",
+    "value": "~30%",
+    "note": "Approximate team contribution share across the season."
   },
   {
     "label": "Top Finishes",
@@ -49,14 +50,14 @@
     "note": "Win, podium, and top-10 volume across 9 freshman events."
   },
   {
-    "label": "WAGR",
-    "value": "416",
-    "note": "Global ranking reference best read with deeper profile context."
+    "label": "Ranking Snapshot",
+    "value": "311 / 430",
+    "note": "Clippd rank. / WAGR Useful market markers alongside deeper profile context."
   },
   {
-    "label": "Clippd Rank",
-    "value": "311",
-    "note": "Useful market marker; underlying profile appears stronger than rank alone."
+    "label": "Par-or-Better",
+    "value": "17",
+    "note": "Seventeen rounds at par or better during the freshman season."
   }
 ],
   
