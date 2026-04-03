@@ -124,19 +124,18 @@
           "Clear evidence of scoring ceiling and sustained contention"
         ]
       },
-
-{
-  "badge": "Trajectory",
-  "event": "Fall to Spring Progression",
-  "points": [
-    "Fall finishes of 9-12-24-55 reflected the normal early NCAA adjustment phase",
-    "Spring opened with a 3-1-3-48-10 run, showing immediate competitive rebound",
-    "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
-    "The profile is defined more by progression and repeat result volume than by a single week"
-  ]
-}      
+      {
+        "badge": "Trajectory",
+        "event": "Fall to Spring Progression",
+        "points": [
+          "Fall finishes of 9-12-24-55 reflected the normal early NCAA adjustment phase",
+          "Spring opened with a 3-1-3-48-10 run, showing immediate competitive rebound",
+          "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
+          "The profile is defined more by progression and repeat result volume than by a single week"
+        ]
+      }
     ],
-    
+
     "projectedRoleTitle": "Projected College Role",
     "projectedRoleBody": "Profiles as an immediate lineup option rather than a long-term development piece, with dependable travel-roster value and counting-round reliability in a stronger competitive environment.",
     "translationLabel": "Roster Translation",
@@ -145,19 +144,19 @@
     "developmentText": "Year-by-year scoring improvement and sustained low-round progression suggest room for further growth under stronger daily competition and more demanding weekly fields."
   },
 
-"cultureFit": [
-  "Exceptional work ethic noted by coaches",
-  "Comfortable in stronger fields and demanding conditions",
-  "Steady temperament and coachable profile",
-  "Professional conduct and team-oriented behavior",
-  "Long-term development mindset"
-],
+  "cultureFit": [
+    "Exceptional work ethic noted by coaches",
+    "Comfortable in stronger fields and demanding conditions",
+    "Steady temperament and coachable profile",
+    "Professional conduct and team-oriented behavior",
+    "Long-term development mindset"
+  ],
 
-"transferObjective": {
-  "body": "Seeking the next competitive step through stronger daily lineup pressure, deeper tournament fields, and a development environment aligned with long-term professional goals and the PGA U pathway.",
-  "noteLabel": "Positioning Note",
-  "noteText": "A forward-looking move based on long-term development, not dissatisfaction."
-}
+  "transferObjective": {
+    "body": "Seeking the next competitive step through stronger daily lineup pressure, deeper tournament fields, and a development environment aligned with long-term professional goals and the PGA U pathway.",
+    "noteLabel": "Positioning Note",
+    "noteText": "A forward-looking move based on long-term development, not dissatisfaction."
+  },
 
   "links": [
     {
