@@ -1059,18 +1059,257 @@
     font-weight: 500;
   }
 
+/* ===== Evidence & Projection unified layout ===== */
 
+.ts-eval-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
+.ts-eval-signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
 
+.ts-eval-role-main {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 22px 24px 20px;
+  overflow: hidden;
+}
 
+.ts-eval-role-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
 
+.ts-eval-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
 
+.ts-eval-main-title {
+  margin: 0 0 10px 0;
+  color: #0c2340;
+  font-size: 20px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+}
 
+.ts-eval-main-body {
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
 
+.ts-eval-four-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
 
+.ts-eval-equal-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+  min-height: 100%;
+}
 
- 
+.ts-eval-equal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
 
+.ts-eval-equal-card--orange::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-eval-equal-card--navy::before {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-eval-equal-kicker {
+  margin: 0 0 10px 0;
+  padding-top: 6px;
+  color: #0c2340;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.ts-eval-equal-title {
+  margin: 0 0 12px 0;
+  color: #0c2340;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.ts-eval-equal-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.78;
+  font-weight: 500;
+}
+
+.ts-eval-equal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-eval-equal-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-eval-equal-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-eval-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-eval-note-label {
+  margin: 0 0 9px 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ts-eval-note-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .ts-eval-signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-eval-four-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-eval-role-main,
+  .ts-eval-equal-card {
+    border-radius: 18px;
+  }
+
+  .ts-eval-role-main {
+    padding: 20px 18px 18px;
+  }
+
+  .ts-eval-equal-card {
+    padding: 18px 16px 16px;
+  }
+
+  .ts-eval-main-title,
+  .ts-eval-equal-title {
+    font-size: 20px;
+  }
+
+  .ts-eval-main-body,
+  .ts-eval-equal-body,
+  .ts-eval-equal-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-eval-equal-kicker {
+    font-size: 11px;
+    padding-top: 4px;
+  }
+
+  .ts-eval-equal-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-eval-equal-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-eval-note-box {
+    border-radius: 14px;
+    padding: 16px 14px;
+  }
+
+  .ts-eval-note-text {
+    font-size: 14px;
+  }
+}
 
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
