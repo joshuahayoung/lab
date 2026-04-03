@@ -2505,21 +2505,6 @@ function toggleMenu() {
   });
 
 
-  (function () {
-    const canvas = document.getElementById('archiveOfficialChart');
-    if (!canvas) return;
-
-    function enforceCanvasWidth() {
-      const shell = canvas.closest('.ts-progress-canvas-shell');
-      if (!shell) return;
-      canvas.style.width = '100%';
-      canvas.style.maxWidth = '100%';
-      canvas.width = shell.clientWidth;
-    }
-
-    window.addEventListener('load', enforceCanvasWidth);
-    window.addEventListener('resize', enforceCanvasWidth);
-  })();
   
 </script>
 
