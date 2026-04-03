@@ -1780,10 +1780,20 @@
 <script>
   async function renderTransferSnapshot() {
     try {
-      const response = await fetch('./data-transfer.json?v=' + Date.now());
-      if (!response.ok) throw new Error('Failed to load data-transfer.json');
+      console.log('[TS] renderTransferSnapshot started');
+
+      const url = './data-transfer.json?v=' + Date.now();
+      console.log('[TS] fetching:', url);
+
+      const response = await fetch(url);
+      console.log('[TS] fetch status:', response.status, response.ok);
+
+      if (!response.ok) {
+        throw new Error('Failed to load data-transfer.json');
+      }
 
       const data = await response.json();
+      console.log('[TS] data loaded:', data);
 
       const lastUpdatedEl = document.getElementById('ts-last-updated');
       if (lastUpdatedEl) {
@@ -1877,7 +1887,7 @@
         });
       }
 
-      const projectedRoleHeading = document.querySelector('.ts-role-wide-main h3');
+      const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
       const translationText = document.getElementById('translation-text');
@@ -1983,14 +1993,17 @@
           contactBtn.href = '#';
         }
       }
+
+      console.log('[TS] renderTransferSnapshot finished successfully');
     } catch (error) {
-      console.error('Transfer Snapshot render error:', error);
+      console.error('[TS] Transfer Snapshot render error:', error);
+      alert('Transfer Snapshot JSON failed to load. Open DevTools Console and check the exact error.');
     }
   }
 
   document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
 
-function toggleMenu() {
+  function toggleMenu() {
     const nav = document.getElementById('navLinks');
     if (nav) nav.classList.toggle('active');
   }
@@ -2008,7 +2021,11 @@ function toggleMenu() {
     const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
     if (btn) {
-      btn.style.display = currentScrollY > 100 ? 'block' : 'none';
+      if (currentScrollY > 100) {
+        btn.classList.add('is-visible');
+      } else {
+        btn.classList.remove('is-visible');
+      }
     }
 
     if (header) {
@@ -2023,9 +2040,6 @@ function toggleMenu() {
       }
     }
   });
-
-
-  
 </script>
 
 </body>
