@@ -1377,10 +1377,38 @@
   font-weight: 500;
 }
 
-.ts-fit-grid {
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 18px;
+/* 기존 ts-half-grid 폭 체계 유지 */
+.ts-fit-section .ts-half-grid {
+  align-items: stretch;
+}
+
+/* 카드 디자인만 별도로 강화 */
+.ts-fit-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
+  padding: 24px 22px 22px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.ts-fit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-fit-card--culture::before {
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-fit-card--transfer::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
 }
 
 .ts-fit-card {
@@ -2187,7 +2215,7 @@
 </section>
 
 <section class="ts-section ts-fit-section">
-  <div class="ts-fit-grid">
+  <div class="ts-half-grid">
     <div class="ts-fit-card ts-fit-card--culture">
       <div class="ts-fit-kicker">PROGRAM FIT</div>
       <h3 class="ts-fit-title">Work Ethic & Culture Fit</h3>
