@@ -155,7 +155,7 @@
   "transferObjective": {
     "body": "Seeking the next competitive step through stronger daily lineup pressure, deeper tournament fields, and a development environment aligned with long-term professional goals and the PGA U pathway.",
     "noteLabel": "Positioning Note",
-    "noteText": "Appreciative of the growth made within the current program, while recognizing that the next step may require a different competitive environment."
+    "noteText": "Appreciative of the growth made within the current program, while recognizing that continued development may require a different competitive environment."
   },
 
   "links": [
@@ -181,12 +181,12 @@
     },
     {
       "name": "WAGR",
-      "url": "https://www.wagr.com/",
+      "url": "https://www.wagr.com/playerprofile/joshua-hong-40704",
       "desc": "Official world amateur ranking reference for current global positioning and external market context."
     },
     {
       "name": "Clippd / Scoreboard",
-      "url": "https://scoreboard.clippd.com/",
+      "url": "https://scoreboard.clippd.com/players/38903?season=2026",
       "desc": "Event-level scoring verification, player pages, and field-relative performance review."
     }
   ],
