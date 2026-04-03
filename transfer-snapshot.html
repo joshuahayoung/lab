@@ -1800,7 +1800,246 @@
 .ts-quick-grid > *:nth-child(3) .ts-quick-item-number {
   color: #c98a2e !important;
 }
- 
+
+.ts-closing-section {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.ts-closing-box,
+.ts-closing-banner-wrap,
+.ts-closing-summary {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+.ts-closing-box {
+  padding: 26px 28px 24px;
+  margin-bottom: 18px;
+}
+
+.ts-closing-kicker {
+  margin: 0 0 10px 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.ts-closing-headline {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  line-height: 1.04;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+  text-transform: uppercase;
+  color: #0c2340;
+}
+
+.ts-closing-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #475569;
+  max-width: 760px;
+}
+
+.ts-closing-banner-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+  min-height: 520px;
+}
+
+.ts-closing-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ts-closing-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(7, 19, 35, 0.55) 0%,
+      rgba(7, 19, 35, 0.20) 22%,
+      rgba(7, 19, 35, 0.00) 44%,
+      rgba(7, 19, 35, 0.12) 68%,
+      rgba(7, 19, 35, 0.48) 100%);
+  pointer-events: none;
+}
+
+.ts-closing-banner-text {
+  position: absolute;
+  right: 5.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(38%, 420px);
+  color: rgba(255,255,255,0.96);
+  text-align: left;
+}
+
+.ts-closing-banner-text h3 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 56px;
+  line-height: 0.98;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #f5efe5;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.16);
+}
+
+.ts-closing-line {
+  width: 100%;
+  max-width: 320px;
+  height: 2px;
+  margin: 18px 0 18px;
+  background: linear-gradient(90deg, rgba(242,231,208,0.85) 0%, rgba(214,157,67,0.95) 52%, rgba(242,231,208,0.60) 100%);
+  box-shadow: 0 0 10px rgba(201,138,46,0.28);
+}
+
+.ts-closing-banner-text p {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  line-height: 1.42;
+  font-weight: 500;
+  color: rgba(255,255,255,0.90);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.14);
+}
+
+.ts-closing-banner-text span {
+  display: inline-block;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(242,231,208,0.70);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.92);
+}
+
+.ts-closing-summary {
+  padding: 28px 28px 26px;
+}
+
+.ts-closing-definition {
+  margin: 0 0 14px;
+  font-size: 27px;
+  line-height: 1.22;
+  color: #0c2340;
+  font-weight: 900;
+  letter-spacing: -0.7px;
+}
+
+.ts-closing-supporting {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.78;
+  color: #475569;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .ts-closing-banner-wrap {
+    min-height: 460px;
+  }
+
+  .ts-closing-banner-text {
+    width: min(42%, 360px);
+    right: 5%;
+  }
+
+  .ts-closing-banner-text h3 {
+    font-size: 46px;
+  }
+
+  .ts-closing-banner-text p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-closing-box,
+  .ts-closing-summary {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .ts-closing-headline {
+    font-size: 26px;
+    line-height: 1.06;
+  }
+
+  .ts-closing-lead {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .ts-closing-banner-wrap {
+    min-height: 0;
+    border-radius: 20px;
+  }
+
+  .ts-closing-overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(7, 19, 35, 0.10) 0%,
+        rgba(7, 19, 35, 0.22) 38%,
+        rgba(7, 19, 35, 0.60) 100%);
+  }
+
+  .ts-closing-banner-text {
+    right: auto;
+    left: 18px;
+    bottom: 18px;
+    top: auto;
+    transform: none;
+    width: calc(100% - 36px);
+  }
+
+  .ts-closing-banner-text h3 {
+    font-size: 34px;
+    line-height: 1.02;
+  }
+
+  .ts-closing-line {
+    margin: 14px 0 14px;
+    max-width: 220px;
+  }
+
+  .ts-closing-banner-text p {
+    font-size: 15px;
+    line-height: 1.38;
+    margin-bottom: 7px;
+  }
+
+  .ts-closing-banner-text span {
+    margin-top: 12px;
+    padding-top: 10px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+  }
+
+  .ts-closing-definition {
+    font-size: 22px;
+    line-height: 1.24;
+  }
+
+  .ts-closing-supporting {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+}
+	
 </style>
 
 </head>
@@ -2576,35 +2815,47 @@
   });
 </script>
 
-    <section class="ts-hero">
-      <div class="ts-hero-top">
-        <div class="ts-eyebrow">
-          <span class="ts-dot"></span>
-          <span id="hero-eyebrow">Transfer Snapshot</span>
-        </div>
-        <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
-        <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
-      </div>
+   
+<section class="ts-closing-section">
+  <div class="ts-closing-box">
+    <p class="ts-closing-kicker">Final Read</p>
+<h2 class="ts-closing-headline">Built to hold the line.</h2>
+<p class="ts-closing-lead">
+  Reliable in pressure. Proven in difficult conditions. Ready for the next level.
+</p>
+  </div>
 
-      <div class="ts-definition-wrap">
-        <div class="ts-hero-image-wrap">
-          <img
-            src="./images/freshman-2025-2026/joshua-hong-UTSA-Transfer-Portal-3.jpg"
-            alt="Joshua Hong focusing on putting line during NCAA tournament"
-            title="Joshua Hong focusing on putting line during NCAA tournament"
-            class="ts-hero-image"
-            loading="lazy" 
-	    decoding="async"
-          >
-        </div>
+  <div class="ts-closing-banner-wrap">
+    <img
+      src="./images/freshman-2025-2026/joshua-hong-UTSA-Transfer-Portal-3.jpg"
+      alt="Joshua Hong putting during NCAA competition"
+      title="Joshua Hong putting during NCAA competition"
+      class="ts-closing-banner"
+      loading="lazy"
+      decoding="async"
+    >
+    <div class="ts-closing-overlay"></div>
 
-        <h2 class="ts-definition" id="hero-definition">High-reliability freshman scorer with proven lineup value and a profile that projects to higher-level competition.</h2>
-        <p class="ts-supporting" id="hero-supporting">
-          Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
-        </p>
-      </div>
-    </section>
+    <div class="ts-closing-banner-text">
+      <h3>BUILT TO HOLD THE LINE</h3>
+      <div class="ts-closing-line"></div>
+      <p>Reliable in pressure</p>
+      <p>Proven in difficult conditions</p>
+      <p>Ready for the next level</p>
+      <span>JOSHUA HONG</span>
+    </div>
+  </div>
 
+  <div class="ts-closing-summary">
+    <h2 class="ts-closing-definition">
+      Proven at the college level, with performance that translates under pressure and across conditions.
+    </h2>
+
+    <p class="ts-closing-supporting">
+      Reliable scoring, consistent contribution, and a trajectory that points clearly toward higher-level competition.
+    </p>
+  </div>
+</section>
 
  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
