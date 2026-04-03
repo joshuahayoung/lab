@@ -77,7 +77,6 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     -webkit-text-size-adjust: 100%;
@@ -203,31 +202,21 @@
   }
 
   #fixedTopBtn {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 999;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 999px;
-    background: #0f172a;
-    color: #fff;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 20px !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #F15A22 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 50% !important;
+    font-weight: 900 !important;
+    font-size: 12px !important;
+    z-index: 9999 !important;
+    cursor: pointer !important;
+    display: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-
-  #fixedTopBtn.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
   }
 
   .ts-page {
@@ -410,12 +399,9 @@
   .ts-timeline-grid,
   .ts-signature-grid,
   .ts-links-grid,
-  .ts-role-wide-side,
-  .ts-eval-signature-grid,
-  .ts-eval-four-grid {
+  .ts-role-wide-side {
     display: grid;
     gap: 16px;
-    min-width: 0;
   }
 
   .ts-quick-grid {
@@ -483,7 +469,8 @@
   .ts-link-item,
   .ts-half-card,
   .ts-role-wide-main,
-  .ts-role-subcard {
+  .ts-role-subcard,
+  .season-trend-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
@@ -623,6 +610,244 @@
     font-weight: 500;
   }
 
+  .role-progression-block {
+    padding-top: 2px;
+  }
+
+  .role-progression-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .role-progression-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #f3f6fa;
+    border: 1px solid #e2e8f0;
+    color: #0c2340;
+    flex: 0 0 38px;
+  }
+
+  .role-progression-header h3 {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.2;
+    letter-spacing: -0.35px;
+    color: #0c2340;
+    font-weight: 800;
+  }
+
+  .role-progression-note {
+    margin: 0 0 18px 0;
+    max-width: 920px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #526074;
+  }
+
+  .role-progression-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e6edf5;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.05);
+  }
+
+  .role-progression-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+  }
+
+  .role-progression-table thead tr {
+    background: #0c2340;
+    color: #ffffff;
+  }
+
+  .role-progression-table th {
+    padding: 13px 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .role-progression-table th:last-child {
+    border-right: none;
+  }
+
+  .role-progression-table td {
+    padding: 13px 12px;
+    font-size: 13px;
+    color: #263447;
+    border-top: 1px solid #edf2f7;
+  }
+
+  .role-progression-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .role-progression-table tbody tr.is-ncaa-current {
+    background: #fff4ec;
+  }
+
+  .role-progression-table .avg-best,
+  .role-progression-table .round-best,
+  .role-progression-table .avg-strong,
+  .role-progression-table .round-strong {
+    color: #c2410c;
+    font-weight: 800;
+  }
+
+  .role-progression-table .metric-note {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a8798;
+  }
+
+  .role-progression-table .muted-cell {
+    color: #66758a;
+  }
+
+  .role-progression-table .muted-cell.lighter {
+    color: #8c98a8;
+  }
+
+  .season-trend-card {
+    overflow: hidden;
+  }
+
+  .season-trend-head {
+    padding: 26px 24px 10px;
+    text-align: center;
+  }
+
+  .season-trend-head h2 {
+    margin: 0;
+    color: #0c2340;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .season-trend-head p {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: #64748b;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .season-trend-body {
+    padding: 0 24px 24px;
+  }
+
+  .season-trend-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0c2340;
+  }
+
+  .season-trend-topline h3 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #0c2340;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .season-trend-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #0c2340;
+    color: #ffffff;
+    padding: 5px 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .season-trend-chart-shell {
+    position: relative;
+    background: #fafbfd;
+    border: 1px solid #e8edf3;
+    border-radius: 18px;
+    padding: 54px 16px 48px;
+  }
+
+  .season-trend-metric-pill {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    z-index: 5;
+    background: rgba(12, 35, 64, 0.05);
+    border: 1px solid rgba(12, 35, 64, 0.22);
+    border-radius: 999px;
+    padding: 7px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .season-trend-metric-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0c2340;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .season-trend-metric-value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #0c2340;
+    line-height: 1;
+  }
+
+  .season-trend-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 420px;
+  }
+
+  .season-trend-source {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed #cfd8e3;
+    text-align: center;
+    font-size: 11px;
+    color: #7a8798;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
   .ts-signature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-bottom: 18px;
@@ -697,6 +922,7 @@
     font-weight: 800;
   }
 
+
   .ts-half-card {
     padding: 24px 22px 22px;
   }
@@ -726,24 +952,24 @@
     font-weight: 700;
   }
 
-  .ts-eval-section {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
+  /* ===== Section-specific redesign: Evidence / Role / Fit ===== */
 
   .ts-eval-signature-grid {
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
     margin-bottom: 18px;
   }
+
+
 
   .ts-eval-role-main {
     position: relative;
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
     border: 1px solid #dfe7f0;
-    border-radius: 22px;
-    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
-    padding: 22px 24px 20px;
+    border-radius: 24px;
+    box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+    padding: 28px 28px 26px;
     overflow: hidden;
   }
 
@@ -769,38 +995,35 @@
   }
 
   .ts-eval-main-title {
-    margin: 0 0 10px 0;
+    margin: 0 0 12px 0;
     color: #0c2340;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.08;
     font-weight: 900;
-    letter-spacing: -0.35px;
+    letter-spacing: -0.5px;
   }
 
   .ts-eval-main-body {
     margin: 0;
     color: #334155;
-    font-size: 14px;
-    line-height: 1.72;
+    font-size: 16px;
+    line-height: 1.8;
     font-weight: 500;
   }
 
-  .ts-eval-four-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
-  .ts-eval-equal-card {
-    position: relative;
+
+  .ts-eval-mini-card {
     background: #ffffff;
     border: 1px solid #e3eaf2;
     border-radius: 22px;
     box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
     padding: 20px 20px 18px;
+    position: relative;
     overflow: hidden;
-    min-height: 100%;
   }
 
-  .ts-eval-equal-card::before {
+  .ts-eval-mini-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -809,15 +1032,15 @@
     height: 5px;
   }
 
-  .ts-eval-equal-card--orange::before {
+  .ts-eval-mini-card--orange::before {
     background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
   }
 
-  .ts-eval-equal-card--navy::before {
+  .ts-eval-mini-card--navy::before {
     background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
   }
 
-  .ts-eval-equal-kicker {
+  .ts-eval-mini-kicker {
     margin: 0 0 10px 0;
     padding-top: 6px;
     color: #0c2340;
@@ -828,87 +1051,265 @@
     text-transform: uppercase;
   }
 
-  .ts-eval-equal-title {
-    margin: 0 0 12px 0;
-    color: #0c2340;
-    font-size: 22px;
-    line-height: 1.1;
-    font-weight: 900;
-    letter-spacing: -0.4px;
-  }
-
-  .ts-eval-equal-body {
+  .ts-eval-mini-body {
     margin: 0;
-    color: #374151;
-    font-size: 15px;
-    line-height: 1.78;
+    color: #4b5a6d;
+    font-size: 14px;
+    line-height: 1.72;
     font-weight: 500;
   }
 
-  .ts-eval-equal-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 10px;
+/* ===== Evidence & Projection unified layout ===== */
+
+.ts-eval-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-eval-signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ts-eval-role-main {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 22px 24px 20px;
+  overflow: hidden;
+}
+
+.ts-eval-role-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
+
+.ts-eval-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-eval-main-title {
+  margin: 0 0 10px 0;
+  color: #0c2340;
+  font-size: 20px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+}
+
+.ts-eval-main-body {
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.ts-eval-four-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ts-eval-equal-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 20px 20px 18px;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.ts-eval-equal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-eval-equal-card--orange::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-eval-equal-card--navy::before {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-eval-equal-kicker {
+  margin: 0 0 10px 0;
+  padding-top: 6px;
+  color: #0c2340;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.ts-eval-equal-title {
+  margin: 0 0 12px 0;
+  color: #0c2340;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.ts-eval-equal-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.78;
+  font-weight: 500;
+}
+
+.ts-eval-equal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-eval-equal-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-eval-equal-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-eval-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-eval-note-label {
+  margin: 0 0 9px 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ts-eval-note-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .ts-eval-signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-eval-four-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-eval-role-main,
+  .ts-eval-equal-card {
+    border-radius: 18px;
+  }
+
+  .ts-eval-role-main {
+    padding: 20px 18px 18px;
+  }
+
+  .ts-eval-equal-card {
+    padding: 18px 16px 16px;
+  }
+
+  .ts-eval-main-title,
+  .ts-eval-equal-title {
+    font-size: 20px;
+  }
+
+  .ts-eval-main-body,
+  .ts-eval-equal-body,
+  .ts-eval-equal-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-eval-equal-kicker {
+    font-size: 11px;
+    padding-top: 4px;
   }
 
   .ts-eval-equal-list li {
-    position: relative;
-    margin: 0;
-    padding: 12px 14px 12px 42px;
-    background: #f8fafc;
-    border: 1px solid #e6edf5;
-    border-radius: 14px;
-    color: #334155;
-    font-size: 14px;
-    line-height: 1.6;
-    font-weight: 600;
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
   }
 
   .ts-eval-equal-list li::before {
-    content: "✓";
-    position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #F15A22;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 
   .ts-eval-note-box {
-    margin-top: 18px;
-    background: #0c2340;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    padding: 18px 16px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-  }
-
-  .ts-eval-note-label {
-    margin: 0 0 9px 0;
-    color: rgba(255,255,255,0.72);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    border-radius: 14px;
+    padding: 16px 14px;
   }
 
   .ts-eval-note-text {
-    margin: 0;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 1.65;
-    font-weight: 700;
+    font-size: 14px;
   }
+}
 
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1095,10 +1496,14 @@
     }
 
     .ts-signature-grid,
+    .ts-half-grid,
     .ts-role-wide-side,
     .ts-eval-signature-grid,
-    .ts-eval-four-grid {
-      grid-template-columns: 1fr;
+
+
+    .ts-eval-mini-card {
+      border-radius: 18px;
+      padding: 18px 16px 16px;
     }
   }
 
@@ -1127,11 +1532,10 @@
     .ts-timeline-grid,
     .ts-links-grid,
     .ts-signature-grid,
+    .ts-half-grid,
     .ts-role-wide-side,
     .ts-eval-signature-grid,
-    .ts-eval-four-grid {
-      grid-template-columns: 1fr;
-    }
+
 
     .ts-quick-item {
       min-height: auto;
@@ -1189,57 +1593,104 @@
       padding: 20px 18px;
     }
 
-    .ts-eval-role-main,
-    .ts-eval-equal-card {
-      border-radius: 18px;
+    .role-progression-header {
+      align-items: flex-start;
     }
 
-    .ts-eval-role-main {
-      padding: 20px 18px 18px;
+    .role-progression-header h3 {
+      font-size: 18px;
     }
 
-    .ts-eval-equal-card {
-      padding: 18px 16px 16px;
+    .role-progression-note {
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 16px;
     }
 
-    .ts-eval-main-title,
-    .ts-eval-equal-title {
+    .role-progression-table {
+      min-width: 620px;
+    }
+
+    .role-progression-table th,
+    .role-progression-table td {
+      padding: 12px 10px;
+      font-size: 12px;
+    }
+
+    .season-trend-head {
+      padding: 22px 18px 10px;
+    }
+
+    .season-trend-head h2 {
+      font-size: 22px;
+    }
+
+    .season-trend-head p {
+      font-size: 11px;
+      letter-spacing: 0.8px;
+    }
+
+    .season-trend-body {
+      padding: 0 18px 18px;
+    }
+
+    .season-trend-topline {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .season-trend-topline h3 {
+      font-size: 16px;
+    }
+
+    .season-trend-tag {
+      font-size: 11px;
+      padding: 5px 10px;
+    }
+
+    .season-trend-chart-shell {
+      padding: 58px 10px 42px;
+      border-radius: 16px;
+    }
+
+    .season-trend-metric-pill {
+      top: 12px;
+      right: 12px;
+      padding: 6px 12px;
+    }
+
+    .season-trend-metric-label {
+      font-size: 11px;
+    }
+
+    .season-trend-metric-value {
+      font-size: 19px;
+    }
+
+    .season-trend-canvas-wrap {
+      height: 360px;
+    }
+
+    .season-trend-source {
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .ts-eval-main-title {
       font-size: 20px;
     }
 
-    .ts-eval-main-body,
-    .ts-eval-equal-body,
-    .ts-eval-equal-list li {
-      font-size: 13px;
-      line-height: 1.66;
-    }
 
-    .ts-eval-equal-kicker {
+
+    .ts-eval-mini-kicker {
       font-size: 11px;
       padding-top: 4px;
     }
 
-    .ts-eval-equal-list li {
-      padding: 11px 12px 11px 38px;
-      border-radius: 12px;
-    }
+ 
 
-    .ts-eval-equal-list li::before {
-      left: 12px;
-      width: 16px;
-      height: 16px;
-      font-size: 10px;
-    }
 
-    .ts-eval-note-box {
-      border-radius: 14px;
-      padding: 16px 14px;
-    }
-
-    .ts-eval-note-text {
-      font-size: 14px;
-    }
-  }
 
   @media (orientation: landscape) and (max-height: 500px) {
     .header-wrapper {
@@ -1259,6 +1710,35 @@
       margin-top: 30px;
     }
   }
+
+
+#fixedTopBtn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+}
+
+#fixedTopBtn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+    
 </style>
 
 </head>
