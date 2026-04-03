@@ -77,6 +77,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     -webkit-text-size-adjust: 100%;
@@ -202,21 +203,31 @@
   }
 
   #fixedTopBtn {
-    position: fixed !important;
-    bottom: 25px !important;
-    right: 20px !important;
-    width: 50px !important;
-    height: 50px !important;
-    background-color: #F15A22 !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 50% !important;
-    font-weight: 900 !important;
-    font-size: 12px !important;
-    z-index: 9999 !important;
-    cursor: pointer !important;
-    display: none;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  #fixedTopBtn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .ts-page {
@@ -399,9 +410,11 @@
   .ts-timeline-grid,
   .ts-signature-grid,
   .ts-links-grid,
-  .ts-role-wide-side {
+  .ts-role-wide-side,
+  .ts-eval-signature-grid {
     display: grid;
     gap: 16px;
+    min-width: 0;
   }
 
   .ts-quick-grid {
@@ -469,8 +482,7 @@
   .ts-link-item,
   .ts-half-card,
   .ts-role-wide-main,
-  .ts-role-subcard,
-  .season-trend-card {
+  .ts-role-subcard {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
@@ -563,9 +575,9 @@
   }
 
   .ts-progression-stack {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 22px;
+    min-width: 0;
   }
 
   .ts-timeline-grid {
@@ -608,244 +620,6 @@
     font-size: 14px;
     line-height: 1.7;
     font-weight: 500;
-  }
-
-  .role-progression-block {
-    padding-top: 2px;
-  }
-
-  .role-progression-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-
-  .role-progression-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: #f3f6fa;
-    border: 1px solid #e2e8f0;
-    color: #0c2340;
-    flex: 0 0 38px;
-  }
-
-  .role-progression-header h3 {
-    margin: 0;
-    font-size: 19px;
-    line-height: 1.2;
-    letter-spacing: -0.35px;
-    color: #0c2340;
-    font-weight: 800;
-  }
-
-  .role-progression-note {
-    margin: 0 0 18px 0;
-    max-width: 920px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #526074;
-  }
-
-  .role-progression-table-wrap {
-    width: 100%;
-    overflow-x: auto;
-    border: 1px solid #e6edf5;
-    border-radius: 14px;
-    background: #ffffff;
-    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.05);
-  }
-
-  .role-progression-table {
-    width: 100%;
-    min-width: 700px;
-    border-collapse: collapse;
-    table-layout: fixed;
-    text-align: center;
-  }
-
-  .role-progression-table thead tr {
-    background: #0c2340;
-    color: #ffffff;
-  }
-
-  .role-progression-table th {
-    padding: 13px 12px;
-    font-size: 12.5px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .role-progression-table th:last-child {
-    border-right: none;
-  }
-
-  .role-progression-table td {
-    padding: 13px 12px;
-    font-size: 13px;
-    color: #263447;
-    border-top: 1px solid #edf2f7;
-  }
-
-  .role-progression-table tbody tr:nth-child(even) {
-    background: #f8fafc;
-  }
-
-  .role-progression-table tbody tr.is-ncaa-current {
-    background: #fff4ec;
-  }
-
-  .role-progression-table .avg-best,
-  .role-progression-table .round-best,
-  .role-progression-table .avg-strong,
-  .role-progression-table .round-strong {
-    color: #c2410c;
-    font-weight: 800;
-  }
-
-  .role-progression-table .metric-note {
-    display: inline-block;
-    margin-left: 4px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #7a8798;
-  }
-
-  .role-progression-table .muted-cell {
-    color: #66758a;
-  }
-
-  .role-progression-table .muted-cell.lighter {
-    color: #8c98a8;
-  }
-
-  .season-trend-card {
-    overflow: hidden;
-  }
-
-  .season-trend-head {
-    padding: 26px 24px 10px;
-    text-align: center;
-  }
-
-  .season-trend-head h2 {
-    margin: 0;
-    color: #0c2340;
-    font-size: 26px;
-    line-height: 1.1;
-    letter-spacing: -0.4px;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-
-  .season-trend-head p {
-    margin: 8px 0 0;
-    font-size: 12px;
-    color: #64748b;
-    letter-spacing: 1px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  .season-trend-body {
-    padding: 0 24px 24px;
-  }
-
-  .season-trend-topline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #0c2340;
-  }
-
-  .season-trend-topline h3 {
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    color: #0c2340;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .season-trend-tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #0c2340;
-    color: #ffffff;
-    padding: 5px 12px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 12px;
-    border-radius: 999px;
-    font-weight: 500;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .season-trend-chart-shell {
-    position: relative;
-    background: #fafbfd;
-    border: 1px solid #e8edf3;
-    border-radius: 18px;
-    padding: 54px 16px 48px;
-  }
-
-  .season-trend-metric-pill {
-    position: absolute;
-    top: 14px;
-    right: 16px;
-    z-index: 5;
-    background: rgba(12, 35, 64, 0.05);
-    border: 1px solid rgba(12, 35, 64, 0.22);
-    border-radius: 999px;
-    padding: 7px 14px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .season-trend-metric-label {
-    font-size: 12px;
-    font-weight: 800;
-    color: #0c2340;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-
-  .season-trend-metric-value {
-    font-family: 'Oswald', sans-serif;
-    font-size: 21px;
-    font-weight: 700;
-    color: #0c2340;
-    line-height: 1;
-  }
-
-  .season-trend-canvas-wrap {
-    position: relative;
-    width: 100%;
-    height: 420px;
-  }
-
-  .season-trend-source {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px dashed #cfd8e3;
-    text-align: center;
-    font-size: 11px;
-    color: #7a8798;
-    font-weight: 700;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
   }
 
   .ts-signature-grid {
@@ -922,7 +696,6 @@
     font-weight: 800;
   }
 
-
   .ts-half-card {
     padding: 24px 22px 22px;
   }
@@ -952,24 +725,300 @@
     font-weight: 700;
   }
 
-  /* ===== Section-specific redesign: Evidence / Role / Fit ===== */
+  /* ===== Progression: clean section-specific system ===== */
 
-  .ts-eval-signature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-bottom: 18px;
+  .ts-progression-section,
+  .ts-progression-section * {
+    box-sizing: border-box;
   }
 
+  .ts-progression-section {
+    overflow: hidden;
+  }
 
+  .ts-progression-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 20px;
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .ts-progress-panel {
+    min-width: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.98) 100%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06);
+    padding: 22px;
+    overflow: hidden;
+  }
+
+  .ts-progress-panel-head {
+    margin-bottom: 16px;
+  }
+
+  .ts-progress-panel-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .ts-progress-panel-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 23, 42, 0.05);
+    color: #0f172a;
+    flex: 0 0 auto;
+  }
+
+  .ts-progress-panel-title-row h3,
+  .ts-progress-panel-title-block h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    font-weight: 900;
+  }
+
+  .ts-progress-panel-title-block p {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .ts-progress-note-box {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(248,250,252,0.92) 0%, rgba(241,245,249,0.92) 100%);
+  }
+
+  .ts-progress-note-box p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.62;
+    color: #334155;
+    font-weight: 500;
+  }
+
+  .ts-progress-table-shell {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    background: #ffffff;
+  }
+
+  .ts-progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .ts-progress-table th,
+  .ts-progress-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    vertical-align: middle;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #0f172a;
+  }
+
+  .ts-progress-table thead th {
+    background: #f8fafc;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+  }
+
+  .ts-progress-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .ts-progress-table th:nth-child(1),
+  .ts-progress-table td:nth-child(1) {
+    width: 46%;
+  }
+
+  .ts-progress-table th:nth-child(2),
+  .ts-progress-table td:nth-child(2) {
+    width: 14%;
+  }
+
+  .ts-progress-table th:nth-child(3),
+  .ts-progress-table td:nth-child(3) {
+    width: 20%;
+  }
+
+  .ts-progress-table th:nth-child(4),
+  .ts-progress-table td:nth-child(4) {
+    width: 20%;
+  }
+
+  .ts-progress-table td:nth-child(1) {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .ts-progress-table .metric-note {
+    display: inline;
+    font-size: 0.76rem;
+    color: #64748b;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  .ts-progress-table tr.is-current td {
+    background: rgba(248, 250, 252, 0.85);
+    font-weight: 600;
+  }
+
+  .ts-progress-table .is-best {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .ts-progress-table .is-strong {
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .ts-progress-table .is-muted {
+    color: #64748b;
+  }
+
+  .ts-progress-table .lighter {
+    color: #94a3b8;
+  }
+
+  .ts-progress-chart-card {
+    min-width: 0;
+    display: grid;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,250,252,0.96) 100%);
+  }
+
+  .ts-progress-chart-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .ts-progress-chart-topline h4 {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    color: #0f172a;
+    font-weight: 900;
+  }
+
+  .ts-progress-chart-topline p {
+    margin: 4px 0 0;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .ts-progress-metric-chip {
+    flex: 0 0 auto;
+    min-width: 112px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    text-align: right;
+  }
+
+  .ts-progress-metric-chip-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
+  .ts-progress-metric-chip-value {
+    display: block;
+    margin-top: 4px;
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #0f172a;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .ts-progress-canvas-shell {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    height: 320px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+  }
+
+  .ts-progress-canvas-shell canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+  }
+
+  .ts-progress-source {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: #64748b;
+    font-weight: 700;
+  }
+
+  .ts-progression-section .ts-progression-stack > *,
+  .ts-progression-section .ts-progression-panels > *,
+  .ts-progression-section .ts-progress-panel > * {
+    min-width: 0;
+  }
+
+  /* ===== Evidence & Projection unified layout ===== */
+
+  .ts-eval-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .ts-eval-signature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
 
   .ts-eval-role-main {
     position: relative;
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
     border: 1px solid #dfe7f0;
-    border-radius: 24px;
-    box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
-    padding: 28px 28px 26px;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+    padding: 22px 24px 20px;
     overflow: hidden;
   }
 
@@ -995,35 +1044,40 @@
   }
 
   .ts-eval-main-title {
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     color: #0c2340;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.08;
     font-weight: 900;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.35px;
   }
 
   .ts-eval-main-body {
     margin: 0;
     color: #334155;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.72;
     font-weight: 500;
   }
 
+  .ts-eval-four-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
 
-
-  .ts-eval-mini-card {
+  .ts-eval-equal-card {
+    position: relative;
     background: #ffffff;
     border: 1px solid #e3eaf2;
     border-radius: 22px;
     box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
     padding: 20px 20px 18px;
-    position: relative;
     overflow: hidden;
+    min-height: 100%;
   }
 
-  .ts-eval-mini-card::before {
+  .ts-eval-equal-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -1032,15 +1086,15 @@
     height: 5px;
   }
 
-  .ts-eval-mini-card--orange::before {
+  .ts-eval-equal-card--orange::before {
     background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
   }
 
-  .ts-eval-mini-card--navy::before {
+  .ts-eval-equal-card--navy::before {
     background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
   }
 
-  .ts-eval-mini-kicker {
+  .ts-eval-equal-kicker {
     margin: 0 0 10px 0;
     padding-top: 6px;
     color: #0c2340;
@@ -1051,265 +1105,87 @@
     text-transform: uppercase;
   }
 
-  .ts-eval-mini-body {
+  .ts-eval-equal-title {
+    margin: 0 0 12px 0;
+    color: #0c2340;
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+  }
+
+  .ts-eval-equal-body {
     margin: 0;
-    color: #4b5a6d;
-    font-size: 14px;
-    line-height: 1.72;
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.78;
     font-weight: 500;
   }
 
-/* ===== Evidence & Projection unified layout ===== */
-
-.ts-eval-section {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.ts-eval-signature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.ts-eval-role-main {
-  position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid #dfe7f0;
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
-  padding: 22px 24px 20px;
-  overflow: hidden;
-}
-
-.ts-eval-role-main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
-}
-
-.ts-eval-kicker {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: #F15A22;
-}
-
-.ts-eval-main-title {
-  margin: 0 0 10px 0;
-  color: #0c2340;
-  font-size: 20px;
-  line-height: 1.08;
-  font-weight: 900;
-  letter-spacing: -0.35px;
-}
-
-.ts-eval-main-body {
-  margin: 0;
-  color: #334155;
-  font-size: 14px;
-  line-height: 1.72;
-  font-weight: 500;
-}
-
-.ts-eval-four-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.ts-eval-equal-card {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e3eaf2;
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
-  padding: 20px 20px 18px;
-  overflow: hidden;
-  min-height: 100%;
-}
-
-.ts-eval-equal-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-}
-
-.ts-eval-equal-card--orange::before {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-eval-equal-card--navy::before {
-  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
-}
-
-.ts-eval-equal-kicker {
-  margin: 0 0 10px 0;
-  padding-top: 6px;
-  color: #0c2340;
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.ts-eval-equal-title {
-  margin: 0 0 12px 0;
-  color: #0c2340;
-  font-size: 22px;
-  line-height: 1.1;
-  font-weight: 900;
-  letter-spacing: -0.4px;
-}
-
-.ts-eval-equal-body {
-  margin: 0;
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.78;
-  font-weight: 500;
-}
-
-.ts-eval-equal-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.ts-eval-equal-list li {
-  position: relative;
-  margin: 0;
-  padding: 12px 14px 12px 42px;
-  background: #f8fafc;
-  border: 1px solid #e6edf5;
-  border-radius: 14px;
-  color: #334155;
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.ts-eval-equal-list li::before {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #F15A22;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ts-eval-note-box {
-  margin-top: 18px;
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 18px 16px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-.ts-eval-note-label {
-  margin: 0 0 9px 0;
-  color: rgba(255,255,255,0.72);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.ts-eval-note-text {
-  margin: 0;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.65;
-  font-weight: 700;
-}
-
-@media (max-width: 1024px) {
-  .ts-eval-signature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ts-eval-four-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .ts-eval-role-main,
-  .ts-eval-equal-card {
-    border-radius: 18px;
-  }
-
-  .ts-eval-role-main {
-    padding: 20px 18px 18px;
-  }
-
-  .ts-eval-equal-card {
-    padding: 18px 16px 16px;
-  }
-
-  .ts-eval-main-title,
-  .ts-eval-equal-title {
-    font-size: 20px;
-  }
-
-  .ts-eval-main-body,
-  .ts-eval-equal-body,
-  .ts-eval-equal-list li {
-    font-size: 13px;
-    line-height: 1.66;
-  }
-
-  .ts-eval-equal-kicker {
-    font-size: 11px;
-    padding-top: 4px;
+  .ts-eval-equal-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
   }
 
   .ts-eval-equal-list li {
-    padding: 11px 12px 11px 38px;
-    border-radius: 12px;
+    position: relative;
+    margin: 0;
+    padding: 12px 14px 12px 42px;
+    background: #f8fafc;
+    border: 1px solid #e6edf5;
+    border-radius: 14px;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
   }
 
   .ts-eval-equal-list li::before {
-    left: 12px;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #F15A22;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .ts-eval-note-box {
-    border-radius: 14px;
-    padding: 16px 14px;
+    margin-top: 18px;
+    background: #0c2340;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 18px 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .ts-eval-note-label {
+    margin: 0 0 9px 0;
+    color: rgba(255,255,255,0.72);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .ts-eval-note-text {
-    font-size: 14px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 700;
   }
-}
 
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1496,13 +1372,36 @@
     }
 
     .ts-signature-grid,
-    .ts-half-grid,
-    .ts-role-wide-side,
-    .ts-eval-signature-grid,
+    .ts-eval-signature-grid {
+      grid-template-columns: 1fr;
+    }
 
+    .ts-progression-panels {
+      grid-template-columns: 1fr;
+    }
 
-    .ts-eval-mini-card {
+    .ts-progress-panel {
+      padding: 20px;
+    }
+
+    .ts-progress-canvas-shell {
+      height: 300px;
+    }
+
+    .ts-eval-four-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ts-eval-role-main,
+    .ts-eval-equal-card {
       border-radius: 18px;
+    }
+
+    .ts-eval-role-main {
+      padding: 20px 18px 18px;
+    }
+
+    .ts-eval-equal-card {
       padding: 18px 16px 16px;
     }
   }
@@ -1532,10 +1431,11 @@
     .ts-timeline-grid,
     .ts-links-grid,
     .ts-signature-grid,
-    .ts-half-grid,
     .ts-role-wide-side,
     .ts-eval-signature-grid,
-
+    .ts-eval-four-grid {
+      grid-template-columns: 1fr;
+    }
 
     .ts-quick-item {
       min-height: auto;
@@ -1593,104 +1493,113 @@
       padding: 20px 18px;
     }
 
-    .role-progression-header {
-      align-items: flex-start;
+    .ts-progress-panel {
+      padding: 16px;
+      border-radius: 18px;
     }
 
-    .role-progression-header h3 {
-      font-size: 18px;
+    .ts-progress-panel-title-row h3,
+    .ts-progress-panel-title-block h3 {
+      font-size: 1rem;
     }
 
-    .role-progression-note {
-      font-size: 13px;
-      line-height: 1.65;
-      margin-bottom: 16px;
+    .ts-progress-panel-title-block p,
+    .ts-progress-note-box p {
+      font-size: 0.86rem;
     }
 
-    .role-progression-table {
-      min-width: 620px;
-    }
-
-    .role-progression-table th,
-    .role-progression-table td {
-      padding: 12px 10px;
-      font-size: 12px;
-    }
-
-    .season-trend-head {
-      padding: 22px 18px 10px;
-    }
-
-    .season-trend-head h2 {
-      font-size: 22px;
-    }
-
-    .season-trend-head p {
-      font-size: 11px;
-      letter-spacing: 0.8px;
-    }
-
-    .season-trend-body {
-      padding: 0 18px 18px;
-    }
-
-    .season-trend-topline {
-      align-items: flex-start;
+    .ts-progress-chart-topline {
       flex-direction: column;
-      gap: 10px;
+      align-items: stretch;
     }
 
-    .season-trend-topline h3 {
-      font-size: 16px;
+    .ts-progress-metric-chip {
+      width: 100%;
+      min-width: 0;
+      text-align: left;
     }
 
-    .season-trend-tag {
-      font-size: 11px;
-      padding: 5px 10px;
+    .ts-progress-table th,
+    .ts-progress-table td {
+      padding: 10px 8px;
+      font-size: 0.78rem;
+      line-height: 1.35;
     }
 
-    .season-trend-chart-shell {
-      padding: 58px 10px 42px;
-      border-radius: 16px;
+    .ts-progress-table thead th {
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
     }
 
-    .season-trend-metric-pill {
-      top: 12px;
-      right: 12px;
-      padding: 6px 12px;
+    .ts-progress-table th:nth-child(1),
+    .ts-progress-table td:nth-child(1) {
+      width: 43%;
     }
 
-    .season-trend-metric-label {
-      font-size: 11px;
+    .ts-progress-table th:nth-child(2),
+    .ts-progress-table td:nth-child(2) {
+      width: 13%;
     }
 
-    .season-trend-metric-value {
-      font-size: 19px;
+    .ts-progress-table th:nth-child(3),
+    .ts-progress-table td:nth-child(3) {
+      width: 22%;
     }
 
-    .season-trend-canvas-wrap {
-      height: 360px;
+    .ts-progress-table th:nth-child(4),
+    .ts-progress-table td:nth-child(4) {
+      width: 22%;
     }
 
-    .season-trend-source {
-      font-size: 10px;
-      letter-spacing: 0.5px;
+    .ts-progress-table .metric-note {
+      display: block;
+      margin-top: 2px;
+      white-space: normal;
+      font-size: 0.64rem;
     }
 
-    .ts-eval-main-title {
+    .ts-progress-canvas-shell {
+      height: 260px;
+    }
+
+    .ts-eval-main-title,
+    .ts-eval-equal-title {
       font-size: 20px;
     }
 
+    .ts-eval-main-body,
+    .ts-eval-equal-body,
+    .ts-eval-equal-list li {
+      font-size: 13px;
+      line-height: 1.66;
+    }
 
-
-    .ts-eval-mini-kicker {
+    .ts-eval-equal-kicker {
       font-size: 11px;
       padding-top: 4px;
     }
 
- 
+    .ts-eval-equal-list li {
+      padding: 11px 12px 11px 38px;
+      border-radius: 12px;
+    }
 
+    .ts-eval-equal-list li::before {
+      left: 12px;
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
 
+    .ts-eval-note-box {
+      border-radius: 14px;
+      padding: 16px 14px;
+    }
+
+    .ts-eval-note-text {
+      font-size: 14px;
+    }
+  }
 
   @media (orientation: landscape) and (max-height: 500px) {
     .header-wrapper {
@@ -1710,35 +1619,6 @@
       margin-top: 30px;
     }
   }
-
-
-#fixedTopBtn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 999;
-  width: 48px;
-  height: 48px;
-  border: 0;
-  border-radius: 999px;
-  background: #0f172a;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
-}
-
-#fixedTopBtn.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-    
 </style>
 
 </head>
@@ -1848,182 +1728,177 @@
       </div>
     </section>
 
-   <section class="ts-section ts-progression-section">
-  <div class="ts-section-header">
-    <div>
-      <h2>Progression</h2>
-      <p>Why the trajectory matters</p>
-    </div>
-  </div>
-
-  <div class="ts-progression-stack">
-    <div class="ts-timeline-grid" id="timeline-grid"></div>
-
-    <div class="ts-progression-panels">
-      <!-- Left Panel -->
-      <article class="ts-progress-panel ts-progress-panel-table">
-        <div class="ts-progress-panel-head">
-          <div class="ts-progress-panel-title-row">
-            <div class="ts-progress-panel-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
-                <polyline points="17 18 23 18 23 12"></polyline>
-              </svg>
-            </div>
-            <h3>Long-Term Scoring Progression</h3>
-          </div>
+    <section class="ts-section ts-progression-section">
+      <div class="ts-section-header">
+        <div>
+          <h2>Progression</h2>
+          <p>Why the trajectory matters</p>
         </div>
+      </div>
 
-        <div class="ts-progress-note-box">
-          <p>
-            This progression reflects scoring development from the time Joshua began golf at age 12 through the current NCAA freshman season, showing sustained year-by-year improvement in both scoring average and low-round capability.
-          </p>
-        </div>
+      <div class="ts-progression-stack">
+        <div class="ts-timeline-grid" id="timeline-grid"></div>
 
-        <div class="ts-progress-table-shell">
-          <table class="ts-progress-table">
-            <thead>
-              <tr>
-                <th>Stage</th>
-                <th>Rounds</th>
-                <th>Scoring Avg</th>
-                <th>Low Round</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="is-current">
-                <td>2025–26 NCAA Fr. Season (18)</td>
-                <td>27</td>
-                <td class="is-best">70.80 <span class="metric-note">(Clippd Adj.)</span></td>
-                <td class="is-best">64 (-8)</td>
-              </tr>
-              <tr>
-                <td>2024–25 Junior Golf Season (17)</td>
-                <td>52</td>
-                <td class="is-strong">71.37</td>
-                <td class="is-strong">62 (-10)</td>
-              </tr>
-              <tr>
-                <td>2023–24 Junior Golf Season (16)</td>
-                <td>47</td>
-                <td>72.60</td>
-                <td class="is-strong">64 (-8)</td>
-              </tr>
-              <tr>
-                <td>2022–23 Junior Golf Season (15)</td>
-                <td>45</td>
-                <td>74.04</td>
-                <td class="is-strong">66 (-5)</td>
-              </tr>
-              <tr>
-                <td>2021–22 Junior Golf Season (14)</td>
-                <td>34</td>
-                <td>77.88</td>
-                <td class="is-strong">70 (-2)</td>
-              </tr>
-              <tr>
-                <td>2020–21 Junior Golf Season (13)</td>
-                <td>18</td>
-                <td class="is-muted">79.39</td>
-                <td class="is-muted">74</td>
-              </tr>
-              <tr>
-                <td>2019–20 Junior Golf Season (12)</td>
-                <td>17</td>
-                <td class="is-muted lighter">86.88</td>
-                <td class="is-muted lighter">75</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <!-- Right Panel -->
-      <article class="ts-progress-panel ts-progress-panel-chart">
-        <div class="ts-progress-panel-head">
-          <div class="ts-progress-panel-title-block">
-            <h3>Seasonal Finish Trend</h3>
-            <p>2025–26 Competitive Record</p>
-          </div>
-        </div>
-
-        <div class="ts-progress-chart-card">
-          <div class="ts-progress-chart-topline">
-            <div>
-              <h4>Event Results</h4>
-              <p>Freshman Season</p>
+        <div class="ts-progression-panels">
+          <article class="ts-progress-panel ts-progress-panel-table">
+            <div class="ts-progress-panel-head">
+              <div class="ts-progress-panel-title-row">
+                <div class="ts-progress-panel-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                    <polyline points="17 18 23 18 23 12"></polyline>
+                  </svg>
+                </div>
+                <h3>Long-Term Scoring Progression</h3>
+              </div>
             </div>
 
-            <div class="ts-progress-metric-chip">
-              <span class="ts-progress-metric-chip-label">Clippd Adj.</span>
-              <span class="ts-progress-metric-chip-value">70.80</span>
+            <div class="ts-progress-note-box">
+              <p>
+                This progression reflects scoring development from the time Joshua began golf at age 12 through the current NCAA freshman season, showing sustained year-by-year improvement in both scoring average and low-round capability.
+              </p>
+            </div>
+
+            <div class="ts-progress-table-shell">
+              <table class="ts-progress-table">
+                <thead>
+                  <tr>
+                    <th>Stage</th>
+                    <th>Rounds</th>
+                    <th>Scoring Avg</th>
+                    <th>Low Round</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-current">
+                    <td>2025–26 NCAA Fr. Season (18)</td>
+                    <td>27</td>
+                    <td class="is-best">70.80 <span class="metric-note">(Clippd Adj.)</span></td>
+                    <td class="is-best">64 (-8)</td>
+                  </tr>
+                  <tr>
+                    <td>2024–25 Junior Golf Season (17)</td>
+                    <td>52</td>
+                    <td class="is-strong">71.37</td>
+                    <td class="is-strong">62 (-10)</td>
+                  </tr>
+                  <tr>
+                    <td>2023–24 Junior Golf Season (16)</td>
+                    <td>47</td>
+                    <td>72.60</td>
+                    <td class="is-strong">64 (-8)</td>
+                  </tr>
+                  <tr>
+                    <td>2022–23 Junior Golf Season (15)</td>
+                    <td>45</td>
+                    <td>74.04</td>
+                    <td class="is-strong">66 (-5)</td>
+                  </tr>
+                  <tr>
+                    <td>2021–22 Junior Golf Season (14)</td>
+                    <td>34</td>
+                    <td>77.88</td>
+                    <td class="is-strong">70 (-2)</td>
+                  </tr>
+                  <tr>
+                    <td>2020–21 Junior Golf Season (13)</td>
+                    <td>18</td>
+                    <td class="is-muted">79.39</td>
+                    <td class="is-muted">74</td>
+                  </tr>
+                  <tr>
+                    <td>2019–20 Junior Golf Season (12)</td>
+                    <td>17</td>
+                    <td class="is-muted lighter">86.88</td>
+                    <td class="is-muted lighter">75</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="ts-progress-panel ts-progress-panel-chart">
+            <div class="ts-progress-panel-head">
+              <div class="ts-progress-panel-title-block">
+                <h3>Seasonal Finish Trend</h3>
+                <p>2025–26 Competitive Record</p>
+              </div>
+            </div>
+
+            <div class="ts-progress-chart-card">
+              <div class="ts-progress-chart-topline">
+                <div>
+                  <h4>Event Results</h4>
+                  <p>Freshman Season</p>
+                </div>
+
+                <div class="ts-progress-metric-chip">
+                  <span class="ts-progress-metric-chip-label">Clippd Adj.</span>
+                  <span class="ts-progress-metric-chip-value">70.80</span>
+                </div>
+              </div>
+
+              <div class="ts-progress-canvas-shell">
+                <canvas id="archiveOfficialChart"></canvas>
+              </div>
+
+              <div class="ts-progress-source">
+                Source: Scoreboard.Clippd, WAGR &amp; Golfstat
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ts-section">
+      <div class="ts-section-header">
+        <div>
+          <h2>Evidence & Projection</h2>
+          <p>Fast evidence and roster translation</p>
+        </div>
+      </div>
+
+      <div class="ts-eval-section">
+        <div class="ts-eval-signature-grid" id="signature-grid"></div>
+
+        <div class="ts-eval-role-main">
+          <div class="ts-eval-kicker">PRIMARY ROLE READ</div>
+          <h3 class="ts-eval-main-title">Projected College Role</h3>
+          <p class="ts-eval-main-body" id="projected-role-body"></p>
+        </div>
+
+        <div class="ts-eval-four-grid">
+          <div class="ts-eval-equal-card ts-eval-equal-card--orange">
+            <div class="ts-eval-equal-kicker" id="translation-label">Roster Translation</div>
+            <p class="ts-eval-equal-body" id="translation-text"></p>
+          </div>
+
+          <div class="ts-eval-equal-card ts-eval-equal-card--navy">
+            <div class="ts-eval-equal-kicker" id="development-label">Development Outlook</div>
+            <p class="ts-eval-equal-body" id="development-text"></p>
+          </div>
+
+          <div class="ts-eval-equal-card ts-eval-equal-card--navy">
+            <div class="ts-eval-equal-kicker">Program Fit</div>
+            <h3 class="ts-eval-equal-title">Work Ethic & Culture Fit</h3>
+            <ul id="culture-list" class="ts-eval-equal-list"></ul>
+          </div>
+
+          <div class="ts-eval-equal-card ts-eval-equal-card--orange">
+            <div class="ts-eval-equal-kicker">Transfer Purpose</div>
+            <h3 class="ts-eval-equal-title">Transfer Objective</h3>
+            <p class="ts-eval-equal-body" id="transfer-body"></p>
+
+            <div class="ts-eval-note-box">
+              <div class="ts-eval-note-label" id="transfer-note-label">Positioning Note</div>
+              <p class="ts-eval-note-text" id="transfer-note-text"></p>
             </div>
           </div>
-
-          <div class="ts-progress-canvas-shell">
-            <canvas id="archiveOfficialChart"></canvas>
-          </div>
-
-          <div class="ts-progress-source">
-            Source: Scoreboard.Clippd, WAGR &amp; Golfstat
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<section class="ts-section">
-  <div class="ts-section-header">
-    <div>
-      <h2>Evidence & Projection</h2>
-      <p>Fast evidence and roster translation</p>
-    </div>
-  </div>
-
-  <div class="ts-eval-section">
-    <div class="ts-eval-signature-grid" id="signature-grid"></div>
-
-    <div class="ts-eval-role-main">
-      <div class="ts-eval-kicker">PRIMARY ROLE READ</div>
-      <h3 class="ts-eval-main-title">Projected College Role</h3>
-      <p class="ts-eval-main-body" id="projected-role-body"></p>
-    </div>
-
-    <div class="ts-eval-four-grid">
-      <div class="ts-eval-equal-card ts-eval-equal-card--orange">
-        <div class="ts-eval-equal-kicker" id="translation-label">Roster Translation</div>
-        <p class="ts-eval-equal-body" id="translation-text"></p>
-      </div>
-
-      <div class="ts-eval-equal-card ts-eval-equal-card--navy">
-        <div class="ts-eval-equal-kicker" id="development-label">Development Outlook</div>
-        <p class="ts-eval-equal-body" id="development-text"></p>
-      </div>
-
-      <div class="ts-eval-equal-card ts-eval-equal-card--navy">
-        <div class="ts-eval-equal-kicker">Program Fit</div>
-        <h3 class="ts-eval-equal-title">Work Ethic & Culture Fit</h3>
-        <ul id="culture-list" class="ts-eval-equal-list"></ul>
-      </div>
-
-      <div class="ts-eval-equal-card ts-eval-equal-card--orange">
-        <div class="ts-eval-equal-kicker">Transfer Purpose</div>
-        <h3 class="ts-eval-equal-title">Transfer Objective</h3>
-        <p class="ts-eval-equal-body" id="transfer-body"></p>
-
-        <div class="ts-eval-note-box">
-          <div class="ts-eval-note-label" id="transfer-note-label">Positioning Note</div>
-          <p class="ts-eval-note-text" id="transfer-note-text"></p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-    
+    </section>
 
-    
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
@@ -2257,256 +2132,257 @@
     })();
   </script>
 
-<script>
-  async function renderTransferSnapshot() {
-    try {
-      const response = await fetch('./data-transfer.json?v=' + Date.now());
-      if (!response.ok) throw new Error('Failed to load data-transfer.json');
+  <script>
+    async function renderTransferSnapshot() {
+      try {
+        const response = await fetch('./data-transfer.json?v=' + Date.now());
+        if (!response.ok) throw new Error('Failed to load data-transfer.json');
 
-      const data = await response.json();
+        const data = await response.json();
 
-      const lastUpdatedEl = document.getElementById('ts-last-updated');
-      if (lastUpdatedEl) {
-        lastUpdatedEl.textContent =
-          data.meta && data.meta.lastUpdated ? `Last Updated: ${data.meta.lastUpdated}` : 'Last Updated: —';
-      }
+        const lastUpdatedEl = document.getElementById('ts-last-updated');
+        if (lastUpdatedEl) {
+          lastUpdatedEl.textContent =
+            data.meta && data.meta.lastUpdated ? `Last Updated: ${data.meta.lastUpdated}` : 'Last Updated: —';
+        }
 
-      const heroEyebrow = document.getElementById('hero-eyebrow');
-      const heroTitle = document.getElementById('hero-title');
-      const heroMeta = document.getElementById('hero-meta');
-      const heroDefinition = document.getElementById('hero-definition');
-      const heroSupporting = document.getElementById('hero-supporting');
+        const heroEyebrow = document.getElementById('hero-eyebrow');
+        const heroTitle = document.getElementById('hero-title');
+        const heroMeta = document.getElementById('hero-meta');
+        const heroDefinition = document.getElementById('hero-definition');
+        const heroSupporting = document.getElementById('hero-supporting');
 
-      if (heroEyebrow) heroEyebrow.textContent = data.hero?.eyebrow || 'Transfer Snapshot';
-      if (heroTitle) heroTitle.textContent = data.hero?.title || 'Joshua Hong';
-      if (heroMeta) heroMeta.textContent = data.hero?.metaLine || '';
-      if (heroDefinition) heroDefinition.textContent = data.hero?.definition || '';
-      if (heroSupporting) heroSupporting.textContent = data.hero?.supporting || '';
+        if (heroEyebrow) heroEyebrow.textContent = data.hero?.eyebrow || 'Transfer Snapshot';
+        if (heroTitle) heroTitle.textContent = data.hero?.title || 'Joshua Hong';
+        if (heroMeta) heroMeta.textContent = data.hero?.metaLine || '';
+        if (heroDefinition) heroDefinition.textContent = data.hero?.definition || '';
+        if (heroSupporting) heroSupporting.textContent = data.hero?.supporting || '';
 
-      const heroStripGrid = document.getElementById('hero-strip-grid');
-      if (heroStripGrid) {
-        heroStripGrid.innerHTML = '';
-        (data.heroStrip || []).forEach(item => {
-          const div = document.createElement('div');
-          div.className = 'ts-hero-strip-item';
-          div.innerHTML = `
-            <span class="ts-hero-strip-label">${item.label || ''}</span>
-            <span class="ts-hero-strip-value">${item.value || ''}</span>
-          `;
-          heroStripGrid.appendChild(div);
-        });
-      }
+        const heroStripGrid = document.getElementById('hero-strip-grid');
+        if (heroStripGrid) {
+          heroStripGrid.innerHTML = '';
+          (data.heroStrip || []).forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'ts-hero-strip-item';
+            div.innerHTML = `
+              <span class="ts-hero-strip-label">${item.label || ''}</span>
+              <span class="ts-hero-strip-value">${item.value || ''}</span>
+            `;
+            heroStripGrid.appendChild(div);
+          });
+        }
 
-      const quickGrid = document.getElementById('quick-summary-grid');
-      if (quickGrid) {
-        quickGrid.innerHTML = '';
-        (data.quickSummary || []).forEach((item, index) => {
-          const div = document.createElement('div');
-          div.className = 'ts-quick-item';
-          div.innerHTML = `
-            <span class="ts-quick-item-number">${String(index + 1).padStart(2, '0')}</span>
-            <p class="ts-quick-item-text">${item}</p>
-          `;
-          quickGrid.appendChild(div);
-        });
-      }
+        const quickGrid = document.getElementById('quick-summary-grid');
+        if (quickGrid) {
+          quickGrid.innerHTML = '';
+          (data.quickSummary || []).forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'ts-quick-item';
+            div.innerHTML = `
+              <span class="ts-quick-item-number">${String(index + 1).padStart(2, '0')}</span>
+              <p class="ts-quick-item-text">${item}</p>
+            `;
+            quickGrid.appendChild(div);
+          });
+        }
 
-      const metricsGrid = document.getElementById('metrics-grid');
-      if (metricsGrid) {
-        metricsGrid.innerHTML = '';
-        (data.metrics || []).forEach(metric => {
-          const div = document.createElement('div');
-          div.className = 'ts-metric';
-          div.innerHTML = `
-            <div class="ts-metric-label">${metric.label || ''}</div>
-            <div class="ts-metric-value ${metric.accent ? 'accent' : ''}">${metric.value || ''}</div>
-            <div class="ts-metric-note">${metric.note || ''}</div>
-          `;
-          metricsGrid.appendChild(div);
-        });
-      }
+        const metricsGrid = document.getElementById('metrics-grid');
+        if (metricsGrid) {
+          metricsGrid.innerHTML = '';
+          (data.metrics || []).forEach(metric => {
+            const div = document.createElement('div');
+            div.className = 'ts-metric';
+            div.innerHTML = `
+              <div class="ts-metric-label">${metric.label || ''}</div>
+              <div class="ts-metric-value ${metric.accent ? 'accent' : ''}">${metric.value || ''}</div>
+              <div class="ts-metric-note">${metric.note || ''}</div>
+            `;
+            metricsGrid.appendChild(div);
+          });
+        }
 
-      const timelineGrid = document.getElementById('timeline-grid');
-      if (timelineGrid) {
-        timelineGrid.innerHTML = '';
-        (data.progression?.stages || []).forEach(item => {
-          const div = document.createElement('div');
-          div.className = 'ts-timeline-item';
-          div.innerHTML = `
-            <div class="ts-phase">${item.phase || ''}</div>
-            <h3>${item.title || ''}</h3>
-            <p>${item.desc || ''}</p>
-          `;
-          timelineGrid.appendChild(div);
-        });
-      }
+        const timelineGrid = document.getElementById('timeline-grid');
+        if (timelineGrid) {
+          timelineGrid.innerHTML = '';
+          (data.progression?.stages || []).forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'ts-timeline-item';
+            div.innerHTML = `
+              <div class="ts-phase">${item.phase || ''}</div>
+              <h3>${item.title || ''}</h3>
+              <p>${item.desc || ''}</p>
+            `;
+            timelineGrid.appendChild(div);
+          });
+        }
 
-      const signatureGrid = document.getElementById('signature-grid');
-      if (signatureGrid) {
-        signatureGrid.innerHTML = '';
-        (data.evidenceProjection?.cards || []).forEach(item => {
-          const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
-          const div = document.createElement('div');
-          div.className = 'ts-signature-item';
-          div.innerHTML = `
-            <div class="ts-badge">${item.badge || ''}</div>
-            <h3>${item.event || ''}</h3>
-            <ul>${liItems}</ul>
-          `;
-          signatureGrid.appendChild(div);
-        });
-      }
+        const signatureGrid = document.getElementById('signature-grid');
+        if (signatureGrid) {
+          signatureGrid.innerHTML = '';
+          (data.evidenceProjection?.cards || []).forEach(item => {
+            const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
+            const div = document.createElement('div');
+            div.className = 'ts-signature-item';
+            div.innerHTML = `
+              <div class="ts-badge">${item.badge || ''}</div>
+              <h3>${item.event || ''}</h3>
+              <ul>${liItems}</ul>
+            `;
+            signatureGrid.appendChild(div);
+          });
+        }
 
-      const projectedRoleHeading = document.querySelector('.ts-role-wide-main h3');
-      const projectedRoleBody = document.getElementById('projected-role-body');
-      const translationLabel = document.getElementById('translation-label');
-      const translationText = document.getElementById('translation-text');
-      const developmentLabel = document.getElementById('development-label');
-      const developmentText = document.getElementById('development-text');
+        const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
+        const projectedRoleBody = document.getElementById('projected-role-body');
+        const translationLabel = document.getElementById('translation-label');
+        const translationText = document.getElementById('translation-text');
+        const developmentLabel = document.getElementById('development-label');
+        const developmentText = document.getElementById('development-text');
 
-      if (projectedRoleHeading) {
-        projectedRoleHeading.textContent = data.evidenceProjection?.projectedRoleTitle || 'Projected College Role';
-      }
+        if (projectedRoleHeading) {
+          projectedRoleHeading.textContent = data.evidenceProjection?.projectedRoleTitle || 'Projected College Role';
+        }
 
-      if (projectedRoleBody) {
-        projectedRoleBody.textContent = data.evidenceProjection?.projectedRoleBody || '';
-      }
+        if (projectedRoleBody) {
+          projectedRoleBody.textContent = data.evidenceProjection?.projectedRoleBody || '';
+        }
 
-      if (translationLabel) {
-        translationLabel.textContent = data.evidenceProjection?.translationLabel || 'Roster Translation';
-      }
+        if (translationLabel) {
+          translationLabel.textContent = data.evidenceProjection?.translationLabel || 'Roster Translation';
+        }
 
-      if (translationText) {
-        translationText.textContent = data.evidenceProjection?.translationText || '';
-      }
+        if (translationText) {
+          translationText.textContent = data.evidenceProjection?.translationText || '';
+        }
 
-      if (developmentLabel) {
-        developmentLabel.textContent = data.evidenceProjection?.developmentLabel || 'Development Outlook';
-      }
+        if (developmentLabel) {
+          developmentLabel.textContent = data.evidenceProjection?.developmentLabel || 'Development Outlook';
+        }
 
-      if (developmentText) {
-        developmentText.textContent = data.evidenceProjection?.developmentText || '';
-      }
+        if (developmentText) {
+          developmentText.textContent = data.evidenceProjection?.developmentText || '';
+        }
 
-      const cultureList = document.getElementById('culture-list');
-      if (cultureList) {
-        cultureList.innerHTML = '';
-        (data.cultureFit || []).forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item;
-          cultureList.appendChild(li);
-        });
-      }
+        const cultureList = document.getElementById('culture-list');
+        if (cultureList) {
+          cultureList.innerHTML = '';
+          (data.cultureFit || []).forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            cultureList.appendChild(li);
+          });
+        }
 
-      const transferBody = document.getElementById('transfer-body');
-      const transferNoteLabel = document.getElementById('transfer-note-label');
-      const transferNoteText = document.getElementById('transfer-note-text');
+        const transferBody = document.getElementById('transfer-body');
+        const transferNoteLabel = document.getElementById('transfer-note-label');
+        const transferNoteText = document.getElementById('transfer-note-text');
 
-      if (transferBody) transferBody.textContent = data.transferObjective?.body || '';
-      if (transferNoteLabel) transferNoteLabel.textContent = data.transferObjective?.noteLabel || 'Positioning Note';
-      if (transferNoteText) transferNoteText.textContent = data.transferObjective?.noteText || '';
+        if (transferBody) transferBody.textContent = data.transferObjective?.body || '';
+        if (transferNoteLabel) transferNoteLabel.textContent = data.transferObjective?.noteLabel || 'Positioning Note';
+        if (transferNoteText) transferNoteText.textContent = data.transferObjective?.noteText || '';
 
-      const linksGrid = document.getElementById('links-grid');
-      if (linksGrid) {
-        linksGrid.innerHTML = '';
-        (data.links || []).forEach(link => {
-          const a = document.createElement('a');
-          a.className = 'ts-link-item';
-          a.href = link.url || '#';
+        const linksGrid = document.getElementById('links-grid');
+        if (linksGrid) {
+          linksGrid.innerHTML = '';
+          (data.links || []).forEach(link => {
+            const a = document.createElement('a');
+            a.className = 'ts-link-item';
+            a.href = link.url || '#';
 
-          if ((link.url || '').startsWith('http')) {
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
+            if ((link.url || '').startsWith('http')) {
+              a.target = '_blank';
+              a.rel = 'noopener noreferrer';
+            }
+
+            a.innerHTML = `
+              <div class="ts-link-top">
+                <h3>${link.name || ''}</h3>
+                <div class="ts-link-arrow">↗</div>
+              </div>
+              <p class="ts-link-desc">${link.desc || ''}</p>
+            `;
+            linksGrid.appendChild(a);
+          });
+        }
+
+        const contactSectionTitle = document.getElementById('contact-section-title');
+        const contactSectionSubtitle = document.getElementById('contact-section-subtitle');
+        const contactBody = document.getElementById('contact-body');
+        const contactBtn = document.getElementById('contact-email-btn');
+
+        if (contactSectionTitle) {
+          contactSectionTitle.textContent = data.contact?.sectionTitle || 'Program Contact';
+        }
+
+        if (contactSectionSubtitle) {
+          contactSectionSubtitle.textContent = data.contact?.sectionSubtitle || 'For direct program inquiries';
+        }
+
+        if (contactBody) {
+          contactBody.textContent =
+            data.contact?.body ||
+            'For direct program inquiries regarding transfer-related communication, use the contact button below.';
+        }
+
+        if (contactBtn) {
+          const localPart = data.contact?.localPart || '';
+          const domain = data.contact?.domain || '';
+          const subject = encodeURIComponent(data.contact?.subject || 'Joshua Hong Transfer Inquiry');
+
+          contactBtn.textContent = data.contact?.buttonLabel || 'Email Joshua Directly';
+
+          if (localPart && domain) {
+            const email = `${localPart}@${domain}`;
+            contactBtn.href = `mailto:${email}?subject=${subject}`;
+          } else {
+            contactBtn.href = '#';
           }
-
-          a.innerHTML = `
-            <div class="ts-link-top">
-              <h3>${link.name || ''}</h3>
-              <div class="ts-link-arrow">↗</div>
-            </div>
-            <p class="ts-link-desc">${link.desc || ''}</p>
-          `;
-          linksGrid.appendChild(a);
-        });
+        }
+      } catch (error) {
+        console.error('Transfer Snapshot render error:', error);
       }
+    }
 
-      const contactSectionTitle = document.getElementById('contact-section-title');
-      const contactSectionSubtitle = document.getElementById('contact-section-subtitle');
-      const contactBody = document.getElementById('contact-body');
-      const contactBtn = document.getElementById('contact-email-btn');
+    document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
 
-      if (contactSectionTitle) {
-        contactSectionTitle.textContent = data.contact?.sectionTitle || 'Program Contact';
-      }
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      if (nav) nav.classList.toggle('active');
+    }
 
-      if (contactSectionSubtitle) {
-        contactSectionSubtitle.textContent = data.contact?.sectionSubtitle || 'For direct program inquiries';
-      }
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
 
-      if (contactBody) {
-        contactBody.textContent =
-          data.contact?.body ||
-          'For direct program inquiries regarding transfer-related communication, use the contact button below.';
-      }
+    window.addEventListener('scroll', function () {
+      const btn = document.getElementById('fixedTopBtn');
+      const header = document.getElementById('mainHeader');
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (contactBtn) {
-        const localPart = data.contact?.localPart || '';
-        const domain = data.contact?.domain || '';
-        const subject = encodeURIComponent(data.contact?.subject || 'Joshua Hong Transfer Inquiry');
-
-        contactBtn.textContent = data.contact?.buttonLabel || 'Email Joshua Directly';
-
-        if (localPart && domain) {
-          const email = `${localPart}@${domain}`;
-          contactBtn.href = `mailto:${email}?subject=${subject}`;
+      if (btn) {
+        if (currentScrollY > 100) {
+          btn.classList.add('is-visible');
         } else {
-          contactBtn.href = '#';
+          btn.classList.remove('is-visible');
         }
       }
-    } catch (error) {
-      console.error('Transfer Snapshot render error:', error);
-    }
-  }
 
-  document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
-
-function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    if (nav) nav.classList.toggle('active');
-  }
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  window.addEventListener('scroll', function () {
-    const btn = document.getElementById('fixedTopBtn');
-    const header = document.getElementById('mainHeader');
-    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (btn) {
-      btn.style.display = currentScrollY > 100 ? 'block' : 'none';
-    }
-
-    if (header) {
-      if (currentScrollY > 300) {
-        header.classList.add('scrolled');
-        header.classList.remove('preparing');
-      } else if (currentScrollY > 10) {
-        header.classList.remove('scrolled');
-        header.classList.add('preparing');
-      } else {
-        header.classList.remove('scrolled', 'preparing');
+      if (header) {
+        if (currentScrollY > 300) {
+          header.classList.add('scrolled');
+          header.classList.remove('preparing');
+        } else if (currentScrollY > 10) {
+          header.classList.remove('scrolled');
+          header.classList.add('preparing');
+        } else {
+          header.classList.remove('scrolled', 'preparing');
+        }
       }
-    }
-  });
-
-
-  
-</script>
+    });
+  </script>
 
 </body>
 </html>
