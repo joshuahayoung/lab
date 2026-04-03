@@ -14,6 +14,22 @@
 <title>Transfer Snapshot | Joshua Hong Golf</title>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1JW8YBDZ8"></script>
+
+<script>
+  fetch('./data-transfer.json?v=' + Date.now())
+    .then(res => {
+      console.log('status:', res.status, 'ok:', res.ok);
+      return res.json();
+    })
+    .then(data => {
+      console.log('JSON OK:', data);
+      document.getElementById('hero-title').textContent = data.hero?.title || 'NO TITLE';
+    })
+    .catch(err => {
+      console.error('JSON FAIL:', err);
+    });
+</script>
+  
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
