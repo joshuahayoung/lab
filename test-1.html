@@ -1254,6 +1254,301 @@
   }
 }
 
+
+/* ===== Section-specific redesign: Evidence / Role / Fit ===== */
+
+.ts-eval-section,
+.ts-fit-section {
+  margin-bottom: 28px;
+}
+
+.ts-eval-signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ts-eval-role-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-eval-role-main {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+  padding: 28px 28px 26px;
+  overflow: hidden;
+}
+
+.ts-eval-role-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
+
+.ts-eval-kicker,
+.ts-fit-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-eval-main-title,
+.ts-fit-title {
+  margin: 0 0 12px 0;
+  color: #0c2340;
+  font-size: 24px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.ts-eval-main-body {
+  margin: 0;
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.ts-eval-role-side {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ts-eval-mini-card {
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 20px 20px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-eval-mini-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-eval-mini-card--orange::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-eval-mini-card--navy::before {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-eval-mini-kicker {
+  margin: 0 0 10px 0;
+  padding-top: 6px;
+  color: #0c2340;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.ts-eval-mini-body {
+  margin: 0;
+  color: #4b5a6d;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.ts-fit-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+}
+
+.ts-fit-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
+  padding: 24px 22px 22px;
+  overflow: hidden;
+}
+
+.ts-fit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-fit-card--culture::before {
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-fit-card--transfer::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-fit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-fit-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-fit-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-fit-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 500;
+}
+
+.ts-fit-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-fit-note-label {
+  margin: 0 0 9px 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ts-fit-note-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .ts-eval-signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-eval-role-side,
+  .ts-fit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-eval-role-main,
+  .ts-fit-card {
+    border-radius: 20px;
+    padding: 22px 18px 20px;
+  }
+
+  .ts-eval-mini-card {
+    border-radius: 18px;
+    padding: 18px 16px 16px;
+  }
+
+  .ts-eval-main-title,
+  .ts-fit-title {
+    font-size: 20px;
+  }
+
+  .ts-eval-main-body,
+  .ts-fit-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ts-eval-mini-kicker {
+    font-size: 11px;
+    padding-top: 4px;
+  }
+
+  .ts-eval-mini-body,
+  .ts-fit-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-fit-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-fit-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-fit-note-box {
+    border-radius: 14px;
+    padding: 16px 14px;
+  }
+
+  .ts-fit-note-text {
+    font-size: 14px;
+  }
+}
   
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1867,51 +2162,50 @@
         </div>
       </div>
 
-이거 디자인 변경해야해. 포인트가 없어서, 영 읽기가 힘들고 따분한 듯 해.
+      <section class="ts-section ts-eval-section">
+  <div class="ts-eval-signature-grid" id="signature-grid"></div>
 
-여러가지 방법으로 하되 통일성 있게 하고, 또 가독성 좋아야 하고, 디자인 완성도 좋게.
+  <div class="ts-eval-role-wrap">
+    <div class="ts-eval-role-main">
+      <div class="ts-eval-kicker">PRIMARY ROLE READ</div>
+      <h3 class="ts-eval-main-title">Projected College Role</h3>
+      <p class="ts-eval-main-body" id="projected-role-body"></p>
+    </div>
 
-
-      <div class="ts-signature-grid" id="signature-grid"></div>
-
-      <div class="ts-role-layout">
-        <div class="ts-role-wide-main">
-          <h3>Projected College Role</h3>
-          <p id="projected-role-body"></p>
-        </div>
-
-        <div class="ts-role-wide-side">
-          <div class="ts-role-subcard">
-            <h3 class="ts-role-subtitle" id="translation-label">Roster Translation</h3>
-            <p id="translation-text"></p>
-          </div>
-
-          <div class="ts-role-subcard">
-            <h3 class="ts-role-subtitle" id="development-label">Development Outlook</h3>
-            <p id="development-text"></p>
-          </div>
-        </div>
+    <div class="ts-eval-role-side">
+      <div class="ts-eval-mini-card ts-eval-mini-card--orange">
+        <div class="ts-eval-mini-kicker" id="translation-label">Roster Translation</div>
+        <p class="ts-eval-mini-body" id="translation-text"></p>
       </div>
-    </section>
 
-    <section class="ts-section">
-      <div class="ts-half-grid">
-        <div class="ts-half-card">
-          <h3>Work Ethic & Culture Fit</h3>
-          <ul id="culture-list"></ul>
-        </div>
-
-        <div class="ts-half-card">
-          <h3>Transfer Objective</h3>
-          <p id="transfer-body"></p>
-
-          <div class="ts-role-box">
-            <div class="ts-role-label" id="transfer-note-label">Positioning Note</div>
-            <p class="ts-role-text" id="transfer-note-text"></p>
-          </div>
-        </div>
+      <div class="ts-eval-mini-card ts-eval-mini-card--navy">
+        <div class="ts-eval-mini-kicker" id="development-label">Development Outlook</div>
+        <p class="ts-eval-mini-body" id="development-text"></p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<section class="ts-section ts-fit-section">
+  <div class="ts-fit-grid">
+    <div class="ts-fit-card ts-fit-card--culture">
+      <div class="ts-fit-kicker">PROGRAM FIT</div>
+      <h3 class="ts-fit-title">Work Ethic & Culture Fit</h3>
+      <ul id="culture-list" class="ts-fit-list"></ul>
+    </div>
+
+    <div class="ts-fit-card ts-fit-card--transfer">
+      <div class="ts-fit-kicker">TRANSFER PURPOSE</div>
+      <h3 class="ts-fit-title">Transfer Objective</h3>
+      <p class="ts-fit-body" id="transfer-body"></p>
+
+      <div class="ts-fit-note-box">
+        <div class="ts-fit-note-label" id="transfer-note-label">Positioning Note</div>
+        <p class="ts-fit-note-text" id="transfer-note-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
 
     
     <section class="ts-section">
