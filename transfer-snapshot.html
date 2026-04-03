@@ -1257,10 +1257,6 @@
 
 /* ===== Section-specific redesign: Evidence / Role / Fit ===== */
 
-.ts-eval-section,
-.ts-fit-section {
-  margin-bottom: 28px;
-}
 
 .ts-eval-signature-grid {
   display: grid;
@@ -1377,66 +1373,8 @@
   font-weight: 500;
 }
 
-/* 기존 ts-half-grid 폭 체계 유지 */
-.ts-fit-section .ts-half-grid {
-  align-items: stretch;
-}
 
-/* 카드 디자인만 별도로 강화 */
-.ts-fit-card {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 24px;
-  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
-  padding: 24px 22px 22px;
-  overflow: hidden;
-  height: 100%;
-}
 
-.ts-fit-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-}
-
-.ts-fit-card--culture::before {
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
-
-.ts-fit-card--transfer::before {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-fit-card {
-  position: relative;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 24px;
-  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
-  padding: 24px 22px 22px;
-  overflow: hidden;
-}
-
-.ts-fit-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-}
-
-.ts-fit-card--culture::before {
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
-
-.ts-fit-card--transfer::before {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
 
 .ts-fit-list {
   list-style: none;
@@ -1516,18 +1454,8 @@
     grid-template-columns: 1fr;
   }
 
-  .ts-eval-role-side,
-  .ts-fit-grid {
-    grid-template-columns: 1fr;
-  }
-}
+ 
 
-@media (max-width: 768px) {
-  .ts-eval-role-main,
-  .ts-fit-card {
-    border-radius: 20px;
-    padding: 22px 18px 20px;
-  }
 
   .ts-eval-mini-card {
     border-radius: 18px;
@@ -1577,6 +1505,151 @@
     font-size: 14px;
   }
 }
+
+
+/* ===== Use existing ts-half-grid width system ===== */
+
+.ts-culture-panel,
+.ts-transfer-panel {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.ts-culture-panel::before,
+.ts-transfer-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-culture-panel::before {
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-transfer-panel::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-panel-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-culture-panel h3,
+.ts-transfer-panel h3 {
+  margin: 0 0 14px;
+  color: #0c2340;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.ts-culture-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-culture-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-culture-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-transfer-panel p#transfer-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 500;
+}
+
+.ts-transfer-note-panel {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-transfer-note-panel .ts-role-label {
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 9px;
+}
+
+.ts-transfer-note-panel .ts-role-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .ts-culture-panel h3,
+  .ts-transfer-panel h3 {
+    font-size: 20px;
+  }
+
+  .ts-culture-list li,
+  .ts-transfer-panel p#transfer-body {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-culture-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-culture-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-transfer-note-panel .ts-role-text {
+    font-size: 14px;
+  }
+}
+
   
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2214,22 +2287,22 @@
   </div>
 </section>
 
-<section class="ts-section ts-fit-section">
+<section class="ts-section">
   <div class="ts-half-grid">
-    <div class="ts-fit-card ts-fit-card--culture">
-      <div class="ts-fit-kicker">PROGRAM FIT</div>
-      <h3 class="ts-fit-title">Work Ethic & Culture Fit</h3>
-      <ul id="culture-list" class="ts-fit-list"></ul>
+    <div class="ts-half-card ts-culture-panel">
+      <div class="ts-panel-kicker">PROGRAM FIT</div>
+      <h3>Work Ethic & Culture Fit</h3>
+      <ul id="culture-list" class="ts-culture-list"></ul>
     </div>
 
-    <div class="ts-fit-card ts-fit-card--transfer">
-      <div class="ts-fit-kicker">TRANSFER PURPOSE</div>
-      <h3 class="ts-fit-title">Transfer Objective</h3>
-      <p class="ts-fit-body" id="transfer-body"></p>
+    <div class="ts-half-card ts-transfer-panel">
+      <div class="ts-panel-kicker">TRANSFER PURPOSE</div>
+      <h3>Transfer Objective</h3>
+      <p id="transfer-body"></p>
 
-      <div class="ts-fit-note-box">
-        <div class="ts-fit-note-label" id="transfer-note-label">Positioning Note</div>
-        <p class="ts-fit-note-text" id="transfer-note-text"></p>
+      <div class="ts-role-box ts-transfer-note-panel">
+        <div class="ts-role-label" id="transfer-note-label">Positioning Note</div>
+        <p class="ts-role-text" id="transfer-note-text"></p>
       </div>
     </div>
   </div>
