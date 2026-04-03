@@ -1937,7 +1937,8 @@
           <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
         </div>
 
-        <a href="index.html" class="active">Home</a>
+        <a href="transfer-snapshot.html" class="active">Transfer Snapshot</a>
+		<a href="index.html">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
@@ -2467,6 +2468,416 @@
   </div>
 </section>
 
+
+<section class="transfer-snapshot-section" aria-labelledby="transferSnapshotTitle">
+  <style>
+    .transfer-snapshot-section {
+      --tsnap-navy: #0C2340;
+      --tsnap-orange: #F15A22;
+      --tsnap-gold: #c98a2e;
+      --tsnap-white: #ffffff;
+      --tsnap-white-soft: rgba(255,255,255,0.82);
+      --tsnap-line: rgba(255,255,255,0.10);
+      --tsnap-shadow: 0 20px 50px rgba(0,0,0,0.22);
+      --tsnap-radius: 24px;
+
+      position: relative;
+      margin: 32px 0;
+      padding: 0;
+      isolation: isolate;
+      font-family: inherit;
+    }
+
+    .transfer-snapshot-shell {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(241,90,34,0.14), transparent 30%),
+        radial-gradient(circle at 88% 82%, rgba(201,138,46,0.16), transparent 26%),
+        linear-gradient(135deg, #0C2340 0%, #112c50 52%, #0C2340 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--tsnap-radius);
+      box-shadow: var(--tsnap-shadow);
+    }
+
+    .transfer-snapshot-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0) 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0) 42%);
+      opacity: 0.7;
+    }
+
+    .transfer-snapshot-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 3px;
+      background: linear-gradient(90deg, #F15A22 0%, #c98a2e 55%, #F15A22 100%);
+      opacity: 0.95;
+    }
+
+    .transfer-snapshot-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.8fr);
+      gap: 28px;
+      align-items: center;
+      padding: 34px 36px;
+    }
+
+    .transfer-snapshot-copy {
+      min-width: 0;
+    }
+
+    .transfer-snapshot-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 14px 0;
+      padding: 8px 12px;
+      border: 1px solid rgba(241,90,34,0.32);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--tsnap-orange);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .transfer-snapshot-kicker-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #F15A22 0%, #c98a2e 100%);
+      box-shadow: 0 0 0 6px rgba(241,90,34,0.10);
+      flex: 0 0 auto;
+    }
+
+    .transfer-snapshot-title {
+      margin: 0;
+      color: var(--tsnap-white);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      max-width: 11ch;
+      text-wrap: balance;
+    }
+
+    .transfer-snapshot-desc {
+      margin: 14px 0 0 0;
+      max-width: 760px;
+      color: var(--tsnap-white-soft);
+      font-size: 15.5px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .transfer-snapshot-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .transfer-snapshot-points li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--tsnap-line);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.90);
+      font-size: 12.5px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .transfer-snapshot-points svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+      color: var(--tsnap-gold);
+      flex: 0 0 auto;
+    }
+
+    .transfer-snapshot-side {
+      display: grid;
+      gap: 14px;
+      justify-items: stretch;
+      align-content: center;
+      min-width: 0;
+    }
+
+    .transfer-snapshot-card {
+      display: grid;
+      gap: 10px;
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+      backdrop-filter: blur(8px);
+    }
+
+    .transfer-snapshot-card-label {
+      margin: 0;
+      color: rgba(255,255,255,0.62);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .transfer-snapshot-card-text {
+      margin: 0;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .transfer-snapshot-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .transfer-snapshot-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+      font: inherit;
+      box-sizing: border-box;
+    }
+
+    .transfer-snapshot-btn-primary {
+      background: linear-gradient(135deg, #F15A22 0%, #c98a2e 100%);
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      box-shadow: 0 14px 30px rgba(241,90,34,0.24);
+    }
+
+    .transfer-snapshot-btn-primary:hover,
+    .transfer-snapshot-btn-primary:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(241,90,34,0.30);
+      outline: none;
+    }
+
+    .transfer-snapshot-btn-secondary {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.88);
+      font-weight: 700;
+    }
+
+    .transfer-snapshot-btn-secondary:hover,
+    .transfer-snapshot-btn-secondary:focus-visible {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.18);
+      outline: none;
+    }
+
+    .transfer-snapshot-btn svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    .transfer-snapshot-note {
+      margin: 2px 0 0 0;
+      color: rgba(255,255,255,0.58);
+      font-size: 12px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .transfer-snapshot-inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 22px;
+      }
+
+      .transfer-snapshot-title {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .transfer-snapshot-section {
+        margin: 24px 0;
+      }
+
+      .transfer-snapshot-shell {
+        border-radius: 20px;
+      }
+
+      .transfer-snapshot-inner {
+        padding: 22px 16px 18px;
+        gap: 18px;
+      }
+
+      .transfer-snapshot-kicker {
+        margin-bottom: 12px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+
+      .transfer-snapshot-title {
+        font-size: clamp(24px, 8vw, 32px);
+        line-height: 1.12;
+      }
+
+      .transfer-snapshot-desc {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .transfer-snapshot-points {
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .transfer-snapshot-points li {
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .transfer-snapshot-card {
+        padding: 16px 14px 14px;
+        border-radius: 16px;
+      }
+
+      .transfer-snapshot-btn {
+        min-height: 50px;
+        border-radius: 14px;
+      }
+
+      .transfer-snapshot-note {
+        font-size: 11.5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .transfer-snapshot-btn {
+        transition: none;
+      }
+    }
+  </style>
+
+  <div class="transfer-snapshot-shell">
+    <div class="transfer-snapshot-inner">
+      <div class="transfer-snapshot-copy">
+        <div class="transfer-snapshot-kicker">
+          <span class="transfer-snapshot-kicker-dot" aria-hidden="true"></span>
+          Transfer Snapshot
+        </div>
+
+        <h2 class="transfer-snapshot-title" id="transferSnapshotTitle">
+          Coach-facing transfer data, organized in one view.
+        </h2>
+
+        <p class="transfer-snapshot-desc">
+          A single-page evaluation snapshot with results, rankings, scoring profile,
+          reliability indicators, and program-fit context.
+        </p>
+
+        <ul class="transfer-snapshot-points" aria-label="Snapshot contents">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Rankings
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12.5 9.2 16 19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Results
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 19c5.5-9 8.5-12 14-14M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Scoring Profile
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3 5 7v5c0 4.5 3 7 7 9 4-2 7-4.5 7-9V7l-7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            Reliability
+          </li>
+        </ul>
+      </div>
+
+      <div class="transfer-snapshot-side">
+        <div class="transfer-snapshot-card">
+          <p class="transfer-snapshot-card-label">Quick Access</p>
+          <p class="transfer-snapshot-card-text">
+            Open the transfer snapshot directly for a condensed review of current performance and fit indicators.
+          </p>
+        </div>
+
+        <div class="transfer-snapshot-actions">
+  <a
+    class="transfer-snapshot-btn transfer-snapshot-btn-primary"
+    href="transfer-snapshot.html"
+  >
+    View Transfer Snapshot
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <a
+    class="transfer-snapshot-btn transfer-snapshot-btn-secondary"
+    href="ncaa-stats.html"
+  >
+    Review Full Data Page
+  </a>
+
+  <p class="transfer-snapshot-note">
+    Single-page summary built for fast coach review.
+  </p>
+</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+	  
 	
  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
