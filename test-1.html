@@ -451,13 +451,15 @@
   }
 
   .ts-quick-item-text {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.68;
-    color: #334155;
-    font-weight: 600;
-  }
+  font-size: 15px !important;
+  line-height: 1.6;
+}
 
+@media (max-width: 768px) {
+  .ts-quick-item-text {
+    font-size: 14px !important;
+  }
+}
 
 .ts-quick-grid .ts-quick-card-badge,
 .ts-quick-grid .ts-quick-card-number,
@@ -1780,6 +1782,18 @@
 .ts-progress-metric-pair-inline .ts-progress-metric-chip-label,
 .ts-progress-metric-pair-inline .ts-progress-metric-chip-value {
   white-space: nowrap;
+}
+
+ /* 1,2,4 = #0C2340 */
+.ts-quick-grid > *:nth-child(1) .ts-quick-item-number,
+.ts-quick-grid > *:nth-child(2) .ts-quick-item-number,
+.ts-quick-grid > *:nth-child(4) .ts-quick-item-number {
+  color: #0C2340 !important;
+}
+
+/* 3 = #c98a2e */
+.ts-quick-grid > *:nth-child(3) .ts-quick-item-number {
+  color: #c98a2e !important;
 }
  
 </style>
