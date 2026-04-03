@@ -1388,6 +1388,91 @@
       border-radius: 18px;
     }
 
+
+.ts-type-grid {
+  gap: 18px;
+}
+
+.ts-type-grid .ts-type-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 22px 20px 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+  border: 1px solid #e4ebf3;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.05);
+}
+
+.ts-type-grid .ts-type-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-type-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-type-grid .ts-type-item h3 {
+  margin: 0 0 10px;
+  color: #0c2340;
+  font-size: 20px;
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+}
+
+.ts-type-grid .ts-type-item p {
+  margin: 0;
+  color: #4b5a6d;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.ts-type-grid .ts-type-item:nth-child(2),
+.ts-type-grid .ts-type-item:nth-child(4) {
+  background: linear-gradient(180deg, #fbfcfe 0%, #f5f8fb 100%);
+}
+
+@media (max-width: 768px) {
+  .ts-type-grid {
+    gap: 14px;
+  }
+
+  .ts-type-grid .ts-type-item {
+    padding: 20px 18px 18px;
+    border-radius: 18px;
+  }
+
+  .ts-type-kicker {
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+
+  .ts-type-grid .ts-type-item h3 {
+    font-size: 18px;
+  }
+
+  .ts-type-grid .ts-type-item p {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+}
+
+    
     .role-progression-block {
       margin-top: 24px;
       margin-bottom: 44px;
@@ -2128,18 +2213,19 @@ if (quickGrid) {
       }
 
       const typeGrid = document.getElementById('player-type-grid');
-      if (typeGrid) {
-        typeGrid.innerHTML = '';
-        (data.playerType || []).forEach(item => {
-          const div = document.createElement('div');
-          div.className = 'ts-type-item';
-          div.innerHTML = `
-            <h3>${item.title || ''}</h3>
-            <p>${item.desc || ''}</p>
-          `;
-          typeGrid.appendChild(div);
-        });
-      }
+if (typeGrid) {
+  typeGrid.innerHTML = '';
+  (data.playerType || []).forEach((item, index) => {
+    const div = document.createElement('div');
+    div.className = 'ts-type-item';
+    div.innerHTML = `
+      <div class="ts-type-kicker">Profile ${String(index + 1).padStart(2, '0')}</div>
+      <h3>${item.title || ''}</h3>
+      <p>${item.desc || ''}</p>
+    `;
+    typeGrid.appendChild(div);
+  });
+}
 
       const timelineGrid = document.getElementById('timeline-grid');
       if (timelineGrid) {
