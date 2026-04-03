@@ -957,6 +957,304 @@
     font-weight: 700;
   }
 
+
+/* ===== Evidence & Projection / Culture / Transfer visual upgrade ===== */
+
+.ts-role-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-role-hero-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 24px;
+  padding: 30px 30px 28px;
+  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+}
+
+.ts-role-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
+
+.ts-role-card-kicker,
+.ts-info-card-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-role-wide-main h3 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  color: #0c2340;
+  font-weight: 900;
+}
+
+.ts-role-wide-main p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.82;
+  color: #334155;
+  font-weight: 500;
+  max-width: 940px;
+}
+
+.ts-role-wide-side {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ts-role-subcard {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  padding: 0 22px 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+}
+
+.ts-role-subcard-topbar {
+  height: 5px;
+  margin: 0 -22px 16px;
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-role-translation-card .ts-role-subcard-topbar {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-role-development-card .ts-role-subcard-topbar {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-role-subtitle {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0c2340;
+  font-weight: 800;
+}
+
+.ts-role-subcard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4b5a6d;
+  font-weight: 500;
+}
+
+.ts-half-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+}
+
+.ts-half-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
+  padding: 26px 24px 24px;
+}
+
+.ts-half-card h3 {
+  margin: 0 0 14px;
+  color: #0c2340;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.ts-culture-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.ts-culture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-culture-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-culture-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-culture-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-transfer-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
+}
+
+.ts-transfer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-transfer-card p#transfer-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 500;
+}
+
+.ts-transfer-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-transfer-note-box .ts-role-label {
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 9px;
+}
+
+.ts-transfer-note-box .ts-role-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .ts-role-wide-side,
+  .ts-half-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-role-hero-card,
+  .ts-half-card {
+    border-radius: 20px;
+  }
+
+  .ts-role-subcard {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-role-hero-card {
+    padding: 24px 20px 22px;
+  }
+
+  .ts-role-wide-main h3,
+  .ts-half-card h3 {
+    font-size: 20px;
+  }
+
+  .ts-role-wide-main p,
+  .ts-transfer-card p#transfer-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ts-role-subcard {
+    padding: 0 18px 18px;
+    border-radius: 18px;
+  }
+
+  .ts-role-subcard-topbar {
+    margin: 0 -18px 14px;
+  }
+
+  .ts-role-subcard p,
+  .ts-culture-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-half-card {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .ts-culture-list {
+    gap: 9px;
+  }
+
+  .ts-culture-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-culture-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-transfer-note-box .ts-role-text {
+    font-size: 14px;
+  }
+}
+
+  
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1569,6 +1867,11 @@
         </div>
       </div>
 
+이거 디자인 변경해야해. 포인트가 없어서, 영 읽기가 힘들고 따분한 듯 해.
+
+여러가지 방법으로 하되 통일성 있게 하고, 또 가독성 좋아야 하고, 디자인 완성도 좋게.
+
+
       <div class="ts-signature-grid" id="signature-grid"></div>
 
       <div class="ts-role-layout">
@@ -1610,6 +1913,7 @@
       </div>
     </section>
 
+    
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
