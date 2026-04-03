@@ -429,7 +429,12 @@
     position: relative;
     background: linear-gradient(180deg, #fbfcfe 0%, #f7f9fc 100%);
     border: 1px solid #e6edf5;
-    border-left: 4px solid #F15A22;
+    border-left: 4px solid #0C2340 !important;
+}
+
+.ts-quick-grid > *:nth-child(3).ts-quick-item {
+  border-left: 4px solid #c98a2e !important;
+}
     border-radius: 18px;
     box-shadow: 0 4px 14px rgba(12, 35, 64, 0.04);
     padding: 18px 18px 18px 20px;
@@ -450,14 +455,15 @@
     line-height: 1;
   }
 
-  .ts-quick-item-text {
+ .ts-quick-item-text {
   font-size: 15px !important;
-  line-height: 1.6;
+  line-height: 1.62 !important;
 }
 
 @media (max-width: 768px) {
   .ts-quick-item-text {
     font-size: 14px !important;
+    line-height: 1.58 !important;
   }
 }
 
