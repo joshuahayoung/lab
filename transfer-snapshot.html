@@ -957,700 +957,233 @@
     font-weight: 700;
   }
 
+  /* ===== Section-specific redesign: Evidence / Role / Fit ===== */
 
-/* ===== Evidence & Projection / Culture / Transfer visual upgrade ===== */
-
-.ts-role-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.ts-role-hero-card {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid #dfe7f0;
-  border-radius: 24px;
-  padding: 30px 30px 28px;
-  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
-}
-
-.ts-role-hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 6px;
-  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
-}
-
-.ts-role-card-kicker,
-.ts-info-card-kicker {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: #F15A22;
-}
-
-.ts-role-wide-main h3 {
-  margin: 0 0 12px 0;
-  font-size: 26px;
-  line-height: 1.08;
-  letter-spacing: -0.6px;
-  color: #0c2340;
-  font-weight: 900;
-}
-
-.ts-role-wide-main p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.82;
-  color: #334155;
-  font-weight: 500;
-  max-width: 940px;
-}
-
-.ts-role-wide-side {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.ts-role-subcard {
-  position: relative;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e3eaf2;
-  border-radius: 22px;
-  padding: 0 22px 22px;
-  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
-}
-
-.ts-role-subcard-topbar {
-  height: 5px;
-  margin: 0 -22px 16px;
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
-
-.ts-role-translation-card .ts-role-subcard-topbar {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-role-development-card .ts-role-subcard-topbar {
-  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
-}
-
-.ts-role-subtitle {
-  margin: 0 0 10px 0;
-  font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #0c2340;
-  font-weight: 800;
-}
-
-.ts-role-subcard p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
-  color: #4b5a6d;
-  font-weight: 500;
-}
-
-.ts-half-grid {
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 18px;
-}
-
-.ts-half-card {
-  position: relative;
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 24px;
-  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
-  padding: 26px 24px 24px;
-}
-
-.ts-half-card h3 {
-  margin: 0 0 14px;
-  color: #0c2340;
-  font-size: 22px;
-  line-height: 1.1;
-  font-weight: 900;
-  letter-spacing: -0.4px;
-}
-
-.ts-culture-card {
-  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
-}
-
-.ts-culture-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
-
-.ts-culture-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.ts-culture-list li {
-  position: relative;
-  margin: 0;
-  padding: 12px 14px 12px 42px;
-  background: #f8fafc;
-  border: 1px solid #e6edf5;
-  border-radius: 14px;
-  color: #334155;
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.ts-culture-list li::before {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #F15A22;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ts-transfer-card {
-  background: linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
-}
-
-.ts-transfer-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-transfer-card p#transfer-body {
-  margin: 0;
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.82;
-  font-weight: 500;
-}
-
-.ts-transfer-note-box {
-  margin-top: 18px;
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-.ts-transfer-note-box .ts-role-label {
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 9px;
-}
-
-.ts-transfer-note-box .ts-role-text {
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.65;
-  font-weight: 700;
-}
-
-@media (max-width: 900px) {
-  .ts-role-wide-side,
-  .ts-half-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ts-role-hero-card,
-  .ts-half-card {
-    border-radius: 20px;
-  }
-
-  .ts-role-subcard {
-    border-radius: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ts-role-hero-card {
-    padding: 24px 20px 22px;
-  }
-
-  .ts-role-wide-main h3,
-  .ts-half-card h3 {
-    font-size: 20px;
-  }
-
-  .ts-role-wide-main p,
-  .ts-transfer-card p#transfer-body {
-    font-size: 14px;
-    line-height: 1.75;
-  }
-
-  .ts-role-subcard {
-    padding: 0 18px 18px;
-    border-radius: 18px;
-  }
-
-  .ts-role-subcard-topbar {
-    margin: 0 -18px 14px;
-  }
-
-  .ts-role-subcard p,
-  .ts-culture-list li {
-    font-size: 13px;
-    line-height: 1.66;
-  }
-
-  .ts-half-card {
-    padding: 22px 18px 20px;
-    border-radius: 20px;
-  }
-
-  .ts-culture-list {
-    gap: 9px;
-  }
-
-  .ts-culture-list li {
-    padding: 11px 12px 11px 38px;
-    border-radius: 12px;
-  }
-
-  .ts-culture-list li::before {
-    left: 12px;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-  }
-
-  .ts-transfer-note-box .ts-role-text {
-    font-size: 14px;
-  }
-}
-
-
-/* ===== Section-specific redesign: Evidence / Role / Fit ===== */
-
-
-.ts-eval-signature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 18px;
-}
-
-.ts-eval-role-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.ts-eval-role-main {
-  position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid #dfe7f0;
-  border-radius: 24px;
-  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
-  padding: 28px 28px 26px;
-  overflow: hidden;
-}
-
-.ts-eval-role-main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
-}
-
-.ts-eval-kicker,
-.ts-fit-kicker {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: #F15A22;
-}
-
-.ts-eval-main-title,
-.ts-fit-title {
-  margin: 0 0 12px 0;
-  color: #0c2340;
-  font-size: 24px;
-  line-height: 1.08;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-}
-
-.ts-eval-main-body {
-  margin: 0;
-  color: #334155;
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: 500;
-}
-
-.ts-eval-role-side {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.ts-eval-mini-card {
-  background: #ffffff;
-  border: 1px solid #e3eaf2;
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
-  padding: 20px 20px 18px;
-  position: relative;
-  overflow: hidden;
-}
-
-.ts-eval-mini-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-}
-
-.ts-eval-mini-card--orange::before {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-eval-mini-card--navy::before {
-  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
-}
-
-.ts-eval-mini-kicker {
-  margin: 0 0 10px 0;
-  padding-top: 6px;
-  color: #0c2340;
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-.ts-eval-mini-body {
-  margin: 0;
-  color: #4b5a6d;
-  font-size: 14px;
-  line-height: 1.72;
-  font-weight: 500;
-}
-
-
-
-
-.ts-fit-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.ts-fit-list li {
-  position: relative;
-  margin: 0;
-  padding: 12px 14px 12px 42px;
-  background: #f8fafc;
-  border: 1px solid #e6edf5;
-  border-radius: 14px;
-  color: #334155;
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.ts-fit-list li::before {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #F15A22;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ts-fit-body {
-  margin: 0;
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.82;
-  font-weight: 500;
-}
-
-.ts-fit-note-box {
-  margin-top: 18px;
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 18px 16px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-.ts-fit-note-label {
-  margin: 0 0 9px 0;
-  color: rgba(255,255,255,0.72);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.ts-fit-note-text {
-  margin: 0;
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.65;
-  font-weight: 700;
-}
-
-@media (max-width: 1024px) {
   .ts-eval-signature-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
   }
 
- 
+  .ts-eval-role-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
 
+  .ts-eval-role-main {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid #dfe7f0;
+    border-radius: 24px;
+    box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+    padding: 28px 28px 26px;
+    overflow: hidden;
+  }
+
+  .ts-eval-role-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+  }
+
+  .ts-eval-kicker {
+    display: inline-block;
+    margin: 0 0 12px 0;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #F15A22;
+  }
+
+  .ts-eval-main-title {
+    margin: 0 0 12px 0;
+    color: #0c2340;
+    font-size: 24px;
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+
+  .ts-eval-main-body {
+    margin: 0;
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+
+  .ts-eval-role-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
 
   .ts-eval-mini-card {
-    border-radius: 18px;
-    padding: 18px 16px 16px;
+    background: #ffffff;
+    border: 1px solid #e3eaf2;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+    padding: 20px 20px 18px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .ts-eval-main-title,
-  .ts-fit-title {
-    font-size: 20px;
+  .ts-eval-mini-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
   }
 
-  .ts-eval-main-body,
-  .ts-fit-body {
-    font-size: 14px;
-    line-height: 1.75;
+  .ts-eval-mini-card--orange::before {
+    background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+  }
+
+  .ts-eval-mini-card--navy::before {
+    background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
   }
 
   .ts-eval-mini-kicker {
-    font-size: 11px;
-    padding-top: 4px;
+    margin: 0 0 10px 0;
+    padding-top: 6px;
+    color: #0c2340;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
   }
 
-  .ts-eval-mini-body,
-  .ts-fit-list li {
-    font-size: 13px;
-    line-height: 1.66;
-  }
-
-  .ts-fit-list li {
-    padding: 11px 12px 11px 38px;
-    border-radius: 12px;
-  }
-
-  .ts-fit-list li::before {
-    left: 12px;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-  }
-
-  .ts-fit-note-box {
-    border-radius: 14px;
-    padding: 16px 14px;
-  }
-
-  .ts-fit-note-text {
+  .ts-eval-mini-body {
+    margin: 0;
+    color: #4b5a6d;
     font-size: 14px;
+    line-height: 1.72;
+    font-weight: 500;
   }
-}
 
+  .ts-culture-panel,
+  .ts-transfer-panel {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
 
-/* ===== Use existing ts-half-grid width system ===== */
+  .ts-culture-panel::before,
+  .ts-transfer-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+  }
 
-.ts-culture-panel,
-.ts-transfer-panel {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
+  .ts-culture-panel::before {
+    background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+  }
 
-.ts-culture-panel::before,
-.ts-transfer-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-}
+  .ts-transfer-panel::before {
+    background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+  }
 
-.ts-culture-panel::before {
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
+  .ts-panel-kicker {
+    display: inline-block;
+    margin: 0 0 12px 0;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #F15A22;
+  }
 
-.ts-transfer-panel::before {
-  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
-}
-
-.ts-panel-kicker {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: #F15A22;
-}
-
-.ts-culture-panel h3,
-.ts-transfer-panel h3 {
-  margin: 0 0 14px;
-  color: #0c2340;
-  font-size: 22px;
-  line-height: 1.1;
-  font-weight: 900;
-  letter-spacing: -0.4px;
-}
-
-.ts-culture-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.ts-culture-list li {
-  position: relative;
-  margin: 0;
-  padding: 12px 14px 12px 42px;
-  background: #f8fafc;
-  border: 1px solid #e6edf5;
-  border-radius: 14px;
-  color: #334155;
-  font-size: 14px;
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.ts-culture-list li::before {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #F15A22;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ts-transfer-panel p#transfer-body {
-  margin: 0;
-  color: #374151;
-  font-size: 15px;
-  line-height: 1.82;
-  font-weight: 500;
-}
-
-.ts-transfer-note-panel {
-  margin-top: 18px;
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-.ts-transfer-note-panel .ts-role-label {
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 9px;
-}
-
-.ts-transfer-note-panel .ts-role-text {
-  color: #ffffff;
-  font-size: 15px;
-  line-height: 1.65;
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
   .ts-culture-panel h3,
   .ts-transfer-panel h3 {
-    font-size: 20px;
+    margin: 0 0 14px;
+    color: #0c2340;
+    font-size: 22px;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -0.4px;
   }
 
-  .ts-culture-list li,
-  .ts-transfer-panel p#transfer-body {
-    font-size: 13px;
-    line-height: 1.66;
+  .ts-culture-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
   }
 
   .ts-culture-list li {
-    padding: 11px 12px 11px 38px;
-    border-radius: 12px;
+    position: relative;
+    margin: 0;
+    padding: 12px 14px 12px 42px;
+    background: #f8fafc;
+    border: 1px solid #e6edf5;
+    border-radius: 14px;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 600;
   }
 
   .ts-culture-list li::before {
-    left: 12px;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #F15A22;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ts-transfer-panel p#transfer-body {
+    margin: 0;
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.82;
+    font-weight: 500;
+  }
+
+  .ts-transfer-note-panel {
+    margin-top: 18px;
+    background: #0c2340;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .ts-transfer-note-panel .ts-role-label {
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 9px;
   }
 
   .ts-transfer-note-panel .ts-role-text {
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 700;
   }
-}
 
-  
   .ts-links-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1837,8 +1370,15 @@
 
     .ts-signature-grid,
     .ts-half-grid,
-    .ts-role-wide-side {
+    .ts-role-wide-side,
+    .ts-eval-signature-grid,
+    .ts-eval-role-side {
       grid-template-columns: 1fr;
+    }
+
+    .ts-eval-mini-card {
+      border-radius: 18px;
+      padding: 18px 16px 16px;
     }
   }
 
@@ -1868,7 +1408,9 @@
     .ts-links-grid,
     .ts-signature-grid,
     .ts-half-grid,
-    .ts-role-wide-side {
+    .ts-role-wide-side,
+    .ts-eval-signature-grid,
+    .ts-eval-role-side {
       grid-template-columns: 1fr;
     }
 
@@ -2010,6 +1552,48 @@
     .season-trend-source {
       font-size: 10px;
       letter-spacing: 0.5px;
+    }
+
+    .ts-eval-main-title {
+      font-size: 20px;
+    }
+
+    .ts-eval-main-body,
+    .ts-transfer-panel p#transfer-body {
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .ts-eval-mini-kicker {
+      font-size: 11px;
+      padding-top: 4px;
+    }
+
+    .ts-eval-mini-body,
+    .ts-culture-list li {
+      font-size: 13px;
+      line-height: 1.66;
+    }
+
+    .ts-culture-panel h3,
+    .ts-transfer-panel h3 {
+      font-size: 20px;
+    }
+
+    .ts-culture-list li {
+      padding: 11px 12px 11px 38px;
+      border-radius: 12px;
+    }
+
+    .ts-culture-list li::before {
+      left: 12px;
+      width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
+
+    .ts-transfer-note-panel .ts-role-text {
+      font-size: 14px;
     }
   }
 
