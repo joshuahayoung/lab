@@ -2849,46 +2849,31 @@
         </div>
 
         <div class="transfer-snapshot-actions">
-          <a
-            class="transfer-snapshot-btn transfer-snapshot-btn-primary"
-            href="transfer-snapshot.html"
-            data-transfer-snapshot-link
-          >
-            View Transfer Snapshot
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+  <a
+    class="transfer-snapshot-btn transfer-snapshot-btn-primary"
+    href="transfer-snapshot.html"
+  >
+    View Transfer Snapshot
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 
-          <a
-            class="transfer-snapshot-btn transfer-snapshot-btn-secondary"
-            href="ncaa-stats.html"
-            data-transfer-snapshot-link
-          >
-            Review Full Data Page
-          </a>
+  <a
+    class="transfer-snapshot-btn transfer-snapshot-btn-secondary"
+    href="ncaa-stats.html"
+  >
+    Review Full Data Page
+  </a>
 
-          <p class="transfer-snapshot-note">
-            Single-page summary built for fast coach review.
-          </p>
-        </div>
+  <p class="transfer-snapshot-note">
+    Single-page summary built for fast coach review.
+  </p>
+</div>
       </div>
     </div>
   </div>
 
-  <script>
-    (function () {
-      var section = document.currentScript.closest('.transfer-snapshot-section');
-      if (!section) return;
-
-      var links = section.querySelectorAll('[data-transfer-snapshot-link]');
-      var target = section.getAttribute('data-transfer-url') || '/transfer-snapshot.html';
-
-      links.forEach(function (link) {
-        link.setAttribute('href', target);
-      });
-    })();
-  </script>
 </section>
 
 	  
