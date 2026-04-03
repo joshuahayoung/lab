@@ -1132,6 +1132,199 @@
       margin-top: 30px;
     }
   }
+
+.season-trend-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.season-trend-head {
+  padding: 26px 24px 10px;
+  text-align: center;
+}
+
+.season-trend-head h2 {
+  margin: 0;
+  color: #0c2340;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.season-trend-head p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.season-trend-body {
+  padding: 0 24px 24px;
+}
+
+.season-trend-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0c2340;
+}
+
+.season-trend-topline h3 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  color: #0c2340;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.season-trend-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0c2340;
+  color: #ffffff;
+  padding: 5px 12px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.season-trend-chart-shell {
+  position: relative;
+  background: #fafbfd;
+  border: 1px solid #e8edf3;
+  border-radius: 18px;
+  padding: 54px 16px 48px;
+}
+
+.season-trend-metric-pill {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  z-index: 5;
+  background: rgba(12, 35, 64, 0.05);
+  border: 1px solid rgba(12, 35, 64, 0.22);
+  border-radius: 999px;
+  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.season-trend-metric-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0c2340;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.season-trend-metric-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #0c2340;
+  line-height: 1;
+}
+
+.season-trend-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+}
+
+.season-trend-source {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #cfd8e3;
+  text-align: center;
+  font-size: 11px;
+  color: #7a8798;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .season-trend-head {
+    padding: 22px 18px 10px;
+  }
+
+  .season-trend-head h2 {
+    font-size: 22px;
+  }
+
+  .season-trend-head p {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .season-trend-body {
+    padding: 0 18px 18px;
+  }
+
+  .season-trend-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .season-trend-topline h3 {
+    font-size: 16px;
+  }
+
+  .season-trend-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .season-trend-chart-shell {
+    padding: 58px 10px 42px;
+    border-radius: 16px;
+  }
+
+  .season-trend-metric-pill {
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+  }
+
+  .season-trend-metric-label {
+    font-size: 11px;
+  }
+
+  .season-trend-metric-value {
+    font-size: 19px;
+  }
+
+  .season-trend-canvas-wrap {
+    height: 360px;
+  }
+
+  .season-trend-source {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+}
+
+  
 </style>
 </head>
 
@@ -1267,6 +1460,208 @@
   </div>
 </section>
 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
+<script>
+(function() {
+  if (typeof Chart === 'undefined') return;
+
+  if (typeof ChartDataLabels !== 'undefined') {
+    try { Chart.register(ChartDataLabels); } catch (e) {}
+  }
+
+  const canvas = document.getElementById('archiveOfficialChart');
+  if (!canvas) return;
+
+  const isMobile = window.innerWidth <= 768;
+
+  const archiveLabels = [
+    '9/07 (Argent)',
+    '9/15 (Highlands)',
+    '9/22 (Badger)',
+    '10/05 (Trinity)',
+    '2/01 (Compadres)',
+    '2/24 (Military)',
+    '3/03 (Golden)',
+    '3/17 (Thunderbirds)',
+    '3/24 (Bellbank)'
+  ];
+
+  const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
+  const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
+
+  const archiveRounds = [
+    '70-70-69 (-7)',
+    '74-71-70 (-1)',
+    '71-71-76 (+2)',
+    '75-73-74 (+6)',
+    '70-75-71 (E)',
+    '69-72-74 (-1)',
+    '64-70-69 (-13)',
+    '72-76-73 (+5)',
+    '73-68-71 (-4)'
+  ];
+
+  const archiveRankImpact = [
+    '● Rank Impact ▲ 151',
+    '● Rank Impact ▲ 28',
+    '● Rank Impact ▼ 38',
+    '● Rank Impact ▼ 98',
+    '● Rank Impact ▲ 142',
+    '● Rank Impact ▲ 72',
+    '● Rank Impact ▲ 43',
+    '● Rank Impact ▼ 43',
+    '● Rank Impact ▲ 26'
+  ];
+
+  const archiveWagrPower = [
+    '230.8799',
+    '232.6656',
+    '129.0694',
+    '360.1597',
+    '145.6033',
+    '101.3382',
+    '135.0209',
+    '670.0102',
+    '221.2814'
+  ];
+
+  const archivePtsEarned = [
+    '5.3735',
+    '4.9097',
+    '3.3178',
+    '3.1971',
+    '6.5774',
+    '9.2734',
+    '6.7817',
+    '4.8345',
+    '4.9385'
+  ];
+
+  new Chart(canvas.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: archiveLabels,
+      datasets: [{
+        label: 'Scoring Avg',
+        data: archiveScores,
+        borderColor: '#0c2340',
+        backgroundColor: 'rgba(12, 35, 64, 0.05)',
+        borderWidth: 2,
+        pointRadius: isMobile ? 4 : 6,
+        pointHoverRadius: isMobile ? 6 : 8,
+        pointBackgroundColor: '#0c2340',
+        pointHoverBackgroundColor: '#F15A22',
+        pointBorderColor: '#ffffff',
+        pointBorderWidth: 2,
+        tension: 0.3,
+        fill: true,
+        datalabels: {
+          align: 'top',
+          anchor: 'end',
+          offset: isMobile ? 4 : 8,
+          color: '#0c2340',
+          font: {
+            family: "'Oswald', sans-serif",
+            weight: '700',
+            size: isMobile ? 10 : 13
+          },
+          formatter: function(value, context) {
+            return archivePositions[context.dataIndex];
+          }
+        }
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: isMobile
+          ? { top: 14, bottom: 10, left: 0, right: 0 }
+          : { top: 20, bottom: 10, left: 0, right: 8 }
+      },
+      scales: {
+        y: {
+          min: 65,
+          max: 82,
+          grid: {
+            color: '#e9eef4',
+            drawBorder: false
+          },
+          ticks: {
+            color: '#334155',
+            font: {
+              family: "'Montserrat', sans-serif",
+              size: isMobile ? 10 : 11,
+              weight: '600'
+            }
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          },
+          ticks: {
+            color: '#334155',
+            autoSkip: false,
+            maxRotation: isMobile ? 58 : 42,
+            minRotation: isMobile ? 58 : 42,
+            font: {
+              family: "'Montserrat', sans-serif",
+              size: isMobile ? 8 : 10,
+              weight: '600'
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#0c2340',
+          titleColor: '#F15A22',
+          bodyColor: '#ffffff',
+          padding: 12,
+          displayColors: false,
+          titleFont: {
+            family: "'Oswald', sans-serif",
+            size: 14,
+            weight: '600'
+          },
+          bodyFont: {
+            family: "'Montserrat', sans-serif",
+            size: 12,
+            weight: '600'
+          },
+          callbacks: {
+            title: function(context) {
+              return archiveLabels[context[0].dataIndex];
+            },
+            label: function(context) {
+              return `● Scoring Avg: ${context.parsed.y}`;
+            },
+            afterLabel: function(context) {
+              const i = context.dataIndex;
+              return [
+                `● Rounds: ${archiveRounds[i]}`,
+                `● Pos: ${archivePositions[i]}`,
+                archiveRankImpact[i],
+                '-----------------------',
+                `● WAGR Pwr: ${archiveWagrPower[i]}`,
+                `● Pts Earned: ${archivePtsEarned[i]}`
+              ];
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+</script>
     
     <section class="ts-section">
       <div class="ts-section-header">
