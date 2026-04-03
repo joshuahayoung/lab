@@ -1261,6 +1261,378 @@
       margin-top: 30px;
     }
   }
+
+
+/* ===== Progression: table + graph fix only ===== */
+
+.ts-progression-section {
+  overflow: hidden;
+}
+
+.ts-progression-stack {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.ts-progression-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 20px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.ts-progress-panel {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 22px;
+  overflow: hidden;
+}
+
+.ts-progress-panel-head {
+  margin-bottom: 16px;
+}
+
+.ts-progress-panel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ts-progress-panel-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f6fa;
+  border: 1px solid #e2e8f0;
+  color: #0c2340;
+  flex: 0 0 auto;
+}
+
+.ts-progress-panel-title-row h3,
+.ts-progress-panel-title-block h3 {
+  margin: 0;
+  color: #0c2340;
+  font-size: 19px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+
+.ts-progress-panel-title-block p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ts-progress-note-box {
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.ts-progress-note-box p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.68;
+  font-weight: 500;
+}
+
+/* ===== Table ===== */
+
+.ts-progress-table-shell {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e6edf5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgba(12, 35, 64, 0.05);
+}
+
+.ts-progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.ts-progress-table thead tr {
+  background: #0c2340;
+  color: #ffffff;
+}
+
+.ts-progress-table th {
+  padding: 13px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.ts-progress-table th:last-child {
+  border-right: none;
+}
+
+.ts-progress-table td {
+  padding: 13px 12px;
+  font-size: 13px;
+  color: #263447;
+  border-top: 1px solid #edf2f7;
+  vertical-align: middle;
+}
+
+.ts-progress-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.ts-progress-table tbody tr.is-current {
+  background: #fff4ec;
+}
+
+.ts-progress-table th:nth-child(1),
+.ts-progress-table td:nth-child(1) {
+  width: 46%;
+}
+
+.ts-progress-table th:nth-child(2),
+.ts-progress-table td:nth-child(2) {
+  width: 14%;
+}
+
+.ts-progress-table th:nth-child(3),
+.ts-progress-table td:nth-child(3) {
+  width: 20%;
+}
+
+.ts-progress-table th:nth-child(4),
+.ts-progress-table td:nth-child(4) {
+  width: 20%;
+}
+
+.ts-progress-table td:nth-child(1) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.ts-progress-table .is-best,
+.ts-progress-table .is-strong {
+  color: #c2410c;
+  font-weight: 800;
+}
+
+.ts-progress-table .is-muted {
+  color: #66758a;
+}
+
+.ts-progress-table .lighter {
+  color: #8c98a8;
+}
+
+.ts-progress-table .metric-note {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #7a8798;
+}
+
+/* ===== Chart ===== */
+
+.ts-progress-chart-card {
+  min-width: 0;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #e8edf3;
+  border-radius: 18px;
+  background: #fafbfd;
+}
+
+.ts-progress-chart-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0c2340;
+}
+
+.ts-progress-chart-topline h4 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  color: #0c2340;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ts-progress-chart-topline p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ts-progress-metric-chip {
+  flex: 0 0 auto;
+  background: rgba(12, 35, 64, 0.05);
+  border: 1px solid rgba(12, 35, 64, 0.22);
+  border-radius: 999px;
+  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ts-progress-metric-chip-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0c2340;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ts-progress-metric-chip-value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #0c2340;
+  line-height: 1;
+}
+
+.ts-progress-canvas-shell {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 420px;
+}
+
+.ts-progress-canvas-shell canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+}
+
+.ts-progress-source {
+  padding-top: 10px;
+  border-top: 1px dashed #cfd8e3;
+  text-align: center;
+  font-size: 11px;
+  color: #7a8798;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1024px) {
+  .ts-progression-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-progress-panel {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .ts-progress-panel-title-row h3,
+  .ts-progress-panel-title-block h3 {
+    font-size: 18px;
+  }
+
+  .ts-progress-note-box p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .ts-progress-table th,
+  .ts-progress-table td {
+    padding: 11px 8px;
+    font-size: 12px;
+  }
+
+  .ts-progress-table th:nth-child(1),
+  .ts-progress-table td:nth-child(1) {
+    width: 43%;
+  }
+
+  .ts-progress-table th:nth-child(2),
+  .ts-progress-table td:nth-child(2) {
+    width: 13%;
+  }
+
+  .ts-progress-table th:nth-child(3),
+  .ts-progress-table td:nth-child(3) {
+    width: 22%;
+  }
+
+  .ts-progress-table th:nth-child(4),
+  .ts-progress-table td:nth-child(4) {
+    width: 22%;
+  }
+
+  .ts-progress-table .metric-note {
+    display: block;
+    margin-left: 0;
+    margin-top: 2px;
+    font-size: 10px;
+  }
+
+  .ts-progress-chart-topline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ts-progress-chart-topline h4 {
+    font-size: 16px;
+  }
+
+  .ts-progress-metric-chip {
+    padding: 6px 12px;
+  }
+
+  .ts-progress-metric-chip-label {
+    font-size: 11px;
+  }
+
+  .ts-progress-metric-chip-value {
+    font-size: 19px;
+  }
+
+  .ts-progress-canvas-shell {
+    height: 360px;
+  }
+
+  .ts-progress-source {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+}
+
+ 
 </style>
 
 </head>
