@@ -425,19 +425,23 @@
     gap: 14px;
   }
 
-  .ts-quick-item {
-    position: relative;
-    background: linear-gradient(180deg, #fbfcfe 0%, #f7f9fc 100%);
-    border: 1px solid #e6edf5;
-    border-left: 4px solid #F15A22;
-    border-radius: 18px;
-    box-shadow: 0 4px 14px rgba(12, 35, 64, 0.04);
-    padding: 18px 18px 18px 20px;
-    min-height: 118px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+ .ts-quick-item {
+  position: relative;
+  background: linear-gradient(180deg, #fbfcfe 0%, #f7f9fc 100%);
+  border: 1px solid #e6edf5;
+  border-left: 4px solid #0C2340;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(12, 35, 64, 0.04);
+  padding: 18px 18px 18px 20px;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.ts-quick-grid > .ts-quick-item:nth-child(3) {
+  border-left-color: #c98a2e;
+}
 
   .ts-quick-item-number {
     display: inline-block;
@@ -450,14 +454,49 @@
     line-height: 1;
   }
 
-  .ts-quick-item-text {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.68;
-    color: #334155;
-    font-weight: 600;
-  }
+ .ts-quick-item-text {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
 
+@media (max-width: 768px) {
+  .ts-quick-item-text {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+}
+
+.ts-quick-grid .ts-quick-card-badge,
+.ts-quick-grid .ts-quick-card-number,
+.ts-quick-grid .ts-quick-index {
+  background: #0C2340;
+  color: #fff;
+}
+
+.ts-quick-grid > *:nth-child(3) .ts-quick-card-badge,
+.ts-quick-grid > *:nth-child(3) .ts-quick-card-number,
+.ts-quick-grid > *:nth-child(3) .ts-quick-index {
+  background: #c98a2e;
+  color: #fff;
+}
+
+.ts-quick-grid .ts-quick-card p,
+.ts-quick-grid .ts-quick-card-text,
+.ts-quick-grid .ts-quick-card-body {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .ts-quick-grid .ts-quick-card p,
+  .ts-quick-grid .ts-quick-card-text,
+  .ts-quick-grid .ts-quick-card-body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+ 
   .ts-metrics-panel-section {
     margin-bottom: 34px;
   }
@@ -1749,6 +1788,18 @@
 .ts-progress-metric-pair-inline .ts-progress-metric-chip-value {
   white-space: nowrap;
 }
+
+ /* 1,2,4 = #0C2340 */
+.ts-quick-grid > *:nth-child(1) .ts-quick-item-number,
+.ts-quick-grid > *:nth-child(2) .ts-quick-item-number,
+.ts-quick-grid > *:nth-child(4) .ts-quick-item-number {
+  color: #0C2340 !important;
+}
+
+/* 3 = #c98a2e */
+.ts-quick-grid > *:nth-child(3) .ts-quick-item-number {
+  color: #c98a2e !important;
+}
  
 </style>
 
@@ -1819,13 +1870,6 @@
         <p class="ts-supporting" id="hero-supporting">
           Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
         </p>
-
-        <div class="ts-links-inline">
-          <a href="ncaa-stats.html">View NCAA Stats</a>
-          <a href="news-media.html">News & Media</a>
-          <a href="junior-career.html">Junior Career</a>
-          <a href="reference-links.html">Reference Links</a>
-        </div>
       </div>
     </section>
 
