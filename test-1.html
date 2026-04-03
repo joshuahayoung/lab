@@ -2357,7 +2357,7 @@
         });
       }
 
-      const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
+      const projectedRoleHeading = document.querySelector('.ts-role-wide-main h3');
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
       const translationText = document.getElementById('translation-text');
@@ -2470,7 +2470,7 @@
 
   document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
 
-  function toggleMenu() {
+function toggleMenu() {
     const nav = document.getElementById('navLinks');
     if (nav) nav.classList.toggle('active');
   }
@@ -2488,11 +2488,7 @@
     const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
     if (btn) {
-      if (currentScrollY > 100) {
-        btn.classList.add('is-visible');
-      } else {
-        btn.classList.remove('is-visible');
-      }
+      btn.style.display = currentScrollY > 100 ? 'block' : 'none';
     }
 
     if (header) {
@@ -2507,6 +2503,9 @@
       }
     }
   });
+
+
+  
 </script>
 
 </body>
