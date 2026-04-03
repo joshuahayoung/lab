@@ -1801,10 +1801,9 @@
   color: #c98a2e !important;
 }
 
+
 .ts-closing-section {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto 28px;
+  margin-bottom: 28px;
 }
 
 .ts-closing-box,
@@ -1851,10 +1850,8 @@
 }
 
 .ts-closing-banner-wrap {
-  position: relative;
   width: 100%;
   margin-bottom: 18px;
-  min-height: 520px;
 }
 
 .ts-closing-banner {
@@ -1862,21 +1859,6 @@
   width: 100%;
   height: auto;
 }
-
-.ts-closing-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg,
-      rgba(7, 19, 35, 0.55) 0%,
-      rgba(7, 19, 35, 0.20) 22%,
-      rgba(7, 19, 35, 0.00) 44%,
-      rgba(7, 19, 35, 0.12) 68%,
-      rgba(7, 19, 35, 0.48) 100%);
-  pointer-events: none;
-}
-
-
 
 .ts-closing-summary {
   padding: 28px 28px 26px;
@@ -1899,25 +1881,6 @@
   font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-  .ts-closing-banner-wrap {
-    min-height: 460px;
-  }
-
-  .ts-closing-banner-text {
-    width: min(42%, 360px);
-    right: 5%;
-  }
-
-  .ts-closing-banner-text h3 {
-    font-size: 46px;
-  }
-
-  .ts-closing-banner-text p {
-    font-size: 17px;
-  }
-}
-
 @media (max-width: 768px) {
   .ts-closing-box,
   .ts-closing-summary {
@@ -1936,48 +1899,7 @@
   }
 
   .ts-closing-banner-wrap {
-    min-height: 0;
     border-radius: 20px;
-  }
-
-  .ts-closing-overlay {
-    background:
-      linear-gradient(180deg,
-        rgba(7, 19, 35, 0.10) 0%,
-        rgba(7, 19, 35, 0.22) 38%,
-        rgba(7, 19, 35, 0.60) 100%);
-  }
-
-  .ts-closing-banner-text {
-    right: auto;
-    left: 18px;
-    bottom: 18px;
-    top: auto;
-    transform: none;
-    width: calc(100% - 36px);
-  }
-
-  .ts-closing-banner-text h3 {
-    font-size: 34px;
-    line-height: 1.02;
-  }
-
-  .ts-closing-line {
-    margin: 14px 0 14px;
-    max-width: 220px;
-  }
-
-  .ts-closing-banner-text p {
-    font-size: 15px;
-    line-height: 1.38;
-    margin-bottom: 7px;
-  }
-
-  .ts-closing-banner-text span {
-    margin-top: 12px;
-    padding-top: 10px;
-    font-size: 13px;
-    letter-spacing: 0.14em;
   }
 
   .ts-closing-definition {
@@ -1990,6 +1912,7 @@
     line-height: 1.72;
   }
 }
+	
 	
 </style>
 
@@ -2785,7 +2708,6 @@
       loading="lazy"
       decoding="async"
     >
-    <div class="ts-closing-overlay"></div>
  </div>
 
   <div class="ts-closing-summary">
