@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png" sizes="32x32">
-<link rel="shortcut icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
+<link rel="shortcut icon" href="https://raw.githubusercontent.com/joshuahayoung/joshhua-golf-official/main/images/joshua-hong-logo.png">
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png">
 
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow, noarchive"> 
+<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="googlebot" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Joshua Hong Golf, Joshua Hong UTSA, Joshua Hong Transfer Snapshot, NCAA D1 Golfer, UTSA Men's Golf">
@@ -226,6 +227,51 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
+  .ts-meta-strip {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+
+  .ts-last-updated {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.4px;
+  }
+
+  .ts-section {
+    margin-bottom: 28px;
+  }
+
+  .ts-section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    border-left: 6px solid #F15A22;
+    padding-left: 15px;
+  }
+
+  .ts-section-header h2 {
+    margin: 0;
+    color: #0c2340;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .ts-section-header p {
+    margin: 7px 0 0;
+    color: #7f8c8d;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
   .ts-hero {
     width: 100%;
     background: #ffffff;
@@ -284,6 +330,23 @@
     background: #ffffff;
   }
 
+  .ts-hero-image-wrap {
+    width: 100%;
+    margin: 0 0 22px 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 14px 32px rgba(12, 35, 64, 0.10);
+    background: #ffffff;
+  }
+
+  .ts-hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   .ts-definition {
     margin: 0 0 14px;
     font-size: 27px;
@@ -331,97 +394,12 @@
     color: #fff;
   }
 
-  .ts-hero-strip-section {
-    margin-top: -4px;
-    margin-bottom: 28px;
-  }
-
-  .ts-hero-strip {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .ts-hero-strip-item {
-    background: #0c2340;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 18px;
-    box-shadow: 0 14px 28px rgba(12, 35, 64, 0.18);
-    padding: 16px 14px 14px;
-    text-align: center;
-  }
-
-  .ts-hero-strip-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.72);
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
-
-  .ts-hero-strip-value {
-    display: block;
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.6px;
-    color: #ffffff;
-  }
-
-  .ts-section {
-    margin-bottom: 28px;
-  }
-
-  .ts-section-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 18px;
-    border-left: 6px solid #F15A22;
-    padding-left: 15px;
-  }
-
-  .ts-section-header h2 {
-    margin: 0;
-    color: #0c2340;
-    font-size: 24px;
-    letter-spacing: 1px;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 1.2;
-  }
-
-  .ts-section-header p {
-    margin: 7px 0 0;
-    color: #7f8c8d;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.7px;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
-  .ts-meta-strip {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 16px;
-  }
-
-  .ts-last-updated {
-    font-size: 12px;
-    font-weight: 700;
-    color: #64748b;
-    letter-spacing: 0.4px;
-  }
-
   .ts-quick-grid,
   .ts-metrics-grid,
-  .ts-type-grid,
   .ts-timeline-grid,
   .ts-signature-grid,
-  .ts-links-grid {
+  .ts-links-grid,
+  .ts-role-wide-side {
     display: grid;
     gap: 16px;
   }
@@ -429,27 +407,6 @@
   .ts-quick-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-  }
-
-  .ts-metrics-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  
-  .ts-type-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ts-timeline-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .ts-signature-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .ts-links-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ts-quick-item {
@@ -485,12 +442,35 @@
     font-weight: 600;
   }
 
+  .ts-metrics-panel-section {
+    margin-bottom: 34px;
+  }
+
+  .ts-metrics-panel {
+    background: linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+    border: 1px solid #dfe7f0;
+    border-radius: 24px;
+    padding: 18px;
+    box-shadow: 0 14px 34px rgba(12, 35, 64, 0.06);
+  }
+
+  .ts-metrics-main {
+    margin-bottom: 14px;
+  }
+
+  .ts-metrics-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
   .ts-metric,
-  .ts-type-item,
   .ts-timeline-item,
   .ts-signature-item,
   .ts-link-item,
-  .ts-half-card {
+  .ts-half-card,
+  .ts-role-wide-main,
+  .ts-role-subcard,
+  .season-trend-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
@@ -530,164 +510,71 @@
     font-weight: 600;
   }
 
-.ts-metrics-panel-section {
-  margin-bottom: 34px;
-}
-
-.ts-metrics-panel {
-  background: linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
-  border: 1px solid #dfe7f0;
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: 0 14px 34px rgba(12, 35, 64, 0.06);
-}
-
-.ts-metrics-main {
-  margin-bottom: 14px;
-}
-
-.ts-metrics-panel .ts-metrics-grid {
-  gap: 14px;
-}
-
-.ts-metrics-panel .ts-metric {
-  background: #ffffff;
-  border: 1px solid #e1e8f0;
-  border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(12, 35, 64, 0.05);
-}
-
-.ts-metrics-panel .ts-metric-value {
-  font-size: 33px;
-}
-
-.ts-metrics-panel .ts-metric-note {
-  font-size: 12.5px;
-  line-height: 1.5;
-}
-
-.ts-metrics-supporting {
-  background: #0c2340;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 14px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-.ts-metrics-supporting-label {
-  margin: 0 0 12px 2px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.68);
-}
-
-.ts-metrics-panel .ts-hero-strip-section {
-  margin: 0;
-}
-
-.ts-metrics-panel .ts-hero-strip {
-  gap: 12px;
-}
-
-.ts-metrics-panel .ts-hero-strip-item {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: none;
-  border-radius: 16px;
-  padding: 14px 12px 13px;
-}
-
-.ts-metrics-panel .ts-hero-strip-label {
-  color: rgba(255,255,255,0.70);
-  margin-bottom: 7px;
-}
-
-.ts-metrics-panel .ts-hero-strip-value {
-  font-size: 22px;
-  color: #ffffff;
-}
-
-@media (max-width: 1024px) {
-  .ts-metrics-panel {
-    padding: 16px;
-  }
-
-  .ts-metrics-panel .ts-metric-value {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ts-metrics-panel-section {
-    margin-bottom: 30px;
-  }
-
-  .ts-metrics-panel {
+  .ts-metrics-supporting {
+    background: #0c2340;
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 20px;
     padding: 14px;
-  }
-
-  .ts-metrics-main {
-    margin-bottom: 12px;
-  }
-
-  .ts-metrics-supporting {
-    border-radius: 16px;
-    padding: 12px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   }
 
   .ts-metrics-supporting-label {
-    margin-bottom: 10px;
-    font-size: 10px;
+    margin: 0 0 12px 2px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.68);
   }
 
-  .ts-metrics-panel .ts-metric-value {
-    font-size: 30px;
+  .ts-hero-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  .ts-metrics-panel .ts-hero-strip {
-    gap: 10px;
+  .ts-hero-strip-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: none;
+    border-radius: 16px;
+    padding: 14px 12px 13px;
+    text-align: center;
   }
 
-  .ts-metrics-panel .ts-hero-strip-item {
-    border-radius: 14px;
-    padding: 13px 10px 12px;
+  .ts-hero-strip-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 8px;
+    line-height: 1.2;
   }
 
-  .ts-metrics-panel .ts-hero-strip-value {
-    font-size: 20px;
+  .ts-hero-strip-value {
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.6px;
+    color: #ffffff;
   }
-}
 
-  
-  .ts-type-item,
+  .ts-progression-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .ts-timeline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .ts-timeline-item,
   .ts-signature-item {
     padding: 22px 20px 20px;
-  }
-
-  .ts-type-item h3,
-  .ts-timeline-item h3,
-  .ts-signature-item h3,
-  .ts-half-card h3 {
-    margin: 0 0 10px;
-    color: #0c2340;
-    font-size: 19px;
-    line-height: 1.15;
-    font-weight: 900;
-    letter-spacing: -0.3px;
-  }
-
-  .ts-type-item p,
-  .ts-timeline-item p,
-  .ts-half-card p {
-    margin: 0;
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.7;
-    font-weight: 500;
   }
 
   .ts-phase {
@@ -699,230 +586,32 @@
     margin-bottom: 10px;
   }
 
-  .ts-badge {
-    display: inline-block;
-    margin-bottom: 12px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: rgba(241,90,34,0.08);
-    color: #F15A22;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-  }
-
-  .ts-signature-item ul,
-  .ts-half-card ul {
-    margin: 0;
-    padding-left: 18px;
-  }
-
-  .ts-signature-item li,
-  .ts-half-card li {
-    margin-bottom: 10px;
-    color: #475569;
-    font-size: 14px;
-    line-height: 1.55;
-    font-weight: 500;
-  }
-
-  .ts-half-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 16px;
-  }
-
-  .ts-half-card {
-    padding: 24px 22px 22px;
-  }
-
-  .ts-role-box {
-    padding: 18px 16px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    margin-top: 14px;
-  }
-
-  .ts-role-label {
-    font-size: 11px;
-    font-weight: 800;
-    color: #64748b;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-
-  .ts-role-text {
-    margin: 0;
-    color: #0f172a;
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 700;
-  }
-
-  .ts-role-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .ts-role-wide-main {
-    background: #ffffff;
-    border: 1px solid #e5ebf2;
-    border-radius: 20px;
-    padding: 28px 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-
-  .ts-role-wide-main h3 {
-    margin: 0 0 12px 0;
-    font-size: 24px;
-    line-height: 1.15;
-    letter-spacing: -0.5px;
+  .ts-timeline-item h3,
+  .ts-signature-item h3,
+  .ts-half-card h3,
+  .ts-role-wide-main h3,
+  .ts-role-subcard h3 {
+    margin: 0 0 10px;
     color: #0c2340;
+    font-size: 19px;
+    line-height: 1.15;
     font-weight: 900;
+    letter-spacing: -0.3px;
   }
 
+  .ts-timeline-item p,
+  .ts-half-card p,
+  .ts-role-subcard p,
   .ts-role-wide-main p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.8;
-    color: #334155;
-    max-width: 980px;
-    font-weight: 500;
-  }
-
-  .ts-role-subgrid,
-  .ts-role-wide-side {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .ts-role-subcard {
-    background: #ffffff;
-    border: 1px solid #e5ebf2;
-    border-radius: 20px;
-    padding: 22px 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-
-  .ts-role-subtitle {
-    margin: 0 0 10px 0;
-    font-size: 13px;
-    line-height: 1.2;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #0c2340;
-    font-weight: 800;
-  }
-
-  .ts-role-subcard p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.75;
-    color: #4b5a6d;
-    font-weight: 500;
-  }
-
-  .ts-link-item {
-    display: block;
-    text-decoration: none;
-    padding: 20px 20px 18px;
-    transition: 0.25s ease;
-  }
-
-  .ts-link-item:hover {
-    border-color: rgba(241,90,34,0.45);
-    transform: translateY(-2px);
-  }
-
-  .ts-link-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .ts-link-top h3 {
-    margin: 0;
-    color: #0c2340;
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1.15;
-  }
-
-  .ts-link-arrow {
-    color: #F15A22;
-    font-size: 22px;
-    font-weight: 900;
-    line-height: 1;
-  }
-
-  .ts-link-desc {
-    margin: 0;
     color: #475569;
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.7;
     font-weight: 500;
-  }
-
-  .ts-contact-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 18px;
-  }
-
-  .ts-contact-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 999px;
-    background: #F15A22;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    border: 1px solid #F15A22;
-    transition: 0.25s ease;
-  }
-
-  .ts-contact-btn:hover {
-    background: #d94d1a;
-    border-color: #d94d1a;
-    color: #ffffff;
-    transform: translateY(-1px);
-  }
-
-  .ts-hero-image-wrap {
-    width: 100%;
-    margin: 0 0 22px 0;
-    border-radius: 22px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 14px 32px rgba(12, 35, 64, 0.10);
-    background: #ffffff;
-  }
-
-  .ts-hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
   }
 
   .role-progression-block {
-    margin-top: 30px;
-    margin-bottom: 56px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(12, 35, 64, 0.10);
+    padding-top: 2px;
   }
 
   .role-progression-header {
@@ -1011,16 +700,6 @@
     background: #fff4ec;
   }
 
-  .role-progression-table tbody tr.is-current-junior {
-    background: #fffaf6;
-  }
-
-  .role-progression-table tbody tr.is-ncaa-current td:first-child,
-  .role-progression-table tbody tr.is-current-junior td:first-child {
-    font-weight: 800;
-    color: #0c2340;
-  }
-
   .role-progression-table .avg-best,
   .role-progression-table .round-best,
   .role-progression-table .avg-strong,
@@ -1046,11 +725,6 @@
   }
 
   .season-trend-card {
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     overflow: hidden;
   }
 
@@ -1174,6 +848,786 @@
     text-transform: uppercase;
   }
 
+  .ts-signature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 18px;
+  }
+
+  .ts-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(241,90,34,0.08);
+    color: #F15A22;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .ts-signature-item ul,
+  .ts-half-card ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .ts-signature-item li,
+  .ts-half-card li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.55;
+    font-weight: 500;
+  }
+
+  .ts-role-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .ts-role-wide-main {
+    padding: 28px 30px;
+  }
+
+  .ts-role-wide-main h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .ts-role-wide-main p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #334155;
+    max-width: 980px;
+  }
+
+  .ts-role-wide-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ts-role-subcard {
+    padding: 22px 24px;
+  }
+
+  .ts-role-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0c2340;
+    font-weight: 800;
+  }
+
+  .ts-half-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 16px;
+  }
+
+  .ts-half-card {
+    padding: 24px 22px 22px;
+  }
+
+  .ts-role-box {
+    padding: 18px 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    margin-top: 14px;
+  }
+
+  .ts-role-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .ts-role-text {
+    margin: 0;
+    color: #0f172a;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 700;
+  }
+
+
+/* ===== Evidence & Projection / Culture / Transfer visual upgrade ===== */
+
+.ts-role-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-role-hero-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 24px;
+  padding: 30px 30px 28px;
+  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+}
+
+.ts-role-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
+
+.ts-role-card-kicker,
+.ts-info-card-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-role-wide-main h3 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  color: #0c2340;
+  font-weight: 900;
+}
+
+.ts-role-wide-main p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.82;
+  color: #334155;
+  font-weight: 500;
+  max-width: 940px;
+}
+
+.ts-role-wide-side {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ts-role-subcard {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  padding: 0 22px 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+}
+
+.ts-role-subcard-topbar {
+  height: 5px;
+  margin: 0 -22px 16px;
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-role-translation-card .ts-role-subcard-topbar {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-role-development-card .ts-role-subcard-topbar {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-role-subtitle {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0c2340;
+  font-weight: 800;
+}
+
+.ts-role-subcard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4b5a6d;
+  font-weight: 500;
+}
+
+.ts-half-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+}
+
+.ts-half-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
+  padding: 26px 24px 24px;
+}
+
+.ts-half-card h3 {
+  margin: 0 0 14px;
+  color: #0c2340;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.ts-culture-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.ts-culture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-culture-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-culture-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-culture-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-transfer-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
+}
+
+.ts-transfer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-transfer-card p#transfer-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 500;
+}
+
+.ts-transfer-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-transfer-note-box .ts-role-label {
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 9px;
+}
+
+.ts-transfer-note-box .ts-role-text {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .ts-role-wide-side,
+  .ts-half-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-role-hero-card,
+  .ts-half-card {
+    border-radius: 20px;
+  }
+
+  .ts-role-subcard {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-role-hero-card {
+    padding: 24px 20px 22px;
+  }
+
+  .ts-role-wide-main h3,
+  .ts-half-card h3 {
+    font-size: 20px;
+  }
+
+  .ts-role-wide-main p,
+  .ts-transfer-card p#transfer-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ts-role-subcard {
+    padding: 0 18px 18px;
+    border-radius: 18px;
+  }
+
+  .ts-role-subcard-topbar {
+    margin: 0 -18px 14px;
+  }
+
+  .ts-role-subcard p,
+  .ts-culture-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-half-card {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .ts-culture-list {
+    gap: 9px;
+  }
+
+  .ts-culture-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-culture-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-transfer-note-box .ts-role-text {
+    font-size: 14px;
+  }
+}
+
+
+/* ===== Section-specific redesign: Evidence / Role / Fit ===== */
+
+.ts-eval-section,
+.ts-fit-section {
+  margin-bottom: 28px;
+}
+
+.ts-eval-signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.ts-eval-role-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-eval-role-main {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dfe7f0;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(12, 35, 64, 0.08);
+  padding: 28px 28px 26px;
+  overflow: hidden;
+}
+
+.ts-eval-role-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #F15A22 0%, #d94d1a 100%);
+}
+
+.ts-eval-kicker,
+.ts-fit-kicker {
+  display: inline-block;
+  margin: 0 0 12px 0;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #F15A22;
+}
+
+.ts-eval-main-title,
+.ts-fit-title {
+  margin: 0 0 12px 0;
+  color: #0c2340;
+  font-size: 24px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.ts-eval-main-body {
+  margin: 0;
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.ts-eval-role-side {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ts-eval-mini-card {
+  background: #ffffff;
+  border: 1px solid #e3eaf2;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.06);
+  padding: 20px 20px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-eval-mini-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-eval-mini-card--orange::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-eval-mini-card--navy::before {
+  background: linear-gradient(90deg, #0c2340 0%, #2b5d94 100%);
+}
+
+.ts-eval-mini-kicker {
+  margin: 0 0 10px 0;
+  padding-top: 6px;
+  color: #0c2340;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.ts-eval-mini-body {
+  margin: 0;
+  color: #4b5a6d;
+  font-size: 14px;
+  line-height: 1.72;
+  font-weight: 500;
+}
+
+.ts-fit-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+}
+
+.ts-fit-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(12, 35, 64, 0.06);
+  padding: 24px 22px 22px;
+  overflow: hidden;
+}
+
+.ts-fit-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.ts-fit-card--culture::before {
+  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
+}
+
+.ts-fit-card--transfer::before {
+  background: linear-gradient(90deg, #F15A22 0%, #ff7a45 100%);
+}
+
+.ts-fit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.ts-fit-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 14px 12px 42px;
+  background: #f8fafc;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.ts-fit-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #F15A22;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-fit-body {
+  margin: 0;
+  color: #374151;
+  font-size: 15px;
+  line-height: 1.82;
+  font-weight: 500;
+}
+
+.ts-fit-note-box {
+  margin-top: 18px;
+  background: #0c2340;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.ts-fit-note-label {
+  margin: 0 0 9px 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ts-fit-note-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .ts-eval-signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-eval-role-side,
+  .ts-fit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-eval-role-main,
+  .ts-fit-card {
+    border-radius: 20px;
+    padding: 22px 18px 20px;
+  }
+
+  .ts-eval-mini-card {
+    border-radius: 18px;
+    padding: 18px 16px 16px;
+  }
+
+  .ts-eval-main-title,
+  .ts-fit-title {
+    font-size: 20px;
+  }
+
+  .ts-eval-main-body,
+  .ts-fit-body {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .ts-eval-mini-kicker {
+    font-size: 11px;
+    padding-top: 4px;
+  }
+
+  .ts-eval-mini-body,
+  .ts-fit-list li {
+    font-size: 13px;
+    line-height: 1.66;
+  }
+
+  .ts-fit-list li {
+    padding: 11px 12px 11px 38px;
+    border-radius: 12px;
+  }
+
+  .ts-fit-list li::before {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .ts-fit-note-box {
+    border-radius: 14px;
+    padding: 16px 14px;
+  }
+
+  .ts-fit-note-text {
+    font-size: 14px;
+  }
+}
+  
+  .ts-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ts-link-item {
+    display: block;
+    text-decoration: none;
+    padding: 20px 20px 18px;
+    transition: 0.25s ease;
+  }
+
+  .ts-link-item:hover {
+    border-color: rgba(241,90,34,0.45);
+    transform: translateY(-2px);
+  }
+
+  .ts-link-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ts-link-top h3 {
+    margin: 0;
+    color: #0c2340;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.15;
+  }
+
+  .ts-link-arrow {
+    color: #F15A22;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .ts-link-desc {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.65;
+    font-weight: 500;
+  }
+
+  .ts-contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .ts-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: #F15A22;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: 1px solid #F15A22;
+    transition: 0.25s ease;
+  }
+
+  .ts-contact-btn:hover {
+    background: #d94d1a;
+    border-color: #d94d1a;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
   @media (max-width: 1024px) {
     .header-wrapper {
       padding: 0 20px;
@@ -1276,45 +1730,14 @@
       margin-top: 4px;
     }
 
-    .ts-hero-strip {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .ts-metrics-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .ts-signature-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ts-half-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .ts-role-wide-main {
-      padding: 24px 22px;
-    }
-
-    .ts-role-wide-main h3 {
-      font-size: 22px;
-    }
-
-    .ts-role-wide-main p {
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .ts-role-subgrid,
+    .ts-signature-grid,
+    .ts-half-grid,
     .ts-role-wide-side {
       grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .ts-role-subcard {
-      padding: 20px 18px;
     }
   }
 
@@ -1332,9 +1755,20 @@
       font-size: 22px;
     }
 
-    .ts-quick-grid {
+    .ts-hero-top,
+    .ts-definition-wrap {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .ts-quick-grid,
+    .ts-metrics-grid,
+    .ts-timeline-grid,
+    .ts-links-grid,
+    .ts-signature-grid,
+    .ts-half-grid,
+    .ts-role-wide-side {
       grid-template-columns: 1fr;
-      gap: 12px;
     }
 
     .ts-quick-item {
@@ -1353,132 +1787,44 @@
       line-height: 1.62;
     }
 
-    .ts-type-grid,
-    .ts-timeline-grid,
-    .ts-links-grid,
-    .ts-metrics-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ts-hero-top,
-    .ts-definition-wrap {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-
-    .ts-hero-strip {
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .ts-hero-strip-item {
-      padding: 14px 12px 13px;
-      border-radius: 16px;
-    }
-
-    .ts-hero-strip-label {
-      font-size: 10px;
-      margin-bottom: 7px;
-    }
-
-    .ts-hero-strip-value {
-      font-size: 21px;
-    }
-
     .ts-hero-image-wrap {
       margin-bottom: 18px;
       border-radius: 18px;
     }
 
+    .ts-hero-strip {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
-.ts-type-grid {
-  gap: 18px;
-}
+    .ts-hero-strip-item {
+      border-radius: 14px;
+      padding: 13px 10px 12px;
+    }
 
-.ts-type-grid .ts-type-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  padding: 22px 20px 20px;
-  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
-  border: 1px solid #e4ebf3;
-  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.05);
-}
+    .ts-hero-strip-label {
+      font-size: 10px;
+    }
 
-.ts-type-grid .ts-type-item::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #0c2340 0%, #1f4a7c 100%);
-}
+    .ts-hero-strip-value {
+      font-size: 20px;
+    }
 
-.ts-type-kicker {
-  display: inline-block;
-  margin: 0 0 12px 0;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: #F15A22;
-}
+    .ts-role-wide-main {
+      padding: 22px 20px;
+    }
 
-.ts-type-grid .ts-type-item h3 {
-  margin: 0 0 10px;
-  color: #0c2340;
-  font-size: 20px;
-  line-height: 1.12;
-  font-weight: 900;
-  letter-spacing: -0.35px;
-}
+    .ts-role-wide-main h3 {
+      font-size: 22px;
+    }
 
-.ts-type-grid .ts-type-item p {
-  margin: 0;
-  color: #4b5a6d;
-  font-size: 14px;
-  line-height: 1.72;
-  font-weight: 500;
-}
+    .ts-role-wide-main p {
+      font-size: 15px;
+      line-height: 1.75;
+    }
 
-.ts-type-grid .ts-type-item:nth-child(2),
-.ts-type-grid .ts-type-item:nth-child(4) {
-  background: linear-gradient(180deg, #fbfcfe 0%, #f5f8fb 100%);
-}
-
-@media (max-width: 768px) {
-  .ts-type-grid {
-    gap: 14px;
-  }
-
-  .ts-type-grid .ts-type-item {
-    padding: 20px 18px 18px;
-    border-radius: 18px;
-  }
-
-  .ts-type-kicker {
-    margin-bottom: 10px;
-    font-size: 9px;
-  }
-
-  .ts-type-grid .ts-type-item h3 {
-    font-size: 18px;
-  }
-
-  .ts-type-grid .ts-type-item p {
-    font-size: 13px;
-    line-height: 1.66;
-  }
-}
-
-    
-    .role-progression-block {
-      margin-top: 24px;
-      margin-bottom: 44px;
-      padding-top: 20px;
+    .ts-role-subcard {
+      padding: 20px 18px;
     }
 
     .role-progression-header {
@@ -1503,10 +1849,6 @@
     .role-progression-table td {
       padding: 12px 10px;
       font-size: 12px;
-    }
-
-    .role-progression-table .metric-note {
-      font-size: 10px;
     }
 
     .season-trend-head {
@@ -1589,7 +1931,7 @@
     }
   }
 </style>
-  
+
 </head>
 
 <body>
@@ -1631,454 +1973,241 @@
     </div>
 
     <section class="ts-hero">
-  <div class="ts-hero-top">
-    <div class="ts-eyebrow">
-      <span class="ts-dot"></span>
-      <span id="hero-eyebrow">Transfer Snapshot</span>
-    </div>
-    <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
-    <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
-  </div>
+      <div class="ts-hero-top">
+        <div class="ts-eyebrow">
+          <span class="ts-dot"></span>
+          <span id="hero-eyebrow">Transfer Snapshot</span>
+        </div>
+        <h1 class="ts-title" id="hero-title">Joshua Hong</h1>
+        <p class="ts-meta" id="hero-meta">Freshman | UTSA Men's Golf | NCAA Division I</p>
+      </div>
 
-  <div class="ts-definition-wrap">
-    <div class="ts-hero-image-wrap">
-      <img
-        src="./images/freshman-2025-2026/joshua-hong-UTSA-Transfer-Portal-1.jpg"
-        alt="Joshua Hong reading a putting line during the Military City Collegiate"
-        title="Joshua Hong reading a putting line during the Military City Collegiate"
-        class="ts-hero-image"
-        loading="eager"
-        fetchpriority="high"
-        decoding="sync"
-      >
-    </div>
+      <div class="ts-definition-wrap">
+        <div class="ts-hero-image-wrap">
+          <img
+            src="./images/freshman-2025-2026/joshua-hong-UTSA-Transfer-Portal-1.jpg"
+            alt="Joshua Hong reading a putting line during the Military City Collegiate"
+            title="Joshua Hong reading a putting line during the Military City Collegiate"
+            class="ts-hero-image"
+            loading="eager"
+            fetchpriority="high"
+            decoding="sync"
+          >
+        </div>
 
-    <h2 class="ts-definition" id="hero-definition">High-reliability freshman scorer with proven lineup value and Power 4 transfer upside.</h2>
-    <p class="ts-supporting" id="hero-supporting">
-      Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
-    </p>
+        <h2 class="ts-definition" id="hero-definition">High-reliability freshman scorer with proven lineup value and a profile that projects to higher-level competition.</h2>
+        <p class="ts-supporting" id="hero-supporting">
+          Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling.
+        </p>
 
-    <div class="ts-links-inline">
-      <a href="ncaa-stats.html">View NCAA Stats</a>
-      <a href="news-media.html">News & Media</a>
-      <a href="junior-career.html">Junior Career</a>
-      <a href="reference-links.html">Reference Links</a>
-    </div>
-  </div>
-</section>
-   
+        <div class="ts-links-inline">
+          <a href="ncaa-stats.html">View NCAA Stats</a>
+          <a href="news-media.html">News & Media</a>
+          <a href="junior-career.html">Junior Career</a>
+          <a href="reference-links.html">Reference Links</a>
+        </div>
+      </div>
+    </section>
+
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
-          <h2>Quick Read Summary</h2>
-          <p>Condensed coach-facing interpretation</p>
+          <h2>Snapshot Summary</h2>
+          <p>Coach-facing first read</p>
         </div>
       </div>
       <div class="ts-quick-grid" id="quick-summary-grid"></div>
     </section>
 
-  
-<section class="ts-section ts-metrics-panel-section">
-  <div class="ts-section-header">
-    <div>
-      <h2>Core Metrics Snapshot</h2>
-      <p>First-look numbers for coach evaluation</p>
-    </div>
-  </div>
-
-  <div class="ts-metrics-panel">
-    <div class="ts-metrics-main">
-      <div class="ts-metrics-grid" id="metrics-grid"></div>
-    </div>
-
-    <div class="ts-metrics-supporting">
-      <div class="ts-metrics-supporting-label">Supporting Context</div>
-      <div class="ts-hero-strip" id="hero-strip-grid"></div>
-    </div>
-  </div>
-</section>
-
-
-<section class="ts-section">
-  <div class="season-trend-card">
-    <div class="season-trend-head">
-      <h2>Seasonal Finish Trend</h2>
-      <p>2025–26 Competitive Record</p>
-    </div>
-
-    <div class="season-trend-body">
-      <div class="season-trend-topline">
-        <h3>Event Results</h3>
-        <span class="season-trend-tag">Freshman Season</span>
-      </div>
-
-      <div class="season-trend-chart-shell">
-        <div class="season-trend-metric-pill">
-          <span class="season-trend-metric-label">Clippd Adj.</span>
-          <span class="season-trend-metric-value">70.80</span>
-        </div>
-
-        <div class="season-trend-canvas-wrap">
-          <canvas id="archiveOfficialChart"></canvas>
-        </div>
-
-        <div class="season-trend-source">
-          Source: Scoreboard.Clippd, WAGR & Golfstat
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
-<script>
-(function() {
-  if (typeof Chart === 'undefined') return;
-
-  if (typeof ChartDataLabels !== 'undefined') {
-    try { Chart.register(ChartDataLabels); } catch (e) {}
-  }
-
-  const canvas = document.getElementById('archiveOfficialChart');
-  if (!canvas) return;
-
-  const isMobile = window.innerWidth <= 768;
-
-  const archiveLabels = [
-    '9/07 (Argent)',
-    '9/15 (Highlands)',
-    '9/22 (Badger)',
-    '10/05 (Trinity)',
-    '2/01 (Compadres)',
-    '2/24 (Military)',
-    '3/03 (Golden)',
-    '3/17 (Thunderbirds)',
-    '3/24 (Bellbank)'
-  ];
-
-  const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
-  const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
-
-  const archiveRounds = [
-    '70-70-69 (-7)',
-    '74-71-70 (-1)',
-    '71-71-76 (+2)',
-    '75-73-74 (+6)',
-    '70-75-71 (E)',
-    '69-72-74 (-1)',
-    '64-70-69 (-13)',
-    '72-76-73 (+5)',
-    '73-68-71 (-4)'
-  ];
-
-  const archiveRankImpact = [
-    '● Rank Impact ▲ 151',
-    '● Rank Impact ▲ 28',
-    '● Rank Impact ▼ 38',
-    '● Rank Impact ▼ 98',
-    '● Rank Impact ▲ 142',
-    '● Rank Impact ▲ 72',
-    '● Rank Impact ▲ 43',
-    '● Rank Impact ▼ 43',
-    '● Rank Impact ▲ 26'
-  ];
-
-  const archiveWagrPower = [
-    '230.8799',
-    '232.6656',
-    '129.0694',
-    '360.1597',
-    '145.6033',
-    '101.3382',
-    '135.0209',
-    '670.0102',
-    '221.2814'
-  ];
-
-  const archivePtsEarned = [
-    '5.3735',
-    '4.9097',
-    '3.3178',
-    '3.1971',
-    '6.5774',
-    '9.2734',
-    '6.7817',
-    '4.8345',
-    '4.9385'
-  ];
-
-  new Chart(canvas.getContext('2d'), {
-    type: 'line',
-    data: {
-      labels: archiveLabels,
-      datasets: [{
-        label: 'Scoring Avg',
-        data: archiveScores,
-        borderColor: '#0c2340',
-        backgroundColor: 'rgba(12, 35, 64, 0.05)',
-        borderWidth: 2,
-        pointRadius: isMobile ? 4 : 6,
-        pointHoverRadius: isMobile ? 6 : 8,
-        pointBackgroundColor: '#0c2340',
-        pointHoverBackgroundColor: '#F15A22',
-        pointBorderColor: '#ffffff',
-        pointBorderWidth: 2,
-        tension: 0.3,
-        fill: true,
-        datalabels: {
-          align: 'top',
-          anchor: 'end',
-          offset: isMobile ? 4 : 8,
-          color: '#0c2340',
-          font: {
-            family: "'Oswald', sans-serif",
-            weight: '700',
-            size: isMobile ? 10 : 13
-          },
-          formatter: function(value, context) {
-            return archivePositions[context.dataIndex];
-          }
-        }
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      layout: {
-        padding: isMobile
-          ? { top: 14, bottom: 10, left: 0, right: 0 }
-          : { top: 20, bottom: 10, left: 0, right: 8 }
-      },
-      scales: {
-        y: {
-          min: 65,
-          max: 82,
-          grid: {
-            color: '#e9eef4',
-            drawBorder: false
-          },
-          ticks: {
-            color: '#334155',
-            font: {
-              family: "'Montserrat', sans-serif",
-              size: isMobile ? 10 : 11,
-              weight: '600'
-            }
-          }
-        },
-        x: {
-          grid: {
-            display: false
-          },
-          ticks: {
-            color: '#334155',
-            autoSkip: false,
-            maxRotation: isMobile ? 58 : 42,
-            minRotation: isMobile ? 58 : 42,
-            font: {
-              family: "'Montserrat', sans-serif",
-              size: isMobile ? 8 : 10,
-              weight: '600'
-            }
-          }
-        }
-      },
-      plugins: {
-        legend: {
-          display: false
-        },
-        tooltip: {
-          enabled: true,
-          backgroundColor: '#0c2340',
-          titleColor: '#F15A22',
-          bodyColor: '#ffffff',
-          padding: 12,
-          displayColors: false,
-          titleFont: {
-            family: "'Oswald', sans-serif",
-            size: 14,
-            weight: '600'
-          },
-          bodyFont: {
-            family: "'Montserrat', sans-serif",
-            size: 12,
-            weight: '600'
-          },
-          callbacks: {
-            title: function(context) {
-              return archiveLabels[context[0].dataIndex];
-            },
-            label: function(context) {
-              return `● Scoring Avg: ${context.parsed.y}`;
-            },
-            afterLabel: function(context) {
-              const i = context.dataIndex;
-              return [
-                `● Rounds: ${archiveRounds[i]}`,
-                `● Pos: ${archivePositions[i]}`,
-                archiveRankImpact[i],
-                '-----------------------',
-                `● WAGR Pwr: ${archiveWagrPower[i]}`,
-                `● Pts Earned: ${archivePtsEarned[i]}`
-              ];
-            }
-          }
-        }
-      }
-    }
-  });
-})();
-</script>
-    
-    <section class="ts-section">
+    <section class="ts-section ts-metrics-panel-section">
       <div class="ts-section-header">
         <div>
-          <h2>Player Type & Competitive Profile</h2>
-          <p>What kind of scorer he is</p>
+          <h2>Core Metrics Snapshot</h2>
+          <p>First-look numbers for coach evaluation</p>
         </div>
       </div>
-      <div class="ts-type-grid" id="player-type-grid"></div>
+
+      <div class="ts-metrics-panel">
+        <div class="ts-metrics-main">
+          <div class="ts-metrics-grid" id="metrics-grid"></div>
+        </div>
+
+        <div class="ts-metrics-supporting">
+          <div class="ts-metrics-supporting-label">Supporting Context</div>
+          <div class="ts-hero-strip" id="hero-strip-grid"></div>
+        </div>
+      </div>
     </section>
 
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
-          <h2>Progression & Upward Trend</h2>
+          <h2>Progression</h2>
           <p>Why the trajectory matters</p>
         </div>
       </div>
-      <div class="ts-timeline-grid" id="timeline-grid"></div>
-    </section>
 
-    <section class="ts-section">
-      <div class="ts-section-header">
-        <div>
-          <h2>Signature Results</h2>
-          <p>Three pieces of fast evidence</p>
-        </div>
-      </div>
-      <div class="ts-signature-grid" id="signature-grid"></div>
-    </section>
+      <div class="ts-progression-stack">
+        <div class="ts-timeline-grid" id="timeline-grid"></div>
 
-<section class="ts-section">
-  <div class="ts-role-layout">
-    <div class="ts-role-wide-main">
-      <h3>Projected College Role</h3>
-      <p id="projected-role-body"></p>
-    </div>
-  </div>
-</section>
+        <div class="role-progression-block">
+          <div class="role-progression-header">
+            <div class="role-progression-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                <polyline points="17 18 23 18 23 12"></polyline>
+              </svg>
+            </div>
+            <h3>Long-Term Scoring Progression</h3>
+          </div>
 
-    <div class="ts-role-wide-side">
-      <div class="ts-role-box">
-        <div class="ts-role-label" id="translation-label">Roster Translation</div>
-        <p class="ts-role-text" id="translation-text"></p>
-      </div>
+          <p class="role-progression-note">
+            This progression reflects scoring development from the time Joshua began golf at age 12 through the current NCAA freshman season, showing a sustained year-by-year improvement in both scoring average and low-round capability.
+          </p>
 
-      <div class="ts-role-box">
-        <div class="ts-role-label" id="development-label">Development Outlook</div>
-        <p class="ts-role-text" id="development-text"></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="role-progression-block">
-  <div class="role-progression-header">
-    <div class="role-progression-icon" aria-hidden="true">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
-        <polyline points="17 18 23 18 23 12"></polyline>
-      </svg>
-    </div>
-    <h3>Long-Term Scoring Progression</h3>
-  </div>
-
-  <p class="role-progression-note">
-    This progression reflects scoring development from the time Joshua began golf at age 12 through the current NCAA freshman season, showing a sustained year-by-year improvement in both scoring average and low-round capability.
-  </p>
-
-  <div class="role-progression-table-wrap">
-    <table class="role-progression-table">
-      <thead>
-        <tr>
-          <th>Stage</th>
-          <th>Rounds</th>
-          <th>Scoring Avg</th>
-          <th>Low Round</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="is-ncaa-current">
-          <td>2025-26 NCAA Fr. Season (18)</td>
-          <td>27</td>
-          <td class="avg-best">70.80 <span class="metric-note">(Clippd Adj.)</span></td>
-          <td class="round-best">64 (-8)</td>
-        </tr>
-        <tr>
-          <td>2024–25 Junior Golf Season (17)</td>
-          <td>52</td>
-          <td class="avg-strong">71.37</td>
-          <td class="round-strong">62 (-10)</td>
-        </tr>
-        <tr>
-          <td>2023–24 Junior Golf Season (16)</td>
-          <td>47</td>
-          <td>72.60</td>
-          <td class="round-strong">64 (-8)</td>
-        </tr>
-        <tr>
-          <td>2022–23 Junior Golf Season (15)</td>
-          <td>45</td>
-          <td>74.04</td>
-          <td class="round-strong">66 (-5)</td>
-        </tr>
-        <tr>
-          <td>2021–22 Junior Golf Season (14)</td>
-          <td>34</td>
-          <td>77.88</td>
-          <td class="round-strong">70 (-2)</td>
-        </tr>
-        <tr>
-          <td>2020–21 Junior Golf Season (13)</td>
-          <td>18</td>
-          <td class="muted-cell">79.39</td>
-          <td class="muted-cell">74</td>
-        </tr>
-        <tr>
-          <td>2019–20 Junior Golf Season (12)</td>
-          <td>17</td>
-          <td class="muted-cell lighter">86.88</td>
-          <td class="muted-cell lighter">75</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-    
-
-    <section class="ts-section">
-      <div class="ts-half-grid">
-        <div class="ts-half-card">
-          <h3>Work Ethic & Culture Fit</h3>
-          <ul id="culture-list"></ul>
+          <div class="role-progression-table-wrap">
+            <table class="role-progression-table">
+              <thead>
+                <tr>
+                  <th>Stage</th>
+                  <th>Rounds</th>
+                  <th>Scoring Avg</th>
+                  <th>Low Round</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-ncaa-current">
+                  <td>2025-26 NCAA Fr. Season (18)</td>
+                  <td>27</td>
+                  <td class="avg-best">70.80 <span class="metric-note">(Clippd Adj.)</span></td>
+                  <td class="round-best">64 (-8)</td>
+                </tr>
+                <tr>
+                  <td>2024–25 Junior Golf Season (17)</td>
+                  <td>52</td>
+                  <td class="avg-strong">71.37</td>
+                  <td class="round-strong">62 (-10)</td>
+                </tr>
+                <tr>
+                  <td>2023–24 Junior Golf Season (16)</td>
+                  <td>47</td>
+                  <td>72.60</td>
+                  <td class="round-strong">64 (-8)</td>
+                </tr>
+                <tr>
+                  <td>2022–23 Junior Golf Season (15)</td>
+                  <td>45</td>
+                  <td>74.04</td>
+                  <td class="round-strong">66 (-5)</td>
+                </tr>
+                <tr>
+                  <td>2021–22 Junior Golf Season (14)</td>
+                  <td>34</td>
+                  <td>77.88</td>
+                  <td class="round-strong">70 (-2)</td>
+                </tr>
+                <tr>
+                  <td>2020–21 Junior Golf Season (13)</td>
+                  <td>18</td>
+                  <td class="muted-cell">79.39</td>
+                  <td class="muted-cell">74</td>
+                </tr>
+                <tr>
+                  <td>2019–20 Junior Golf Season (12)</td>
+                  <td>17</td>
+                  <td class="muted-cell lighter">86.88</td>
+                  <td class="muted-cell lighter">75</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <div class="ts-half-card">
-          <h3>Transfer Objective</h3>
-          <p id="transfer-body"></p>
+        <div class="season-trend-card">
+          <div class="season-trend-head">
+            <h2>Seasonal Finish Trend</h2>
+            <p>2025–26 Competitive Record</p>
+          </div>
 
-          <div class="ts-role-box">
-            <div class="ts-role-label" id="transfer-note-label">Positioning Note</div>
-            <p class="ts-role-text" id="transfer-note-text"></p>
+          <div class="season-trend-body">
+            <div class="season-trend-topline">
+              <h3>Event Results</h3>
+              <span class="season-trend-tag">Freshman Season</span>
+            </div>
+
+            <div class="season-trend-chart-shell">
+              <div class="season-trend-metric-pill">
+                <span class="season-trend-metric-label">Clippd Adj.</span>
+                <span class="season-trend-metric-value">70.80</span>
+              </div>
+
+              <div class="season-trend-canvas-wrap">
+                <canvas id="archiveOfficialChart"></canvas>
+              </div>
+
+              <div class="season-trend-source">
+                Source: Scoreboard.Clippd, WAGR & Golfstat
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="ts-section">
+      <div class="ts-section-header">
+        <div>
+          <h2>Evidence & Projection</h2>
+          <p>Fast evidence and roster translation</p>
+        </div>
+      </div>
+
+      <section class="ts-section ts-eval-section">
+  <div class="ts-eval-signature-grid" id="signature-grid"></div>
+
+  <div class="ts-eval-role-wrap">
+    <div class="ts-eval-role-main">
+      <div class="ts-eval-kicker">PRIMARY ROLE READ</div>
+      <h3 class="ts-eval-main-title">Projected College Role</h3>
+      <p class="ts-eval-main-body" id="projected-role-body"></p>
+    </div>
+
+    <div class="ts-eval-role-side">
+      <div class="ts-eval-mini-card ts-eval-mini-card--orange">
+        <div class="ts-eval-mini-kicker" id="translation-label">Roster Translation</div>
+        <p class="ts-eval-mini-body" id="translation-text"></p>
+      </div>
+
+      <div class="ts-eval-mini-card ts-eval-mini-card--navy">
+        <div class="ts-eval-mini-kicker" id="development-label">Development Outlook</div>
+        <p class="ts-eval-mini-body" id="development-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ts-section ts-fit-section">
+  <div class="ts-fit-grid">
+    <div class="ts-fit-card ts-fit-card--culture">
+      <div class="ts-fit-kicker">PROGRAM FIT</div>
+      <h3 class="ts-fit-title">Work Ethic & Culture Fit</h3>
+      <ul id="culture-list" class="ts-fit-list"></ul>
+    </div>
+
+    <div class="ts-fit-card ts-fit-card--transfer">
+      <div class="ts-fit-kicker">TRANSFER PURPOSE</div>
+      <h3 class="ts-fit-title">Transfer Objective</h3>
+      <p class="ts-fit-body" id="transfer-body"></p>
+
+      <div class="ts-fit-note-box">
+        <div class="ts-fit-note-label" id="transfer-note-label">Positioning Note</div>
+        <p class="ts-fit-note-text" id="transfer-note-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
@@ -2110,41 +2239,209 @@
     </section>
   </main>
 
- <script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 
-  window.addEventListener('scroll', function() {
-    const btn = document.getElementById('fixedTopBtn');
-    const header = document.getElementById('mainHeader');
-    const currentScrollY = window.pageYOffset;
+  <script>
+    (function() {
+      if (typeof Chart === 'undefined') return;
 
-    if (btn) {
-      if (currentScrollY > 100) {
-        btn.style.display = 'block';
-      } else {
-        btn.style.display = 'none';
+      if (typeof ChartDataLabels !== 'undefined') {
+        try { Chart.register(ChartDataLabels); } catch (e) {}
       }
-    }
 
-    if (header) {
-      if (currentScrollY > 300) {
-        header.classList.add('scrolled');
-        header.classList.remove('preparing');
-      } else if (currentScrollY > 10) {
-        header.classList.remove('scrolled');
-        header.classList.add('preparing');
-      } else {
-        header.classList.remove('scrolled', 'preparing');
-      }
-    }
-  });
+      const canvas = document.getElementById('archiveOfficialChart');
+      if (!canvas) return;
 
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+      const isMobile = window.innerWidth <= 768;
 
+      const archiveLabels = [
+        '9/07 (Argent)',
+        '9/15 (Highlands)',
+        '9/22 (Badger)',
+        '10/05 (Trinity)',
+        '2/01 (Compadres)',
+        '2/24 (Military)',
+        '3/03 (Golden)',
+        '3/17 (Thunderbirds)',
+        '3/24 (Bellbank)'
+      ];
+
+      const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66];
+      const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10'];
+
+      const archiveRounds = [
+        '70-70-69 (-7)',
+        '74-71-70 (-1)',
+        '71-71-76 (+2)',
+        '75-73-74 (+6)',
+        '70-75-71 (E)',
+        '69-72-74 (-1)',
+        '64-70-69 (-13)',
+        '72-76-73 (+5)',
+        '73-68-71 (-4)'
+      ];
+
+      const archiveRankImpact = [
+        '● Rank Impact ▲ 151',
+        '● Rank Impact ▲ 28',
+        '● Rank Impact ▼ 38',
+        '● Rank Impact ▼ 98',
+        '● Rank Impact ▲ 142',
+        '● Rank Impact ▲ 72',
+        '● Rank Impact ▲ 43',
+        '● Rank Impact ▼ 43',
+        '● Rank Impact ▲ 26'
+      ];
+
+      const archiveWagrPower = [
+        '230.8799',
+        '232.6656',
+        '129.0694',
+        '360.1597',
+        '145.6033',
+        '101.3382',
+        '135.0209',
+        '670.0102',
+        '221.2814'
+      ];
+
+      const archivePtsEarned = [
+        '5.3735',
+        '4.9097',
+        '3.3178',
+        '3.1971',
+        '6.5774',
+        '9.2734',
+        '6.7817',
+        '4.8345',
+        '4.9385'
+      ];
+
+      new Chart(canvas.getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: archiveLabels,
+          datasets: [{
+            label: 'Scoring Avg',
+            data: archiveScores,
+            borderColor: '#0c2340',
+            backgroundColor: 'rgba(12, 35, 64, 0.05)',
+            borderWidth: 2,
+            pointRadius: isMobile ? 4 : 6,
+            pointHoverRadius: isMobile ? 6 : 8,
+            pointBackgroundColor: '#0c2340',
+            pointHoverBackgroundColor: '#F15A22',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            tension: 0.3,
+            fill: true,
+            datalabels: {
+              align: 'top',
+              anchor: 'end',
+              offset: isMobile ? 4 : 8,
+              color: '#0c2340',
+              font: {
+                family: "'Oswald', sans-serif",
+                weight: '700',
+                size: isMobile ? 10 : 13
+              },
+              formatter: function(value, context) {
+                return archivePositions[context.dataIndex];
+              }
+            }
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: isMobile
+              ? { top: 14, bottom: 10, left: 0, right: 0 }
+              : { top: 20, bottom: 10, left: 0, right: 8 }
+          },
+          scales: {
+            y: {
+              min: 65,
+              max: 82,
+              grid: {
+                color: '#e9eef4',
+                drawBorder: false
+              },
+              ticks: {
+                color: '#334155',
+                font: {
+                  family: "'Montserrat', sans-serif",
+                  size: isMobile ? 10 : 11,
+                  weight: '600'
+                }
+              }
+            },
+            x: {
+              grid: {
+                display: false
+              },
+              ticks: {
+                color: '#334155',
+                autoSkip: false,
+                maxRotation: isMobile ? 58 : 42,
+                minRotation: isMobile ? 58 : 42,
+                font: {
+                  family: "'Montserrat', sans-serif",
+                  size: isMobile ? 8 : 10,
+                  weight: '600'
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: '#0c2340',
+              titleColor: '#F15A22',
+              bodyColor: '#ffffff',
+              padding: 12,
+              displayColors: false,
+              titleFont: {
+                family: "'Oswald', sans-serif",
+                size: 14,
+                weight: '600'
+              },
+              bodyFont: {
+                family: "'Montserrat', sans-serif",
+                size: 12,
+                weight: '600'
+              },
+              callbacks: {
+                title: function(context) {
+                  return archiveLabels[context[0].dataIndex];
+                },
+                label: function(context) {
+                  return `● Scoring Avg: ${context.parsed.y}`;
+                },
+                afterLabel: function(context) {
+                  const i = context.dataIndex;
+                  return [
+                    `● Rounds: ${archiveRounds[i]}`,
+                    `● Pos: ${archivePositions[i]}`,
+                    archiveRankImpact[i],
+                    '-----------------------',
+                    `● WAGR Pwr: ${archiveWagrPower[i]}`,
+                    `● Pts Earned: ${archivePtsEarned[i]}`
+                  ];
+                }
+              }
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+<script>
   async function renderTransferSnapshot() {
     try {
       const response = await fetch('./data-transfer.json?v=' + Date.now());
@@ -2170,7 +2467,6 @@
       if (heroDefinition) heroDefinition.textContent = data.hero?.definition || '';
       if (heroSupporting) heroSupporting.textContent = data.hero?.supporting || '';
 
-      /* HERO STRIP RENDER */
       const heroStripGrid = document.getElementById('hero-strip-grid');
       if (heroStripGrid) {
         heroStripGrid.innerHTML = '';
@@ -2185,19 +2481,19 @@
         });
       }
 
-const quickGrid = document.getElementById('quick-summary-grid');
-if (quickGrid) {
-  quickGrid.innerHTML = '';
-  (data.quickSummary || []).forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'ts-quick-item';
-    div.innerHTML = `
-      <span class="ts-quick-item-number">${String(index + 1).padStart(2, '0')}</span>
-      <p class="ts-quick-item-text">${item}</p>
-    `;
-    quickGrid.appendChild(div);
-  });
-}
+      const quickGrid = document.getElementById('quick-summary-grid');
+      if (quickGrid) {
+        quickGrid.innerHTML = '';
+        (data.quickSummary || []).forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = 'ts-quick-item';
+          div.innerHTML = `
+            <span class="ts-quick-item-number">${String(index + 1).padStart(2, '0')}</span>
+            <p class="ts-quick-item-text">${item}</p>
+          `;
+          quickGrid.appendChild(div);
+        });
+      }
 
       const metricsGrid = document.getElementById('metrics-grid');
       if (metricsGrid) {
@@ -2214,25 +2510,10 @@ if (quickGrid) {
         });
       }
 
-      const typeGrid = document.getElementById('player-type-grid');
-if (typeGrid) {
-  typeGrid.innerHTML = '';
-  (data.playerType || []).forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'ts-type-item';
-    div.innerHTML = `
-      <div class="ts-type-kicker">Profile ${String(index + 1).padStart(2, '0')}</div>
-      <h3>${item.title || ''}</h3>
-      <p>${item.desc || ''}</p>
-    `;
-    typeGrid.appendChild(div);
-  });
-}
-
       const timelineGrid = document.getElementById('timeline-grid');
       if (timelineGrid) {
         timelineGrid.innerHTML = '';
-        (data.timeline || []).forEach(item => {
+        (data.progression?.stages || []).forEach(item => {
           const div = document.createElement('div');
           div.className = 'ts-timeline-item';
           div.innerHTML = `
@@ -2247,7 +2528,7 @@ if (typeGrid) {
       const signatureGrid = document.getElementById('signature-grid');
       if (signatureGrid) {
         signatureGrid.innerHTML = '';
-        (data.signatureResults || []).forEach(item => {
+        (data.evidenceProjection?.cards || []).forEach(item => {
           const liItems = (item.points || []).map(point => `<li>${point}</li>`).join('');
           const div = document.createElement('div');
           div.className = 'ts-signature-item';
@@ -2260,31 +2541,35 @@ if (typeGrid) {
         });
       }
 
-      /* PROJECTED ROLE */
+      const projectedRoleHeading = document.querySelector('.ts-role-wide-main h3');
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
       const translationText = document.getElementById('translation-text');
       const developmentLabel = document.getElementById('development-label');
       const developmentText = document.getElementById('development-text');
 
+      if (projectedRoleHeading) {
+        projectedRoleHeading.textContent = data.evidenceProjection?.projectedRoleTitle || 'Projected College Role';
+      }
+
       if (projectedRoleBody) {
-        projectedRoleBody.textContent = data.projectedRole?.body || '';
+        projectedRoleBody.textContent = data.evidenceProjection?.projectedRoleBody || '';
       }
 
       if (translationLabel) {
-        translationLabel.textContent = data.projectedRole?.translationLabel || 'Roster Translation';
+        translationLabel.textContent = data.evidenceProjection?.translationLabel || 'Roster Translation';
       }
 
       if (translationText) {
-        translationText.textContent = data.projectedRole?.translationText || '';
+        translationText.textContent = data.evidenceProjection?.translationText || '';
       }
 
       if (developmentLabel) {
-        developmentLabel.textContent = data.projectedRole?.developmentLabel || 'Development Outlook';
+        developmentLabel.textContent = data.evidenceProjection?.developmentLabel || 'Development Outlook';
       }
 
       if (developmentText) {
-        developmentText.textContent = data.projectedRole?.developmentText || '';
+        developmentText.textContent = data.evidenceProjection?.developmentText || '';
       }
 
       const cultureList = document.getElementById('culture-list');
@@ -2369,6 +2654,6 @@ if (typeGrid) {
 
   document.addEventListener('DOMContentLoaded', renderTransferSnapshot);
 </script>
-  
+
 </body>
 </html>
