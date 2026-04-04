@@ -102,38 +102,38 @@
     ]
   },
 
-  "evidenceProjection": {
-    "cards": [
-      {
-        "badge": "Difficult-Condition Win",
-        "event": "Military City Collegiate",
-        "points": [
-          "Individual champion",
-          "Only player under par in the field",
-          "Tough scoring environment with clear separation pressure",
-          "Strong evidence of difficult-condition scoring value"
-        ]
-      },
-      {
-        "badge": "Ceiling / Conversion",
-        "event": "Golden Nugget Invitational",
-        "points": [
-          "Solo 3rd finish",
-          "64 (-8) tied the 18-hole school record",
-          "134 (-10) tied the 36-hole school record",
-          "Clear evidence of scoring ceiling and sustained contention"
-        ]
-      },
-      {
-        "badge": "Trajectory",
-        "event": "Fall to Spring Progression",
-        "points": [
-          "Fall finishes of 9-12-24-55 reflected the normal early NCAA adjustment phase",
-          "Spring opened with a 3-1-3-48-10 run, showing immediate competitive rebound",
-          "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
-          "The profile is defined more by progression and repeat result volume than by a single week"
-        ]
-      }
+ "evidenceProjection": {
+  "cards": [
+    {
+      "badge": "Difficult-Condition Win",
+      "event": "Military City Collegiate",
+      "points": [
+        "Individual champion and only player under par in the field",
+        "Played in a tough scoring environment with clear separation pressure",
+        "Strong evidence of difficult-condition scoring value under resistance",
+        "Led UTSA to the team title at TPC San Antonio in gusting conditions"
+      ]
+    },
+    {
+      "badge": "Ceiling / Conversion",
+      "event": "Golden Nugget Invitational",
+      "points": [
+        "Solo 3rd finish with a full-event contention profile",
+        "64 (-8) tied the 18-hole school record",
+        "134 (-10) tied the 36-hole school record over 36 holes",
+        "Clear evidence of scoring ceiling, conversion, and team-impact value"
+      ]
+    },
+    {
+      "badge": "Trajectory",
+      "event": "Fall to Spring Progression",
+      "points": [
+        "Fall finishes of 9-12-24-55 reflected a normal early NCAA adjustment phase",
+        "Spring opened with a 3-1-3-48-10 run, showing a clear competitive rebound",
+        "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
+        "The profile is defined by progression, repeat results, and expanding finish volume"
+      ]
+    }
     ],
 
     "projectedRoleTitle": "Projected College Role",
