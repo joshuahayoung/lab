@@ -91,7 +91,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* 1. 기본 설정 */
+    
     html, body {
       margin: 0; padding: 0; width: 100%; overflow-x: hidden; 
       font-family: 'Montserrat', sans-serif;
@@ -99,15 +99,15 @@
     }
     * { box-sizing: border-box; }
 
-    /* [상단 헤더 기본 스타일] */
+    
     .sticky-top {
       position: absolute; top: 0; left: 0; z-index: 1000; width: 100%;
       background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      /* 우아한 등장을 위한 트랜지션 */
+      
       transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
     }
 
-    /* 스크롤 시 내려와 고정되는 상태 */
+    
     .sticky-top.scrolled {
       position: fixed;
       top: 0;
@@ -117,7 +117,7 @@
       background: rgba(255, 255, 255, 0.98);
     }
 
-    /* 위로 올라갈 때 '스르르륵' 사라지는 상태 */
+    
     .sticky-top.preparing {
       position: fixed;
       top: 0;
@@ -133,35 +133,40 @@
       font-weight: 400;
     }
 
-    /* 헤더 래퍼: 데스크탑/모바일 공용 */
+    
     .header-wrapper {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 80px;
     }
 
-    /* 로고 영역 */
+    
     .logo-area { display: flex; align-items: center; text-decoration: none; color: #333; }
     .logo-img { height: 50px; width: auto; display: block; }
     .logo-text { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; margin-left: 12px; }
 
-    /* 데스크탑 메뉴 */
+    
     .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a {
       text-decoration: none; color: #444; font-family: 'Oswald', sans-serif;
       font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
-    /* News & Media 활성화 스타일 */
+
+    .nav-links a:hover {
+    background-color: #F15A22 !important;
+    color: #fff !important;
+   }
+    
     .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
     .mobile-menu-logo, .close-menu, .menu-footer { display: none; }
 
-    /* 메뉴 토글 버튼 */
+    
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
       background: none; border: none; color: #F15A22;
     }
 
-    /* TOP 버튼 스타일 */
+    
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
@@ -172,7 +177,7 @@
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* [모바일 반응형] */
+    
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: space-between; gap: 0; }
       .menu-toggle { display: block; order: 2; }
@@ -192,6 +197,11 @@
       
       .nav-links a { width: 100%; padding: 12px 20px; border-bottom: none; }
       .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
+      .nav-links a:hover,
+      .nav-links a.active {
+      background-color: #F15A22 !important;
+      color: #fff !important;
+     }
 
       .mobile-menu-logo { display: block; margin-bottom: 30px; } 
       .mobile-menu-logo img { height: 35px; }
@@ -228,7 +238,9 @@
       <nav class="nav-links" id="navLinks">
         <span class="close-menu" onclick="toggleMenu()">✕</span>
         <div class="mobile-menu-logo">
+          <a href="index.html" class="logo-area">
             <img src="images/joshua-hong-logo-nombre.jpg" alt="Joshua Hong">
+             </a>
         </div>
         
         <a href="index.html">Home</a>
