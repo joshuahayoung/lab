@@ -169,21 +169,25 @@
       "url": "news-media.html",
       "desc": "External validation, coverage, and public-facing references connected to performance milestones."
     },
-    {
-      "name": "Junior Career",
-      "url": "junior-career.html",
-      "desc": "Pre-college progression, season-champion track, win streak context, and growth history."
-    },
+
     {
       "name": "Reference & Links",
       "url": "reference-links.html",
       "desc": "Official external links for deeper review, independent verification, and follow-up evaluation."
     },
+
+    {
+      "name": "Junior Career",
+      "url": "junior-career.html",
+      "desc": "Pre-college progression, season-champion track, win streak context, and growth history."
+    },
+    
     {
       "name": "WAGR",
       "url": "https://www.wagr.com/playerprofile/joshua-hong-40704",
       "desc": "Official world amateur ranking reference for current global positioning and external market context."
     },
+    
     {
       "name": "Clippd / Scoreboard",
       "url": "https://scoreboard.clippd.com/players/38903?season=2026",
