@@ -148,47 +148,82 @@
 
 "awardsRecords": {
   "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
-  "title": "Awards & Program Records",
-  "subtitle": "Official recognition, record-level milestones, and season-end validation markers that strengthen the overall performance profile.",
+  "title": "Awards, Selection & Record Tracking",
+  "subtitle": "Conference recognition, postseason selection pathways, and program-level record tracking tied to the full freshman season body of work.",
   "cards": [
     {
       "tier": "primary",
-      "badge": "Official Recognition",
-      "title": "Conference-Level Recognition",
+      "badge": "Recognition",
+      "title": "Conference & Season-End Recognition",
       "items": [
         {
           "label": "AAC Player of the Week",
           "status": "Official",
           "note": "Conference-issued weekly recognition tied directly to on-course performance."
+        },
+        {
+          "label": "All-American Conference Team",
+          "status": "Tracking",
+          "note": "Season-end all-conference recognition watch based on full-body scoring value, finish profile, and overall contribution."
+        },
+        {
+          "label": "Freshman of the Year",
+          "status": "Tracking",
+          "note": "Conference freshman honor watch tied to full-season impact, consistency, and scoring profile."
+        },
+        {
+          "label": "All-Freshman Team",
+          "status": "Tracking",
+          "note": "Conference freshman recognition watch based on season-long performance and role value."
         }
       ]
     },
     {
       "tier": "secondary",
-      "badge": "Record Watch",
-      "title": "Program Record Tracking",
+      "badge": "Selection",
+      "title": "Postseason Qualification & Regional Pathway",
       "items": [
         {
-          "label": "18-hole school record",
-          "status": "Tied",
-          "note": "64 (-8) matched the current program benchmark for a single round."
+          "label": "NCAA Regional Individual Selection",
+          "status": "Tracking",
+          "note": "Individual postseason pathway tied to season-long scoring profile, ranking position, and qualifying status."
         },
         {
-          "label": "36-hole school record",
-          "status": "Tied",
-          "note": "134 (-10) matched the current program benchmark through 36 holes."
+          "label": "Regional Individual Positioning",
+          "status": "Tracking",
+          "note": "Performance profile remains relevant to individual postseason discussion if automatic team qualification does not apply."
+        },
+        {
+          "label": "Postseason Validation Marker",
+          "status": "Watch",
+          "note": "Regional-level individual qualification would serve as an additional external validation point for the full season."
         }
       ]
     },
     {
       "tier": "tertiary",
-      "badge": "Season Watch",
-      "title": "Additional Season Markers",
+      "badge": "Record Watch",
+      "title": "Program Record & Historical Tracking",
       "items": [
         {
-          "label": "Freshman of the Year watch",
+          "label": "18-hole program record",
+          "status": "Tied",
+          "note": "64 (-8) matched the current UTSA single-round benchmark."
+        },
+        {
+          "label": "36-hole program record",
+          "status": "Tied",
+          "note": "134 (-10) matched the current UTSA 36-hole benchmark."
+        },
+        {
+          "label": "UTSA season scoring average record",
           "status": "Tracking",
-          "note": "Season-end conference recognition watch based on full freshman-year body of work."
+          "note": "Freshman-season scoring pace remains relevant in relation to the current program single-season benchmark."
+        },
+        {
+          "label": "Freshman season benchmark",
+          "status": "Tracking",
+          "note": "Season profile remains relevant in relation to the strongest freshman-year scoring standard in program context."
         }
       ]
     }
