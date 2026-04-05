@@ -2409,6 +2409,314 @@
 
 
 
+<section class="ts-section" id="ts-awards-records-section">
+  <style>
+    #ts-awards-records-section .ts-ar-wrap{
+      position:relative;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at top right, rgba(255,140,0,.10), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.028) 0%, rgba(255,255,255,.014) 100%),
+        rgba(10,14,22,.88);
+      box-shadow:0 12px 30px rgba(0,0,0,.16);
+    }
+
+    #ts-awards-records-section .ts-ar-head{
+      padding:26px 24px 18px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.022) 0%, rgba(255,255,255,.008) 100%);
+    }
+
+    #ts-awards-records-section .ts-ar-kicker{
+      margin:0 0 8px;
+      font-size:.72rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(255,171,92,.92);
+      font-weight:700;
+    }
+
+    #ts-awards-records-section .ts-ar-title{
+      margin:0;
+      font-size:1.56rem;
+      line-height:1.1;
+      letter-spacing:-.02em;
+    }
+
+    #ts-awards-records-section .ts-ar-subtitle{
+      margin:8px 0 0;
+      max-width:860px;
+      color:rgba(255,255,255,.74);
+      font-size:.96rem;
+      line-height:1.55;
+    }
+
+    #ts-awards-records-section .ts-ar-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      padding:22px 24px 26px;
+    }
+
+    #ts-awards-records-section .ts-ar-card{
+      position:relative;
+      border-radius:20px;
+      padding:18px 18px 16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.028);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+      min-height:100%;
+    }
+
+    #ts-awards-records-section .ts-ar-card--primary{
+      background:
+        linear-gradient(180deg, rgba(255,149,0,.08) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.03);
+      border-color:rgba(255,168,74,.22);
+    }
+
+    #ts-awards-records-section .ts-ar-card--secondary{
+      background:
+        linear-gradient(180deg, rgba(97,165,255,.075) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.03);
+      border-color:rgba(97,165,255,.18);
+    }
+
+    #ts-awards-records-section .ts-ar-card--tertiary{
+      background:
+        linear-gradient(180deg, rgba(210,210,210,.06) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.03);
+      border-color:rgba(255,255,255,.12);
+    }
+
+    #ts-awards-records-section .ts-ar-card-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+
+    #ts-awards-records-section .ts-ar-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:92px;
+      height:28px;
+      padding:0 12px;
+      border-radius:999px;
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    #ts-awards-records-section .ts-ar-card--primary .ts-ar-badge{
+      background:rgba(255,153,51,.14);
+      color:rgba(255,188,109,.95);
+    }
+
+    #ts-awards-records-section .ts-ar-card--secondary .ts-ar-badge{
+      background:rgba(97,165,255,.14);
+      color:rgba(165,207,255,.95);
+    }
+
+    #ts-awards-records-section .ts-ar-card--tertiary .ts-ar-badge{
+      background:rgba(255,255,255,.08);
+      color:rgba(255,255,255,.84);
+    }
+
+    #ts-awards-records-section .ts-ar-card-title{
+      margin:0 0 12px;
+      font-size:1rem;
+      line-height:1.32;
+      font-weight:700;
+    }
+
+    #ts-awards-records-section .ts-ar-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    #ts-awards-records-section .ts-ar-item{
+      padding:11px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    #ts-awards-records-section .ts-ar-item-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:4px;
+    }
+
+    #ts-awards-records-section .ts-ar-item-label{
+      font-size:.94rem;
+      line-height:1.36;
+      font-weight:600;
+    }
+
+    #ts-awards-records-section .ts-ar-item-status{
+      white-space:nowrap;
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.72);
+    }
+
+    #ts-awards-records-section .ts-ar-item-note{
+      margin:0;
+      font-size:.83rem;
+      line-height:1.46;
+      color:rgba(255,255,255,.64);
+    }
+
+    #ts-awards-records-section .ts-ar-empty{
+      padding:14px 12px;
+      border-radius:14px;
+      background:rgba(255,255,255,.022);
+      border:1px dashed rgba(255,255,255,.08);
+      font-size:.88rem;
+      line-height:1.5;
+      color:rgba(255,255,255,.58);
+    }
+
+    @media (max-width:1080px){
+      #ts-awards-records-section .ts-ar-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      #ts-awards-records-section .ts-ar-head{
+        padding:22px 18px 16px;
+      }
+
+      #ts-awards-records-section .ts-ar-title{
+        font-size:1.34rem;
+      }
+
+      #ts-awards-records-section .ts-ar-grid{
+        padding:18px;
+        gap:14px;
+      }
+
+      #ts-awards-records-section .ts-ar-card{
+        padding:16px 15px 14px;
+        border-radius:18px;
+      }
+    }
+  </style>
+
+  <div class="ts-ar-wrap">
+    <div class="ts-ar-head">
+      <p class="ts-ar-kicker" id="ts-ar-kicker">OFFICIAL RECOGNITION & RECORD WATCH</p>
+      <h2 class="ts-ar-title" id="ts-ar-title">Awards &amp; Program Records</h2>
+      <p class="ts-ar-subtitle" id="ts-ar-subtitle">
+        Official postseason recognition, program-level record tracking, and validation markers following the 2025–26 season.
+      </p>
+    </div>
+
+    <div class="ts-ar-grid" id="ts-ar-grid"></div>
+  </div>
+
+  <script>
+    (function () {
+      var sectionRoot = document.getElementById('ts-awards-records-section');
+      if (!sectionRoot) return;
+
+      function esc(str) {
+        return String(str == null ? '' : str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function itemHTML(item) {
+        return (
+          '<li class="ts-ar-item">' +
+            '<div class="ts-ar-item-top">' +
+              '<span class="ts-ar-item-label">' + esc(item.label || '') + '</span>' +
+              (item.status ? '<span class="ts-ar-item-status">' + esc(item.status) + '</span>' : '') +
+            '</div>' +
+            (item.note ? '<p class="ts-ar-item-note">' + esc(item.note) + '</p>' : '') +
+          '</li>'
+        );
+      }
+
+      function cardHTML(card, index) {
+        var tierClass = 'ts-ar-card--tertiary';
+        if (card.tier === 'primary' || index === 0) tierClass = 'ts-ar-card--primary';
+        if (card.tier === 'secondary' || index === 1) tierClass = 'ts-ar-card--secondary';
+        if (card.tier === 'tertiary' || index === 2) tierClass = 'ts-ar-card--tertiary';
+
+        var items = Array.isArray(card.items) && card.items.length
+          ? '<ul class="ts-ar-list">' + card.items.map(itemHTML).join('') + '</ul>'
+          : '<div class="ts-ar-empty">No official items added yet.</div>';
+
+        return (
+          '<article class="ts-ar-card ' + tierClass + '">' +
+            '<div class="ts-ar-card-head">' +
+              '<span class="ts-ar-badge">' + esc(card.badge || '') + '</span>' +
+            '</div>' +
+            '<h3 class="ts-ar-card-title">' + esc(card.title || '') + '</h3>' +
+            items +
+          '</article>'
+        );
+      }
+
+      function renderAwardsBlock(snapshotData) {
+        if (!snapshotData || !snapshotData.awardsRecords) return;
+
+        var block = snapshotData.awardsRecords;
+        var kicker = document.getElementById('ts-ar-kicker');
+        var title = document.getElementById('ts-ar-title');
+        var subtitle = document.getElementById('ts-ar-subtitle');
+        var grid = document.getElementById('ts-ar-grid');
+
+        if (kicker && block.kicker) kicker.textContent = block.kicker;
+        if (title && block.title) title.textContent = block.title;
+        if (subtitle && block.subtitle) subtitle.textContent = block.subtitle;
+
+        if (!grid) return;
+
+        if (!Array.isArray(block.cards) || !block.cards.length) {
+          grid.innerHTML = '<div class="ts-ar-empty">No awards or records loaded yet.</div>';
+          return;
+        }
+
+        grid.innerHTML = block.cards.slice(0, 3).map(cardHTML).join('');
+      }
+
+      /*
+        중요:
+        아래 window.snapshotPageData 는
+        관리자님이 현재 페이지에서 쓰는 JSON 전역 변수명으로 바꾸시면 됩니다.
+
+        예:
+        window.snapshotPageData = data;
+        window.snapshotPageData = snapshotData;
+      */
+      if (window.snapshotPageData) {
+        renderAwardsBlock(window.snapshotPageData);
+      } else {
+        console.warn('Awards block: window.snapshotPageData is not defined.');
+      }
+    })();
+  </script>
+</section>
 
 	  
     <section class="ts-section">
@@ -2998,7 +3306,7 @@
           signatureGrid.appendChild(div);
         });
       }
-
+	  window.snapshotPageData = data;
       const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
