@@ -3,7 +3,6 @@
     "lastUpdated": "April 2, 2026",
     "status": "in-season"
   },
-
   "hero": {
     "eyebrow": "Transfer Snapshot",
     "title": "Joshua Hong",
@@ -11,14 +10,12 @@
     "definition": "High-reliability freshman scorer with proven lineup value and a profile that projects to higher-level competition.",
     "supporting": "Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling."
   },
-
   "quickSummary": [
     "Immediate freshman lineup value with strong counting reliability and low round-to-round volatility.",
     "Includes an individual win and multiple top-3 and top-10 finishes across the season.",
     "Performs well in difficult scoring environments and holds value when conditions become more demanding.",
     "Already built on real lineup evidence, with clear room for further growth in a stronger daily competitive environment."
   ],
-
   "heroStrip": [
     {
       "label": "Official Rounds",
@@ -37,7 +34,6 @@
       "value": "3.4"
     }
   ],
-
   "metrics": [
     {
       "label": "Clippd Adjusted Avg",
@@ -81,7 +77,6 @@
       "note": "Current Clippd ranking."
     }
   ],
-
   "progression": {
     "stages": [
       {
@@ -101,122 +96,119 @@
       }
     ]
   },
-
- "evidenceProjection": {
-  "cards": [
-    {
-      "badge": "Difficult-Condition Win",
-      "event": "Military City Collegiate",
-      "points": [
-        "Individual champion and only player under par in the field",
-        "Played in a tough scoring environment with clear separation pressure",
-        "Strong evidence of difficult-condition scoring value under resistance",
-        "Led UTSA to the team title at TPC San Antonio in gusting conditions"
-      ]
-    },
-    {
-      "badge": "Ceiling / Conversion",
-      "event": "Golden Nugget Invitational",
-      "points": [
-        "Solo 3rd finish with a full-event contention profile",
-        "64 (-8) tied the 18-hole school record",
-        "134 (-10) tied the 36-hole school record over 36 holes",
-        "Led UTSA to a team runner-up finish, reinforcing scoring ceiling and conversion value"
-      ]
-    },
-    {
-      "badge": "Trajectory",
-      "event": "Fall to Spring Progression",
-      "points": [
-        "Fall finishes of 9-12-24-55 reflected a normal early NCAA adjustment phase",
-        "Spring opened with a 3-1-3-48-10 run, showing a clear competitive rebound",
-        "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
-        "The profile is defined by progression, repeat results, and expanding finish volume"
-      ]
-    }
-    ],
-
-
-"awardsRecords": {
-  "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
-  "title": "Awards & Program Records",
-  "subtitle": "Official postseason recognition, program-level record tracking, and validation markers following the 2025–26 season.",
-  "cards": [
-    {
-      "tier": "primary",
-      "badge": "Tier 1",
-      "title": "Major Recognition",
-      "items": [
-        {
-          "label": "AAC Freshman of the Year",
-          "status": "Projected",
-          "note": "Conference postseason recognition pending official release."
-        },
-        {
-          "label": "All-Conference Team",
-          "status": "Projected",
-          "note": "Expected to enter postseason consideration based on season-long performance."
-        },
-        {
-          "label": "AAC Player of the Week",
-          "status": "Confirmed",
-          "note": "Official weekly conference recognition already earned during the season."
-        },
-        {
-          "label": "NCAA Regional Individual",
-          "status": "Watch",
-          "note": "To be confirmed following conference championship and selection process."
-        }
-      ]
-    },
-    {
-      "tier": "secondary",
-      "badge": "Tier 2",
-      "title": "Program Record Watch",
-      "items": [
-        {
-          "label": "18-Hole School Record",
-          "status": "Confirmed",
-          "note": "Tied the UTSA program record with 64 (-8)."
-        },
-        {
-          "label": "36-Hole School Record",
-          "status": "Confirmed",
-          "note": "Tied the UTSA program record at 134 (-10)."
-        },
-        {
-          "label": "Single-Season Scoring Average Record",
-          "status": "Tracking",
-          "note": "Currently positioned to challenge the existing all-time single-season mark."
-        }
-      ]
-    },
-    {
-      "tier": "tertiary",
-      "badge": "Tier 3",
-      "title": "Additional Validation",
-      "items": [
-        {
-          "label": "Five Top-10 Finishes",
-          "status": "Confirmed",
-          "note": "Includes three top-3 finishes and one collegiate win."
-        },
-        {
-          "label": "17 Par-or-Better Rounds",
-          "status": "Confirmed",
-          "note": "Built on consistency, low round volatility, and repeat contribution."
-        },
-        {
-          "label": "27-Round Official Sample",
-          "status": "Confirmed",
-          "note": "Sufficient season volume for reliable evaluation and lineup translation."
-        }
-      ]
-    }
-  ]
-},
-
-   
+  "evidenceProjection": {
+    "cards": [
+      {
+        "badge": "Difficult-Condition Win",
+        "event": "Military City Collegiate",
+        "points": [
+          "Individual champion and only player under par in the field",
+          "Played in a tough scoring environment with clear separation pressure",
+          "Strong evidence of difficult-condition scoring value under resistance",
+          "Led UTSA to the team title at TPC San Antonio in gusting conditions"
+        ]
+      },
+      {
+        "badge": "Ceiling / Conversion",
+        "event": "Golden Nugget Invitational",
+        "points": [
+          "Solo 3rd finish with a full-event contention profile",
+          "64 (-8) tied the 18-hole school record",
+          "134 (-10) tied the 36-hole school record over 36 holes",
+          "Led UTSA to a team runner-up finish, reinforcing scoring ceiling and conversion value"
+        ]
+      },
+      {
+        "badge": "Trajectory",
+        "event": "Fall to Spring Progression",
+        "points": [
+          "Fall finishes of 9-12-24-55 reflected a normal early NCAA adjustment phase",
+          "Spring opened with a 3-1-3-48-10 run, showing a clear competitive rebound",
+          "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
+          "The profile is defined by progression, repeat results, and expanding finish volume"
+        ]
+      }
+    ]
+  },
+  "awardsRecords": {
+    "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
+    "title": "Awards & Program Records",
+    "subtitle": "Official postseason recognition, program-level record tracking, and validation markers following the 2025–26 season.",
+    "cards": [
+      {
+        "tier": "primary",
+        "badge": "Tier 1",
+        "title": "Major Recognition",
+        "items": [
+          {
+            "label": "AAC Freshman of the Year",
+            "status": "Projected",
+            "note": "Conference postseason recognition pending official release."
+          },
+          {
+            "label": "All-Conference Team",
+            "status": "Projected",
+            "note": "Expected to enter postseason consideration based on season-long performance."
+          },
+          {
+            "label": "AAC Player of the Week",
+            "status": "Confirmed",
+            "note": "Official weekly conference recognition already earned during the season."
+          },
+          {
+            "label": "NCAA Regional Individual",
+            "status": "Watch",
+            "note": "To be confirmed following conference championship and selection process."
+          }
+        ]
+      },
+      {
+        "tier": "secondary",
+        "badge": "Tier 2",
+        "title": "Program Record Watch",
+        "items": [
+          {
+            "label": "18-Hole School Record",
+            "status": "Confirmed",
+            "note": "Tied the UTSA program record with 64 (-8)."
+          },
+          {
+            "label": "36-Hole School Record",
+            "status": "Confirmed",
+            "note": "Tied the UTSA program record at 134 (-10)."
+          },
+          {
+            "label": "Single-Season Scoring Average Record",
+            "status": "Tracking",
+            "note": "Currently positioned to challenge the existing all-time single-season mark."
+          }
+        ]
+      },
+      {
+        "tier": "tertiary",
+        "badge": "Tier 3",
+        "title": "Additional Validation",
+        "items": [
+          {
+            "label": "Five Top-10 Finishes",
+            "status": "Confirmed",
+            "note": "Includes three top-3 finishes and one collegiate win."
+          },
+          {
+            "label": "17 Par-or-Better Rounds",
+            "status": "Confirmed",
+            "note": "Built on consistency, low round volatility, and repeat contribution."
+          },
+          {
+            "label": "27-Round Official Sample",
+            "status": "Confirmed",
+            "note": "Sufficient season volume for reliable evaluation and lineup translation."
+          }
+        ]
+      }
+    ]
+  },
+  "roleProjection": {
     "projectedRoleTitle": "Projected College Role",
     "projectedRoleBody": "Profiles as an immediate lineup option rather than a long-term development piece, with dependable travel-roster value and counting-round reliability in a stronger competitive environment.",
     "translationLabel": "Roster Translation",
@@ -224,7 +216,6 @@
     "developmentLabel": "Development Outlook",
     "developmentText": "Year-by-year scoring improvement and sustained low-round progression suggest room for further growth under stronger daily competition and more demanding weekly fields."
   },
-
   "cultureFit": [
     "Exceptional work ethic noted by coaches",
     "Comfortable in stronger fields and demanding conditions",
@@ -232,13 +223,11 @@
     "Professional conduct and team-oriented behavior",
     "Long-term development mindset"
   ],
-
   "transferObjective": {
     "body": "Pursuing the next competitive step through deeper fields, expanded high-level tournament exposure, and a development environment aligned with long-term professional goals and the PGA U pathway.",
     "noteLabel": "Positioning Note",
     "noteText": "Appreciative of the growth and opportunities provided within the current program, while recognizing that the next stage of development may be better served in a different performance environment."
   },
-
   "links": [
     {
       "name": "NCAA Stats",
@@ -250,32 +239,27 @@
       "url": "news-media.html",
       "desc": "External validation, coverage, and public-facing references connected to performance milestones."
     },
-
     {
       "name": "Reference & Links",
       "url": "reference-links.html",
       "desc": "Official external links for deeper review, independent verification, and follow-up evaluation."
     },
-
     {
       "name": "Junior Career",
       "url": "junior-career.html",
       "desc": "Pre-college progression, season-champion track, win streak context, and growth history."
     },
-    
     {
       "name": "WAGR",
       "url": "https://www.wagr.com/playerprofile/joshua-hong-40704",
       "desc": "Official world amateur ranking reference for current global positioning and external market context."
     },
-    
     {
       "name": "Clippd / Scoreboard",
       "url": "https://scoreboard.clippd.com/players/38903?season=2026",
       "desc": "Event-level scoring verification, player pages, and field-relative performance review."
     }
   ],
-
   "contact": {
     "sectionTitle": "Program Contact",
     "sectionSubtitle": "For direct program inquiries",
