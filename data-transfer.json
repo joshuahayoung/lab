@@ -149,17 +149,17 @@
 "awardsRecords": {
   "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
   "title": "Awards & Program Records",
-  "subtitle": "Official postseason recognition, program-level record tracking, and validation markers following the 2025–26 season.",
+  "subtitle": "Official recognition, record-level milestones, and season-end validation markers that strengthen the overall performance profile.",
   "cards": [
     {
       "tier": "primary",
       "badge": "Official Recognition",
-      "title": "Postseason Awards",
+      "title": "Conference-Level Recognition",
       "items": [
         {
           "label": "AAC Player of the Week",
           "status": "Official",
-          "note": "Conference-recognized weekly performance marker."
+          "note": "Conference-issued weekly recognition tied directly to on-course performance."
         }
       ]
     },
@@ -171,24 +171,24 @@
         {
           "label": "18-hole school record",
           "status": "Tied",
-          "note": "64 (-8) tied the program record."
+          "note": "64 (-8) matched the current program benchmark for a single round."
         },
         {
           "label": "36-hole school record",
           "status": "Tied",
-          "note": "134 (-10) tied the program record."
+          "note": "134 (-10) matched the current program benchmark through 36 holes."
         }
       ]
     },
     {
       "tier": "tertiary",
-      "badge": "Season Markers",
-      "title": "Additional Validation",
+      "badge": "Season Watch",
+      "title": "Additional Season Markers",
       "items": [
         {
           "label": "Freshman of the Year watch",
           "status": "Tracking",
-          "note": "Season-end conference recognition watch item."
+          "note": "Season-end conference recognition watch based on full freshman-year body of work."
         }
       ]
     }
