@@ -136,6 +136,87 @@
     }
     ],
 
+
+"awardsRecords": {
+  "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
+  "title": "Awards & Program Records",
+  "subtitle": "Official postseason recognition, program-level record tracking, and validation markers following the 2025–26 season.",
+  "cards": [
+    {
+      "tier": "primary",
+      "badge": "Tier 1",
+      "title": "Major Recognition",
+      "items": [
+        {
+          "label": "AAC Freshman of the Year",
+          "status": "Projected",
+          "note": "Conference postseason recognition pending official release."
+        },
+        {
+          "label": "All-Conference Team",
+          "status": "Projected",
+          "note": "Expected to enter postseason consideration based on season-long performance."
+        },
+        {
+          "label": "AAC Player of the Week",
+          "status": "Confirmed",
+          "note": "Official weekly conference recognition already earned during the season."
+        },
+        {
+          "label": "NCAA Regional Individual",
+          "status": "Watch",
+          "note": "To be confirmed following conference championship and selection process."
+        }
+      ]
+    },
+    {
+      "tier": "secondary",
+      "badge": "Tier 2",
+      "title": "Program Record Watch",
+      "items": [
+        {
+          "label": "18-Hole School Record",
+          "status": "Confirmed",
+          "note": "Tied the UTSA program record with 64 (-8)."
+        },
+        {
+          "label": "36-Hole School Record",
+          "status": "Confirmed",
+          "note": "Tied the UTSA program record at 134 (-10)."
+        },
+        {
+          "label": "Single-Season Scoring Average Record",
+          "status": "Tracking",
+          "note": "Currently positioned to challenge the existing all-time single-season mark."
+        }
+      ]
+    },
+    {
+      "tier": "tertiary",
+      "badge": "Tier 3",
+      "title": "Additional Validation",
+      "items": [
+        {
+          "label": "Five Top-10 Finishes",
+          "status": "Confirmed",
+          "note": "Includes three top-3 finishes and one collegiate win."
+        },
+        {
+          "label": "17 Par-or-Better Rounds",
+          "status": "Confirmed",
+          "note": "Built on consistency, low round volatility, and repeat contribution."
+        },
+        {
+          "label": "27-Round Official Sample",
+          "status": "Confirmed",
+          "note": "Sufficient season volume for reliable evaluation and lineup translation."
+        }
+      ]
+    }
+  ]
+},
+
+   
     "projectedRoleTitle": "Projected College Role",
     "projectedRoleBody": "Profiles as an immediate lineup option rather than a long-term development piece, with dependable travel-roster value and counting-round reliability in a stronger competitive environment.",
     "translationLabel": "Roster Translation",
