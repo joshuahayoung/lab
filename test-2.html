@@ -2629,93 +2629,6 @@
 
     <div class="ts-ar-grid" id="ts-ar-grid"></div>
   </div>
-
-  <script>
-    (function () {
-      var sectionRoot = document.getElementById('ts-awards-records-section');
-      if (!sectionRoot) return;
-
-      function esc(str) {
-        return String(str == null ? '' : str)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      }
-
-      function itemHTML(item) {
-        return (
-          '<li class="ts-ar-item">' +
-            '<div class="ts-ar-item-top">' +
-              '<span class="ts-ar-item-label">' + esc(item.label || '') + '</span>' +
-              (item.status ? '<span class="ts-ar-item-status">' + esc(item.status) + '</span>' : '') +
-            '</div>' +
-            (item.note ? '<p class="ts-ar-item-note">' + esc(item.note) + '</p>' : '') +
-          '</li>'
-        );
-      }
-
-      function cardHTML(card, index) {
-        var tierClass = 'ts-ar-card--tertiary';
-        if (card.tier === 'primary' || index === 0) tierClass = 'ts-ar-card--primary';
-        if (card.tier === 'secondary' || index === 1) tierClass = 'ts-ar-card--secondary';
-        if (card.tier === 'tertiary' || index === 2) tierClass = 'ts-ar-card--tertiary';
-
-        var items = Array.isArray(card.items) && card.items.length
-          ? '<ul class="ts-ar-list">' + card.items.map(itemHTML).join('') + '</ul>'
-          : '<div class="ts-ar-empty">No official items added yet.</div>';
-
-        return (
-          '<article class="ts-ar-card ' + tierClass + '">' +
-            '<div class="ts-ar-card-head">' +
-              '<span class="ts-ar-badge">' + esc(card.badge || '') + '</span>' +
-            '</div>' +
-            '<h3 class="ts-ar-card-title">' + esc(card.title || '') + '</h3>' +
-            items +
-          '</article>'
-        );
-      }
-
-      function renderAwardsBlock(snapshotData) {
-        if (!snapshotData || !snapshotData.awardsRecords) return;
-
-        var block = snapshotData.awardsRecords;
-        var kicker = document.getElementById('ts-ar-kicker');
-        var title = document.getElementById('ts-ar-title');
-        var subtitle = document.getElementById('ts-ar-subtitle');
-        var grid = document.getElementById('ts-ar-grid');
-
-        if (kicker && block.kicker) kicker.textContent = block.kicker;
-        if (title && block.title) title.textContent = block.title;
-        if (subtitle && block.subtitle) subtitle.textContent = block.subtitle;
-
-        if (!grid) return;
-
-        if (!Array.isArray(block.cards) || !block.cards.length) {
-          grid.innerHTML = '<div class="ts-ar-empty">No awards or records loaded yet.</div>';
-          return;
-        }
-
-        grid.innerHTML = block.cards.slice(0, 3).map(cardHTML).join('');
-      }
-
-      /*
-        중요:
-        아래 window.snapshotPageData 는
-        관리자님이 현재 페이지에서 쓰는 JSON 전역 변수명으로 바꾸시면 됩니다.
-
-        예:
-        window.snapshotPageData = data;
-        window.snapshotPageData = snapshotData;
-      */
-      if (window.snapshotPageData) {
-        renderAwardsBlock(window.snapshotPageData);
-      } else {
-        console.warn('Awards block: window.snapshotPageData is not defined.');
-      }
-    })();
-  </script>
 </section>
 
 	  
@@ -3202,9 +3115,76 @@
 
   </main>
 
- <script>
+<script>
   function asArray(value) {
     return Array.isArray(value) ? value : [];
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function renderAwardsBlock(snapshotData) {
+    if (!snapshotData || !snapshotData.awardsRecords) return;
+
+    const block = snapshotData.awardsRecords;
+
+    const kicker = document.getElementById('ts-ar-kicker');
+    const title = document.getElementById('ts-ar-title');
+    const subtitle = document.getElementById('ts-ar-subtitle');
+    const grid = document.getElementById('ts-ar-grid');
+
+    if (kicker && block.kicker) kicker.textContent = block.kicker;
+    if (title && block.title) title.textContent = block.title;
+    if (subtitle && block.subtitle) subtitle.textContent = block.subtitle;
+
+    if (!grid) return;
+
+    const cards = asArray(block.cards);
+
+    if (!cards.length) {
+      grid.innerHTML = '<div class="ts-ar-empty">No awards or records loaded yet.</div>';
+      return;
+    }
+
+    grid.innerHTML = cards.slice(0, 3).map((card, index) => {
+      let tierClass = 'ts-ar-card--tertiary';
+      if (card.tier === 'primary' || index === 0) tierClass = 'ts-ar-card--primary';
+      else if (card.tier === 'secondary' || index === 1) tierClass = 'ts-ar-card--secondary';
+
+      const items = asArray(card.items);
+
+      const itemsHtml = items.length
+        ? `
+          <ul class="ts-ar-list">
+            ${items.map(item => `
+              <li class="ts-ar-item">
+                <div class="ts-ar-item-top">
+                  <span class="ts-ar-item-label">${escapeHtml(item.label)}</span>
+                  ${item.status ? `<span class="ts-ar-item-status">${escapeHtml(item.status)}</span>` : ''}
+                </div>
+                ${item.note ? `<p class="ts-ar-item-note">${escapeHtml(item.note)}</p>` : ''}
+              </li>
+            `).join('')}
+          </ul>
+        `
+        : `<div class="ts-ar-empty">No official items added yet.</div>`;
+
+      return `
+        <article class="ts-ar-card ${tierClass}">
+          <div class="ts-ar-card-head">
+            <span class="ts-ar-badge">${escapeHtml(card.badge)}</span>
+          </div>
+          <h3 class="ts-ar-card-title">${escapeHtml(card.title)}</h3>
+          ${itemsHtml}
+        </article>
+      `;
+    }).join('');
   }
 
   async function renderTransferSnapshot() {
@@ -3306,7 +3286,10 @@
           signatureGrid.appendChild(div);
         });
       }
-	  window.snapshotPageData = data;
+
+      window.snapshotPageData = data;
+      renderAwardsBlock(data);
+
       const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
       const projectedRoleBody = document.getElementById('projected-role-body');
       const translationLabel = document.getElementById('translation-label');
@@ -3459,6 +3442,7 @@
       }
     }
   });
-</script>	
+</script>
+	
 </body>
 </html>
