@@ -2407,6 +2407,350 @@
       </div>
     </section>
 
+
+
+<section class="ts-section" id="ts-awards-records-section">
+  <style>
+    #ts-awards-records-section{
+      --ts-ar-bg:#0b1220;
+      --ts-ar-bg-soft:#111a2b;
+      --ts-ar-panel:#0f1727;
+      --ts-ar-panel-2:#121d31;
+      --ts-ar-line:rgba(255,255,255,.10);
+      --ts-ar-line-soft:rgba(255,255,255,.06);
+      --ts-ar-white:#ffffff;
+      --ts-ar-white-strong:rgba(255,255,255,.96);
+      --ts-ar-white-mid:rgba(255,255,255,.82);
+      --ts-ar-white-soft:rgba(255,255,255,.68);
+      --ts-ar-white-faint:rgba(255,255,255,.56);
+      --ts-ar-orange:#ffb15c;
+      --ts-ar-orange-2:#f15a22;
+      --ts-ar-blue:#8dc2ff;
+      --ts-ar-blue-2:#5c96db;
+      --ts-ar-silver:#d7dde7;
+      --ts-ar-shadow:0 18px 42px rgba(0,0,0,.22);
+    }
+
+    #ts-awards-records-section .ts-ar-wrap{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--ts-ar-line);
+      border-radius:26px;
+      background:
+        radial-gradient(circle at top right, rgba(255,140,0,.14), transparent 26%),
+        radial-gradient(circle at bottom left, rgba(88,128,255,.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(255,255,255,.01) 100%),
+        linear-gradient(180deg, #0c1322 0%, #0b1220 100%);
+      box-shadow:var(--ts-ar-shadow);
+      isolation:isolate;
+    }
+
+    #ts-awards-records-section .ts-ar-wrap::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.04), transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,.05), transparent 32%);
+      opacity:.65;
+    }
+
+    #ts-awards-records-section .ts-ar-head{
+      position:relative;
+      z-index:1;
+      padding:28px 26px 18px;
+      border-bottom:1px solid var(--ts-ar-line-soft);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.028) 0%, rgba(255,255,255,.01) 100%);
+    }
+
+    #ts-awards-records-section .ts-ar-kicker{
+      margin:0 0 10px;
+      font-size:.74rem;
+      line-height:1;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--ts-ar-orange);
+      font-weight:800;
+    }
+
+    #ts-awards-records-section .ts-ar-title{
+      margin:0;
+      color:var(--ts-ar-white-strong);
+      font-size:1.65rem;
+      line-height:1.08;
+      letter-spacing:-.025em;
+      font-weight:900;
+    }
+
+    #ts-awards-records-section .ts-ar-subtitle{
+      margin:10px 0 0;
+      max-width:920px;
+      color:var(--ts-ar-white-mid);
+      font-size:.97rem;
+      line-height:1.62;
+      font-weight:500;
+    }
+
+    #ts-awards-records-section .ts-ar-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      padding:22px 24px 26px;
+    }
+
+    #ts-awards-records-section .ts-ar-card{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      border-radius:22px;
+      padding:18px 18px 16px;
+      border:1px solid var(--ts-ar-line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.025) 100%),
+        rgba(255,255,255,.02);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+      color:var(--ts-ar-white-strong);
+    }
+
+    #ts-awards-records-section .ts-ar-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      border-radius:22px 22px 0 0;
+      opacity:.98;
+    }
+
+    #ts-awards-records-section .ts-ar-card--primary{
+      background:
+        linear-gradient(180deg, rgba(255,166,77,.09) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.025);
+      border-color:rgba(255,183,111,.22);
+    }
+
+    #ts-awards-records-section .ts-ar-card--primary::before{
+      background:linear-gradient(90deg, #ffb663 0%, #f15a22 100%);
+    }
+
+    #ts-awards-records-section .ts-ar-card--secondary{
+      background:
+        linear-gradient(180deg, rgba(108,171,255,.09) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.025);
+      border-color:rgba(126,184,255,.22);
+    }
+
+    #ts-awards-records-section .ts-ar-card--secondary::before{
+      background:linear-gradient(90deg, #8fc7ff 0%, #5c96db 100%);
+    }
+
+    #ts-awards-records-section .ts-ar-card--tertiary{
+      background:
+        linear-gradient(180deg, rgba(215,221,231,.08) 0%, rgba(255,255,255,.02) 100%),
+        rgba(255,255,255,.025);
+      border-color:rgba(255,255,255,.14);
+    }
+
+    #ts-awards-records-section .ts-ar-card--tertiary::before{
+      background:linear-gradient(90deg, #dfe5ee 0%, #aab4c3 100%);
+    }
+
+    #ts-awards-records-section .ts-ar-card-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:14px;
+      padding-top:2px;
+    }
+
+    #ts-awards-records-section .ts-ar-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:94px;
+      min-height:30px;
+      padding:0 12px;
+      border-radius:999px;
+      font-size:.7rem;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+
+    #ts-awards-records-section .ts-ar-card--primary .ts-ar-badge{
+      background:rgba(255,177,92,.12);
+      border-color:rgba(255,177,92,.18);
+      color:#ffd2a1;
+    }
+
+    #ts-awards-records-section .ts-ar-card--secondary .ts-ar-badge{
+      background:rgba(141,194,255,.12);
+      border-color:rgba(141,194,255,.18);
+      color:#d3e9ff;
+    }
+
+    #ts-awards-records-section .ts-ar-card--tertiary .ts-ar-badge{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(255,255,255,.10);
+      color:rgba(255,255,255,.88);
+    }
+
+    #ts-awards-records-section .ts-ar-card-title{
+      margin:0 0 14px;
+      color:var(--ts-ar-white-strong);
+      font-size:1.04rem;
+      line-height:1.4;
+      font-weight:800;
+      letter-spacing:-.01em;
+    }
+
+    #ts-awards-records-section .ts-ar-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    #ts-awards-records-section .ts-ar-item{
+      padding:12px 13px 11px;
+      border-radius:15px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+      backdrop-filter:blur(3px);
+    }
+
+    #ts-awards-records-section .ts-ar-item-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:6px;
+    }
+
+    #ts-awards-records-section .ts-ar-item-label{
+      color:var(--ts-ar-white-strong);
+      font-size:.95rem;
+      line-height:1.42;
+      font-weight:700;
+    }
+
+    #ts-awards-records-section .ts-ar-item-status{
+      flex:0 0 auto;
+      white-space:nowrap;
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:.66rem;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--ts-ar-white-mid);
+    }
+
+    #ts-awards-records-section .ts-ar-item-note{
+      margin:0;
+      color:var(--ts-ar-white-soft);
+      font-size:.84rem;
+      line-height:1.54;
+      font-weight:500;
+    }
+
+    #ts-awards-records-section .ts-ar-empty{
+      padding:15px 13px;
+      border-radius:15px;
+      background:rgba(255,255,255,.025);
+      border:1px dashed rgba(255,255,255,.10);
+      color:var(--ts-ar-white-faint);
+      font-size:.89rem;
+      line-height:1.56;
+    }
+
+    @media (max-width:1080px){
+      #ts-awards-records-section .ts-ar-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:640px){
+      #ts-awards-records-section .ts-ar-wrap{
+        border-radius:22px;
+      }
+
+      #ts-awards-records-section .ts-ar-head{
+        padding:22px 18px 16px;
+      }
+
+      #ts-awards-records-section .ts-ar-title{
+        font-size:1.38rem;
+        line-height:1.14;
+      }
+
+      #ts-awards-records-section .ts-ar-subtitle{
+        font-size:.92rem;
+        line-height:1.58;
+      }
+
+      #ts-awards-records-section .ts-ar-grid{
+        padding:18px;
+        gap:14px;
+      }
+
+      #ts-awards-records-section .ts-ar-card{
+        padding:16px 15px 14px;
+        border-radius:18px;
+      }
+
+      #ts-awards-records-section .ts-ar-card::before{
+        border-radius:18px 18px 0 0;
+      }
+
+      #ts-awards-records-section .ts-ar-card-title{
+        font-size:.98rem;
+      }
+
+      #ts-awards-records-section .ts-ar-item{
+        padding:11px 12px 10px;
+      }
+
+      #ts-awards-records-section .ts-ar-item-top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+      }
+
+      #ts-awards-records-section .ts-ar-item-status{
+        white-space:normal;
+      }
+    }
+  </style>
+
+  <div class="ts-ar-wrap">
+    <div class="ts-ar-head">
+      <p class="ts-ar-kicker" id="ts-ar-kicker">OFFICIAL RECOGNITION &amp; RECORD WATCH</p>
+      <h2 class="ts-ar-title" id="ts-ar-title">Awards &amp; Program Records</h2>
+      <p class="ts-ar-subtitle" id="ts-ar-subtitle">
+        Official recognition, record-level milestones, and season-end validation markers that strengthen the overall performance profile.
+      </p>
+    </div>
+
+    <div class="ts-ar-grid" id="ts-ar-grid"></div>
+  </div>
+</section>
+
+	  
     <section class="ts-section">
       <div class="ts-section-header">
         <div>
@@ -2890,9 +3234,76 @@
 
   </main>
 
- <script>
+<script>
   function asArray(value) {
     return Array.isArray(value) ? value : [];
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function renderAwardsBlock(snapshotData) {
+    if (!snapshotData || !snapshotData.awardsRecords) return;
+
+    const block = snapshotData.awardsRecords;
+
+    const kicker = document.getElementById('ts-ar-kicker');
+    const title = document.getElementById('ts-ar-title');
+    const subtitle = document.getElementById('ts-ar-subtitle');
+    const grid = document.getElementById('ts-ar-grid');
+
+    if (kicker && block.kicker) kicker.textContent = block.kicker;
+    if (title && block.title) title.textContent = block.title;
+    if (subtitle && block.subtitle) subtitle.textContent = block.subtitle;
+
+    if (!grid) return;
+
+    const cards = asArray(block.cards);
+
+    if (!cards.length) {
+      grid.innerHTML = '<div class="ts-ar-empty">No awards or records loaded yet.</div>';
+      return;
+    }
+
+    grid.innerHTML = cards.slice(0, 3).map((card, index) => {
+      let tierClass = 'ts-ar-card--tertiary';
+      if (card.tier === 'primary' || index === 0) tierClass = 'ts-ar-card--primary';
+      else if (card.tier === 'secondary' || index === 1) tierClass = 'ts-ar-card--secondary';
+
+      const items = asArray(card.items);
+
+      const itemsHtml = items.length
+        ? `
+          <ul class="ts-ar-list">
+            ${items.map(item => `
+              <li class="ts-ar-item">
+                <div class="ts-ar-item-top">
+                  <span class="ts-ar-item-label">${escapeHtml(item.label)}</span>
+                  ${item.status ? `<span class="ts-ar-item-status">${escapeHtml(item.status)}</span>` : ''}
+                </div>
+                ${item.note ? `<p class="ts-ar-item-note">${escapeHtml(item.note)}</p>` : ''}
+              </li>
+            `).join('')}
+          </ul>
+        `
+        : `<div class="ts-ar-empty">No official items added yet.</div>`;
+
+      return `
+        <article class="ts-ar-card ${tierClass}">
+          <div class="ts-ar-card-head">
+            <span class="ts-ar-badge">${escapeHtml(card.badge)}</span>
+          </div>
+          <h3 class="ts-ar-card-title">${escapeHtml(card.title)}</h3>
+          ${itemsHtml}
+        </article>
+      `;
+    }).join('');
   }
 
   async function renderTransferSnapshot() {
@@ -2994,6 +3405,9 @@
           signatureGrid.appendChild(div);
         });
       }
+
+      window.snapshotPageData = data;
+      renderAwardsBlock(data);
 
       const projectedRoleHeading = document.querySelector('.ts-eval-main-title');
       const projectedRoleBody = document.getElementById('projected-role-body');
@@ -3147,6 +3561,7 @@
       }
     }
   });
-</script>	
+</script>
+	
 </body>
 </html>
