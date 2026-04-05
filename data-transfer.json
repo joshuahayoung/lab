@@ -136,6 +136,16 @@
     }
     ],
 
+   
+    "projectedRoleTitle": "Projected College Role",
+    "projectedRoleBody": "Profiles as an immediate lineup option rather than a long-term development piece, with dependable travel-roster value and counting-round reliability in a stronger competitive environment.",
+    "translationLabel": "Roster Translation",
+    "translationText": "Reliable counting-round addition with value that extends beyond baseline lineup stability.",
+    "developmentLabel": "Development Outlook",
+    "developmentText": "Year-by-year scoring improvement and sustained low-round progression suggest room for further growth under stronger daily competition and more demanding weekly fields."
+  },
+
+
 "awardsRecords": {
   "kicker": "OFFICIAL RECOGNITION & RECORD WATCH",
   "title": "Awards & Program Records",
@@ -184,17 +194,7 @@
     }
   ]
 },
-
-
-   
-    "projectedRoleTitle": "Projected College Role",
-    "projectedRoleBody": "Profiles as an immediate lineup option rather than a long-term development piece, with dependable travel-roster value and counting-round reliability in a stronger competitive environment.",
-    "translationLabel": "Roster Translation",
-    "translationText": "Reliable counting-round addition with value that extends beyond baseline lineup stability.",
-    "developmentLabel": "Development Outlook",
-    "developmentText": "Year-by-year scoring improvement and sustained low-round progression suggest room for further growth under stronger daily competition and more demanding weekly fields."
-  },
-
+  
   "cultureFit": [
     "Exceptional work ethic noted by coaches",
     "Comfortable in stronger fields and demanding conditions",
