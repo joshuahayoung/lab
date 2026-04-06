@@ -23,19 +23,19 @@
     },
 
     "summary": {
-      "total": "-",
-      "par": "-",
-      "pos": "-"
+      "total": "70",
+      "par": "E",
+      "pos": "26"
     },
 
     "rounds": [
       {
         "round": "Round 1",
         "date": "Apr 6, 2026",
-        "score": "-",
-        "par": "-",
-        "status": "-",
-        "pos": "-"
+        "score": "70",
+        "par": "E",
+        "status": "FINISH",
+        "pos": "26"
       },
       {
         "round": "Round 2",
