@@ -1201,7 +1201,7 @@
                 <div class="jtc-pos-summary">
                   <span class="jtc-summary-label">Pos</span>
                   <div class="jtc-band-body">
-                    <span class="jtc-pos-value">RAW:${summary.pos}</span>
+                    <span class="jtc-pos-value">${isUsableValue(summary.pos) ? summary.pos : "—"}</span>
                   </div>
                 </div>
               </div>
@@ -1217,7 +1217,6 @@
 
           const data = await res.json();
           const pgaData = data.pgaTableShared;
-          console.log("RAW summary.pos =", pgaData.summary?.pos);
 
           if (!pgaData) {
             container.innerHTML = "";
