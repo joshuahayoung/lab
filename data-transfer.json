@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "April 2, 2026",
+    "lastUpdated": "April 8, 2026",
     "status": "in-season"
   },
 
@@ -22,7 +22,7 @@
   "heroStrip": [
     {
       "label": "Official Rounds",
-      "value": "27"
+      "value": "30"
     },
     {
       "label": "Low Score",
@@ -30,7 +30,7 @@
     },
     {
       "label": "Par or Better",
-      "value": "17 / 27 (62.96%)"
+      "value": "18 / 30 (60.00%)"
     },
     {
       "label": "Academic GPA",
@@ -46,14 +46,14 @@
     },
     {
       "label": "Raw Scoring Avg",
-      "value": "71.52",
+      "value": "71.73",
       "note": "Freshman-season scoring baseline with stable week-to-week value."
     },
     {
       "label": "Counting Rate",
-      "value": "96.30%",
+      "value": "96.67%",
       "accent": true,
-      "note": "26 of 27 counting rounds. Strong travel-roster reliability."
+      "note": "29 of 30 counting rounds. Strong travel-roster reliability."
     },
     {
       "label": "Head-to-Head",
