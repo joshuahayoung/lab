@@ -31,21 +31,18 @@
     "rounds": [
       {
         "round": "Round 1",
-        "date": "Apr 6, 2026",
         "score": "70",
         "par": "E",
         "pos": "26"
       },
       {
         "round": "Round 2",
-        "date": "Apr 6, 2026",
         "score": "75",
         "par": "+5",
         "pos": "52"
       },
       {
         "round": "Round 3",
-        "date": "Apr 7, 2026",
         "score": "-",
         "par": "-",
         "pos": "-"
