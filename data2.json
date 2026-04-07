@@ -24,8 +24,8 @@
 
     "summary": {
       "total": "145",
-      "par": "+5",
-      "pos": "52"
+      "par": "+6",
+      "pos": "65"
     },
 
     "rounds": [
@@ -37,9 +37,9 @@
       },
       {
         "round": "Round 2",
-        "score": "75",
-        "par": "+5",
-        "pos": "52"
+        "score": "76",
+        "par": "+6",
+        "pos": "65"
       },
       {
         "round": "Round 3",
