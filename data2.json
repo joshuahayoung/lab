@@ -2,11 +2,11 @@
   "pgaTableShared": {
     "lastUpdated": "Apr 7, 2026",
 
-    "sectionTitle": "ONGOING TOURNAMENT",
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "10th Event",
     "eventLabel": "Tiger Invitational",
 
-    "status": "ongoing",
+    "status": "final",
 
     "title": "Tiger Invitational (Missouri)",
     "date": "Apr 6-7",
@@ -19,7 +19,7 @@
 
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/239556/scoring/team",
-      "label": "LIVE LEADERBOARD"
+      "label": "FINAL RESULTS"
     },
 
     "summary": {
