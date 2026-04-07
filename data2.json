@@ -34,7 +34,6 @@
         "date": "Apr 6, 2026",
         "score": "70",
         "par": "E",
-        "status": "FINISH",
         "pos": "26"
       },
       {
@@ -42,7 +41,6 @@
         "date": "Apr 6, 2026",
         "score": "75",
         "par": "+5",
-        "status": "FINISH",
         "pos": "52"
       },
       {
@@ -50,7 +48,6 @@
         "date": "Apr 7, 2026",
         "score": "-",
         "par": "-",
-        "status": "IN PROGRESS",
         "pos": "-"
       }
     ]
