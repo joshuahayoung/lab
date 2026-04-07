@@ -1217,6 +1217,7 @@
 
           const data = await res.json();
           const pgaData = data.pgaTableShared;
+          console.log("RAW summary.pos =", pgaData.summary?.pos);
 
           if (!pgaData) {
             container.innerHTML = "";
