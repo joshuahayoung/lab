@@ -1134,29 +1134,21 @@
     }
 
     function buildRoundSlots(rounds) {
-  const allRounds = getAllRounds(rounds);
+      const allRounds = getAllRounds(rounds);
 
-  return allRounds.map((round, index) => {
-    const label = roundShortLabel(round, index);
-    const score = isUsableValue(round.score) ? String(round.score).trim() : "—";
-    const par = isUsableValue(round.par) ? String(round.par).trim() : "";
-    const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
+      return allRounds.map((round, index) => {
+        const label = roundShortLabel(round, index);
+        const value = isUsableValue(round.score) ? String(round.score).trim() : "—";
+        const colorClass = isUsableValue(round.par) ? scoreClass(round.par) : "white";
 
-    const combinedValue =
-      score === "—"
-        ? "—"
-        : par
-          ? `${score} (${par})`
-          : score;
-
-    return `
-      <div class="jtc-round-chip">
-        <span class="jtc-round-chip-label">${label}</span>
-        <span class="jtc-round-chip-value ${combinedValue === "—" ? "white" : colorClass}">${combinedValue}</span>
-      </div>
-    `;
-  }).join("");
-}
+        return `
+          <div class="jtc-round-chip">
+            <span class="jtc-round-chip-label">${label}</span>
+            <span class="jtc-round-chip-value ${value === "—" ? "white" : colorClass}">${value}</span>
+          </div>
+        `;
+      }).join("");
+    }
 
     function buildCardHtml(data) {
       const badge = badgeMap(data.status);
