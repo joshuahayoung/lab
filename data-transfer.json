@@ -41,7 +41,7 @@
   "metrics": [
     {
       "label": "Clippd Adjusted Avg",
-      "value": "70.80",
+      "value": "71.10",
       "note": "Strong Division I scoring signal with real lineup value."
     },
     {
@@ -57,13 +57,13 @@
     },
     {
       "label": "Head-to-Head",
-      "value": "530-156-18",
+      "value": "564-218-21",
       "note": "Strong field-beating record; 75.28% win rate across the full sample."
     },
     {
       "label": "Points Share",
-      "value": "29.84%",
-      "note": "350.25 of 1,173.93 weighted team points."
+      "value": "28.11%",
+      "note": "370.23 of 1,317.09 weighted team points."
     },
     {
       "label": "Top Finishes",
@@ -72,12 +72,12 @@
     },
     {
       "label": "WAGR",
-      "value": "416",
+      "value": "436",
       "note": "Current world amateur ranking."
     },
     {
       "label": "Clippd Rank",
-      "value": "311",
+      "value": "367",
       "note": "Current Clippd ranking."
     }
   ],
@@ -129,9 +129,9 @@
       "event": "Fall to Spring Progression",
       "points": [
         "Fall finishes of 9-12-24-55 reflected a normal early NCAA adjustment phase",
-        "Spring opened with a 3-1-3-48-10 run, showing a clear competitive rebound",
-        "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 9 events",
-        "The profile is defined by progression, repeat results, and expanding finish volume"
+        "Spring included a 3-1-3-48-10-63 sequence, highlighted by a win and multiple top finishes",
+        "The season already includes 1 win, 3 top-3 finishes, and 5 top-10s in 10 events",
+        "The overall profile is still defined more by progression and repeat result volume than by any single week"
       ]
     }
     ],
