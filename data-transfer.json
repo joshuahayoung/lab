@@ -157,27 +157,23 @@
       "title": "Conference & Season-End Recognition",
       "items": [
         {
-          "label": "AAC Player of the Week",
-          "status": "Official",
-          "note": "Conference-issued weekly recognition tied directly to on-course performance."
+          "label": "Freshman of the Year",
+          "status": "Tracking",
+          "note": "Conference freshman honor watch tied to full-season impact, consistency, and scoring profile."
         },
+        
         {
           "label": "All-American Conference Team",
           "status": "Tracking",
           "note": "Season-end all-conference recognition watch based on full-body scoring value, finish profile, and overall contribution."
         },
+
         {
-          "label": "Freshman of the Year",
-          "status": "Tracking",
-          "note": "Conference freshman honor watch tied to full-season impact, consistency, and scoring profile."
+          "label": "AAC Player of the Week",
+          "status": "Official",
+          "note": "Conference-issued weekly recognition tied directly to on-course performance."
         },
-        {
-          "label": "All-Freshman Team",
-          "status": "Tracking",
-          "note": "Conference freshman recognition watch based on season-long performance and role value."
-        }
-      ]
-    },
+        
     {
       "tier": "secondary",
       "badge": "Selection",
