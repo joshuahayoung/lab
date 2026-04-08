@@ -23,27 +23,27 @@
     },
 
     "summary": {
-      "total": "54 holes",
-      "par": "Par 72",
-      "pos": "Pre-Tournament"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
 
     "rounds": [
       {
         "round": "Round 1",
-        "score": "E",
+        "score": "-",
         "par": "-",
         "pos": "-"
       },
       {
         "round": "Round 2",
-        "score": "E",
+        "score": "-",
         "par": "-",
         "pos": "-"
       },
       {
         "round": "Round 3",
-        "score": "E",
+        "score": "-",
         "par": "-",
         "pos": "-"
       }
