@@ -172,8 +172,10 @@
           "label": "AAC Player of the Week",
           "status": "Official",
           "note": "Conference-issued weekly recognition tied directly to on-course performance."
-        },
-        
+        }
+        ]
+    },
+    
     {
       "tier": "secondary",
       "badge": "Selection",
