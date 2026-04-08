@@ -2,26 +2,26 @@
   "status": "30 OFFICIAL ROUNDS",
   "scope": "30",
   "individual": {
-    "scoringAvg": "70.80",
+    "scoringAvg": "71.10",
     "rawAvg": "71.73",
     "underPar": "18 Par or Better (60.00%)",
     "gpa": "3.4 GPA"
   },
   "teamMetrics": {
-    "winRate": "75.28",
-    "headToHead": "530-156-18",
+    "winRate": "70.24",
+    "headToHead": "564-218-21",
     "countingScore": "96.67",
     "recordedRounds": "29 / 30",
-    "pointsShare": "29.84",
-    "pointsValue": "350.25",
-    "teamTotal": "1173.93"
+    "pointsShare": "28.11",
+    "pointsValue": "370.23",
+    "teamTotal": "1317.09"
   },
   "officialRank": {
-    "wagrRank": "430",
-    "wagrImpact": "▼13",
+    "wagrRank": "436",
+    "wagrImpact": "▼6",
     "wagrDate": "Apr 8, 2026",
-    "clippdRank": "305",
-    "clippdImpact": "▲6",
+    "clippdRank": "367",
+    "clippdImpact": "▼52",
     "clippdDate": "Apr 8, 2026",
     "wins": "1",
     "top3": "3",
