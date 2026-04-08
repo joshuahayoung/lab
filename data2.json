@@ -1,51 +1,51 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "Apr 7, 2026",
+    "lastUpdated": "Apr 8, 2026",
 
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "10th Event",
-    "eventLabel": "Tiger Invitational",
+    "sectionTitle": "UPCOMING TOURNAMENT",
+    "eventNo": "11th Event",
+    "eventLabel": "AAC Championships",
 
-    "status": "final",
+    "status": "upcoming",
 
-    "title": "Tiger Invitational (Missouri)",
-    "date": "Apr 6-7",
-    "venue": "The Club At Old Hawthorne",
-    "location": "Columbia - MO",
-    "par": 70,
-    "yards": "7,158",
-    "rating": 74.9,
-    "slope": 131,
+    "title": "American Conference Championships",
+    "date": "Apr 27-29",
+    "venue": "Ritz Carlton Members Club",
+    "location": "Sarasota, FL",
+    "par": 72,
+    "yards": "7,292",
+    "rating": 74.0,
+    "slope": 132,
 
     "mainLink": {
-      "url": "https://scoreboard.clippd.com/tournaments/239556/scoring/team",
-      "label": "FINAL RESULTS"
+      "url": "https://scoreboard.clippd.com/tournaments/239888/scoring/team",
+      "label": "LIVE LEADERBOARD"
     },
 
     "summary": {
-      "total": "221",
-      "par": "+11",
-      "pos": "T63"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
 
     "rounds": [
       {
         "round": "Round 1",
-        "score": "70",
-        "par": "E",
-        "pos": "T26"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       },
       {
         "round": "Round 2",
-        "score": "76",
-        "par": "+6",
-        "pos": "T65"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       },
       {
         "round": "Round 3",
-        "score": "75",
-        "par": "+5",
-        "pos": "T63"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       }
     ]
   }
