@@ -159,19 +159,19 @@
         {
           "label": "Freshman of the Year",
           "status": "Tracking",
-          "note": "Conference freshman honor watch tied to full-season impact, consistency, and scoring profile."
+          "note": "Conference freshman honor watch tied to full-season impact and scoring profile."
         },
         
         {
           "label": "All-American Conference Team",
           "status": "Tracking",
-          "note": "Season-end all-conference recognition watch based on full-body scoring value, finish profile, and overall contribution."
+          "note": "Season-end all-conference watch tied to scoring value and finish profile."
         },
 
         {
           "label": "AAC Player of the Week",
           "status": "Official",
-          "note": "Conference-issued weekly recognition tied directly to on-course performance."
+          "note": "Official conference recognition tied directly to performance."
         }
         ]
     },
@@ -184,17 +184,17 @@
         {
           "label": "NCAA Regional Individual Selection",
           "status": "Tracking",
-          "note": "Individual postseason pathway tied to season-long scoring profile, ranking position, and qualifying status."
+          "note": "Postseason pathway tied to scoring profile, ranking position, and selection status."
         },
         {
           "label": "Regional Individual Positioning",
           "status": "Tracking",
-          "note": "Performance profile remains relevant to individual postseason discussion if automatic team qualification does not apply."
+          "note": "Relevant to individual postseason discussion if automatic team qualification does not apply."
         },
         {
           "label": "Postseason Validation Marker",
           "status": "Watch",
-          "note": "Regional-level individual qualification would serve as an additional external validation point for the full season."
+          "note": "Regional individual qualification would provide an additional external validation point."
         }
       ]
     },
@@ -216,12 +216,12 @@
         {
           "label": "UTSA season scoring average record",
           "status": "Tracking",
-          "note": "Freshman-season scoring pace remains relevant in relation to the current program single-season benchmark."
+          "note": "Freshman scoring pace remains relevant to the current single-season benchmark."
         },
         {
           "label": "Freshman season benchmark",
           "status": "Tracking",
-          "note": "Season profile remains relevant in relation to the strongest freshman-year scoring standard in program context."
+          "note": "Season profile remains relevant within program freshman-year scoring history."
         }
       ]
     }
@@ -229,41 +229,41 @@
 },
   
   "cultureFit": [
-    "Exceptional work ethic noted by coaches",
-    "Comfortable in stronger fields and demanding conditions",
-    "Steady temperament and coachable profile",
+    "High daily work rate.",
+    "Comfortable in stronger fields and tougher conditions.",
+    "Steady temperament with coachable competitive habits.",
     "Professional conduct and team-oriented behavior",
-    "Long-term development mindset"
+    "Team-oriented and development-driven profile."
   ],
 
   "transferObjective": {
-    "body": "Pursuing the next competitive step through deeper fields, expanded high-level tournament exposure, and a development environment aligned with long-term professional goals and the PGA U pathway.",
+    "body": "Pursuing the next competitive step through deeper fields, stronger internal competition, and a development environment aligned with long-term professional goals and the PGA U pathway.",
     "noteLabel": "Positioning Note",
-    "noteText": "Appreciative of the growth and opportunities provided within the current program, while recognizing that the next stage of development may be better served in a different performance environment."
+    "noteText": "Appreciative of the current program experience and growth, while recognizing that the next development phase may be better served in a different competitive environment."
   },
 
   "links": [
     {
       "name": "NCAA Stats",
       "url": "ncaa-stats.html",
-      "desc": "Full freshman season log, event results, schedule structure, and detailed scoring archive."
+      "desc": "Full freshman season log, results, and scoring archive."
     },
     {
       "name": "News & Media",
       "url": "news-media.html",
-      "desc": "External validation, coverage, and public-facing references connected to performance milestones."
+      "desc": "External validation, coverage, and milestone-linked references."
     },
 
     {
       "name": "Reference & Links",
       "url": "reference-links.html",
-      "desc": "Official external links for deeper review, independent verification, and follow-up evaluation."
+      "desc": "Official world amateur ranking reference."
     },
 
     {
       "name": "Junior Career",
       "url": "junior-career.html",
-      "desc": "Pre-college progression, season-champion track, win streak context, and growth history."
+      "desc": "Pre-college progression, season-title track, and growth history."
     },
     
     {
@@ -275,14 +275,14 @@
     {
       "name": "Clippd / Scoreboard",
       "url": "https://scoreboard.clippd.com/players/38903?season=2026",
-      "desc": "Event-level scoring verification, player pages, and field-relative performance review."
+      "desc": "Event-level scoring verification and field-relative review."
     }
   ],
 
   "contact": {
     "sectionTitle": "Program Contact",
     "sectionSubtitle": "For direct program inquiries",
-    "body": "For direct program inquiries regarding transfer-related communication, use the contact button below.",
+    "body": "Direct transfer-related contact:",
     "buttonLabel": "Email Joshua Directly",
     "localPart": "Joshuahayoung",
     "domain": "xxxxx.com",
