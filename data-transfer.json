@@ -8,15 +8,15 @@
     "eyebrow": "Transfer Snapshot",
     "title": "Joshua Hong",
     "metaLine": "Freshman | UTSA Men's Golf | NCAA Division I",
-    "definition": "High-reliability freshman scorer with proven lineup value and a profile that projects to higher-level competition.",
-    "supporting": "Low-variance profile with strong counting-round reliability, difficult-condition performance, and early evidence of both scoring floor and contention ceiling."
+    "definition": "High-reliability freshman scorer with immediate lineup value and upward transfer projection.",
+    "supporting": "Low-variance profile built on counting-round reliability, difficult-condition performance, and early win/top-end conversion at the Division I level."
   },
 
   "quickSummary": [
-    "Immediate freshman lineup value with strong counting reliability and low round-to-round volatility.",
-    "Includes an individual win and multiple top-3 and top-10 finishes across the season.",
-    "Performs well in difficult scoring environments and holds value when conditions become more demanding.",
-    "Already built on real lineup evidence, with clear room for further growth in a stronger daily competitive environment."
+    "Immediate lineup value with strong counting reliability and low volatility.",
+    "College-level proof already includes an individual win, three top-3 finishes, and five top-10s.",
+    "Profile holds under resistance and retains value when scoring conditions become more demanding.",
+    "Production is already real; trajectory still points higher in a stronger daily competitive setting."
   ],
 
   "heroStrip": [
@@ -42,23 +42,23 @@
     {
       "label": "Clippd Adjusted Avg",
       "value": "71.10",
-      "note": "Strong Division I scoring signal with real lineup value."
+      "note": "Division I scoring baseline with real lineup value."
     },
     {
       "label": "Raw Scoring Avg",
       "value": "71.73",
-      "note": "Freshman-season scoring baseline with stable week-to-week value."
+      "note": "Freshman-season raw scoring baseline."
     },
     {
       "label": "Counting Rate",
       "value": "96.67%",
       "accent": true,
-      "note": "29 of 30 counting rounds. Strong travel-roster reliability."
+      "note": "29 of 30 counting rounds. Travel-roster reliability."
     },
     {
       "label": "Head-to-Head",
       "value": "564-218-21",
-      "note": "Strong field-beating record; 75.28% win rate across the full sample."
+      "note": "70.24% win rate across the full sample."
     },
     {
       "label": "Points Share",
@@ -68,17 +68,17 @@
     {
       "label": "Top Finishes",
       "value": "1 / 3 / 5",
-      "note": "Win, podium, and top-10 volume across 10 freshman events."
+      "note": "Win, top-3, and top-10 volume across 10 freshman events."
     },
     {
       "label": "WAGR",
       "value": "436",
-      "note": "Current world amateur ranking."
+      "note": "Current world amateur position."
     },
     {
       "label": "Clippd Rank",
       "value": "367",
-      "note": "Current Clippd ranking."
+      "note": "Current Clippd position."
     }
   ],
 
@@ -86,18 +86,18 @@
     "stages": [
       {
         "phase": "Freshman NCAA Phase",
-        "title": "Immediate NCAA Lineup Value",
-        "desc": "Freshman season translated quickly into win, podium finishes, top-10 volume, and a high-reliability lineup profile."
+        "title": "Immediate Division I Lineup Translation",
+        "desc": "Freshman season already produced a win, top-3 volume, and a high-reliability lineup profile."
       },
       {
         "phase": "Senior Junior Phase",
         "title": "Back-to-Back Mexico Season Champion",
-        "desc": "Six consecutive wins and a second straight Mexico season title reinforced both finishing power and season-long control."
+        "desc": "Six consecutive wins and a second straight Mexico season title reinforced finishing ability, cumulative control, and long-form scoring value."
       },
       {
         "phase": "Early Junior Phase",
         "title": "Season Champion Before the Wins",
-        "desc": "Early proof of cumulative scoring value. The profile first emerged through consistency, stability, and the ability to separate over time."
+        "desc": "The early profile separated through consistency, stability, and score accumulation before the win volume arrived."
       }
     ]
   },
