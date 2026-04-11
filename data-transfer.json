@@ -13,10 +13,10 @@
   },
 
   "quickSummary": [
-    "Immediate lineup value with strong counting reliability and low volatility.",
+    "29 of 30 counting rounds already support immediate lineup trust at the college level.",
     "College-level proof already includes an individual win, three top-3 finishes, and five top-10s.",
-    "Profile holds under resistance and retains value when scoring conditions become more demanding.",
-    "Production is already real; trajectory still points higher in a stronger daily competitive setting."
+    "Difficult-condition value is already supported by a win in a resistance-heavy scoring environment.",
+    "Current production is already college-real, while the overall profile still leaves room to scale higher."
   ],
 
   "heroStrip": [
@@ -110,7 +110,6 @@
       "points": [
         "Individual champion and only player under par in the field.",
         "Proven scoring value in a resistance-heavy setup at TPC San Antonio.",
-        "Strong evidence of difficult-condition scoring value under resistance",
         "Added team-title contribution under real separation pressure."
       ]
     },
@@ -120,8 +119,7 @@
       "points": [
         "Solo 3rd with full-event contention profile.",
         "64 (-8) tied the UTSA 18-hole record.",
-        "134 (-10) tied the UTSA 36-hole record.",
-        "Led UTSA to a team runner-up finish, reinforcing scoring ceiling and conversion value"
+        "134 (-10) tied the UTSA 36-hole record."
       ]
     },
     {
@@ -130,8 +128,7 @@
       "points": [
         "Fall reflected a normal freshman adjustment phase: 9–12–24–55.",
         "Spring produced a 3–1–3–48–10–63 sequence, including a win and multiple top finishes.",
-        "Full-season value is now defined by repeat result volume, not a one-week spike.",
-        "The overall profile is still defined more by progression and repeat result volume than by any single week"
+        "Full-season value is now defined by repeat result volume, not a one-week spike."
       ]
     }
     ],
@@ -232,8 +229,7 @@
     "High daily work rate.",
     "Comfortable in stronger fields and tougher conditions.",
     "Steady temperament with coachable competitive habits.",
-    "Professional conduct and team-oriented behavior",
-    "Team-oriented and development-driven profile."
+    "Professional conduct with a development-driven profile."
   ],
 
   "transferObjective": {
@@ -257,7 +253,7 @@
     {
       "name": "Reference & Links",
       "url": "reference-links.html",
-      "desc": "Official world amateur ranking reference."
+      "desc": "Official external sources for independent verification and deeper review."
     },
 
     {
@@ -282,7 +278,7 @@
   "contact": {
     "sectionTitle": "Program Contact",
     "sectionSubtitle": "For direct program inquiries",
-    "body": "Direct transfer-related contact:",
+    "body": "Direct transfer-related contact.",
     "buttonLabel": "Email Joshua Directly",
     "localPart": "Joshuahayoung",
     "domain": "xxxxx.com",
