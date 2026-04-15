@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "April 8, 2026",
+    "lastUpdated": "April 15, 2026",
     "status": "in-season"
   },
 
@@ -72,12 +72,12 @@
     },
     {
       "label": "WAGR",
-      "value": "436",
+      "value": "486",
       "note": "Current world amateur position."
     },
     {
       "label": "Clippd Rank",
-      "value": "367",
+      "value": "370",
       "note": "Current Clippd position."
     }
   ],
