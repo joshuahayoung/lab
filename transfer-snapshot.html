@@ -1915,7 +1915,52 @@
   }
 }
 	
-	
+/* Program Contact section only */
+.ts-contact-section .ts-section-header {
+  justify-content: center;
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+}
+
+.ts-contact-section .ts-section-header > div {
+  width: 100%;
+}
+
+.ts-contact-section .ts-half-card {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.ts-contact-section .ts-half-card h3 {
+  margin-bottom: 12px;
+}
+
+.ts-contact-section #contact-body {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.ts-contact-section .ts-contact-actions {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ts-contact-section .ts-half-card {
+    padding: 28px 20px;
+  }
+
+  .ts-contact-section #contact-body {
+    max-width: 100%;
+  }
+
+  .ts-contact-section .ts-contact-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}	
 </style>
 
 </head>
@@ -1991,7 +2036,7 @@
       </div>
     </section>
 
-    <section class="ts-section">
+    <section class="ts-section ts-contact-section">
       <div class="ts-section-header">
         <div>
           <h2>Snapshot Summary</h2>
