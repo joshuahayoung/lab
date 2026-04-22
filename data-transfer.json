@@ -234,11 +234,11 @@
   "Coachable, reliable teammate profile."
 ],
 
-  "transferObjective": {
-    "body": "Pursuing the next competitive step through deeper fields, stronger internal competition, and a development environment aligned with long-term professional goals and the PGA U pathway.",
-    "noteLabel": "Positioning Note",
-    "noteText": "Appreciative of the current program experience and growth, while recognizing that the next development phase may be better served in a different competitive environment."
-  },
+"transferObjective": {
+  "body": "Pursuing the next competitive step through deeper fields, a more demanding daily environment, and a development setting aligned with long-term professional goals and the PGA U pathway.",
+  "noteLabel": "Positioning Note",
+  "noteText": "Appreciative of the current program experience and growth, while recognizing that the next development phase may be better served in a different competitive environment."
+},
 
   "links": [
     {
