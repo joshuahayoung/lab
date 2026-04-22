@@ -2768,27 +2768,6 @@
     </section>
 
 
-	  
-    <section class="ts-section">
-      <div class="ts-section-header">
-        <div>
-          <h2 id="contact-section-title">Program Contact</h2>
-          <p id="contact-section-subtitle">For direct program inquiries</p>
-        </div>
-      </div>
-
-      <div class="ts-half-card">
-        <h3>Direct Contact</h3>
-        <p id="contact-body">
-          For direct program inquiries regarding transfer-related communication, use the contact button below.
-        </p>
-
-        <div class="ts-contact-actions">
-          <a href="#" class="ts-contact-btn" id="contact-email-btn">Email Joshua Directly</a>
-        </div>
-      </div>
-    </section>
-
 <section class="ts-section ts-closing-section">
   <div class="ts-closing-box">
 <p class="ts-closing-kicker">Final Read</p>
@@ -3229,7 +3208,169 @@
 
 </section>
 
-	  
+
+<section style="margin:34px 0 24px;">
+  <style>
+    .jh-contact-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding-bottom: 14px;
+    }
+
+    .jh-contact-block {
+      width: 100%;
+      max-width: 980px;
+      background: linear-gradient(180deg, #0c2340 0%, #12335d 100%);
+      border: 1px solid #163a66;
+      border-radius: 26px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+      overflow: hidden;
+      position: relative;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      z-index: 2;
+    }
+
+    .jh-contact-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .jh-contact-accent {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 0;
+      height: 10px;
+      background: linear-gradient(90deg, #f15a22 0%, #ff7a45 100%);
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 10px 18px rgba(241, 90, 34, 0.28);
+      z-index: 1;
+    }
+
+    .jh-contact-head {
+      padding: 26px 28px 22px;
+      text-align: center;
+    }
+
+    .jh-contact-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 34px;
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+    }
+
+    .jh-contact-subtitle {
+      margin: 10px auto 0;
+      max-width: 700px;
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .jh-contact-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .jh-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #f15a22;
+      border: 1px solid #f15a22;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .jh-contact-btn:hover {
+      background: #d94d1a;
+      border-color: #d94d1a;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .jh-contact-wrap {
+        padding-bottom: 12px;
+      }
+
+      .jh-contact-block {
+        border-radius: 20px;
+      }
+
+      .jh-contact-block::before {
+        border-radius: 20px;
+      }
+
+      .jh-contact-accent {
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        border-radius: 0 0 14px 14px;
+      }
+
+      .jh-contact-head {
+        padding: 22px 18px 20px;
+      }
+
+      .jh-contact-title {
+        font-size: 26px;
+        line-height: 1.05;
+      }
+
+      .jh-contact-subtitle {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .jh-contact-btn {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+
+  <div class="jh-contact-wrap">
+    <div class="jh-contact-block" aria-labelledby="jh-contact-title">
+      <div class="jh-contact-head">
+        <h2 class="jh-contact-title" id="jh-contact-title">Program Contact</h2>
+        <p class="jh-contact-subtitle">For direct transfer-related communication.</p>
+
+        <div class="jh-contact-actions">
+          <a class="jh-contact-btn" href="mailto:yourname@example.com?subject=Joshua%20Hong%20Transfer%20Inquiry">
+            Email Joshua Directly
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="jh-contact-accent" aria-hidden="true"></div>
+  </div>
+</section>
 	
  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
