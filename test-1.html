@@ -3232,8 +3232,15 @@
 
 <section style="margin:34px 0 24px;">
   <style>
+    .jh-contact-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     .jh-contact-block {
       width: 100%;
+      max-width: 980px;
       background: linear-gradient(180deg, #0c2340 0%, #12335d 100%);
       border: 1px solid #163a66;
       border-radius: 26px;
@@ -3255,6 +3262,7 @@
     .jh-contact-head {
       padding: 24px 28px 18px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
     }
 
     .jh-contact-kicker {
@@ -3289,6 +3297,7 @@
 
     .jh-contact-body-wrap {
       padding: 24px 28px 28px;
+      text-align: left;
     }
 
     .jh-contact-label {
@@ -3314,6 +3323,7 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 22px;
+      justify-content: flex-start;
     }
 
     .jh-contact-btn {
@@ -3386,26 +3396,25 @@
     }
   </style>
 
-  <div class="jh-contact-block" aria-labelledby="jh-contact-title">
-    <div class="jh-contact-head">
-      <p class="jh-contact-kicker">Direct Program Inquiry</p>
-      <h2 class="jh-contact-title" id="jh-contact-title">Program Contact</h2>
-      <p class="jh-contact-subtitle">For direct program inquiries</p>
-    </div>
+  <div class="jh-contact-wrap">
+    <div class="jh-contact-block" aria-labelledby="jh-contact-title">
+      <div class="jh-contact-head">
+        <p class="jh-contact-kicker">Direct Program Inquiry</p>
+        <h2 class="jh-contact-title" id="jh-contact-title">Program Contact</h2>
+        <p class="jh-contact-subtitle">For direct program inquiries</p>
+      </div>
 
-    <div class="jh-contact-body-wrap">
-      <h3 class="jh-contact-label">Direct Contact</h3>
-      <p class="jh-contact-body">
-        For direct program inquiries regarding transfer-related communication, use the contact button below.
-      </p>
+      <div class="jh-contact-body-wrap">
+        <h3 class="jh-contact-label">Direct Contact</h3>
+        <p class="jh-contact-body">
+          For direct program inquiries regarding transfer-related communication, use the contact button below.
+        </p>
 
-      <div class="jh-contact-actions">
-        <a
-          class="jh-contact-btn"
-          href="mailto:yourname@example.com?subject=Joshua%20Hong%20Transfer%20Inquiry"
-        >
-          Email Joshua Directly
-        </a>
+        <div class="jh-contact-actions">
+          <a class="jh-contact-btn" href="mailto:yourname@example.com?subject=Joshua%20Hong%20Transfer%20Inquiry">
+            Email Joshua Directly
+          </a>
+        </div>
       </div>
     </div>
   </div>
