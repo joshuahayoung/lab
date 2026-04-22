@@ -2768,27 +2768,6 @@
     </section>
 
 
-	  
-    <section class="ts-section">
-      <div class="ts-section-header">
-        <div>
-          <h2 id="contact-section-title">Program Contact</h2>
-          <p id="contact-section-subtitle">For direct program inquiries</p>
-        </div>
-      </div>
-
-      <div class="ts-half-card">
-        <h3>Direct Contact</h3>
-        <p id="contact-body">
-          For direct program inquiries regarding transfer-related communication, use the contact button below.
-        </p>
-
-        <div class="ts-contact-actions">
-          <a href="#" class="ts-contact-btn" id="contact-email-btn">Email Joshua Directly</a>
-        </div>
-      </div>
-    </section>
-
 <section class="ts-section ts-closing-section">
   <div class="ts-closing-box">
 <p class="ts-closing-kicker">Final Read</p>
@@ -3236,6 +3215,8 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      position: relative;
+      padding-bottom: 14px;
     }
 
     .jh-contact-block {
@@ -3248,6 +3229,7 @@
       overflow: hidden;
       position: relative;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      z-index: 2;
     }
 
     .jh-contact-block::before {
@@ -3259,20 +3241,21 @@
       pointer-events: none;
     }
 
-    .jh-contact-head {
-      padding: 26px 28px 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
+    .jh-contact-accent {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 0;
+      height: 10px;
+      background: linear-gradient(90deg, #f15a22 0%, #ff7a45 100%);
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 10px 18px rgba(241, 90, 34, 0.28);
+      z-index: 1;
     }
 
-    .jh-contact-kicker {
-      margin: 0 0 10px;
-      color: rgba(255,255,255,0.68);
-      font-size: 11px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .jh-contact-head {
+      padding: 26px 28px 22px;
+      text-align: center;
     }
 
     .jh-contact-title {
@@ -3292,20 +3275,6 @@
       font-size: 14px;
       line-height: 1.65;
       font-weight: 600;
-    }
-
-    .jh-contact-body-wrap {
-      padding: 22px 28px 28px;
-      text-align: center;
-    }
-
-    .jh-contact-body {
-      margin: 0 auto;
-      max-width: 720px;
-      color: rgba(255,255,255,0.84);
-      font-size: 15px;
-      line-height: 1.78;
-      font-weight: 500;
     }
 
     .jh-contact-actions {
@@ -3344,6 +3313,10 @@
     }
 
     @media (max-width: 768px) {
+      .jh-contact-wrap {
+        padding-bottom: 12px;
+      }
+
       .jh-contact-block {
         border-radius: 20px;
       }
@@ -3352,12 +3325,15 @@
         border-radius: 20px;
       }
 
-      .jh-contact-head {
-        padding: 22px 18px 16px;
+      .jh-contact-accent {
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        border-radius: 0 0 14px 14px;
       }
 
-      .jh-contact-body-wrap {
-        padding: 20px 18px 22px;
+      .jh-contact-head {
+        padding: 22px 18px 20px;
       }
 
       .jh-contact-title {
@@ -3371,12 +3347,6 @@
         line-height: 1.55;
       }
 
-      .jh-contact-body {
-        max-width: 100%;
-        font-size: 14px;
-        line-height: 1.72;
-      }
-
       .jh-contact-btn {
         width: 100%;
         max-width: 320px;
@@ -3387,15 +3357,8 @@
   <div class="jh-contact-wrap">
     <div class="jh-contact-block" aria-labelledby="jh-contact-title">
       <div class="jh-contact-head">
-        <p class="jh-contact-kicker">Program Inquiry</p>
         <h2 class="jh-contact-title" id="jh-contact-title">Program Contact</h2>
-        <p class="jh-contact-subtitle">For direct transfer-related communication and program inquiry.</p>
-      </div>
-
-      <div class="jh-contact-body-wrap">
-        <p class="jh-contact-body">
-          Use the button below for direct communication regarding roster fit, transfer discussion, or program-related inquiry.
-        </p>
+        <p class="jh-contact-subtitle">For direct transfer-related communication.</p>
 
         <div class="jh-contact-actions">
           <a class="jh-contact-btn" href="mailto:yourname@example.com?subject=Joshua%20Hong%20Transfer%20Inquiry">
@@ -3404,8 +3367,10 @@
         </div>
       </div>
     </div>
+
+    <div class="jh-contact-accent" aria-hidden="true"></div>
   </div>
-</section>	  
+</section>
 	
  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
