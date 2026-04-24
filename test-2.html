@@ -5237,178 +5237,204 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
   
-<div id="joshua-insight-archive" style="max-width: 1180px; margin: 0 auto 80px; padding: 0 14px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
+<div id="joshua-unique-section" style="max-width: 1180px; margin: 0 auto 70px; padding: 0 12px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
   <style>
-    #joshua-insight-archive * { box-sizing: border-box; }
+    #joshua-unique-section * { box-sizing: border-box; }
 
-    #joshua-insight-archive .jia-shell {
-      background: linear-gradient(180deg, #08182d 0%, #0c2340 100%);
-      border: 1px solid rgba(201,138,46,0.34);
-      border-radius: 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    #joshua-unique-section .jpp-shell {
+      background: linear-gradient(180deg, #0c2340 0%, #0a1d35 100%);
+      border: 1px solid rgba(201,138,46,0.35);
+      border-radius: 18px;
       overflow: hidden;
+      box-shadow: 0 16px 34px rgba(0,0,0,0.22);
     }
 
-    #joshua-insight-archive .jia-top {
+    #joshua-unique-section .jpp-topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
       padding: 18px 22px;
       border-bottom: 1px solid rgba(201,138,46,0.18);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+      background: rgba(255,255,255,0.02);
     }
 
-    #joshua-insight-archive .jia-top-left {
+    #joshua-unique-section .jpp-title-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       min-width: 0;
     }
 
-    #joshua-insight-archive .jia-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+    #joshua-unique-section .jpp-title-icon {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(201,138,46,0.1);
-      border: 1px solid rgba(201,138,46,0.26);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(201,138,46,0.08);
+      border: 1px solid rgba(201,138,46,0.28);
       flex: 0 0 auto;
     }
 
-    #joshua-insight-archive .jia-title-wrap {
+    #joshua-unique-section .jpp-title-icon .pulse-dot {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 8px;
+      height: 8px;
+      background: #c98a2e;
+      border-radius: 50%;
+      border: 2px solid #0c2340;
+      animation: jpp-soft-pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes jpp-soft-pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #joshua-unique-section .jpp-title-text {
       min-width: 0;
     }
 
-    #joshua-insight-archive .jia-title {
+    #joshua-unique-section .jpp-title {
       margin: 0;
+      font-size: 16px;
       color: #c98a2e;
-      font-size: 15px;
-      line-height: 1.2;
       font-weight: 900;
-      letter-spacing: 0.12em;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
+      line-height: 1.2;
     }
 
-    #joshua-insight-archive .jia-subtitle {
-      margin: 5px 0 0;
-      color: rgba(255,255,255,0.72);
-      font-size: 12px;
-      line-height: 1.4;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+    #joshua-unique-section .jpp-subtitle {
+      margin: 4px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 800;
       text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.2;
     }
 
-    #joshua-insight-archive .jia-top-right {
+    #joshua-unique-section .jpp-controls {
       display: flex;
       align-items: center;
       gap: 10px;
-      flex: 0 0 auto;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    #joshua-insight-archive .jia-counter {
-      min-width: 78px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(201,138,46,0.12);
-      border: 1px solid rgba(201,138,46,0.24);
-      color: #fff;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 800;
-      text-align: center;
-      letter-spacing: 0.05em;
-    }
-
-    #joshua-insight-archive .jia-btn {
+    #joshua-unique-section .jpp-btn {
       width: 42px;
       height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(201,138,46,0.34);
-      background: rgba(7, 18, 33, 0.88);
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,138,46,0.55);
+      background: rgba(12,35,64,0.94);
       color: #c98a2e;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      transition: all 0.22s ease;
+      flex: 0 0 auto;
     }
 
-    #joshua-insight-archive .jia-btn:hover {
-      background: #143157;
+    #joshua-unique-section .jpp-btn:hover {
+      background: #173662;
       border-color: #e5a545;
     }
 
-    #joshua-insight-archive .jia-btn:disabled {
+    #joshua-unique-section .jpp-btn:disabled {
       opacity: 0.35;
       cursor: default;
       transform: none;
     }
 
-    #joshua-insight-archive .jia-viewport {
-      position: relative;
-      padding: 22px 18px 26px;
-      overflow: hidden;
+    #joshua-unique-section .jpp-select {
+      min-width: 260px;
+      max-width: 360px;
+      height: 42px;
+      padding: 0 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(201,138,46,0.4);
+      background: rgba(12,35,64,0.94);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      outline: none;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
-    #joshua-insight-archive .jia-track {
+    #joshua-unique-section .jpp-counter {
+      min-width: 64px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(201,138,46,0.24);
+      background: rgba(201,138,46,0.1);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
       display: flex;
-      gap: 22px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      padding: 4px 14vw 10px;
-      scrollbar-width: none;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
     }
 
-    #joshua-insight-archive .jia-track::-webkit-scrollbar {
-      display: none;
+    #joshua-unique-section .jpp-stage-wrap {
+      padding: 20px;
+      background: transparent;
     }
 
-    #joshua-insight-archive .insight-card-item {
-      flex: 0 0 min(820px, 100%);
-      min-width: min(820px, 100%);
-      max-width: min(820px, 100%);
-      scroll-snap-align: center !important;
-      background: #0f1117 !important;
-      border-radius: 24px !important;
-      border: 1px solid rgba(201,138,46,0.22) !important;
-      box-shadow: 0 18px 34px rgba(0,0,0,0.24) !important;
-      padding: 34px 34px 28px !important;
+    #joshua-unique-section .jpp-stage {
       position: relative;
-      overflow: hidden;
+      min-height: 300px;
     }
 
-    #joshua-insight-archive .insight-card-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, rgba(201,138,46,0.16), #c98a2e, rgba(201,138,46,0.16));
-      opacity: 0.85;
+    #joshua-unique-section .jpp-stage .insight-card-item {
+      display: none !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+      scroll-snap-align: unset !important;
+      margin: 0 !important;
+      background: #111 !important;
+      border-radius: 24px !important;
+      padding: 36px 34px !important;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+      border: 1px solid rgba(201,138,46,0.3) !important;
     }
 
-    #joshua-insight-archive .jia-progress {
-      padding: 0 22px 20px;
+    #joshua-unique-section .jpp-stage .insight-card-item.active {
+      display: flex !important;
     }
 
-    #joshua-insight-archive .jia-progress-bar {
-      width: 100%;
+    #joshua-unique-section .jpp-bottom {
+      padding: 0 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    #joshua-unique-section .jpp-progress {
+      flex: 1 1 auto;
+      min-width: 180px;
       height: 6px;
       border-radius: 999px;
       background: rgba(255,255,255,0.08);
       overflow: hidden;
     }
 
-    #joshua-insight-archive .jia-progress-fill {
+    #joshua-unique-section .jpp-progress-fill {
       width: 0%;
       height: 100%;
       border-radius: 999px;
@@ -5416,95 +5442,117 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       transition: width 0.25s ease;
     }
 
-    #joshua-insight-archive .jia-footnote {
-      margin-top: 10px;
-      color: rgba(255,255,255,0.48);
+    #joshua-unique-section .jpp-footnote {
       font-size: 11px;
-      line-height: 1.4;
+      color: rgba(255,255,255,0.5);
       font-weight: 700;
-      text-align: right;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    @media (max-width: 1024px) {
-      #joshua-insight-archive .jia-track {
-        padding-left: 8vw;
-        padding-right: 8vw;
+    @media (max-width: 900px) {
+      #joshua-unique-section .jpp-topbar {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      #joshua-insight-archive .insight-card-item {
-        flex-basis: min(720px, 100%);
-        min-width: min(720px, 100%);
-        max-width: min(720px, 100%);
+      #joshua-unique-section .jpp-controls {
+        justify-content: space-between;
+      }
+
+      #joshua-unique-section .jpp-select {
+        min-width: 0;
+        flex: 1 1 auto;
       }
     }
 
     @media (max-width: 768px) {
-      #joshua-insight-archive {
-        padding: 0 10px;
+      #joshua-unique-section {
+        padding: 0 8px;
       }
 
-      #joshua-insight-archive .jia-top {
-        padding: 16px 16px;
-        align-items: flex-start;
-        flex-direction: column;
+      #joshua-unique-section .jpp-topbar {
+        padding: 16px;
       }
 
-      #joshua-insight-archive .jia-top-right {
-        width: 100%;
-        justify-content: space-between;
+      #joshua-unique-section .jpp-stage-wrap {
+        padding: 12px;
       }
 
-      #joshua-insight-archive .jia-counter {
-        min-width: 74px;
-      }
-
-      #joshua-insight-archive .jia-viewport {
-        padding: 16px 10px 22px;
-      }
-
-      #joshua-insight-archive .jia-track {
-        gap: 14px;
-        padding: 2px 2px 8px;
-      }
-
-      #joshua-insight-archive .insight-card-item {
-        flex: 0 0 100%;
-        min-width: 100%;
-        max-width: 100%;
-        scroll-snap-align: start !important;
-        padding: 26px 20px 22px !important;
+      #joshua-unique-section .jpp-stage .insight-card-item {
+        padding: 26px 20px !important;
         border-radius: 20px !important;
+      }
+
+      #joshua-unique-section .jpp-bottom {
+        padding: 0 12px 16px;
+      }
+
+      #joshua-unique-section .jpp-footnote {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #joshua-unique-section .jpp-controls {
+        gap: 8px;
+      }
+
+      #joshua-unique-section .jpp-select {
+        width: 100%;
+        order: 3;
+      }
+
+      #joshua-unique-section .jpp-counter {
+        min-width: 58px;
+      }
+
+      #joshua-unique-section .jpp-btn {
+        width: 40px;
+        height: 40px;
       }
     }
   </style>
 
-  <div class="jia-shell">
-    <div class="jia-top">
-      <div class="jia-top-left">
-        <div class="jia-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+  <div class="jpp-shell">
+    <div class="jpp-topbar">
+      <div class="jpp-title-wrap">
+        <div class="jpp-title-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
             <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
           </svg>
+          <span class="pulse-dot"></span>
         </div>
-        <div class="jia-title-wrap">
-          <h2 class="jia-title">Present Process &amp; Progress</h2>
-          <p class="jia-subtitle">Insight Archive</p>
+        <div class="jpp-title-text">
+          <h2 class="jpp-title">Present Process &amp; Progress</h2>
+          <div class="jpp-subtitle">Insight Archive</div>
         </div>
       </div>
 
-      <div class="jia-top-right">
-        <button type="button" class="jia-btn" id="jia-prev" aria-label="Previous card">
+      <div class="jpp-controls">
+        <button type="button" class="jpp-btn" id="jpp-prev" aria-label="Previous insight card">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
 
-        <div class="jia-counter" id="jia-counter">1 / 1</div>
+        <select class="jpp-select" id="jpp-select" aria-label="Jump to insight card">
+          <option value="0">10th Event — Tiger Invitational — Columbia, Missouri</option>
+          <option value="1">9th Event — Bell Bank “Pay It Forward” Collegiate — Litchfield Park, Arizona</option>
+          <option value="2">8th Event — Arizona Thunderbirds Intercollegiate — Tucson, Arizona</option>
+          <option value="3">7th Event — Golden Nugget Invitational — Lake Charles, Louisiana</option>
+          <option value="4">6th Event — Military City Collegiate — San Antonio, Texas</option>
+          <option value="5">Spring Opener — Spring Season Opener — Cancun, Mexico</option>
+          <option value="6">Current Focus — Winter Preparation &amp; Competitive Assessment</option>
+          <option value="7">Performance Archive — Fall Review &amp; Strategic Focus</option>
+          <option value="8">Freshman Fall Season — Opening Month — College Transition Phase</option>
+        </select>
 
-        <button type="button" class="jia-btn" id="jia-next" aria-label="Next card">
+        <div class="jpp-counter" id="jpp-counter">1 / 9</div>
+
+        <button type="button" class="jpp-btn" id="jpp-next" aria-label="Next insight card">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
@@ -5512,296 +5560,288 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       </div>
     </div>
 
-    <div class="jia-viewport">
-      <div class="jia-track" id="jia-track">
-
-<div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
-  <div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-      <div style="display: flex; align-items: center;">
-        <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        </div>
-        <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-      </div>
-      <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">10th Event</span>
-    </div>
-
-    <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
-      <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Tiger Invitational — Columbia, Missouri</p>
-
-   <p style="margin-bottom: 10px;">
-  Relative to the season standard, this was an unusually poor week. Scoring never developed normal rhythm, birdie conversion remained limited, and the result was shaped more by accumulated small losses than by one isolated mistake.
-</p>
-
-<p style="margin-bottom: 10px;">
-  That made the week a useful reminder that college golf demands more than shot-making alone. Competitive performance is shaped not only by execution during the round, but also by how well the full week is managed before the first shot is hit.
-</p>
-
-<p style="margin-bottom: 10px;">
-  In developmental terms, the tournament was one of the most useful weeks of the year. It exposed clear deficiencies, removed ambiguity, and clarified which parts of the competitive process still require a higher level of control.
-</p>
-
-<p style="margin-bottom: 10px;">
-  In that sense, the week offered more than the recent 3–1–3 stretch did. Strong finishes confirm progress, but difficult tournaments often reveal more about where the next level of improvement must come from.
-</p>
-
-<p style="margin-bottom: 10px;">
-  The main value of the week was therefore diagnostic: it sharpened the focus on the areas that now require more precise work, particularly in preparation, conversion, and overall competitive control when scoring flow is harder to establish.
-</p>
-
-<p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-  The objective now is simple: use that feedback well over the next three weeks and arrive at the AAC Championship better prepared, more precise, and competitively cleaner.
-</p>
-      
-    </div>
-  </div>
-
-  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Apr 8, 2026</div>
-</div>
-        
-
-<div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
-  <div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-      <div style="display: flex; align-items: center;">
-        <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        </div>
-        <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-      </div>
-      <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">9th Event</span>
-    </div>
-
-    <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
-      <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Bell Bank “Pay It Forward” Collegiate — Litchfield Park, Arizona</p>
-
-      <p style="margin-bottom: 10px;">
-        The event was played under <b>high-temperature desert conditions</b> with <b>firm surfaces and fast greens</b>, requiring precise distance control and early adaptation to surface speed and release patterns.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        Across three rounds, the recorded scores were <b>73, 68, and 71</b>, finishing at <b>4-under-par</b> and inside the <b>top 10 of a 96-player field</b>.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        The scoreline reflects partial conversion of available opportunities. <b>Tee-to-green control remained consistent</b> throughout the event, with repeated creation of birdie chances. However, a significant portion of those opportunities did not convert, particularly within makeable range.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        The first round showed stable ball-striking with limited scoring return due to reduced putting efficiency. The second round reflected improved confidence on the greens and produced a lower score. The final round began with early scoring but returned to lower conversion rates despite continued control in ball striking.
-      </p>
-
-<p style="margin-bottom: 10px;">
-  Dry and high-temperature conditions remained a management factor throughout the event.
-</p>
-
-      <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-        From a performance perspective, the event presents a clear separation between opportunity creation and scoring output. The underlying ball-striking level supported a lower scoring range than the final result indicates. The primary limiting factor was not approach instability but <b>conversion efficiency on the greens</b>, creating a gap between performance indicators and recorded score.
-      </p>
-    </div>
-  </div>
-
-  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 24, 2026</div>
-</div>
-
-        
-
-<div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
-  <div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-      <div style="display: flex; align-items: center;">
-        <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        </div>
-        <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-      </div>
-      <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">8th Event</span>
-    </div>
-
-    <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
-      <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Arizona Thunderbirds Intercollegiate — Tucson, Arizona</p>
-
-      <p style="margin-bottom: 10px;">
-        <b>Tucson Country Club (Par 72, 7,533 yards)</b> presented an upper-tier Division I setup with <b>narrow fairways, small fast greens, and firm surfaces</b> that reduced stopping power into targets. Standard approach shots often released through or off the green, requiring front-edge landing patterns and controlled run-out adaptation.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        Pre-event preparation was affected by <b>cold symptoms</b> after practicing in cold rain before travel. Symptoms were managed with medication. Earlier arrival in Tucson supported time-zone adjustment, altitude adaptation, and general recovery. The draw also created a difficult tournament rhythm, with a <b>late-wave assignment in the 36-hole day</b>, suspended-round risk, early restart, and immediate final-round transition.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        Dry desert conditions created additional physical stress, including <b>two nosebleeds and breathing discomfort</b>, which were managed with staff support. Given the draw, schedule, and first-time exposure to this course style, the working scoring target entering the event was <b>even par over 18 holes</b>.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        The latest event in the sequence concluded at <b>72, 76, and 73</b> over three rounds. The overall result did not fully represent the underlying tee-to-green sample. By the final round, <b>green adaptation and ball striking were materially better</b>, with <b>16 greens in regulation</b> and enough birdie opportunities to produce a lower score than the card ultimately showed.
-      </p>
-
-      <p style="margin-bottom: 10px;">
-        <b>Driver and long-iron dispersion</b> continued to trend positively. <b>Iron precision and wedge feel</b> were improved relative to prior events. The main scoring separator was <b>putting conversion</b> rather than approach instability, with multiple short- and mid-range birdie looks not converting.
-      </p>
-
-      <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
-        In analytical terms, this event is more useful as a context-heavy performance sample than as a simple scoreline entry. The result sits below the quality of several underlying control indicators, especially late in the week, and is best read as a demanding desert-course adjustment sample rather than a full reflection of current ball-striking level.
-      </p>
-    </div>
-  </div>
-
-  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 17, 2026</div>
-</div>
-
+    <div class="jpp-stage-wrap">
+      <div class="jpp-stage" id="jpp-stage">
 
         <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
-<div>
-<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-<div style="display: flex; align-items: center;">
-<div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-</div>
-<h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-</div>
-<span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">7th Event</span>
-</div>
-<div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
-<p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">
-  Golden Nugget Invitational — Lake Charles, Louisiana
-</p>
-
-<p style="margin-bottom: 14px; line-height: 1.8;">
-  <b>Venue & Conditions:</b> The CC at The Golden Nugget (Par 72, 6,906 yards). The layout required navigation of penalty areas and management of Bermuda grain on approach shots and putting surfaces. A structural issue in the driver head was identified during the practice round and monitored throughout; ball speed and launch parameters remained stable.
-</p>
-
-<p style="margin-bottom: 14px; line-height: 1.8;">
-  <b>Scoring Record:</b> <br>
-  <b>Round 1: 64 (−8)</b> — Tied UTSA program record for lowest single round. Multiple birdie/eagle opportunities created. <br>
-  <b>Round 2: 70 (−2)</b> — Part of 36-hole day. Nutritional intake structured at regular intervals to stabilize concentration. <br>
-  <b>Round 3: 69 (−3)</b> — Bogey-free final round. Several mid-range par saves preserved scoring position. <br>
-  <b>Total: 203 (−13).</b>
-</p>
-
-<p style="margin-bottom: 14px; line-height: 1.8;">
-  <b>Final Result & Rank Impact:</b> <br>
-  <b>Position:</b> Solo 3rd (1 stroke from 2nd, 3 strokes from 1st) | <b>Team:</b> 2nd Place. <br>
-  <b>Clippd National Rank:</b> 311 (▲43) | <b>WAGR:</b> 425 (▲81). 
-</p>
-
-<p style="margin-bottom: 14px; line-height: 1.8;">
-  <b>Technical Metrics:</b> Driver and long-iron dispersion remained within controlled parameters. Proximity control was stable relative to course setup. Scoring efficiency limited by putting variance under Bermuda conditions rather than approach dispersion.
-</p>
-
-<p style="margin-bottom: 0; line-height: 1.8;">
-  <b>Post-Event Status:</b> Preparation transitions to Arizona event (D-14). Technical focus on short-game proximity refinement and putting consistency. Academic responsibilities addressed following return travel.
-</p>
-</div>
-</div>
-<div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 4, 2026</div>
-</div>
-
-
-      
-      <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
-        <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
               </div>
-              <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">10th Event</span>
             </div>
-            <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">6th Event</span>
-          </div>
-          <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
-            <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Military City Collegiate — San Antonio, Texas</p>
-<p style="margin-bottom: 10px;">
-  Temperature declined prior to competition, and Round 1 was delayed approximately one hour due to frost. <b>Wind gusts approached 25 mph</b> throughout the event. The course at <b>TPC San Antonio — The Canyons Course (Par 72, 7,106 yards)</b> was set at <b>PGA-level yardage, green speed, and pin positioning.</b><br><br>
-  <b>Round 1 concluded at 69 (−3)</b>, establishing the lead. The <b>field scoring average was 76.16</b>. <b>Round 2 concluded at Even Par</b>, moving to <b>−3 cumulative and second position</b> entering the final round. <b>Round 3</b> was played under continued wind and firm conditions, with the <b>field scoring average rising to 79.03</b>. The tournament concluded at <b>−1</b>.<br><br>
-  Joshua finished as <b>Individual Champion</b> and contributed to the <b>Team Championship</b> as the <b>only player under par</b>.<br><br>
-  National ranking adjusted from <b>No. 406 to No. 354 (▲52)</b>.<br><br>
-  <b>Driver and long-iron dispersion</b> remained stable relative to wind exposure. Minor <b>proximity variance</b> was observed under crosswind conditions. <b>Greenside execution</b> remained functional. <b>Putting adaptation variance</b> was noted under tournament-speed greens.<br><br>
-  Post-event review of <b>Clippd and WAGR metrics</b> indicated a narrower ranking differential relative to observed field scoring dispersion. Preparation transitions to <b>Golden Nugget Invitational</b>, with midweek allocated to academic completion and technical calibration.
-</p>
-<p style="margin-bottom: 0; color: #fff; font-weight: 600;">Technical calibration remains focused on tournament continuity.</p>
-          </div>
-        </div>
-        <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Feb 25, 2026</div>
-      </div>
 
-      <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              </div>
-              <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-            </div>
-            <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
-              <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%;"></span>
-              SPRING OPENER
-            </span>
-          </div>
-          <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px; text-align: left;">
-            <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Spring Season Opener — Cancun, Mexico</p>
-            <p style="margin-bottom: 12px;">
-              Travel began before 4:00 a.m., including ground transportation from San Antonio to Austin, followed by connecting flights through Dallas to Cancun. Upon arrival, preparation focused on course and putting green familiarization ahead of competition.
-            </p>
-            <p style="margin-bottom: 12px;">Round 1 was played in high-wind conditions. Driver accuracy varied, while scoring was maintained through short-game execution. The round concluded at 70 (-2).</p>
-            <p style="margin-bottom: 12px;">In Round 2, driver dispersion affected play, including an early double bogey. Birdies on the front nine were followed by dropped strokes on the back nine. Scrambling limited further score impact. The round concluded at 75 (+3).</p>
-            <p style="margin-bottom: 12px;">Round 3 showed improved driver alignment under continued wind conditions. The round concluded at 71 (-1).</p>
-            <p style="margin-bottom: 12px;">Joshua finished the tournament at Even Par, placing T3, with only two players ahead.</p>
-            <p style="margin-bottom: 12px; color: #fff; font-weight: 700;">As a result, his national ranking moved from No. 523 to No. 403.</p>
-            <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with ongoing driver accuracy calibration.</p>
-          </div>
-        </div>
-        <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">Posted on: Feb 4, 2026</div>
-      </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+              <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Tiger Invitational — Columbia, Missouri</p>
 
-        
-      <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px;">
-            <div style="display: flex; align-items: center;">
-              <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              </div>
-              <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
-            </div>
-            <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
-              <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%;"></span>
-              CURRENT FOCUS
-            </span>
-          </div>
-          <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px; text-align: left;">
-            <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Winter Preparation & Competitive Assessment</p>
-            <p style="margin-bottom: 15px;">January training was structured around refining <strong>long-iron dispersion</strong> and reinforcing <strong>short-game execution</strong>, with the objective of stabilizing scoring opportunities from mid-to-long range.</p>
-            <p style="margin-bottom: 15px;">Performance during the Jan 22–23 qualifying rounds (R1–R2) reflected improved ball-striking consistency under competitive conditions. During Round 3, a separate data point was recorded as Joshua tested aggressive driving lines on the Oaks Course in a <strong>high-margin scenario</strong>. This round provided useful feedback on driver control and decision-making under full-power execution.</p>
-            <p style="margin-bottom: 15px;">A corrective training session followed on Jan 29 at TPC San Antonio, focusing on driver alignment and short-game touch to recalibrate feel and reestablish R1–R2 performance benchmarks.</p>
-            <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with the goal of entering the Spring season fully calibrated and ready to contribute consistently across all competitive rounds.</p>
-          </div>
-        </div>
-        <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted on: Jan 26, 2026</div>
-      </div>
+              <p style="margin-bottom: 10px;">
+                Relative to the season standard, this was an unusually poor week. Scoring never developed normal rhythm, birdie conversion remained limited, and the result was shaped more by accumulated small losses than by one isolated mistake.
+              </p>
 
-      <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div style="display: flex; align-items: center; margin-bottom: 25px;">
-            <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              <p style="margin-bottom: 10px;">
+                That made the week a useful reminder that college golf demands more than shot-making alone. Competitive performance is shaped not only by execution during the round, but also by how well the full week is managed before the first shot is hit.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                In developmental terms, the tournament was one of the most useful weeks of the year. It exposed clear deficiencies, removed ambiguity, and clarified which parts of the competitive process still require a higher level of control.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                In that sense, the week offered more than the recent 3–1–3 stretch did. Strong finishes confirm progress, but difficult tournaments often reveal more about where the next level of improvement must come from.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                The main value of the week was therefore diagnostic: it sharpened the focus on the areas that now require more precise work, particularly in preparation, conversion, and overall competitive control when scoring flow is harder to establish.
+              </p>
+
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+                The objective now is simple: use that feedback well over the next three weeks and arrive at the AAC Championship better prepared, more precise, and competitively cleaner.
+              </p>
             </div>
-            <h3 style="font-size: 22px; color: #94a3b8; margin: 0; font-weight: 800;">Performance Archive</h3>
           </div>
-          <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; text-align: left;">
-            <p style="margin: 0 0 18px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus</p>
-            <p style="margin-bottom: 18px;">The <b>Patriot All-America Invitational</b> served as a competitive reference point against a <b>national amateur field</b>, including several of the <b>top collegiate players</b>. Following the event, a <b>technical review</b> identified <strong>long-iron performance</strong> as an area for improvement ahead of <b>Spring qualifying</b>.</p>
-            <p style="margin-bottom: 18px;">In coordination with the <b>UTSA coaching staff</b>, a <b>short-term adjustment</b> was approved for Joshua to remain on campus and continue <strong>individual training during January</strong> rather than participate in the scheduled team trip.</p>
-            <p style="margin-bottom: 0;">This period was used to address identified <b>technical areas</b> prior to <b>Spring qualifying rounds</b> and subsequent team events. Joshua continues preparation within the <b>UTSA program</b> for the <b>Spring season</b>.</p>
-          </div>
+
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Apr 8, 2026</div>
         </div>
-        <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted on: Jan 10, 2026</div>
-      </div>
 
         <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">9th Event</span>
+            </div>
+
+            <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+              <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Bell Bank “Pay It Forward” Collegiate — Litchfield Park, Arizona</p>
+
+              <p style="margin-bottom: 10px;">
+                The event was played under <b>high-temperature desert conditions</b> with <b>firm surfaces and fast greens</b>, requiring precise distance control and early adaptation to surface speed and release patterns.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                Across three rounds, the recorded scores were <b>73, 68, and 71</b>, finishing at <b>4-under-par</b> and inside the <b>top 10 of a 96-player field</b>.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                The scoreline reflects partial conversion of available opportunities. <b>Tee-to-green control remained consistent</b> throughout the event, with repeated creation of birdie chances. However, a significant portion of those opportunities did not convert, particularly within makeable range.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                The first round showed stable ball-striking with limited scoring return due to reduced putting efficiency. The second round reflected improved confidence on the greens and produced a lower score. The final round began with early scoring but returned to lower conversion rates despite continued control in ball striking.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                Dry and high-temperature conditions remained a management factor throughout the event.
+              </p>
+
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+                From a performance perspective, the event presents a clear separation between opportunity creation and scoring output. The underlying ball-striking level supported a lower scoring range than the final result indicates. The primary limiting factor was not approach instability but <b>conversion efficiency on the greens</b>, creating a gap between performance indicators and recorded score.
+              </p>
+            </div>
+          </div>
+
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 24, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">8th Event</span>
+            </div>
+
+            <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+              <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Arizona Thunderbirds Intercollegiate — Tucson, Arizona</p>
+
+              <p style="margin-bottom: 10px;">
+                <b>Tucson Country Club (Par 72, 7,533 yards)</b> presented an upper-tier Division I setup with <b>narrow fairways, small fast greens, and firm surfaces</b> that reduced stopping power into targets. Standard approach shots often released through or off the green, requiring front-edge landing patterns and controlled run-out adaptation.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                Pre-event preparation was affected by <b>cold symptoms</b> after practicing in cold rain before travel. Symptoms were managed with medication. Earlier arrival in Tucson supported time-zone adjustment, altitude adaptation, and general recovery. The draw also created a difficult tournament rhythm, with a <b>late-wave assignment in the 36-hole day</b>, suspended-round risk, early restart, and immediate final-round transition.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                Dry desert conditions created additional physical stress, including <b>two nosebleeds and breathing discomfort</b>, which were managed with staff support. Given the draw, schedule, and first-time exposure to this course style, the working scoring target entering the event was <b>even par over 18 holes</b>.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                The latest event in the sequence concluded at <b>72, 76, and 73</b> over three rounds. The overall result did not fully represent the underlying tee-to-green sample. By the final round, <b>green adaptation and ball striking were materially better</b>, with <b>16 greens in regulation</b> and enough birdie opportunities to produce a lower score than the card ultimately showed.
+              </p>
+
+              <p style="margin-bottom: 10px;">
+                <b>Driver and long-iron dispersion</b> continued to trend positively. <b>Iron precision and wedge feel</b> were improved relative to prior events. The main scoring separator was <b>putting conversion</b> rather than approach instability, with multiple short- and mid-range birdie looks not converting.
+              </p>
+
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+                In analytical terms, this event is more useful as a context-heavy performance sample than as a simple scoreline entry. The result sits below the quality of several underlying control indicators, especially late in the week, and is best read as a demanding desert-course adjustment sample rather than a full reflection of current ball-striking level.
+              </p>
+            </div>
+          </div>
+
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 17, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">7th Event</span>
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+              <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">
+                Golden Nugget Invitational — Lake Charles, Louisiana
+              </p>
+
+              <p style="margin-bottom: 14px; line-height: 1.8;">
+                <b>Venue & Conditions:</b> The CC at The Golden Nugget (Par 72, 6,906 yards). The layout required navigation of penalty areas and management of Bermuda grain on approach shots and putting surfaces. A structural issue in the driver head was identified during the practice round and monitored throughout; ball speed and launch parameters remained stable.
+              </p>
+
+              <p style="margin-bottom: 14px; line-height: 1.8;">
+                <b>Scoring Record:</b> <br>
+                <b>Round 1: 64 (−8)</b> — Tied UTSA program record for lowest single round. Multiple birdie/eagle opportunities created. <br>
+                <b>Round 2: 70 (−2)</b> — Part of 36-hole day. Nutritional intake structured at regular intervals to stabilize concentration. <br>
+                <b>Round 3: 69 (−3)</b> — Bogey-free final round. Several mid-range par saves preserved scoring position. <br>
+                <b>Total: 203 (−13).</b>
+              </p>
+
+              <p style="margin-bottom: 14px; line-height: 1.8;">
+                <b>Final Result & Rank Impact:</b> <br>
+                <b>Position:</b> Solo 3rd (1 stroke from 2nd, 3 strokes from 1st) | <b>Team:</b> 2nd Place. <br>
+                <b>Clippd National Rank:</b> 311 (▲43) | <b>WAGR:</b> 425 (▲81). 
+              </p>
+
+              <p style="margin-bottom: 14px; line-height: 1.8;">
+                <b>Technical Metrics:</b> Driver and long-iron dispersion remained within controlled parameters. Proximity control was stable relative to course setup. Scoring efficiency limited by putting variance under Bermuda conditions rather than approach dispersion.
+              </p>
+
+              <p style="margin-bottom: 0; line-height: 1.8;">
+                <b>Post-Event Status:</b> Preparation transitions to Arizona event (D-14). Technical focus on short-game proximity refinement and putting consistency. Academic responsibilities addressed following return travel.
+              </p>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Mar 4, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">6th Event</span>
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+              <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">Military City Collegiate — San Antonio, Texas</p>
+              <p style="margin-bottom: 10px;">
+                Temperature declined prior to competition, and Round 1 was delayed approximately one hour due to frost. <b>Wind gusts approached 25 mph</b> throughout the event. The course at <b>TPC San Antonio — The Canyons Course (Par 72, 7,106 yards)</b> was set at <b>PGA-level yardage, green speed, and pin positioning.</b><br><br>
+                <b>Round 1 concluded at 69 (−3)</b>, establishing the lead. The <b>field scoring average was 76.16</b>. <b>Round 2 concluded at Even Par</b>, moving to <b>−3 cumulative and second position</b> entering the final round. <b>Round 3</b> was played under continued wind and firm conditions, with the <b>field scoring average rising to 79.03</b>. The tournament concluded at <b>−1</b>.<br><br>
+                Joshua finished as <b>Individual Champion</b> and contributed to the <b>Team Championship</b> as the <b>only player under par</b>.<br><br>
+                National ranking adjusted from <b>No. 406 to No. 354 (▲52)</b>.<br><br>
+                <b>Driver and long-iron dispersion</b> remained stable relative to wind exposure. Minor <b>proximity variance</b> was observed under crosswind conditions. <b>Greenside execution</b> remained functional. <b>Putting adaptation variance</b> was noted under tournament-speed greens.<br><br>
+                Post-event review of <b>Clippd and WAGR metrics</b> indicated a narrower ranking differential relative to observed field scoring dispersion. Preparation transitions to <b>Golden Nugget Invitational</b>, with midweek allocated to academic completion and technical calibration.
+              </p>
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Technical calibration remains focused on tournament continuity.</p>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Feb 25, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
+                <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%;"></span>
+                SPRING OPENER
+              </span>
+            </div>
+            <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px; text-align: left;">
+              <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Spring Season Opener — Cancun, Mexico</p>
+              <p style="margin-bottom: 12px;">
+                Travel began before 4:00 a.m., including ground transportation from San Antonio to Austin, followed by connecting flights through Dallas to Cancun. Upon arrival, preparation focused on course and putting green familiarization ahead of competition.
+              </p>
+              <p style="margin-bottom: 12px;">Round 1 was played in high-wind conditions. Driver accuracy varied, while scoring was maintained through short-game execution. The round concluded at 70 (-2).</p>
+              <p style="margin-bottom: 12px;">In Round 2, driver dispersion affected play, including an early double bogey. Birdies on the front nine were followed by dropped strokes on the back nine. Scrambling limited further score impact. The round concluded at 75 (+3).</p>
+              <p style="margin-bottom: 12px;">Round 3 showed improved driver alignment under continued wind conditions. The round concluded at 71 (-1).</p>
+              <p style="margin-bottom: 12px;">Joshua finished the tournament at Even Par, placing T3, with only two players ahead.</p>
+              <p style="margin-bottom: 12px; color: #fff; font-weight: 700;">As a result, his national ranking moved from No. 523 to No. 403.</p>
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with ongoing driver accuracy calibration.</p>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #444; font-weight: 700; margin-top: 10px;">Posted on: Feb 4, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px;">
+              <div style="display: flex; align-items: center;">
+                <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3 style="font-size: 22px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+              </div>
+              <span style="display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; color: #27ae60; background: rgba(39,174,96,0.1); padding: 4px 12px; border-radius: 50px; border: 1px solid rgba(39,174,96,0.3);">
+                <span style="width: 6px; height: 6px; background: #27ae60; border-radius: 50%;"></span>
+                CURRENT FOCUS
+              </span>
+            </div>
+            <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 25px; text-align: left;">
+              <p style="margin: 0 0 15px 0; color: #c98a2e; font-weight: 700; font-size: 17px;">Winter Preparation & Competitive Assessment</p>
+              <p style="margin-bottom: 15px;">January training was structured around refining <strong>long-iron dispersion</strong> and reinforcing <strong>short-game execution</strong>, with the objective of stabilizing scoring opportunities from mid-to-long range.</p>
+              <p style="margin-bottom: 15px;">Performance during the Jan 22–23 qualifying rounds (R1–R2) reflected improved ball-striking consistency under competitive conditions. During Round 3, a separate data point was recorded as Joshua tested aggressive driving lines on the Oaks Course in a <strong>high-margin scenario</strong>. This round provided useful feedback on driver control and decision-making under full-power execution.</p>
+              <p style="margin-bottom: 15px;">A corrective training session followed on Jan 29 at TPC San Antonio, focusing on driver alignment and short-game touch to recalibrate feel and reestablish R1–R2 performance benchmarks.</p>
+              <p style="margin-bottom: 0; color: #fff; font-weight: 600;">Preparation continues with the goal of entering the Spring season fully calibrated and ready to contribute consistently across all competitive rounds.</p>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted on: Jan 26, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+              <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <h3 style="font-size: 22px; color: #94a3b8; margin: 0; font-weight: 800;">Performance Archive</h3>
+            </div>
+            <div style="font-size: 15px; line-height: 1.7; color: #efefef; border-left: 4px solid #94a3b8; padding-left: 25px; text-align: left;">
+              <p style="margin: 0 0 18px 0; color: #fff; font-weight: 700; font-style: normal; font-size: 17px;">Fall Review & Strategic Focus</p>
+              <p style="margin-bottom: 18px;">The <b>Patriot All-America Invitational</b> served as a competitive reference point against a <b>national amateur field</b>, including several of the <b>top collegiate players</b>. Following the event, a <b>technical review</b> identified <strong>long-iron performance</strong> as an area for improvement ahead of <b>Spring qualifying</b>.</p>
+              <p style="margin-bottom: 18px;">In coordination with the <b>UTSA coaching staff</b>, a <b>short-term adjustment</b> was approved for Joshua to remain on campus and continue <strong>individual training during January</strong> rather than participate in the scheduled team trip.</p>
+              <p style="margin-bottom: 0;">This period was used to address identified <b>technical areas</b> prior to <b>Spring qualifying rounds</b> and subsequent team events. Joshua continues preparation within the <b>UTSA program</b> for the <b>Spring season</b>.</p>
+            </div>
+          </div>
+          <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted on: Jan 10, 2026</div>
+        </div>
+
+        <div class="insight-card-item" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; margin-bottom: 25px;">
               <div style="background: rgba(148, 163, 184, 0.1); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(148, 163, 184, 0.3);">
@@ -5832,120 +5872,82 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
           <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted on: Nov 16, 2025</div>
         </div>
 
-
-
       </div>
     </div>
 
-    <div class="jia-progress">
-      <div class="jia-progress-bar">
-        <div class="jia-progress-fill" id="jia-progress-fill"></div>
+    <div class="jpp-bottom">
+      <div class="jpp-progress">
+        <div class="jpp-progress-fill" id="jpp-progress-fill"></div>
       </div>
-      <div class="jia-footnote">Use arrows, swipe, or trackpad to move through the archive</div>
+      <div class="jpp-footnote">Use previous / next or jump directly from the dropdown</div>
     </div>
   </div>
 </div>
 
 <script>
-(function () {
-  const track = document.getElementById('jia-track');
-  const prev = document.getElementById('jia-prev');
-  const next = document.getElementById('jia-next');
-  const counter = document.getElementById('jia-counter');
-  const fill = document.getElementById('jia-progress-fill');
+(function() {
+  const stage = document.getElementById('jpp-stage');
+  const prevBtn = document.getElementById('jpp-prev');
+  const nextBtn = document.getElementById('jpp-next');
+  const select = document.getElementById('jpp-select');
+  const counter = document.getElementById('jpp-counter');
+  const progress = document.getElementById('jpp-progress-fill');
 
-  if (!track || !prev || !next || !counter || !fill) return;
+  if (!stage || !prevBtn || !nextBtn || !select || !counter || !progress) return;
 
-  function cards() {
-    return Array.from(track.querySelectorAll('.insight-card-item'));
-  }
+  const cards = Array.from(stage.querySelectorAll('.insight-card-item'));
+  let currentIndex = 0;
 
-  function currentIndex() {
-    const items = cards();
-    if (!items.length) return 0;
+  function showCard(index) {
+    const safeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    currentIndex = safeIndex;
 
-    const center = track.scrollLeft + track.clientWidth / 2;
-    let best = 0;
-    let bestDist = Infinity;
-
-    items.forEach((card, i) => {
-      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-      const dist = Math.abs(cardCenter - center);
-      if (dist < bestDist) {
-        bestDist = dist;
-        best = i;
+    cards.forEach((card, i) => {
+      if (i === safeIndex) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
       }
     });
 
-    return best;
+    select.value = String(safeIndex);
+    counter.textContent = (safeIndex + 1) + ' / ' + cards.length;
+    progress.style.width = (((safeIndex + 1) / cards.length) * 100) + '%';
+
+    prevBtn.disabled = safeIndex === 0;
+    nextBtn.disabled = safeIndex === cards.length - 1;
   }
 
-  function goTo(index, behavior) {
-    const items = cards();
-    if (!items.length) return;
-
-    const safe = Math.max(0, Math.min(index, items.length - 1));
-    const card = items[safe];
-    const left = card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-
-    track.scrollTo({
-      left,
-      behavior: behavior || 'smooth'
-    });
-  }
-
-  function update() {
-    const items = cards();
-    const total = items.length || 1;
-    const current = currentIndex();
-
-    counter.textContent = (current + 1) + ' / ' + total;
-    fill.style.width = (((current + 1) / total) * 100) + '%';
-
-    prev.disabled = current <= 0;
-    next.disabled = current >= total - 1;
-  }
-
-  prev.addEventListener('click', function () {
-    goTo(currentIndex() - 1, 'smooth');
+  prevBtn.addEventListener('click', function() {
+    showCard(currentIndex - 1);
   });
 
-  next.addEventListener('click', function () {
-    goTo(currentIndex() + 1, 'smooth');
+  nextBtn.addEventListener('click', function() {
+    showCard(currentIndex + 1);
   });
 
-  let timer;
-  track.addEventListener('scroll', function () {
-    clearTimeout(timer);
-    timer = setTimeout(update, 70);
-  }, { passive: true });
-
-  window.addEventListener('resize', function () {
-    update();
-    goTo(currentIndex(), 'auto');
+  select.addEventListener('change', function() {
+    showCard(parseInt(select.value, 10));
   });
 
-  document.addEventListener('keydown', function (e) {
+  document.addEventListener('keydown', function(e) {
+    const section = document.getElementById('joshua-unique-section');
+    if (!section) return;
     const active = document.activeElement;
-    const inside = document.getElementById('joshua-insight-archive');
-    if (!inside) return;
-    if (active && !inside.contains(active) && active !== document.body) return;
+    if (active && !section.contains(active) && active !== document.body) return;
 
     if (e.key === 'ArrowLeft') {
       e.preventDefault();
-      goTo(currentIndex() - 1, 'smooth');
+      showCard(currentIndex - 1);
     }
+
     if (e.key === 'ArrowRight') {
       e.preventDefault();
-      goTo(currentIndex() + 1, 'smooth');
+      showCard(currentIndex + 1);
     }
   });
 
-  update();
-  setTimeout(function () {
-    goTo(0, 'auto');
-    update();
-  }, 60);
+  showCard(0);
 })();
 </script>
 
