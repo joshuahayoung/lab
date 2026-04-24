@@ -2,11 +2,12 @@
   "pgaTableShared": {
     "lastUpdated": "Apr 22, 2026",
 
-    "sectionTitle": "UCHAMPIONSHIP WEEK",
+    "sectionTitle": "CHAMPIONSHIP WEEK",
     "eventNo": "Postseason Event",
     "eventLabel": "AAC Championship",
 
     "status": "ongoing",
+    "label": "CHAMPIONSHIP",
 
     "title": "American Conference Championship",
     "date": "Apr 27-29",
