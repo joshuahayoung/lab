@@ -5926,7 +5926,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
     });
 
     select.value = String(activeId);
-    counter.textContent = (safeDisplayIndex + 1) + ' / ' + orderedIds.length;
+    counter.textContent = (orderedIds.length - safeDisplayIndex) + ' / ' + orderedIds.length;
     currentLabel.textContent = cardLabels[activeId] || '';
 
     prevBtn.disabled = safeDisplayIndex === 0;
