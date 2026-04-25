@@ -452,7 +452,6 @@
            class="jh-isolated-banner-img"
            src="./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg"
            alt="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
-           title="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
            loading="eager"
            fetchpriority="high"
            decoding="sync"
@@ -529,8 +528,7 @@
 
           img.src = banner.src;
           img.alt = banner.alt;
-          img.title = banner.title;
-          hoverCaption.textContent = banner.hover;
+          hoverCaption.textContent = banner.hover || banner.alt || '';
 
           img.classList.remove('is-changing');
         }, 180);
