@@ -326,15 +326,246 @@
   </div>
   
 
-<div class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0; box-sizing: border-box;">
-    <div style="width: 100%; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.18); background-color: #ffffff; border: 1px solid #e2e8f0; box-sizing: border-box;">
-        <img src="./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg" 
-             style="width: 100%; height: auto; display: block; object-fit: contain;" 
-             alt="Joshua Hong focusing on putting line during NCAA tournament"
-             title="Joshua Hong focusing on putting line during NCAA tournament"
-             loading="eager" fetchpriority="high" decoding="sync"
-             onerror="this.src='https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg';">
+<div id="jh-rotating-ncaa-banner" class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <style>
+    #jh-rotating-ncaa-banner,
+    #jh-rotating-ncaa-banner * {
+      box-sizing: border-box;
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-card {
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-media {
+      position: relative;
+      width: 100%;
+      background: #0c2340;
+      overflow: hidden;
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-img.is-changing {
+      opacity: 0;
+      transform: scale(1.006);
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-meta {
+      position: absolute;
+      right: 18px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-status {
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: rgba(12,35,64,0.82);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 10px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-count {
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      color: #0c2340;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 10px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+    }
+
+    #jh-rotating-ncaa-banner .jh-banner-caption {
+      padding: 16px 20px 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-top: 1px solid #e2e8f0;
+    }
+
+    #jh-rotating-ncaa-banner .jh-caption-kicker {
+      margin: 0 0 6px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #c98a2e;
+    }
+
+    #jh-rotating-ncaa-banner .jh-caption-title {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 700;
+      color: #0c2340;
+    }
+
+    @media (max-width: 768px) {
+      #jh-rotating-ncaa-banner .jh-banner-card {
+        border-radius: 18px;
+      }
+
+      #jh-rotating-ncaa-banner .jh-banner-meta {
+        right: 12px;
+        bottom: 12px;
+        gap: 6px;
+      }
+
+      #jh-rotating-ncaa-banner .jh-banner-status,
+      #jh-rotating-ncaa-banner .jh-banner-count {
+        font-size: 9px;
+        padding: 7px 8px;
+      }
+
+      #jh-rotating-ncaa-banner .jh-banner-caption {
+        padding: 14px 15px 16px;
+      }
+
+      #jh-rotating-ncaa-banner .jh-caption-title {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+  </style>
+
+  <div class="jh-banner-card">
+    <div class="jh-banner-media">
+      <img id="jh-rotating-banner-img"
+           class="jh-banner-img"
+           src="./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg"
+           style="width: 100%; height: auto; display: block; object-fit: contain;"
+           alt="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
+           title="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
+           loading="eager"
+           fetchpriority="high"
+           decoding="sync"
+           onerror="this.src='https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg';">
+
+      <div class="jh-banner-meta" aria-hidden="true">
+        <span class="jh-banner-status">Daily Banner</span>
+        <span id="jh-rotating-banner-count" class="jh-banner-count">1 / 5</span>
+      </div>
     </div>
+
+    <div class="jh-banner-caption" aria-live="polite">
+      <p class="jh-caption-kicker">NCAA Stats</p>
+      <p id="jh-rotating-banner-caption" class="jh-caption-title">
+        Joshua Hong checking his yardage book before selecting a club during NCAA competition.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const section = document.getElementById('jh-rotating-ncaa-banner');
+      if (!section) return;
+
+      const img = section.querySelector('#jh-rotating-banner-img');
+      const caption = section.querySelector('#jh-rotating-banner-caption');
+      const count = section.querySelector('#jh-rotating-banner-count');
+
+      if (!img || !caption || !count) return;
+
+      const banners = [
+        {
+          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
+          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
+          alt: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition',
+          title: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition',
+          caption: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition.'
+        },
+        {
+          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
+          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
+          alt: 'Joshua Hong preparing for an NCAA tournament round during his freshman season',
+          title: 'Joshua Hong preparing for an NCAA tournament round during his freshman season',
+          caption: 'Joshua Hong preparing for an NCAA tournament round during his freshman season.'
+        },
+        {
+          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
+          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
+          alt: 'Joshua Hong focused during NCAA competition as part of the UTSA men’s golf lineup',
+          title: 'Joshua Hong focused during NCAA competition as part of the UTSA men’s golf lineup',
+          caption: 'Joshua Hong focused during NCAA competition as part of the UTSA men’s golf lineup.'
+        },
+        {
+          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
+          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
+          alt: 'Joshua Hong in tournament preparation during the 2025–2026 NCAA season',
+          title: 'Joshua Hong in tournament preparation during the 2025–2026 NCAA season',
+          caption: 'Joshua Hong in tournament preparation during the 2025–2026 NCAA season.'
+        },
+        {
+          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
+          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
+          alt: 'Joshua Hong during NCAA golf competition with focus on performance and preparation',
+          title: 'Joshua Hong during NCAA golf competition with focus on performance and preparation',
+          caption: 'Joshua Hong during NCAA golf competition with focus on performance and preparation.'
+        }
+      ];
+
+      const oneDay = 24 * 60 * 60 * 1000;
+      const dayIndex = Math.floor(Date.now() / oneDay);
+      const activeIndex = dayIndex % banners.length;
+      const activeBanner = banners[activeIndex];
+
+      function preloadNextBanner() {
+        const nextIndex = (activeIndex + 1) % banners.length;
+        const preloadImg = new Image();
+        preloadImg.src = banners[nextIndex].src;
+      }
+
+      function applyBanner(banner, index) {
+        img.classList.add('is-changing');
+
+        window.setTimeout(function() {
+          img.onerror = function() {
+            this.onerror = null;
+            this.src = banner.fallback;
+          };
+
+          img.src = banner.src;
+          img.alt = banner.alt;
+          img.title = banner.title;
+          caption.textContent = banner.caption;
+          count.textContent = (index + 1) + ' / ' + banners.length;
+
+          img.classList.remove('is-changing');
+        }, 180);
+      }
+
+      applyBanner(activeBanner, activeIndex);
+      preloadNextBanner();
+    })();
+  </script>
 </div>
 
 </div>
