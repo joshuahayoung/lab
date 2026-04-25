@@ -327,123 +327,135 @@
   
 
 <div id="jh-rotating-ncaa-banner-isolated" style="display: block; width: 100%; max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both; contain: layout style paint;">
-  <style>
-    #jh-rotating-ncaa-banner-isolated {
-      display: block;
-      width: 780px;
-      height: auto;
-      margin: 0 auto 20px;
-      padding: 0;
-      object-fit: contain;
-      box-sizing: border-box;
-      clear: both;
-      contain: layout style paint;
-    }
+<style>
+  #jh-rotating-ncaa-banner-isolated {
+    display: block;
+    width: 100%;
+    max-width: 780px;
+    height: auto;
+    margin: 0 auto 20px;
+    padding: 0;
+    box-sizing: border-box;
+    clear: both;
+    contain: layout style paint;
+    transition: max-width 0.35s ease;
+  }
 
+  #jh-rotating-ncaa-banner-isolated.is-landscape {
+    max-width: 780px;
+  }
+
+  #jh-rotating-ncaa-banner-isolated.is-portrait {
+    max-width: 540px;
+  }
+
+  #jh-rotating-ncaa-banner-isolated,
+  #jh-rotating-ncaa-banner-isolated * {
+    box-sizing: border-box;
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    line-height: 0;
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #0c2340;
+    overflow: hidden;
+    border-radius: 25px;
+    line-height: 0;
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    border-radius: 25px;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img.is-changing {
+    opacity: 0;
+    transform: scale(1.006);
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-hover-caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+    padding: 12px 15px;
+    border-radius: 14px;
+    background: rgba(12, 35, 64, 0.82);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0.1px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  }
+
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:hover .jh-isolated-hover-caption,
+  #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:focus-within .jh-isolated-hover-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
     #jh-rotating-ncaa-banner-isolated,
-    #jh-rotating-ncaa-banner-isolated * {
-      box-sizing: border-box;
-    }
-
-    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card {
-      display: block;
+    #jh-rotating-ncaa-banner-isolated.is-landscape,
+    #jh-rotating-ncaa-banner-isolated.is-portrait {
       width: 100%;
       max-width: 100%;
-      margin: 0;
-      padding: 0;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      position: relative;
-      line-height: 0;
+      margin: 0 auto 20px;
     }
 
-    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media {
-      display: block;
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-      background: #0c2340;
-      overflow: hidden;
-      border-radius: 25px;
-      line-height: 0;
-    }
-
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card,
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media,
     #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      margin: 0;
-      padding: 0;
-      object-fit: contain;
-      border-radius: 25px;
-      transition: opacity 0.45s ease, transform 0.45s ease;
-    }
-
-    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img.is-changing {
-      opacity: 0;
-      transform: scale(1.006);
+      border-radius: 18px;
     }
 
     #jh-rotating-ncaa-banner-isolated .jh-isolated-hover-caption {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      z-index: 3;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      pointer-events: none;
-      padding: 12px 15px;
-      border-radius: 14px;
-      background: rgba(12, 35, 64, 0.82);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.45;
-      letter-spacing: 0.1px;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      line-height: 1.4;
     }
-
-    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:hover .jh-isolated-hover-caption,
-    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:focus-within .jh-isolated-hover-caption {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      #jh-rotating-ncaa-banner-isolated {
-        max-width: 100%;
-        margin: 0 auto 34px;
-      }
-
-      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card,
-      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media,
-      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img {
-        border-radius: 18px;
-      }
-
-      #jh-rotating-ncaa-banner-isolated .jh-isolated-hover-caption {
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        padding: 10px 12px;
-        border-radius: 12px;
-        font-size: 12px;
-        line-height: 1.4;
-      }
-    }
-  </style>
+  }
+</style>
 
   <div class="jh-isolated-banner-card">
     <div class="jh-isolated-banner-media">
