@@ -326,7 +326,7 @@
   </div>
   
 
-<div id="jh-rotating-ncaa-banner-isolated" style="display: block; width: 100%; max-width: 900px; margin: 0 margin-bottom: 10px; auto 40px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both; contain: layout style paint;">
+<div id="jh-rotating-ncaa-banner-isolated" style="display: block; width: 100%; max-width: 900px; margin: 0 margin-bottom: -20px; auto 40px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both; contain: layout style paint;">
   <style>
     #jh-rotating-ncaa-banner-isolated {
       display: block;
@@ -510,7 +510,7 @@
         }
       ];
 
-      const oneDay = 60 * 1000;
+      const oneDay = 6 * 60 * 60 * 1000;
       const dayIndex = Math.floor(Date.now() / oneDay);
       const activeIndex = dayIndex % banners.length;
       const activeBanner = banners[activeIndex];
