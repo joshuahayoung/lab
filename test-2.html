@@ -326,46 +326,70 @@
   </div>
   
 
-<div id="jh-rotating-ncaa-banner" class="image-section" style="max-width: 900px; margin: 0 auto 40px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div id="jh-rotating-ncaa-banner-isolated" style="display: block; width: 100%; max-width: 900px; margin: 0 auto 40px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both; contain: layout style paint;">
   <style>
-    #jh-rotating-ncaa-banner,
-    #jh-rotating-ncaa-banner * {
+    #jh-rotating-ncaa-banner-isolated {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0;
+      box-sizing: border-box;
+      clear: both;
+      contain: layout style paint;
+    }
+
+    #jh-rotating-ncaa-banner-isolated,
+    #jh-rotating-ncaa-banner-isolated * {
       box-sizing: border-box;
     }
 
-    #jh-rotating-ncaa-banner .jh-banner-card {
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card {
+      display: block;
       width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
       border-radius: 25px;
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.18);
       background: #ffffff;
       border: 1px solid #e2e8f0;
       position: relative;
+      line-height: 0;
     }
 
-    #jh-rotating-ncaa-banner .jh-banner-media {
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media {
+      display: block;
       position: relative;
       width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
       background: #0c2340;
       overflow: hidden;
       border-radius: 25px;
+      line-height: 0;
     }
 
-    #jh-rotating-ncaa-banner .jh-banner-img {
-      width: 100%;
-      height: auto;
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img {
       display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
       object-fit: contain;
       border-radius: 25px;
       transition: opacity 0.45s ease, transform 0.45s ease;
     }
 
-    #jh-rotating-ncaa-banner .jh-banner-img.is-changing {
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img.is-changing {
       opacity: 0;
       transform: scale(1.006);
     }
 
-    #jh-rotating-ncaa-banner .jh-hover-caption {
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-hover-caption {
       position: absolute;
       left: 18px;
       right: 18px;
@@ -384,25 +408,31 @@
       font-weight: 700;
       line-height: 1.45;
       letter-spacing: 0.1px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       box-shadow: 0 10px 24px rgba(0,0,0,0.22);
     }
 
-    #jh-rotating-ncaa-banner .jh-banner-media:hover .jh-hover-caption,
-    #jh-rotating-ncaa-banner .jh-banner-media:focus-within .jh-hover-caption {
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:hover .jh-isolated-hover-caption,
+    #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:focus-within .jh-isolated-hover-caption {
       opacity: 1;
       transform: translateY(0);
     }
 
     @media (max-width: 768px) {
-      #jh-rotating-ncaa-banner .jh-banner-card,
-      #jh-rotating-ncaa-banner .jh-banner-media,
-      #jh-rotating-ncaa-banner .jh-banner-img {
+      #jh-rotating-ncaa-banner-isolated {
+        max-width: 100%;
+        margin: 0 auto 34px;
+      }
+
+      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-card,
+      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media,
+      #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-img {
         border-radius: 18px;
       }
 
-      #jh-rotating-ncaa-banner .jh-hover-caption {
+      #jh-rotating-ncaa-banner-isolated .jh-isolated-hover-caption {
         left: 12px;
         right: 12px;
         bottom: 12px;
@@ -414,12 +444,11 @@
     }
   </style>
 
-  <div class="jh-banner-card">
-    <div class="jh-banner-media">
-      <img id="jh-rotating-banner-img"
-           class="jh-banner-img"
+  <div class="jh-isolated-banner-card">
+    <div class="jh-isolated-banner-media">
+      <img id="jh-isolated-rotating-banner-img"
+           class="jh-isolated-banner-img"
            src="./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg"
-           style="width: 100%; height: auto; display: block; object-fit: contain;"
            alt="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
            title="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
            loading="eager"
@@ -427,7 +456,7 @@
            decoding="sync"
            onerror="this.src='https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg';">
 
-      <div id="jh-rotating-banner-hover" class="jh-hover-caption" aria-hidden="true">
+      <div id="jh-isolated-rotating-banner-hover" class="jh-isolated-hover-caption" aria-hidden="true">
         Joshua Hong checking his yardage book before selecting a club during NCAA competition.
       </div>
     </div>
@@ -435,11 +464,11 @@
 
   <script>
     (function() {
-      const section = document.getElementById('jh-rotating-ncaa-banner');
+      const section = document.getElementById('jh-rotating-ncaa-banner-isolated');
       if (!section) return;
 
-      const img = section.querySelector('#jh-rotating-banner-img');
-      const hoverCaption = section.querySelector('#jh-rotating-banner-hover');
+      const img = section.querySelector('#jh-isolated-rotating-banner-img');
+      const hoverCaption = section.querySelector('#jh-isolated-rotating-banner-hover');
 
       if (!img || !hoverCaption) return;
 
