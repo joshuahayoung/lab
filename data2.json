@@ -24,9 +24,9 @@
     },
 
     "summary": {
-      "total": "73",
-      "par": "+1",
-      "pos": "T33"
+      "total": "146",
+      "par": "+2",
+      "pos": "T31"
     },
 
     "rounds": [
@@ -38,9 +38,9 @@
       },
       {
         "round": "Round 2",
-        "score": "-",
-        "par": "-",
-        "pos": "-"
+        "score": "73",
+        "par": "+1",
+        "pos": "T31"
       },
       {
         "round": "Round 3",
