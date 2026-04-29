@@ -2,11 +2,11 @@
   "pgaTableShared": {
     "lastUpdated": "Apr 29, 2026",
 
-    "sectionTitle": "ONGOING TOURNAMENT",
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "Postseason Event",
     "eventLabel": "AAC Championship",
 
-    "status": "ongoing",
+    "status": "final",
 
 
     "title": "American Conference Championship",
@@ -20,13 +20,13 @@
 
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/239888/scoring/team",
-      "label": "LIVE LEADERBOARD"
+      "label": "FINAL RESULTS"
     },
 
     "summary": {
-      "total": "146",
-      "par": "+2",
-      "pos": "T31"
+      "total": "215",
+      "par": "-1",
+      "pos": "T21"
     },
 
     "rounds": [
@@ -44,9 +44,9 @@
       },
       {
         "round": "Round 3",
-        "score": "-",
-        "par": "-",
-        "pos": "-"
+        "score": "69",
+        "par": "-3",
+        "pos": "T21"
       }
     ]
   }
