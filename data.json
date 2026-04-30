@@ -8,21 +8,21 @@
     "gpa": "3.4 GPA"
   },
   "teamMetrics": {
-    "winRate": "70.24",
-    "headToHead": "564-218-21",
+    "winRate": "68.64",
+    "headToHead": "599-238-24",
     "countingScore": "96.97",
     "recordedRounds": "32 / 33",
-    "pointsShare": "28.11",
-    "pointsValue": "370.23",
-    "teamTotal": "1317.09"
+    "pointsShare": "28.20",
+    "pointsValue": "403.10",
+    "teamTotal": "1429.21"
   },
   "officialRank": {
     "wagrRank": "492",
     "wagrImpact": "▼8",
     "wagrDate": "Apr 29, 2026",
-    "clippdRank": "360",
-    "clippdImpact": "▲9",
-    "clippdDate": "Apr 28, 2026",
+    "clippdRank": "373",
+    "clippdImpact": "▼11",
+    "clippdDate": "Apr 29, 2026",
     "wins": "1",
     "top3": "3",
     "top10": "5",
