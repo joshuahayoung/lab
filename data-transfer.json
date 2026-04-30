@@ -143,57 +143,7 @@
   },
 
 
-"awardsRecords": {
-  "kicker": "OFFICIAL RECOGNITION & PROGRAM RECORDS",
-  "title": "Awards, Recognition & Program Records",
-  "subtitle": "Official conference recognition and UTSA program-record markers from the completed freshman season.",
-  "cards": [
-    {
-      "tier": "primary",
-      "badge": "Recognition",
-      "title": "Conference & Season Recognition",
-      "items": [
-        {
-          "label": "Freshman of the Year",
-          "status": "Pending",
-          "note": "Season-end conference recognition status pending official announcement."
-        },
-        {
-          "label": "American Conference All-Conference Team",
-          "status": "Pending",
-          "note": "Season-end all-conference recognition status pending official announcement."
-        },
-        {
-          "label": "AAC Player of the Week",
-          "status": "Official",
-          "note": "Official conference recognition tied directly to freshman-season performance."
-        }
-      ]
-    },
-    {
-      "tier": "tertiary",
-      "badge": "Program Records",
-      "title": "UTSA Program Record Status",
-      "items": [
-        {
-          "label": "UTSA single-season scoring average record",
-          "status": "Official",
-          "note": "71.73 over 33 rounds, surpassing the previous 71.94 mark."
-        },
-        {
-          "label": "18-hole program record",
-          "status": "Tied",
-          "note": "64 (-8) matched the current UTSA single-round benchmark."
-        },
-        {
-          "label": "36-hole program record",
-          "status": "Tied",
-          "note": "134 (-10) matched the current UTSA 36-hole benchmark."
-        }
-      ]
-    }
-  ]
-},
+"awardsRecords": { "kicker": "OFFICIAL RECOGNITION & RECORD WATCH", "title": "Awards, Selection & Record Tracking", "subtitle": "Conference recognition, postseason relevance, and program-level record positioning tied to the full freshman season.", "cards": [ { "tier": "primary", "badge": "Recognition", "title": "Conference & Season-End Recognition", "items": [ { "label": "Freshman of the Year", "status": "Tracking", "note": "Conference freshman honor watch tied to full-season impact and scoring profile." }, { "label": "All-American Conference Team", "status": "Tracking", "note": "Season-end all-conference watch tied to scoring value and finish profile." }, { "label": "AAC Player of the Week", "status": "Official", "note": "Official conference recognition tied directly to performance." } ] }, { "tier": "secondary", "badge": "Selection", "title": "Postseason Qualification & Regional Pathway", "items": [ { "label": "NCAA Regional Individual Selection", "status": "Tracking", "note": "Postseason pathway tied to scoring profile, ranking position, and selection status." }, { "label": "Regional Individual Positioning", "status": "Tracking", "note": "Relevant to individual postseason discussion if automatic team qualification does not apply." }, { "label": "Postseason Validation Marker", "status": "Watch", "note": "Regional individual qualification would provide an additional external validation point." } ] }, { "tier": "tertiary", "badge": "Record Watch", "title": "Program Record & Historical Tracking", "items": [ { "label": "18-hole program record", "status": "Tied", "note": "64 (-8) matched the current UTSA single-round benchmark." }, { "label": "36-hole program record", "status": "Tied", "note": "134 (-10) matched the current UTSA 36-hole benchmark." }, { "label": "UTSA season scoring average record", "status": "Tracking", "note": "Freshman scoring pace remains relevant to the current single-season benchmark." }, { "label": "Freshman season benchmark", "status": "Tracking", "note": "Season profile remains relevant within program freshman-year scoring history." } ] } ] },
   
 
   "cultureFit": [
