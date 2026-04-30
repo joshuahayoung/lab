@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastUpdated": "April 30, 2026",
-    "status": "in-season"
+    "status": "season-complete"
   },
 
   "hero": {
@@ -16,7 +16,7 @@
     "Set UTSA’s single-season scoring average record at 71.73 over 33 official rounds.",
     "College-level proof already includes an individual win, three top-3 finishes, and five top-10s.",
     "Low-round capability is documented by a 64 (-8), a 134 (-10), and six sub-70 rounds.",
-    "Current production is already college-real, while the overall profile still leaves room to scale higher."
+    "Transfer read centers on lineup readiness, scoring stability, and room to grow into a higher team role."
   ],
 
   "heroStrip": [
@@ -83,63 +83,63 @@
   ],
 
   "progression": {
-    "stages": [
-      {
-        "phase": "Freshman NCAA Phase",
-        "title": "Immediate Division I Lineup Translation",
-        "desc": "Freshman season already produced a win, top-3 volume, and a high-reliability lineup profile."
-      },
-      {
-        "phase": "Senior Junior Phase",
-        "title": "Back-to-Back Mexico Season Champion",
-        "desc": "Six consecutive wins and a second straight Mexico season title reinforced finishing ability, cumulative control, and long-form scoring value."
-      },
-      {
-        "phase": "Early Junior Phase",
-        "title": "Season Champion Before the Wins",
-        "desc": "The early profile separated through consistency, stability, and score accumulation before the win volume arrived."
-      }
-    ]
-  },
+  "stages": [
+    {
+      "phase": "NCAA Freshman Phase",
+      "title": "Junior-to-College Scoring Translation",
+      "desc": "The first college season showed that Joshua’s pre-college scoring pattern carried into NCAA team play through steady contribution, low-round capability, and record-level UTSA scoring."
+    },
+    {
+      "phase": "Senior Junior Phase",
+      "title": "Back-to-Back Mexico Season Champion",
+      "desc": "Six consecutive wins and a second straight Mexico season title reinforced finishing ability, cumulative control, and long-form scoring value."
+    },
+    {
+      "phase": "Early Junior Phase",
+      "title": "Season Champion Before the Wins",
+      "desc": "The early profile separated through consistency, stability, and score accumulation before the later win volume arrived."
+    }
+  ]
+},
 
- "evidenceProjection": {
+"evidenceProjection": {
   "cards": [
     {
       "badge": "Difficult-Condition Win",
       "event": "Military City Collegiate",
       "points": [
         "Individual champion and only player under par in the field.",
-        "Proven scoring value in a resistance-heavy setup at TPC San Antonio.",
-        "Added team-title contribution under real separation pressure."
+        "Won at TPC San Antonio in a field where par held clear scoring value.",
+        "Contributed to UTSA’s team title in the same event."
       ]
     },
     {
-      "badge": "Ceiling / Conversion",
+      "badge": "Scoring Ceiling",
       "event": "Golden Nugget Invitational",
       "points": [
-        "Solo 3rd with full-event contention profile.",
-        "64 (-8) tied the UTSA 18-hole record.",
-        "134 (-10) tied the UTSA 36-hole record."
+        "Solo 3rd finish with a 13-under 203 total.",
+        "64 (-8) tied the UTSA 18-hole program record.",
+        "134 (-10) tied the UTSA 36-hole program record."
       ]
     },
     {
-      "badge": "Season-Long Team Trust",
-      "event": "UTSA Freshman Season Role",
+      "badge": "Season-Long Team Role",
+      "event": "UTSA Freshman Season",
       "points": [
-        "Started all 10 regular-season events as a freshman.",
-        "Finished as UTSA’s top scorer in 6 events, No. 2 in 2, and No. 3 in 2.",
-        "Maintained lineup trust through the conference championship."
+    "Team standing by event: UTSA No. 1 in six, No. 2 in three, and No. 3 in two across 11 NCAA tournaments.",
+    "Counting record: 32 of 33 team rounds, including all three AAC Championship rounds.",
+    "Score-floor indicator: without peak scoring sharpness, posted 73-73-69, counted all three rounds, and closed the AAC Championship under par."
       ]
     }
     ],
 
    
-    "projectedRoleTitle": "Projected College Role",
-    "projectedRoleBody": "Immediate lineup option with dependable travel-roster value, strong counting reliability, and room to scale in a stronger competitive environment.",
-    "translationLabel": "Roster Translation",
-    "translationText": "Reliable counting-round addition with value beyond baseline lineup stability.",
-    "developmentLabel": "Development Outlook",
-    "developmentText": "Upward scoring trend and repeated low-round evidence suggest additional growth under deeper fields and stronger daily pressure."
+"projectedRoleTitle": "College Role Read",
+"projectedRoleBody": "Lineup-ready transfer profile with verified freshman production, scoring stability, and room to grow into a higher team role.",
+"translationLabel": "Roster Translation",
+"translationText": "Reliable scoring profile for programs seeking lineup competition, scoring stability, and upward role potential.",
+"developmentLabel": "Development Outlook",
+"developmentText": "Freshman-year production, scoring progression, and low-round evidence point to continued growth as his college schedule and role expand."
   },
 
 
@@ -227,17 +227,17 @@
   
 
   "cultureFit": [
-  "Low-maintenance, low-drama teammate profile.",
-  "Comfortable within team structure without entitlement behavior.",
-  "Steady practice habits.",
-  "Comfortable carrying major scoring responsibility.",
-  "Coachable, reliable teammate profile."
+  "Works within team structure and daily practice expectations.",
+  "Maintains steady preparation habits across tournament weeks.",
+  "Responsive to coaching feedback and technical adjustment.",
+  "Handled meaningful team scoring responsibility as a freshman.",
+  "Reliable teammate profile with consistent competitive preparation."
 ],
 
 "transferObjective": {
-  "body": "Pursuing the next competitive step through deeper fields, a more demanding daily environment, and a development setting aligned with long-term professional goals and the PGA U pathway.",
+  "body": "Evaluating a next-step fit centered on schedule exposure, internal competition, player development, and long-term growth.",
   "noteLabel": "Positioning Note",
-  "noteText": "Appreciative of the current program experience and growth, while recognizing that the next development phase may be better served in a different competitive environment."
+  "noteText": "Appreciative of the UTSA freshman-year experience; the transfer review is framed around future fit, opportunity, and continued development."
 },
 
   "links": [
