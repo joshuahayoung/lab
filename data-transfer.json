@@ -1,28 +1,28 @@
 {
   "meta": {
-    "lastUpdated": "April 22, 2026",
+    "lastUpdated": "April 30, 2026",
     "status": "in-season"
   },
 
   "hero": {
     "eyebrow": "Transfer Snapshot",
     "title": "Joshua Hong",
-    "metaLine": "Freshman | UTSA Men's Golf | NCAA Division I",
-    "definition": "High-reliability freshman scorer with immediate lineup value and upward transfer projection.",
-    "supporting": "Low-variance profile built on counting-round reliability, difficult-condition performance, and early win/top-end conversion at the Division I level."
+    "metaLine": "2025–26 Freshman Season | UTSA Men's Golf | NCAA Division I",
+    "definition": "Record-level freshman scorer with verified Division I production, high counting reliability, and upward Power 4 lineup potential.",
+    "supporting": "Season-long profile built on 32 of 33 counting rounds, one win, three top-3 finishes, five top-10s, and 19 par-or-better scorecards across 33 official rounds."
   },
 
   "quickSummary": [
-    "29 of 30 counting rounds already support immediate lineup trust at the college level.",
+    "Set UTSA’s single-season scoring average record at 71.73 over 33 official rounds.",
     "College-level proof already includes an individual win, three top-3 finishes, and five top-10s.",
-    "Difficult-condition value is already supported by a win in a resistance-heavy scoring environment.",
+    "Low-round capability is documented by a 64 (-8), a 134 (-10), and six sub-70 rounds.",
     "Current production is already college-real, while the overall profile still leaves room to scale higher."
   ],
 
   "heroStrip": [
     {
       "label": "Official Rounds",
-      "value": "30"
+      "value": "33"
     },
     {
       "label": "Low Score",
@@ -30,7 +30,7 @@
     },
     {
       "label": "Par or Better",
-      "value": "18 / 30 (60.00%)"
+      "value": "19 / 33 (57.58%)"
     },
     {
       "label": "Academic GPA",
@@ -51,33 +51,33 @@
     },
     {
       "label": "Counting Rate",
-      "value": "96.67%",
+      "value": "96.97%",
       "accent": true,
-      "note": "29 of 30 counting rounds. Travel-roster reliability."
+      "note": "32 of 33 counting rounds. Travel-roster reliability."
     },
     {
       "label": "Head-to-Head",
-      "value": "564-218-21",
-      "note": "70.24% win rate across the full sample."
+      "value": "599-238-24",
+      "note": "68.64% win rate across the full sample."
     },
     {
       "label": "Points Share",
-      "value": "28.11%",
-      "note": "370.23 of 1,317.09 weighted team points."
+      "value": "28.20%",
+      "note": "403.10 of 1,429.21 weighted team points."
     },
     {
       "label": "Top Finishes",
       "value": "1 / 3 / 5",
-      "note": "Win, top-3, and top-10 volume across 10 freshman events."
+      "note": "Win, top-3, and top-10 volume across 11 freshman events."
     },
     {
       "label": "WAGR",
-      "value": "484",
+      "value": "492",
       "note": "Current world amateur position."
     },
     {
       "label": "Clippd Rank",
-      "value": "371",
+      "value": "373",
       "note": "Current Clippd position."
     }
   ],
