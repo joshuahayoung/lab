@@ -144,9 +144,9 @@
 
 
 "awardsRecords": { 
-  "kicker": "OFFICIAL RECOGNITION & RECORD WATCH", 
-  "title": "Awards, Selection & Record Tracking", 
-  "subtitle": "Conference recognition, postseason relevance, and program-level record positioning tied to the full freshman season.", 
+  "kicker": "SEASON RECOGNITION & PROGRAM MARKERS", 
+  "title": "Recognition, Program Records & Reliability", 
+  "subtitle": "Conference recognition, UTSA program-record, and team-value indicators markers from the completed freshman season.", 
   "cards": [ 
     { 
       "tier": "primary", "badge": "Recognition", "title": "Conference & Season-End Recognition", 
