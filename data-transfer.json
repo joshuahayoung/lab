@@ -164,7 +164,7 @@
     },
 
     {
-  "tier": "tertiary",
+  "tier": "secondary",
   "badge": "Program Records",
   "title": "UTSA Program Record Status",
   "items": [
@@ -187,7 +187,7 @@
 },
     
     {
-      "tier": "secondary",
+      "tier": "tertiary",
       "badge": "Reliability",
       "title": "Freshman Reliability & Team Value",
       "items": [
