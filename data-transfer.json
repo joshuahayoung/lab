@@ -162,36 +162,56 @@
     } 
   ] 
     },
-    { 
-      "tier": "secondary", "badge": "Selection", "title": "Postseason Qualification & Regional Pathway", "items": 
-      [ 
-        { 
-          "label": "NCAA Regional Individual Selection", "status": "Tracking", "note": "Postseason pathway tied to scoring profile, ranking position, and selection status." 
-        }, 
-        { 
-          "label": "Regional Individual Positioning", "status": "Tracking", "note": "Relevant to individual postseason discussion if automatic team qualification does not apply." 
-        }, 
-        { 
-          "label": "Postseason Validation Marker", "status": "Watch", "note": "Regional individual qualification would provide an additional external validation point." 
-        } 
-      ] 
-    }, 
-    { "tier": "tertiary", "badge": "Record Watch", "title": "Program Record & Historical Tracking", "items": 
-      [ 
-        { 
-          "label": "18-hole program record", "status": "Tied", "note": "64 (-8) matched the current UTSA single-round benchmark." 
-        }, 
-        { 
-          "label": "36-hole program record", "status": "Tied", "note": "134 (-10) matched the current UTSA 36-hole benchmark." 
-        }, 
-        { 
-          "label": "UTSA season scoring average record", "status": "Tracking", "note": "Freshman scoring pace remains relevant to the current single-season benchmark." 
-        }, 
-        { 
-          "label": "Freshman season benchmark", "status": "Tracking", "note": "Season profile remains relevant within program freshman-year scoring history." 
-        } 
-      ] 
+
+    {
+  "tier": "tertiary",
+  "badge": "Program Records",
+  "title": "UTSA Program Record Status",
+  "items": [
+    {
+      "label": "UTSA single-season scoring average record",
+      "status": "Official",
+      "note": "71.73 over 33 rounds, surpassing the previous 71.94 mark."
+    },
+    {
+      "label": "18-hole program record",
+      "status": "Tied",
+      "note": "64 (-8) matched the current UTSA single-round benchmark."
+    },
+    {
+      "label": "36-hole program record",
+      "status": "Tied",
+      "note": "134 (-10) matched the current UTSA 36-hole benchmark."
+    }
+  ]
+},
+    
+    {
+      "tier": "secondary",
+      "badge": "Reliability",
+      "title": "Freshman Reliability & Team Value",
+      "items": [
+        {
+          "label": "Counting Score Record",
+          "status": "Verified",
+          "note": "32 of 33 team rounds counted during the completed freshman season."
+        },
+        {
+          "label": "Team Contribution Share",
+          "status": "Verified",
+          "note": "28.20% Clippd points share across 33 rounds, with 403.10 weighted points."
+        },
+        {
+          "label": "Scoring Floor",
+          "status": "Verified",
+          "note": "Round range stayed within 64–76 across 33 official rounds, with no 80-plus scorecards."
+        }
+      ]
     } 
+
+    
+
+    
   ] 
 },
   
