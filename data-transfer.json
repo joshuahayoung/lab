@@ -172,7 +172,7 @@
       "label": "Freshman of the Year", "status": "Pending", "note": "Conference freshman honor watch tied to full-season impact and scoring profile." 
     }, 
     { 
-      "label": "American Conference All-Conference Team", "status": "Pending", "note": "Season-end all-conference watch tied to scoring value and finish profile." 
+      "label": "AAC All-Conference Team", "status": "Pending", "note": "Season-end all-conference recognition status pending official announcement." 
     }, 
     { 
       "label": "AAC Player of the Week", "status": "Official", "note": "Official conference recognition tied directly to performance." 
@@ -205,7 +205,7 @@
     
     {
       "tier": "tertiary",
-      "badge": "Reliability",
+      "badge": "Season Markers",
       "title": "Freshman Reliability & Team Value",
       "items": [
         {
