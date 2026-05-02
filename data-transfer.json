@@ -237,36 +237,36 @@
     {
       "name": "NCAA Stats",
       "url": "ncaa-stats.html",
-      "desc": "Full freshman season log, results, and scoring archive."
+      "desc": "Full freshman-season log, results, and scoring archive."
     },
     {
       "name": "News & Media",
       "url": "news-media.html",
-      "desc": "External validation, coverage, and milestone-linked references."
+      "desc": "External coverage and milestone-linked references."
     },
 
     {
       "name": "Reference & Links",
       "url": "reference-links.html",
-      "desc": "Official external sources for independent verification and deeper review."
+      "desc": "Official source hub for rankings, records, and event verification."
     },
 
     {
       "name": "Junior Career",
       "url": "junior-career.html",
-      "desc": "Pre-college progression, season-title track, and growth history."
+      "desc": "Pre-college progression and junior record archive."
     },
     
     {
       "name": "WAGR",
       "url": "https://www.wagr.com/playerprofile/joshua-hong-40704",
-      "desc": "Official world amateur ranking reference for current global positioning and external market context."
+      "desc": "Official world amateur ranking reference."
     },
     
     {
       "name": "Clippd / Scoreboard",
       "url": "https://scoreboard.clippd.com/players/38903?season=2026",
-      "desc": "Event-level scoring verification and field-relative review."
+      "desc": "Event-level scoring and field-relative verification."
     }
   ],
 
