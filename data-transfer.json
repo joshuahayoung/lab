@@ -42,43 +42,43 @@
     {
       "label": "Clippd Adjusted Avg",
       "value": "71.20",
-      "note": "Division I scoring baseline with real lineup value."
+      "note": "Field-adjusted freshman scoring reference across 33 official rounds."
     },
     {
       "label": "Raw Scoring Avg",
       "value": "71.73",
-      "note": "Freshman-season raw scoring baseline."
+      "note": "UTSA single-season scoring average record over 33 rounds."
     },
     {
       "label": "Counting Rate",
       "value": "96.97%",
       "accent": true,
-      "note": "32 of 33 counting rounds. Travel-roster reliability."
+      "note": "32 of 33 team rounds counted across the completed freshman season."
     },
     {
       "label": "Head-to-Head",
       "value": "599-238-24",
-      "note": "68.64% win rate across the full sample."
+      "note": "68.64% win rate across the completed freshman-season sample."
     },
     {
       "label": "Points Share",
       "value": "28.20%",
-      "note": "403.10 of 1,429.21 weighted team points."
+      "note": "403.10 of 1,429.21 weighted team points across 33 rounds."
     },
     {
       "label": "Top Finishes",
       "value": "1 / 3 / 5",
-      "note": "Win, top-3, and top-10 volume across 11 freshman events."
+      "note": "One win, three top-3s, and five top-10s across 11 NCAA tournaments."
     },
     {
       "label": "WAGR",
       "value": "492",
-      "note": "Current world amateur position."
+      "note": "World amateur ranking reference as of Apr. 29, 2026."
     },
     {
       "label": "Clippd Rank",
       "value": "373",
-      "note": "Current Clippd position."
+      "note": "NCAA player ranking reference as of Apr. 29, 2026."
     }
   ],
 
@@ -145,17 +145,17 @@
 
 "awardsRecords": { 
   "kicker": "SEASON RECOGNITION & PROGRAM MARKERS", 
-  "title": "Recognition, Program Records & Reliability", 
-  "subtitle": "Conference recognition, UTSA program-record, and team-value indicators markers from the completed freshman season.", 
+  "title": "Recognition, Program Records & Season Markers", 
+  "subtitle": "Conference recognition, UTSA program-record status, and season-value markers from the completed freshman season.", 
   "cards": [ 
     { 
       "tier": "primary", "badge": "Recognition", "title": "Conference & Season-End Recognition", 
   "items": [ 
     { 
-      "label": "Freshman of the Year", "status": "Tracking", "note": "Conference freshman honor watch tied to full-season impact and scoring profile." 
+      "label": "Freshman of the Year", "status": "Pending", "note": "Conference freshman honor watch tied to full-season impact and scoring profile." 
     }, 
     { 
-      "label": "All-American Conference Team", "status": "Tracking", "note": "Season-end all-conference watch tied to scoring value and finish profile." 
+      "label": "American Conference All-Conference Team", "status": "Pending", "note": "Season-end all-conference watch tied to scoring value and finish profile." 
     }, 
     { 
       "label": "AAC Player of the Week", "status": "Official", "note": "Official conference recognition tied directly to performance." 
@@ -204,7 +204,7 @@
         {
           "label": "Scoring Floor",
           "status": "Verified",
-          "note": "Round range stayed within 64–76 across 33 official rounds, with no 80-plus scorecards."
+          "note": "Completed 33-round freshman sample stayed within a 64–76 scoring range."
         }
       ]
     } 
