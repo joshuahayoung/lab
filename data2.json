@@ -1,52 +1,52 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "May 2, 2026",
+    "lastUpdated": "May 4, 2026",
 
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "Postseason Event",
-    "eventLabel": "AAC Championship",
+    "sectionTitle": "UPCOMING TOURNAMENT",
+    "eventNo": "TBD",
+    "eventLabel": "TBD",
 
-    "status": "final",
+    "status": "upcoming",
 
 
-    "title": "American Conference Championship",
-    "date": "Apr 27-29",
-    "venue": "Ritz Carlton Members Club",
-    "location": "Sarasota, FL",
-    "par": 72,
-    "yards": "7,417",
-    "rating": 74.0,
-    "slope": 132,
+    "title": "TBD",
+    "date": "-",
+    "venue": "-",
+    "location": "-",
+    "par": -,
+    "yards": "-",
+    "rating": -,
+    "slope": -,
 
     "mainLink": {
-      "url": "https://scoreboard.clippd.com/tournaments/239888/scoring/team",
-      "label": "FINAL RESULTS"
+      "url": "-",
+      "label": "TBD"
     },
 
     "summary": {
-      "total": "215",
-      "par": "-1",
-      "pos": "T21"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
 
     "rounds": [
       {
         "round": "Round 1",
-        "score": "73",
-        "par": "+1",
-        "pos": "T33"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       },
       {
         "round": "Round 2",
-        "score": "73",
-        "par": "+1",
-        "pos": "T31"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       },
       {
         "round": "Round 3",
-        "score": "69",
-        "par": "-3",
-        "pos": "T21"
+        "score": "-",
+        "par": "-",
+        "pos": "-"
       }
     ]
   }
