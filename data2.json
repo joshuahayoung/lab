@@ -1,34 +1,27 @@
 {
   "pgaTableShared": {
     "lastUpdated": "May 2, 2026",
-
     "sectionTitle": "UPCOMING TOURNAMENT",
     "eventNo": "Upcoming Tournament",
     "eventLabel": "TBD",
-
     "status": "upcoming",
-
-
     "title": "UPCOMING TOURNAMENT",
     "date": "TBD",
     "venue": "TBD",
     "location": "TBD, TBD",
-    "par": "-",
+    "par": 0,
     "yards": "-",
-    "rating": "-",
-    "slope": "-",
-
+    "rating": 0,
+    "slope": 0,
     "mainLink": {
       "url": "-",
       "label": "TBD"
     },
-
     "summary": {
       "total": "-",
       "par": "-",
       "pos": "-"
     },
-
     "rounds": [
       {
         "round": "Round 1",
