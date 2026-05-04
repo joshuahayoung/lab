@@ -413,6 +413,7 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+    text-align: center;
   }
 
   #jh-rotating-ncaa-banner-isolated .jh-isolated-banner-media:hover .jh-isolated-hover-caption,
@@ -452,7 +453,6 @@
            class="jh-isolated-banner-img"
            src="./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg"
            alt="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
-           title="Joshua Hong checking his yardage book before selecting a club during NCAA competition"
            loading="eager"
            fetchpriority="high"
            decoding="sync"
@@ -479,41 +479,36 @@
           src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
           fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
           alt: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition',
-          title: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition',
           hover: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition.'
         },
         {
           src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
           fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
           alt: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round',
-          title: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round',
           hover: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round.'
         },
         {
           src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
           fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
           alt: 'Joshua Hong studying the putting line during an NCAA tournament round',
-          title: 'Joshua Hong studying the putting line during an NCAA tournament round',
           hover: 'Joshua Hong studying the putting line during an NCAA tournament round.'
         },
         {
           src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
           fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
           alt: 'Joshua Hong putting during an NCAA tournament round',
-          title: 'Joshua Hong putting during an NCAA tournament round',
           hover: 'Joshua Hong putting during an NCAA tournament round.'
         },
         {
           src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
           fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
           alt: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round',
-          title: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round',
           hover: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round.'
         }
       ];
 
-      const oneDay = 6 * 60 * 60 * 1000;
-      const dayIndex = Math.floor(Date.now() / oneDay);
+      const rotationInterval = 10 * 60 * 60 * 1000;
+      const dayIndex = Math.floor(Date.now() / rotationInterval);
       const activeIndex = dayIndex % banners.length;
       const activeBanner = banners[activeIndex];
 
@@ -534,8 +529,7 @@
 
           img.src = banner.src;
           img.alt = banner.alt;
-          img.title = banner.title;
-          hoverCaption.textContent = banner.hover;
+          hoverCaption.textContent = banner.hover || banner.alt || '';
 
           img.classList.remove('is-changing');
         }, 180);
@@ -1556,7 +1550,7 @@
   <div style="margin-bottom: 20px;">
     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
       <h2 style="color: #0c2340; border-left: 6px solid #2e7d32; padding-left: 15px; font-size: 22px; margin: 0; font-weight: 800;">
-        2026 NCAA Spring Season <span style="font-weight: 400; font-size: 16px; color: #2e7d32;">(Scheduled)</span>
+        2026 NCAA Spring Season
       </h2>
     </div>
 
@@ -1580,60 +1574,26 @@
             <td class="col-left">
               <div style="font-weight: 600; font-size: 13px; color: #c98a2e;">Apr 27-29, 2026</div>
               <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">American Conference Championship</div>
-              <div style="font-size: 12px; color: #7f8c8d;">Ritz Carlton Members Club - FL | Par 72 | 7,292 Yards</div>
+              <div style="font-size: 12px; color: #7f8c8d;">Ritz Carlton Members Club - FL | Par 72 | 7,417 Yards</div>
 
                <div style="font-size: 11px; color: #777; font-weight: 500; margin-top: 2px;">
-              Rank Impact: <span style="color:#16a34a;"> </span> TBD | SG: TBD | Weighted Pts: TBD<br>
-              WAGR Pwr: TBD | Pts Earned: TBD
+              Rank Impact: <span style="color:#e11d48;">▼</span> 11 | SG: -1.64 | Weighted Pts: 32.87<br>
+              WAGR Pwr: 302.0150 | Pts Earned: 4.4097
               
               <div class="mobile-status-bar">
-                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">R1-R2-R3</span><span class="ms-value" style="color: #c98a2e; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">TOTAL</span><span class="ms-value" style="color: #c98a2e; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">PAR</span><span class="ms-value" style="color: #c98a2e; font-weight: 700;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">FINISH</span><span class="ms-value" style="color: #c98a2e; font-weight: 700;">-</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">R1-R2-R3</span><span class="ms-value" style="color: #c98a2e; font-weight: 800;">
+                  <span style="color:#333;">73</span>-<span style="color: #333;">73</span>-<span style="color:#e11d48;">69</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">TOTAL</span><span class="ms-value" style="color:#e11d48; font-weight: 800;">215</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">PAR</span><span class="ms-value" style="color: #e11d48; font-weight: 700;">-1</span></div>
+                <div class="ms-item"><span class="ms-label" style="color: #c98a2e;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">T21</span></div>
               </div>
             </td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 800;"><span style="color: #333;">73</span>-<span style="color: #333;">73</span>-<span style="color: #e11d48;">69</span></td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 800;">215</td>
+            <td class="hide-mobile" style="color: #e11d48; font-weight: 700;">-1</td>
+            <td class="hide-mobile" style="color: #333; font-weight: 700;">T21</td>
           </tr>
-          
-          <tr>
-            <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #333;">May 18-20, 2026</div>
-              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">NCAA Regional</div>
-              <div style="font-size: 12px; color: #7f8c8d;">TBD - Location to be Announced</div>
-              <div class="mobile-status-bar">
-                <div class="ms-item"><span class="ms-label" style="color: #333;">R1-R2-R3</span><span class="ms-value" style="color: #333; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">TOTAL</span><span class="ms-value" style="color: #333; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">PAR</span><span class="ms-value" style="color: #333; font-weight: 700;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #333;">FINISH</span><span class="ms-value" style="color: #333; font-weight: 700;">-</span></div>
-              </div>
-            </td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-          </tr>
-          
-          <tr style="background: rgba(12, 35, 64, 0.05);">
-            <td class="col-left">
-              <div style="font-weight: 600; font-size: 13px; color: #0c2340;">May 29 - Jun 3, 2026</div>
-              <div style="font-weight: 800; color: #0c2340; font-size: 16px; margin: 2px 0;">NCAA Championship</div>
-              <div style="font-size: 12px; color: #7f8c8d;">Omni La Costa - Carlsbad, CA</div>
-              <div class="mobile-status-bar">
-                <div class="ms-item"><span class="ms-label" style="color: #0c2340;">R1-R2-R3</span><span class="ms-value" style="color: #0c2340; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #0c2340;">TOTAL</span><span class="ms-value" style="color: #0c2340; font-weight: 800;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #0c2340;">PAR</span><span class="ms-value" style="color: #0c2340; font-weight: 700;">-</span></div>
-                <div class="ms-item"><span class="ms-label" style="color: #0c2340;">FINISH</span><span class="ms-value" style="color: #0c2340; font-weight: 700;">-</span></div>
-              </div>
-            </td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-            <td class="hide-mobile" style="color: #bdc3c7;">-</td>
-          </tr>
+
 
           <tr style="background-color: #fcfdfe;">
             <td class="col-left">
@@ -1653,7 +1613,7 @@
               </div>
     
                <div style="font-size: 11px; color: #777; font-weight: 500; margin-top: 2px;">
-              Rank Impact: <span style="color: #e11d48;">▼</span> 52 | SG: -3.63 | Weighted Pts: 19.98<br>
+              Rank Impact: <span style="color: #e11d48;">▼</span> 35 | SG: -3.63 | Weighted Pts: 19.98<br>
               WAGR Pwr: 247.6920 | Pts Earned: 2.6487
                  
               <div class="mobile-status-bar">
@@ -1726,7 +1686,7 @@
               </div>
     
                <div style="font-size: 11px; color: #777; font-weight: 500; margin-top: 2px;">
-              Rank Impact: <span style="color: #e11d48;">▼</span> 43 | SG: -2.32 | Weighted Pts: 27.75<br>
+              Rank Impact: <span style="color: #e11d48;">▼</span> 15 | SG: -2.32 | Weighted Pts: 27.75<br>
               WAGR Pwr: 670.0102 | Pts Earned: 4.8345
                  
               <div class="mobile-status-bar">
@@ -2128,7 +2088,7 @@
                 </a>
               </div>
               <div style="font-size: 11px; color: #7f8c8d; font-weight: 500;margin-top: 2px;">
-                Rank Impact: <span style="color: #e11d48;">▼</span> 98 | SG: -4.15 | Weighted Pts: 17.54<br>
+                Rank Impact: <span style="color: #e11d48;">▼</span> 37 | SG: -4.15 | Weighted Pts: 17.54<br>
                 WAGR Pwr: 360.1597 | Pts Earned: 3.1971</div>
               <div class="mobile-score-bar">
                 <div class="m-item"><span class="m-label" style="color: #333;">R1-R2-R3</span><span class="m-value" style="color: #333; font-weight: 800;">75-73-74</span></div>
@@ -2184,13 +2144,13 @@
               
               <div class="mobile-score-bar">
                 <div class="m-item"><span class="m-label" style="color: #333;">R1-R2-R3</span><span class="m-value" style="color: #333; font-weight: 800;">74-<span style="color:#e53935;">71-70</span></span></div>
-                <div class="m-item"><span class="m-label" style="color: #333;">TOTAL</span><span class="m-value" style="color: #333; font-weight: 800;">215</span></div>
+                <div class="m-item"><span class="m-label" style="color: #333;">TOTAL</span><span class="m-value" style="color: #e53935; font-weight: 800;">215</span></div>
                 <div class="m-item"><span class="m-label" style="color: #333;">PAR</span><span class="m-value" style="color:#e53935; font-weight: 700;">-1</span></div>
                 <div class="m-item"><span class="m-label" style="color: #333;">FINISH</span><span class="m-value" style="color: #333; font-weight: 700;">T12</span></div>
               </div>
             </td>
             <td class="hide-on-mobile">74-<span style="color:#e53935;font-weight:800;">71-70</span></td>
-            <td class="hide-on-mobile">215</td>
+            <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">215</td>
             <td class="hide-on-mobile" style="font-weight: 900; color:#e53935;">-1</td>
             <td class="hide-on-mobile" style="font-weight: 800;">T12</td>
           </tr>
@@ -2290,12 +2250,13 @@
         '3/03 (Golden)',
         '3/17 (Thunderbirds)',
         '3/24 (Bellbank)',
-        '4/07 (Tiger)'
+        '4/07 (Tiger)',
+        '4/29 (AAC)'
     ];
 
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66, 73.66];
+    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66, 73.66, 71.66];
 
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10', 'T63'];
+    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10', 'T63', 'T21'];
 
     const archiveRounds = [
         '70-70-69 (-7)',
@@ -2307,20 +2268,22 @@
         '64-70-69 (-13)',
         '72-76-73 (+5)',
         '73-68-71 (-4)',
-        '70-76-75 (+11)'
+        '70-76-75 (+11)',
+        '73-73-69 (-1)'
     ];
 
     const archiveRankImpact = [
         '● Rank Impact ▲ 151',
         '● Rank Impact ▲ 28',
         '● Rank Impact ▼ 38',
-        '● Rank Impact ▼ 98',
+        '● Rank Impact ▼ 37',
         '● Rank Impact ▲ 142',
         '● Rank Impact ▲ 72',
         '● Rank Impact ▲ 43',
-        '● Rank Impact ▼ 43',
+        '● Rank Impact ▼ 15',
         '● Rank Impact ▲ 26',
-        '● Rank Impact ▼ 52'
+        '● Rank Impact ▼ 35',
+        '● Rank Impact ▼ 11'
     ];
 
     const archiveWagrPower = [
@@ -2333,7 +2296,8 @@
         '135.0209',
         '670.0102',
         '221.2814',
-        '247.6920'
+        '247.6920',
+        '302.0150'
     ];
 
     const archivePtsEarned = [
@@ -2346,7 +2310,8 @@
         '6.7817',
         '4.8345',
         '4.9385',
-        '2.6487'
+        '2.6487',
+        '4.4097'
     ];
 
     // Mobile
@@ -2515,7 +2480,7 @@
     <div style="padding: 10px 24px 18px 24px; box-sizing: border-box; text-align: center; width: 100%;">
       
       <h2 class="rd-header-title" style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">
-        Round Distribution & Scoring Pattern
+        Freshman Scoring Record & Reliability Profile
       </h2>
       <p class="rd-subtitle" style="font-size: 0.85em; color: #666; margin-bottom: 0; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
         2025–26 Competitive Record
@@ -2530,7 +2495,7 @@
         <!-- ROUND LOG -->
         <div style="background: #fafafa; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; box-sizing: border-box;">
           <div style="padding: 14px 18px; background: #0c2340; color: #ffffff; font-family: 'Oswald', sans-serif; font-size: 1em; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase;">
-            30-Round Competitive Distribution
+            33-Round Competitive Distribution
           </div>
 
           <div style="padding: 14px 16px 12px 16px; box-sizing: border-box;">
@@ -2545,7 +2510,13 @@
               <tbody>
                
                  <tr>
-                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">10<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">11<span style="color:#64748b; font-weight:700;">(Latest)</span></td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">73 • 73 • 69</td>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">71.66</td>
+                </tr>
+                
+                <tr>
+                  <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 800; border-bottom: 1px solid #edf2f7;">10</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #111827; font-weight: 700; border-bottom: 1px solid #edf2f7;">70 • 76 • 75</td>
                   <td style="padding: 10px 10px; font-size: 12px; color: #0c2340; font-weight: 900; text-align: right; border-bottom: 1px solid #edf2f7;">73.66</td>
                 </tr>
@@ -2610,7 +2581,7 @@
 
           <div class="rd-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
-              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">30-Round Avg.</div>
+              <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">33-Round Avg.</div>
 
               <div class="rd-summary-value rd-avg-stack-desktop" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px; line-height: 1.05;">
                 <div>71.73</div>
@@ -2637,7 +2608,7 @@
             </div>
             <div style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Par or Better</div>
-              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">18 / 30</div>
+              <div class="rd-summary-value" style="font-size: 24px; color: #ffffff; font-weight: 900; margin-top: 4px;">19 / 33</div>
             </div>
             <div style="background: #f15a22; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: rgba(255,255,255,0.82); font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Primary Band</div>
@@ -2657,20 +2628,19 @@
             Technical Reading
           </div>
 
-          <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
-            <div style="margin-bottom: 10px;">
-              Across the 30 competitive rounds included in this section, most recorded scores fall between 68 and 72.
-            </div>
-            <div style="margin-bottom: 10px;">
-              The scoring range across all rounds displayed in this segment extends from 64 to 76 in the season log.
-            </div>
-            <div style="margin-bottom: 10px;">
-              This table includes nine event entries, with each row showing the three round scores recorded for that event and the corresponding event average.
-            </div>
-            <div>
-              The sequence is arranged with the most recent event first and the earliest event last, allowing the round record to be read in chronological reverse order.
-            </div>
-          </div>
+         <div style="font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.68; color: #334155; font-weight: 400;">
+  <div style="margin-bottom: 10px;">
+    The distribution shows a freshman season built less on one isolated low round and more on <strong style="color: #0c2340; font-weight: 800;">sustained scoring value across 33 competitive rounds</strong>. Hong finished with a <strong style="color: #0c2340; font-weight: 800;">UTSA single-season scoring average record of 71.73</strong>, supported by <strong style="color: #0c2340; font-weight: 800;">19 par-or-better rounds</strong> and <strong style="color: #0c2340; font-weight: 800;">32 counting scores in 33 team rounds</strong>.
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    The scoring range also shows normal freshman volatility, including several higher-cost rounds late in the season. However, the full-season profile remained record-level because the primary scoring band stayed concentrated around <strong style="color: #0c2340; font-weight: 800;">68–72</strong>, with <strong style="color: #0c2340; font-weight: 800;">six rounds in the 60s</strong> and repeated team-counting scores throughout the year.
+  </div>
+
+  <div>
+    The final entry, <strong style="color: #0c2340; font-weight: 800;">73–73–69 at the American Conference Championship</strong>, reflects the same pattern: two inefficient opening rounds followed by a <strong style="color: #0c2340; font-weight: 800;">final-round correction</strong> that helped close the season under par and secure the program scoring-average mark.
+  </div>
+</div>
         </div>
 
         <!-- SCORING STRUCTURE -->
@@ -2682,29 +2652,29 @@
           <div class="rd-structure-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Events</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">10</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">11</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Rounds</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">30</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">33</div>
             </div>
             <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">Range</div>
               <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">64–76</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px; display: flex; flex-direction: column; justify-content: center; min-height: 86px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">60s</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">5</div>
+              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px; display: flex; flex-direction: column; justify-content: center; min-height: 86px;">
               <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">70–72</div>
-              <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">13</div>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px;">
-              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">13</div>
+                  </div>
+            <div style="background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 12px; display: flex; flex-direction: column; justify-content: center; min-height: 86px;">
+                <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%;">
                 <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
                   <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">73-74</div>
-                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">6</div>
+                  <div class="rd-structure-value" style="font-size: 22px; color: #0c2340; font-weight: 900; margin-top: 4px;">8</div>
                 </div>
 
                 <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 10px; text-align: center;">
@@ -3078,7 +3048,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         </div>
 
         <div id="Current-Focus" class="jhcf-posted-wrap">
-          <span class="jhcf-posted-pill">Posted On: Apr 8, 2026</span>
+          <span class="jhcf-posted-pill">Posted On: Apr 29, 2026</span>
         </div>
       </div>
     </div>
@@ -3093,85 +3063,90 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       <h4>Technical Notes (Field-Relative)</h4>
     </div>
 
-    <div class="jhcf-text-block">
-      <p class="jhcf-text-line">
-        <strong>Current Technical Baseline:</strong> The week produced an atypical scoring pattern relative to the season standard, shaped less by one isolated error than by an incomplete level of competitive control across the event.
-      </p>
+<div class="jhcf-text-block">
+  <p class="jhcf-text-line">
+    <strong>Championship Baseline:</strong> Hong closed the 2026 American Conference Men’s Golf Championship with a final-round 69 after opening with consecutive rounds of 73, finishing T21 at 1-under par.
+  </p>
 
-      <p class="jhcf-text-line">
-        <strong>Preparation &amp; Week Management:</strong> The tournament reinforced that college golf demands more than swing execution alone. Managing the full competitive week with consistency and clarity is part of performance.
-      </p>
+  <p class="jhcf-text-line">
+    <strong>Final-Round Correction:</strong> The final round was not built on an unusual putting spike. The post-round evaluation was simple: “No metí putts, pero bien.” The scoring improvement came from a cleaner round structure, fewer large costs, and better management through the difficult 10–18 stretch.
+  </p>
 
-<p class="jhcf-text-line">
-  <strong>Ball-Flight &amp; Distance Control:</strong> Distance clarity and trajectory control were not managed at the normal level throughout the week, which reduced precision in approach planning and limited scoring freedom.
-</p>
+  <p class="jhcf-text-line">
+    <strong>Scoring Window:</strong> The primary scoring window came on holes 4–6, where the round created and converted enough value to separate the final day from the first two rounds.
+  </p>
 
-<p class="jhcf-text-line">
-  <strong>Driving / Positional Constraint:</strong> On a course requiring disciplined aerial placement, exact carry numbers and clean positional execution from the tee were not maintained consistently enough throughout the week.
-</p>
+  <p class="jhcf-text-line">
+    <strong>Driving Profile:</strong> Across the championship, driving remained the strongest part of the profile. The Golf Metrics report showed strong driving value, high fairway accuracy, and no penalty-stroke pattern.
+  </p>
 
-      <p class="jhcf-text-line">
-        <strong>Scoring Opportunity Pattern:</strong> Birdie chances were present early in the event, but conversion remained below the level needed to offset small losses. In the final round, opportunity creation itself declined as overall execution sharpness dropped.
-      </p>
+  <p class="jhcf-text-line">
+    <strong>Putting Conversion:</strong> Putting remained functional, especially inside 11 feet, but longer putts were not a major scoring source. The final-round improvement therefore reads more as a cost-control correction than a putting-driven outlier.
+  </p>
 
-      <p class="jhcf-text-line">
-        <strong>Putting Conversion:</strong> Short- to mid-range conversion remained an important scoring separator during the week, though the result was shaped by more than putting alone.
-      </p>
+  <p class="jhcf-text-line">
+    <strong>Approach-Cost Pattern:</strong> The main technical focus remains approach-cost control. The 100–149 yard range continued to perform as a scoring strength, while the 150–199 yard and longer approach ranges created the most measurable scoring cost during the week.
+  </p>
 
-      <p class="jhcf-text-line">
-        <strong>Performance Interpretation:</strong> More than a simple poor finish, the week clarified where the current competitive process still lacks precision. In that sense, the result was useful because it made the next layer of improvement easier to identify.
-      </p>
+  <p class="jhcf-text-line">
+    <strong>Recovery Efficiency:</strong> When greens were missed, the next priority is improving recovery efficiency and limiting score leakage. The focus is not changing the profile, but making missed approaches less expensive.
+  </p>
 
-      <p class="jhcf-text-line jhcf-text-line-last">
-        <strong>Immediate Priority:</strong> Use the next three weeks to sharpen preparation quality, restore cleaner execution, improve conversion efficiency, and arrive at the AAC Championship in a more complete competitive position.
-      </p>
-    </div>
+  <p class="jhcf-text-line jhcf-text-line-last">
+    <strong>Immediate Priority:</strong> Preserve the driver value, wedge-range scoring strength, and high counting reliability while reducing the cost of mid-iron misses and missed-green recovery situations.
+  </p>
+</div>
+</div>
+
+<!-- Section 02 -->
+<div class="jhcf-section">
+  <div class="jhcf-section-head">
+    <div class="jhcf-no jhcf-no-gold">02</div>
+    <h4>Competitive Status &amp; Next Technical Focus</h4>
   </div>
 
-  <!-- Section 02 -->
-  <div class="jhcf-section">
-    <div class="jhcf-section-head">
-      <div class="jhcf-no jhcf-no-gold">02</div>
-      <h4>Conditioning &amp; Competitive Status</h4>
-    </div>
+  <div class="jhcf-text-block">
+    <p class="jhcf-text-line">
+      <strong class="jhcf-gold-strong">Competitive Status:</strong> The championship result was not a high individual finish relative to the season standard, but the final round provided a cleaner closing sample after two inefficient opening rounds.
+    </p>
 
-    <div class="jhcf-text-block">
-      <p class="jhcf-text-line">
-        <strong class="jhcf-gold-strong">Physical:</strong> The event reinforced the need for a more complete level of physical and technical readiness across the full tournament week, especially when normal rhythm is harder to establish.
-      </p>
+    <p class="jhcf-text-line">
+      <strong class="jhcf-gold-strong">Technical Reset:</strong> The next phase remains centered on reducing approach-related cost while keeping the strongest parts of the profile intact: controlled driving, wedge-range scoring, and cleaner round structure.
+    </p>
 
-      <p class="jhcf-text-line jhcf-text-line-last">
-        <strong class="jhcf-gold-strong">Competitive Reset:</strong> The objective now is not to explain the week away, but to respond correctly to it — with clearer preparation, more precise practice, and a cleaner competitive showing at the championship.
-      </p>
-    </div>
+    <p class="jhcf-text-line jhcf-text-line-last">
+      <strong class="jhcf-gold-strong">Academic Follow-Through:</strong> With the competitive season complete, the immediate non-tournament focus shifts to closing the semester properly: completing delayed coursework, preparing for final exams, and finishing the freshman academic year with the same discipline required during competition.
+    </p>
   </div>
+</div>
 
-  <div class="jhcf-divider"></div>
+<div class="jhcf-divider"></div>
 
-  <!-- Upcoming Focus -->
-  <div class="jhcf-upcoming-wrap">
-    <div class="jhcf-upcoming-tab">Inserted Focus Note</div>
+<!-- Upcoming Focus -->
+<div class="jhcf-upcoming-wrap">
+  <div class="jhcf-upcoming-tab">Inserted Focus Note</div>
 
-    <div class="jhcf-upcoming">
-      <div class="jhcf-upcoming-head">
-        <div class="jhcf-upcoming-title-wrap">
-          <h5>Upcoming Focus — AAC Championship</h5>
-        </div>
-
-        <div class="jhcf-upcoming-pill">
-          Tournament Prep — Technical Memo
-        </div>
+  <div class="jhcf-upcoming">
+    <div class="jhcf-upcoming-head">
+      <div class="jhcf-upcoming-title-wrap">
+        <h5>Current Focus — Post-Championship Technical Review</h5>
       </div>
 
-      <div class="jhcf-upcoming-lines">
-        <p>Complete week preparation and competitive readiness</p>
-        <p>Driver carry and positional discipline off the tee</p>
-        <p>Reliable yardage confirmation and distance clarity</p>
-        <p>Short- to mid-range birdie-putt conversion</p>
-        <p class="jhcf-upcoming-last">Rebuilding scoring flow without forcing aggression</p>
+      <div class="jhcf-upcoming-pill">
+        Final-Round Correction — Technical Memo
       </div>
     </div>
+
+    <div class="jhcf-upcoming-lines">
+      <p>Maintain driver value and penalty-free tee-shot structure</p>
+      <p>Preserve 100–149 yard scoring strength</p>
+      <p>Reduce cost from 150–199 yard and longer approach ranges</p>
+      <p>Improve recovery efficiency after green misses</p>
+      <p>Close the semester through delayed coursework, final exam preparation, and disciplined academic follow-through</p>
+      <p class="jhcf-upcoming-last">Lower round cost without forcing scoring through putting variance</p>
+    </div>
   </div>
+</div>
 
   <div class="jhcf-footer-note">Joshua's Memo Note</div>
 </div>
@@ -5440,8 +5415,8 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
 
 <div id="joshua-unique-section" style="max-width: 900px; margin: 0 auto 70px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
-  <details style="width: 100%; cursor: pointer; transition: all 0.3s ease;" class="progress-details">
-    <summary style="list-style: none; outline: none; -webkit-details-marker: none;">
+  
+    
       <div class="intro-section" style="width: 100%; margin-bottom: 18px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background: #0c2340; 
         padding: 18px 25px; border-radius: 12px; border: 1px solid #f15a22; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
         <h2 style="font-size: 16px; color: #ffffff; margin: 0; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 12px;">
@@ -5457,17 +5432,13 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="display: flex; flex-direction: column; align-items: flex-end;">
-            <span style="font-size: 10px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; background: #d94d1a; padding: 2px 6px; border-radius: 4px; color: #ffffff; margin-bottom: 2px;">Click to Expand</span>
-            <span style="font-size: 11px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6;">Insight Archive</span>
+            <span style="font-size: 10px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; background: #d94d1a; padding: 2px 6px; border-radius: 4px; color: #ffffff; margin-bottom: 2px;">Insight Archive</span>
           </div>
-          <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f15a22" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
         </div>
 
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #f15a22, transparent); opacity: 0.35;"></div>
       </div>
-    </summary>
+    
 
     <style>
       #joshua-unique-section * { box-sizing: border-box; }
@@ -5827,7 +5798,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
             <div class="jpp-current" id="jpp-current-label">10th Event — Tiger Invitational — Columbia, Missouri</div>
           </div>
 
-          <div class="jpp-counter" id="jpp-counter">9 / 9</div>
+          <div class="jpp-counter" id="jpp-counter">10 / 10</div>
         </div>
 
         <div class="jpp-controls">
@@ -5839,6 +5810,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
 
           <div class="jpp-select-wrap">
             <select class="jpp-select" id="jpp-select" aria-label="Jump to insight card">
+              <option value="9">AAC Championship</option>
               <option value="8">10th Event</option>
               <option value="7">9th Event</option>
               <option value="6">8th Event</option>
@@ -5862,6 +5834,62 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
       <div class="jpp-stage-wrap">
         <div class="jpp-stage" id="jpp-stage">
 
+
+<div class="insight-card-item" data-card-id="9" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
+  <div>
+    <div class="bts-card-head" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
+      <div style="display: flex; align-items: center;">
+        <div style="background: rgba(201,138,46,0.15); width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; border: 1px solid rgba(201,138,46,0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3 style="font-size: 20px; color: #c98a2e; margin: 0; font-weight: 800;">Beyond the Scorecard</h3>
+      </div>
+      <span class="bts-event-badge" style="font-size: 10px; font-weight: 800; color: #fff; background: #c98a2e; padding: 4px 12px; border-radius: 50px;">AAC Championship</span>
+    </div>
+
+    <div style="font-size: 14px; line-height: 1.7; color: #efefef; border-left: 4px solid #c98a2e; padding-left: 20px; text-align: left;">
+
+      <p style="margin: 0 0 10px 0; color: #c98a2e; font-weight: 700; font-size: 16px;">AAC Championship — Final-Round Correction, Season Profile Preserved</p>
+
+      <p style="margin-bottom: 10px;">
+        The AAC Championship did not produce Hong’s highest individual finish of the season, but the week closed with a clear final-round response.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        After opening with consecutive rounds of 73, Hong remained countable for the team and closed with a final-round 69 to finish T21 at 1-under par.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The first two rounds required adjustment. The scorecards showed enough scoring opportunities, but the round cost was higher than needed when approach misses and recovery situations turned into dropped shots.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The final round showed a cleaner structure. Hong played the difficult 10–18 stretch at even par, moved under par through the 1–6 sequence, converted both par-5 opportunities on holes 4 and 6, and closed 7–9 with three pars to protect the 69.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        That round brought the championship total to 1-under par and gave the week a more balanced finish after two higher-cost opening rounds.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The week also reinforced his season-long reliability. Hong counted in all three championship rounds and finished the season with a counting score in all but one team round.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        The next stage remains clear: preserve the driver value, wedge-range scoring, and birdie production while continuing to reduce scoring cost from mid-iron approach misses and recovery positions.
+      </p>
+
+      <p style="margin-bottom: 0; color: #fff; font-weight: 600;">
+        The championship was not the strongest finish of his season, but the final-round correction helped complete a freshman campaign defined by team-leading production, high counting reliability, and a new UTSA single-season scoring average record.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: right; font-size: 11px; color: #555; font-weight: 700; margin-top: 20px;">Posted On: Apr 29, 2026</div>
+</div>
+
+
+          
           <div class="insight-card-item" data-card-id="8" style="flex: 0 0 85%; min-width: 320px; max-width: 500px; scroll-snap-align: start; background: #111; border-radius: 25px; padding: 35px 30px; color: white; box-shadow: 0 15px 30px rgba(0,0,0,0.2); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(201,138,46,0.3);">
             <div>
               <div class="bts-card-head" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
@@ -6168,7 +6196,7 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
         </div>
       </div>
     </div>
-  </details>
+  
 </div>
 
 <script>
@@ -6183,9 +6211,10 @@ window.addEventListener('DOMContentLoaded', updateMetrics);
   if (!stage || !prevBtn || !nextBtn || !select || !counter || !currentLabel) return;
 
   const cards = Array.from(stage.querySelectorAll('.insight-card-item'));
-  const orderedIds = [8, 7, 6, 5, 4, 3, 2, 1, 0];
+  const orderedIds = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
 
   const cardLabels = {
+    9: 'AAC Championship — American Conference Championship — Sarasota, Florida',
     8: '10th Event — Tiger Invitational — Columbia, Missouri',
     7: '9th Event — Bell Bank “Pay It Forward” Collegiate — Litchfield Park, Arizona',
     6: '8th Event — Arizona Thunderbirds Intercollegiate — Tucson, Arizona',
@@ -6442,64 +6471,80 @@ stage.addEventListener('touchend', function(e) {
     <div class="scroll-viewport">
       <div id="thumbScroll">
         <div class="thumb-page">
-          
+
+ 
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Golf-American-Confernce-Championship-team.jpg" onclick="popupGallery(this)" class="thumb-img" alt="2026 American Athletic Conference Championship: UTSA Men's Golf Team" title="2026 American Athletic Conference Championship: UTSA Men's Golf Team" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Confernce-Championship-putting.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="2026 American Athletic Conference Championship Joshua Hong Putting" title="2026 American Athletic Conference Championship Joshua Hong Putting" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Confernce-Championship-R3-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="2026 American Athletic Conference Championship R3 69" title="2026 American Athletic Conference Championship R3 69" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Confernce-Championship-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="2026 American Athletic Conference Championship: UTSA Men's Golf Official Lineup" title="2026 American Athletic Conference Championship: UTSA Men's Golf Official Lineup" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-utsa-mens-golf-unique-experiences-success.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong: Strategic Course Planning and Path to Collegiate Success" title="Joshua Hong: Strategic Course Planning and Path to Collegiate Success" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-American-Conference-Championship-Poster.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Official Tournament Poster: Joshua Hong at the 2026 AAC Men’s Golf Championship" title="Official Tournament Poster: Joshua Hong at the 2026 AAC Men’s Golf Championship" loading="lazy" decoding="async">         
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Tiger-Invitational-Lineup.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Tiger Invitational Lineup" title="Joshua Hong UTSA Men's Golf Tiger Invitational Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Round-2-68.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Round 2 68 (-4)" title="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Round 2 68 (-4)" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Bell-Bank-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Lineup" title="UTSA Men's Golf Arizona Bell Bank - Pay it Forward - Collegiate Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Arizona-Thunderbirds-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Arizona Thunderbirds Lineup" title="UTSA Men's Golf Arizona Thunderbirds Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Player-of-the-week-article-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong American Conference POTW Honor Article" title="Joshua Hong American Conference POTW Honor Article" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-1-Stars-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Stars of The Week Honor" title="Joshua Hong UTSA Stars of The Week Honor" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA American Conference Player of The Week Honor" title="Joshua Hong UTSA American Conference Player of The Week Honor" loading="lazy" decoding="async">
+     
+          </div>
+        <div class="thumb-page">
+
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong American Conference Player of The Week Honor UTSA" title="Joshua Hong American Conference Player of The Week UTSA" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-American-Conference-1-Player-of-the-week-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA American Conference Player of The Week Honor" title="Joshua Hong UTSA American Conference Player of The Week Honor" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Results.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Golden Nugget Inv. Results" title="Joshua Hong UTSA Golden Nugget Inv. Results" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-School-Record-38-under-54-hole.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf School Record -38 / 54 hole" title="Joshua Hong UTSA Men's Golf School Record -38 / 54 hole" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Final-Article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Golden Nugget Final Article" title="Joshua Hong UTSA Men's Golf Golden Nugget Final Article" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round3-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Round 3 69" title="Joshua Hong UTSA Men's Golf Round 3 69" loading="lazy" decoding="async">
-             
-        </div>
-        <div class="thumb-page">
-          
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-R1-R2-article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf R1 R2 Official Article" title="Joshua Hong UTSA Men's Golf R1 R2 Official Article" loading="lazy" decoding="async"><img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget UTSA School Record 64 (-8)" loading="lazy" decoding="async">         
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round3-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Round 3 69" title="Joshua Hong UTSA Men's Golf Round 3 69" loading="lazy" decoding="async">       
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-R1-R2-article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf R1 R2 Official Article" title="Joshua Hong UTSA Men's Golf R1 R2 Official Article" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record-best-round.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget UTSA School Record 64 (-8)" loading="lazy" decoding="async">         
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-round1-64-school-record.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget School Record 64 (-8)" loading="lazy" decoding="async">     
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Golden-Nugget-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" title="Joshua Hong UTSA Men's Golf 2026 Golden Nugget Lineup" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-FMG.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong celebrating his individual victory at the Military City Collegiate Photo by FMG" title="Joshua Hong Individual Champion - Military City Collegiate (FMG)" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Team-Win-2.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men’s Golf team holding the championship trophy at the Military City Collegiate event" title="UTSA Men's Golf Team Victory - Military City Collegiate" loading="lazy" decoding="async">
+
+        </div>
+        <div class="thumb-page">
+
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Indiviudal-Win-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong posing with the individual winner's trophy at the 2026 Military City Collegiate" title="Joshua Hong 2026 Military City Collegiate Individual Winner" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Team-Win-1.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Official team photo of UTSA Men’s Golf following their team title win at Military City" title="UTSA Men’s Golf Team Champions Photo - Military City Collegiate" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Results.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="UTSA Men's Golf Military City Collegiate Results" title="UTSA Men's Golf Military City Collegiate Results" loading="lazy" decoding="async">   
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-R1-R2-article.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua hong UTSA Military City Day 1 official article" title="Joshua hong UTSA Military City Day 1 official article" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-R1-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua hong UTSA Military City R1 Score" title="Joshua hong UTSA Military City R1 Score" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Military-City-Lineup.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Lineup" title="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Lineup" loading="lazy" decoding="async">
-                  
-         </div>
-        <div class="thumb-page">
-
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Military-Collegiate-poster.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Poster" title="Joshua Hong UTSA Men's Golf 2026 Military City Collegiate Poster" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-Result-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Results at UTRGV" loading="lazy" decoding="async">          
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r3-71.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 3 Score 71" loading="lazy" decoding="async">   
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-2026-Spring-Opner-UTRGV-r1-70.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" title="Joshua Hong UTSA 2026 Spring Opener UTRGV Round 1 Score 70" loading="lazy" decoding="async">   
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-2026-Spring-Opner-line-up-utrgv.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" title="Joshua Hong UTSA Men's Golf 2026 Spring Opener Line-up UTRGV" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-Spring-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" title="Joshua Hong UTSA Men's Golf Spring 2026 Schedule" loading="lazy" decoding="async">
+  
+        </div>
+        
+        <div class="thumb-page">
+
+          
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-collegiate debut-1-70-Argent.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong’s collegiate debut: Shooting a 70 at the Argent Financial Invitational" title="Joshua Hong’s collegiate debut: Shooting a 70 at the Argent Financial Invitational" loading="lazy" decoding="async">
-          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Official-Highlands-invitational.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" title="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" loading="lazy" decoding="async">
+          <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Official-Highlands-invitational.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" title="Joshua Hong putting at the Highlands Invitational, featured on the official UTSA Athletics website" loading="lazy" decoding="async">    
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-TPC-San-Antonio-fall off-season.png" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong training at the TPC San Antonio team facility during the fall off-season" title="Joshua Hong training at the TPC San Antonio team facility during the fall off-season" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Team-Photo-day.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong during the team photo day for his freshman debut season." title="Joshua Hong during the team photo day for his freshman debut season" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Get-To-Know.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong's student-athlete profile information." title="Joshua Hong's student-athlete profile information." loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Patriot-All-America-2025-Winter.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong competing at the 2025 Winter Patriot All-America Invitational" title="Joshua Hong competing at the 2025 Winter Patriot All-America Invitational" loading="lazy" decoding="async">
-
-          
-        </div>
-        <div class="thumb-page">
-          
           <img src="./images/freshman-2025-2026/Joshua-Hong-UTSA-CGN-HIGHLIGHT.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong's CGN Player Highlight feature poster" title="Joshua Hong's CGN Player Highlight feature poster" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Team-Photoday-Fran-Sam.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" title="Joshua Hong with teammates Francisco Solorza and Sadbhav Acharya (Sam) during the freshman team photo day" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-Schedule-2025-2026.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" title="Joshua Hong UTSA Men's Golf 2025-2026 Full Schedule" loading="lazy" decoding="async">      
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands Results" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-second-line-up-highlands.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Second Line-up Highlands" title="Joshua Hong UTSA Men's Golf Second Line-up Highlands" loading="lazy" decoding="async">      
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent-results.jpeg" onclick="popupGallery(this)" class="thumb-img pos-center" alt="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" title="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic Results" loading="lazy" decoding="async">
+
+        </div>
+        
+          <div class="thumb-page">
+      
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-first-line-up-argent.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic" title="Joshua Hong UTSA Men's Golf First Line-up Argent Financial Classic" loading="lazy" decoding="async">
           <img src="./images/freshman-2025-2026/joshua-hong-UTSA-Mens-golf-argent-69.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong UTSA Men's Golf Argent Financial Classic Round Score 69" title="Joshua Hong UTSA Men's Golf Argent Financial Classic Round Score 69" loading="lazy" decoding="async">
+               
         </div>
+      
       </div>
     </div>
   </div>
