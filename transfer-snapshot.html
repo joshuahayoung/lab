@@ -3304,6 +3304,10 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: 0.25s ease;
+      cursor: pointer;
+      font-family: inherit;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
     .jh-contact-btn:hover {
@@ -3362,16 +3366,70 @@
         <p class="jh-contact-subtitle">For direct transfer-related communication.</p>
 
         <div class="jh-contact-actions">
-          <a class="jh-contact-btn" href="mailto:yourname@example.com?subject=Joshua%20Hong%20Transfer%20Inquiry">
+          <button
+            type="button"
+            class="jh-contact-btn"
+            data-jh-email-ref="primary"
+            data-jh-email-subject="Joshua Hong Transfer Inquiry"
+          >
             Email Joshua Directly
-          </a>
+          </button>
         </div>
       </div>
     </div>
 
     <div class="jh-contact-accent" aria-hidden="true"></div>
   </div>
+
+  <script>
+    (function () {
+      const jhProtectedEmails = {
+        primary: {
+          user: [106, 111, 115, 104, 117, 97, 104, 97, 121, 111, 117, 110, 103],
+          host: [104, 111, 116, 109, 97, 105, 108, 46, 99, 111, 109]
+        }
+      };
+
+      function jhDecodeEmailPart(codeArray) {
+        return codeArray.map(function (code) {
+          return String.fromCharCode(code);
+        }).join("");
+      }
+
+      function jhOpenProtectedEmail(emailRef, subjectText) {
+        const entry = jhProtectedEmails[emailRef];
+
+        if (!entry) {
+          return;
+        }
+
+        const user = jhDecodeEmailPart(entry.user);
+        const host = jhDecodeEmailPart(entry.host);
+        const email = user + "@" + host;
+        const subject = encodeURIComponent(subjectText || "");
+
+        window.location.href = "mailto:" + email + "?subject=" + subject;
+      }
+
+      document.addEventListener("click", function (event) {
+        const button = event.target.closest("[data-jh-email-ref]");
+
+        if (!button) {
+          return;
+        }
+
+        event.preventDefault();
+
+        const emailRef = button.getAttribute("data-jh-email-ref");
+        const subject = button.getAttribute("data-jh-email-subject");
+
+        jhOpenProtectedEmail(emailRef, subject);
+      });
+    })();
+  </script>
 </section>
+
+	  
 	
  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     <p style="font-size: 11px; color: #aaa; text-transform: uppercase; letter-spacing: 2px; line-height: 1.8;">
