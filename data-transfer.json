@@ -272,13 +272,12 @@
     }
   ],
 
-  "contact": {
-    "sectionTitle": "Program Contact",
-    "sectionSubtitle": "For direct program inquiries",
-    "body": "Direct transfer-related contact.",
-    "buttonLabel": "Email Joshua Directly",
-    "localPart": "Joshuahayoung",
-    "domain": "xxxxx.com",
-    "subject": "Joshua Hong Transfer Inquiry"
-  }
+"contact": {
+  "sectionTitle": "Program Contact",
+  "sectionSubtitle": "For direct program inquiries",
+  "body": "Direct transfer-related contact.",
+  "buttonLabel": "Email Joshua Directly",
+  "emailRef": "primary",
+  "subject": "Joshua Hong Transfer Inquiry"
+}
 }
