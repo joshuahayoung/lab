@@ -160,76 +160,78 @@
 
 
 
-"awardsRecords": { 
-  "kicker": "SEASON RECOGNITION & PROGRAM MARKERS", 
-  "title": "Recognition, Program Records & Season Markers", 
-  "subtitle": "Conference recognition, UTSA program-record status, and season-value markers from the completed freshman season.", 
-  "cards": [ 
-    { 
-      "tier": "primary", "badge": "Recognition", "title": "Conference & Season-End Recognition", 
-  "items": [ 
-    { 
-      "label": "Freshman of the Year", "status": "Pending", "note": "Conference freshman honor watch tied to full-season impact and scoring profile." 
-    }, 
-    { 
-      "label": "AAC All-Conference Team", "status": "Pending", "note": "Season-end all-conference recognition status pending official announcement." 
-    }, 
-    { 
-      "label": "AAC Player of the Week", "status": "Official", "note": "Official conference recognition tied directly to performance." 
-    } 
-  ] 
-    },
-
+"awardsRecords": {
+  "kicker": "SEASON RECOGNITION & PROGRAM RECORDS",
+  "title": "Official Recognition, Program Records & Freshman Reliability",
+  "subtitle": "Verified recognition, UTSA program-record markers, and season-long reliability indicators from the completed freshman season.",
+  "cards": [
     {
-  "tier": "secondary",
-  "badge": "Program Records",
-  "title": "UTSA Program Record Status",
-  "items": [
-    {
-      "label": "UTSA single-season scoring average record",
-      "status": "Official",
-      "note": "71.73 over 33 rounds, surpassing the previous 71.94 mark."
+      "tier": "primary",
+      "badge": "Recognition",
+      "title": "Official Recognition & Competitive Results",
+      "items": [
+        {
+          "label": "AAC Player of the Week",
+          "status": "Official",
+          "note": "Official conference recognition tied directly to tournament performance."
+        },
+        {
+          "label": "Individual Win",
+          "status": "Verified",
+          "note": "Won the Military City Collegiate and finished as the only player under par in the field."
+        },
+        {
+          "label": "Team Title Contribution",
+          "status": "Verified",
+          "note": "Contributed to UTSA's team title at the Military City Collegiate."
+        }
+      ]
     },
     {
-      "label": "18-hole program record",
-      "status": "Tied",
-      "note": "64 (-8) matched the current UTSA single-round benchmark."
+      "tier": "secondary",
+      "badge": "Program Records",
+      "title": "UTSA Program Record Status",
+      "items": [
+        {
+          "label": "UTSA single-season scoring average record",
+          "status": "Official",
+          "note": "71.73 over 33 rounds, surpassing the previous 71.94 mark."
+        },
+        {
+          "label": "18-hole program record",
+          "status": "Tied",
+          "note": "64 (-8) matched the current UTSA single-round benchmark."
+        },
+        {
+          "label": "36-hole program record",
+          "status": "Tied",
+          "note": "134 (-10) matched the current UTSA 36-hole benchmark."
+        }
+      ]
     },
-    {
-      "label": "36-hole program record",
-      "status": "Tied",
-      "note": "134 (-10) matched the current UTSA 36-hole benchmark."
-    }
-  ]
-},
-    
     {
       "tier": "tertiary",
       "badge": "Season Markers",
       "title": "Freshman Reliability & Team Value",
       "items": [
         {
-          "label": "Counting Score Record",
+          "label": "Counting Score Reliability",
           "status": "Verified",
           "note": "32 of 33 team rounds counted during the completed freshman season."
         },
         {
           "label": "Team Contribution Share",
-          "status": "Verified",
+          "status": "Calculated",
           "note": "28.20% Clippd points share across 33 rounds, with 403.10 weighted points."
         },
         {
-          "label": "Scoring Floor",
+          "label": "Controlled Scoring Range",
           "status": "Verified",
           "note": "Completed 33-round freshman sample stayed within a 64–76 scoring range."
         }
       ]
-    } 
-
-    
-
-    
-  ] 
+    }
+  ]
 },
 
   
