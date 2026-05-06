@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "May 2, 2026",
+    "lastUpdated": "May 6, 2026",
     "status": "season-complete"
   },
 
@@ -72,13 +72,13 @@
     },
     {
       "label": "WAGR",
-      "value": "492",
-      "note": "World amateur ranking reference as of Apr. 29, 2026."
+      "value": "505",
+      "note": "World amateur ranking reference as of May 6, 2026."
     },
     {
       "label": "Clippd Rank",
-      "value": "373",
-      "note": "NCAA player ranking reference as of Apr. 29, 2026."
+      "value": "370",
+      "note": "NCAA player ranking reference as of May 6, 2026."
     }
   ],
 
