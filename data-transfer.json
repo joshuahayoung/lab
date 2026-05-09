@@ -168,7 +168,7 @@
     {
       "tier": "primary",
       "badge": "Recognition",
-      "title": "Official Recognition & Competitive Results",
+      "title": "Official Recognition",
       "items": [
         {
           "label": "AAC Player of the Week",
@@ -178,12 +178,29 @@
         {
           "label": "The Rowdys — Men’s Golf Strength & Conditioning Award",
           "status": "Official",
-          "note": "UTSA Athletics recognition for intensity, energy, and positive team-impact standards."
+          "note": "UTSA Athletics recognition tied to training commitment, work standard, and team impact."
         },
         {
           "label": "The Rowdys — Male Newcomer of the Year Nominee",
           "status": "Official",
           "note": "Listed by UTSA Athletics as a Male Newcomer of the Year nominee."
+        }
+      ]
+    },
+    {
+      "tier": "secondary",
+      "badge": "Records & Results",
+      "title": "Program Records & Competitive Results",
+      "items": [
+        {
+          "label": "18-hole program record",
+          "status": "Tied",
+          "note": "64 (-8) matched the current UTSA single-round benchmark."
+        },
+        {
+          "label": "36-hole program record",
+          "status": "Tied",
+          "note": "134 (-10) matched the current UTSA 36-hole benchmark."
         },
         {
           "label": "Individual Win",
@@ -198,32 +215,15 @@
       ]
     },
     {
-      "tier": "secondary",
-      "badge": "Program Records",
-      "title": "UTSA Program Record Status",
+      "tier": "tertiary",
+      "badge": "Season Markers",
+      "title": "Freshman Reliability & Season Scoring Record",
       "items": [
         {
           "label": "UTSA single-season scoring average record",
           "status": "Official",
           "note": "71.73 over 33 rounds, surpassing the previous 71.94 mark."
         },
-        {
-          "label": "18-hole program record",
-          "status": "Tied",
-          "note": "64 (-8) matched the current UTSA single-round benchmark."
-        },
-        {
-          "label": "36-hole program record",
-          "status": "Tied",
-          "note": "134 (-10) matched the current UTSA 36-hole benchmark."
-        }
-      ]
-    },
-    {
-      "tier": "tertiary",
-      "badge": "Season Markers",
-      "title": "Freshman Reliability & Team Value",
-      "items": [
         {
           "label": "Counting Score Reliability",
           "status": "Verified",
