@@ -281,14 +281,14 @@
       const header = document.getElementById('mainHeader');
       const currentScrollY = window.pageYOffset;
 
-      // 1. TOP 버튼 제어
+
       if (currentScrollY > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
 
-      // 2. 헤더 우아한 제어 (300px 기준)
+
       if (currentScrollY > 300) {
         header.classList.add('scrolled');
         header.classList.remove('preparing');
@@ -644,7 +644,7 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
-  /* 안전장치: 내부 중복 Last Updated 완전 제거 */
+
   #jh-pga-table-shared .jtc-last-updated-wrap,
   #jh-pga-table-shared .jtc-last-updated {
     display: none !important;
