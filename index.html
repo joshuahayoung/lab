@@ -273,14 +273,14 @@
       const header = document.getElementById('mainHeader');
       const currentScrollY = window.pageYOffset;
 
-      // 1. TOP 버튼 제어
+
       if (currentScrollY > 100) {
         btn.style.display = 'block';
       } else {
         btn.style.display = 'none';
       }
 
-      // 2. 헤더 우아한 제어 (300px 기준)
+
       if (currentScrollY > 300) {
         header.classList.add('scrolled');
         header.classList.remove('preparing');
@@ -363,14 +363,6 @@
       letter-spacing: 0.5px;
       padding-bottom: 2px;
       white-space: nowrap;
-/* =========================================================
-   TEMP_HIDE_UPCOMING_TOURNAMENT_CARD
-   Purpose: Hide the tournament card temporarily and show only "Last Updated".
-   Restore: Delete this whole block to show the tournament card again.
-   Added: May 9, 2026
-========================================================= */
-     #jh-pga-table-shared .jtc-wrap {
-     display: none !important;
     }
 
     #jh-pga-table-shared .jtc-wrap {
