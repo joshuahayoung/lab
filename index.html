@@ -685,7 +685,9 @@
 </div>    
  
 
-<section class="transfer-snapshot-section" aria-labelledby="transferSnapshotTitle">
+
+
+<section class="transfer-snapshot-section" aria-labelledby="transferSnapshotTitle" data-portal-state="draft-copy">
   <style>
     .transfer-snapshot-section {
       --tsnap-navy: #0C2340;
@@ -705,10 +707,6 @@
       padding: 0;
       isolation: isolate;
       font-family: inherit;
-    }
-
-    .transfer-snapshot-section[hidden] {
-      display: none !important;
     }
 
     .transfer-snapshot-shell {
@@ -747,7 +745,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(310px, 0.82fr);
+      grid-template-columns: minmax(0, 1fr) minmax(330px, 0.74fr);
       gap: 30px;
       align-items: stretch;
       padding: 36px;
@@ -757,7 +755,12 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .transfer-snapshot-copy-main {
+      min-width: 0;
     }
 
     .transfer-snapshot-kicker {
@@ -791,11 +794,11 @@
     .transfer-snapshot-title {
       margin: 0;
       color: var(--tsnap-white);
-      font-size: clamp(28px, 3.8vw, 40px);
+      font-size: clamp(30px, 3.5vw, 42px);
       line-height: 1.08;
       letter-spacing: -0.035em;
       font-weight: 850;
-      max-width: 720px;
+      max-width: 760px;
       text-wrap: balance;
     }
 
@@ -810,7 +813,7 @@
 
     .transfer-snapshot-points {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, max-content));
+      grid-template-columns: repeat(2, minmax(0, 220px));
       gap: 10px;
       margin: 24px 0 0 0;
       padding: 0;
@@ -821,7 +824,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      min-height: 36px;
+      min-height: 38px;
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid var(--tsnap-line);
@@ -842,6 +845,57 @@
       flex: 0 0 auto;
     }
 
+    .transfer-snapshot-review-panel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.035) 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.075);
+    }
+
+    .transfer-snapshot-review-card {
+      display: grid;
+      gap: 8px;
+      min-height: 112px;
+      padding: 15px;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .transfer-snapshot-review-label {
+      margin: 0;
+      color: rgba(255,255,255,0.62);
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .transfer-snapshot-review-text {
+      margin: 0;
+      color: rgba(255,255,255,0.91);
+      font-size: 13.2px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .transfer-snapshot-review-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 12px 14px 0;
+      border-top: 1px solid rgba(255,255,255,0.09);
+      color: rgba(255,255,255,0.60);
+      font-size: 11.7px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
     .transfer-snapshot-side {
       min-width: 0;
       display: flex;
@@ -852,6 +906,8 @@
     .transfer-snapshot-side-panel {
       display: grid;
       gap: 14px;
+      height: 100%;
+      align-content: center;
       padding: 16px;
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,0.10);
@@ -1011,7 +1067,7 @@
       }
 
       .transfer-snapshot-copy {
-        text-align: left;
+        gap: 20px;
       }
 
       .transfer-snapshot-title {
@@ -1024,6 +1080,10 @@
 
       .transfer-snapshot-points li {
         justify-content: flex-start;
+      }
+
+      .transfer-snapshot-side-panel {
+        height: auto;
       }
     }
 
@@ -1071,6 +1131,24 @@
         padding: 8px 10px;
       }
 
+      .transfer-snapshot-review-panel {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 12px;
+        border-radius: 18px;
+      }
+
+      .transfer-snapshot-review-card {
+        min-height: auto;
+        padding: 14px;
+        border-radius: 15px;
+      }
+
+      .transfer-snapshot-review-note {
+        padding: 10px 2px 0;
+        font-size: 11.3px;
+      }
+
       .transfer-snapshot-side-panel {
         padding: 12px;
         border-radius: 18px;
@@ -1112,45 +1190,67 @@
   <div class="transfer-snapshot-shell">
     <div class="transfer-snapshot-inner">
       <div class="transfer-snapshot-copy">
-        <div class="transfer-snapshot-kicker">
-          <span class="transfer-snapshot-kicker-dot" aria-hidden="true"></span>
-          Transfer Snapshot
+        <div class="transfer-snapshot-copy-main">
+          <div class="transfer-snapshot-kicker">
+            <span class="transfer-snapshot-kicker-dot" aria-hidden="true"></span>
+            Transfer Snapshot
+          </div>
+
+          <h2 class="transfer-snapshot-title" id="transferSnapshotTitle">
+            Coach-facing transfer data organized for fast review.
+          </h2>
+
+          <p class="transfer-snapshot-desc">
+            A single-page summary of completed freshman-season results, rankings, scoring profile, reliability indicators, and roster-fit context.
+          </p>
+
+          <ul class="transfer-snapshot-points" aria-label="Snapshot contents">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Key Metrics
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12.5 9.2 16 19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Tournament Results
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 19c5.5-9 8.5-12 14-14M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Scoring Trend
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3 5 7v5c0 4.5 3 7 7 9 4-2 7-4.5 7-9V7l-7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              Lineup Reliability
+            </li>
+          </ul>
         </div>
 
-        <h2 class="transfer-snapshot-title" id="transferSnapshotTitle">
-          Coach-facing transfer data organized for fast review.
-        </h2>
+        <div class="transfer-snapshot-review-panel" aria-label="Transfer snapshot review context">
+          <div class="transfer-snapshot-review-card">
+            <p class="transfer-snapshot-review-label">Review Scope</p>
+            <p class="transfer-snapshot-review-text">
+              Built to help coaches review the completed freshman season, scoring record, rankings, reliability profile, and roster-fit indicators in one place.
+            </p>
+          </div>
 
-        <p class="transfer-snapshot-desc">
-          A single-page summary of completed freshman-season results, rankings, scoring profile, reliability indicators, and roster-fit context.
-        </p>
+          <div class="transfer-snapshot-review-card">
+            <p class="transfer-snapshot-review-label">Evaluation Use</p>
+            <p class="transfer-snapshot-review-text">
+              Designed as a fast reference point before deeper review of full NCAA stats, tournament logs, and supporting performance context.
+            </p>
+          </div>
 
-        <ul class="transfer-snapshot-points" aria-label="Snapshot contents">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            Key Metrics
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12.5 9.2 16 19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Tournament Results
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 19c5.5-9 8.5-12 14-14M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Scoring Trend
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3 5 7v5c0 4.5 3 7 7 9 4-2 7-4.5 7-9V7l-7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-            Lineup Reliability
-          </li>
-        </ul>
+          <p class="transfer-snapshot-review-note">
+            Formal transfer-related communication should follow official NCAA Transfer Portal listing.
+          </p>
+        </div>
       </div>
 
       <div class="transfer-snapshot-side">
@@ -1207,6 +1307,7 @@
     </div>
   </div>
 </section>
+    
 
 
     
