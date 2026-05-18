@@ -405,7 +405,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(330px, 0.74fr);
       gap: 30px;
-      align-items: stretch;
+      align-items: start;
       padding: 36px;
     }
 
@@ -413,8 +413,8 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
+      justify-content: flex-start;
+      gap: 20px;
     }
 
     .transfer-snapshot-copy-main {
@@ -425,27 +425,28 @@
       display: inline-flex;
       align-items: center;
       width: fit-content;
-      gap: 10px;
-      margin: 0 0 15px 0;
-      padding: 8px 12px;
-      border: 1px solid rgba(241,90,34,0.34);
+      gap: 11px;
+      margin: 0 0 18px 0;
+      padding: 10px 15px;
+      border: 1px solid rgba(241,90,34,0.52);
       border-radius: 999px;
-      background: rgba(255,255,255,0.045);
+      background: rgba(241,90,34,0.13);
       color: var(--tsnap-orange);
-      font-size: 12px;
+      font-size: 13.5px;
       line-height: 1;
-      font-weight: 850;
-      letter-spacing: 0.14em;
+      font-weight: 900;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(241,90,34,0.13);
     }
 
     .transfer-snapshot-kicker-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: linear-gradient(180deg, #F15A22 0%, #c98a2e 100%);
-      box-shadow: 0 0 0 6px rgba(241,90,34,0.10);
+      box-shadow: 0 0 0 7px rgba(241,90,34,0.13);
       flex: 0 0 auto;
     }
 
@@ -558,14 +559,14 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .transfer-snapshot-side-panel {
       display: grid;
       gap: 14px;
-      height: 100%;
-      align-content: center;
+      height: auto;
+      align-content: start;
       padding: 16px;
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,0.10);
@@ -847,9 +848,17 @@
       }
 
       .transfer-snapshot-kicker {
-        margin-bottom: 12px;
-        font-size: 10.5px;
-        letter-spacing: 0.12em;
+        margin-bottom: 14px;
+        padding: 9px 12px;
+        font-size: 11px;
+        letter-spacing: 0.13em;
+        box-shadow: 0 8px 18px rgba(241,90,34,0.10);
+      }
+
+      .transfer-snapshot-kicker-dot {
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 0 6px rgba(241,90,34,0.12);
       }
 
       .transfer-snapshot-title {
@@ -1042,18 +1051,18 @@
               </p>
 
               <h3 class="transfer-snapshot-status-headline">
-                Notice Submitted · Compliance Process Completed
+                Written Request Submitted · Compliance Confirmation Pending
               </h3>
 
               <p class="transfer-snapshot-status-summary">
-                Transfer notification has been submitted to UTSA, and the required compliance process has been completed.
+                Joshua submitted a written transfer request to UTSA Compliance. Institutional confirmation remains pending.
               </p>
 
               <div class="transfer-snapshot-status-grid">
                 <div class="transfer-snapshot-status-item">
                   <span class="transfer-snapshot-status-key">Listing</span>
                   <span class="transfer-snapshot-status-value">
-                    NCAA Transfer Portal listing pending June 4, 2026 transfer-window processing.
+                    NCAA Transfer Portal listing pending institutional processing during the men’s golf transfer window beginning June 4, 2026.
                   </span>
                 </div>
 
