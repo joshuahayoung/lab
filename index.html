@@ -202,8 +202,8 @@
       .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
       .nav-links a:hover,
       .nav-links a.active {
-      background-color: #F15A22 !important;
-      color: #fff !important;
+        background-color: #F15A22 !important;
+        color: #fff !important;
       }
       .mobile-menu-logo { display: block; margin-bottom: 30px; } 
       .mobile-menu-logo img { height: 35px; }
@@ -222,6 +222,33 @@
       .logo-img { height: 35px !important; }
       .nav-links { padding: 30px 25px; overflow-y: auto; }
       .menu-footer { margin-top: 30px; }
+    }
+
+    /* Transfer Snapshot menu highlight */
+    .nav-links a[href="transfer-snapshot.html"] {
+      background-color: #0C2340 !important;
+      color: #ffffff !important;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(12, 35, 64, 0.16);
+    }
+
+    .nav-links a[href="transfer-snapshot.html"]:hover {
+      background-color: #12335d !important;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links a[href="transfer-snapshot.html"] {
+        border-radius: 14px;
+        width: 100%;
+      }
+
+      .nav-links a[href="transfer-snapshot.html"]:hover {
+        background-color: #12335d !important;
+        color: #ffffff !important;
+      }
     }
 </style>
 
@@ -247,8 +274,8 @@
 </a>
 </div>
 
-        <a href="transfer-snapshot.html" class="active">Transfer Snapshot</a>
-		<a href="index.html">Home</a>
+        <a href="transfer-snapshot.html">Transfer Snapshot</a>
+		<a href="index.html" class="active">Home</a>
         <a href="ncaa-stats.html">NCAA Stats</a>
         <a href="news-media.html">News & Media</a>
         <a href="reference-links.html">Reference & Links</a>
