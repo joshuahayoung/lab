@@ -584,12 +584,6 @@
       background: rgba(255,255,255,0.045);
     }
 
-    .transfer-snapshot-card-status {
-      background:
-        linear-gradient(180deg, rgba(201,138,46,0.14) 0%, rgba(255,255,255,0.045) 100%);
-      border-color: rgba(201,138,46,0.22);
-    }
-
     .transfer-snapshot-card-label {
       margin: 0;
       color: rgba(255,255,255,0.66);
@@ -608,39 +602,123 @@
       font-weight: 600;
     }
 
-    .transfer-snapshot-status-list {
+    .transfer-snapshot-status-module {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(241,90,34,0.36);
+      background:
+        linear-gradient(135deg, rgba(241,90,34,0.20) 0%, rgba(201,138,46,0.12) 48%, rgba(255,255,255,0.055) 100%);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .transfer-snapshot-status-module::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, #F15A22 0%, #c98a2e 100%);
+      opacity: 0.96;
+    }
+
+    .transfer-snapshot-status-module::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(255,255,255,0.13), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0) 48%);
+      opacity: 0.75;
+    }
+
+    .transfer-snapshot-status-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 13px;
+    }
+
+    .transfer-snapshot-status-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 8px;
+      margin: 0;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(12,35,64,0.28);
+      color: rgba(255,255,255,0.84);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .transfer-snapshot-status-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #F15A22;
+      box-shadow: 0 0 0 5px rgba(241,90,34,0.14);
+      flex: 0 0 auto;
+    }
+
+    .transfer-snapshot-status-headline {
+      margin: 0;
+      color: #ffffff;
+      font-size: 19px;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .transfer-snapshot-status-summary {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 12.8px;
+      line-height: 1.58;
+      font-weight: 560;
+    }
+
+    .transfer-snapshot-status-grid {
       display: grid;
       gap: 9px;
-      margin: 2px 0 0 0;
-      padding: 0;
-      list-style: none;
+      margin-top: 1px;
     }
 
-    .transfer-snapshot-status-list li {
+    .transfer-snapshot-status-item {
       display: grid;
-      grid-template-columns: 76px minmax(0, 1fr);
+      grid-template-columns: 82px minmax(0, 1fr);
       gap: 10px;
       align-items: start;
-      padding-top: 9px;
-      border-top: 1px solid rgba(255,255,255,0.09);
-      color: #ffffff;
-      font-size: 13px;
-      line-height: 1.45;
-      font-weight: 600;
+      padding: 11px 12px;
+      border-radius: 13px;
+      border: 1px solid rgba(255,255,255,0.115);
+      background: rgba(12,35,64,0.22);
     }
 
-    .transfer-snapshot-status-list li:first-child {
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .transfer-snapshot-status-label {
-      color: rgba(255,255,255,0.58);
+    .transfer-snapshot-status-key {
+      color: rgba(255,255,255,0.62);
       font-size: 10px;
-      line-height: 1.4;
-      font-weight: 850;
+      line-height: 1.35;
+      font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+    }
+
+    .transfer-snapshot-status-value {
+      color: rgba(255,255,255,0.94);
+      font-size: 12.6px;
+      line-height: 1.45;
+      font-weight: 650;
     }
 
     .transfer-snapshot-actions {
@@ -831,10 +909,40 @@
         line-height: 1.58;
       }
 
-      .transfer-snapshot-status-list li {
+      .transfer-snapshot-status-module {
+        padding: 15px;
+        border-radius: 16px;
+      }
+
+      .transfer-snapshot-status-module::before {
+        width: 4px;
+      }
+
+      .transfer-snapshot-status-badge {
+        font-size: 9px;
+        padding: 6px 9px;
+        letter-spacing: 0.11em;
+      }
+
+      .transfer-snapshot-status-headline {
+        font-size: 16.5px;
+        line-height: 1.28;
+      }
+
+      .transfer-snapshot-status-summary {
+        font-size: 12.4px;
+        line-height: 1.55;
+      }
+
+      .transfer-snapshot-status-item {
         grid-template-columns: 1fr;
-        gap: 3px;
-        font-size: 12.8px;
+        gap: 4px;
+        padding: 10px 11px;
+        border-radius: 12px;
+      }
+
+      .transfer-snapshot-status-value {
+        font-size: 12.4px;
       }
 
       .transfer-snapshot-btn {
@@ -926,22 +1034,37 @@
 
       <div class="transfer-snapshot-side">
         <div class="transfer-snapshot-side-panel">
-          <div class="transfer-snapshot-card transfer-snapshot-card-status">
-            <p class="transfer-snapshot-card-label">Current Status</p>
-            <p class="transfer-snapshot-card-text">
-              Transfer notification submitted to UTSA; required compliance process completed.
-            </p>
+          <div class="transfer-snapshot-status-module" aria-label="Transfer process status">
+            <div class="transfer-snapshot-status-content">
+              <p class="transfer-snapshot-status-badge">
+                <span class="transfer-snapshot-status-badge-dot" aria-hidden="true"></span>
+                Transfer Process Status
+              </p>
 
-            <ul class="transfer-snapshot-status-list" aria-label="Transfer process status">
-              <li>
-                <span class="transfer-snapshot-status-label">Listing</span>
-                <span>NCAA Transfer Portal listing pending June 4, 2026 transfer-window processing.</span>
-              </li>
-              <li>
-                <span class="transfer-snapshot-status-label">Contact</span>
-                <span>Formal transfer-related contact with NCAA programs should follow official NCAA Transfer Portal listing.</span>
-              </li>
-            </ul>
+              <h3 class="transfer-snapshot-status-headline">
+                Notice Submitted · Compliance Process Completed
+              </h3>
+
+              <p class="transfer-snapshot-status-summary">
+                Transfer notification has been submitted to UTSA, and the required compliance process has been completed.
+              </p>
+
+              <div class="transfer-snapshot-status-grid">
+                <div class="transfer-snapshot-status-item">
+                  <span class="transfer-snapshot-status-key">Listing</span>
+                  <span class="transfer-snapshot-status-value">
+                    NCAA Transfer Portal listing pending June 4, 2026 transfer-window processing.
+                  </span>
+                </div>
+
+                <div class="transfer-snapshot-status-item">
+                  <span class="transfer-snapshot-status-key">Contact</span>
+                  <span class="transfer-snapshot-status-value">
+                    Formal transfer-related contact with NCAA programs should follow official NCAA Transfer Portal listing.
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="transfer-snapshot-card">
