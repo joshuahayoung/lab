@@ -327,366 +327,6 @@
 
 
 
-<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
-</div>
-
-<div id="jh-status-card-block" style="width:100%; max-width:900px; margin:0 auto 24px; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-
-  <div id="jh-transfer-status-shared"></div>
-
-  <style>
-    #jh-transfer-status-shared,
-    #jh-transfer-status-shared *,
-    #jh-transfer-status-shared *::before,
-    #jh-transfer-status-shared *::after {
-      box-sizing: border-box;
-    }
-
-    #jh-transfer-status-shared {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 24px;
-      padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    #jh-transfer-status-shared .jhs-last-updated-wrap {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 10px;
-      padding-right: 15px;
-    }
-
-    #jh-transfer-status-shared .jhs-last-updated {
-      color: #64748b;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
-
-    #jh-transfer-status-shared .jhs-card {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      border: 2px solid #0c2340;
-      border-radius: 20px;
-      box-shadow: 0 15px 45px rgba(12, 35, 64, 0.12);
-      padding: 0;
-    }
-
-    #jh-transfer-status-shared .jhs-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 7px;
-      height: 100%;
-      background: #0c2340;
-    }
-
-    #jh-transfer-status-shared .jhs-inner {
-      padding: 24px 28px 22px 32px;
-    }
-
-    #jh-transfer-status-shared .jhs-top-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    #jh-transfer-status-shared .jhs-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #0c2340;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    #jh-transfer-status-shared .jhs-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #1e3a8a;
-      box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.12);
-      flex-shrink: 0;
-    }
-
-    #jh-transfer-status-shared .jhs-title {
-      margin: 0;
-      color: #0c2340;
-      font-family: 'Oswald', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 24px;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.2px;
-    }
-
-    #jh-transfer-status-shared .jhs-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #0c2340;
-      color: #ffffff;
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.9px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      margin-top: 2px;
-    }
-
-    #jh-transfer-status-shared .jhs-body {
-      color: #334155;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.62;
-      max-width: 790px;
-      margin: 0;
-    }
-
-    #jh-transfer-status-shared .jhs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    #jh-transfer-status-shared .jhs-chip {
-      background: #ffffff;
-      border: 1px solid rgba(12, 35, 64, 0.14);
-      border-radius: 12px;
-      padding: 12px 13px;
-      min-width: 0;
-    }
-
-    #jh-transfer-status-shared .jhs-chip-label {
-      display: block;
-      color: #64748b;
-      font-size: 9px;
-      font-weight: 900;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-      line-height: 1.1;
-    }
-
-    #jh-transfer-status-shared .jhs-chip-value {
-      display: block;
-      color: #0c2340;
-      font-size: 13px;
-      font-weight: 900;
-      line-height: 1.25;
-    }
-
-    #jh-transfer-status-shared .jhs-note {
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(12, 35, 64, 0.10);
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 768px) {
-      #jh-transfer-status-shared .jhs-last-updated-wrap {
-        padding-right: 15px;
-        margin-bottom: 8px;
-      }
-
-      #jh-transfer-status-shared .jhs-last-updated {
-        font-size: 11px;
-      }
-
-      #jh-transfer-status-shared .jhs-card {
-        border-radius: 14px;
-        box-shadow: 0 10px 22px rgba(12, 35, 64, 0.10);
-      }
-
-      #jh-transfer-status-shared .jhs-card::before {
-        width: 5px;
-      }
-
-      #jh-transfer-status-shared .jhs-inner {
-        padding: 18px 16px 17px 20px;
-      }
-
-      #jh-transfer-status-shared .jhs-top-row {
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-
-      #jh-transfer-status-shared .jhs-label {
-        font-size: 9px;
-        letter-spacing: 0.9px;
-        margin-bottom: 6px;
-      }
-
-      #jh-transfer-status-shared .jhs-dot {
-        width: 7px;
-        height: 7px;
-      }
-
-      #jh-transfer-status-shared .jhs-title {
-        font-size: 19px;
-        line-height: 1.16;
-      }
-
-      #jh-transfer-status-shared .jhs-pill {
-        font-size: 8px;
-        padding: 6px 10px;
-        letter-spacing: 0.65px;
-      }
-
-      #jh-transfer-status-shared .jhs-body {
-        font-size: 13px;
-        line-height: 1.55;
-      }
-
-      #jh-transfer-status-shared .jhs-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin-top: 14px;
-      }
-
-      #jh-transfer-status-shared .jhs-chip {
-        padding: 10px 11px;
-        border-radius: 10px;
-      }
-
-      #jh-transfer-status-shared .jhs-chip-label {
-        font-size: 8px;
-      }
-
-      #jh-transfer-status-shared .jhs-chip-value {
-        font-size: 12px;
-      }
-
-      #jh-transfer-status-shared .jhs-note {
-        font-size: 10px;
-      }
-    }
-  </style>
-
-  <script>
-    (function () {
-      const container = document.getElementById("jh-transfer-status-shared");
-      if (!container) return;
-
-      function isUsableValue(value) {
-        if (value === null || value === undefined) return false;
-        const cleaned = String(value).trim();
-        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
-      }
-
-      function escapeHtml(value) {
-        return String(value)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;")
-          .replace(/'/g, "&#039;");
-      }
-
-      function buildStatusHtml(lastUpdated) {
-        const lastUpdatedHtml = isUsableValue(lastUpdated)
-          ? `
-            <div class="jhs-last-updated-wrap">
-              <span class="jhs-last-updated">Last Updated: ${escapeHtml(lastUpdated)}</span>
-            </div>
-          `
-          : "";
-
-        return `
-          ${lastUpdatedHtml}
-
-          <div class="jhs-card">
-            <div class="jhs-inner">
-              <div class="jhs-top-row">
-                <div>
-                  <div class="jhs-label">
-                    <span class="jhs-dot"></span>
-                    <span>Transfer Status</span>
-                  </div>
-                  <h3 class="jhs-title">Formal Notice Submitted</h3>
-                </div>
-
-                <div class="jhs-pill">Compliance Process Completed</div>
-              </div>
-
-              <p class="jhs-body">
-                Following his completed freshman season at UTSA, Joshua Hong submitted formal notice of his intent to enter the NCAA Transfer Portal and has completed the required compliance process.
-              </p>
-
-              <div class="jhs-grid">
-                <div class="jhs-chip">
-                  <span class="jhs-chip-label">Status</span>
-                  <span class="jhs-chip-value">Formal notice submitted to UTSA</span>
-                </div>
-
-                <div class="jhs-chip">
-                  <span class="jhs-chip-label">Process</span>
-                  <span class="jhs-chip-value">Required compliance process completed</span>
-                </div>
-
-                <div class="jhs-chip">
-                  <span class="jhs-chip-label">Next Step</span>
-                  <span class="jhs-chip-value">NCAA Transfer Portal listing pending official transfer-window processing</span>
-                </div>
-              </div>
-
-              <div class="jhs-note">
-                Formal transfer-related contact with NCAA programs should follow official NCAA Transfer Portal listing.
-              </div>
-            </div>
-          </div>
-        `;
-      }
-
-      async function renderTransferStatus() {
-        let lastUpdated = "";
-
-        try {
-          const res = await fetch("./data2.json?v=" + Date.now());
-          if (res.ok) {
-            const data = await res.json();
-            if (data && data.pgaTableShared && isUsableValue(data.pgaTableShared.lastUpdated)) {
-              lastUpdated = data.pgaTableShared.lastUpdated;
-            }
-          }
-        } catch (error) {
-          console.error("TRANSFER STATUS render error:", error);
-        }
-
-        container.innerHTML = buildStatusHtml(lastUpdated);
-      }
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", renderTransferStatus);
-      } else {
-        renderTransferStatus();
-      }
-    })();
-  </script>
-
-</div>    
- 
-
-
-
 <section class="transfer-snapshot-section" aria-labelledby="transferSnapshotTitle" data-portal-state="draft-copy">
   <style>
     .transfer-snapshot-section {
@@ -707,6 +347,24 @@
       padding: 0;
       isolation: isolate;
       font-family: inherit;
+    }
+
+    .transfer-snapshot-last-updated-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 10px 0;
+      padding-right: 12px;
+      box-sizing: border-box;
+    }
+
+    .transfer-snapshot-last-updated {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .transfer-snapshot-shell {
@@ -1092,6 +750,15 @@
         margin: 24px 0;
       }
 
+      .transfer-snapshot-last-updated-wrap {
+        margin-bottom: 8px;
+        padding-right: 8px;
+      }
+
+      .transfer-snapshot-last-updated {
+        font-size: 11px;
+      }
+
       .transfer-snapshot-shell {
         border-radius: 20px;
       }
@@ -1186,6 +853,10 @@
       }
     }
   </style>
+
+  <div class="transfer-snapshot-last-updated-wrap" id="transferSnapshotLastUpdatedWrap" hidden>
+    <span class="transfer-snapshot-last-updated" id="transferSnapshotLastUpdated"></span>
+  </div>
 
   <div class="transfer-snapshot-shell">
     <div class="transfer-snapshot-inner">
@@ -1306,6 +977,46 @@
       </div>
     </div>
   </div>
+
+  <script>
+    (function () {
+      const wrap = document.getElementById("transferSnapshotLastUpdatedWrap");
+      const target = document.getElementById("transferSnapshotLastUpdated");
+
+      if (!wrap || !target) return;
+
+      function isUsableValue(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
+      }
+
+      async function renderTransferSnapshotLastUpdated() {
+        try {
+          const res = await fetch("./data2.json?v=" + Date.now());
+          if (!res.ok) return;
+
+          const data = await res.json();
+          const lastUpdated = data && data.pgaTableShared
+            ? data.pgaTableShared.lastUpdated
+            : "";
+
+          if (!isUsableValue(lastUpdated)) return;
+
+          target.textContent = "Last Updated: " + String(lastUpdated).trim();
+          wrap.hidden = false;
+        } catch (error) {
+          console.error("TRANSFER SNAPSHOT last updated render error:", error);
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderTransferSnapshotLastUpdated);
+      } else {
+        renderTransferSnapshotLastUpdated();
+      }
+    })();
+  </script>
 </section>
     
 
