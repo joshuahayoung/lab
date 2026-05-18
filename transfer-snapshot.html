@@ -2761,6 +2761,352 @@
   </div>
 </section>
 
+
+
+<section class="ts-section" id="ts-current-status-section" aria-labelledby="ts-current-status-title">
+  <style>
+    #ts-current-status-section {
+      --tscs-navy: #0C2340;
+      --tscs-navy-2: #12335d;
+      --tscs-orange: #F15A22;
+      --tscs-gold: #c98a2e;
+      --tscs-white: #ffffff;
+      --tscs-text: #334155;
+      --tscs-muted: #64748b;
+      --tscs-line: #e2e8f0;
+      --tscs-soft: #f8fafc;
+
+      margin-bottom: 28px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #ts-current-status-section,
+    #ts-current-status-section *,
+    #ts-current-status-section *::before,
+    #ts-current-status-section *::after {
+      box-sizing: border-box;
+    }
+
+    #ts-current-status-section .tscs-wrap {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 26px;
+      border: 1px solid rgba(12, 35, 64, 0.16);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(241,90,34,0.10), transparent 28%),
+        radial-gradient(circle at 88% 88%, rgba(201,138,46,0.12), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 18px 42px rgba(12, 35, 64, 0.10);
+    }
+
+    #ts-current-status-section .tscs-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: linear-gradient(180deg, var(--tscs-orange) 0%, var(--tscs-gold) 100%);
+      opacity: 0.98;
+    }
+
+    #ts-current-status-section .tscs-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(12,35,64,0.045), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.70), transparent 42%);
+      opacity: 0.85;
+    }
+
+    #ts-current-status-section .tscs-inner {
+      position: relative;
+      z-index: 1;
+      padding: 26px 28px 24px 34px;
+    }
+
+    #ts-current-status-section .tscs-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    #ts-current-status-section .tscs-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      margin: 0 0 10px 0;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(241,90,34,0.26);
+      background: rgba(241,90,34,0.08);
+      color: var(--tscs-orange);
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    #ts-current-status-section .tscs-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--tscs-orange);
+      box-shadow: 0 0 0 5px rgba(241,90,34,0.12);
+      flex: 0 0 auto;
+    }
+
+    #ts-current-status-section .tscs-title {
+      margin: 0;
+      color: var(--tscs-navy);
+      font-size: 30px;
+      line-height: 1.08;
+      font-weight: 950;
+      letter-spacing: -0.045em;
+    }
+
+    #ts-current-status-section .tscs-subtitle {
+      margin: 10px 0 0 0;
+      max-width: 760px;
+      color: var(--tscs-text);
+      font-size: 15px;
+      line-height: 1.68;
+      font-weight: 560;
+    }
+
+    #ts-current-status-section .tscs-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--tscs-navy);
+      color: #ffffff;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 10px 22px rgba(12,35,64,0.14);
+    }
+
+    #ts-current-status-section .tscs-main-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    #ts-current-status-section .tscs-status-card {
+      position: relative;
+      min-width: 0;
+      padding: 16px 16px 15px;
+      border-radius: 18px;
+      border: 1px solid rgba(12,35,64,0.11);
+      background: rgba(255,255,255,0.78);
+      box-shadow:
+        0 10px 24px rgba(12,35,64,0.055),
+        inset 0 1px 0 rgba(255,255,255,0.76);
+    }
+
+    #ts-current-status-section .tscs-status-card.is-primary {
+      border-color: rgba(241,90,34,0.24);
+      background:
+        linear-gradient(180deg, rgba(241,90,34,0.075) 0%, rgba(255,255,255,0.82) 100%);
+    }
+
+    #ts-current-status-section .tscs-status-card.is-pending {
+      border-color: rgba(201,138,46,0.24);
+      background:
+        linear-gradient(180deg, rgba(201,138,46,0.085) 0%, rgba(255,255,255,0.82) 100%);
+    }
+
+    #ts-current-status-section .tscs-card-label {
+      display: block;
+      margin: 0 0 8px 0;
+      color: var(--tscs-muted);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    #ts-current-status-section .tscs-card-value {
+      display: block;
+      color: var(--tscs-navy);
+      font-size: 15px;
+      line-height: 1.36;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    #ts-current-status-section .tscs-card-note {
+      margin: 8px 0 0 0;
+      color: #475569;
+      font-size: 12.5px;
+      line-height: 1.55;
+      font-weight: 560;
+    }
+
+    #ts-current-status-section .tscs-note {
+      margin: 18px 0 0 0;
+      padding: 14px 15px 0;
+      border-top: 1px solid rgba(12,35,64,0.10);
+      color: var(--tscs-muted);
+      font-size: 12px;
+      line-height: 1.62;
+      font-weight: 650;
+    }
+
+    #ts-current-status-section .tscs-note strong {
+      color: var(--tscs-navy);
+      font-weight: 900;
+    }
+
+    @media (max-width: 820px) {
+      #ts-current-status-section .tscs-top {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      #ts-current-status-section .tscs-pill {
+        width: fit-content;
+      }
+
+      #ts-current-status-section .tscs-main-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #ts-current-status-section {
+        margin-bottom: 24px;
+      }
+
+      #ts-current-status-section .tscs-wrap {
+        border-radius: 21px;
+      }
+
+      #ts-current-status-section .tscs-wrap::before {
+        width: 5px;
+      }
+
+      #ts-current-status-section .tscs-inner {
+        padding: 22px 17px 20px 22px;
+      }
+
+      #ts-current-status-section .tscs-kicker {
+        font-size: 9px;
+        letter-spacing: 0.11em;
+        padding: 6px 9px;
+      }
+
+      #ts-current-status-section .tscs-title {
+        font-size: 23px;
+        line-height: 1.14;
+        letter-spacing: -0.035em;
+      }
+
+      #ts-current-status-section .tscs-subtitle {
+        font-size: 13.5px;
+        line-height: 1.62;
+      }
+
+      #ts-current-status-section .tscs-pill {
+        min-height: 30px;
+        padding: 7px 10px;
+        font-size: 8.5px;
+        letter-spacing: 0.08em;
+        white-space: normal;
+        text-align: center;
+      }
+
+      #ts-current-status-section .tscs-status-card {
+        padding: 14px 13px 13px;
+        border-radius: 15px;
+      }
+
+      #ts-current-status-section .tscs-card-value {
+        font-size: 14px;
+      }
+
+      #ts-current-status-section .tscs-card-note {
+        font-size: 12px;
+      }
+
+      #ts-current-status-section .tscs-note {
+        padding: 12px 2px 0;
+        font-size: 11.5px;
+      }
+    }
+  </style>
+
+  <div class="tscs-wrap">
+    <div class="tscs-inner">
+      <div class="tscs-top">
+        <div>
+          <p class="tscs-kicker">
+            <span class="tscs-dot" aria-hidden="true"></span>
+            Current Status
+          </p>
+
+          <h2 class="tscs-title" id="ts-current-status-title">
+            Written Request Submitted · Compliance Confirmation Pending
+          </h2>
+
+          <p class="tscs-subtitle">
+            Joshua submitted a written transfer request to UTSA Compliance. Institutional confirmation remains pending before official NCAA Transfer Portal listing.
+          </p>
+        </div>
+
+        <span class="tscs-pill">Pre-Listing Status</span>
+      </div>
+
+      <div class="tscs-main-grid" aria-label="Current transfer process status">
+        <div class="tscs-status-card is-primary">
+          <span class="tscs-card-label">Request</span>
+          <span class="tscs-card-value">Written request submitted to UTSA Compliance</span>
+          <p class="tscs-card-note">
+            The request has been submitted through the institutional channel.
+          </p>
+        </div>
+
+        <div class="tscs-status-card is-pending">
+          <span class="tscs-card-label">Confirmation</span>
+          <span class="tscs-card-value">Compliance confirmation pending</span>
+          <p class="tscs-card-note">
+            Public status will be updated after institutional confirmation is received.
+          </p>
+        </div>
+
+        <div class="tscs-status-card">
+          <span class="tscs-card-label">Portal Listing</span>
+          <span class="tscs-card-value">Pending official transfer-window processing</span>
+          <p class="tscs-card-note">
+            NCAA Transfer Portal listing is expected to follow institutional processing during the men’s golf transfer window beginning June 4, 2026.
+          </p>
+        </div>
+      </div>
+
+      <p class="tscs-note">
+        <strong>Contact note:</strong> Formal transfer-related communication with NCAA programs should follow official NCAA Transfer Portal listing.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+	  
 	  
     <section class="ts-section">
       <div class="ts-section-header">
