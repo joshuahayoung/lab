@@ -99,7 +99,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
+ <style>
     
     html {
       margin: 0; padding: 0; width: 100%;
@@ -120,7 +120,7 @@
       transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
     }
 
-    
+   
     .sticky-top.scrolled {
       position: fixed;
       top: 0;
@@ -146,7 +146,7 @@
       font-weight: 400;
     }
 
-   
+    
     .header-wrapper {
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 80px;
@@ -165,21 +165,21 @@
       transition: 0.3s; padding: 8px 15px; border-radius: 4px;
     }
 
-    .nav-links a:hover {
+   .nav-links a:hover {
     background-color: #F15A22 !important;
     color: #fff !important;
-  }
-    
+   }
+  
     .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; border: none; } 
     .mobile-menu-logo, .close-menu, .menu-footer { display: none; }
 
-   
+    
     .menu-toggle {
       display: none; font-size: 30px; cursor: pointer;
       background: none; border: none; color: #F15A22;
     }
 
-    
+   
     #fixedTopBtn {
       position: fixed !important; bottom: 25px !important; right: 20px !important;
       width: 50px !important; height: 50px !important;
@@ -190,7 +190,7 @@
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    
+   
     @media (max-width: 1024px) {
       .header-wrapper { padding: 0 20px; height: 70px; justify-content: space-between; gap: 0; }
       .menu-toggle { display: block; order: 2; }
@@ -212,8 +212,8 @@
       .nav-links a.active { background-color: #F15A22 !important; color: #fff !important; }
       .nav-links a:hover,
       .nav-links a.active {
-      background-color: #F15A22 !important;
-      color: #fff !important;
+        background-color: #F15A22 !important;
+        color: #fff !important;
       }
       .mobile-menu-logo { display: block; margin-bottom: 30px; } 
       .mobile-menu-logo img { height: 35px; }
@@ -233,7 +233,35 @@
       .nav-links { padding: 30px 25px; overflow-y: auto; }
       .menu-footer { margin-top: 30px; }
     }
-  </style>
+
+    /* Transfer Snapshot menu highlight */
+    .nav-links a[href="transfer-snapshot.html"] {
+      background-color: #0C2340 !important;
+      color: #ffffff !important;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(12, 35, 64, 0.16);
+    }
+
+    .nav-links a[href="transfer-snapshot.html"]:hover {
+      background-color: #12335d !important;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links a[href="transfer-snapshot.html"] {
+        border-radius: 14px;
+        width: 100%;
+      }
+
+      .nav-links a[href="transfer-snapshot.html"]:hover {
+        background-color: #12335d !important;
+        color: #ffffff !important;
+      }
+    }
+</style>
+  
 </head>
 
 <body>
