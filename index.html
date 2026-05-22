@@ -1369,6 +1369,590 @@
     
 
 
+<section
+  id="jh-resume-download-block"
+  class="jh-resume-download-section"
+  aria-labelledby="jh-resume-download-title"
+>
+  <style>
+    #jh-resume-download-block,
+    #jh-resume-download-block * {
+      box-sizing: border-box;
+    }
+
+    #jh-resume-download-block {
+      width: 100%;
+      max-width: 1120px;
+      margin: 34px auto 54px;
+      padding: 0 18px;
+      font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: #0c2340;
+    }
+
+    #jh-resume-download-block .jhrd-shell {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid rgba(12, 35, 64, 0.12);
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(241, 90, 34, 0.10),
+          transparent 34%
+        ),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 18px 42px rgba(12, 35, 64, 0.10);
+    }
+
+    #jh-resume-download-block .jhrd-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid rgba(12, 35, 64, 0.10);
+    }
+
+    #jh-resume-download-block .jhrd-kicker {
+      margin: 0 0 8px;
+      color: #c98a2e;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    #jh-resume-download-block .jhrd-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 950;
+      letter-spacing: -0.8px;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    #jh-resume-download-block .jhrd-subtitle {
+      max-width: 740px;
+      margin: 12px 0 0;
+      color: #475569;
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.75;
+    }
+
+    #jh-resume-download-block .jhrd-status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #0c2340;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 10px 20px rgba(12, 35, 64, 0.16);
+    }
+
+    #jh-resume-download-block .jhrd-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 22px 30px 30px;
+    }
+
+    #jh-resume-download-block .jhrd-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 248px;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(12, 35, 64, 0.12);
+      background: #ffffff;
+      box-shadow: 0 12px 26px rgba(12, 35, 64, 0.07);
+    }
+
+    #jh-resume-download-block .jhrd-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: #f15a22;
+    }
+
+    #jh-resume-download-block .jhrd-card.is-full::before {
+      background: #c98a2e;
+    }
+
+    #jh-resume-download-block .jhrd-card-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px 24px 22px 28px;
+    }
+
+    #jh-resume-download-block .jhrd-card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    #jh-resume-download-block .jhrd-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(241, 90, 34, 0.10);
+      color: #b84218;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    #jh-resume-download-block .jhrd-card.is-full .jhrd-label {
+      background: rgba(201, 138, 46, 0.12);
+      color: #7c5a1b;
+    }
+
+    #jh-resume-download-block .jhrd-format {
+      flex: 0 0 auto;
+      padding: 6px 9px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      color: #64748b;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-resume-download-block .jhrd-card-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -0.4px;
+      line-height: 1.15;
+    }
+
+    #jh-resume-download-block .jhrd-card-text {
+      margin: 12px 0 0;
+      color: #475569;
+      font-size: 13.5px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    #jh-resume-download-block .jhrd-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 18px 0 20px;
+    }
+
+    #jh-resume-download-block .jhrd-point {
+      min-width: 0;
+      padding: 10px 9px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+    }
+
+    #jh-resume-download-block .jhrd-point span {
+      display: block;
+      color: #64748b;
+      font-size: 8.5px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    #jh-resume-download-block .jhrd-point strong {
+      display: block;
+      margin-top: 4px;
+      color: #0c2340;
+      font-size: 16px;
+      font-weight: 950;
+      line-height: 1.1;
+      white-space: normal;
+    }
+
+    #jh-resume-download-block .jhrd-action-row {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    #jh-resume-download-block .jhrd-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: #0c2340;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      line-height: 1;
+      text-transform: uppercase;
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+      box-shadow: 0 10px 20px rgba(12, 35, 64, 0.18);
+    }
+
+    #jh-resume-download-block .jhrd-download-btn:hover,
+    #jh-resume-download-block .jhrd-download-btn:focus-visible {
+      background: #12335d;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 24px rgba(12, 35, 64, 0.22);
+      outline: none;
+    }
+
+    #jh-resume-download-block .jhrd-download-btn svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    #jh-resume-download-block .jhrd-file-note {
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    #jh-resume-download-block .jhrd-footer {
+      padding: 16px 30px 22px;
+      border-top: 1px solid rgba(12, 35, 64, 0.08);
+      background: rgba(12, 35, 64, 0.025);
+    }
+
+    #jh-resume-download-block .jhrd-footer p {
+      margin: 0;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    #jh-resume-download-block .jhrd-footer strong {
+      color: #0c2340;
+      font-weight: 900;
+    }
+
+    @media (max-width: 820px) {
+      #jh-resume-download-block {
+        margin: 28px auto 44px;
+        padding: 0 14px;
+      }
+
+      #jh-resume-download-block .jhrd-header {
+        grid-template-columns: 1fr;
+        align-items: start;
+        padding: 24px 20px 20px;
+      }
+
+      #jh-resume-download-block .jhrd-status-pill {
+        width: fit-content;
+        white-space: normal;
+        text-align: center;
+      }
+
+      #jh-resume-download-block .jhrd-grid {
+        grid-template-columns: 1fr;
+        padding: 18px 20px 24px;
+      }
+
+      #jh-resume-download-block .jhrd-card {
+        min-height: 0;
+      }
+
+      #jh-resume-download-block .jhrd-card-body {
+        padding: 22px 18px 20px 24px;
+      }
+
+      #jh-resume-download-block .jhrd-points {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      #jh-resume-download-block .jhrd-footer {
+        padding: 15px 20px 20px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      #jh-resume-download-block .jhrd-card-top {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      #jh-resume-download-block .jhrd-card-title {
+        font-size: 20px;
+      }
+
+      #jh-resume-download-block .jhrd-points {
+        grid-template-columns: 1fr;
+      }
+
+      #jh-resume-download-block .jhrd-action-row {
+        align-items: stretch;
+      }
+
+      #jh-resume-download-block .jhrd-download-btn {
+        width: 100%;
+      }
+
+      #jh-resume-download-block .jhrd-file-note {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <div class="jhrd-shell">
+    <div class="jhrd-header">
+      <div>
+        <p class="jhrd-kicker">Resume Downloads</p>
+
+        <h2
+          id="jh-resume-download-title"
+          class="jhrd-title"
+        >
+          Coach-Ready Resume Files
+        </h2>
+
+        <p class="jhrd-subtitle">
+          Two downloadable PDF references are provided for different
+          coach-review needs: a one-page transfer golf resume for fast
+          evaluation and a full athletic resume for extended background
+          review.
+        </p>
+      </div>
+
+      <div class="jhrd-status-pill">
+        Resume PDFs
+      </div>
+    </div>
+
+    <div class="jhrd-grid">
+      <article class="jhrd-card">
+        <div class="jhrd-card-body">
+          <div class="jhrd-card-top">
+            <span class="jhrd-label">
+              Transfer Resume
+            </span>
+
+            <span class="jhrd-format">
+              1 Page PDF
+            </span>
+          </div>
+
+          <h3 class="jhrd-card-title">
+            One-Page Transfer Golf Resume
+          </h3>
+
+          <p class="jhrd-card-text">
+            A condensed one-page profile built for fast coach review,
+            highlighting freshman-year production, scoring record,
+            lineup reliability, and complete NCAA freshman-season
+            results.
+          </p>
+
+          <div class="jhrd-points">
+            <div class="jhrd-point">
+              <span>Focus</span>
+              <strong>Fast Review</strong>
+            </div>
+
+            <div class="jhrd-point">
+              <span>Scope</span>
+              <strong>2025–26 Freshman</strong>
+            </div>
+
+            <div class="jhrd-point">
+              <span>Use</span>
+              <strong>Initial Evaluation</strong>
+            </div>
+          </div>
+
+          <div class="jhrd-action-row">
+            <a
+              class="jhrd-download-btn"
+              href="./images/Joshua_Hong_2026_Transfer_Golf_Resume.pdf"
+              download="Joshua_Hong_2026_Transfer_Golf_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              data-resume-type="transfer"
+            >
+              <span>Download Resume</span>
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 15v4a2 2 0 0 1-2 2H5
+                     a2 2 0 0 1-2-2v-4"
+                >
+                </path>
+                <polyline points="7 10 12 15 17 10">
+                </polyline>
+                <line x1="12" y1="15" x2="12" y2="3">
+                </line>
+              </svg>
+            </a>
+
+            <span class="jhrd-file-note">
+              Joshua_Hong_2026_Transfer_Golf_Resume.pdf
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="jhrd-card is-full">
+        <div class="jhrd-card-body">
+          <div class="jhrd-card-top">
+            <span class="jhrd-label">
+              Full Resume
+            </span>
+
+            <span class="jhrd-format">
+              Full PDF
+            </span>
+          </div>
+
+          <h3 class="jhrd-card-title">
+            Full Athletic Resume
+          </h3>
+
+          <p class="jhrd-card-text">
+            A broader athletic profile including freshman-season data,
+            junior background, development record, achievements, rankings,
+            academic context, and supporting career references.
+          </p>
+
+          <div class="jhrd-points">
+            <div class="jhrd-point">
+              <span>Focus</span>
+              <strong>Full Profile</strong>
+            </div>
+
+            <div class="jhrd-point">
+              <span>Scope</span>
+              <strong>Junior + NCAA</strong>
+            </div>
+
+            <div class="jhrd-point">
+              <span>Use</span>
+              <strong>Background Review</strong>
+            </div>
+          </div>
+
+          <div class="jhrd-action-row">
+            <a
+              class="jhrd-download-btn"
+              href="./images/Joshua_Hong_Full_Athletic_Resume_2026.pdf"
+              download="Joshua_Hong_Full_Athletic_Resume_2026.pdf"
+              target="_blank"
+              rel="noopener"
+              data-resume-type="full"
+            >
+              <span>Download Resume</span>
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M21 15v4a2 2 0 0 1-2 2H5
+                     a2 2 0 0 1-2-2v-4"
+                >
+                </path>
+                <polyline points="7 10 12 15 17 10">
+                </polyline>
+                <line x1="12" y1="15" x2="12" y2="3">
+                </line>
+              </svg>
+            </a>
+
+            <span class="jhrd-file-note">
+              Joshua_Hong_Full_Athletic_Resume_2026.pdf
+            </span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="jhrd-footer">
+      <p>
+        <strong>Use note:</strong>
+        Use the one-page transfer resume for a quick first read.
+        Use the full athletic resume for extended background review,
+        junior record context, academic context, and supporting career
+        references.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const block = document.getElementById("jh-resume-download-block");
+      if (!block) return;
+
+      const links = block.querySelectorAll(".jhrd-download-btn");
+
+      links.forEach(function (link) {
+        link.addEventListener("click", function () {
+          const type = link.getAttribute("data-resume-type") || "resume";
+          block.setAttribute("data-last-download", type);
+        });
+      });
+    })();
+  </script>
+</section>
+
     
        
 <div id="jh-index-key-metrics-panel" style="max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
