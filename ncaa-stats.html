@@ -1846,6 +1846,308 @@
     }
   </style>
 
+ <div
+  id="jh-offseason-schedule"
+  class="jh-offseason-schedule"
+>
+  <style>
+    #jh-offseason-schedule,
+    #jh-offseason-schedule * {
+      box-sizing: border-box;
+    }
+
+    #jh-offseason-schedule {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      padding: 0;
+      font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+    #jh-offseason-schedule .jhos-title-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-left: 6px solid #c98a2e;
+      padding-left: 15px;
+    }
+
+    #jh-offseason-schedule .jhos-title {
+      margin: 0;
+      color: #c98a2e;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+
+    #jh-offseason-schedule .jhos-topbar {
+      background: #000000;
+      border-radius: 8px 8px 0 0;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-inner {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      width: 100%;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-title {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 1px;
+      line-height: 1.25;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-badge {
+      margin-left: 15px;
+      background: #c98a2e;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #jh-offseason-schedule .jhos-table-wrap {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+    }
+
+    #jh-offseason-schedule .jhos-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    #jh-offseason-schedule .jhos-table thead tr {
+      background: #f8f9fa;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    #jh-offseason-schedule .jhos-table th {
+      padding: 15px 25px;
+      text-align: left;
+      font-size: 12px;
+      color: #4a5568;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+
+    #jh-offseason-schedule .jhos-table th:nth-child(1),
+    #jh-offseason-schedule .jhos-table td:nth-child(1) {
+      width: 25%;
+    }
+
+    #jh-offseason-schedule .jhos-table th:nth-child(2),
+    #jh-offseason-schedule .jhos-table td:nth-child(2) {
+      width: 50%;
+    }
+
+    #jh-offseason-schedule .jhos-table th:nth-child(3),
+    #jh-offseason-schedule .jhos-table td:nth-child(3) {
+      width: 25%;
+      text-align: center;
+    }
+
+    #jh-offseason-schedule .jhos-table td {
+      padding: 20px 25px;
+      vertical-align: top;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    #jh-offseason-schedule .jhos-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    #jh-offseason-schedule .jhos-date {
+      font-weight: 700;
+      font-size: 14px;
+      color: #1a202c;
+      line-height: 1.35;
+    }
+
+    #jh-offseason-schedule .jhos-event-name {
+      font-weight: 800;
+      color: #2d3748;
+      font-size: 16px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    #jh-offseason-schedule .jhos-event-location {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    #jh-offseason-schedule .jhos-status {
+      display: inline-block;
+      max-width: 100%;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.25;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    #jh-offseason-schedule .jhos-status.is-gold {
+      color: #c98a2e;
+    }
+
+    #jh-offseason-schedule .jhos-status.is-gray {
+      color: #4a5568;
+    }
+
+    #jh-offseason-schedule .jhos-status.is-navy {
+      color: #1f365d;
+    }
+
+    #jh-offseason-schedule .jhos-row-muted {
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    @media (max-width: 700px) {
+      #jh-offseason-schedule {
+        margin: 0 auto 34px;
+      }
+
+      #jh-offseason-schedule .jhos-title-row {
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding-left: 12px;
+      }
+
+      #jh-offseason-schedule .jhos-title {
+        font-size: 18px;
+        line-height: 1.28;
+      }
+
+      #jh-offseason-schedule .jhos-topbar {
+        padding: 15px 14px;
+      }
+
+      #jh-offseason-schedule .jhos-topbar-inner {
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      #jh-offseason-schedule .jhos-topbar-title {
+        font-size: 13px;
+        letter-spacing: 0.55px;
+        line-height: 1.25;
+      }
+
+      #jh-offseason-schedule .jhos-topbar-badge {
+        margin-left: 0;
+        flex: 0 0 auto;
+        font-size: 10px;
+        padding: 3px 7px;
+      }
+
+      #jh-offseason-schedule .jhos-table th {
+        padding: 10px 6px;
+        font-size: 9.5px;
+        letter-spacing: 0.25px;
+        line-height: 1.2;
+        vertical-align: middle;
+      }
+
+      #jh-offseason-schedule .jhos-table td {
+        padding: 12px 6px;
+        vertical-align: top;
+      }
+
+      #jh-offseason-schedule .jhos-table th:nth-child(1),
+      #jh-offseason-schedule .jhos-table td:nth-child(1) {
+        width: 23%;
+      }
+
+      #jh-offseason-schedule .jhos-table th:nth-child(2),
+      #jh-offseason-schedule .jhos-table td:nth-child(2) {
+        width: 47%;
+      }
+
+      #jh-offseason-schedule .jhos-table th:nth-child(3),
+      #jh-offseason-schedule .jhos-table td:nth-child(3) {
+        width: 30%;
+      }
+
+      #jh-offseason-schedule .jhos-date {
+        font-size: 11.5px;
+        line-height: 1.35;
+      }
+
+      #jh-offseason-schedule .jhos-event-name {
+        font-size: 12.5px;
+        line-height: 1.32;
+      }
+
+      #jh-offseason-schedule .jhos-event-location {
+        font-size: 10.5px;
+        line-height: 1.35;
+        margin-top: 3px;
+      }
+
+      #jh-offseason-schedule .jhos-status {
+        font-size: 10px;
+        line-height: 1.18;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 390px) {
+      #jh-offseason-schedule .jhos-table th {
+        padding: 9px 5px;
+        font-size: 9px;
+      }
+
+      #jh-offseason-schedule .jhos-table td {
+        padding: 11px 5px;
+      }
+
+      #jh-offseason-schedule .jhos-date {
+        font-size: 11px;
+      }
+
+      #jh-offseason-schedule .jhos-event-name {
+        font-size: 12px;
+      }
+
+      #jh-offseason-schedule .jhos-event-location {
+        font-size: 10px;
+      }
+
+      #jh-offseason-schedule .jhos-status {
+        font-size: 9.5px;
+        line-height: 1.16;
+      }
+    }
+  </style>
+
   <div class="jhos-title-row">
     <h4 class="jhos-title">
       Off-Season Competition Plan / EAGS, USGA, FMG Events
@@ -1892,7 +2194,7 @@
             </div>
           </td>
 
-          <td class="jhos-status-cell">
+          <td>
             <span class="jhos-status is-gold">
               SELECTION PENDING
             </span>
@@ -1916,7 +2218,7 @@
             </div>
           </td>
 
-          <td class="jhos-status-cell">
+          <td>
             <span class="jhos-status is-gray">
               SCHEDULED
             </span>
@@ -1940,7 +2242,7 @@
             </div>
           </td>
 
-          <td class="jhos-status-cell">
+          <td>
             <span class="jhos-status is-gold">
               EXEMPTION PENDING
             </span>
@@ -1964,7 +2266,7 @@
             </div>
           </td>
 
-          <td class="jhos-status-cell">
+          <td>
             <span class="jhos-status is-navy">
               FINAL QUALIFYING
             </span>
