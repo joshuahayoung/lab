@@ -1603,27 +1603,39 @@
     }
 
     #jh-offseason-schedule .jhos-table {
-      display: table;
+      display: table !important;
       width: 100%;
       border-collapse: collapse;
       table-layout: fixed;
     }
 
     #jh-offseason-schedule .jhos-table thead {
-      display: table-header-group;
+      display: table-header-group !important;
     }
 
     #jh-offseason-schedule .jhos-table tbody {
-      display: table-row-group;
+      display: table-row-group !important;
     }
 
     #jh-offseason-schedule .jhos-table tr {
-      display: table-row;
+      display: table-row !important;
     }
 
     #jh-offseason-schedule .jhos-table th,
     #jh-offseason-schedule .jhos-table td {
-      display: table-cell;
+      display: table-cell !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-date {
+      width: 25%;
+    }
+
+    #jh-offseason-schedule .jhos-col-event {
+      width: 50%;
+    }
+
+    #jh-offseason-schedule .jhos-col-status {
+      width: 25%;
     }
 
     #jh-offseason-schedule .jhos-table thead tr {
@@ -1634,6 +1646,7 @@
     #jh-offseason-schedule .jhos-table th {
       padding: 15px 25px;
       text-align: left;
+      vertical-align: middle;
       font-size: 12px;
       color: #4a5568;
       font-weight: 700;
@@ -1641,30 +1654,26 @@
       line-height: 1.25;
     }
 
-    #jh-offseason-schedule .jhos-table th:nth-child(1),
-    #jh-offseason-schedule .jhos-table td:nth-child(1) {
-      width: 25%;
-    }
-
-    #jh-offseason-schedule .jhos-table th:nth-child(2),
-    #jh-offseason-schedule .jhos-table td:nth-child(2) {
-      width: 50%;
-    }
-
-    #jh-offseason-schedule .jhos-table th:nth-child(3),
-    #jh-offseason-schedule .jhos-table td:nth-child(3) {
-      width: 25%;
+    #jh-offseason-schedule .jhos-table th:nth-child(3) {
       text-align: center;
     }
 
     #jh-offseason-schedule .jhos-table td {
       padding: 20px 25px;
-      vertical-align: top;
+      vertical-align: top !important;
       border-bottom: 1px solid #edf2f7;
     }
 
     #jh-offseason-schedule .jhos-table tbody tr:last-child td {
       border-bottom: none;
+    }
+
+    #jh-offseason-schedule .jhos-date,
+    #jh-offseason-schedule .jhos-event-block,
+    #jh-offseason-schedule .jhos-status-wrap {
+      margin: 0;
+      padding: 0;
+      display: block;
     }
 
     #jh-offseason-schedule .jhos-date {
@@ -1675,6 +1684,8 @@
     }
 
     #jh-offseason-schedule .jhos-event-name {
+      margin: 0;
+      padding: 0;
       font-weight: 800;
       color: #2d3748;
       font-size: 16px;
@@ -1683,16 +1694,29 @@
     }
 
     #jh-offseason-schedule .jhos-event-location {
+      margin: 4px 0 0;
+      padding: 0;
       font-size: 12px;
       color: #718096;
-      margin-top: 4px;
       line-height: 1.45;
       overflow-wrap: anywhere;
+    }
+
+    #jh-offseason-schedule .jhos-status-cell {
+      text-align: center;
+    }
+
+    #jh-offseason-schedule .jhos-status-wrap {
+      width: 100%;
+      text-align: center;
+      line-height: 1;
     }
 
     #jh-offseason-schedule .jhos-status {
       display: inline-block;
       max-width: 100%;
+      margin: 0;
+      padding: 0;
       font-size: 13px;
       font-weight: 800;
       line-height: 1.25;
@@ -1727,89 +1751,171 @@
     }
 
     @media (max-width: 700px) {
-  #jh-offseason-schedule .jhos-table th:nth-child(1),
-  #jh-offseason-schedule .jhos-table td:nth-child(1) {
-    width: 21%;
-  }
+      #jh-offseason-schedule {
+        margin: 0 auto 34px;
+      }
 
-  #jh-offseason-schedule .jhos-table th:nth-child(2),
-  #jh-offseason-schedule .jhos-table td:nth-child(2) {
-    width: 51%;
-  }
+      #jh-offseason-schedule .jhos-title-row {
+        align-items: flex-start;
+        margin-bottom: 16px;
+        padding-left: 12px;
+      }
 
-  #jh-offseason-schedule .jhos-table th:nth-child(3),
-  #jh-offseason-schedule .jhos-table td:nth-child(3) {
-    width: 28%;
-    text-align: center;
-  }
+      #jh-offseason-schedule .jhos-title {
+        font-size: 18px;
+        line-height: 1.28;
+      }
 
-  #jh-offseason-schedule .jhos-table th {
-    padding: 10px 4px;
-    font-size: 8.6px;
-    letter-spacing: 0.1px;
-    line-height: 1.15;
-    vertical-align: middle;
-  }
+      #jh-offseason-schedule .jhos-topbar {
+        padding: 15px 14px;
+      }
 
-  #jh-offseason-schedule .jhos-table td {
-    padding: 12px 4px;
-    vertical-align: top;
-  }
+      #jh-offseason-schedule .jhos-topbar-inner {
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
 
-  #jh-offseason-schedule .jhos-date {
-    font-size: 10.7px;
-    line-height: 1.28;
-  }
+      #jh-offseason-schedule .jhos-topbar-title {
+        font-size: 13px;
+        letter-spacing: 0.55px;
+        line-height: 1.25;
+      }
 
-  #jh-offseason-schedule .jhos-event-name {
-    font-size: 13.4px;
-    line-height: 1.28;
-    letter-spacing: -0.1px;
-  }
+      #jh-offseason-schedule .jhos-topbar-badge {
+        margin-left: 0;
+        flex: 0 0 auto;
+        font-size: 10px;
+        padding: 3px 7px;
+      }
 
-  #jh-offseason-schedule .jhos-event-location {
-    font-size: 11px;
-    line-height: 1.32;
-    margin-top: 3px;
-  }
+      #jh-offseason-schedule .jhos-col-date {
+        width: 20%;
+      }
 
-  #jh-offseason-schedule .jhos-status {
-    font-size: 9px;
-    line-height: 1.13;
-    max-width: 100%;
-    text-align: center;
-    letter-spacing: -0.1px;
-  }
-}
+      #jh-offseason-schedule .jhos-col-event {
+        width: 53%;
+      }
 
-@media (max-width: 390px) {
-  #jh-offseason-schedule .jhos-table th {
-    padding: 9px 3px;
-    font-size: 8.2px;
-  }
+      #jh-offseason-schedule .jhos-col-status {
+        width: 27%;
+      }
 
-  #jh-offseason-schedule .jhos-table td {
-    padding: 11px 3px;
-  }
+      #jh-offseason-schedule .jhos-table {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed;
+      }
 
-  #jh-offseason-schedule .jhos-date {
-    font-size: 10.2px;
-  }
+      #jh-offseason-schedule .jhos-table thead {
+        display: table-header-group !important;
+      }
 
-  #jh-offseason-schedule .jhos-event-name {
-    font-size: 12.8px;
-    line-height: 1.27;
-  }
+      #jh-offseason-schedule .jhos-table tbody {
+        display: table-row-group !important;
+      }
 
-  #jh-offseason-schedule .jhos-event-location {
-    font-size: 10.5px;
-  }
+      #jh-offseason-schedule .jhos-table tr {
+        display: table-row !important;
+      }
 
-  #jh-offseason-schedule .jhos-status {
-    font-size: 8.6px;
-    line-height: 1.12;
-  }
-}
+      #jh-offseason-schedule .jhos-table th,
+      #jh-offseason-schedule .jhos-table td {
+        display: table-cell !important;
+      }
+
+      #jh-offseason-schedule .jhos-table th {
+        padding: 10px 4px;
+        vertical-align: middle;
+        font-size: 8.7px;
+        letter-spacing: 0.1px;
+        line-height: 1.15;
+      }
+
+      #jh-offseason-schedule .jhos-table td {
+        padding: 12px 4px;
+        vertical-align: top !important;
+      }
+
+      #jh-offseason-schedule .jhos-date {
+        font-size: 10.6px;
+        line-height: 1.25;
+      }
+
+      #jh-offseason-schedule .jhos-event-name {
+        font-size: 13.8px;
+        line-height: 1.25;
+        letter-spacing: -0.12px;
+      }
+
+      #jh-offseason-schedule .jhos-event-location {
+        margin-top: 3px;
+        font-size: 11.1px;
+        line-height: 1.32;
+      }
+
+      #jh-offseason-schedule .jhos-status-wrap {
+        padding-top: 0;
+        line-height: 1;
+      }
+
+      #jh-offseason-schedule .jhos-status {
+        font-size: 8.9px;
+        line-height: 1.12;
+        letter-spacing: -0.12px;
+        text-align: center;
+      }
+
+      #jh-offseason-schedule .jhos-status-line {
+        display: block;
+      }
+
+      #jh-offseason-schedule .jhos-status-line + .jhos-status-line::before {
+        content: "";
+      }
+    }
+
+    @media (max-width: 390px) {
+      #jh-offseason-schedule .jhos-col-date {
+        width: 20%;
+      }
+
+      #jh-offseason-schedule .jhos-col-event {
+        width: 53.5%;
+      }
+
+      #jh-offseason-schedule .jhos-col-status {
+        width: 26.5%;
+      }
+
+      #jh-offseason-schedule .jhos-table th {
+        padding: 9px 3px;
+        font-size: 8.3px;
+      }
+
+      #jh-offseason-schedule .jhos-table td {
+        padding: 11px 3px;
+      }
+
+      #jh-offseason-schedule .jhos-date {
+        font-size: 10.2px;
+        line-height: 1.25;
+      }
+
+      #jh-offseason-schedule .jhos-event-name {
+        font-size: 13.2px;
+        line-height: 1.24;
+      }
+
+      #jh-offseason-schedule .jhos-event-location {
+        font-size: 10.6px;
+        line-height: 1.3;
+      }
+
+      #jh-offseason-schedule .jhos-status {
+        font-size: 8.5px;
+        line-height: 1.1;
+      }
     }
   </style>
 
@@ -1833,6 +1939,12 @@
 
   <div class="jhos-table-wrap">
     <table class="jhos-table">
+      <colgroup>
+        <col class="jhos-col-date">
+        <col class="jhos-col-event">
+        <col class="jhos-col-status">
+      </colgroup>
+
       <thead>
         <tr>
           <th>DATE</th>
@@ -1850,20 +1962,24 @@
           </td>
 
           <td>
-            <div class="jhos-event-name">
-              Trans-Mississippi Amateur Championship (EAGS)
-            </div>
+            <div class="jhos-event-block">
+              <div class="jhos-event-name">
+                Trans-Mississippi Amateur Championship (EAGS)
+              </div>
 
-            <div class="jhos-event-location">
-              Southern Hills Country Club - Tulsa, OK
+              <div class="jhos-event-location">
+                Southern Hills Country Club - Tulsa, OK
+              </div>
             </div>
           </td>
 
-          <td>
-            <span class="jhos-status is-gold">
-              <span class="jhos-status-line">SELECTION</span>
-              <span class="jhos-status-line">PENDING</span>
-            </span>
+          <td class="jhos-status-cell">
+            <div class="jhos-status-wrap">
+              <span class="jhos-status is-gold">
+                <span class="jhos-status-line">SELECTION</span>
+                <span class="jhos-status-line">PENDING</span>
+              </span>
+            </div>
           </td>
         </tr>
 
@@ -1875,19 +1991,23 @@
           </td>
 
           <td>
-            <div class="jhos-event-name">
-              Mexican Amateur Championship
-            </div>
+            <div class="jhos-event-block">
+              <div class="jhos-event-name">
+                Mexican Amateur Championship
+              </div>
 
-            <div class="jhos-event-location">
-              FMG | U.S. Amateur Exemption Event, CDMX
+              <div class="jhos-event-location">
+                FMG | U.S. Amateur Exemption Event, CDMX
+              </div>
             </div>
           </td>
 
-          <td>
-            <span class="jhos-status is-gray">
-              <span class="jhos-status-line">SCHEDULED</span>
-            </span>
+          <td class="jhos-status-cell">
+            <div class="jhos-status-wrap">
+              <span class="jhos-status is-gray">
+                <span class="jhos-status-line">SCHEDULED</span>
+              </span>
+            </div>
           </td>
         </tr>
 
@@ -1899,20 +2019,24 @@
           </td>
 
           <td>
-            <div class="jhos-event-name">
-              Western Amateur Championship (EAGS)
-            </div>
+            <div class="jhos-event-block">
+              <div class="jhos-event-name">
+                Western Amateur Championship (EAGS)
+              </div>
 
-            <div class="jhos-event-location">
-              Skokie Country Club - Glencoe, IL
+              <div class="jhos-event-location">
+                Skokie Country Club - Glencoe, IL
+              </div>
             </div>
           </td>
 
-          <td>
-            <span class="jhos-status is-gold">
-              <span class="jhos-status-line">EXEMPTION</span>
-              <span class="jhos-status-line">PENDING</span>
-            </span>
+          <td class="jhos-status-cell">
+            <div class="jhos-status-wrap">
+              <span class="jhos-status is-gold">
+                <span class="jhos-status-line">EXEMPTION</span>
+                <span class="jhos-status-line">PENDING</span>
+              </span>
+            </div>
           </td>
         </tr>
 
@@ -1924,20 +2048,24 @@
           </td>
 
           <td>
-            <div class="jhos-event-name">
-              U.S. Amateur Championship
-            </div>
+            <div class="jhos-event-block">
+              <div class="jhos-event-name">
+                U.S. Amateur Championship
+              </div>
 
-            <div class="jhos-event-location">
-              Merion Golf Club - Ardmore, PA
+              <div class="jhos-event-location">
+                Merion Golf Club - Ardmore, PA
+              </div>
             </div>
           </td>
 
-          <td>
-            <span class="jhos-status is-navy">
-              <span class="jhos-status-line">FINAL</span>
-              <span class="jhos-status-line">QUALIFYING</span>
-            </span>
+          <td class="jhos-status-cell">
+            <div class="jhos-status-wrap">
+              <span class="jhos-status is-navy">
+                <span class="jhos-status-line">FINAL</span>
+                <span class="jhos-status-line">QUALIFYING</span>
+              </span>
+            </div>
           </td>
         </tr>
       </tbody>
