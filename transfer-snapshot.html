@@ -2770,6 +2770,8 @@
       --tscs-navy-2: #12335d;
       --tscs-orange: #F15A22;
       --tscs-gold: #c98a2e;
+      --tscs-green: #16a34a;
+      --tscs-green-2: #22c55e;
       --tscs-white: #ffffff;
       --tscs-text: #334155;
       --tscs-muted: #64748b;
@@ -2794,8 +2796,9 @@
       border-radius: 26px;
       border: 1px solid rgba(12, 35, 64, 0.16);
       background:
-        radial-gradient(circle at 12% 10%, rgba(241,90,34,0.10), transparent 28%),
-        radial-gradient(circle at 88% 88%, rgba(201,138,46,0.12), transparent 26%),
+        radial-gradient(circle at 12% 10%, rgba(22, 163, 74, 0.12), transparent 28%),
+        radial-gradient(circle at 88% 88%, rgba(241, 90, 34, 0.10), transparent 26%),
+        radial-gradient(circle at 70% 8%, rgba(201, 138, 46, 0.10), transparent 26%),
         linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       box-shadow: 0 18px 42px rgba(12, 35, 64, 0.10);
     }
@@ -2805,7 +2808,13 @@
       position: absolute;
       inset: 0 auto 0 0;
       width: 7px;
-      background: linear-gradient(180deg, var(--tscs-orange) 0%, var(--tscs-gold) 100%);
+      background: linear-gradient(
+        180deg,
+        var(--tscs-green-2) 0%,
+        var(--tscs-green) 34%,
+        var(--tscs-orange) 72%,
+        var(--tscs-gold) 100%
+      );
       opacity: 0.98;
     }
 
@@ -2816,8 +2825,8 @@
       pointer-events: none;
       background:
         linear-gradient(90deg, rgba(12,35,64,0.045), transparent 34%),
-        linear-gradient(180deg, rgba(255,255,255,0.70), transparent 42%);
-      opacity: 0.85;
+        linear-gradient(180deg, rgba(255,255,255,0.72), transparent 42%);
+      opacity: 0.86;
     }
 
     #ts-current-status-section .tscs-inner {
@@ -2842,9 +2851,9 @@
       margin: 0 0 10px 0;
       padding: 7px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(241,90,34,0.26);
-      background: rgba(241,90,34,0.08);
-      color: var(--tscs-orange);
+      border: 1px solid rgba(22,163,74,0.28);
+      background: rgba(22,163,74,0.09);
+      color: #166534;
       font-size: 10.5px;
       line-height: 1;
       font-weight: 900;
@@ -2856,8 +2865,8 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--tscs-orange);
-      box-shadow: 0 0 0 5px rgba(241,90,34,0.12);
+      background: var(--tscs-green-2);
+      box-shadow: 0 0 0 5px rgba(22,163,74,0.14);
       flex: 0 0 auto;
     }
 
@@ -2872,7 +2881,7 @@
 
     #ts-current-status-section .tscs-subtitle {
       margin: 10px 0 0 0;
-      max-width: 760px;
+      max-width: 790px;
       color: var(--tscs-text);
       font-size: 15px;
       line-height: 1.68;
@@ -2897,6 +2906,85 @@
       box-shadow: 0 10px 22px rgba(12,35,64,0.14);
     }
 
+    #ts-current-status-section .tscs-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--tscs-green-2);
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.16);
+      flex: 0 0 auto;
+    }
+
+    #ts-current-status-section .tscs-confirmed-banner {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      margin: 18px 0 18px;
+      padding: 16px 17px;
+      border-radius: 20px;
+      border: 1px solid rgba(22, 163, 74, 0.24);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(22,163,74,0.15), transparent 32%),
+        linear-gradient(
+          135deg,
+          rgba(22, 163, 74, 0.10) 0%,
+          rgba(241, 90, 34, 0.055) 54%,
+          rgba(201, 138, 46, 0.055) 100%
+        );
+      box-shadow:
+        0 12px 26px rgba(12,35,64,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+
+    #ts-current-status-section .tscs-confirmed-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--tscs-green-2) 0%, var(--tscs-orange) 100%);
+    }
+
+    #ts-current-status-section .tscs-confirmed-label {
+      margin: 0 0 5px 0;
+      color: #166534;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    #ts-current-status-section .tscs-confirmed-text {
+      margin: 0;
+      color: var(--tscs-navy);
+      font-size: 14.2px;
+      line-height: 1.55;
+      font-weight: 760;
+    }
+
+    #ts-current-status-section .tscs-confirmed-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(22, 163, 74, 0.24);
+      background: #ecfdf5;
+      color: #166534;
+      font-size: 9.5px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
     #ts-current-status-section .tscs-main-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2917,15 +3005,21 @@
     }
 
     #ts-current-status-section .tscs-status-card.is-primary {
-      border-color: rgba(241,90,34,0.24);
+      border-color: rgba(241,90,34,0.22);
       background:
-        linear-gradient(180deg, rgba(241,90,34,0.075) 0%, rgba(255,255,255,0.82) 100%);
+        linear-gradient(180deg, rgba(241,90,34,0.065) 0%, rgba(255,255,255,0.84) 100%);
     }
 
-    #ts-current-status-section .tscs-status-card.is-pending {
+    #ts-current-status-section .tscs-status-card.is-confirmed {
+      border-color: rgba(22,163,74,0.26);
+      background:
+        linear-gradient(180deg, rgba(22,163,74,0.090) 0%, rgba(255,255,255,0.84) 100%);
+    }
+
+    #ts-current-status-section .tscs-status-card.is-ready {
       border-color: rgba(201,138,46,0.24);
       background:
-        linear-gradient(180deg, rgba(201,138,46,0.085) 0%, rgba(255,255,255,0.82) 100%);
+        linear-gradient(180deg, rgba(201,138,46,0.085) 0%, rgba(255,255,255,0.84) 100%);
     }
 
     #ts-current-status-section .tscs-card-label {
@@ -2981,6 +3075,15 @@
         width: fit-content;
       }
 
+      #ts-current-status-section .tscs-confirmed-banner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      #ts-current-status-section .tscs-confirmed-badge {
+        width: fit-content;
+      }
+
       #ts-current-status-section .tscs-main-grid {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -3030,6 +3133,26 @@
         text-align: center;
       }
 
+      #ts-current-status-section .tscs-confirmed-banner {
+        margin: 16px 0 16px;
+        padding: 14px 14px 14px 16px;
+        border-radius: 17px;
+      }
+
+      #ts-current-status-section .tscs-confirmed-label {
+        font-size: 9px;
+      }
+
+      #ts-current-status-section .tscs-confirmed-text {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      #ts-current-status-section .tscs-confirmed-badge {
+        font-size: 8.5px;
+        padding: 7px 10px;
+      }
+
       #ts-current-status-section .tscs-status-card {
         padding: 14px 13px 13px;
         border-radius: 15px;
@@ -3050,7 +3173,7 @@
     }
   </style>
 
- <div class="tscs-wrap">
+  <div class="tscs-wrap">
     <div class="tscs-inner">
       <div class="tscs-top">
         <div>
@@ -3060,50 +3183,66 @@
           </p>
 
           <h2 class="tscs-title" id="ts-current-status-title">
-            Student-Side Transfer Requirements Completed · Portal Entry Scheduled
+            Official NCAA Transfer Portal Listing Confirmed
           </h2>
 
           <p class="tscs-subtitle">
-            Joshua has submitted the required transfer notification materials to UTSA Compliance and completed the required NCAA transfer education module. UTSA Compliance has confirmed that Joshua is scheduled for NCAA Transfer Portal entry on June 4, 2026, at 8:00 a.m., the first day the men’s golf transfer window opens.
+            Joshua has completed the required student-side transfer steps requested by institutional compliance. UTSA Compliance has confirmed that Joshua was entered into the NCAA Transfer Portal on June 4, 2026, at 8:00 a.m., the first day of the men’s golf transfer window.
           </p>
         </div>
 
-        <span class="tscs-pill">Pre-Listing Status</span>
+        <span class="tscs-pill">Officially Listed</span>
+      </div>
+
+      <div class="tscs-confirmed-banner" aria-label="Official NCAA Transfer Portal listing confirmation">
+        <div>
+          <p class="tscs-confirmed-label">
+            Confirmed Status Update
+          </p>
+
+          <p class="tscs-confirmed-text">
+            Joshua is officially listed in the NCAA Transfer Portal and available for NCAA program review during the men’s golf transfer window.
+          </p>
+        </div>
+
+        <span class="tscs-confirmed-badge">
+          Coach Review Ready
+        </span>
       </div>
 
       <div class="tscs-main-grid" aria-label="Current transfer process status">
         <div class="tscs-status-card is-primary">
-          <span class="tscs-card-label">Request</span>
-          <span class="tscs-card-value">Written request submitted to UTSA Compliance</span>
+          <span class="tscs-card-label">Student Steps</span>
+          <span class="tscs-card-value">Required transfer steps completed</span>
           <p class="tscs-card-note">
-            The request has been submitted through the institutional channel.
+            Transfer notification materials and the required NCAA transfer education module were completed through the institutional process.
           </p>
         </div>
 
-        <div class="tscs-status-card is-pending">
+        <div class="tscs-status-card is-confirmed">
           <span class="tscs-card-label">Confirmation</span>
-          <span class="tscs-card-value">Portal-entry scheduling confirmed</span>
+          <span class="tscs-card-value">Portal entry confirmed by UTSA Compliance</span>
           <p class="tscs-card-note">
-            UTSA Compliance confirmed that the required steps have been received and that Joshua is scheduled for NCAA Transfer Portal entry on June 4, 2026, at 8:00 a.m.
+            UTSA Compliance confirmed that Joshua’s NCAA Transfer Portal entry was completed on June 4, 2026, at 8:00 a.m.
           </p>
         </div>
 
-        <div class="tscs-status-card">
+        <div class="tscs-status-card is-ready">
           <span class="tscs-card-label">Portal Listing</span>
-          <span class="tscs-card-value">Scheduled for official transfer-window processing</span>
+          <span class="tscs-card-value">Officially listed for NCAA program review</span>
           <p class="tscs-card-note">
-            NCAA Transfer Portal listing remains pending until institutional entry is completed during the men’s golf transfer window beginning June 4, 2026.
+            The profile is now positioned for transfer-related coach review during the men’s golf transfer window.
           </p>
         </div>
       </div>
 
       <p class="tscs-note">
-        <strong>Contact note:</strong> Formal transfer-related communication with NCAA programs should follow official NCAA Transfer Portal listing.
+        <strong>Contact note:</strong>
+        Joshua is officially listed in the NCAA Transfer Portal following institutional compliance entry confirmation. Transfer-related communication with NCAA programs may proceed through the official NCAA Transfer Portal listing.
       </p>
     </div>
   </div>
 </section>
-
 
 
 	  
