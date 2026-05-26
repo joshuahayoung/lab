@@ -1,21 +1,21 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "May 25 2026",
+    "lastUpdated": "May 26 2026",
     "sectionTitle": "UPCOMING TOURNAMENT",
     "eventNo": "Upcoming Tournament",
     "eventLabel": "TBD",
     "status": "upcoming",
-    "title": "UPCOMING TOURNAMENT",
-    "date": "TBD",
-    "venue": "TBD",
-    "location": "TBD, TBD",
-    "par": 0,
-    "yards": "-",
-    "rating": 0,
-    "slope": 0,
+    "title": "The Dogwood Invitational",
+    "date": "Jun 17-20",
+    "venue": "Druid Hills Golf Club",
+    "location": "Georgia, Atlanta",
+    "par": 72,
+    "yards": "6,947",
+    "rating": 73.7,
+    "slope": 142,
     "mainLink": {
-      "url": "-",
-      "label": "TBD"
+      "url": "https://thedogwood.com/leaderboard",
+      "label": "Live Leaderboard"
     },
     "summary": {
       "total": "-",
