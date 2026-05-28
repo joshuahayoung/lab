@@ -494,80 +494,72 @@
   </div>
 
   <script>
-    (function() {
-      const section = document.getElementById('jh-rotating-ncaa-banner-isolated');
-      if (!section) return;
+  (function() {
+    const section = document.getElementById('jh-rotating-ncaa-banner-isolated');
+    if (!section) return;
 
-      const img = section.querySelector('#jh-isolated-rotating-banner-img');
-      const hoverCaption = section.querySelector('#jh-isolated-rotating-banner-hover');
+    const img = section.querySelector('#jh-isolated-rotating-banner-img');
+    if (!img) return;
 
-      if (!img || !hoverCaption) return;
-
-      const banners = [
-        {
-          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
-          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
-          alt: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition',
-          hover: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition.'
-        },
-        {
-          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
-          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
-          alt: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round',
-          hover: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round.'
-        },
-        {
-          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
-          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
-          alt: 'Joshua Hong studying the putting line during an NCAA tournament round',
-          hover: 'Joshua Hong studying the putting line during an NCAA tournament round.'
-        },
-        {
-          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
-          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
-          alt: 'Joshua Hong putting during an NCAA tournament round',
-          hover: 'Joshua Hong putting during an NCAA tournament round.'
-        },
-        {
-          src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
-          fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
-          alt: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round',
-          hover: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round.'
-        }
-      ];
-
-      const rotationInterval = 10 * 60 * 60 * 1000;
-      const dayIndex = Math.floor(Date.now() / rotationInterval);
-      const activeIndex = dayIndex % banners.length;
-      const activeBanner = banners[activeIndex];
-
-      function preloadNextBanner() {
-        const nextIndex = (activeIndex + 1) % banners.length;
-        const preloadImg = new Image();
-        preloadImg.src = banners[nextIndex].src;
+    const banners = [
+      {
+        src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
+        fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg',
+        alt: 'Joshua Hong checking his yardage book before selecting a club during NCAA competition'
+      },
+      {
+        src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
+        fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg',
+        alt: 'Joshua Hong moments before hitting a tee shot during an NCAA tournament round'
+      },
+      {
+        src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
+        fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg',
+        alt: 'Joshua Hong studying the putting line during an NCAA tournament round'
+      },
+      {
+        src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
+        fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg',
+        alt: 'Joshua Hong putting during an NCAA tournament round'
+      },
+      {
+        src: './images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
+        fallback: 'https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg',
+        alt: 'Joshua Hong placing his ball while reading the putting line during an NCAA tournament round'
       }
+    ];
 
-      function applyBanner(banner) {
-        img.classList.add('is-changing');
+    const rotationInterval = 10 * 60 * 60 * 1000;
+    const dayIndex = Math.floor(Date.now() / rotationInterval);
+    const activeIndex = dayIndex % banners.length;
+    const activeBanner = banners[activeIndex];
 
-        window.setTimeout(function() {
-          img.onerror = function() {
-            this.onerror = null;
-            this.src = banner.fallback;
-          };
+    function preloadNextBanner() {
+      const nextIndex = (activeIndex + 1) % banners.length;
+      const preloadImg = new Image();
+      preloadImg.src = banners[nextIndex].src;
+    }
 
-          img.src = banner.src;
-          img.alt = banner.alt;
-          hoverCaption.textContent = banner.hover || banner.alt || '';
+    function applyBanner(banner) {
+      img.classList.add('is-changing');
 
-          img.classList.remove('is-changing');
-        }, 180);
-      }
+      window.setTimeout(function() {
+        img.onerror = function() {
+          this.onerror = null;
+          this.src = banner.fallback;
+        };
 
-      applyBanner(activeBanner);
-      preloadNextBanner();
-    })();
-  </script>
+        img.src = banner.src;
+        img.alt = banner.alt;
+
+        img.classList.remove('is-changing');
+      }, 180);
+    }
+
+    applyBanner(activeBanner);
+    preloadNextBanner();
+  })();
+</script>
 </div>
 </div>
   
