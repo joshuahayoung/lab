@@ -561,6 +561,778 @@
 </div>
   
 
+<!-- =========================================================
+  JH ISOLATED SUMMER RESULTS SECTION
+  Paste this directly below the Summer Off-Season Schedule.
+  This section is fully isolated and does not affect other tables.
+========================================================= -->
+
+<section id="jh-summer-results-isolated" aria-label="2026 Summer Competition Results">
+  <style>
+    #jh-summer-results-isolated {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 34px auto 54px;
+      padding: 0 15px;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #0c2340;
+      clear: both;
+      contain: layout style paint;
+    }
+
+    #jh-summer-results-isolated,
+    #jh-summer-results-isolated * {
+      box-sizing: border-box;
+    }
+
+    #jh-summer-results-isolated .jh-sr-shell {
+      width: 100%;
+      border-radius: 26px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98));
+      border: 1px solid rgba(203, 213, 225, 0.95);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+    }
+
+    #jh-summer-results-isolated .jh-sr-header {
+      padding: 26px 24px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(201,138,46,0.18), transparent 34%),
+        linear-gradient(135deg, #0c2340 0%, #163b66 100%);
+      color: #ffffff;
+      position: relative;
+    }
+
+    #jh-summer-results-isolated .jh-sr-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.90);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #c98a2e;
+      box-shadow: 0 0 0 3px rgba(201,138,46,0.20);
+      flex: 0 0 auto;
+    }
+
+    #jh-summer-results-isolated .jh-sr-title {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-subtitle {
+      margin: 8px 0 0;
+      max-width: 720px;
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    #jh-summer-results-isolated .jh-sr-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 18px;
+      background: #f8fafc;
+    }
+
+    #jh-summer-results-isolated .jh-sr-card {
+      display: block;
+      width: 100%;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 1);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+
+    #jh-summer-results-isolated .jh-sr-card-top {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+
+    #jh-summer-results-isolated .jh-sr-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-date {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(12, 35, 64, 0.08);
+      color: #0c2340;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(22, 101, 52, 0.10);
+      color: #166534;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      border: 1px solid rgba(22, 101, 52, 0.16);
+    }
+
+    #jh-summer-results-isolated .jh-sr-tournament {
+      margin: 0;
+      color: #0c2340;
+      font-size: 21px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: -0.45px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-course {
+      margin: 7px 0 0;
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    #jh-summer-results-isolated .jh-sr-body {
+      padding: 18px 20px 20px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-label {
+      margin: 0 0 9px;
+      color: #334155;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.9px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-rounds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 18px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-round-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+      box-shadow: 0 5px 12px rgba(15, 23, 42, 0.05);
+    }
+
+    #jh-summer-results-isolated .jh-sr-round-label {
+      color: #64748b;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-round-score {
+      font-size: 17px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    #jh-summer-results-isolated .jh-sr-round-vs-par {
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    #jh-summer-results-isolated .jh-sr-under {
+      color: #b91c1c;
+    }
+
+    #jh-summer-results-isolated .jh-sr-even {
+      color: #1d4ed8;
+    }
+
+    #jh-summer-results-isolated .jh-sr-over {
+      color: #0c2340;
+    }
+
+    #jh-summer-results-isolated .jh-sr-muted {
+      color: #64748b;
+    }
+
+    #jh-summer-results-isolated .jh-sr-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-summary-box {
+      min-width: 0;
+      padding: 14px 13px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    #jh-summer-results-isolated .jh-sr-summary-name {
+      display: block;
+      margin-bottom: 6px;
+      color: #64748b;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    #jh-summer-results-isolated .jh-sr-summary-value {
+      display: block;
+      color: #0c2340;
+      font-size: 18px;
+      line-height: 1.15;
+      font-weight: 950;
+      letter-spacing: -0.3px;
+      word-break: break-word;
+    }
+
+    #jh-summer-results-isolated .jh-sr-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #jh-summer-results-isolated .jh-sr-metric {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    #jh-summer-results-isolated .jh-sr-metric strong {
+      color: #0c2340;
+      font-weight: 950;
+    }
+
+    #jh-summer-results-isolated .jh-sr-match {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    #jh-summer-results-isolated .jh-sr-match-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #jh-summer-results-isolated .jh-sr-match-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    #jh-summer-results-isolated .jh-sr-match-result {
+      color: #0c2340;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    #jh-summer-results-isolated .jh-sr-note {
+      margin: 14px 0 0;
+      padding: 12px 13px;
+      border-radius: 15px;
+      background: rgba(12, 35, 64, 0.05);
+      border: 1px solid rgba(12, 35, 64, 0.09);
+      color: #475569;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    #jh-summer-results-isolated .jh-sr-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    #jh-summer-results-isolated .jh-sr-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: #0c2340;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    #jh-summer-results-isolated .jh-sr-link:hover,
+    #jh-summer-results-isolated .jh-sr-link:focus {
+      background: #163b66;
+      transform: translateY(-1px);
+    }
+
+    #jh-summer-results-isolated .jh-sr-empty {
+      padding: 20px;
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      #jh-summer-results-isolated {
+        margin: 28px auto 44px;
+        padding: 0 12px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-shell {
+        border-radius: 22px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-header {
+        padding: 22px 18px 18px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-title {
+        font-size: 22px;
+        letter-spacing: -0.55px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-subtitle {
+        font-size: 12px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-list {
+        padding: 12px;
+        gap: 13px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-card {
+        border-radius: 19px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-card-top,
+      #jh-summer-results-isolated .jh-sr-body {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-tournament {
+        font-size: 18px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-course {
+        font-size: 12px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #jh-summer-results-isolated .jh-sr-rounds {
+        gap: 8px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-round-chip {
+        width: calc(50% - 4px);
+        justify-content: center;
+        padding: 10px 8px;
+      }
+
+      #jh-summer-results-isolated .jh-sr-match-item {
+        display: block;
+      }
+
+      #jh-summer-results-isolated .jh-sr-match-result {
+        display: block;
+        margin-top: 5px;
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #jh-summer-results-isolated .jh-sr-round-chip {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="jh-sr-shell">
+    <header class="jh-sr-header">
+      <div class="jh-sr-kicker">Results Only</div>
+      <h2 class="jh-sr-title">2026 Summer Competition Results</h2>
+      <p class="jh-sr-subtitle">
+        Completed off-season tournament results from invitational, USGA,
+        FMG, and elite amateur events.
+      </p>
+    </header>
+
+    <div id="jh-summer-results-list" class="jh-sr-list"></div>
+  </div>
+
+  <script>
+    (function() {
+      const section = document.getElementById('jh-summer-results-isolated');
+      if (!section) return;
+
+      const list = section.querySelector('#jh-summer-results-list');
+      if (!list) return;
+
+      /*
+        =========================================================
+        HOW TO UPDATE
+
+        1. Keep the newest completed result at the TOP.
+        2. Keep this section for COMPLETED results only.
+        3. Do not use this section for active/live tournaments.
+        4. Score color is automatic:
+           under par = red
+           even par  = blue
+           over par  = navy/dark
+        5. If WAGR is not posted yet, use:
+           metrics: [{ label: 'WAGR', value: 'Pending' }]
+        =========================================================
+      */
+
+      const hideSectionWhenEmpty = true;
+
+      const results = [
+        /*
+        {
+          date: 'Jun 17 - 20',
+          tournament: 'The Dogwood Invitational',
+          course: 'Druid Hills Golf Club - Atlanta, GA',
+          status: 'Completed',
+          par: 72,
+          rounds: [69, 72, 73, 65],
+          total: 279,
+          toPar: -9,
+          finish: 'T3',
+          metrics: [
+            { label: 'WAGR Pwr', value: '380.8745' },
+            { label: 'Earned Pts', value: '9.8874' }
+          ],
+          links: [
+            { label: 'Official Results', url: '#' }
+          ],
+          note: ''
+        }
+        */
+      ];
+
+      function escapeHtml(value) {
+        return String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function formatToPar(delta) {
+        if (delta === null || delta === undefined || Number.isNaN(Number(delta))) {
+          return '';
+        }
+
+        const n = Number(delta);
+
+        if (n === 0) return 'E';
+        if (n > 0) return '+' + n;
+        return String(n);
+      }
+
+      function scoreClass(delta) {
+        if (delta === null || delta === undefined || Number.isNaN(Number(delta))) {
+          return 'jh-sr-muted';
+        }
+
+        const n = Number(delta);
+
+        if (n < 0) return 'jh-sr-under';
+        if (n === 0) return 'jh-sr-even';
+        return 'jh-sr-over';
+      }
+
+      function normalizeRound(round, index, eventPar) {
+        if (typeof round === 'number') {
+          const par = Number(eventPar || 72);
+          return {
+            label: 'R' + (index + 1),
+            score: round,
+            par: par,
+            toPar: round - par
+          };
+        }
+
+        const score = Number(round.score);
+        const par = Number(round.par || eventPar || 72);
+        const label = round.label || ('R' + (index + 1));
+
+        return {
+          label: label,
+          score: score,
+          par: par,
+          toPar: score - par
+        };
+      }
+
+      function getEventToPar(event, normalizedRounds) {
+        if (event.toPar !== null && event.toPar !== undefined && event.toPar !== '') {
+          return Number(event.toPar);
+        }
+
+        if (event.total !== null && event.total !== undefined && normalizedRounds.length) {
+          const parTotal = normalizedRounds.reduce(function(sum, r) {
+            return sum + Number(r.par || 0);
+          }, 0);
+
+          return Number(event.total) - parTotal;
+        }
+
+        return null;
+      }
+
+      function renderRounds(event) {
+        const rounds = Array.isArray(event.rounds) ? event.rounds : [];
+        const normalized = rounds.map(function(round, index) {
+          return normalizeRound(round, index, event.par);
+        });
+
+        if (!normalized.length) return '';
+
+        const chips = normalized.map(function(round) {
+          const cls = scoreClass(round.toPar);
+          const vsPar = formatToPar(round.toPar);
+
+          return (
+            '<span class="jh-sr-round-chip">' +
+              '<span class="jh-sr-round-label">' + escapeHtml(round.label) + '</span>' +
+              '<span class="jh-sr-round-score ' + cls + '">' + escapeHtml(round.score) + '</span>' +
+              '<span class="jh-sr-round-vs-par ' + cls + '">(' + escapeHtml(vsPar) + ')</span>' +
+            '</span>'
+          );
+        }).join('');
+
+        return (
+          '<div class="jh-sr-label">Round Scores</div>' +
+          '<div class="jh-sr-rounds">' + chips + '</div>'
+        );
+      }
+
+      function renderSummary(event) {
+        const normalizedRounds = Array.isArray(event.rounds)
+          ? event.rounds.map(function(round, index) {
+              return normalizeRound(round, index, event.par);
+            })
+          : [];
+
+        const eventToPar = getEventToPar(event, normalizedRounds);
+        const totalClass = scoreClass(eventToPar);
+        const formattedTotalToPar = formatToPar(eventToPar);
+
+        const totalValue = event.total !== null && event.total !== undefined && event.total !== ''
+          ? escapeHtml(event.total) + ' <span class="' + totalClass + '">(' + escapeHtml(formattedTotalToPar) + ')</span>'
+          : '—';
+
+        const finishValue = event.finish ? escapeHtml(event.finish) : '—';
+        const statusValue = event.status ? escapeHtml(event.status) : 'Completed';
+
+        return (
+          '<div class="jh-sr-summary-grid">' +
+            '<div class="jh-sr-summary-box">' +
+              '<span class="jh-sr-summary-name">Total</span>' +
+              '<span class="jh-sr-summary-value">' + totalValue + '</span>' +
+            '</div>' +
+            '<div class="jh-sr-summary-box">' +
+              '<span class="jh-sr-summary-name">Finish</span>' +
+              '<span class="jh-sr-summary-value">' + finishValue + '</span>' +
+            '</div>' +
+            '<div class="jh-sr-summary-box">' +
+              '<span class="jh-sr-summary-name">Status</span>' +
+              '<span class="jh-sr-summary-value">' + statusValue + '</span>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderMetrics(event) {
+        const metrics = Array.isArray(event.metrics) ? event.metrics : [];
+        if (!metrics.length) return '';
+
+        const items = metrics.map(function(metric) {
+          return (
+            '<li class="jh-sr-metric">' +
+              '<span>' + escapeHtml(metric.label) + '</span>' +
+              '<strong>' + escapeHtml(metric.value) + '</strong>' +
+            '</li>'
+          );
+        }).join('');
+
+        return (
+          '<div class="jh-sr-label">Event Metrics</div>' +
+          '<ul class="jh-sr-metrics">' + items + '</ul>'
+        );
+      }
+
+      function renderMatchPlay(event) {
+        const matches = Array.isArray(event.matchPlay) ? event.matchPlay : [];
+        if (!matches.length) return '';
+
+        const items = matches.map(function(match) {
+          return (
+            '<li class="jh-sr-match-item">' +
+              '<span>' + escapeHtml(match.stage) + '</span>' +
+              '<span class="jh-sr-match-result">' + escapeHtml(match.result) + '</span>' +
+            '</li>'
+          );
+        }).join('');
+
+        return (
+          '<div class="jh-sr-match">' +
+            '<div class="jh-sr-label">Match Play</div>' +
+            '<ul class="jh-sr-match-list">' + items + '</ul>' +
+          '</div>'
+        );
+      }
+
+      function renderLinks(event) {
+        const links = Array.isArray(event.links) ? event.links : [];
+        if (!links.length) return '';
+
+        const items = links
+          .filter(function(link) {
+            return link && link.url && link.url !== '#';
+          })
+          .map(function(link) {
+            return (
+              '<a class="jh-sr-link" href="' + escapeHtml(link.url) + '" target="_blank" rel="noopener noreferrer">' +
+                escapeHtml(link.label || 'Official Results') +
+              '</a>'
+            );
+          })
+          .join('');
+
+        if (!items) return '';
+
+        return '<div class="jh-sr-links">' + items + '</div>';
+      }
+
+      function renderNote(event) {
+        if (!event.note) return '';
+
+        return '<div class="jh-sr-note">' + escapeHtml(event.note) + '</div>';
+      }
+
+      function renderCard(event) {
+        return (
+          '<article class="jh-sr-card">' +
+            '<div class="jh-sr-card-top">' +
+              '<div class="jh-sr-card-meta">' +
+                '<span class="jh-sr-date">' + escapeHtml(event.date || '') + '</span>' +
+                '<span class="jh-sr-status">' + escapeHtml(event.status || 'Completed') + '</span>' +
+              '</div>' +
+              '<h3 class="jh-sr-tournament">' + escapeHtml(event.tournament || '') + '</h3>' +
+              '<p class="jh-sr-course">' + escapeHtml(event.course || '') + '</p>' +
+            '</div>' +
+            '<div class="jh-sr-body">' +
+              renderRounds(event) +
+              renderSummary(event) +
+              renderMetrics(event) +
+              renderMatchPlay(event) +
+              renderNote(event) +
+              renderLinks(event) +
+            '</div>' +
+          '</article>'
+        );
+      }
+
+      if (!results.length) {
+        if (hideSectionWhenEmpty) {
+          section.style.display = 'none';
+          return;
+        }
+
+        list.innerHTML =
+          '<div class="jh-sr-empty">No completed summer competition results posted yet.</div>';
+        return;
+      }
+
+      list.innerHTML = results.map(renderCard).join('');
+    })();
+  </script>
+</section>
+
+  
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
