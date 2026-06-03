@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "Jun 2, 2026",
+    "lastUpdated": "Jun 3, 2026",
     "status": "season-complete"
   },
 
@@ -13,7 +13,7 @@
   },
 
  "quickSummary": [
-    "Recorded a 71.20 Clippd-adjusted average and set UTSA’s single-season raw scoring record at 71.73 over 33 rounds.",
+    "Recorded a 71.30 Clippd-adjusted average and set UTSA’s single-season raw scoring record at 71.73 over 33 rounds.",
     "Counted in 32 of 33 team rounds as a freshman, with NCAA course setups, travel rhythm, academic demands, and team-score responsibility already tested across a completed Division I season.",
     "Season production included one individual win, three top-3 finishes, and five top-10s across 11 NCAA tournaments.",
     "Maintained a controlled 64–76 scoring range, with scoring ceiling reinforced by a 64 (-8), a 134 (-10), and six sub-70 rounds."
@@ -41,7 +41,7 @@
   "metrics": [
     {
       "label": "Clippd Adjusted Avg",
-      "value": "71.20",
+      "value": "71.30",
       "note": "Field-adjusted freshman scoring reference across 33 official rounds."
     },
     {
@@ -72,8 +72,8 @@
     },
     {
       "label": "WAGR",
-      "value": "523",
-      "note": "World amateur ranking reference as of May 27, 2026."
+      "value": "519",
+      "note": "World amateur ranking reference as of Jun 3, 2026."
     },
     {
       "label": "Clippd Rank",
