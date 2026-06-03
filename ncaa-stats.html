@@ -607,6 +607,8 @@
   </span>
 </div>
 
+
+
 <div id="jh-pga-table-shared"></div>
 
 <style>
@@ -624,7 +626,6 @@
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
-
   #jh-pga-table-shared .jtc-last-updated-wrap,
   #jh-pga-table-shared .jtc-last-updated {
     display: none !important;
@@ -639,8 +640,7 @@
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-}
-
+  }
 
   #jh-pga-table-shared .jtc-header-top {
     margin-bottom: 16px;
@@ -744,6 +744,7 @@
   }
 
   #jh-pga-table-shared .jtc-dot.final { background-color: #e74c3c; }
+
   #jh-pga-table-shared .jtc-dot.cancelled {
     background-color: #7f1d1d;
     opacity: 0.7;
@@ -867,25 +868,37 @@
     width: 100%;
     max-width: 134px;
     min-height: 42px;
+    text-align: center;
   }
 
   #jh-pga-table-shared .jtc-main-link-content {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
+    min-width: 0;
+    text-align: center;
   }
 
   #jh-pga-table-shared .jtc-main-link-label-stack {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 4px;
     line-height: 1;
     white-space: nowrap;
+    text-align: center;
+    min-width: 0;
   }
 
   #jh-pga-table-shared .jtc-main-link-label-stack .line1,
   #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
     display: inline;
+    text-align: center;
+  }
+
+  #jh-pga-table-shared .jtc-main-link svg {
+    flex: 0 0 auto;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot {
@@ -1115,11 +1128,14 @@
       min-height: 32px;
       width: 100%;
       max-width: 60px;
+      justify-content: center;
+      text-align: center;
     }
 
     #jh-pga-table-shared .jtc-main-link svg {
       width: 8px;
       height: 8px;
+      flex: 0 0 auto;
     }
 
     #jh-pga-table-shared .jtc-main-link-dot {
@@ -1129,22 +1145,29 @@
 
     #jh-pga-table-shared .jtc-main-link-content {
       align-items: center;
+      justify-content: center;
       gap: 3px;
+      min-width: 0;
+      text-align: center;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack {
       display: inline-flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       gap: 1px;
       line-height: 0.92;
       white-space: normal;
+      text-align: center;
+      min-width: 0;
     }
 
     #jh-pga-table-shared .jtc-main-link-label-stack .line1,
     #jh-pga-table-shared .jtc-main-link-label-stack .line2 {
       display: block;
+      width: 100%;
+      text-align: center;
     }
 
     #jh-pga-table-shared .jtc-rounds-grid {
@@ -1462,8 +1485,6 @@
     document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
   })();
 </script>
-
-
 
 
 
