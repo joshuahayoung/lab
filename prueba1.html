@@ -353,7 +353,88 @@
   </a>
 </div>
 
+<div class="jh-hero-last-updated-wrap" id="jhHeroLastUpdatedWrap" hidden>
+  <span class="jh-hero-last-updated" id="jhHeroLastUpdated"></span>
+</div>
 
+<style>
+  .jh-hero-last-updated-wrap,
+  .jh-hero-last-updated-wrap * {
+    box-sizing: border-box;
+  }
+
+  .jh-hero-last-updated-wrap {
+    width: 100%;
+    margin: -6px 0 12px 0;
+    padding: 0 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .jh-hero-last-updated {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .jh-hero-last-updated-wrap {
+      margin: -4px 0 10px 0;
+      padding: 0 4px;
+    }
+
+    .jh-hero-last-updated {
+      font-size: 11px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const wrap = document.getElementById("jhHeroLastUpdatedWrap");
+    const target = document.getElementById("jhHeroLastUpdated");
+
+    if (!wrap || !target) return;
+
+    function isUsableValue(value) {
+      if (value === null || value === undefined) return false;
+      const cleaned = String(value).trim();
+      return cleaned !== "" &&
+        cleaned !== "-" &&
+        cleaned !== "—" &&
+        cleaned.toUpperCase() !== "TBD";
+    }
+
+    async function renderHeroLastUpdated() {
+      try {
+        const res = await fetch("./data2.json?v=" + Date.now());
+        if (!res.ok) return;
+
+        const data = await res.json();
+        const lastUpdated = data && data.pgaTableShared
+          ? data.pgaTableShared.lastUpdated
+          : "";
+
+        if (!isUsableValue(lastUpdated)) return;
+
+        target.textContent = "Last Updated: " + String(lastUpdated).trim();
+        wrap.hidden = false;
+      } catch (error) {
+        console.error("HERO last updated render error:", error);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderHeroLastUpdated);
+    } else {
+      renderHeroLastUpdated();
+    }
+  })();
+</script>
 
 <section class="usc-commit-section" aria-labelledby="uscCommitTitle">
   <style>
@@ -371,7 +452,7 @@
       --usc-radius: 26px;
 
       position: relative;
-      margin: 32px 0;
+      margin: 0 0 32px 0;
       padding: 0;
       isolation: isolate;
       font-family: inherit;
@@ -844,7 +925,7 @@
 
     @media (max-width: 640px) {
       .usc-commit-section {
-        margin: 24px 0;
+        margin: 0 0 24px 0;
       }
 
       .usc-commit-shell {
