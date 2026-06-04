@@ -907,12 +907,17 @@
   #jh-pga-table-shared .jtc-main-link-content {
     width: 100%;
     display: grid;
-    grid-template-columns: 12px minmax(0, 1fr);
+    grid-template-columns: 12px minmax(0, 1fr) 14px;
     grid-template-rows: auto auto;
     align-items: center;
     justify-items: center;
-    column-gap: 6px;
+    column-gap: 5px;
     row-gap: 2px;
+  }
+
+  #jh-pga-table-shared .jtc-main-link-top-row,
+  #jh-pga-table-shared .jtc-main-link-bottom-row {
+    display: contents;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot {
@@ -955,32 +960,25 @@
     min-width: 0;
   }
 
-  #jh-pga-table-shared .jtc-main-link-bottom {
+  #jh-pga-table-shared .jtc-main-link-board {
     grid-column: 2;
     grid-row: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+    display: block;
     width: 100%;
-    min-width: 0;
     text-align: center;
     line-height: 1;
     white-space: nowrap;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-board {
-    display: inline-block;
     min-width: 0;
-    text-align: center;
-    line-height: 1;
-    white-space: nowrap;
   }
 
   #jh-pga-table-shared .jtc-main-link-arrow {
+    grid-column: 3;
+    grid-row: 1 / 3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    justify-self: center;
+    align-self: center;
     flex: 0 0 auto;
     line-height: 1;
   }
@@ -1235,7 +1233,7 @@
 
     #jh-pga-table-shared .jtc-main-link {
       font-size: 6.4px;
-      letter-spacing: 0.18px;
+      letter-spacing: 0.14px;
       padding: 4px 4px;
       min-height: 34px;
       width: 100%;
@@ -1243,45 +1241,61 @@
     }
 
     #jh-pga-table-shared .jtc-main-link-content {
-      grid-template-columns: 1fr;
-      grid-template-rows: 5px auto auto;
-      row-gap: 1px;
-      column-gap: 0;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      row-gap: 2px;
+      width: 100%;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-top-row,
+    #jh-pga-table-shared .jtc-main-link-bottom-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+      text-align: center;
+      line-height: 1;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-top-row {
+      gap: 3px;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-bottom-row {
+      gap: 2px;
     }
 
     #jh-pga-table-shared .jtc-main-link-dot {
-      grid-column: 1;
-      grid-row: 1;
       width: 4px;
       height: 4px;
-      justify-self: center;
-      align-self: center;
+      flex: 0 0 4px;
+      display: inline-block;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-live,
+    #jh-pga-table-shared .jtc-main-link-board,
+    #jh-pga-table-shared .jtc-main-link-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      grid-column: auto;
+      grid-row: auto;
     }
 
     #jh-pga-table-shared .jtc-main-link-live {
-      grid-column: 1;
-      grid-row: 2;
-      width: 100%;
-      text-align: center;
-      line-height: 0.95;
-    }
-
-    #jh-pga-table-shared .jtc-main-link-bottom {
-      grid-column: 1;
-      grid-row: 3;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      gap: 2px;
-      line-height: 0.9;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     #jh-pga-table-shared .jtc-main-link-board {
       font-size: 0.84em;
-      letter-spacing: 0.08px;
-      line-height: 0.9;
+      letter-spacing: 0.04px;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     #jh-pga-table-shared .jtc-main-link-arrow svg {
@@ -1494,11 +1508,12 @@
         ? `
           <a href="${data.mainLink.url}" target="_blank" class="jtc-main-link">
             <span class="jtc-main-link-content">
-              <span class="jtc-main-link-dot ${badge.className}"></span>
+              <span class="jtc-main-link-top-row">
+                <span class="jtc-main-link-dot ${badge.className}"></span>
+                <span class="jtc-main-link-live">${split.line1}</span>
+              </span>
 
-              <span class="jtc-main-link-live">${split.line1}</span>
-
-              <span class="jtc-main-link-bottom">
+              <span class="jtc-main-link-bottom-row">
                 <span class="jtc-main-link-board">${split.line2}</span>
                 <span class="jtc-main-link-arrow" aria-hidden="true">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
