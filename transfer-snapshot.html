@@ -2095,17 +2095,15 @@
     .usc-commit-section {
       --usc-navy: #0C2340;
       --usc-cardinal: #8C1515;
-      --usc-cardinal-dark: #6f1111;
-      --usc-gold: #f4c05f;
-      --usc-gold-muted: #d7a94b;
+      --usc-cardinal-dark: #5f0f0f;
+      --usc-gold: #F6C65B;
+      --usc-gold-muted: #d8a642;
       --usc-white: #ffffff;
       --usc-white-soft: rgba(255,255,255,0.86);
       --usc-white-muted: rgba(255,255,255,0.64);
       --usc-line: rgba(255,255,255,0.12);
-      --usc-panel: rgba(255,255,255,0.065);
-      --usc-panel-strong: rgba(255,255,255,0.10);
-      --usc-shadow: 0 22px 52px rgba(0,0,0,0.24);
-      --usc-radius: 24px;
+      --usc-shadow: 0 24px 56px rgba(0,0,0,0.26);
+      --usc-radius: 26px;
 
       position: relative;
       margin: 32px 0;
@@ -2125,10 +2123,10 @@
       border-radius: var(--usc-radius);
       border: 1px solid rgba(255,255,255,0.11);
       background:
-        radial-gradient(circle at 12% 18%, rgba(140,21,21,0.33), transparent 31%),
-        radial-gradient(circle at 84% 78%, rgba(244,192,95,0.18), transparent 30%),
-        radial-gradient(circle at 72% 8%, rgba(255,255,255,0.08), transparent 25%),
-        linear-gradient(135deg, #0C2340 0%, #131f37 47%, #6f1111 100%);
+        radial-gradient(circle at 10% 18%, rgba(140,21,21,0.34), transparent 31%),
+        radial-gradient(circle at 85% 18%, rgba(246,198,91,0.18), transparent 30%),
+        radial-gradient(circle at 82% 82%, rgba(140,21,21,0.28), transparent 34%),
+        linear-gradient(135deg, #0C2340 0%, #111d34 45%, #5f0f0f 100%);
       box-shadow: var(--usc-shadow);
     }
 
@@ -2138,9 +2136,9 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(90deg, rgba(255,255,255,0.07), rgba(255,255,255,0) 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0) 46%);
-      opacity: 0.82;
+        linear-gradient(90deg, rgba(255,255,255,0.075), rgba(255,255,255,0) 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.070), rgba(255,255,255,0) 48%);
+      opacity: 0.84;
     }
 
     .usc-commit-shell::after {
@@ -2148,7 +2146,12 @@
       position: absolute;
       inset: auto 0 0 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--usc-cardinal) 0%, var(--usc-gold) 52%, var(--usc-cardinal) 100%);
+      background: linear-gradient(
+        90deg,
+        var(--usc-cardinal) 0%,
+        var(--usc-gold) 48%,
+        var(--usc-cardinal) 100%
+      );
       opacity: 0.98;
     }
 
@@ -2156,7 +2159,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.56fr);
+      grid-template-columns: minmax(0, 1fr) minmax(310px, 0.58fr);
       gap: 28px;
       align-items: stretch;
       padding: 36px;
@@ -2177,9 +2180,9 @@
       margin: 0 0 18px 0;
       padding: 10px 15px;
       border-radius: 999px;
-      border: 1px solid rgba(244,192,95,0.42);
-      background: rgba(244,192,95,0.12);
-      color: #ffe0a2;
+      border: 1px solid rgba(246,198,91,0.42);
+      background: rgba(246,198,91,0.12);
+      color: #ffe3a0;
       font-size: 13px;
       line-height: 1;
       font-weight: 900;
@@ -2193,8 +2196,8 @@
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: linear-gradient(180deg, #f8d27b 0%, #d7a94b 100%);
-      box-shadow: 0 0 0 7px rgba(244,192,95,0.15);
+      background: linear-gradient(180deg, #f8d27b 0%, #d8a642 100%);
+      box-shadow: 0 0 0 7px rgba(246,198,91,0.15);
       flex: 0 0 auto;
     }
 
@@ -2204,14 +2207,14 @@
       font-size: clamp(30px, 3.5vw, 43px);
       line-height: 1.08;
       letter-spacing: -0.035em;
-      font-weight: 900;
-      max-width: 800px;
+      font-weight: 920;
+      max-width: 810px;
       text-wrap: balance;
     }
 
     .usc-commit-desc {
       margin: 15px 0 0 0;
-      max-width: 800px;
+      max-width: 810px;
       color: var(--usc-white-soft);
       font-size: 15.5px;
       line-height: 1.72;
@@ -2226,10 +2229,10 @@
       margin-top: 22px;
       padding: 16px 17px;
       border-radius: 20px;
-      border: 1px solid rgba(244,192,95,0.28);
+      border: 1px solid rgba(246,198,91,0.28);
       background:
-        radial-gradient(circle at 0% 0%, rgba(244,192,95,0.16), transparent 30%),
-        linear-gradient(135deg, rgba(140,21,21,0.22) 0%, rgba(255,255,255,0.055) 100%);
+        radial-gradient(circle at 0% 0%, rgba(246,198,91,0.16), transparent 30%),
+        linear-gradient(135deg, rgba(140,21,21,0.24) 0%, rgba(255,255,255,0.055) 100%);
       box-shadow:
         0 14px 30px rgba(0,0,0,0.14),
         inset 0 1px 0 rgba(255,255,255,0.12);
@@ -2329,6 +2332,8 @@
     }
 
     .usc-commit-side-panel {
+      position: relative;
+      overflow: hidden;
       display: grid;
       gap: 13px;
       height: 100%;
@@ -2337,9 +2342,114 @@
       border-radius: 22px;
       border: 1px solid rgba(255,255,255,0.10);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.045) 100%);
+        linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 100%);
       backdrop-filter: blur(8px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .usc-commit-logo-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      min-height: 122px;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(246,198,91,0.28);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(246,198,91,0.22), transparent 34%),
+        linear-gradient(135deg, rgba(12,35,64,0.42) 0%, rgba(140,21,21,0.28) 100%);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.13);
+    }
+
+    .usc-commit-logo-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--usc-gold) 0%, var(--usc-cardinal) 100%);
+    }
+
+    .usc-commit-logo-frame {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 92px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.17), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.035) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    .usc-commit-logo-frame img {
+      display: block;
+      width: 76px;
+      max-height: 76px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 8px 12px rgba(0,0,0,0.26))
+        drop-shadow(0 0 10px rgba(246,198,91,0.18));
+    }
+
+    .usc-commit-logo-fallback {
+      display: none;
+      color: #ffffff;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-shadow: 0 8px 14px rgba(0,0,0,0.28);
+    }
+
+    .usc-commit-logo-frame.is-missing img {
+      display: none;
+    }
+
+    .usc-commit-logo-frame.is-missing .usc-commit-logo-fallback {
+      display: block;
+    }
+
+    .usc-commit-logo-copy {
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .usc-commit-logo-label {
+      margin: 0 0 8px 0;
+      color: rgba(255,255,255,0.66);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .usc-commit-logo-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.22;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .usc-commit-logo-text {
+      margin: 8px 0 0 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 12.4px;
+      line-height: 1.48;
+      font-weight: 560;
     }
 
     .usc-commit-card {
@@ -2367,80 +2477,6 @@
       font-size: 13.2px;
       line-height: 1.58;
       font-weight: 600;
-    }
-
-    .usc-commit-highlight-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      gap: 11px;
-      padding: 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(244,192,95,0.28);
-      background:
-        linear-gradient(135deg, rgba(140,21,21,0.24) 0%, rgba(244,192,95,0.13) 55%, rgba(255,255,255,0.055) 100%);
-      box-shadow:
-        0 16px 34px rgba(0,0,0,0.18),
-        inset 0 1px 0 rgba(255,255,255,0.12);
-    }
-
-    .usc-commit-highlight-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: linear-gradient(180deg, var(--usc-gold) 0%, var(--usc-cardinal) 100%);
-    }
-
-    .usc-commit-highlight-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 11px;
-    }
-
-    .usc-commit-badge {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      gap: 8px;
-      margin: 0;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(12,35,64,0.28);
-      color: rgba(255,255,255,0.88);
-      font-size: 10px;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .usc-commit-badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--usc-gold);
-      box-shadow: 0 0 0 5px rgba(244,192,95,0.16);
-      flex: 0 0 auto;
-    }
-
-    .usc-commit-side-title {
-      margin: 0;
-      color: #ffffff;
-      font-size: 19px;
-      line-height: 1.22;
-      font-weight: 950;
-      letter-spacing: -0.025em;
-    }
-
-    .usc-commit-side-summary {
-      margin: 0;
-      color: rgba(255,255,255,0.82);
-      font-size: 12.7px;
-      line-height: 1.56;
-      font-weight: 560;
     }
 
     .usc-commit-actions {
@@ -2565,7 +2601,7 @@
       .usc-commit-kicker-dot {
         width: 8px;
         height: 8px;
-        box-shadow: 0 0 0 6px rgba(244,192,95,0.13);
+        box-shadow: 0 0 0 6px rgba(246,198,91,0.13);
       }
 
       .usc-commit-title {
@@ -2617,8 +2653,40 @@
         border-radius: 18px;
       }
 
-      .usc-commit-card,
-      .usc-commit-highlight-card {
+      .usc-commit-logo-card {
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 13px;
+        min-height: 104px;
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .usc-commit-logo-frame {
+        width: 76px;
+        height: 76px;
+        border-radius: 16px;
+      }
+
+      .usc-commit-logo-frame img {
+        width: 62px;
+        max-height: 62px;
+      }
+
+      .usc-commit-logo-fallback {
+        font-size: 22px;
+      }
+
+      .usc-commit-logo-title {
+        font-size: 16px;
+        line-height: 1.24;
+      }
+
+      .usc-commit-logo-text {
+        font-size: 12px;
+        line-height: 1.44;
+      }
+
+      .usc-commit-card {
         padding: 14px;
         border-radius: 15px;
       }
@@ -2626,16 +2694,6 @@
       .usc-commit-card-text {
         font-size: 13px;
         line-height: 1.58;
-      }
-
-      .usc-commit-side-title {
-        font-size: 16.8px;
-        line-height: 1.27;
-      }
-
-      .usc-commit-side-summary {
-        font-size: 12.4px;
-        line-height: 1.55;
       }
 
       .usc-commit-btn {
@@ -2652,6 +2710,18 @@
 
       .usc-commit-note {
         font-size: 11.3px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .usc-commit-logo-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .usc-commit-logo-copy {
+        text-align: center;
       }
     }
 
@@ -2686,7 +2756,7 @@
           </p>
 
           <p class="usc-commit-status-text">
-            Joshua is grateful to Coach Hankins and the USC Men’s Golf staff for their
+            Joshua is grateful to Coach Hankins, Coach Lapa, and the USC Men’s Golf staff for their
             confidence and vision for his continued development. He also remains thankful
             to Coach Matt Wernecke, the UTSA staff, and his teammates for a meaningful
             freshman season at UTSA.
@@ -2740,20 +2810,29 @@
 
       <div class="usc-commit-side">
         <div class="usc-commit-side-panel">
-          <div class="usc-commit-highlight-card" aria-label="Commitment status">
-            <div class="usc-commit-highlight-content">
-              <p class="usc-commit-badge">
-                <span class="usc-commit-badge-dot" aria-hidden="true"></span>
+          <div class="usc-commit-logo-card" aria-label="USC Men’s Golf commitment">
+            <div class="usc-commit-logo-frame">
+              <img
+                src="images/USC-mensgolf-logo.jpg"
+                alt="USC"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('is-missing');"
+              >
+              <span class="usc-commit-logo-fallback" aria-hidden="true">USC</span>
+            </div>
+
+            <div class="usc-commit-logo-copy">
+              <p class="usc-commit-logo-label">
                 Commitment Confirmed
               </p>
 
-              <h3 class="usc-commit-side-title">
+              <h3 class="usc-commit-logo-title">
                 Next collegiate chapter: USC Men’s Golf
               </h3>
 
-              <p class="usc-commit-side-summary">
-                This site will preserve Joshua’s verified UTSA freshman-season record while
-                continuing to track summer competition and future development updates.
+              <p class="usc-commit-logo-text">
+                A new program chapter following a completed freshman season and verified
+                NCAA record at UTSA.
               </p>
             </div>
           </div>
