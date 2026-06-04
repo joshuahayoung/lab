@@ -353,158 +353,221 @@
   </a>
 </div>
 
+<div class="jh-hero-last-updated-wrap" id="jhHeroLastUpdatedWrap" hidden>
+  <span class="jh-hero-last-updated" id="jhHeroLastUpdated"></span>
+</div>
 
+<style>
+  .jh-hero-last-updated-wrap,
+  .jh-hero-last-updated-wrap * {
+    box-sizing: border-box;
+  }
 
-<section class="transfer-snapshot-section" aria-labelledby="transferSnapshotTitle" data-portal-state="portal-listed">
+  .jh-hero-last-updated-wrap {
+    width: 100%;
+    margin: -6px 0 12px 0;
+    padding: 0 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .jh-hero-last-updated {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .jh-hero-last-updated-wrap {
+      margin: -4px 0 10px 0;
+      padding: 0 4px;
+    }
+
+    .jh-hero-last-updated {
+      font-size: 11px;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const wrap = document.getElementById("jhHeroLastUpdatedWrap");
+    const target = document.getElementById("jhHeroLastUpdated");
+
+    if (!wrap || !target) return;
+
+    function isUsableValue(value) {
+      if (value === null || value === undefined) return false;
+      const cleaned = String(value).trim();
+      return cleaned !== "" &&
+        cleaned !== "-" &&
+        cleaned !== "—" &&
+        cleaned.toUpperCase() !== "TBD";
+    }
+
+    async function renderHeroLastUpdated() {
+      try {
+        const res = await fetch("./data2.json?v=" + Date.now());
+        if (!res.ok) return;
+
+        const data = await res.json();
+        const lastUpdated = data && data.pgaTableShared
+          ? data.pgaTableShared.lastUpdated
+          : "";
+
+        if (!isUsableValue(lastUpdated)) return;
+
+        target.textContent = "Last Updated: " + String(lastUpdated).trim();
+        wrap.hidden = false;
+      } catch (error) {
+        console.error("HERO last updated render error:", error);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderHeroLastUpdated);
+    } else {
+      renderHeroLastUpdated();
+    }
+  })();
+</script>
+
+<section class="usc-commit-section" aria-labelledby="uscCommitTitle">
   <style>
-    .transfer-snapshot-section {
-      --tsnap-navy: #0C2340;
-      --tsnap-orange: #F15A22;
-      --tsnap-gold: #c98a2e;
-      --tsnap-green: #16a34a;
-      --tsnap-white: #ffffff;
-      --tsnap-white-soft: rgba(255,255,255,0.84);
-      --tsnap-white-muted: rgba(255,255,255,0.64);
-      --tsnap-line: rgba(255,255,255,0.11);
-      --tsnap-panel: rgba(255,255,255,0.065);
-      --tsnap-panel-strong: rgba(255,255,255,0.09);
-      --tsnap-shadow: 0 22px 52px rgba(0,0,0,0.24);
-      --tsnap-radius: 24px;
+    .usc-commit-section {
+      --usc-navy: #0C2340;
+      --usc-cardinal: #8C1515;
+      --usc-cardinal-dark: #5f0f0f;
+      --usc-gold: #F6C65B;
+      --usc-gold-muted: #d8a642;
+      --usc-white: #ffffff;
+      --usc-white-soft: rgba(255,255,255,0.86);
+      --usc-white-muted: rgba(255,255,255,0.64);
+      --usc-line: rgba(255,255,255,0.12);
+      --usc-shadow: 0 24px 56px rgba(0,0,0,0.26);
+      --usc-radius: 26px;
 
       position: relative;
-      margin: 32px 0;
+      margin: 0 0 32px 0;
       padding: 0;
       isolation: isolate;
       font-family: inherit;
     }
 
-    .transfer-snapshot-section,
-    .transfer-snapshot-section * {
+    .usc-commit-section,
+    .usc-commit-section * {
       box-sizing: border-box;
     }
 
-    .transfer-snapshot-last-updated-wrap {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 100%;
-      margin: 0 0 10px 0;
-      padding-right: 12px;
-    }
-
-    .transfer-snapshot-last-updated {
-      color: #64748b;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
-
-    .transfer-snapshot-shell {
+    .usc-commit-shell {
       position: relative;
       overflow: hidden;
+      border-radius: var(--usc-radius);
+      border: 1px solid rgba(255,255,255,0.11);
       background:
-        radial-gradient(circle at 12% 18%, rgba(241,90,34,0.17), transparent 30%),
-        radial-gradient(circle at 88% 82%, rgba(22,163,74,0.14), transparent 29%),
-        radial-gradient(circle at 70% 8%, rgba(201,138,46,0.16), transparent 24%),
-        linear-gradient(135deg, #0C2340 0%, #112c50 52%, #0C2340 100%);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: var(--tsnap-radius);
-      box-shadow: var(--tsnap-shadow);
+        radial-gradient(circle at 10% 18%, rgba(140,21,21,0.34), transparent 31%),
+        radial-gradient(circle at 85% 18%, rgba(246,198,91,0.18), transparent 30%),
+        radial-gradient(circle at 82% 82%, rgba(140,21,21,0.28), transparent 34%),
+        linear-gradient(135deg, #0C2340 0%, #111d34 45%, #5f0f0f 100%);
+      box-shadow: var(--usc-shadow);
     }
 
-    .transfer-snapshot-shell::before {
+    .usc-commit-shell::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(90deg, rgba(255,255,255,0.060), rgba(255,255,255,0) 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0) 44%);
-      opacity: 0.78;
+        linear-gradient(90deg, rgba(255,255,255,0.075), rgba(255,255,255,0) 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.070), rgba(255,255,255,0) 48%);
+      opacity: 0.84;
     }
 
-    .transfer-snapshot-shell::after {
+    .usc-commit-shell::after {
       content: "";
       position: absolute;
       inset: auto 0 0 0;
       height: 4px;
-      background: linear-gradient(90deg, #16a34a 0%, #F15A22 44%, #c98a2e 74%, #16a34a 100%);
+      background: linear-gradient(
+        90deg,
+        var(--usc-cardinal) 0%,
+        var(--usc-gold) 48%,
+        var(--usc-cardinal) 100%
+      );
       opacity: 0.98;
     }
 
-    .transfer-snapshot-inner {
+    .usc-commit-inner {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
-      gap: 30px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr) minmax(310px, 0.58fr);
+      gap: 28px;
+      align-items: stretch;
       padding: 36px;
     }
 
-    .transfer-snapshot-copy {
+    .usc-commit-main {
       min-width: 0;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 18px;
+      justify-content: center;
     }
 
-    .transfer-snapshot-copy-main {
-      min-width: 0;
-    }
-
-    .transfer-snapshot-kicker {
+    .usc-commit-kicker {
       display: inline-flex;
       align-items: center;
       width: fit-content;
       gap: 11px;
       margin: 0 0 18px 0;
       padding: 10px 15px;
-      border: 1px solid rgba(22,163,74,0.45);
       border-radius: 999px;
-      background: rgba(22,163,74,0.14);
-      color: #8ff0b0;
-      font-size: 13.5px;
+      border: 1px solid rgba(246,198,91,0.42);
+      background: rgba(246,198,91,0.12);
+      color: #ffe3a0;
+      font-size: 13px;
       line-height: 1;
       font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       white-space: nowrap;
-      box-shadow: 0 10px 24px rgba(22,163,74,0.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
 
-    .transfer-snapshot-kicker-dot {
+    .usc-commit-kicker-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
-      box-shadow: 0 0 0 7px rgba(22,163,74,0.16);
+      background: linear-gradient(180deg, #f8d27b 0%, #d8a642 100%);
+      box-shadow: 0 0 0 7px rgba(246,198,91,0.15);
       flex: 0 0 auto;
     }
 
-    .transfer-snapshot-title {
+    .usc-commit-title {
       margin: 0;
-      color: var(--tsnap-white);
-      font-size: clamp(30px, 3.5vw, 42px);
+      color: var(--usc-white);
+      font-size: clamp(30px, 3.5vw, 43px);
       line-height: 1.08;
       letter-spacing: -0.035em;
-      font-weight: 850;
-      max-width: 760px;
+      font-weight: 920;
+      max-width: 810px;
       text-wrap: balance;
     }
 
-    .transfer-snapshot-desc {
+    .usc-commit-desc {
       margin: 15px 0 0 0;
-      max-width: 760px;
-      color: var(--tsnap-white-soft);
+      max-width: 810px;
+      color: var(--usc-white-soft);
       font-size: 15.5px;
       line-height: 1.72;
       font-weight: 500;
     }
 
-    .transfer-snapshot-confirmed-bar {
+    .usc-commit-status-bar {
       position: relative;
       overflow: hidden;
       display: grid;
@@ -512,24 +575,24 @@
       margin-top: 22px;
       padding: 16px 17px;
       border-radius: 20px;
-      border: 1px solid rgba(22,163,74,0.32);
+      border: 1px solid rgba(246,198,91,0.28);
       background:
-        radial-gradient(circle at 0% 0%, rgba(22,163,74,0.19), transparent 30%),
-        linear-gradient(135deg, rgba(22,163,74,0.16) 0%, rgba(241,90,34,0.12) 48%, rgba(255,255,255,0.055) 100%);
+        radial-gradient(circle at 0% 0%, rgba(246,198,91,0.16), transparent 30%),
+        linear-gradient(135deg, rgba(140,21,21,0.24) 0%, rgba(255,255,255,0.055) 100%);
       box-shadow:
         0 14px 30px rgba(0,0,0,0.14),
         inset 0 1px 0 rgba(255,255,255,0.12);
     }
 
-    .transfer-snapshot-confirmed-bar::before {
+    .usc-commit-status-bar::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
       width: 5px;
-      background: linear-gradient(180deg, #22c55e 0%, #F15A22 100%);
+      background: linear-gradient(180deg, var(--usc-gold) 0%, var(--usc-cardinal) 100%);
     }
 
-    .transfer-snapshot-confirmed-label {
+    .usc-commit-status-label {
       margin: 0;
       color: rgba(255,255,255,0.72);
       font-size: 10px;
@@ -539,32 +602,32 @@
       text-transform: uppercase;
     }
 
-    .transfer-snapshot-confirmed-text {
+    .usc-commit-status-text {
       margin: 0;
       color: #ffffff;
       font-size: 16px;
-      line-height: 1.35;
-      font-weight: 900;
-      letter-spacing: -0.015em;
+      line-height: 1.42;
+      font-weight: 850;
+      letter-spacing: -0.01em;
     }
 
-    .transfer-snapshot-confirmed-meta {
+    .usc-commit-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin: 0;
     }
 
-    .transfer-snapshot-confirmed-pill {
+    .usc-commit-pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 27px;
       padding: 7px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.13);
-      background: rgba(12,35,64,0.24);
-      color: rgba(255,255,255,0.84);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(12,35,64,0.28);
+      color: rgba(255,255,255,0.86);
       font-size: 10px;
       line-height: 1;
       font-weight: 850;
@@ -573,23 +636,23 @@
       white-space: nowrap;
     }
 
-    .transfer-snapshot-points {
+    .usc-commit-points {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 220px));
+      grid-template-columns: repeat(2, minmax(0, 230px));
       gap: 10px;
       margin: 24px 0 0 0;
       padding: 0;
       list-style: none;
     }
 
-    .transfer-snapshot-points li {
+    .usc-commit-points li {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       min-height: 38px;
       padding: 9px 12px;
       border-radius: 999px;
-      border: 1px solid var(--tsnap-line);
+      border: 1px solid var(--usc-line);
       background: rgba(255,255,255,0.045);
       color: rgba(255,255,255,0.91);
       font-size: 12.5px;
@@ -599,101 +662,118 @@
       white-space: nowrap;
     }
 
-    .transfer-snapshot-points svg {
+    .usc-commit-points svg {
       width: 14px;
       height: 14px;
       display: block;
-      color: var(--tsnap-gold);
+      color: var(--usc-gold);
       flex: 0 0 auto;
     }
 
-    .transfer-snapshot-review-panel {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      padding: 14px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.035) 100%);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.075);
+    .usc-commit-side {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
     }
 
-    .transfer-snapshot-review-card {
-      display: grid;
-      gap: 8px;
-      min-height: 112px;
-      padding: 15px;
-      border-radius: 17px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.045);
-    }
-
-    .transfer-snapshot-review-label {
-      margin: 0;
-      color: rgba(255,255,255,0.62);
-      font-size: 10.5px;
-      line-height: 1;
-      font-weight: 850;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .transfer-snapshot-review-text {
-      margin: 0;
-      color: rgba(255,255,255,0.91);
-      font-size: 13.2px;
-      line-height: 1.55;
-      font-weight: 600;
-    }
-
-    .transfer-snapshot-review-note {
-      grid-column: 1 / -1;
-      margin: 0;
-      padding: 12px 14px 0;
-      border-top: 1px solid rgba(255,255,255,0.09);
-      color: rgba(255,255,255,0.66);
-      font-size: 11.7px;
-      line-height: 1.55;
-      font-weight: 500;
-    }
-
-    .transfer-snapshot-resume-strip {
+    .usc-commit-side-panel {
       position: relative;
       overflow: hidden;
       display: grid;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 20px;
-      border: 1px solid rgba(241,90,34,0.28);
+      gap: 13px;
+      height: 100%;
+      align-content: start;
+      padding: 15px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
       background:
-        radial-gradient(circle at 0% 0%, rgba(241,90,34,0.15), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,0.080) 0%, rgba(255,255,255,0.035) 100%);
-      box-shadow:
-        0 12px 26px rgba(0,0,0,0.12),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+        linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 100%);
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
-    .transfer-snapshot-resume-strip::before {
+    .usc-commit-logo-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      min-height: 122px;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(246,198,91,0.28);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(246,198,91,0.22), transparent 34%),
+        linear-gradient(135deg, rgba(12,35,64,0.42) 0%, rgba(140,21,21,0.28) 100%);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.13);
+    }
+
+    .usc-commit-logo-card::before {
       content: "";
       position: absolute;
-      inset: 0 0 auto 0;
-      height: 3px;
-      background: linear-gradient(90deg, #F15A22 0%, #c98a2e 70%, rgba(255,255,255,0.24) 100%);
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--usc-gold) 0%, var(--usc-cardinal) 100%);
     }
 
-    .transfer-snapshot-resume-strip-head {
+    .usc-commit-logo-frame {
       position: relative;
-      z-index: 1;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      justify-content: center;
+      width: 92px;
+      height: 92px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.17), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.035) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 12px 26px rgba(0,0,0,0.18);
     }
 
-    .transfer-snapshot-resume-strip-title {
-      margin: 0;
-      color: rgba(255,255,255,0.78);
+    .usc-commit-logo-frame img {
+      display: block;
+      width: 76px;
+      max-height: 76px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 8px 12px rgba(0,0,0,0.26))
+        drop-shadow(0 0 10px rgba(246,198,91,0.18));
+    }
+
+    .usc-commit-logo-fallback {
+      display: none;
+      color: #ffffff;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-shadow: 0 8px 14px rgba(0,0,0,0.28);
+    }
+
+    .usc-commit-logo-frame.is-missing img {
+      display: none;
+    }
+
+    .usc-commit-logo-frame.is-missing .usc-commit-logo-fallback {
+      display: block;
+    }
+
+    .usc-commit-logo-copy {
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .usc-commit-logo-label {
+      margin: 0 0 8px 0;
+      color: rgba(255,255,255,0.66);
       font-size: 10px;
       line-height: 1;
       font-weight: 900;
@@ -701,86 +781,24 @@
       text-transform: uppercase;
     }
 
-    .transfer-snapshot-resume-strip-tag {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(201,138,46,0.32);
-      background: rgba(201,138,46,0.13);
-      color: rgba(255,255,255,0.82);
-      font-size: 8.5px;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .transfer-snapshot-resume-mini-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 9px;
-    }
-
-    .transfer-snapshot-resume-mini {
-      min-width: 0;
-      padding: 11px 10px 10px;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(12,35,64,0.22);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.055);
-    }
-
-    .transfer-snapshot-resume-mini-value {
-      display: block;
+    .usc-commit-logo-title {
+      margin: 0;
       color: #ffffff;
-      font-size: clamp(20px, 2.25vw, 27px);
-      line-height: 1;
+      font-size: 18px;
+      line-height: 1.22;
       font-weight: 950;
-      letter-spacing: -0.04em;
-      margin-bottom: 6px;
-      white-space: nowrap;
+      letter-spacing: -0.02em;
     }
 
-    .transfer-snapshot-resume-mini-value.is-accent {
-      color: #f6b15b;
+    .usc-commit-logo-text {
+      margin: 8px 0 0 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 12.4px;
+      line-height: 1.48;
+      font-weight: 560;
     }
 
-    .transfer-snapshot-resume-mini-label {
-      display: block;
-      color: rgba(255,255,255,0.72);
-      font-size: 10.8px;
-      line-height: 1.28;
-      font-weight: 700;
-    }
-
-    .transfer-snapshot-side {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    .transfer-snapshot-side-panel {
-      display: grid;
-      gap: 13px;
-      height: auto;
-      align-content: start;
-      padding: 15px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.045) 100%);
-      backdrop-filter: blur(8px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    .transfer-snapshot-card {
+    .usc-commit-card {
       display: grid;
       gap: 9px;
       padding: 15px;
@@ -789,7 +807,7 @@
       background: rgba(255,255,255,0.045);
     }
 
-    .transfer-snapshot-card-label {
+    .usc-commit-card-label {
       margin: 0;
       color: rgba(255,255,255,0.66);
       font-size: 10.5px;
@@ -799,139 +817,20 @@
       text-transform: uppercase;
     }
 
-    .transfer-snapshot-card-text {
+    .usc-commit-card-text {
       margin: 0;
-      color: #ffffff;
+      color: rgba(255,255,255,0.91);
       font-size: 13.2px;
-      line-height: 1.56;
+      line-height: 1.58;
       font-weight: 600;
     }
 
-    .transfer-snapshot-status-module {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      gap: 12px;
-      padding: 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(22,163,74,0.38);
-      background:
-        linear-gradient(135deg, rgba(22,163,74,0.22) 0%, rgba(241,90,34,0.17) 50%, rgba(255,255,255,0.060) 100%);
-      box-shadow:
-        0 16px 34px rgba(0,0,0,0.18),
-        inset 0 1px 0 rgba(255,255,255,0.12);
-    }
-
-    .transfer-snapshot-status-module::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: linear-gradient(180deg, #22c55e 0%, #F15A22 100%);
-      opacity: 0.98;
-    }
-
-    .transfer-snapshot-status-module::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 18% 8%, rgba(255,255,255,0.15), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0) 48%);
-      opacity: 0.78;
-    }
-
-    .transfer-snapshot-status-content {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      gap: 11px;
-    }
-
-    .transfer-snapshot-status-badge {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      gap: 8px;
-      margin: 0;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(12,35,64,0.28);
-      color: rgba(255,255,255,0.88);
-      font-size: 10px;
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .transfer-snapshot-status-badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(22,163,74,0.17);
-      flex: 0 0 auto;
-    }
-
-    .transfer-snapshot-status-headline {
-      margin: 0;
-      color: #ffffff;
-      font-size: 19px;
-      line-height: 1.22;
-      font-weight: 950;
-      letter-spacing: -0.025em;
-    }
-
-    .transfer-snapshot-status-summary {
-      margin: 0;
-      color: rgba(255,255,255,0.81);
-      font-size: 12.7px;
-      line-height: 1.54;
-      font-weight: 560;
-    }
-
-    .transfer-snapshot-status-grid {
-      display: grid;
-      gap: 8px;
-      margin-top: 0;
-    }
-
-    .transfer-snapshot-status-item {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 4px;
-      align-items: start;
-      padding: 10px 11px;
-      border-radius: 13px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(12,35,64,0.23);
-    }
-
-    .transfer-snapshot-status-key {
-      color: rgba(255,255,255,0.64);
-      font-size: 9.5px;
-      line-height: 1.3;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .transfer-snapshot-status-value {
-      color: rgba(255,255,255,0.95);
-      font-size: 12.3px;
-      line-height: 1.42;
-      font-weight: 650;
-    }
-
-    .transfer-snapshot-actions {
+    .usc-commit-actions {
       display: grid;
       gap: 10px;
     }
 
-    .transfer-snapshot-btn {
+    .usc-commit-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -951,54 +850,49 @@
       font: inherit;
     }
 
-    .transfer-snapshot-btn-primary {
-      min-height: 76px;
-      padding: 19px 18px;
+    .usc-commit-btn-primary {
+      min-height: 66px;
+      padding: 17px 18px;
       border: 0;
       border-radius: 18px;
-      background: linear-gradient(135deg, #F15A22 0%, #c98a2e 100%);
+      background: linear-gradient(135deg, var(--usc-cardinal) 0%, var(--usc-gold-muted) 100%);
       color: #ffffff;
-      font-size: 15.5px;
-      line-height: 1.15;
+      font-size: 14.5px;
+      line-height: 1.18;
       font-weight: 900;
       letter-spacing: 0.01em;
-      box-shadow: 0 16px 34px rgba(241,90,34,0.27);
+      box-shadow: 0 16px 34px rgba(140,21,21,0.28);
     }
 
-    .transfer-snapshot-btn-primary:hover,
-    .transfer-snapshot-btn-primary:focus-visible {
+    .usc-commit-btn-primary:hover,
+    .usc-commit-btn-primary:focus-visible {
       transform: translateY(-1px);
-      box-shadow: 0 20px 38px rgba(241,90,34,0.32);
+      box-shadow: 0 20px 38px rgba(140,21,21,0.34);
       outline: none;
     }
 
-    .transfer-snapshot-btn-primary svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .transfer-snapshot-btn-secondary {
+    .usc-commit-btn-secondary {
       border: 1px solid rgba(255,255,255,0.13);
       background: rgba(255,255,255,0.045);
       color: rgba(255,255,255,0.90);
       font-weight: 760;
     }
 
-    .transfer-snapshot-btn-secondary:hover,
-    .transfer-snapshot-btn-secondary:focus-visible {
+    .usc-commit-btn-secondary:hover,
+    .usc-commit-btn-secondary:focus-visible {
       background: rgba(255,255,255,0.075);
       border-color: rgba(255,255,255,0.20);
       outline: none;
     }
 
-    .transfer-snapshot-btn svg {
+    .usc-commit-btn svg {
       width: 16px;
       height: 16px;
       display: block;
       flex: 0 0 auto;
     }
 
-    .transfer-snapshot-note {
+    .usc-commit-note {
       margin: 1px 0 0 0;
       padding-top: 11px;
       border-top: 1px solid rgba(255,255,255,0.09);
@@ -1010,1381 +904,324 @@
     }
 
     @media (max-width: 920px) {
-      .transfer-snapshot-inner {
+      .usc-commit-inner {
         grid-template-columns: 1fr;
         gap: 24px;
         padding: 30px 24px;
       }
 
-      .transfer-snapshot-copy {
-        gap: 20px;
+      .usc-commit-side-panel {
+        height: auto;
       }
 
-      .transfer-snapshot-title {
+      .usc-commit-title {
         max-width: none;
       }
 
-      .transfer-snapshot-points {
+      .usc-commit-points {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .transfer-snapshot-points li {
-        justify-content: flex-start;
-      }
-
-      .transfer-snapshot-resume-mini-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .transfer-snapshot-side-panel {
-        height: auto;
       }
     }
 
     @media (max-width: 640px) {
-      .transfer-snapshot-section {
-        margin: 24px 0;
+      .usc-commit-section {
+        margin: 0 0 24px 0;
       }
 
-      .transfer-snapshot-last-updated-wrap {
-        margin-bottom: 8px;
-        padding-right: 8px;
-      }
-
-      .transfer-snapshot-last-updated {
-        font-size: 11px;
-      }
-
-      .transfer-snapshot-shell {
+      .usc-commit-shell {
         border-radius: 20px;
       }
 
-      .transfer-snapshot-inner {
+      .usc-commit-inner {
         padding: 22px 16px 18px;
         gap: 18px;
       }
 
-      .transfer-snapshot-kicker {
+      .usc-commit-kicker {
         margin-bottom: 14px;
         padding: 9px 12px;
-        font-size: 11px;
-        letter-spacing: 0.13em;
-        box-shadow: 0 8px 18px rgba(22,163,74,0.10);
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
       }
 
-      .transfer-snapshot-kicker-dot {
+      .usc-commit-kicker-dot {
         width: 8px;
         height: 8px;
-        box-shadow: 0 0 0 6px rgba(22,163,74,0.13);
+        box-shadow: 0 0 0 6px rgba(246,198,91,0.13);
       }
 
-      .transfer-snapshot-title {
+      .usc-commit-title {
         font-size: clamp(24px, 8vw, 32px);
         line-height: 1.12;
       }
 
-      .transfer-snapshot-desc {
+      .usc-commit-desc {
         margin-top: 12px;
         font-size: 14px;
         line-height: 1.65;
       }
 
-      .transfer-snapshot-confirmed-bar {
+      .usc-commit-status-bar {
         margin-top: 18px;
         padding: 14px 14px 14px 16px;
         border-radius: 17px;
       }
 
-      .transfer-snapshot-confirmed-text {
+      .usc-commit-status-text {
         font-size: 14.5px;
-        line-height: 1.36;
+        line-height: 1.38;
       }
 
-      .transfer-snapshot-confirmed-meta {
+      .usc-commit-pills {
         gap: 7px;
       }
 
-      .transfer-snapshot-confirmed-pill {
+      .usc-commit-pill {
         font-size: 9px;
         padding: 7px 9px;
       }
 
-      .transfer-snapshot-points {
+      .usc-commit-points {
         grid-template-columns: 1fr;
         gap: 8px;
         margin-top: 18px;
       }
 
-      .transfer-snapshot-points li {
+      .usc-commit-points li {
         width: 100%;
         min-height: 34px;
         font-size: 12px;
         padding: 8px 10px;
       }
 
-      .transfer-snapshot-review-panel {
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .usc-commit-side-panel {
         padding: 12px;
         border-radius: 18px;
       }
 
-      .transfer-snapshot-review-card {
-        min-height: auto;
+      .usc-commit-logo-card {
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 13px;
+        min-height: 104px;
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .usc-commit-logo-frame {
+        width: 76px;
+        height: 76px;
+        border-radius: 16px;
+      }
+
+      .usc-commit-logo-frame img {
+        width: 62px;
+        max-height: 62px;
+      }
+
+      .usc-commit-logo-fallback {
+        font-size: 22px;
+      }
+
+      .usc-commit-logo-title {
+        font-size: 16px;
+        line-height: 1.24;
+      }
+
+      .usc-commit-logo-text {
+        font-size: 12px;
+        line-height: 1.44;
+      }
+
+      .usc-commit-card {
         padding: 14px;
         border-radius: 15px;
       }
 
-      .transfer-snapshot-review-note {
-        padding: 10px 2px 0;
-        font-size: 11.3px;
-      }
-
-      .transfer-snapshot-resume-strip {
-        padding: 13px;
-        border-radius: 17px;
-        gap: 9px;
-      }
-
-      .transfer-snapshot-resume-strip-head {
-        align-items: flex-start;
-      }
-
-      .transfer-snapshot-resume-strip-title {
-        font-size: 9px;
-        line-height: 1.2;
-      }
-
-      .transfer-snapshot-resume-strip-tag {
-        font-size: 8px;
-        padding: 6px 8px;
-      }
-
-      .transfer-snapshot-resume-mini-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .transfer-snapshot-resume-mini {
-        padding: 11px 12px;
-      }
-
-      .transfer-snapshot-resume-mini-value {
-        font-size: 25px;
-      }
-
-      .transfer-snapshot-resume-mini-label {
-        font-size: 11.2px;
-      }
-
-      .transfer-snapshot-side-panel {
-        padding: 12px;
-        border-radius: 18px;
-      }
-
-      .transfer-snapshot-card {
-        padding: 14px;
-        border-radius: 15px;
-      }
-
-      .transfer-snapshot-card-text {
+      .usc-commit-card-text {
         font-size: 13px;
         line-height: 1.58;
       }
 
-      .transfer-snapshot-status-module {
-        padding: 15px;
-        border-radius: 16px;
-      }
-
-      .transfer-snapshot-status-module::before {
-        width: 4px;
-      }
-
-      .transfer-snapshot-status-badge {
-        font-size: 9px;
-        padding: 6px 9px;
-        letter-spacing: 0.11em;
-      }
-
-      .transfer-snapshot-status-headline {
-        font-size: 16.8px;
-        line-height: 1.27;
-      }
-
-      .transfer-snapshot-status-summary {
-        font-size: 12.4px;
-        line-height: 1.55;
-      }
-
-      .transfer-snapshot-status-item {
-        grid-template-columns: 1fr;
-        gap: 4px;
-        padding: 10px 11px;
-        border-radius: 12px;
-      }
-
-      .transfer-snapshot-status-value {
-        font-size: 12.4px;
-      }
-
-      .transfer-snapshot-btn {
+      .usc-commit-btn {
         min-height: 50px;
         border-radius: 14px;
       }
 
-      .transfer-snapshot-btn-primary {
+      .usc-commit-btn-primary {
         min-height: 58px;
         padding: 15px 16px;
         border-radius: 15px;
         font-size: 13.5px;
       }
 
-      .transfer-snapshot-btn-primary svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .transfer-snapshot-note {
+      .usc-commit-note {
         font-size: 11.3px;
       }
     }
 
+    @media (max-width: 420px) {
+      .usc-commit-logo-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .usc-commit-logo-copy {
+        text-align: center;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .transfer-snapshot-btn {
+      .usc-commit-btn {
         transition: none;
       }
     }
   </style>
 
- <div class="transfer-snapshot-last-updated-wrap" id="transferSnapshotLastUpdatedWrap" hidden>
-  <span class="transfer-snapshot-last-updated" id="transferSnapshotLastUpdated"></span>
-</div>
-
-<div class="transfer-snapshot-shell">
-  <div class="transfer-snapshot-inner">
-    <div class="transfer-snapshot-copy">
-      <div class="transfer-snapshot-copy-main">
-        <div class="transfer-snapshot-kicker">
-          <span class="transfer-snapshot-kicker-dot" aria-hidden="true"></span>
-          Official Portal Listing
+  <div class="usc-commit-shell">
+    <div class="usc-commit-inner">
+      <div class="usc-commit-main">
+        <div class="usc-commit-kicker">
+          <span class="usc-commit-kicker-dot" aria-hidden="true"></span>
+          Commitment Update
         </div>
 
-        <h2 class="transfer-snapshot-title" id="transferSnapshotTitle">
-          Officially listed in the NCAA Transfer Portal for coach review.
+        <h2 class="usc-commit-title" id="uscCommitTitle">
+          Joshua Hong has committed to USC Men’s Golf.
         </h2>
 
-        <p class="transfer-snapshot-desc">
-          Completed freshman-season profile with verified Division I production, a UTSA single-season scoring average record, high lineup reliability, and three years of eligibility remaining.
+        <p class="usc-commit-desc">
+          After completing his freshman season at UTSA and entering the NCAA Transfer Portal,
+          Joshua has committed to USC Men’s Golf for the next stage of his collegiate and
+          athletic development.
         </p>
 
-        <div class="transfer-snapshot-confirmed-bar" aria-label="Official transfer portal listing confirmation">
-          <p class="transfer-snapshot-confirmed-label">
-            Status Update
+        <div class="usc-commit-status-bar" aria-label="USC commitment update">
+          <p class="usc-commit-status-label">
+            Transition Update
           </p>
 
-          <p class="transfer-snapshot-confirmed-text">
-            UTSA Compliance has confirmed Joshua’s NCAA Transfer Portal entry was completed on June 4, 2026, at 8:00 a.m.
+          <p class="usc-commit-status-text">
+            Joshua is grateful to Coach Hankins, Coach Lapa, and the USC Men’s Golf staff for their
+            confidence and vision for his continued development. He also remains thankful
+            to Coach Matt Wernecke, the UTSA staff, and his teammates for a meaningful
+            freshman season at UTSA.
           </p>
 
-          <div class="transfer-snapshot-confirmed-meta">
-            <span class="transfer-snapshot-confirmed-pill">
-              Officially Listed
+          <div class="usc-commit-pills">
+            <span class="usc-commit-pill">
+              Committed to USC
             </span>
 
-            <span class="transfer-snapshot-confirmed-pill">
-              Coach Review Ready
+            <span class="usc-commit-pill">
+              2026 Transfer
             </span>
 
-            <span class="transfer-snapshot-confirmed-pill">
+            <span class="usc-commit-pill">
               3 Years Eligibility
             </span>
           </div>
         </div>
 
-        <ul class="transfer-snapshot-points" aria-label="Snapshot contents">
+        <ul class="usc-commit-points" aria-label="USC commitment section highlights">
           <li>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 12.5 9.2 16 19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            Portal Listed
+            USC Commitment
           </li>
 
           <li>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            Key Metrics
+            Verified NCAA Record
           </li>
 
           <li>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 19c5.5-9 8.5-12 14-14M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            Scoring Profile
+            Freshman Season Archive
           </li>
 
           <li>
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M12 3 5 7v5c0 4.5 3 7 7 9 4-2 7-4.5 7-9V7l-7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
             </svg>
-            Lineup Reliability
+            Continued Development
           </li>
         </ul>
       </div>
 
-      <div class="transfer-snapshot-review-panel" aria-label="Transfer snapshot review context">
-        <div class="transfer-snapshot-review-card">
-          <p class="transfer-snapshot-review-label">Review Scope</p>
-          <p class="transfer-snapshot-review-text">
-            Condenses freshman-season production, scoring record, rankings, and reliability indicators into one coach-review point.
-          </p>
-        </div>
-
-        <div class="transfer-snapshot-review-card">
-          <p class="transfer-snapshot-review-label">Evaluation Use</p>
-          <p class="transfer-snapshot-review-text">
-            Provides a starting point before reviewing full NCAA statistics, tournament logs, and event-by-event results.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="transfer-snapshot-side">
-      <div class="transfer-snapshot-side-panel">
-        <div class="transfer-snapshot-status-module" aria-label="Transfer process status">
-          <div class="transfer-snapshot-status-content">
-            <p class="transfer-snapshot-status-badge">
-              <span class="transfer-snapshot-status-badge-dot" aria-hidden="true"></span>
-              Confirmed Portal Status
-            </p>
-
-            <h3 class="transfer-snapshot-status-headline">
-              Listed in the NCAA Transfer Portal
-            </h3>
-
-            <p class="transfer-snapshot-status-summary">
-              Joshua’s transfer portal entry has been completed and confirmed by UTSA Compliance. His completed freshman-season profile is now available for transfer-related coach review.
-            </p>
-
-            <div class="transfer-snapshot-status-grid">
-              <div class="transfer-snapshot-status-item">
-                <span class="transfer-snapshot-status-key">Listing</span>
-                <span class="transfer-snapshot-status-value">
-                  Officially listed as of June 4, 2026, at 8:00 a.m.
-                </span>
-              </div>
-
-              <div class="transfer-snapshot-status-item">
-                <span class="transfer-snapshot-status-key">Contact</span>
-                <span class="transfer-snapshot-status-value">
-                  NCAA program communication may proceed following confirmed NCAA Transfer Portal listing.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="transfer-snapshot-card">
-          <p class="transfer-snapshot-card-label">Quick Access</p>
-          <p class="transfer-snapshot-card-text">
-            Open the snapshot for condensed performance, consistency, and lineup-reliability data.
-          </p>
-        </div>
-
-        <div class="transfer-snapshot-actions">
-          <a
-            class="transfer-snapshot-btn transfer-snapshot-btn-primary"
-            href="transfer-snapshot.html"
-          >
-            View Transfer Snapshot
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-
-          <a
-            class="transfer-snapshot-btn transfer-snapshot-btn-secondary"
-            href="ncaa-stats.html"
-          >
-            Review NCAA Stats & Results
-          </a>
-
-          <p class="transfer-snapshot-note">
-            Confirmed transfer profile for coach review.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <script>
-    (function () {
-      const wrap = document.getElementById("transferSnapshotLastUpdatedWrap");
-      const target = document.getElementById("transferSnapshotLastUpdated");
-
-      if (!wrap || !target) return;
-
-      function isUsableValue(value) {
-        if (value === null || value === undefined) return false;
-        const cleaned = String(value).trim();
-        return cleaned !== "" && cleaned !== "-" && cleaned !== "—" && cleaned.toUpperCase() !== "TBD";
-      }
-
-      async function renderTransferSnapshotLastUpdated() {
-        try {
-          const res = await fetch("./data2.json?v=" + Date.now());
-          if (!res.ok) return;
-
-          const data = await res.json();
-          const lastUpdated = data && data.pgaTableShared
-            ? data.pgaTableShared.lastUpdated
-            : "";
-
-          if (!isUsableValue(lastUpdated)) return;
-
-          target.textContent = "Last Updated: " + String(lastUpdated).trim();
-          wrap.hidden = false;
-        } catch (error) {
-          console.error("TRANSFER SNAPSHOT last updated render error:", error);
-        }
-      }
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", renderTransferSnapshotLastUpdated);
-      } else {
-        renderTransferSnapshotLastUpdated();
-      }
-    })();
-  </script>
-</section>
-    
-
-
-<section
-  id="jh-resume-download-block"
-  class="jh-resume-download-section"
-  aria-labelledby="jh-resume-download-title"
-  data-portal-state="portal-listed"
->
-  <style>
-    #jh-resume-download-block,
-    #jh-resume-download-block * {
-      box-sizing: border-box;
-    }
-
-    #jh-resume-download-block {
-      width: 100%;
-      max-width: 1120px;
-      margin: 34px auto 54px;
-      padding: 0;
-      font-family:
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      color: #0c2340;
-    }
-
-    #jh-resume-download-block .jhrd-shell {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 26px;
-      border: 1px solid rgba(12, 35, 64, 0.12);
-      background:
-        radial-gradient(
-          circle at top left,
-          rgba(241, 90, 34, 0.10),
-          transparent 34%
-        ),
-        radial-gradient(
-          circle at bottom right,
-          rgba(22, 163, 74, 0.10),
-          transparent 32%
-        ),
-        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-      box-shadow: 0 18px 42px rgba(12, 35, 64, 0.10);
-    }
-
-    #jh-resume-download-block .jhrd-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 18px;
-      align-items: end;
-      padding: 28px 30px 22px;
-      border-bottom: 1px solid rgba(12, 35, 64, 0.10);
-    }
-
-    #jh-resume-download-block .jhrd-kicker {
-      margin: 0 0 8px;
-      color: #c98a2e;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-title {
-      margin: 0;
-      color: #0c2340;
-      font-size: clamp(24px, 3vw, 34px);
-      font-weight: 950;
-      letter-spacing: -0.8px;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-subtitle {
-      max-width: 760px;
-      margin: 12px 0 0;
-      color: #475569;
-      font-size: 14.5px;
-      font-weight: 500;
-      line-height: 1.75;
-    }
-
-    #jh-resume-download-block .jhrd-status-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #0c2340;
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      box-shadow: 0 10px 20px rgba(12, 35, 64, 0.16);
-    }
-
-    #jh-resume-download-block .jhrd-status-pill::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      margin-right: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.16);
-      flex: 0 0 auto;
-    }
-
-    #jh-resume-download-block .jhrd-portal-banner {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 16px;
-      align-items: center;
-      margin: 0 30px;
-      padding: 15px 17px;
-      border-radius: 18px;
-      border: 1px solid rgba(22, 163, 74, 0.22);
-      background:
-        radial-gradient(
-          circle at top left,
-          rgba(22, 163, 74, 0.13),
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          rgba(22, 163, 74, 0.09) 0%,
-          rgba(241, 90, 34, 0.055) 100%
-        );
-    }
-
-    #jh-resume-download-block .jhrd-portal-label {
-      margin: 0 0 5px;
-      color: #166534;
-      font-size: 10px;
-      font-weight: 950;
-      letter-spacing: 1.4px;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-portal-text {
-      margin: 0;
-      color: #0c2340;
-      font-size: 13.4px;
-      font-weight: 700;
-      line-height: 1.55;
-    }
-
-    #jh-resume-download-block .jhrd-portal-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 32px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #ecfdf5;
-      border: 1px solid rgba(22, 163, 74, 0.22);
-      color: #166534;
-      font-size: 9.5px;
-      font-weight: 950;
-      letter-spacing: 1px;
-      line-height: 1;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    #jh-resume-download-block .jhrd-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      padding: 22px 30px 30px;
-    }
-
-    #jh-resume-download-block .jhrd-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      min-height: 248px;
-      overflow: hidden;
-      border-radius: 22px;
-      border: 1px solid rgba(12, 35, 64, 0.12);
-      background: #ffffff;
-      box-shadow: 0 12px 26px rgba(12, 35, 64, 0.07);
-    }
-
-    #jh-resume-download-block .jhrd-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 6px;
-      background: #f15a22;
-    }
-
-    #jh-resume-download-block .jhrd-card.is-full::before {
-      background: #c98a2e;
-    }
-
-    #jh-resume-download-block .jhrd-card-body {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 24px 24px 22px 28px;
-    }
-
-    #jh-resume-download-block .jhrd-card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-    }
-
-    #jh-resume-download-block .jhrd-label {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      max-width: 100%;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(241, 90, 34, 0.10);
-      color: #b84218;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-card.is-full .jhrd-label {
-      background: rgba(201, 138, 46, 0.12);
-      color: #7c5a1b;
-    }
-
-    #jh-resume-download-block .jhrd-format {
-      flex: 0 0 auto;
-      padding: 6px 9px;
-      border-radius: 8px;
-      background: #f1f5f9;
-      color: #64748b;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.9px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    #jh-resume-download-block .jhrd-card-title {
-      margin: 0;
-      color: #0c2340;
-      font-size: 22px;
-      font-weight: 950;
-      letter-spacing: -0.4px;
-      line-height: 1.15;
-    }
-
-    #jh-resume-download-block .jhrd-card-text {
-      margin: 12px 0 0;
-      color: #475569;
-      font-size: 13.5px;
-      font-weight: 500;
-      line-height: 1.7;
-    }
-
-    #jh-resume-download-block .jhrd-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      margin: 18px 0 20px;
-    }
-
-    #jh-resume-download-block .jhrd-point {
-      min-width: 0;
-      padding: 10px 9px;
-      border-radius: 12px;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
-    }
-
-    #jh-resume-download-block .jhrd-point span {
-      display: block;
-      color: #64748b;
-      font-size: 8.5px;
-      font-weight: 900;
-      letter-spacing: 0.8px;
-      line-height: 1.2;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-point strong {
-      display: block;
-      margin-top: 4px;
-      color: #0c2340;
-      font-size: 16px;
-      font-weight: 950;
-      line-height: 1.1;
-      white-space: normal;
-    }
-
-    #jh-resume-download-block .jhrd-action-row {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    #jh-resume-download-block .jhrd-download-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 44px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: #0c2340;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.7px;
-      line-height: 1;
-      text-transform: uppercase;
-      transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        background 0.18s ease;
-      box-shadow: 0 10px 20px rgba(12, 35, 64, 0.18);
-    }
-
-    #jh-resume-download-block .jhrd-download-btn:hover,
-    #jh-resume-download-block .jhrd-download-btn:focus-visible {
-      background: #12335d;
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(12, 35, 64, 0.22);
-      outline: none;
-    }
-
-    #jh-resume-download-block .jhrd-download-btn svg {
-      width: 16px;
-      height: 16px;
-      flex: 0 0 auto;
-    }
-
-    #jh-resume-download-block .jhrd-file-note {
-      color: #94a3b8;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.7px;
-      line-height: 1.35;
-      text-transform: uppercase;
-    }
-
-    #jh-resume-download-block .jhrd-footer {
-      padding: 16px 30px 22px;
-      border-top: 1px solid rgba(12, 35, 64, 0.08);
-      background: rgba(12, 35, 64, 0.025);
-    }
-
-    #jh-resume-download-block .jhrd-footer p {
-      margin: 0;
-      color: #64748b;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 1.7;
-    }
-
-    #jh-resume-download-block .jhrd-footer .jhrd-contact-note {
-      margin-top: 10px;
-    }
-
-    #jh-resume-download-block .jhrd-footer strong {
-      color: #0c2340;
-      font-weight: 900;
-    }
-
-    @media (max-width: 820px) {
-      #jh-resume-download-block {
-        margin: 28px auto 44px;
-        padding: 0;
-      }
-
-      #jh-resume-download-block .jhrd-header {
-        grid-template-columns: 1fr;
-        align-items: start;
-        padding: 24px 20px 20px;
-      }
-
-      #jh-resume-download-block .jhrd-status-pill {
-        width: fit-content;
-        white-space: normal;
-        text-align: center;
-      }
-
-      #jh-resume-download-block .jhrd-portal-banner {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin: 0 20px;
-        padding: 14px 15px;
-      }
-
-      #jh-resume-download-block .jhrd-portal-badge {
-        width: fit-content;
-      }
-
-      #jh-resume-download-block .jhrd-grid {
-        grid-template-columns: 1fr;
-        padding: 18px 20px 24px;
-      }
-
-      #jh-resume-download-block .jhrd-card {
-        min-height: 0;
-      }
-
-      #jh-resume-download-block .jhrd-card-body {
-        padding: 22px 18px 20px 24px;
-      }
-
-      #jh-resume-download-block .jhrd-points {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      #jh-resume-download-block .jhrd-footer {
-        padding: 15px 20px 20px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      #jh-resume-download-block .jhrd-card-top {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      #jh-resume-download-block .jhrd-card-title {
-        font-size: 20px;
-      }
-
-      #jh-resume-download-block .jhrd-points {
-        grid-template-columns: 1fr;
-      }
-
-      #jh-resume-download-block .jhrd-action-row {
-        align-items: stretch;
-      }
-
-      #jh-resume-download-block .jhrd-download-btn {
-        width: 100%;
-      }
-
-      #jh-resume-download-block .jhrd-file-note {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
-
-  <div class="jhrd-shell">
-    <div class="jhrd-header">
-      <div>
-        <p class="jhrd-kicker">Resume Downloads</p>
-
-        <h2
-          id="jh-resume-download-title"
-          class="jhrd-title"
-        >
-          Coach-Ready Resume Files
-        </h2>
-
-        <p class="jhrd-subtitle">
-          Two PDF references are provided for coach-review needs:
-          a one-page transfer golf resume for fast evaluation and a
-          full athletic resume for extended background review. Joshua
-          is officially listed in the NCAA Transfer Portal following
-          institutional compliance entry confirmation.
-        </p>
-      </div>
-
-      <div class="jhrd-status-pill">
-        Officially Listed
-      </div>
-    </div>
-
-    <div class="jhrd-portal-banner" aria-label="NCAA Transfer Portal listing confirmation">
-      <div>
-        <p class="jhrd-portal-label">
-          NCAA Transfer Portal Status
-        </p>
-
-        <p class="jhrd-portal-text">
-          UTSA Compliance has confirmed Joshua’s NCAA Transfer Portal
-          entry was completed on June 4, 2026, at 8:00 a.m. These
-          resume files are available for coach review during the men’s
-          golf transfer window.
-        </p>
-      </div>
-
-      <span class="jhrd-portal-badge">
-        Coach Review Ready
-      </span>
-    </div>
-
-    <div class="jhrd-grid">
-      <article class="jhrd-card">
-        <div class="jhrd-card-body">
-          <div class="jhrd-card-top">
-            <span class="jhrd-label">
-              Transfer Resume
-            </span>
-
-            <span class="jhrd-format">
-              1 Page PDF
-            </span>
-          </div>
-
-          <h3 class="jhrd-card-title">
-            One-Page Transfer Golf Resume
-          </h3>
-
-          <p class="jhrd-card-text">
-            A condensed one-page profile built for fast coach review,
-            highlighting freshman-year production, scoring record,
-            lineup reliability, and complete NCAA freshman-season
-            results.
-          </p>
-
-          <div class="jhrd-points">
-            <div class="jhrd-point">
-              <span>Focus</span>
-              <strong>Fast Review</strong>
-            </div>
-
-            <div class="jhrd-point">
-              <span>Scope</span>
-              <strong>2025–26 Freshman</strong>
-            </div>
-
-            <div class="jhrd-point">
-              <span>Use</span>
-              <strong>Initial Evaluation</strong>
-            </div>
-          </div>
-
-          <div class="jhrd-action-row">
-            <a
-              class="jhrd-download-btn"
-              href="https://joshuahonggolf.com/images/Joshua_Hong_2026_Transfer_Golf_Resume.pdf"
-              target="_blank"
-              rel="noopener"
-              data-resume-type="transfer"
-            >
-              <span>View | Download PDF</span>
-
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
+      <div class="usc-commit-side">
+        <div class="usc-commit-side-panel">
+          <div class="usc-commit-logo-card" aria-label="USC Men’s Golf commitment">
+            <div class="usc-commit-logo-frame">
+              <img
+                src="images/USC-mensgolf-logo.jpg"
+                alt="USC"
+                loading="lazy"
+                onerror="this.parentElement.classList.add('is-missing');"
               >
-                <path
-                  d="M21 15v4a2 2 0 0 1-2 2H5
-                     a2 2 0 0 1-2-2v-4"
-                >
-                </path>
-                <polyline points="7 10 12 15 17 10">
-                </polyline>
-                <line x1="12" y1="15" x2="12" y2="3">
-                </line>
+              <span class="usc-commit-logo-fallback" aria-hidden="true">USC</span>
+            </div>
+
+            <div class="usc-commit-logo-copy">
+              <p class="usc-commit-logo-label">
+                Commitment Confirmed
+              </p>
+
+              <h3 class="usc-commit-logo-title">
+                Next collegiate chapter: USC Men’s Golf
+              </h3>
+
+              <p class="usc-commit-logo-text">
+                A new program chapter following a completed freshman season and verified
+                NCAA record at UTSA.
+              </p>
+            </div>
+          </div>
+
+          <div class="usc-commit-card">
+            <p class="usc-commit-card-label">
+              Archive Purpose
+            </p>
+
+            <p class="usc-commit-card-text">
+              The completed UTSA freshman season remains available as a factual record of
+              NCAA production, tournament results, scoring data, and lineup reliability.
+            </p>
+          </div>
+
+          <div class="usc-commit-actions">
+            <a
+              class="usc-commit-btn usc-commit-btn-primary"
+              href="transfer-snapshot.html"
+            >
+              View Freshman Season Archive
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
 
-            <span class="jhrd-file-note">
-              Joshua_Hong_2026_Transfer_Golf_Resume.pdf
-            </span>
-          </div>
-        </div>
-      </article>
-
-      <article class="jhrd-card is-full">
-        <div class="jhrd-card-body">
-          <div class="jhrd-card-top">
-            <span class="jhrd-label">
-              Full Resume
-            </span>
-
-            <span class="jhrd-format">
-              Full PDF
-            </span>
-          </div>
-
-          <h3 class="jhrd-card-title">
-            Full Athletic Resume
-          </h3>
-
-<p class="jhrd-card-text">
-  A broader athletic profile including freshman-season data,
-  junior background, development record, achievements, rankings,
-  academic context, and official verification links.
-</p>
-
-          <div class="jhrd-points">
-            <div class="jhrd-point">
-              <span>Focus</span>
-              <strong>Full Profile</strong>
-            </div>
-
-            <div class="jhrd-point">
-              <span>Scope</span>
-              <strong>Junior + NCAA</strong>
-            </div>
-
-            <div class="jhrd-point">
-              <span>Use</span>
-              <strong>Background Review</strong>
-            </div>
-          </div>
-
-          <div class="jhrd-action-row">
             <a
-              class="jhrd-download-btn"
-              href="https://joshuahonggolf.com/images/Joshua_Hong_Full_Athletic_Resume_2026.pdf"
-              target="_blank"
-              rel="noopener"
-              data-resume-type="full"
+              class="usc-commit-btn usc-commit-btn-secondary"
+              href="ncaa-stats.html"
             >
-              <span>View | Download PDF</span>
-
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M21 15v4a2 2 0 0 1-2 2H5
-                     a2 2 0 0 1-2-2v-4"
-                >
-                </path>
-                <polyline points="7 10 12 15 17 10">
-                </polyline>
-                <line x1="12" y1="15" x2="12" y2="3">
-                </line>
-              </svg>
+              Review NCAA Stats & Results
             </a>
 
-            <span class="jhrd-file-note">
-              Joshua_Hong_Full_Athletic_Resume_2026.pdf
-            </span>
+            <p class="usc-commit-note">
+              Commitment update and verified freshman-season archive.
+            </p>
           </div>
-        </div>
-      </article>
-    </div>
-
-    <div class="jhrd-footer">
-<p>
-  <strong>Use note:</strong>
-  Use the one-page transfer resume for a quick
-  first read. Use the full athletic resume for
-  extended background review, junior record
-  context, academic context, and official
-  verification links.
-</p>
-
-      <p class="jhrd-contact-note">
-        <strong>Contact:</strong>
-        Joshua is officially listed in the NCAA Transfer
-        Portal following institutional compliance entry
-        confirmation. Transfer-related recruiting
-        communication may proceed through the official
-        NCAA Transfer Portal listing.
-      </p>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const block = document.getElementById("jh-resume-download-block");
-      if (!block) return;
-
-      const links = block.querySelectorAll(".jhrd-download-btn");
-
-      links.forEach(function (link) {
-        link.addEventListener("click", function () {
-          const type = link.getAttribute("data-resume-type") || "resume";
-          block.setAttribute("data-last-download", type);
-        });
-      });
-    })();
-  </script>
-</section>
-
-
-<section style="margin:34px 0 24px;">
-  <style>
-    .jh-contact-wrap {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      padding-bottom: 14px;
-    }
-
-    .jh-contact-block {
-      width: 100%;
-      max-width: 980px;
-      background: linear-gradient(180deg, #0c2340 0%, #12335d 100%);
-      border: 1px solid #163a66;
-      border-radius: 26px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
-      overflow: hidden;
-      position: relative;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      z-index: 2;
-    }
-
-    .jh-contact-block::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 26px;
-      pointer-events: none;
-    }
-
-    .jh-contact-accent {
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 0;
-      height: 10px;
-      background: linear-gradient(90deg, #f15a22 0%, #ff7a45 100%);
-      border-radius: 0 0 18px 18px;
-      box-shadow: 0 10px 18px rgba(241, 90, 34, 0.28);
-      z-index: 1;
-    }
-
-    .jh-contact-head {
-      padding: 26px 28px 22px;
-      text-align: center;
-    }
-
-    .jh-contact-title {
-      margin: 0;
-      color: #ffffff;
-      font-size: 34px;
-      line-height: 1.02;
-      font-weight: 900;
-      letter-spacing: -0.8px;
-      text-transform: uppercase;
-    }
-
-    .jh-contact-subtitle {
-      margin: 10px auto 0;
-      max-width: 700px;
-      color: rgba(255,255,255,0.78);
-      font-size: 14px;
-      line-height: 1.65;
-      font-weight: 600;
-    }
-
-    .jh-contact-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .jh-contact-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 220px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: #f15a22;
-      border: 1px solid #f15a22;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: 0.25s ease;
-      cursor: pointer;
-      font-family: inherit;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .jh-contact-btn:hover {
-      background: #d94d1a;
-      border-color: #d94d1a;
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 768px) {
-      .jh-contact-wrap {
-        padding-bottom: 12px;
-      }
-
-      .jh-contact-block {
-        border-radius: 20px;
-      }
-
-      .jh-contact-block::before {
-        border-radius: 20px;
-      }
-
-      .jh-contact-accent {
-        left: 18px;
-        right: 18px;
-        height: 8px;
-        border-radius: 0 0 14px 14px;
-      }
-
-      .jh-contact-head {
-        padding: 22px 18px 20px;
-      }
-
-      .jh-contact-title {
-        font-size: 26px;
-        line-height: 1.05;
-      }
-
-      .jh-contact-subtitle {
-        max-width: 100%;
-        font-size: 13px;
-        line-height: 1.55;
-      }
-
-      .jh-contact-btn {
-        width: 100%;
-        max-width: 320px;
-      }
-    }
-  </style>
-
-  <div class="jh-contact-wrap">
-    <div class="jh-contact-block" aria-labelledby="jh-contact-title">
-      <div class="jh-contact-head">
-        <h2 class="jh-contact-title" id="jh-contact-title">Program Contact</h2>
-        <p class="jh-contact-subtitle">For direct transfer-related communication.</p>
-
-        <div class="jh-contact-actions">
-          <button
-            type="button"
-            class="jh-contact-btn"
-            data-jh-email-ref="primary"
-            data-jh-email-subject="Joshua Hong Transfer Inquiry"
-          >
-            Email Joshua Directly
-          </button>
         </div>
       </div>
     </div>
-
-    <div class="jh-contact-accent" aria-hidden="true"></div>
   </div>
-
-  <script>
-    (function () {
-      const jhProtectedEmails = {
-        primary: {
-          user: [106, 111, 115, 104, 117, 97, 104, 97, 121, 111, 117, 110, 103],
-          host: [104, 111, 116, 109, 97, 105, 108, 46, 99, 111, 109]
-        }
-      };
-
-      function jhDecodeEmailPart(codeArray) {
-        return codeArray.map(function (code) {
-          return String.fromCharCode(code);
-        }).join("");
-      }
-
-      function jhOpenProtectedEmail(emailRef, subjectText) {
-        const entry = jhProtectedEmails[emailRef];
-
-        if (!entry) {
-          return;
-        }
-
-        const user = jhDecodeEmailPart(entry.user);
-        const host = jhDecodeEmailPart(entry.host);
-        const email = user + "@" + host;
-        const subject = encodeURIComponent(subjectText || "");
-
-        window.location.href = "mailto:" + email + "?subject=" + subject;
-      }
-
-      document.addEventListener("click", function (event) {
-        const button = event.target.closest("[data-jh-email-ref]");
-
-        if (!button) {
-          return;
-        }
-
-        event.preventDefault();
-
-        const emailRef = button.getAttribute("data-jh-email-ref");
-        const subject = button.getAttribute("data-jh-email-subject");
-
-        jhOpenProtectedEmail(emailRef, subject);
-      });
-    })();
-  </script>
 </section>
-	
-    
+     
        
 <div id="jh-index-key-metrics-panel" style="max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <div class="jhkm-shell">
