@@ -522,6 +522,60 @@
 </div>
 
 
+
+
+<div id="Tournament-Schedule-Scoring" style="padding-top: 5px;">
+</div>
+
+<div style="border-bottom: 2px solid #0c2340; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
+  <h1 style="margin: 0; color: #0c2340; font-size: 22px; letter-spacing: 1px; font-weight: 900; text-transform: uppercase; line-height: 1.2; min-width: 200px;">
+    2025-26 FRESHMAN SEASON LOG &amp; METRICS
+  </h1>
+  <script>
+  (function () {
+    const target = document.getElementById("jh-ncaa-last-updated");
+    if (!target) return;
+
+    function isUsableValue(value) {
+      if (value === null || value === undefined) return false;
+      const cleaned = String(value).trim();
+      return cleaned !== "" &&
+        cleaned !== "-" &&
+        cleaned !== "—" &&
+        cleaned.toUpperCase() !== "TBD";
+    }
+
+    async function renderFreshmanSeasonLastUpdated() {
+      try {
+        const res = await fetch("./freshman-season.json?v=" + Date.now());
+        if (!res.ok) throw new Error("Failed to load freshman-season.json");
+
+        const data = await res.json();
+        const lastUpdated = data && data.archiveMeta
+          ? data.archiveMeta.lastUpdated
+          : "";
+
+        target.textContent = isUsableValue(lastUpdated)
+          ? "Last Updated: " + lastUpdated
+          : "Last Updated: —";
+      } catch (error) {
+        console.error("Freshman season Last Updated error:", error);
+        target.textContent = "Last Updated: —";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", renderFreshmanSeasonLastUpdated);
+  })();
+</script>
+  <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
+    Last Updated: —
+  </span>
+</div>
+
+
+
+  
+
 <section class="jh-fsa-section" aria-labelledby="jhFsaTitle">
   <style>
     .jh-fsa-section {
@@ -1427,18 +1481,6 @@
   
 
 
-<div id="Tournament-Schedule-Scoring" style="padding-top: 5px;">
-</div>
-
-<div style="border-bottom: 2px solid #0c2340; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
-  <h1 style="margin: 0; color: #0c2340; font-size: 22px; letter-spacing: 1px; font-weight: 900; text-transform: uppercase; line-height: 1.2; min-width: 200px;">
-    2025-26 FRESHMAN SEASON LOG &amp; METRICS
-  </h1>
-  
-  <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
-    Last Updated: —
-  </span>
-</div>
 
 
 
@@ -2773,7 +2815,7 @@
 <script>
 async function updateMetrics() {
   try {
-    const response = await fetch('data.json?v=' + new Date().getTime());
+    const response = await fetch('./freshman-season.json?v=' + Date.now())
     const data = await response.json();
 
     // 01. Individual Metrics
