@@ -685,8 +685,9 @@
 
   #jh-pga-table-shared {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto 24px;
+    max-width: none;
+    margin: 0 0 24px;
+    padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
@@ -702,8 +703,9 @@
 
   #jh-pga-table-shared .jtc-wrap {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 
   #jh-pga-table-shared .jtc-header-top {
@@ -1703,13 +1705,19 @@
       box-sizing: border-box;
     }
 
+    <style>
+    #jh-offseason-schedule,
+    #jh-offseason-schedule * {
+      box-sizing: border-box;
+    }
+
     #jh-offseason-schedule {
       --jhos-body-y: 20px;
       --jhos-body-x: 25px;
 
       width: 100%;
-      max-width: 900px;
-      margin: 0 auto 40px;
+      max-width: none;
+      margin: 0 0 40px;
       padding: 0;
       font-family:
         "Segoe UI",
@@ -1944,12 +1952,12 @@
     }
 
     @media (max-width: 700px) {
-      #jh-offseason-schedule {
-        --jhos-body-y: 12px;
-        --jhos-body-x: 4px;
+  #jh-offseason-schedule {
+    --jhos-body-y: 12px;
+    --jhos-body-x: 4px;
 
-        margin: 0 auto 34px;
-      }
+    margin: 0 0 34px;
+  }
 
       #jh-offseason-schedule .jhos-title-row {
         align-items: flex-start;
@@ -3084,7 +3092,7 @@
   width: 100%;
   max-width: 900px;
   margin: 30px auto 50px;
-  padding: 0 15px;
+  padding: 0;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -3563,7 +3571,7 @@
 
     @media (max-width: 768px) {
   #jh-sophomore-season-page {
-    padding: 0 15px;
+    padding: 0 14px;
     margin: 24px auto 42px;
   }
 
@@ -3628,6 +3636,13 @@
         justify-content: space-between;
       }
     }
+
+    @media (max-width: 480px) {
+  #jh-sophomore-season-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
   </style>
 
  
@@ -3995,7 +4010,7 @@
       }
     })();
   </script>  
-  
+  </div>
 
   
 
@@ -4016,22 +4031,22 @@
     }
 
     #jh-sophomore-finish-trend {
-      --jhft-cardinal: #990000;
-      --jhft-cardinal-dark: #650000;
-      --jhft-gold: #ffcc00;
-      --jhft-gold-muted: #d6a642;
-      --jhft-navy: #0c2340;
-      --jhft-text: #172033;
-      --jhft-muted: #64748b;
-      --jhft-line: #e2e8f0;
-      --jhft-soft: #f8fafc;
+  --jhft-cardinal: #990000;
+  --jhft-cardinal-dark: #650000;
+  --jhft-gold: #ffcc00;
+  --jhft-gold-muted: #d6a642;
+  --jhft-navy: #0c2340;
+  --jhft-text: #172033;
+  --jhft-muted: #64748b;
+  --jhft-line: #e2e8f0;
+  --jhft-soft: #f8fafc;
 
-      width: 100%;
-      max-width: 900px;
-      margin: 30px auto 40px;
-      padding: 0 15px;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 40px;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
     #jh-sophomore-finish-trend .jhft-shell {
       width: 100%;
@@ -4267,10 +4282,10 @@
     }
 
     @media (max-width: 768px) {
-      #jh-sophomore-finish-trend {
-        margin: 24px auto 34px;
-        padding: 0 15px;
-      }
+  #jh-sophomore-finish-trend {
+    margin: 24px auto 34px;
+    padding: 0 14px;
+  }
 
       #jh-sophomore-finish-trend .jhft-head {
         padding: 18px 16px 15px;
@@ -4310,6 +4325,13 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    @media (max-width: 480px) {
+  #jh-sophomore-finish-trend {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
   </style>
 
   <div class="jhft-shell">
@@ -4967,23 +4989,23 @@
       box-sizing: border-box;
     }
 
-    #jh-sophomore-key-metrics {
-      --jhskm-cardinal: #990000;
-      --jhskm-cardinal-dark: #650000;
-      --jhskm-gold: #ffcc00;
-      --jhskm-gold-muted: #d6a642;
-      --jhskm-navy: #0c2340;
-      --jhskm-text: #172033;
-      --jhskm-muted: #64748b;
-      --jhskm-line: #e2e8f0;
-      --jhskm-soft: #f8fafc;
+   #jh-sophomore-key-metrics {
+  --jhskm-cardinal: #990000;
+  --jhskm-cardinal-dark: #650000;
+  --jhskm-gold: #ffcc00;
+  --jhskm-gold-muted: #d6a642;
+  --jhskm-navy: #0c2340;
+  --jhskm-text: #172033;
+  --jhskm-muted: #64748b;
+  --jhskm-line: #e2e8f0;
+  --jhskm-soft: #f8fafc;
 
-      width: 100%;
-      max-width: 900px;
-      margin: 30px auto 40px;
-      padding: 0 15px;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
+  width: 100%;
+  max-width: none;
+  margin: 30px 0 40px;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
     #jh-sophomore-key-metrics .jhskm-shell {
       width: 100%;
@@ -5257,6 +5279,28 @@
         font-size: 26px;
       }
     }
+
+    @media (max-width: 960px) {
+  #jh-sophomore-key-metrics {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  #jh-sophomore-key-metrics {
+    margin: 24px 0 34px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #jh-sophomore-key-metrics {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
   </style>
 
   <div class="jhskm-shell">
@@ -5525,52 +5569,169 @@
   
 
 
-<div style="margin: 20px 0 30px 0; border-radius: 14px; background: #ffffff; border: 1px solid #dbe4ee; padding: 20px; box-shadow: 0 6px 18px rgba(12,35,64,0.06); width: 100%; box-sizing: border-box;">
-  <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-    <div style="flex-shrink: 0; width: 20px; display: flex; justify-content: center; padding-top: 1px;">
+<div id="jh-ncaa-data-point-note" class="jh-ncaa-data-point-note">
+  <style>
+    #jh-ncaa-data-point-note,
+    #jh-ncaa-data-point-note * {
+      box-sizing: border-box;
+    }
+
+    #jh-ncaa-data-point-note {
+      width: 100%;
+      margin: 20px 0 30px 0;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 1px solid #dbe4ee;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(12,35,64,0.06);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-row-last {
+      margin-bottom: 0;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-icon {
+      flex-shrink: 0;
+      width: 20px;
+      display: flex;
+      justify-content: center;
+      padding-top: 1px;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-title {
+      margin: 0 0 8px 0;
+      color: #0c2340;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      line-height: 1.2;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-text {
+      margin: 0;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-text-muted {
+      color: #475569;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-text-green {
+      color: #166534;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-highlight {
+      color: #16a34a;
+      font-weight: 700;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-strong {
+      color: #0c2340;
+      font-weight: 800;
+    }
+
+    #jh-ncaa-data-point-note .jhndpn-divider {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #edf2f7;
+    }
+
+    @media (max-width: 768px) {
+      #jh-ncaa-data-point-note {
+        margin: 18px 0 28px 0;
+        padding: 18px 16px;
+        border-radius: 13px;
+      }
+
+      #jh-ncaa-data-point-note .jhndpn-row {
+        gap: 10px;
+      }
+
+      #jh-ncaa-data-point-note .jhndpn-title {
+        font-size: 12.5px;
+      }
+
+      #jh-ncaa-data-point-note .jhndpn-text {
+        font-size: 12.5px;
+        line-height: 1.65;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #jh-ncaa-data-point-note {
+        padding: 16px 14px;
+      }
+
+      #jh-ncaa-data-point-note .jhndpn-icon {
+        width: 18px;
+      }
+    }
+  </style>
+
+  <div class="jhndpn-row">
+    <div class="jhndpn-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"></circle>
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
     </div>
 
-<div style="flex: 1; min-width: 0;">
-      <h5 style="margin: 0 0 8px 0; color: #0c2340; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.2;">
+    <div class="jhndpn-content">
+      <h5 class="jhndpn-title">
         Data Point Note
       </h5>
 
-      <p style="margin: 0; font-size: 13px; color: #334155; line-height: 1.7; word-break: keep-all;">
-       Archived metrics and rankings are updated after round or event completion as reported by Clippd and WAGR. Current rankings may vary due to <span style="color: #16a34a; font-weight: 700;">ongoing system recalibration and field adjustments</span>.
+      <p class="jhndpn-text">
+        Archived metrics and rankings are updated after round or event completion as reported by Clippd and WAGR. Current rankings may vary due to <span class="jhndpn-highlight">ongoing system recalibration and field adjustments</span>.
       </p>
     </div>
   </div>
 
-  <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid #edf2f7;">
-    <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
-      <div style="flex-shrink: 0; width: 20px; display: flex; justify-content: center; padding-top: 1px;">
+  <div class="jhndpn-divider">
+    <div class="jhndpn-row">
+      <div class="jhndpn-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4z"></path>
           <path d="M9.5 12l1.7 1.7 3.3-3.3"></path>
         </svg>
       </div>
 
-      <div style="flex: 1; min-width: 0;">
-        <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.7; word-break: keep-all;">
-          All performance metrics and rankings are based on official data from <b style="color:#0c2340;">Scoreboard.Clippd</b> and <b style="color:#0c2340;">WAGR</b>.
+      <div class="jhndpn-content">
+        <p class="jhndpn-text jhndpn-text-muted">
+          All performance metrics and rankings are based on official data from <b class="jhndpn-strong">Scoreboard.Clippd</b> and <b class="jhndpn-strong">WAGR</b>.
         </p>
       </div>
     </div>
 
-    <div style="display: flex; align-items: flex-start; gap: 12px;">
-      <div style="flex-shrink: 0; width: 20px; display: flex; justify-content: center; padding-top: 1px;">
+    <div class="jhndpn-row jhndpn-row-last">
+      <div class="jhndpn-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M3 12h18"></path>
           <path d="M15 6l6 6-6 6"></path>
         </svg>
       </div>
 
-      <div style="flex: 1; min-width: 0;">
-        <p style="margin: 0; color: #166534; font-size: 13px; font-weight: 800; line-height: 1.6; word-break: keep-all;">
+      <div class="jhndpn-content">
+        <p class="jhndpn-text jhndpn-text-green">
           Live scoring is available through official channels during tournament play.
         </p>
       </div>
@@ -5580,7 +5741,7 @@
 
 
 
-<div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div id="jh-current-focus-block" style="width:100%; max-width:none; margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <a id="current-focus"></a>
 
   <!-- Unified Shell -->
@@ -5669,8 +5830,8 @@
 
 #jh-current-focus-block {
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -5982,6 +6143,11 @@
 
 /* responsive */
 @media (max-width: 768px) {
+    #jh-current-focus-block {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  
   #jh-current-focus-block .jhcf-shell {
     margin: 18px 0 36px 0 !important;
     border-radius: 16px !important;
@@ -6059,6 +6225,13 @@
     gap: 10px !important;
   }
 }
+
+  @media (max-width: 480px) {
+  #jh-current-focus-block {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
 </style>
 
   
@@ -6076,7 +6249,7 @@
 
 
 
-<div id="joshua-unique-section" style="max-width: 900px; margin: 0 auto 70px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
+<div id="joshua-unique-section" style="width: 100%; max-width: none; margin: 0 0 70px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
   
     
       <div class="intro-section" style="width: 100%; margin-bottom: 18px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background: #0c2340; 
@@ -6102,9 +6275,24 @@
       </div>
     
 
-    <style>
-      #joshua-unique-section * { box-sizing: border-box; }
-      summary::-webkit-details-marker { display: none; }
+   <style>
+  #joshua-unique-section,
+  #joshua-unique-section * {
+    box-sizing: border-box;
+  }
+
+  #joshua-unique-section {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 70px;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    clear: both;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
       details[open] .arrow-icon {
         transform: rotate(180deg);
@@ -6334,9 +6522,16 @@
       }
 
       @media (max-width: 768px) {
+#joshua-unique-section {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  margin-bottom: 58px !important;
+}
+     
         #joshua-unique-section {
-          padding: 0;
-        }
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
 
         #joshua-unique-section .intro-section {
           padding: 16px 18px !important;
@@ -6450,6 +6645,13 @@
           line-height: 1.25 !important;
         }
       }
+
+     @media (max-width: 480px) {
+  #joshua-unique-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
     </style>
 
  <div class="jpp-shell">
@@ -6778,9 +6980,9 @@
   
 
 
-<div class="witb-section" style="width: 100%; max-width: 900px; margin: 40px auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="witb-section" style="width: 100%; max-width: none; margin: 40px 0 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
-  <div style="margin-bottom: 40px; padding: 0; box-sizing: border-box;">
+  <div style="width: 100%; margin-bottom: 40px; padding: 0; box-sizing: border-box;">
     <h3 style="font-size: 16px; color: #0c2340; margin-bottom: 25px; border-left: 5px solid #806600; padding-left: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; box-sizing: border-box;">
       <div style="display: flex; align-items: center; justify-content: center; background: #fdfaf3; width: 30px; height: 30px; border-radius: 6px; border: 1px solid #f1e6d0;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -6860,7 +7062,7 @@
 
   
 
-<div class="gallery-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; position: relative;">
+<div class="gallery-section" style="width: 100%; max-width: none; margin: 0 0 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; position: relative;">
   <div style="display: flex; align-items: center; margin-bottom: 25px; border-left: 5px solid #806600; padding-left: 20px; box-sizing: border-box;">
     <div style="display: flex; align-items: center; justify-content: center; background: #fdfaf3; width: 34px; height: 34px; border-radius: 8px; border: 1px solid #f1e6d0; margin-right: 12px;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -6876,16 +7078,40 @@
     #thumbWrapper { position: relative; width: 100%; box-sizing: border-box; margin-bottom: 20px; }
     .scroll-viewport { overflow: hidden; width: 100%; border-radius: 16px; }
     #thumbScroll { display: flex; transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1); will-change: transform; width: 100%; }
-    .thumb-page { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 15px; flex: 0 0 100%; width: 100%; box-sizing: border-box; padding: 0 15px; }
+    .thumb-page { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 15px; flex: 0 0 100%; width: 100%; box-sizing: border-box; padding: 0; }
     .thumb-img { width: 100%; aspect-ratio: 1 / 1.1; object-fit: cover; object-position: center 15%; border-radius: 16px; cursor: pointer; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; display: block; }
     .thumb-img:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
     .pos-center { object-position: center center !important; }
     .scroll-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: #ffffff; border: 1px solid #0c2340; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; color: #0c2340; }
     .scroll-nav:hover { background: #0c2340; color: #fff; }
-    .scroll-nav.prev { left: -22px; }
-    .scroll-nav.next { right: -22px; }
-    @media (max-width: 1200px) { .scroll-nav.prev { left: 5px; } .scroll-nav.next { right: 5px; } }
-    @media (max-width: 768px) { .thumb-page { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, 1fr); gap: 8px; padding: 0 10px; } .thumb-img { aspect-ratio: 1 / 1.2; } .scroll-nav { width: 32px !important; height: 32px !important; } }
+    .scroll-nav.prev { left: 10px; }
+.scroll-nav.next { right: 10px; }
+
+@media (max-width: 768px) {
+  .thumb-page {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0;
+  }
+
+  .thumb-img {
+    aspect-ratio: 1 / 1.2;
+  }
+
+  .scroll-nav {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .scroll-nav.prev {
+    left: 6px;
+  }
+
+  .scroll-nav.next {
+    right: 6px;
+  }
+}
   </style>
 
   <div id="thumbWrapper">
@@ -7205,7 +7431,7 @@ document.head.appendChild(style);
 
   
 
-  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
+  <div style="width: 100%; box-sizing: border-box; text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
   <p style="color: #cbd5e1; font-size: 10px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 8px;">
     멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
   </p>
