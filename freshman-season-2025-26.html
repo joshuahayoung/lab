@@ -624,7 +624,7 @@
         cleaned.toUpperCase() !== "TBD";
     }
 
-    async function renderFreshmanSeasonLastUpdated() {
+    async function renderFreshmanSeasonArchiveDate() {
       const target = document.getElementById("jh-ncaa-last-updated");
       if (!target) return;
 
@@ -637,25 +637,25 @@
 
         const data = await res.json();
 
-        const lastUpdated = data &&
+        const archivedDate = data &&
           data.archiveMeta &&
-          data.archiveMeta.lastUpdated
-            ? data.archiveMeta.lastUpdated
+          data.archiveMeta.archivedDate
+            ? data.archiveMeta.archivedDate
             : "";
 
-        target.textContent = isUsableValue(lastUpdated)
-          ? "Last Updated: " + String(lastUpdated).trim()
-          : "Last Updated: —";
+        target.textContent = isUsableValue(archivedDate)
+          ? "Archive Finalized: " + String(archivedDate).trim()
+          : "Archive Finalized: —";
       } catch (error) {
-        console.error("Freshman season Last Updated error:", error);
-        target.textContent = "Last Updated: —";
+        console.error("Freshman season archive date error:", error);
+        target.textContent = "Archive Finalized: —";
       }
     }
 
     if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", renderFreshmanSeasonLastUpdated);
+      document.addEventListener("DOMContentLoaded", renderFreshmanSeasonArchiveDate);
     } else {
-      renderFreshmanSeasonLastUpdated();
+      renderFreshmanSeasonArchiveDate();
     }
   })();
 </script>
