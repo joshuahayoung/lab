@@ -295,6 +295,13 @@
             <span class="footer-team">2025–26 UTSA GOLF</span>
         </div>
       </nav>
+
+      <link
+  rel="preload"
+  as="image"
+  href="images/sophomore-2026-27/ncaa-usc-banner-01.jpg"
+  fetchpriority="high"
+/>
     </header>
   </div>
 
@@ -340,21 +347,22 @@
   <style>
     #jh-ncaa-sophomore-hero {
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto 34px auto;
-      padding: 0 18px;
+      max-width: 900px;
+      margin: 0 auto 32px auto;
+      padding: 96px 0 0 0;
       box-sizing: border-box;
+      scroll-margin-top: 110px;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
       width: 100%;
       margin: 0;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       background: #080808;
       box-shadow:
-        0 18px 42px rgba(0, 0, 0, 0.24),
-        0 1px 0 rgba(255, 255, 255, 0.06) inset;
+        0 16px 34px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(201, 138, 46, 0.22);
     }
 
@@ -364,6 +372,7 @@
       height: auto;
       aspect-ratio: 1916 / 821;
       object-fit: cover;
+      object-position: center center;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-sr-only {
@@ -378,10 +387,11 @@
       border: 0;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
       #jh-ncaa-sophomore-hero {
-        padding: 0 14px;
-        margin-bottom: 28px;
+        max-width: 900px;
+        padding: 92px 16px 0 16px;
+        margin-bottom: 30px;
       }
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
@@ -389,14 +399,25 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       #jh-ncaa-sophomore-hero {
-        padding: 0 12px;
-        margin-bottom: 24px;
+        padding: 88px 14px 0 14px;
+        margin-bottom: 28px;
       }
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
         border-radius: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #jh-ncaa-sophomore-hero {
+        padding: 82px 12px 0 12px;
+        margin-bottom: 24px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+        border-radius: 14px;
       }
     }
   </style>
@@ -421,6 +442,9 @@
     <p>Joshua Hong — USC Men’s Golf. Schedule, results, and seasonal metrics.</p>
   </div>
 </section>
+
+
+  
     
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
