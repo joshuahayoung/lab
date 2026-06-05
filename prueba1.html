@@ -3779,43 +3779,6 @@
 
 
 <section
-
-    
-<div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 30px 0; padding: 0; background: transparent; box-sizing: border-box;">
-    <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
-        <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
-            <h2 style="margin: 0; color: #0c2340; font-size: 26px; letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Seasonal Finish Trend</h2>
-            <p style="font-size: 0.85em; color: #666; margin-bottom: 45px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; margin-top: 8px;">
-                Completed 2025–26 Freshman Record
-            </p>
-                
-            <div style="width: 100%; padding: 0 20px; box-sizing: border-box; text-align: left;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #0c2340; padding-bottom: 8px;">
-                    <h3 style="font-family: 'Oswald', sans-serif; font-size: 1.1em; color: #0c2340; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Event Results</h3>
-                    <span style="background: #0c2340; color: #fff; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 0.8em; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px;">FRESHMAN SEASON</span>
-                </div>
-                    
-                <div style="position: relative; height: 460px; background: #fafafa; border-radius: 8px; padding: 45px 10px 50px 10px; box-sizing: border-box; width: 100%;">
-                    <div style="position: absolute; top: 15px; right: 20px; z-index: 10; background: rgba(12, 35, 64, 0.05); border: 1px solid #0c2340; padding: 6px 14px; border-radius: 20px; display: flex; align-items: center; gap: 8px;">
-                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8em; font-weight: 700; color: #0c2340;">Clippd Adj.:</span>
-                        <span style="font-family: 'Oswald', sans-serif; font-size: 1.2em; font-weight: 700; color: #0c2340;">71.30</span>
-                    </div>
-                    <canvas id="archiveOfficialChart"></canvas>
-                    <div style="position: absolute; bottom: 12px; left: 15px; right: 15px; display: flex; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 0.72em; color: #888; border-top: 1px dashed #ccc; 
-                        padding-top: 10px; font-weight: 600; text-transform: uppercase; text-align: center;">
-                        <span>SOURCE: SCOREBOARD.CLIPPD, WAGR & GOLFSTAT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
-
-  
   id="jh-sophomore-finish-trend"
   class="jh-sophomore-finish-trend"
   aria-label="2026-27 USC sophomore season finish trend"
@@ -4125,9 +4088,7 @@
 
   <div class="jhft-shell">
     <header class="jhft-head">
-      <p class="jhft-kicker">
-        Results Trend
-      </p>
+      <p class="jhft-kicker">Results Trend</p>
 
       <h2 class="jhft-title" id="jhft-title">
         Seasonal Finish Trend
@@ -4156,10 +4117,7 @@
           </span>
         </div>
 
-        <div
-          id="jhft-empty"
-          class="jhft-empty is-visible"
-        >
+        <div id="jhft-empty" class="jhft-empty is-visible">
           <div class="jhft-empty-inner">
             <span class="jhft-empty-label">
               Pre-Season
@@ -4175,10 +4133,7 @@
           </div>
         </div>
 
-        <div
-          id="jhft-canvas-wrap"
-          class="jhft-canvas-wrap"
-        >
+        <div id="jhft-canvas-wrap" class="jhft-canvas-wrap">
           <canvas id="jhSophomoreFinishTrendChart"></canvas>
         </div>
 
@@ -4213,19 +4168,22 @@
 
   <script>
     (function () {
+      const SECTION_ID = "jh-sophomore-finish-trend";
       const DATA_URL = "./sophomore-season-2026-27.json?v=" + Date.now();
-      const section = document.getElementById("jh-sophomore-finish-trend");
+      const section = document.getElementById(SECTION_ID);
 
-      if (!section) return;
+      if (!section || section.dataset.jhftInitialized === "true") return;
 
-      const empty = section.querySelector("#jhft-empty");
-      const canvasWrap = section.querySelector("#jhft-canvas-wrap");
-      const emptyText = section.querySelector("#jhft-empty-text");
-      const statusPill = section.querySelector("#jhft-status-pill");
-      const chartMeta = section.querySelector("#jhft-chart-meta");
+      section.dataset.jhftInitialized = "true";
+
+      let chartInstance = null;
+
+      function qs(selector) {
+        return section.querySelector(selector);
+      }
 
       function setText(id, value, fallback) {
-        const el = section.querySelector("#" + id);
+        const el = qs("#" + id);
         if (!el) return;
 
         const clean = value === null || value === undefined
@@ -4235,13 +4193,15 @@
         el.textContent = clean !== "" ? clean : (fallback || "—");
       }
 
-      function escapeText(value) {
+      function cleanText(value) {
         return String(value ?? "").trim();
       }
 
       function isUsableValue(value) {
         if (value === null || value === undefined) return false;
+
         const cleaned = String(value).trim();
+
         return cleaned !== "" &&
           cleaned !== "-" &&
           cleaned !== "—" &&
@@ -4252,11 +4212,13 @@
         if (!isUsableValue(value)) return null;
 
         const num = Number(String(value).replace(/,/g, "").trim());
+
         return Number.isFinite(num) ? num : null;
       }
 
       function isFinalEvent(event) {
         const status = String(event.status || "").trim().toLowerCase();
+
         return status === "final" || status === "completed";
       }
 
@@ -4282,9 +4244,9 @@
         return rounds
           .map(function (round) {
             return {
-              label: escapeText(round.round || ""),
+              label: cleanText(round.round || ""),
               score: parseScore(round.score),
-              par: escapeText(round.par || "")
+              par: cleanText(round.par || "")
             };
           })
           .filter(function (round) {
@@ -4323,8 +4285,10 @@
           ["NCAA Championship", "NCAA Champ."]
         ];
 
-        for (const pair of replacements) {
-          if (clean === pair[0]) return pair[1];
+        for (let i = 0; i < replacements.length; i += 1) {
+          if (clean === replacements[i][0]) {
+            return replacements[i][1];
+          }
         }
 
         return clean.length > 14 ? clean.slice(0, 14) + "…" : clean;
@@ -4361,7 +4325,9 @@
               rankImpact: isUsableValue(metrics.rankImpact) ? metrics.rankImpact : "—",
               strokesGained: isUsableValue(metrics.strokesGained) ? metrics.strokesGained : "—",
               weightedPts: isUsableValue(metrics.weightedPts) ? metrics.weightedPts : "—",
-              wagrPower: isUsableValue(metrics.wagrPower || event.estimatedWagr) ? (metrics.wagrPower || event.estimatedWagr) : "—",
+              wagrPower: isUsableValue(metrics.wagrPower || event.estimatedWagr)
+                ? (metrics.wagrPower || event.estimatedWagr)
+                : "—",
               pointsEarned: isUsableValue(metrics.pointsEarned) ? metrics.pointsEarned : "—"
             };
           })
@@ -4371,54 +4337,74 @@
       function findBestFinish(events) {
         if (!events.length) return "—";
 
-        const wins = events.find(function (event) {
+        const win = events.find(function (event) {
           return String(event.finish).trim() === "1";
         });
 
-        if (wins) return "1";
+        if (win) return "1";
 
-        return events
+        const parsed = events
           .map(function (event) {
             const match = String(event.finish || "").match(/\d+/);
-            return match ? {
-              raw: event.finish,
-              value: Number(match[0])
-            } : null;
+
+            return match
+              ? {
+                  raw: event.finish,
+                  value: Number(match[0])
+                }
+              : null;
           })
           .filter(Boolean)
           .sort(function (a, b) {
             return a.value - b.value;
-          })[0]?.raw || "—";
+          });
+
+        return parsed.length ? parsed[0].raw : "—";
       }
 
       function showEmpty(message) {
+        const empty = qs("#jhft-empty");
+        const canvasWrap = qs("#jhft-canvas-wrap");
+        const emptyText = qs("#jhft-empty-text");
+        const statusPill = qs("#jhft-status-pill");
+        const chartMeta = qs("#jhft-chart-meta");
+
         if (empty) empty.classList.add("is-visible");
         if (canvasWrap) canvasWrap.classList.remove("is-visible");
 
         if (emptyText) {
-          emptyText.textContent = message || "Results pending. Chart will populate after official tournament results are recorded.";
+          emptyText.textContent = message ||
+            "Results pending. Chart will populate after official tournament results are recorded.";
         }
 
         if (statusPill) statusPill.textContent = "Pending";
+
         if (chartMeta) {
-          chartMeta.textContent = "Final results will populate automatically from sophomore-season-2026-27.json.";
+          chartMeta.textContent =
+            "Final results will populate automatically from sophomore-season-2026-27.json.";
         }
 
-        if (window.jhSophomoreFinishTrendChart) {
+        if (chartInstance) {
           try {
-            window.jhSophomoreFinishTrendChart.destroy();
+            chartInstance.destroy();
           } catch (error) {}
-          window.jhSophomoreFinishTrendChart = null;
+          chartInstance = null;
         }
       }
 
       function showChart() {
+        const empty = qs("#jhft-empty");
+        const canvasWrap = qs("#jhft-canvas-wrap");
+        const statusPill = qs("#jhft-status-pill");
+        const chartMeta = qs("#jhft-chart-meta");
+
         if (empty) empty.classList.remove("is-visible");
         if (canvasWrap) canvasWrap.classList.add("is-visible");
-
         if (statusPill) statusPill.textContent = "Active";
+
         if (chartMeta) {
-          chartMeta.textContent = "Chart generated from completed sophomore-season events.";
+          chartMeta.textContent =
+            "Chart generated from completed sophomore-season events.";
         }
       }
 
@@ -4430,14 +4416,16 @@
           }
 
           const existing = Array.from(document.scripts).find(function (script) {
-            return script.src === src;
+            return script.src && script.src.indexOf(src) !== -1;
           });
 
           if (existing) {
-            existing.addEventListener("load", resolve);
-            existing.addEventListener("error", reject);
+            existing.addEventListener("load", resolve, { once: true });
+            existing.addEventListener("error", reject, { once: true });
 
-            if (globalCheck && globalCheck()) resolve();
+            if (globalCheck && globalCheck()) {
+              resolve();
+            }
 
             return;
           }
@@ -4475,22 +4463,24 @@
 
       function calculateYRange(values) {
         if (!values.length) {
-          return { min: 65, max: 80 };
+          return {
+            min: 65,
+            max: 80
+          };
         }
 
         const minValue = Math.min.apply(null, values);
         const maxValue = Math.max.apply(null, values);
-        const floor = Math.floor(minValue - 2);
-        const ceil = Math.ceil(maxValue + 2);
 
         return {
-          min: Math.max(55, floor),
-          max: Math.min(90, ceil)
+          min: Math.max(55, Math.floor(minValue - 2)),
+          max: Math.min(90, Math.ceil(maxValue + 2))
         };
       }
 
       function renderChart(trendEvents) {
-        const canvas = section.querySelector("#jhSophomoreFinishTrendChart");
+        const canvas = qs("#jhSophomoreFinishTrendChart");
+
         if (!canvas || !window.Chart) return;
 
         const ctx = canvas.getContext("2d");
@@ -4504,13 +4494,14 @@
         const yRange = calculateYRange(averages);
         const isMobile = window.innerWidth <= 768;
 
-        if (window.jhSophomoreFinishTrendChart) {
+        if (chartInstance) {
           try {
-            window.jhSophomoreFinishTrendChart.destroy();
+            chartInstance.destroy();
           } catch (error) {}
+          chartInstance = null;
         }
 
-        window.jhSophomoreFinishTrendChart = new window.Chart(ctx, {
+        chartInstance = new window.Chart(ctx, {
           type: "line",
           data: {
             labels: labels,
@@ -4540,6 +4531,7 @@
                   },
                   formatter: function (value, context) {
                     const event = trendEvents[context.dataIndex];
+
                     return event ? event.finish : "";
                   }
                 }
@@ -4551,8 +4543,18 @@
             maintainAspectRatio: false,
             layout: {
               padding: isMobile
-                ? { top: 18, bottom: 10, left: 0, right: 0 }
-                : { top: 30, bottom: 18, left: 4, right: 14 }
+                ? {
+                    top: 18,
+                    bottom: 10,
+                    left: 0,
+                    right: 0
+                  }
+                : {
+                    top: 30,
+                    bottom: 18,
+                    left: 4,
+                    right: 14
+                  }
             },
             scales: {
               y: {
@@ -4601,6 +4603,7 @@
                 callbacks: {
                   title: function (context) {
                     const event = trendEvents[context[0].dataIndex];
+
                     return event ? event.tournament : "";
                   },
                   label: function (context) {
@@ -4680,7 +4683,9 @@
         } catch (error) {
           console.error("Sophomore finish trend render error:", error);
           updateSummary([]);
-          showEmpty("Seasonal finish trend could not be loaded. Please confirm the JSON file and event data.");
+          showEmpty(
+            "Seasonal finish trend could not be loaded. Please confirm the JSON file and event data."
+          );
         }
       }
 
