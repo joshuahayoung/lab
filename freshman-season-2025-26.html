@@ -2742,7 +2742,7 @@
 
     <div style="margin: -6px 0 20px 0; padding-left: 25px; padding-right: 25px; font-family: 'Montserrat', sans-serif; box-sizing: border-box;">
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 10px; color: #94a3b8; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-align: left;">
-        <span>Auto-Synced from data.json</span>
+        <span>Archived Freshman-Season Data</span>
         <span style="opacity: 0.55;">|</span>
         <span>Completed 2025–26 Freshman Record</span>
       </div>
@@ -2903,7 +2903,12 @@
 <script>
 async function updateMetrics() {
   try {
-    const response = await fetch('./freshman-season.json?v=' + Date.now())
+    const response = await fetch('./freshman-season.json?v=' + Date.now());
+
+    if (!response.ok) {
+      throw new Error('freshman-season.json not found or not reachable');
+    }
+
     const data = await response.json();
 
     // 01. Individual Metrics
@@ -2912,34 +2917,37 @@ async function updateMetrics() {
     
     const underParEl = document.getElementById('sync-underPar');
     if (underParEl) {
-        const text = data.individual.underPar;
-        if (text.includes('(')) {
-            const parts = text.split('(');
-            underParEl.innerHTML = `
-                <div style="display: block; line-height: 1.2;">${parts[0]}</div>
-                <div style="display: block; font-size: 0.85em; font-weight: normal; opacity: 0.7; margin-top: 2px;">(${parts[1]}</div>
-            `;
-            underParEl.style.textAlign = 'left';
-        } else {
-            underParEl.innerText = text;
-        }
+      const text = data.individual.underPar;
+
+      if (text.includes('(')) {
+        const parts = text.split('(');
+        underParEl.innerHTML = `
+          <div style="display: block; line-height: 1.2;">${parts[0]}</div>
+          <div style="display: block; font-size: 0.85em; font-weight: normal; opacity: 0.7; margin-top: 2px;">(${parts[1]}</div>
+        `;
+        underParEl.style.textAlign = 'left';
+      } else {
+        underParEl.innerText = text;
+      }
     }
+
     document.getElementById('sync-gpa').innerText = data.individual.gpa;
 
     // 02. Team Metrics
     document.getElementById('sync-headToHead').innerText = data.teamMetrics.headToHead;
     document.getElementById('sync-winRate').innerText = data.teamMetrics.winRate;
     document.getElementById('sync-countingScore').innerText = data.teamMetrics.countingScore;
-    document.getElementById('sync-recordedRounds').innerText = data.teamMetrics.recordedRounds || "20 / 21";
+    document.getElementById('sync-recordedRounds').innerText = data.teamMetrics.recordedRounds || "32 / 33";
     document.getElementById('sync-pointsShare').innerText = data.teamMetrics.pointsShare + '%';
     document.getElementById('sync-pointsValue').innerText = data.teamMetrics.pointsValue;
     document.getElementById('sync-teamTotal').innerText = data.teamMetrics.teamTotal;
 
-    // 03. Official Rank & Performance (New)
+    // 03. Official Rank & Performance
     document.getElementById('sync-wagrRank').innerText = data.officialRank.wagrRank;
 
     const wagrImpactEl = document.getElementById('sync-wagrImpact');
     wagrImpactEl.innerText = data.officialRank.wagrImpact;
+
     if (String(data.officialRank.wagrImpact).trim().startsWith('▲')) {
       wagrImpactEl.style.color = '#10b981';
     } else if (String(data.officialRank.wagrImpact).trim().startsWith('▼')) {
@@ -2949,11 +2957,11 @@ async function updateMetrics() {
     }
 
     document.getElementById('sync-wagrDate').innerText = data.officialRank.wagrDate;
-
     document.getElementById('sync-clippdRank').innerText = data.officialRank.clippdRank;
 
     const clippdImpactEl = document.getElementById('sync-clippdImpact');
     clippdImpactEl.innerText = data.officialRank.clippdImpact;
+
     if (String(data.officialRank.clippdImpact).trim().startsWith('▲')) {
       clippdImpactEl.style.color = '#10b981';
     } else if (String(data.officialRank.clippdImpact).trim().startsWith('▼')) {
@@ -2970,15 +2978,20 @@ async function updateMetrics() {
 
     // Common Text
     const statusElements = document.querySelectorAll('.sync-status');
-    statusElements.forEach(el => el.innerText = 'STATUS: ' + data.status);
+    statusElements.forEach(function(el) {
+      el.innerText = 'STATUS: ' + data.status;
+    });
     
     const scopeElements = document.querySelectorAll('.sync-scope');
-    scopeElements.forEach(el => el.innerText = data.scope || "21");
+    scopeElements.forEach(function(el) {
+      el.innerText = data.scope || "33";
+    });
 
   } catch (error) {
-    console.error('Data Sync Error:', error);
+    console.error('Freshman season metrics sync error:', error);
   }
 }
+
 window.addEventListener('DOMContentLoaded', updateMetrics);
 </script>
 
