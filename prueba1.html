@@ -344,23 +344,23 @@
       box-sizing: border-box;
     }
 
-    #jh-sophomore-season-page {
-      --jh-usc-cardinal: #990000;
-      --jh-usc-cardinal-dark: #650000;
-      --jh-usc-gold: #FFCC00;
-      --jh-usc-gold-muted: #d6a642;
-      --jh-usc-navy: #0c2340;
-      --jh-usc-text: #172033;
-      --jh-usc-muted: #64748b;
-      --jh-usc-line: #e2e8f0;
-      --jh-usc-soft: #f8fafc;
+   #jh-sophomore-season-page {
+  --jh-usc-cardinal: #990000;
+  --jh-usc-cardinal-dark: #650000;
+  --jh-usc-gold: #FFCC00;
+  --jh-usc-gold-muted: #d6a642;
+  --jh-usc-navy: #0c2340;
+  --jh-usc-text: #172033;
+  --jh-usc-muted: #64748b;
+  --jh-usc-line: #e2e8f0;
+  --jh-usc-soft: #f8fafc;
 
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 50px;
-      padding: 140px 15px 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 50px;
+  padding: 0 15px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
     #jh-sophomore-season-page .jh-ss-hero {
       text-align: center;
@@ -836,9 +836,10 @@
     }
 
     @media (max-width: 768px) {
-      #jh-sophomore-season-page {
-        padding: 125px 15px 0;
-      }
+  #jh-sophomore-season-page {
+    padding: 0 15px;
+    margin: 24px auto 42px;
+  }
 
       #jh-sophomore-season-page .jh-ss-hero-title {
         font-size: 28px;
@@ -903,27 +904,7 @@
     }
   </style>
 
-  <section class="jh-ss-hero" aria-label="NCAA stats hero">
-    <h1 class="jh-ss-hero-title">
-      NCAA STATS
-    </h1>
-
-    <div class="jh-ss-hero-subrow">
-      <div class="jh-ss-hero-line"></div>
-      <p class="jh-ss-hero-subtitle">
-        2026–27 USC Sophomore Season Log
-      </p>
-      <div class="jh-ss-hero-line"></div>
-    </div>
-  </section>
-
-
-  <div
-    id="jhSophomoreBannerPlaceholder"
-    class="jh-ss-banner-placeholder"
-  >
-    USC season banner inactive until new USC competition images are available.
-  </div>
+ 
 
   <main class="jh-ss-shell" aria-label="2026–27 USC sophomore season schedule and results">
     <div id="jhSophomoreSeasonApp"></div>
@@ -1292,8 +1273,131 @@
       }
     })();
   </script>
-</div>
-  
+
+<section
+  id="jh-ncaa-sophomore-hero"
+  class="jh-ncaa-sophomore-hero"
+  aria-label="NCAA stats sophomore season page hero"
+>
+  <style>
+    #jh-ncaa-sophomore-hero,
+    #jh-ncaa-sophomore-hero * {
+      box-sizing: border-box;
+    }
+
+    #jh-ncaa-sophomore-hero {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 28px;
+      padding: 140px 15px 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      clear: both;
+      contain: layout style;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-inner {
+      width: 100%;
+      text-align: center;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 34px;
+      line-height: 1.1;
+      font-weight: 950;
+      letter-spacing: -1.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-subrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-line {
+      width: 30px;
+      height: 2px;
+      background: #d6a642;
+      flex: 0 0 auto;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-subtitle {
+      margin: 0;
+      color: #666666;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+
+    #jh-ncaa-sophomore-hero .jhnsh-banner-note {
+      width: 100%;
+      margin: 28px auto 0;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px dashed rgba(153, 0, 0, 0.28);
+      background:
+        linear-gradient(135deg, rgba(153, 0, 0, 0.06), rgba(255, 204, 0, 0.08));
+      color: #64748b;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 768px) {
+      #jh-ncaa-sophomore-hero {
+        padding: 125px 15px 0;
+        margin-bottom: 24px;
+      }
+
+      #jh-ncaa-sophomore-hero .jhnsh-title {
+        font-size: 28px;
+        letter-spacing: -1px;
+      }
+
+      #jh-ncaa-sophomore-hero .jhnsh-subtitle {
+        font-size: 12px;
+      }
+
+      #jh-ncaa-sophomore-hero .jhnsh-banner-note {
+        margin-top: 24px;
+        padding: 15px 14px;
+        border-radius: 15px;
+        font-size: 10.5px;
+        letter-spacing: 0.45px;
+      }
+    }
+  </style>
+
+  <div class="jhnsh-inner">
+    <h1 class="jhnsh-title">
+      NCAA STATS
+    </h1>
+
+    <div class="jhnsh-subrow">
+      <div class="jhnsh-line"></div>
+
+      <p class="jhnsh-subtitle">
+        2026–27 USC Sophomore Season Log
+      </p>
+
+      <div class="jhnsh-line"></div>
+    </div>
+
+    <div class="jhnsh-banner-note">
+      USC season banner inactive until new USC competition images are available.
+    </div>
+  </div>
+</section>
     
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
@@ -1370,8 +1474,8 @@
 
 <div style="border-bottom: 2px solid #0c2340; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
   <h1 style="margin: 0; color: #0c2340; font-size: 22px; letter-spacing: 1px; font-weight: 900; text-transform: uppercase; line-height: 1.2; min-width: 200px;">
-    2025-26 FRESHMAN SEASON LOG &amp; METRICS
-  </h1>
+  2026–27 SOPHOMORE SEASON LOG &amp; METRICS
+</h1>
   
   <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
     Last Updated: —
