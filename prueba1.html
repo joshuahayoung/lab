@@ -3776,7 +3776,11 @@
 
 
 
-  
+
+
+<section
+
+    
 <div class="performance-analysis-wrapper" style="width: 100%; margin: 30px 0 30px 0; padding: 0; background: transparent; box-sizing: border-box;">
     <div style="background: #ffffff; border: 1.5px solid #eeeeee; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; box-sizing: border-box; width: 100%;">
         <div style="padding: 20px 0 40px 0; box-sizing: border-box; text-align: center; width: 100%;">
@@ -3811,200 +3815,883 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 
-<script>
-(function() {
-    if (typeof ChartDataLabels !== 'undefined') {
-        try { Chart.register(ChartDataLabels); } catch (e) {}
+  
+  id="jh-sophomore-finish-trend"
+  class="jh-sophomore-finish-trend"
+  aria-label="2026-27 USC sophomore season finish trend"
+>
+  <style>
+    #jh-sophomore-finish-trend,
+    #jh-sophomore-finish-trend * {
+      box-sizing: border-box;
     }
 
-    Chart.defaults.font.family = "'Oswald', sans-serif";
+    #jh-sophomore-finish-trend {
+      --jhft-cardinal: #990000;
+      --jhft-cardinal-dark: #650000;
+      --jhft-gold: #ffcc00;
+      --jhft-gold-muted: #d6a642;
+      --jhft-navy: #0c2340;
+      --jhft-text: #172033;
+      --jhft-muted: #64748b;
+      --jhft-line: #e2e8f0;
+      --jhft-soft: #f8fafc;
 
-    const isMobile = window.innerWidth <= 768;
-
-    // ===== DATA =====
-    const archiveLabels = [
-        '9/07 (Argent)',
-        '9/15 (Highlands)',
-        '9/22 (Badger)',
-        '10/05 (Trinity)',
-        '2/01 (Compadres)',
-        '2/24 (Military)',
-        '3/03 (Golden)',
-        '3/17 (Thunderbirds)',
-        '3/24 (Bellbank)',
-        '4/07 (Tiger)',
-        '4/29 (AAC)'
-    ];
-
-    const archiveScores = [69.66, 71.66, 72.66, 74.00, 72.00, 71.66, 67.6, 73.66, 70.66, 73.66, 71.66];
-
-    const archivePositions = ['T9', 'T12', 'T24', 'T55', 'T3', '1', '3', 'T48', 'T10', 'T63', 'T21'];
-
-    const archiveRounds = [
-        '70-70-69 (-7)',
-        '74-71-70 (-1)',
-        '71-71-76 (+2)',
-        '75-73-74 (+6)',
-        '70-75-71 (E)',
-        '69-72-74 (-1)',
-        '64-70-69 (-13)',
-        '72-76-73 (+5)',
-        '73-68-71 (-4)',
-        '70-76-75 (+11)',
-        '73-73-69 (-1)'
-    ];
-
-    const archiveRankImpact = [
-        '● Rank Impact ▲ 151',
-        '● Rank Impact ▲ 28',
-        '● Rank Impact ▼ 38',
-        '● Rank Impact ▼ 37',
-        '● Rank Impact ▲ 142',
-        '● Rank Impact ▲ 72',
-        '● Rank Impact ▲ 43',
-        '● Rank Impact ▼ 15',
-        '● Rank Impact ▲ 26',
-        '● Rank Impact ▼ 35',
-        '● Rank Impact ▼ 11'
-    ];
-
-    const archiveWagrPower = [
-        '230.8799',
-        '232.6656',
-        '129.0694',
-        '360.1597',
-        '145.6033',
-        '101.3382',
-        '135.0209',
-        '670.0102',
-        '221.2814',
-        '247.6920',
-        '302.0150'
-    ];
-
-    const archivePtsEarned = [
-        '5.3735',
-        '4.9097',
-        '3.3178',
-        '3.1971',
-        '6.5774',
-        '9.2734',
-        '6.7817',
-        '4.8345',
-        '4.9385',
-        '2.6487',
-        '4.4097'
-    ];
-
-    // Mobile
-    function mobileLabel(label) {
-        return label;
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto 40px;
+      padding: 0 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
-    const ctxOfficialArchive = document.getElementById('archiveOfficialChart').getContext('2d');
+    #jh-sophomore-finish-trend .jhft-shell {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--jhft-line);
+      background: #ffffff;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+    }
 
-    new Chart(ctxOfficialArchive, {
-        type: 'line',
-        data: {
-            labels: archiveLabels,
-            datasets: [{
-                label: 'Scoring Avg',
-                data: archiveScores,
-                borderColor: '#0c2340',
-                backgroundColor: 'rgba(12, 35, 64, 0.05)',
+    #jh-sophomore-finish-trend .jhft-head {
+      padding: 20px 24px 17px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,204,0,0.20), transparent 32%),
+        linear-gradient(135deg, #0c2340 0%, #650000 100%);
+      color: #ffffff;
+      border-bottom: 4px solid var(--jhft-gold-muted);
+    }
+
+    #jh-sophomore-finish-trend .jhft-kicker {
+      margin: 0 0 7px;
+      color: rgba(255,255,255,0.65);
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1.18;
+      font-weight: 950;
+      letter-spacing: -0.4px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-subtitle {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,0.74);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 750;
+      letter-spacing: 0.35px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-body {
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    #jh-sophomore-finish-trend .jhft-chart-card {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      border-radius: 16px;
+      border: 1px solid var(--jhft-line);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      overflow: hidden;
+      padding: 22px 18px 48px;
+    }
+
+    #jh-sophomore-finish-trend .jhft-chart-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    #jh-sophomore-finish-trend .jhft-chart-title {
+      margin: 0;
+      color: var(--jhft-navy);
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-chart-meta {
+      margin: 5px 0 0;
+      color: var(--jhft-muted);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+    }
+
+    #jh-sophomore-finish-trend .jhft-status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(153,0,0,0.08);
+      border: 1px solid rgba(153,0,0,0.16);
+      color: var(--jhft-cardinal);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-sophomore-finish-trend .jhft-canvas-wrap {
+      position: relative;
+      width: 100%;
+      height: 330px;
+      display: none;
+    }
+
+    #jh-sophomore-finish-trend .jhft-canvas-wrap.is-visible {
+      display: block;
+    }
+
+    #jh-sophomore-finish-trend canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty {
+      display: none;
+      min-height: 300px;
+      border-radius: 14px;
+      border: 1px dashed #cbd5e1;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,204,0,0.13), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 34px 22px;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty.is-visible {
+      display: flex;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 27px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(12,35,64,0.06);
+      border: 1px solid rgba(12,35,64,0.10);
+      color: var(--jhft-navy);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty-title {
+      margin: 14px 0 8px;
+      color: var(--jhft-navy);
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: -0.35px;
+    }
+
+    #jh-sophomore-finish-trend .jhft-empty-text {
+      margin: 0;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 700;
+    }
+
+    #jh-sophomore-finish-trend .jhft-source {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed #cbd5e1;
+      color: #94a3b8;
+      font-size: 10px;
+      line-height: 1.35;
+      font-weight: 850;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #jh-sophomore-finish-trend .jhft-summary-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    #jh-sophomore-finish-trend .jhft-summary-item {
+      min-width: 0;
+      padding: 12px 12px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    #jh-sophomore-finish-trend .jhft-summary-k {
+      color: #64748b;
+      font-size: 9px;
+      line-height: 1.15;
+      font-weight: 950;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-finish-trend .jhft-summary-v {
+      margin-top: 5px;
+      color: var(--jhft-navy);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    @media (max-width: 768px) {
+      #jh-sophomore-finish-trend {
+        margin: 24px auto 34px;
+        padding: 0 15px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-head {
+        padding: 18px 16px 15px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-title {
+        font-size: 20px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-body {
+        padding: 16px 14px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-chart-card {
+        min-height: 390px;
+        padding: 18px 13px 46px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-canvas-wrap {
+        height: 285px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-empty {
+        min-height: 265px;
+        padding: 28px 16px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-empty-title {
+        font-size: 18px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-empty-text {
+        font-size: 12px;
+      }
+
+      #jh-sophomore-finish-trend .jhft-summary-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+
+  <div class="jhft-shell">
+    <header class="jhft-head">
+      <p class="jhft-kicker">
+        Results Trend
+      </p>
+
+      <h2 class="jhft-title" id="jhft-title">
+        Seasonal Finish Trend
+      </h2>
+
+      <p class="jhft-subtitle" id="jhft-subtitle">
+        2026–27 USC Sophomore Season
+      </p>
+    </header>
+
+    <div class="jhft-body">
+      <div class="jhft-chart-card">
+        <div class="jhft-chart-top">
+          <div>
+            <h3 class="jhft-chart-title">
+              Event Scoring Average & Finish Position
+            </h3>
+
+            <p class="jhft-chart-meta" id="jhft-chart-meta">
+              Final results will populate automatically from sophomore-season-2026-27.json.
+            </p>
+          </div>
+
+          <span class="jhft-status-pill" id="jhft-status-pill">
+            Pending
+          </span>
+        </div>
+
+        <div
+          id="jhft-empty"
+          class="jhft-empty is-visible"
+        >
+          <div class="jhft-empty-inner">
+            <span class="jhft-empty-label">
+              Pre-Season
+            </span>
+
+            <h3 class="jhft-empty-title">
+              Results Pending
+            </h3>
+
+            <p class="jhft-empty-text" id="jhft-empty-text">
+              Results pending. Chart will populate after official tournament results are recorded.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="jhft-canvas-wrap"
+          class="jhft-canvas-wrap"
+        >
+          <canvas id="jhSophomoreFinishTrendChart"></canvas>
+        </div>
+
+        <div class="jhft-source">
+          Source: Official tournament results, Clippd, WAGR and team schedule data
+        </div>
+      </div>
+
+      <div class="jhft-summary-row">
+        <div class="jhft-summary-item">
+          <div class="jhft-summary-k">Events Recorded</div>
+          <div class="jhft-summary-v" id="jhft-events-recorded">0</div>
+        </div>
+
+        <div class="jhft-summary-item">
+          <div class="jhft-summary-k">Rounds Recorded</div>
+          <div class="jhft-summary-v" id="jhft-rounds-recorded">0</div>
+        </div>
+
+        <div class="jhft-summary-item">
+          <div class="jhft-summary-k">Best Finish</div>
+          <div class="jhft-summary-v" id="jhft-best-finish">—</div>
+        </div>
+
+        <div class="jhft-summary-item">
+          <div class="jhft-summary-k">Low Event Avg.</div>
+          <div class="jhft-summary-v" id="jhft-low-avg">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const DATA_URL = "./sophomore-season-2026-27.json?v=" + Date.now();
+      const section = document.getElementById("jh-sophomore-finish-trend");
+
+      if (!section) return;
+
+      const empty = section.querySelector("#jhft-empty");
+      const canvasWrap = section.querySelector("#jhft-canvas-wrap");
+      const emptyText = section.querySelector("#jhft-empty-text");
+      const statusPill = section.querySelector("#jhft-status-pill");
+      const chartMeta = section.querySelector("#jhft-chart-meta");
+
+      function setText(id, value, fallback) {
+        const el = section.querySelector("#" + id);
+        if (!el) return;
+
+        const clean = value === null || value === undefined
+          ? ""
+          : String(value).trim();
+
+        el.textContent = clean !== "" ? clean : (fallback || "—");
+      }
+
+      function escapeText(value) {
+        return String(value ?? "").trim();
+      }
+
+      function isUsableValue(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" &&
+          cleaned !== "-" &&
+          cleaned !== "—" &&
+          cleaned.toUpperCase() !== "TBD";
+      }
+
+      function parseScore(value) {
+        if (!isUsableValue(value)) return null;
+
+        const num = Number(String(value).replace(/,/g, "").trim());
+        return Number.isFinite(num) ? num : null;
+      }
+
+      function isFinalEvent(event) {
+        const status = String(event.status || "").trim().toLowerCase();
+        return status === "final" || status === "completed";
+      }
+
+      function getAllEvents(data) {
+        const fall = Array.isArray(data.fallSchedule) ? data.fallSchedule : [];
+        const spring = Array.isArray(data.springSchedule) ? data.springSchedule : [];
+
+        return fall.concat(spring).sort(function (a, b) {
+          const aDate = Date.parse(a.startDate || "");
+          const bDate = Date.parse(b.startDate || "");
+
+          if (Number.isNaN(aDate) && Number.isNaN(bDate)) return 0;
+          if (Number.isNaN(aDate)) return 1;
+          if (Number.isNaN(bDate)) return -1;
+
+          return aDate - bDate;
+        });
+      }
+
+      function getNumericRounds(event) {
+        const rounds = Array.isArray(event.rounds) ? event.rounds : [];
+
+        return rounds
+          .map(function (round) {
+            return {
+              label: escapeText(round.round || ""),
+              score: parseScore(round.score),
+              par: escapeText(round.par || "")
+            };
+          })
+          .filter(function (round) {
+            return round.score !== null;
+          });
+      }
+
+      function average(numbers) {
+        if (!numbers.length) return null;
+
+        const sum = numbers.reduce(function (acc, value) {
+          return acc + value;
+        }, 0);
+
+        return sum / numbers.length;
+      }
+
+      function shortTournamentName(name) {
+        const clean = String(name || "Event").trim();
+
+        const replacements = [
+          ["Bombs Darts Birds Collegiate", "Bombs Darts"],
+          ["Rancho Santa Fe Invitational", "Rancho SF"],
+          ["Trinity Forest Invitational", "Trinity"],
+          ["Golf Club of Georgia Intercollegiate", "GC Georgia"],
+          ["Southwestern Invitational", "Southwestern"],
+          ["Genesis College Showcase", "Genesis"],
+          ["UNLV Dual Match", "UNLV"],
+          ["TPC Summerlin Invitational", "TPC Summerlin"],
+          ["The Desimone Invitational", "Desimone"],
+          ["Valspar Intercollegiate", "Valspar"],
+          ["Golfweek Invitational", "Golfweek"],
+          ["Western Intercollegiate", "Western"],
+          ["Big Ten Championship", "Big Ten"],
+          ["NCAA Regional", "Regional"],
+          ["NCAA Championship", "NCAA Champ."]
+        ];
+
+        for (const pair of replacements) {
+          if (clean === pair[0]) return pair[1];
+        }
+
+        return clean.length > 14 ? clean.slice(0, 14) + "…" : clean;
+      }
+
+      function buildTrendData(data) {
+        return getAllEvents(data)
+          .filter(isFinalEvent)
+          .map(function (event) {
+            const rounds = getNumericRounds(event);
+
+            if (!rounds.length) return null;
+
+            const avg = average(rounds.map(function (round) {
+              return round.score;
+            }));
+
+            if (avg === null) return null;
+
+            const summary = event.summary || {};
+            const metrics = event.metrics || {};
+
+            return {
+              id: event.id || "",
+              label: shortTournamentName(event.tournament),
+              date: event.date || "",
+              tournament: event.tournament || "",
+              location: event.location || "",
+              rounds: rounds,
+              eventAverage: Number(avg.toFixed(2)),
+              total: isUsableValue(summary.total) ? summary.total : "—",
+              toPar: isUsableValue(summary.par) ? summary.par : "—",
+              finish: isUsableValue(summary.finish) ? summary.finish : "—",
+              rankImpact: isUsableValue(metrics.rankImpact) ? metrics.rankImpact : "—",
+              strokesGained: isUsableValue(metrics.strokesGained) ? metrics.strokesGained : "—",
+              weightedPts: isUsableValue(metrics.weightedPts) ? metrics.weightedPts : "—",
+              wagrPower: isUsableValue(metrics.wagrPower || event.estimatedWagr) ? (metrics.wagrPower || event.estimatedWagr) : "—",
+              pointsEarned: isUsableValue(metrics.pointsEarned) ? metrics.pointsEarned : "—"
+            };
+          })
+          .filter(Boolean);
+      }
+
+      function findBestFinish(events) {
+        if (!events.length) return "—";
+
+        const wins = events.find(function (event) {
+          return String(event.finish).trim() === "1";
+        });
+
+        if (wins) return "1";
+
+        return events
+          .map(function (event) {
+            const match = String(event.finish || "").match(/\d+/);
+            return match ? {
+              raw: event.finish,
+              value: Number(match[0])
+            } : null;
+          })
+          .filter(Boolean)
+          .sort(function (a, b) {
+            return a.value - b.value;
+          })[0]?.raw || "—";
+      }
+
+      function showEmpty(message) {
+        if (empty) empty.classList.add("is-visible");
+        if (canvasWrap) canvasWrap.classList.remove("is-visible");
+
+        if (emptyText) {
+          emptyText.textContent = message || "Results pending. Chart will populate after official tournament results are recorded.";
+        }
+
+        if (statusPill) statusPill.textContent = "Pending";
+        if (chartMeta) {
+          chartMeta.textContent = "Final results will populate automatically from sophomore-season-2026-27.json.";
+        }
+
+        if (window.jhSophomoreFinishTrendChart) {
+          try {
+            window.jhSophomoreFinishTrendChart.destroy();
+          } catch (error) {}
+          window.jhSophomoreFinishTrendChart = null;
+        }
+      }
+
+      function showChart() {
+        if (empty) empty.classList.remove("is-visible");
+        if (canvasWrap) canvasWrap.classList.add("is-visible");
+
+        if (statusPill) statusPill.textContent = "Active";
+        if (chartMeta) {
+          chartMeta.textContent = "Chart generated from completed sophomore-season events.";
+        }
+      }
+
+      function loadScriptOnce(src, globalCheck) {
+        return new Promise(function (resolve, reject) {
+          if (globalCheck && globalCheck()) {
+            resolve();
+            return;
+          }
+
+          const existing = Array.from(document.scripts).find(function (script) {
+            return script.src === src;
+          });
+
+          if (existing) {
+            existing.addEventListener("load", resolve);
+            existing.addEventListener("error", reject);
+
+            if (globalCheck && globalCheck()) resolve();
+
+            return;
+          }
+
+          const script = document.createElement("script");
+          script.src = src;
+          script.async = true;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      async function ensureChartJs() {
+        await loadScriptOnce(
+          "https://cdn.jsdelivr.net/npm/chart.js",
+          function () {
+            return typeof window.Chart !== "undefined";
+          }
+        );
+
+        await loadScriptOnce(
+          "https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0",
+          function () {
+            return typeof window.ChartDataLabels !== "undefined";
+          }
+        );
+
+        if (window.Chart && window.ChartDataLabels) {
+          try {
+            window.Chart.register(window.ChartDataLabels);
+          } catch (error) {}
+        }
+      }
+
+      function calculateYRange(values) {
+        if (!values.length) {
+          return { min: 65, max: 80 };
+        }
+
+        const minValue = Math.min.apply(null, values);
+        const maxValue = Math.max.apply(null, values);
+        const floor = Math.floor(minValue - 2);
+        const ceil = Math.ceil(maxValue + 2);
+
+        return {
+          min: Math.max(55, floor),
+          max: Math.min(90, ceil)
+        };
+      }
+
+      function renderChart(trendEvents) {
+        const canvas = section.querySelector("#jhSophomoreFinishTrendChart");
+        if (!canvas || !window.Chart) return;
+
+        const ctx = canvas.getContext("2d");
+        const labels = trendEvents.map(function (event) {
+          return event.label;
+        });
+        const averages = trendEvents.map(function (event) {
+          return event.eventAverage;
+        });
+
+        const yRange = calculateYRange(averages);
+        const isMobile = window.innerWidth <= 768;
+
+        if (window.jhSophomoreFinishTrendChart) {
+          try {
+            window.jhSophomoreFinishTrendChart.destroy();
+          } catch (error) {}
+        }
+
+        window.jhSophomoreFinishTrendChart = new window.Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Event Scoring Avg",
+                data: averages,
+                borderColor: "#0c2340",
+                backgroundColor: "rgba(12, 35, 64, 0.06)",
                 borderWidth: 2,
                 pointRadius: isMobile ? 4 : 6,
                 pointHoverRadius: isMobile ? 6 : 9,
-                pointBackgroundColor: '#0c2340',
-                pointHoverBackgroundColor: '#F15A22',
-                pointBorderColor: '#fff',
+                pointBackgroundColor: "#990000",
+                pointHoverBackgroundColor: "#ffcc00",
+                pointBorderColor: "#ffffff",
                 pointBorderWidth: 2,
-                tension: 0.3,
+                tension: 0.28,
                 fill: true,
                 datalabels: {
-                    align: 'top',
-                    anchor: 'end',
-                    offset: isMobile ? 4 : 8,
-                    color: '#0c2340',
-                    font: {
-                        weight: '700',
-                        size: isMobile ? 10 : 13
-                    },
-                    formatter: function(value, context) {
-                        return archivePositions[context.dataIndex];
-                    }
+                  align: "top",
+                  anchor: "end",
+                  offset: isMobile ? 4 : 8,
+                  color: "#0c2340",
+                  font: {
+                    weight: "900",
+                    size: isMobile ? 10 : 12
+                  },
+                  formatter: function (value, context) {
+                    const event = trendEvents[context.dataIndex];
+                    return event ? event.finish : "";
+                  }
                 }
-            }]
-        },
-        options: {
+              }
+            ]
+          },
+          options: {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: isMobile
-                    ? { top: 20, bottom: 18, left: 0, right: 0 }
-                    : { top: 35, bottom: 25, left: -5, right: 15 }
+              padding: isMobile
+                ? { top: 18, bottom: 10, left: 0, right: 0 }
+                : { top: 30, bottom: 18, left: 4, right: 14 }
             },
             scales: {
-                y: {
-                    min: 65,
-                    max: 82,
-                    grid: { color: '#efefef', drawBorder: false },
-                    ticks: {
-                        font: { size: isMobile ? 10 : 11, weight: '600' },
-                        color: '#333',
-                        padding: 0
-                    },
-                    title: { display: false }
+              y: {
+                min: yRange.min,
+                max: yRange.max,
+                grid: {
+                  color: "#edf2f7",
+                  drawBorder: false
                 },
-                x: {
-                    grid: { display: false },
-                    ticks: {
-                        color: '#333',
-                        font: { size: isMobile ? 8 : 10, weight: '500' },
-                        autoSkip: false,
-                        maxRotation: isMobile ? 60 : 45,
-                        minRotation: isMobile ? 60 : 45,
-                        callback: function(value) {
-                            const label = this.getLabelForValue(value);
-                            return mobileLabel(label);
-                        }
-                    },
-                    offset: false
+                ticks: {
+                  color: "#334155",
+                  padding: 2,
+                  font: {
+                    size: isMobile ? 10 : 11,
+                    weight: "700"
+                  }
                 }
+              },
+              x: {
+                grid: {
+                  display: false
+                },
+                ticks: {
+                  color: "#334155",
+                  autoSkip: false,
+                  maxRotation: isMobile ? 58 : 42,
+                  minRotation: isMobile ? 58 : 42,
+                  font: {
+                    size: isMobile ? 8 : 10,
+                    weight: "700"
+                  }
+                }
+              }
             },
             plugins: {
-                legend: { display: false },
-                tooltip: {
-                    enabled: true,
-                    backgroundColor: '#0c2340',
-                    titleColor: '#F15A22',
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        title: function(context) {
-                            return archiveLabels[context[0].dataIndex];
-                        },
-                        label: function(context) {
-                            return `● Scoring Avg: ${context.parsed.y}`;
-                        },
-                        afterLabel: function(context) {
-                            const i = context.dataIndex;
-                            return [
-                                `● Rounds: ${archiveRounds[i]}`,
-                                `● Pos: ${archivePositions[i]}`,
-                                archiveRankImpact[i],
-                                `-----------------------`,
-                                `● WAGR Pwr: ${archiveWagrPower[i]}`,
-                                `● Pts Earned: ${archivePtsEarned[i]}`
-                            ].filter(v => v !== null);
-                        }
-                    }
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: "#0c2340",
+                titleColor: "#ffcc00",
+                bodyColor: "#ffffff",
+                padding: 12,
+                displayColors: false,
+                callbacks: {
+                  title: function (context) {
+                    const event = trendEvents[context[0].dataIndex];
+                    return event ? event.tournament : "";
+                  },
+                  label: function (context) {
+                    return "Event Avg: " + context.parsed.y;
+                  },
+                  afterLabel: function (context) {
+                    const event = trendEvents[context.dataIndex];
+
+                    if (!event) return [];
+
+                    return [
+                      "Date: " + event.date,
+                      "Rounds: " + event.rounds.map(function (round) {
+                        return round.score;
+                      }).join("-"),
+                      "Total: " + event.total + " (" + event.toPar + ")",
+                      "Finish: " + event.finish,
+                      "Rank Impact: " + event.rankImpact,
+                      "SG: " + event.strokesGained,
+                      "Weighted Pts: " + event.weightedPts,
+                      "WAGR Pwr: " + event.wagrPower,
+                      "Pts Earned: " + event.pointsEarned
+                    ];
+                  }
                 }
+              }
             }
+          }
+        });
+      }
+
+      function updateSummary(trendEvents) {
+        const roundsCount = trendEvents.reduce(function (sum, event) {
+          return sum + event.rounds.length;
+        }, 0);
+
+        const lowAvg = trendEvents.length
+          ? Math.min.apply(null, trendEvents.map(function (event) {
+              return event.eventAverage;
+            })).toFixed(2)
+          : "—";
+
+        setText("jhft-events-recorded", String(trendEvents.length), "0");
+        setText("jhft-rounds-recorded", String(roundsCount), "0");
+        setText("jhft-best-finish", findBestFinish(trendEvents), "—");
+        setText("jhft-low-avg", lowAvg, "—");
+      }
+
+      async function renderSophomoreFinishTrend() {
+        try {
+          const response = await fetch(DATA_URL);
+
+          if (!response.ok) {
+            throw new Error("sophomore-season-2026-27.json not found or not reachable");
+          }
+
+          const data = await response.json();
+          const trendConfig = data.finishTrend || {};
+          const trendEvents = buildTrendData(data);
+
+          setText("jhft-title", trendConfig.title, "Seasonal Finish Trend");
+          setText("jhft-subtitle", trendConfig.subtitle, "2026–27 USC Sophomore Season");
+
+          updateSummary(trendEvents);
+
+          if (!trendEvents.length) {
+            showEmpty(
+              trendConfig.emptyState ||
+              "Results pending. Chart will populate after official tournament results are recorded."
+            );
+            return;
+          }
+
+          await ensureChartJs();
+          showChart();
+          renderChart(trendEvents);
+        } catch (error) {
+          console.error("Sophomore finish trend render error:", error);
+          updateSummary([]);
+          showEmpty("Seasonal finish trend could not be loaded. Please confirm the JSON file and event data.");
         }
-    });
-})();
-</script>  
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", renderSophomoreFinishTrend);
+      } else {
+        renderSophomoreFinishTrend();
+      }
+    })();
+  </script>
+</section>
   
 
 
