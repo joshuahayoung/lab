@@ -520,8 +520,841 @@
 </script>
 </div>
 </div>
-  
 
+
+<section class="jh-fsa-section" aria-labelledby="jhFsaTitle">
+  <style>
+    .jh-fsa-section {
+      --jh-fsa-navy: #0C2340;
+      --jh-fsa-navy-deep: #07172c;
+      --jh-fsa-cardinal: #990000;
+      --jh-fsa-cardinal-dark: #650000;
+      --jh-fsa-gold: #FFCC00;
+      --jh-fsa-gold-muted: #d8a642;
+      --jh-fsa-white: #ffffff;
+      --jh-fsa-white-soft: rgba(255,255,255,0.86);
+      --jh-fsa-white-muted: rgba(255,255,255,0.64);
+      --jh-fsa-line: rgba(255,255,255,0.12);
+      --jh-fsa-shadow: 0 24px 56px rgba(0,0,0,0.24);
+      --jh-fsa-radius: 26px;
+
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 42px;
+      padding: 0 15px;
+      isolation: isolate;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .jh-fsa-section,
+    .jh-fsa-section * {
+      box-sizing: border-box;
+    }
+
+    .jh-fsa-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--jh-fsa-radius);
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(153,0,0,0.30), transparent 30%),
+        radial-gradient(circle at 86% 18%, rgba(255,204,0,0.15), transparent 30%),
+        radial-gradient(circle at 84% 86%, rgba(153,0,0,0.22), transparent 34%),
+        linear-gradient(135deg, #07172c 0%, #0C2340 42%, #650000 100%);
+      box-shadow: var(--jh-fsa-shadow);
+    }
+
+    .jh-fsa-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.075), rgba(255,255,255,0) 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.070), rgba(255,255,255,0) 50%);
+      opacity: 0.86;
+    }
+
+    .jh-fsa-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--jh-fsa-cardinal) 0%,
+        var(--jh-fsa-gold) 48%,
+        var(--jh-fsa-cardinal) 100%
+      );
+      opacity: 0.98;
+    }
+
+    .jh-fsa-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.56fr);
+      gap: 28px;
+      align-items: stretch;
+      padding: 36px;
+    }
+
+    .jh-fsa-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .jh-fsa-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 11px;
+      margin: 0 0 18px 0;
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,204,0,0.40);
+      background: rgba(255,204,0,0.11);
+      color: #ffe38a;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+    }
+
+    .jh-fsa-kicker-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ffdf5c 0%, #d8a642 100%);
+      box-shadow: 0 0 0 7px rgba(255,204,0,0.14);
+      flex: 0 0 auto;
+    }
+
+    .jh-fsa-title {
+      margin: 0;
+      color: var(--jh-fsa-white);
+      font-size: clamp(30px, 3.5vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 920;
+      max-width: 820px;
+      text-wrap: balance;
+    }
+
+    .jh-fsa-subtitle {
+      margin: 10px 0 0 0;
+      color: rgba(255,255,255,0.68);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-desc {
+      margin: 17px 0 0 0;
+      max-width: 820px;
+      color: var(--jh-fsa-white-soft);
+      font-size: 15.5px;
+      line-height: 1.74;
+      font-weight: 500;
+    }
+
+    .jh-fsa-status-bar {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 10px;
+      margin-top: 23px;
+      padding: 16px 17px 16px 19px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,204,0,0.28);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,204,0,0.15), transparent 31%),
+        linear-gradient(135deg, rgba(153,0,0,0.24) 0%, rgba(255,255,255,0.055) 100%);
+      box-shadow:
+        0 14px 30px rgba(0,0,0,0.14),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    .jh-fsa-status-bar::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--jh-fsa-gold) 0%, var(--jh-fsa-cardinal) 100%);
+    }
+
+    .jh-fsa-status-label {
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-status-text {
+      margin: 0;
+      color: #ffffff;
+      font-size: 15.5px;
+      line-height: 1.5;
+      font-weight: 760;
+      letter-spacing: -0.01em;
+    }
+
+    .jh-fsa-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .jh-fsa-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 27px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(12,35,64,0.30);
+      color: rgba(255,255,255,0.88);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .jh-fsa-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 240px));
+      gap: 10px;
+      margin: 24px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .jh-fsa-points li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--jh-fsa-line);
+      background: rgba(255,255,255,0.045);
+      color: rgba(255,255,255,0.92);
+      font-size: 12.5px;
+      line-height: 1;
+      font-weight: 740;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .jh-fsa-points svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+      color: var(--jh-fsa-gold);
+      flex: 0 0 auto;
+    }
+
+    .jh-fsa-side {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+
+    .jh-fsa-side-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 13px;
+      height: 100%;
+      align-content: start;
+      padding: 15px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 100%);
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .jh-fsa-snapshot-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 15px;
+      align-items: center;
+      min-height: 122px;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,204,0,0.28);
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,204,0,0.20), transparent 34%),
+        linear-gradient(135deg, rgba(12,35,64,0.42) 0%, rgba(153,0,0,0.25) 100%);
+      box-shadow:
+        0 16px 34px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.13);
+    }
+
+    .jh-fsa-snapshot-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--jh-fsa-gold) 0%, var(--jh-fsa-cardinal) 100%);
+    }
+
+    .jh-fsa-number-frame {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 92px;
+      height: 92px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.17), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.035) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    .jh-fsa-number-main {
+      display: block;
+      color: #ffffff;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-shadow: 0 8px 14px rgba(0,0,0,0.28);
+    }
+
+    .jh-fsa-number-label {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255,255,255,0.66);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-snapshot-copy {
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .jh-fsa-snapshot-label {
+      margin: 0 0 8px 0;
+      color: rgba(255,255,255,0.66);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-snapshot-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 1.22;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .jh-fsa-snapshot-text {
+      margin: 8px 0 0 0;
+      color: rgba(255,255,255,0.78);
+      font-size: 12.4px;
+      line-height: 1.48;
+      font-weight: 560;
+    }
+
+    .jh-fsa-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .jh-fsa-mini-card {
+      min-width: 0;
+      padding: 13px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .jh-fsa-mini-label {
+      margin: 0 0 6px 0;
+      color: rgba(255,255,255,0.61);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-mini-value {
+      margin: 0;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1.05;
+      font-weight: 940;
+      letter-spacing: -0.03em;
+    }
+
+    .jh-fsa-mini-sub {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255,255,255,0.60);
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .jh-fsa-card {
+      display: grid;
+      gap: 9px;
+      padding: 15px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .jh-fsa-card-label {
+      margin: 0;
+      color: rgba(255,255,255,0.66);
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .jh-fsa-card-text {
+      margin: 0;
+      color: rgba(255,255,255,0.91);
+      font-size: 13.2px;
+      line-height: 1.58;
+      font-weight: 600;
+    }
+
+    .jh-fsa-note {
+      margin: 1px 0 0 0;
+      padding-top: 11px;
+      border-top: 1px solid rgba(255,255,255,0.09);
+      color: rgba(255,255,255,0.64);
+      font-size: 11.5px;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    @media (max-width: 920px) {
+      .jh-fsa-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 24px;
+      }
+
+      .jh-fsa-side-panel {
+        height: auto;
+      }
+
+      .jh-fsa-title {
+        max-width: none;
+      }
+
+      .jh-fsa-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .jh-fsa-section {
+        margin: 0 auto 34px;
+        padding: 0 15px;
+      }
+
+      .jh-fsa-shell {
+        border-radius: 20px;
+      }
+
+      .jh-fsa-inner {
+        padding: 22px 16px 18px;
+        gap: 18px;
+      }
+
+      .jh-fsa-kicker {
+        margin-bottom: 14px;
+        padding: 9px 12px;
+        font-size: 10.5px;
+        letter-spacing: 0.12em;
+      }
+
+      .jh-fsa-kicker-dot {
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 0 6px rgba(255,204,0,0.13);
+      }
+
+      .jh-fsa-title {
+        font-size: clamp(24px, 8vw, 32px);
+        line-height: 1.12;
+      }
+
+      .jh-fsa-subtitle {
+        font-size: 10.5px;
+        line-height: 1.35;
+        letter-spacing: 0.10em;
+      }
+
+      .jh-fsa-desc {
+        margin-top: 13px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .jh-fsa-status-bar {
+        margin-top: 18px;
+        padding: 14px 14px 14px 16px;
+        border-radius: 17px;
+      }
+
+      .jh-fsa-status-text {
+        font-size: 14.2px;
+        line-height: 1.48;
+      }
+
+      .jh-fsa-pills {
+        gap: 7px;
+      }
+
+      .jh-fsa-pill {
+        font-size: 9px;
+        padding: 7px 9px;
+      }
+
+      .jh-fsa-points {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .jh-fsa-points li {
+        width: 100%;
+        min-height: 34px;
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+
+      .jh-fsa-side-panel {
+        padding: 12px;
+        border-radius: 18px;
+      }
+
+      .jh-fsa-snapshot-card {
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 13px;
+        min-height: 104px;
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .jh-fsa-number-frame {
+        width: 76px;
+        height: 76px;
+        border-radius: 16px;
+      }
+
+      .jh-fsa-number-main {
+        font-size: 28px;
+      }
+
+      .jh-fsa-number-label {
+        font-size: 8px;
+      }
+
+      .jh-fsa-snapshot-title {
+        font-size: 16px;
+        line-height: 1.24;
+      }
+
+      .jh-fsa-snapshot-text {
+        font-size: 12px;
+        line-height: 1.44;
+      }
+
+      .jh-fsa-mini-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .jh-fsa-mini-card {
+        padding: 12px 10px;
+        border-radius: 14px;
+      }
+
+      .jh-fsa-mini-value {
+        font-size: 18px;
+      }
+
+      .jh-fsa-card {
+        padding: 14px;
+        border-radius: 15px;
+      }
+
+      .jh-fsa-card-text {
+        font-size: 13px;
+        line-height: 1.58;
+      }
+
+      .jh-fsa-note {
+        font-size: 11.3px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .jh-fsa-snapshot-card {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .jh-fsa-snapshot-copy {
+        text-align: center;
+      }
+
+      .jh-fsa-mini-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="jh-fsa-shell">
+    <div class="jh-fsa-inner">
+      <div class="jh-fsa-main">
+        <div class="jh-fsa-kicker">
+          <span class="jh-fsa-kicker-dot" aria-hidden="true"></span>
+          Freshman Season Archive
+        </div>
+
+        <h2 class="jh-fsa-title" id="jhFsaTitle">
+          2025–26 UTSA Freshman Season Archive
+        </h2>
+
+        <p class="jh-fsa-subtitle">
+          A completed NCAA Division I freshman-season record.
+        </p>
+
+        <p class="jh-fsa-desc">
+          Joshua Hong’s 2025–26 season at UTSA marked his first year of NCAA
+          Division I college golf and established a complete freshman-season
+          record across 33 official rounds and 11 tournaments.
+        </p>
+
+        <div class="jh-fsa-status-bar" aria-label="Completed freshman season record summary">
+          <p class="jh-fsa-status-label">
+            Completed Freshman Record
+          </p>
+
+          <p class="jh-fsa-status-text">
+            Over the course of the season, he set the UTSA single-season scoring
+            average record with a 71.73 raw scoring average, supported by a
+            71.30 Clippd adjusted scoring average, 19 par-or-better rounds, and
+            32 counting scores in 33 team rounds.
+          </p>
+
+          <div class="jh-fsa-pills">
+            <span class="jh-fsa-pill">
+              33 Official Rounds
+            </span>
+
+            <span class="jh-fsa-pill">
+              11 Tournaments
+            </span>
+
+            <span class="jh-fsa-pill">
+              2025–26 UTSA
+            </span>
+
+            <span class="jh-fsa-pill">
+              Finalized Record
+            </span>
+          </div>
+        </div>
+
+        <p class="jh-fsa-desc">
+          His freshman year included one individual win, three top-three
+          finishes, five top-10 finishes, and repeated lineup-counting
+          performances across both fall and spring competition.
+        </p>
+
+        <ul class="jh-fsa-points" aria-label="Freshman season archive highlights">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12.5 9.2 16 19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            UTSA Scoring Avg. Record
+          </li>
+
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19h16M7 16V9M12 16V5M17 16v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Verified NCAA Production
+          </li>
+
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3 5 7v5c0 4.5 3 7 7 9 4-2 7-4.5 7-9V7l-7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            32 / 33 Counting Scores
+          </li>
+
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 19c5.5-9 8.5-12 14-14M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Freshman Season Archive
+          </li>
+        </ul>
+      </div>
+
+      <div class="jh-fsa-side">
+        <div class="jh-fsa-side-panel">
+          <div class="jh-fsa-snapshot-card" aria-label="Freshman season archive snapshot">
+            <div class="jh-fsa-number-frame">
+              <span class="jh-fsa-number-main">
+                33
+              </span>
+              <span class="jh-fsa-number-label">
+                Rounds
+              </span>
+            </div>
+
+            <div class="jh-fsa-snapshot-copy">
+              <p class="jh-fsa-snapshot-label">
+                Archive Snapshot
+              </p>
+
+              <h3 class="jh-fsa-snapshot-title">
+                Completed 2025–26 UTSA freshman record
+              </h3>
+
+              <p class="jh-fsa-snapshot-text">
+                A finalized record of NCAA tournament production, scoring
+                distribution, ranking impact, and team lineup reliability.
+              </p>
+            </div>
+          </div>
+
+          <div class="jh-fsa-mini-grid" aria-label="Freshman season key numbers">
+            <div class="jh-fsa-mini-card">
+              <p class="jh-fsa-mini-label">
+                Raw Avg.
+              </p>
+              <p class="jh-fsa-mini-value">
+                71.73
+              </p>
+              <span class="jh-fsa-mini-sub">
+                UTSA record
+              </span>
+            </div>
+
+            <div class="jh-fsa-mini-card">
+              <p class="jh-fsa-mini-label">
+                Clippd Adj.
+              </p>
+              <p class="jh-fsa-mini-value">
+                71.30
+              </p>
+              <span class="jh-fsa-mini-sub">
+                Finalized metric
+              </span>
+            </div>
+
+            <div class="jh-fsa-mini-card">
+              <p class="jh-fsa-mini-label">
+                Par or Better
+              </p>
+              <p class="jh-fsa-mini-value">
+                19
+              </p>
+              <span class="jh-fsa-mini-sub">
+                of 33 rounds
+              </span>
+            </div>
+
+            <div class="jh-fsa-mini-card">
+              <p class="jh-fsa-mini-label">
+                Finishes
+              </p>
+              <p class="jh-fsa-mini-value">
+                1 / 3 / 5
+              </p>
+              <span class="jh-fsa-mini-sub">
+                Win / Top 3 / Top 10
+              </span>
+            </div>
+          </div>
+
+          <div class="jh-fsa-card">
+            <p class="jh-fsa-card-label">
+              Program Markers
+            </p>
+
+            <p class="jh-fsa-card-text">
+              The season included a first collegiate win at the Military City
+              Collegiate, a solo third-place finish at the Golden Nugget
+              Invitational with UTSA record ties of 64 and 134, and a closing
+              69 at the American Conference Championship.
+            </p>
+          </div>
+
+          <div class="jh-fsa-card">
+            <p class="jh-fsa-card-label">
+              Archive Purpose
+            </p>
+
+            <p class="jh-fsa-card-text">
+              This page preserves the completed 2025–26 UTSA freshman season as
+              a factual archive. Later collegiate chapters, summer events, or
+              future program records are separate from this archived
+              freshman-season record.
+            </p>
+          </div>
+
+          <p class="jh-fsa-note">
+            Archive Status: Completed 2025–26 UTSA freshman season · 33 official
+            rounds · 11 NCAA tournaments · Finalized freshman record
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
   
 <div class="performance-log-section" style="max-width: 900px; margin: 0 auto 60px; padding: 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
