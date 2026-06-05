@@ -884,6 +884,7 @@
         padding: 12px 14px;
         border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.10);
+        text-align: left;
       }
 
       #jh-sophomore-season-page .jh-ss-band-cell:last-child {
@@ -894,10 +895,6 @@
         justify-content: flex-start;
         overflow-x: auto;
         padding-bottom: 2px;
-      }
-
-      #jh-sophomore-season-page .jh-ss-band-cell {
-        text-align: left;
       }
 
       #jh-sophomore-season-page .jh-ss-metrics {
@@ -961,6 +958,14 @@
           cleaned.toUpperCase() !== "TBD";
       }
 
+      function isDisplayText(value) {
+        if (value === null || value === undefined) return false;
+        const cleaned = String(value).trim();
+        return cleaned !== "" &&
+          cleaned !== "-" &&
+          cleaned !== "—";
+      }
+
       function normalizeStatus(status) {
         const clean = String(status || "scheduled").trim().toLowerCase();
         if (clean === "final" || clean === "completed") return "final";
@@ -969,15 +974,19 @@
       }
 
       function statusLabel(event) {
-        if (isUsableValue(event.statusLabel)) return event.statusLabel;
+        if (isDisplayText(event.statusLabel)) return event.statusLabel;
+
         const status = normalizeStatus(event.status);
+
         if (status === "final") return "Final";
         if (status === "ongoing") return "Ongoing";
+
         return "Scheduled";
       }
 
       function scoreClass(parValue) {
         if (!isUsableValue(parValue)) return "";
+
         const text = String(parValue).trim().toUpperCase();
 
         if (text === "E" || text === "EVEN" || text === "0") {
@@ -993,27 +1002,54 @@
       function buildMeta(event) {
         const parts = [];
 
-        if (isUsableValue(event.venue)) parts.push(event.venue);
-        if (isUsableValue(event.location)) parts.push(event.location);
-        if (isUsableValue(event.estimatedWagr)) parts.push("Est. WAGR " + event.estimatedWagr);
+        if (isDisplayText(event.venue)) parts.push(event.venue);
+        if (isDisplayText(event.location)) parts.push(event.location);
+        if (isDisplayText(event.estimatedWagr)) parts.push("Est. WAGR " + event.estimatedWagr);
 
         return parts.join(" | ");
       }
 
+      function buildRoundLabel(event) {
+        const rounds = Array.isArray(event.rounds) ? event.rounds : [];
+        const eventType = String(event.eventType || "").trim().toLowerCase();
+
+        if (
+          eventType === "dual-match" ||
+          Number(event.plannedRounds) === 0 ||
+          rounds.length === 0
+        ) {
+          return "Result";
+        }
+
+        if (rounds.length === 1) {
+          return "Round";
+        }
+
+        return rounds.map(function (round, index) {
+          if (isDisplayText(round.round)) return String(round.round).trim();
+          return "R" + (index + 1);
+        }).join("-");
+      }
+
       function buildRoundChips(event) {
         const rounds = Array.isArray(event.rounds) ? event.rounds : [];
+        const eventType = String(event.eventType || "").trim().toLowerCase();
 
-        if (!rounds.length) {
+        if (
+          eventType === "dual-match" ||
+          Number(event.plannedRounds) === 0 ||
+          rounds.length === 0
+        ) {
           return `
             <div class="jh-ss-round-chip">
-              <span class="jh-ss-round-label">Rounds</span>
+              <span class="jh-ss-round-label">Result</span>
               <span class="jh-ss-round-score">—</span>
             </div>
           `;
         }
 
         return rounds.map(function (round, index) {
-          const label = isUsableValue(round.round) ? round.round : "R" + (index + 1);
+          const label = isDisplayText(round.round) ? round.round : "R" + (index + 1);
           const score = isUsableValue(round.score) ? round.score : "—";
           const cls = scoreClass(round.par);
 
@@ -1027,7 +1063,7 @@
       }
 
       function metric(label, value) {
-        if (!isUsableValue(value)) return "";
+        if (!isDisplayText(value)) return "";
 
         return `
           <span class="jh-ss-metric">
@@ -1061,6 +1097,7 @@
         const status = normalizeStatus(event.status);
         const summary = event.summary || {};
         const parClass = scoreClass(summary.par);
+        const roundBandLabel = buildRoundLabel(event);
 
         return `
           <article class="jh-ss-card" data-event-id="${escapeHtml(event.id || "")}">
@@ -1088,7 +1125,7 @@
 
             <div class="jh-ss-result-band">
               <div class="jh-ss-band-cell">
-                <span class="jh-ss-band-label">R1-R2-R3</span>
+                <span class="jh-ss-band-label">${escapeHtml(roundBandLabel)}</span>
                 <div class="jh-ss-rounds">
                   ${buildRoundChips(event)}
                 </div>
@@ -1134,6 +1171,10 @@
         });
       }
 
+      function eventCountLabel(count) {
+        return count === 1 ? "1 Event" : count + " Events";
+      }
+
       function buildSection(title, subtitle, events) {
         const sorted = sortByDate(events);
 
@@ -1146,7 +1187,7 @@
               </div>
 
               <span class="jh-ss-count-pill">
-                ${sorted.length} Events
+                ${escapeHtml(eventCountLabel(sorted.length))}
               </span>
             </div>
 
@@ -1174,7 +1215,7 @@
               </ul>
 
               ${
-                isUsableValue(notes.closingLine)
+                isDisplayText(notes.closingLine)
                   ? `<p class="jh-ss-closing">${escapeHtml(notes.closingLine)}</p>`
                   : ""
               }
