@@ -521,7 +521,274 @@
 </div>
 </div>
 
+<section id="jh-season-archive-access-freshman" class="jh-season-archive-access-freshman" aria-label="Season archive navigation">
+  <style>
+    #jh-season-archive-access-freshman,
+    #jh-season-archive-access-freshman * {
+      box-sizing: border-box;
+    }
 
+    #jh-season-archive-access-freshman {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 28px auto;
+      padding: 0 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-shell {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(12, 35, 64, 0.14);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 10px 24px rgba(12, 35, 64, 0.07);
+      overflow: hidden;
+      position: relative;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-shell::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, #0c2340 0%, #c98a2e 100%);
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 20px 16px 24px;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-left {
+      min-width: 0;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-label {
+      margin: 0 0 8px 0;
+      color: #0c2340;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-control-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-season-label {
+      color: #0c2340;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-select-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-width: 240px;
+      max-width: 100%;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 100%;
+      min-height: 38px;
+      padding: 0 38px 0 13px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #0c2340;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 850;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(12, 35, 64, 0.04);
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-select-wrap::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid #c98a2e;
+      border-bottom: 2px solid #c98a2e;
+      transform: translateY(-65%) rotate(45deg);
+      pointer-events: none;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-subtext {
+      margin: 8px 0 0 0;
+      color: #64748b;
+      font-size: 11.5px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: #990000;
+      border: 1px solid rgba(153, 0, 0, 0.14);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(153, 0, 0, 0.17);
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-link:hover,
+    #jh-season-archive-access-freshman .jhsaf-link:focus {
+      background: #0c2340;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(12, 35, 64, 0.18);
+    }
+
+    #jh-season-archive-access-freshman .jhsaf-arrow {
+      display: inline-block;
+      margin-left: 7px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      #jh-season-archive-access-freshman {
+        margin-bottom: 24px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 15px 16px 16px 20px;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-season-label {
+        width: 100%;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-select-wrap {
+        width: 100%;
+        min-width: 0;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-link {
+        width: 100%;
+        min-height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #jh-season-archive-access-freshman {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-inner {
+        padding: 14px 14px 15px 18px;
+      }
+
+      #jh-season-archive-access-freshman .jhsaf-subtext {
+        font-size: 11px;
+      }
+    }
+  </style>
+
+  <div class="jhsaf-shell">
+    <div class="jhsaf-inner">
+      <div class="jhsaf-left">
+        <p class="jhsaf-label">
+          Season Archive
+        </p>
+
+        <div class="jhsaf-control-row">
+          <span class="jhsaf-season-label">
+            Season
+          </span>
+
+          <span class="jhsaf-select-wrap">
+            <select
+              id="jh-season-archive-select-freshman"
+              class="jhsaf-select"
+              aria-label="Select Joshua Hong season archive"
+              title="Select Joshua Hong season archive"
+            >
+              <option value="./ncaa-stats.html">
+                2026–27 USC Sophomore Season
+              </option>
+              <option value="./freshman-season-2025-26.html" selected>
+                2025–26 UTSA Freshman Season
+              </option>
+            </select>
+          </span>
+        </div>
+
+        <p class="jhsaf-subtext">
+          Current USC sophomore-season schedule, results, seasonal metrics, and live archive updates.
+        </p>
+      </div>
+
+      <a
+        class="jhsaf-link"
+        href="./ncaa-stats.html"
+        title="View Joshua Hong 2026–27 USC Sophomore Season Log"
+        aria-label="View Joshua Hong 2026–27 USC Sophomore Season Log"
+      >
+        View 2026–27 USC Sophomore Season Log
+        <span class="jhsaf-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const select = document.getElementById("jh-season-archive-select-freshman");
+
+      if (!select) return;
+
+      select.addEventListener("change", function () {
+        const target = String(this.value || "").trim();
+
+        if (!target) return;
+
+        window.location.href = target;
+      });
+    })();
+  </script>
+</section>
 
 
 <div
