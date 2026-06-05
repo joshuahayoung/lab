@@ -4451,262 +4451,572 @@
  
  
 
-<div style="width: 100%; max-width: 900px; margin: 0 auto; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<section
+  id="jh-sophomore-key-metrics"
+  class="jh-sophomore-key-metrics"
+  aria-label="Sophomore season key metrics"
+>
+  <style>
+    #jh-sophomore-key-metrics,
+    #jh-sophomore-key-metrics * {
+      box-sizing: border-box;
+    }
 
-  <div style="background: #F15A22; border-radius: 8px 8px 0 0; padding: 10px 25px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; flex-wrap: wrap; gap: 10px;">
-    <div style="display: flex; align-items: center; flex-wrap: wrap;">
-      <span style="color: #ffffff; font-weight: 800; font-size: 16px; letter-spacing: 1px;">Freshman Season Key Metrics</span>
-      <span style="margin-left: 15px; background: #0C2340; color: #ffffff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.5px;">Clippd</span>
+    #jh-sophomore-key-metrics {
+      --jhskm-cardinal: #990000;
+      --jhskm-cardinal-dark: #650000;
+      --jhskm-gold: #ffcc00;
+      --jhskm-gold-muted: #d6a642;
+      --jhskm-navy: #0c2340;
+      --jhskm-text: #172033;
+      --jhskm-muted: #64748b;
+      --jhskm-line: #e2e8f0;
+      --jhskm-soft: #f8fafc;
+
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto 40px;
+      padding: 0 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-shell {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid var(--jhskm-line);
+      background: #ffffff;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-head {
+      padding: 18px 22px 16px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255,204,0,0.20), transparent 30%),
+        linear-gradient(135deg, #0c2340 0%, #650000 100%);
+      color: #ffffff;
+      border-bottom: 4px solid var(--jhskm-gold-muted);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #ffffff;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-subhead {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 10px;
+      color: rgba(255,255,255,0.68);
+      font-size: 10px;
+      line-height: 1.4;
+      font-weight: 850;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-body {
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-section-title {
+      margin: 0 0 14px;
+      padding-left: 14px;
+      border-left: 5px solid var(--jhskm-cardinal);
+      color: var(--jhskm-navy);
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-grid:last-child {
+      margin-bottom: 0;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-card {
+      min-width: 0;
+      min-height: 146px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid var(--jhskm-line);
+      background: #ffffff;
+      box-shadow: 0 5px 14px rgba(15, 23, 42, 0.035);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-card.is-dark {
+      background: var(--jhskm-navy);
+      border-color: var(--jhskm-navy);
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(12, 35, 64, 0.16);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-card.is-cardinal {
+      background:
+        linear-gradient(135deg, #650000 0%, #990000 100%);
+      border-color: #990000;
+      color: #ffffff;
+      box-shadow: 0 10px 24px rgba(153, 0, 0, 0.14);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-card.is-gold-line {
+      border-bottom: 4px solid var(--jhskm-gold-muted);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--jhskm-muted);
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-key-metrics .is-dark .jhskm-label,
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-label {
+      color: rgba(255,255,255,0.62);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-value {
+      color: var(--jhskm-navy);
+      font-size: 28px;
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: -0.6px;
+    }
+
+    #jh-sophomore-key-metrics .is-dark .jhskm-value,
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-value {
+      color: #ffffff;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-sub {
+      margin-top: 10px;
+      padding-top: 11px;
+      border-top: 1px solid rgba(226,232,240,0.75);
+      color: var(--jhskm-muted);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    #jh-sophomore-key-metrics .is-dark .jhskm-sub,
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-sub {
+      border-top-color: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.72);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(226,232,240,0.75);
+    }
+
+    #jh-sophomore-key-metrics .jhskm-mini-k {
+      color: var(--jhskm-muted);
+      font-size: 8.5px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-mini-v {
+      margin-top: 3px;
+      color: var(--jhskm-navy);
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-mini-grid,
+    #jh-sophomore-key-metrics .is-dark .jhskm-mini-grid {
+      border-top-color: rgba(255,255,255,0.14);
+    }
+
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-mini-k,
+    #jh-sophomore-key-metrics .is-dark .jhskm-mini-k {
+      color: rgba(255,255,255,0.62);
+    }
+
+    #jh-sophomore-key-metrics .is-cardinal .jhskm-mini-v,
+    #jh-sophomore-key-metrics .is-dark .jhskm-mini-v {
+      color: #ffffff;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-meta-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--jhskm-soft);
+      border: 1px solid var(--jhskm-line);
+      color: #334155;
+      font-size: 10px;
+      font-weight: 850;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-footnote {
+      margin: 2px 0 0;
+      padding: 13px 16px;
+      border-radius: 13px;
+      background: #f8fafc;
+      border: 1px dashed #dbe3ee;
+      color: #64748b;
+      font-size: 11px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    @media (max-width: 820px) {
+      #jh-sophomore-key-metrics .jhskm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #jh-sophomore-key-metrics .jhskm-body {
+        padding: 18px 15px;
+      }
+
+      #jh-sophomore-key-metrics .jhskm-head {
+        padding: 17px 16px 15px;
+      }
+
+      #jh-sophomore-key-metrics .jhskm-title {
+        font-size: 17px;
+      }
+
+      #jh-sophomore-key-metrics .jhskm-card {
+        min-height: 0;
+        padding: 18px;
+      }
+
+      #jh-sophomore-key-metrics .jhskm-value {
+        font-size: 26px;
+      }
+    }
+  </style>
+
+  <div class="jhskm-shell">
+    <header class="jhskm-head">
+      <div class="jhskm-title-row">
+        <h2 class="jhskm-title" id="jhskm-title">
+          Sophomore Season Key Metrics
+        </h2>
+
+        <span class="jhskm-status-pill" id="jhskm-status">
+          PRE-SEASON
+        </span>
+      </div>
+
+      <div class="jhskm-subhead">
+        <span id="jhskm-dataLabel">Auto-Synced from sophomore-season-2026-27.json</span>
+        <span>|</span>
+        <span id="jhskm-statusText">Pre-season / Results Pending</span>
+      </div>
+    </header>
+
+    <div class="jhskm-body">
+      <h3 class="jhskm-section-title">
+        Individual & Performance Metrics
+      </h3>
+
+      <div class="jhskm-grid">
+        <article class="jhskm-card is-gold-line">
+          <span class="jhskm-label">Clippd Adj. Avg</span>
+          <div class="jhskm-value" id="jhskm-scoringAvg">—</div>
+          <div class="jhskm-sub">
+            Raw Avg: <span id="jhskm-rawAvg">—</span>
+          </div>
+        </article>
+
+        <article class="jhskm-card is-dark">
+          <span class="jhskm-label">Scoring Summary</span>
+          <div class="jhskm-value" id="jhskm-underPar">—</div>
+          <div class="jhskm-sub">
+            Scope: <span id="jhskm-scope">0</span> Rounds
+          </div>
+        </article>
+
+        <article class="jhskm-card is-cardinal">
+          <span class="jhskm-label">Performance Profile</span>
+          <div class="jhskm-value" id="jhskm-top10">0</div>
+          <div class="jhskm-sub">
+            Top 10 Finishes
+          </div>
+
+          <div class="jhskm-mini-grid">
+            <div>
+              <div class="jhskm-mini-k">Wins</div>
+              <div class="jhskm-mini-v" id="jhskm-wins">0</div>
+            </div>
+            <div>
+              <div class="jhskm-mini-k">Top 3</div>
+              <div class="jhskm-mini-v" id="jhskm-top3">0</div>
+            </div>
+            <div>
+              <div class="jhskm-mini-k">Events</div>
+              <div class="jhskm-mini-v" id="jhskm-totalTournaments">0</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="jhskm-section-title">
+        Competitive & Team Metrics
+      </h3>
+
+      <div class="jhskm-grid">
+        <article class="jhskm-card">
+          <span class="jhskm-label">Head-to-Head Record</span>
+          <div class="jhskm-value" id="jhskm-headToHead">—</div>
+          <div class="jhskm-sub">
+            Win Rate: <span id="jhskm-winRate">—</span>
+          </div>
+        </article>
+
+        <article class="jhskm-card is-dark">
+          <span class="jhskm-label">Counting Score Record</span>
+          <div class="jhskm-value" id="jhskm-countingScore">—</div>
+          <div class="jhskm-sub">
+            Recorded Rounds: <span id="jhskm-recordedRounds">0 / 0</span>
+          </div>
+        </article>
+
+        <article class="jhskm-card">
+          <span class="jhskm-label">Points Share</span>
+          <div class="jhskm-value" id="jhskm-pointsShare">—</div>
+          <div class="jhskm-mini-grid">
+            <div>
+              <div class="jhskm-mini-k">(w) Points</div>
+              <div class="jhskm-mini-v" id="jhskm-pointsValue">—</div>
+            </div>
+            <div>
+              <div class="jhskm-mini-k">Team Total</div>
+              <div class="jhskm-mini-v" id="jhskm-teamTotal">—</div>
+            </div>
+            <div>
+              <div class="jhskm-mini-k">GPA</div>
+              <div class="jhskm-mini-v" id="jhskm-gpa">—</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="jhskm-section-title">
+        Official Ranking Snapshot
+      </h3>
+
+      <div class="jhskm-grid">
+        <article class="jhskm-card">
+          <span class="jhskm-label">WAGR Ranking</span>
+          <div class="jhskm-value">
+            <span id="jhskm-wagrRank">—</span>
+            <span id="jhskm-wagrImpact" style="font-size: 16px; font-weight: 900;">—</span>
+          </div>
+          <div class="jhskm-sub">
+            As of <span id="jhskm-wagrDate">—</span>
+          </div>
+        </article>
+
+        <article class="jhskm-card is-dark">
+          <span class="jhskm-label">Clippd NCAA Ranking</span>
+          <div class="jhskm-value">
+            <span id="jhskm-clippdRank">—</span>
+            <span id="jhskm-clippdImpact" style="font-size: 16px; font-weight: 900;">—</span>
+          </div>
+          <div class="jhskm-sub">
+            As of <span id="jhskm-clippdDate">—</span>
+          </div>
+        </article>
+
+        <article class="jhskm-card">
+          <span class="jhskm-label">Season Status</span>
+          <div class="jhskm-value" id="jhskm-statusLarge">PRE-SEASON</div>
+          <div class="jhskm-sub">
+            Results pending official tournament completion.
+          </div>
+        </article>
+      </div>
+
+      <p class="jhskm-footnote">
+        This panel is preserved as an operating metrics structure for the 2026–27 sophomore season. Values remain pending until official tournament results and ranking data are available.
+      </p>
     </div>
   </div>
 
-  <div class="master-container" style="width: 100%; margin-top: 25px; box-sizing: border-box;">
+  <script>
+    (function () {
+      const DATA_URL = "./sophomore-season-2026-27.json?v=" + Date.now();
 
-    <div style="margin: -6px 0 20px 0; padding-left: 25px; padding-right: 25px; font-family: 'Montserrat', sans-serif; box-sizing: border-box;">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 10px; color: #94a3b8; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-align: left;">
-        <span>Auto-Synced from data.json</span>
-        <span style="opacity: 0.55;">|</span>
-        <span>Completed 2025–26 Freshman Record</span>
-      </div>
-    </div>
+      function setText(id, value, fallback) {
+        const el = document.getElementById(id);
+        if (!el) return;
 
-  
-    <div class="roster-standings-section" style="width: 100%; margin-bottom: 40px; box-sizing: border-box;">
-      <div style="margin-bottom: 25px; box-sizing: border-box;">
-        <h3 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #806600; padding-left: 20px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path></svg>
-          INDIVIDUAL METRICS
-        </h3>
-      </div>
+        const clean = value === null || value === undefined
+          ? ""
+          : String(value).trim();
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; box-sizing: border-box; width: 100%; align-items: stretch;">
-        <div style="display: flex; flex-direction: column; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-top: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.03); box-sizing: border-box; min-width: 0; text-align: left;">
-          <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Individual Scoring Avg.</span>
-          <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-            <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;"> <span id="sync-scoringAvg">-</span> <span style="font-size: 15px; font-weight: normal;">(Clippd Adj.)</span> </span>
-          </div>
-          <div style="font-size: 15px; color: #64748b; font-weight: 600;">Raw Avg: <span id="sync-rawAvg">-</span></div>
-          <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;" class="sync-status">STATUS: -Round Cumulative</div>
-        </div>
+        el.textContent = clean !== "" ? clean : (fallback || "—");
+      }
 
-        <div style="display: flex; flex-direction: column; padding: 24px; background: #0c2340; border-radius: 12px; box-shadow: 0 4px 12px rgba(12, 35, 64, 0.2); box-sizing: border-box; min-width: 0; text-align: left; position: relative; z-index: 1;">
-          <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Scoring Summary</span>
-          <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px;">
-            <span style="font-size: 26px; font-weight: 900; color: #ffffff; letter-spacing: -0.5px;" id="sync-underPar">- Under Par</span>
-          </div>
-          <div style="font-size: 15px; color: #f15a22; font-weight: 700;">Out of <span class="sync-scope">-</span> Rounds</div>
-          <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;" class="sync-status">STATUS: -Round Cumulative</div>
-        </div>
+      function withPercent(value) {
+        if (value === null || value === undefined) return "—";
 
-        <div style="display: flex; flex-direction: column; padding: 24px 24px 20px 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-bottom: 4px solid #10b981; box-sizing: border-box; min-width: 0; text-align: left;">
-          <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">Academic Discipline</span>
-          <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-            <span style="font-size: 26px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;" id="sync-gpa">- GPA</span>
-          </div>
-          <div style="font-size: 15px; color: #64748b; font-weight: 600;">Fall 2025 Semester</div>
-          <div style="margin-top: auto; padding-top: 24px; font-size: 10px; color: #10b981; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">METRIC: Fall Finalized</div>
-        </div>
-      </div>
-    </div>
+        const clean = String(value).trim();
 
-    <div class="advanced-analysis-section" style="width: 100%; margin-bottom: 40px; box-sizing: border-box;">
-      <div style="margin-bottom: 25px; box-sizing: border-box;">
-        <h3 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #f15a22; padding-left: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-          COMPETITIVE & TEAM METRICS 
-        </h3>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; box-sizing: border-box; width: 100%;">
-        <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-top: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.03); box-sizing: border-box; min-width: 0; text-align: left;">
-          <div>
-            <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Head-to-Head Record</span>
-            <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-              <span style="font-size: 24px; font-weight: 900; color: #0c2340;" id="sync-headToHead">-</span>
-            </div>
-            <div style="font-size: 15px; color: #111827; font-weight: 800;">Win Rate: <span id="sync-winRate">-</span>%</div>
-          </div>
-          <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;" class="sync-status">STATUS: -Round Cumulative</div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; background: #0c2340; border-radius: 12px; box-shadow: 0 10px 25px rgba(12, 35, 64, 0.15); box-sizing: border-box; min-width: 0; text-align: left;">
-          <div>
-            <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Counting Score Record</span>
-            <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px;">
-              <span style="font-size: 24px; font-weight: 900; color: #ffffff; line-height: 1.2;">
-                <span id="sync-countingScore">-</span>%<br>
-                <span style="font-size: 15px; color: #94a3b8; font-weight: 700;">Counting Score</span>
-              </span>
-            </div>
-          </div>
-          <div style="margin-top: 20px;">
-            <div style="display: inline-block; font-size: 10px; color: #ffffff; font-weight: 800; text-transform: uppercase; background: #f15a22; padding: 2px 8px; border-radius: 4px;">Metric: <span id="sync-recordedRounds">-</span> Rounds Recorded</div>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; box-sizing: border-box; min-width: 0; text-align: left; border-bottom: 4px solid #f15a22;">
-          <div>
-            <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Points Share (Clippd)</span>
-            <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px;">
-              <span style="font-size: 30px; font-weight: 900; color: #0c2340; letter-spacing: -0.5px;" id="sync-pointsShare">-%</span>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-              <div>
-                <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">(w) Points</div>
-                <div style="font-size: 13px; color: #0c2340; font-weight: 900;" id="sync-pointsValue">-</div>
-              </div>
-              <div>
-                <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">Team Total</div>
-                <div style="font-size: 13px; color: #0c2340; font-weight: 900;" id="sync-teamTotal">-</div>
-              </div>
-              <div>
-                <div style="font-size: 8px; color: #64748b; font-weight: 900; text-transform: uppercase;">Scope</div>
-                <div style="font-size: 11px; color: #0c2340; font-weight: 900;"><span class="sync-scope">-</span> Rounds</div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 20px; font-size: 10px; color: #806600; font-weight: 800; text-transform: uppercase;" class="sync-status">STATUS: -Round Cumulative</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="official-rank-section" style="width: 100%; margin-bottom: 40px; box-sizing: border-box;">
-      <div style="margin-bottom: 25px; box-sizing: border-box;">
-        <h3 style="font-size: 18px; color: #0c2340; margin: 0; border-left: 5px solid #2c3e50; padding-left: 20px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; box-sizing: border-box;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-          OFFICIAL RANKS & PERFORMANCE
-        </h3>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; box-sizing: border-box; width: 100%;">
-        <div style="display: flex; flex-direction: column; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.03); box-sizing: border-box; text-align: left;">
-          <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">WAGR Rank</span>
-          <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 12px; display: flex; align-items: baseline; gap: 10px;">
-            <span style="font-size: 30px; font-weight: 900; color: #0c2340;" id="sync-wagrRank">-</span>
-            <span style="font-size: 16px; font-weight: 800;" id="sync-wagrImpact">-</span>
-          </div>
-          <div style="font-size: 13px; color: #64748b; font-weight: 600;">World Amateur Golf Ranking</div>
-          <div style="margin-top: auto; padding-top: 20px; font-size: 10px; color: #94a3b8; font-weight: 800;">As of <span id="sync-wagrDate">-</span></div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; padding: 24px; background: #0c2340; border-radius: 12px; box-shadow: 0 10px 25px rgba(12, 35, 64, 0.15); box-sizing: border-box; text-align: left;">
-          <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Clippd NCAA Rank</span>
-          <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px; display: flex; align-items: baseline; gap: 10px;">
-            <span style="font-size: 30px; font-weight: 900; color: #ffffff;" id="sync-clippdRank">-</span>
-            <span style="font-size: 16px; font-weight: 800;" id="sync-clippdImpact">-</span>
-          </div>
-          <div style="font-size: 13px; color: #94a3b8; font-weight: 600;">Official NCAA Division I Ranking</div>
-          <div style="margin-top: auto; padding-top: 20px; font-size: 10px; color: #64748b; font-weight: 800;">As of <span id="sync-clippdDate">-</span></div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; padding: 24px; background: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; border-bottom: 4px solid #2c3e50; box-sizing: border-box; text-align: left;">
-          <span style="display: block; font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Performance Profile</span>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 5px;">
-            <div>
-              <div style="font-size: 9px; color: #64748b; font-weight: 900; text-transform: uppercase;">Wins</div>
-              <div style="font-size: 20px; color: #0c2340; font-weight: 900;" id="sync-wins">-</div>
-            </div>
-            <div>
-              <div style="font-size: 9px; color: #64748b; font-weight: 900; text-transform: uppercase;">Top 3</div>
-              <div style="font-size: 20px; color: #0c2340; font-weight: 900;" id="sync-top3">-</div>
-            </div>
-            <div>
-              <div style="font-size: 9px; color: #64748b; font-weight: 900; text-transform: uppercase;">Top 10</div>
-              <div style="font-size: 20px; color: #0c2340; font-weight: 900;" id="sync-top10">-</div>
-            </div>
-          </div>
-          <div style="margin-top: auto; padding-top: 15px; border-top: 1px dashed #eee;">
-            <div style="font-size: 11px; color: #0c2340; font-weight: 700;"><span id="sync-totalTournaments">-</span> NCAA Tournaments Cumulated</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<script>
-async function updateMetrics() {
-  try {
-    const response = await fetch('data.json?v=' + new Date().getTime());
-    const data = await response.json();
-
-    // 01. Individual Metrics
-    document.getElementById('sync-scoringAvg').innerText = data.individual.scoringAvg;
-    document.getElementById('sync-rawAvg').innerText = data.individual.rawAvg;
-    
-    const underParEl = document.getElementById('sync-underPar');
-    if (underParEl) {
-        const text = data.individual.underPar;
-        if (text.includes('(')) {
-            const parts = text.split('(');
-            underParEl.innerHTML = `
-                <div style="display: block; line-height: 1.2;">${parts[0]}</div>
-                <div style="display: block; font-size: 0.85em; font-weight: normal; opacity: 0.7; margin-top: 2px;">(${parts[1]}</div>
-            `;
-            underParEl.style.textAlign = 'left';
-        } else {
-            underParEl.innerText = text;
+        if (clean === "" || clean === "-" || clean === "—" || clean.toUpperCase() === "TBD") {
+          return "—";
         }
-    }
-    document.getElementById('sync-gpa').innerText = data.individual.gpa;
 
-    // 02. Team Metrics
-    document.getElementById('sync-headToHead').innerText = data.teamMetrics.headToHead;
-    document.getElementById('sync-winRate').innerText = data.teamMetrics.winRate;
-    document.getElementById('sync-countingScore').innerText = data.teamMetrics.countingScore;
-    document.getElementById('sync-recordedRounds').innerText = data.teamMetrics.recordedRounds || "20 / 21";
-    document.getElementById('sync-pointsShare').innerText = data.teamMetrics.pointsShare + '%';
-    document.getElementById('sync-pointsValue').innerText = data.teamMetrics.pointsValue;
-    document.getElementById('sync-teamTotal').innerText = data.teamMetrics.teamTotal;
+        return clean.includes("%") ? clean : clean + "%";
+      }
 
-    // 03. Official Rank & Performance (New)
-    document.getElementById('sync-wagrRank').innerText = data.officialRank.wagrRank;
+      function normalizeRankImpact(value) {
+        if (value === null || value === undefined) return "—";
 
-    const wagrImpactEl = document.getElementById('sync-wagrImpact');
-    wagrImpactEl.innerText = data.officialRank.wagrImpact;
-    if (String(data.officialRank.wagrImpact).trim().startsWith('▲')) {
-      wagrImpactEl.style.color = '#10b981';
-    } else if (String(data.officialRank.wagrImpact).trim().startsWith('▼')) {
-      wagrImpactEl.style.color = '#d32f2f';
-    } else {
-      wagrImpactEl.style.color = '#64748b';
-    }
+        const clean = String(value).trim();
 
-    document.getElementById('sync-wagrDate').innerText = data.officialRank.wagrDate;
+        if (clean === "" || clean === "-" || clean === "—" || clean.toUpperCase() === "TBD") {
+          return "—";
+        }
 
-    document.getElementById('sync-clippdRank').innerText = data.officialRank.clippdRank;
+        return clean;
+      }
 
-    const clippdImpactEl = document.getElementById('sync-clippdImpact');
-    clippdImpactEl.innerText = data.officialRank.clippdImpact;
-    if (String(data.officialRank.clippdImpact).trim().startsWith('▲')) {
-      clippdImpactEl.style.color = '#10b981';
-    } else if (String(data.officialRank.clippdImpact).trim().startsWith('▼')) {
-      clippdImpactEl.style.color = '#d32f2f';
-    } else {
-      clippdImpactEl.style.color = '#94a3b8';
-    }
+      function setImpact(id, value) {
+        const el = document.getElementById(id);
+        if (!el) return;
 
-    document.getElementById('sync-clippdDate').innerText = data.officialRank.clippdDate;
-    document.getElementById('sync-wins').innerText = data.officialRank.wins;
-    document.getElementById('sync-top3').innerText = data.officialRank.top3;
-    document.getElementById('sync-top10').innerText = data.officialRank.top10;
-    document.getElementById('sync-totalTournaments').innerText = data.officialRank.totalTournaments;
+        const clean = normalizeRankImpact(value);
+        el.textContent = clean;
 
-    // Common Text
-    const statusElements = document.querySelectorAll('.sync-status');
-    statusElements.forEach(el => el.innerText = 'STATUS: ' + data.status);
-    
-    const scopeElements = document.querySelectorAll('.sync-scope');
-    scopeElements.forEach(el => el.innerText = data.scope || "21");
+        if (clean.startsWith("▲")) {
+          el.style.color = "#10b981";
+        } else if (clean.startsWith("▼")) {
+          el.style.color = "#e11d48";
+        } else {
+          el.style.color = "";
+        }
+      }
 
-  } catch (error) {
-    console.error('Data Sync Error:', error);
-  }
-}
-window.addEventListener('DOMContentLoaded', updateMetrics);
-</script>
+      async function updateSophomoreKeyMetrics() {
+        try {
+          const response = await fetch(DATA_URL);
 
-     </div>
-</div>  
+          if (!response.ok) {
+            throw new Error("sophomore-season-2026-27.json not found or not reachable");
+          }
 
+          const data = await response.json();
+          const summary = data.seasonSummary || {};
+          const individual = summary.individual || {};
+          const team = summary.teamMetrics || {};
+          const rank = summary.officialRank || {};
+
+          setText("jhskm-title", summary.label, "Sophomore Season Key Metrics");
+          setText("jhskm-dataLabel", summary.dataLabel, "Auto-Synced from sophomore-season-2026-27.json");
+          setText("jhskm-status", summary.status, "PRE-SEASON");
+          setText("jhskm-statusLarge", summary.status, "PRE-SEASON");
+          setText("jhskm-statusText", summary.statusText, "Pre-season / Results Pending");
+
+          setText("jhskm-scope", summary.scope, "0");
+
+          setText("jhskm-scoringAvg", individual.scoringAvg, "—");
+          setText("jhskm-rawAvg", individual.rawAvg, "—");
+          setText("jhskm-underPar", individual.underPar, "—");
+          setText("jhskm-gpa", individual.gpa, "—");
+
+          setText("jhskm-headToHead", team.headToHead, "—");
+          setText("jhskm-winRate", withPercent(team.winRate), "—");
+          setText("jhskm-countingScore", withPercent(team.countingScore), "—");
+          setText("jhskm-recordedRounds", team.recordedRounds, "0 / 0");
+          setText("jhskm-pointsShare", withPercent(team.pointsShare), "—");
+          setText("jhskm-pointsValue", team.pointsValue, "—");
+          setText("jhskm-teamTotal", team.teamTotal, "—");
+
+          setText("jhskm-wagrRank", rank.wagrRank, "—");
+          setImpact("jhskm-wagrImpact", rank.wagrImpact);
+          setText("jhskm-wagrDate", rank.wagrDate, "—");
+
+          setText("jhskm-clippdRank", rank.clippdRank, "—");
+          setImpact("jhskm-clippdImpact", rank.clippdImpact);
+          setText("jhskm-clippdDate", rank.clippdDate, "—");
+
+          setText("jhskm-wins", rank.wins, "0");
+          setText("jhskm-top3", rank.top3, "0");
+          setText("jhskm-top10", rank.top10, "0");
+          setText("jhskm-totalTournaments", rank.totalTournaments, "0");
+        } catch (error) {
+          console.error("Sophomore key metrics sync error:", error);
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", updateSophomoreKeyMetrics);
+      } else {
+        updateSophomoreKeyMetrics();
+      }
+    })();
+  </script>
+</section>
   
 
 
