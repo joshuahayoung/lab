@@ -336,128 +336,89 @@
 </div>
 
 
-<section
-  id="jh-ncaa-sophomore-hero"
-  class="jh-ncaa-sophomore-hero"
-  aria-label="NCAA stats sophomore season page hero"
->
+<section id="jh-ncaa-sophomore-hero" class="jh-ncaa-sophomore-hero">
   <style>
-    #jh-ncaa-sophomore-hero,
-    #jh-ncaa-sophomore-hero * {
+    #jh-ncaa-sophomore-hero {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 34px auto;
+      padding: 0 18px;
       box-sizing: border-box;
     }
 
-    #jh-ncaa-sophomore-hero {
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
       width: 100%;
-      max-width: 900px;
-      margin: 0 auto 28px;
-      padding: 140px 15px 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      clear: both;
-      contain: layout style;
-    }
-
-    #jh-ncaa-sophomore-hero .jhnsh-inner {
-      width: 100%;
-      text-align: center;
-    }
-
-    #jh-ncaa-sophomore-hero .jhnsh-title {
       margin: 0;
-      color: #0c2340;
-      font-size: 34px;
-      line-height: 1.1;
-      font-weight: 950;
-      letter-spacing: -1.5px;
-      text-transform: uppercase;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #080808;
+      box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.24),
+        0 1px 0 rgba(255, 255, 255, 0.06) inset;
+      border: 1px solid rgba(201, 138, 46, 0.22);
     }
 
-    #jh-ncaa-sophomore-hero .jhnsh-subrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    #jh-ncaa-sophomore-hero .jhnsh-line {
-      width: 30px;
-      height: 2px;
-      background: #d6a642;
-      flex: 0 0 auto;
-    }
-
-    #jh-ncaa-sophomore-hero .jhnsh-subtitle {
-      margin: 0;
-      color: #666666;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      line-height: 1.35;
-    }
-
-    #jh-ncaa-sophomore-hero .jhnsh-banner-note {
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      display: block;
       width: 100%;
-      margin: 28px auto 0;
-      padding: 18px 20px;
-      border-radius: 18px;
-      border: 1px dashed rgba(153, 0, 0, 0.28);
-      background:
-        linear-gradient(135deg, rgba(153, 0, 0, 0.06), rgba(255, 204, 0, 0.08));
-      color: #64748b;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      line-height: 1.45;
+      height: auto;
+      aspect-ratio: 1916 / 821;
+      object-fit: cover;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     @media (max-width: 768px) {
       #jh-ncaa-sophomore-hero {
-        padding: 125px 15px 0;
+        padding: 0 14px;
+        margin-bottom: 28px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #jh-ncaa-sophomore-hero {
+        padding: 0 12px;
         margin-bottom: 24px;
       }
 
-      #jh-ncaa-sophomore-hero .jhnsh-title {
-        font-size: 28px;
-        letter-spacing: -1px;
-      }
-
-      #jh-ncaa-sophomore-hero .jhnsh-subtitle {
-        font-size: 12px;
-      }
-
-      #jh-ncaa-sophomore-hero .jhnsh-banner-note {
-        margin-top: 24px;
-        padding: 15px 14px;
-        border-radius: 15px;
-        font-size: 10.5px;
-        letter-spacing: 0.45px;
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+        border-radius: 16px;
       }
     }
   </style>
 
-  <div class="jhnsh-inner">
-    <h1 class="jhnsh-title">
-      NCAA STATS
-    </h1>
+  <figure class="jh-ncaa-hero-frame">
+    <img
+      class="jh-ncaa-hero-img"
+      src="images/sophomore-2026-27/ncaa-usc-banner-01.jpg"
+      alt="Joshua Hong NCAA Stats hero banner for the 2026–27 USC sophomore season, featuring USC Men’s Golf, B1G Conference, schedule, results, and seasonal metrics."
+      title="Joshua Hong — NCAA Stats | 2026–27 USC Sophomore Season"
+      width="1916"
+      height="821"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
+  </figure>
 
-    <div class="jhnsh-subrow">
-      <div class="jhnsh-line"></div>
-
-      <p class="jhnsh-subtitle">
-        2026–27 USC Sophomore Season Log
-      </p>
-
-      <div class="jhnsh-line"></div>
-    </div>
-
-    <div class="jhnsh-banner-note">
-      USC season banner inactive until new USC competition images are available.
-    </div>
+  <div class="jh-ncaa-hero-sr-only">
+    <h1>NCAA STATS</h1>
+    <p>2026–27 USC Sophomore Season Log</p>
+    <p>Joshua Hong — USC Men’s Golf. Schedule, results, and seasonal metrics.</p>
   </div>
 </section>
     
