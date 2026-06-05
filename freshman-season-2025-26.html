@@ -524,21 +524,100 @@
 
 
 
-<div id="Tournament-Schedule-Scoring" style="padding-top: 5px;">
+<div
+  id="Tournament-Schedule-Scoring"
+  class="jh-fsa-log-heading-wrap"
+>
+  <style>
+    .jh-fsa-log-heading-wrap,
+    .jh-fsa-log-heading-wrap * {
+      box-sizing: border-box;
+    }
+
+    .jh-fsa-log-heading-wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 0 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .jh-fsa-log-heading {
+      width: 100%;
+      border-bottom: 2px solid #0c2340;
+      padding-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .jh-fsa-log-heading-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 22px;
+      letter-spacing: 1px;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.2;
+      min-width: 200px;
+    }
+
+    .jh-fsa-log-last-updated {
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding-bottom: 2px;
+      padding-right: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .jh-fsa-log-heading-wrap {
+        margin: 0 auto 18px;
+        padding: 0 15px;
+      }
+
+      .jh-fsa-log-heading {
+        align-items: flex-start;
+      }
+
+      .jh-fsa-log-heading-title {
+        font-size: 19px;
+        line-height: 1.25;
+      }
+
+      .jh-fsa-log-last-updated {
+        font-size: 11px;
+        width: 100%;
+        text-align: right;
+      }
+    }
+  </style>
+
+  <div class="jh-fsa-log-heading">
+    <h1 class="jh-fsa-log-heading-title">
+      2025-26 FRESHMAN SEASON LOG &amp; METRICS
+    </h1>
+
+    <span
+      id="jh-ncaa-last-updated"
+      class="jh-fsa-log-last-updated"
+    >
+      Last Updated: —
+    </span>
+  </div>
 </div>
 
-<div style="border-bottom: 2px solid #0c2340; padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; box-sizing: border-box;">
-  <h1 style="margin: 0; color: #0c2340; font-size: 22px; letter-spacing: 1px; font-weight: 900; text-transform: uppercase; line-height: 1.2; min-width: 200px;">
-    2025-26 FRESHMAN SEASON LOG &amp; METRICS
-  </h1>
-  <script>
+<script>
   (function () {
-    const target = document.getElementById("jh-ncaa-last-updated");
-    if (!target) return;
-
     function isUsableValue(value) {
       if (value === null || value === undefined) return false;
+
       const cleaned = String(value).trim();
+
       return cleaned !== "" &&
         cleaned !== "-" &&
         cleaned !== "—" &&
@@ -546,17 +625,26 @@
     }
 
     async function renderFreshmanSeasonLastUpdated() {
+      const target = document.getElementById("jh-ncaa-last-updated");
+      if (!target) return;
+
       try {
         const res = await fetch("./freshman-season.json?v=" + Date.now());
-        if (!res.ok) throw new Error("Failed to load freshman-season.json");
+
+        if (!res.ok) {
+          throw new Error("freshman-season.json not found or not reachable");
+        }
 
         const data = await res.json();
-        const lastUpdated = data && data.archiveMeta
-          ? data.archiveMeta.lastUpdated
-          : "";
+
+        const lastUpdated = data &&
+          data.archiveMeta &&
+          data.archiveMeta.lastUpdated
+            ? data.archiveMeta.lastUpdated
+            : "";
 
         target.textContent = isUsableValue(lastUpdated)
-          ? "Last Updated: " + lastUpdated
+          ? "Last Updated: " + String(lastUpdated).trim()
           : "Last Updated: —";
       } catch (error) {
         console.error("Freshman season Last Updated error:", error);
@@ -564,13 +652,13 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", renderFreshmanSeasonLastUpdated);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderFreshmanSeasonLastUpdated);
+    } else {
+      renderFreshmanSeasonLastUpdated();
+    }
   })();
 </script>
-  <span id="jh-ncaa-last-updated" style="color: #64748b; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; padding-bottom: 2px; padding-right: 15px; white-space: nowrap;">
-    Last Updated: —
-  </span>
-</div>
 
 
 
