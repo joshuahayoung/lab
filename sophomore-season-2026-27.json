@@ -16,6 +16,66 @@
     "note": "Banner rotation inactive until USC season images are available.",
     "images": []
   },
+  "seasonSummary": {
+    "active": true,
+    "label": "Sophomore Season Key Metrics",
+    "dataLabel": "Auto-Synced from sophomore-season-2026-27.json",
+    "status": "PRE-SEASON",
+    "statusText": "Pre-season / Results Pending",
+    "scope": "0",
+    "individual": {
+      "scoringAvg": "—",
+      "rawAvg": "—",
+      "adjustedAvg": "—",
+      "underPar": "—",
+      "parOrBetterCount": "0",
+      "parOrBetterPct": "—",
+      "lowRound": "—",
+      "gpa": "— GPA"
+    },
+    "teamMetrics": {
+      "winRate": "—",
+      "headToHead": "—",
+      "countingScore": "—",
+      "recordedRounds": "0 / 0",
+      "pointsShare": "—",
+      "pointsValue": "—",
+      "teamTotal": "—"
+    },
+    "officialRank": {
+      "wagrRank": "—",
+      "wagrImpact": "—",
+      "wagrDate": "—",
+      "clippdRank": "—",
+      "clippdImpact": "—",
+      "clippdDate": "—",
+      "wins": "0",
+      "top3": "0",
+      "top10": "0",
+      "totalTournaments": "0"
+    }
+  },
+  "finishTrend": {
+    "active": true,
+    "title": "Seasonal Finish Trend",
+    "subtitle": "2026–27 USC Sophomore Season",
+    "status": "pending",
+    "source": "Use final events from fallSchedule and springSchedule.",
+    "emptyState": "Results pending. Chart will populate after official tournament results are recorded.",
+    "chartConfig": {
+      "displayMetric": "eventScoringAverage",
+      "yMin": "auto",
+      "yMax": "auto",
+      "showFinishLabels": true,
+      "showTooltipMetrics": true
+    }
+  },
+  "gallery": {
+    "active": false,
+    "title": "2026–27 USC Sophomore Season Gallery",
+    "emptyState": "Gallery inactive until USC season competition images are available.",
+    "images": []
+  },
   "fallSchedule": [
     {
       "id": "fall-01-bombs-darts-birds",
@@ -33,9 +93,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -70,9 +142,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -107,9 +191,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -144,9 +240,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -183,9 +291,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -220,7 +340,11 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 1,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -288,9 +412,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -325,9 +461,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -362,9 +510,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -399,9 +559,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -436,9 +608,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -473,9 +657,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -510,9 +706,21 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 3,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -547,10 +755,26 @@
       "statusLabel": "Scheduled",
       "plannedRounds": 4,
       "rounds": [
-        { "round": "R1", "score": "—", "par": "—" },
-        { "round": "R2", "score": "—", "par": "—" },
-        { "round": "R3", "score": "—", "par": "—" },
-        { "round": "R4", "score": "—", "par": "—" }
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R4",
+          "score": "—",
+          "par": "—"
+        }
       ],
       "summary": {
         "total": "—",
@@ -571,14 +795,13 @@
     }
   ],
   "scheduleNotes": {
-    "title": "Why This Schedule Stands Out",
+    "title": "Schedule Profile",
     "items": [
-      "Elite fields with premier WAGR and PGA TOUR U opportunities.",
-      "Multiple 900+ WAGR events and a 1000+ NCAA Championship field.",
-      "400+ WAGR events help meet the NCAA .500 scheduling requirement while continuing to provide strong WAGR and PGA TOUR U value.",
-      "Competition against the nation's best players and programs.",
-      "Championship venues that prepare players for postseason and professional golf."
+      "2026–27 USC schedule organized by fall season, spring season, and postseason events.",
+      "Several events are expected to provide high-strength WAGR and PGA TOUR University value.",
+      "400+ WAGR events remain useful for schedule balance and NCAA .500 considerations.",
+      "Results, ranking impact, scoring average, and trend data will remain pending until official tournament completion."
     ],
-    "closingLine": "Play the best. Beat the best. Become the best. Fight On."
+    "closingLine": "Data fields will be updated only after official results are available."
   }
 }
