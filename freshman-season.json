@@ -1,0 +1,71 @@
+{
+  "archiveMeta": {
+    "pageType": "freshman-season-archive",
+    "season": "2025–26",
+    "program": "UTSA Men's Golf",
+    "title": "2025-26 FRESHMAN SEASON LOG & METRICS",
+    "subtitle": "Completed 2025–26 Freshman Record",
+    "lastUpdated": "Jun 5, 2026",
+    "archiveStatus": "Completed 2025–26 UTSA freshman season · 33 official rounds · 11 NCAA tournaments · Finalized freshman record",
+    "dataSourceNote": "Archived freshman-season metrics preserved separately from current season, summer events, and future collegiate updates."
+  },
+  "status": "33 OFFICIAL ROUNDS",
+  "scope": "33",
+  "individual": {
+    "scoringAvg": "71.30",
+    "rawAvg": "71.73",
+    "underPar": "19 Par or Better (57.58%)",
+    "gpa": "3.48 GPA"
+  },
+  "teamMetrics": {
+    "winRate": "69.57",
+    "headToHead": "599-238-24",
+    "countingScore": "96.97",
+    "recordedRounds": "32 / 33",
+    "pointsShare": "28.20",
+    "pointsValue": "403.10",
+    "teamTotal": "1429.21"
+  },
+  "officialRank": {
+    "wagrRank": "519",
+    "wagrImpact": "▲4",
+    "wagrDate": "Jun 3, 2026",
+    "clippdRank": "371",
+    "clippdImpact": "▲2",
+    "clippdDate": "Jun 2, 2026",
+    "wins": "1",
+    "top3": "3",
+    "top10": "5",
+    "totalTournaments": "11"
+  },
+  "banner": {
+    "rotationIntervalMinutes": 5,
+    "images": [
+      {
+        "src": "./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg",
+        "fallback": "https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-1.jpg",
+        "alt": "Joshua Hong checking his yardage book before selecting a club during NCAA competition"
+      },
+      {
+        "src": "./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg",
+        "fallback": "https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-2.jpg",
+        "alt": "Joshua Hong moments before hitting a tee shot during an NCAA tournament round"
+      },
+      {
+        "src": "./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg",
+        "fallback": "https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-3.jpg",
+        "alt": "Joshua Hong studying the putting line during an NCAA tournament round"
+      },
+      {
+        "src": "./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg",
+        "fallback": "https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-4.jpg",
+        "alt": "Joshua Hong putting during an NCAA tournament round"
+      },
+      {
+        "src": "./images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg",
+        "fallback": "https://www.joshuahonggolf.com/images/freshman-2025-2026/Joshua-Hong-NCAA-Banner-5.jpg",
+        "alt": "Joshua Hong placing his ball while reading the putting line during an NCAA tournament round"
+      }
+    ]
+  }
+}
