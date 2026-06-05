@@ -1,1 +1,584 @@
-
+{
+  "seasonMeta": {
+    "pageType": "sophomore-season-operating-log",
+    "season": "2026–27",
+    "classYear": "Sophomore",
+    "program": "USC Men's Golf",
+    "pageTitle": "NCAA STATS",
+    "pageSubtitle": "2026–27 USC Sophomore Season Log",
+    "scheduleTitle": "2026–27 Championship Schedule",
+    "lastUpdated": "Jun 5, 2026",
+    "dataStatus": "Pre-season schedule loaded. Results pending official tournament completion.",
+    "sourceNote": "Schedule organized from USC Men's Golf 2026–27 Championship Schedule."
+  },
+  "banner": {
+    "active": false,
+    "note": "Banner rotation inactive until USC season images are available.",
+    "images": []
+  },
+  "fallSchedule": [
+    {
+      "id": "fall-01-bombs-darts-birds",
+      "seasonSegment": "fall",
+      "eventNo": "01",
+      "date": "Sept. 7–8",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-08",
+      "tournament": "Bombs Darts Birds Collegiate",
+      "venue": "",
+      "location": "Chandler, AZ",
+      "estimatedWagr": "400+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "400+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "fall-02-rancho-santa-fe",
+      "seasonSegment": "fall",
+      "eventNo": "02",
+      "date": "Sept. 14–15",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-15",
+      "tournament": "Rancho Santa Fe Invitational",
+      "venue": "",
+      "location": "San Diego, CA",
+      "estimatedWagr": "800+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "800+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "fall-03-trinity-forest",
+      "seasonSegment": "fall",
+      "eventNo": "03",
+      "date": "Oct. 4–6",
+      "startDate": "2026-10-04",
+      "endDate": "2026-10-06",
+      "tournament": "Trinity Forest Invitational",
+      "venue": "Trinity Forest Golf Club",
+      "location": "Dallas, TX",
+      "estimatedWagr": "400+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "400+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "fall-04-golf-club-of-georgia",
+      "seasonSegment": "fall",
+      "eventNo": "04",
+      "date": "Oct. 16–18",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-18",
+      "tournament": "Golf Club of Georgia Intercollegiate",
+      "venue": "Golf Club of Georgia",
+      "location": "Alpharetta, GA",
+      "estimatedWagr": "820+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "820+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    }
+  ],
+  "springSchedule": [
+    {
+      "id": "spring-01-southwestern",
+      "seasonSegment": "spring",
+      "eventNo": "05",
+      "date": "Jan. 25–26",
+      "startDate": "2027-01-25",
+      "endDate": "2027-01-26",
+      "tournament": "Southwestern Invitational",
+      "venue": "",
+      "location": "Thousand Oaks, CA",
+      "estimatedWagr": "700+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "700+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-02-genesis-showcase",
+      "seasonSegment": "spring",
+      "eventNo": "06",
+      "date": "Feb. 15",
+      "startDate": "2027-02-15",
+      "endDate": "2027-02-15",
+      "tournament": "Genesis College Showcase",
+      "venue": "Riviera CC",
+      "location": "Pacific Palisades, CA",
+      "estimatedWagr": "Elite Field",
+      "eventType": "showcase",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 1,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "Elite Field",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-03-unlv-dual-match",
+      "seasonSegment": "spring",
+      "eventNo": "07",
+      "date": "Feb. 20",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "tournament": "UNLV Dual Match",
+      "venue": "",
+      "location": "Las Vegas, NV",
+      "estimatedWagr": "N/A",
+      "eventType": "dual-match",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 0,
+      "rounds": [],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "N/A",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-04-tpc-summerlin",
+      "seasonSegment": "spring",
+      "eventNo": "08",
+      "date": "Feb. 28–Mar. 2",
+      "startDate": "2027-02-28",
+      "endDate": "2027-03-02",
+      "tournament": "TPC Summerlin Invitational",
+      "venue": "TPC Summerlin",
+      "location": "Las Vegas, NV",
+      "estimatedWagr": "900+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "900+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-05-desimone",
+      "seasonSegment": "spring",
+      "eventNo": "09",
+      "date": "Mar. 8–9",
+      "startDate": "2027-03-08",
+      "endDate": "2027-03-09",
+      "tournament": "The Desimone Invitational",
+      "venue": "",
+      "location": "San Francisco, CA",
+      "estimatedWagr": "900+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "900+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-06-valspar",
+      "seasonSegment": "spring",
+      "eventNo": "10",
+      "date": "Mar. 22–23",
+      "startDate": "2027-03-22",
+      "endDate": "2027-03-23",
+      "tournament": "Valspar Intercollegiate",
+      "venue": "",
+      "location": "Palm City, FL",
+      "estimatedWagr": "900+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "900+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-07-golfweek",
+      "seasonSegment": "spring",
+      "eventNo": "11",
+      "date": "Apr. 5–6",
+      "startDate": "2027-04-05",
+      "endDate": "2027-04-06",
+      "tournament": "Golfweek Invitational",
+      "venue": "",
+      "location": "Palos Verdes Estates, CA",
+      "estimatedWagr": "600+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "600+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "spring-08-western-intercollegiate",
+      "seasonSegment": "spring",
+      "eventNo": "12",
+      "date": "Apr. 12–14",
+      "startDate": "2027-04-12",
+      "endDate": "2027-04-14",
+      "tournament": "Western Intercollegiate",
+      "venue": "",
+      "location": "Santa Cruz, CA",
+      "estimatedWagr": "750+",
+      "eventType": "regular-season",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "750+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "postseason-01-big-ten",
+      "seasonSegment": "postseason",
+      "eventNo": "13",
+      "date": "Apr. 30–May 2",
+      "startDate": "2027-04-30",
+      "endDate": "2027-05-02",
+      "tournament": "Big Ten Championship",
+      "venue": "",
+      "location": "Springfield, NJ",
+      "estimatedWagr": "600+",
+      "eventType": "conference-championship",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "600+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "postseason-02-ncaa-regional",
+      "seasonSegment": "postseason",
+      "eventNo": "14",
+      "date": "May 18–20",
+      "startDate": "2027-05-18",
+      "endDate": "2027-05-20",
+      "tournament": "NCAA Regional",
+      "venue": "",
+      "location": "TBD",
+      "estimatedWagr": "800+",
+      "eventType": "ncaa-regional",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 3,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "800+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    },
+    {
+      "id": "postseason-03-ncaa-championship",
+      "seasonSegment": "postseason",
+      "eventNo": "15",
+      "date": "May 29–Jun. 3",
+      "startDate": "2027-05-29",
+      "endDate": "2027-06-03",
+      "tournament": "NCAA Championship",
+      "venue": "",
+      "location": "Carlsbad, CA",
+      "estimatedWagr": "1000+",
+      "eventType": "ncaa-championship",
+      "status": "scheduled",
+      "statusLabel": "Scheduled",
+      "plannedRounds": 4,
+      "rounds": [
+        { "round": "R1", "score": "—", "par": "—" },
+        { "round": "R2", "score": "—", "par": "—" },
+        { "round": "R3", "score": "—", "par": "—" },
+        { "round": "R4", "score": "—", "par": "—" }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "1000+",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "leaderboard": "",
+        "results": ""
+      }
+    }
+  ],
+  "scheduleNotes": {
+    "title": "Why This Schedule Stands Out",
+    "items": [
+      "Elite fields with premier WAGR and PGA TOUR U opportunities.",
+      "Multiple 900+ WAGR events and a 1000+ NCAA Championship field.",
+      "400+ WAGR events help meet the NCAA .500 scheduling requirement while continuing to provide strong WAGR and PGA TOUR U value.",
+      "Competition against the nation's best players and programs.",
+      "Championship venues that prepare players for postseason and professional golf."
+    ],
+    "closingLine": "Play the best. Beat the best. Become the best. Fight On."
+  }
+}
