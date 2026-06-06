@@ -8,7 +8,7 @@
   "pageTitle": "NCAA STATS",
   "pageSubtitle": "2026–27 USC Sophomore Season Log",
   "scheduleTitle": "2026–27 USC Sophomore Season Schedule",
-    "dataStatus": "Pre-season schedule loaded. Results pending official tournament completion.",
+  "dataStatus": "Pre-season schedule loaded. Results pending official tournament completion.",
   "sourceNote": "Schedule organized from USC Men's Golf 2026–27 season schedule."
 },
   "banner": {
@@ -43,15 +43,15 @@
       "teamTotal": "—"
     },
     "officialRank": {
-      "wagrRank": "—",
+      "wagrRank": "519",
       "wagrImpact": "—",
-      "wagrDate": "—",
+      "wagrDate": "Jun 3, 2026",
       "clippdRank": "—",
       "clippdImpact": "—",
       "clippdDate": "—",
       "wins": "0",
-      "top3": "0",
       "top10": "0",
+      "top20": "0",
       "totalTournaments": "0"
     }
   },
