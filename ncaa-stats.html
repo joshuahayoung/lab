@@ -9704,6 +9704,73 @@ function splitSpringSchedule(events) {
     }
   </style>
 
+  <style id="jh-sophomore-key-metrics-rank-impact-style">
+  #jh-sophomore-key-metrics #jhskm-wagrImpact,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 7px;
+    vertical-align: baseline;
+    font-size: 16px !important;
+    line-height: 1;
+    font-weight: 650 !important;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 800;
+    transform: translateY(-1px);
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact-value {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 650;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact.is-up {
+    color: #16a34a;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact.is-down {
+    color: #dc2626;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact.is-neutral {
+    color: #64748b;
+  }
+
+  @media (max-width: 820px) {
+    #jh-sophomore-key-metrics #jhskm-wagrImpact,
+    #jh-sophomore-key-metrics #jhskm-clippdImpact {
+      font-size: 15px !important;
+      margin-left: 6px;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-impact-value {
+      font-size: 15px;
+    }
+
+    #jh-sophomore-key-metrics .jhskm-impact-arrow {
+      font-size: 10px;
+    }
+  }
+</style>
+
   <div class="jhskm-shell">
     <header class="jhskm-head">
       <div class="jhskm-title-row">
@@ -9880,32 +9947,93 @@ function splitSpringSchedule(events) {
       }
 
       function normalizeRankImpact(value) {
-        if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) {
+    return {
+      raw: "—",
+      number: null,
+      direction: "neutral",
+      displayValue: "—"
+    };
+  }
 
-        const clean = String(value).trim();
+  const clean = String(value).trim();
 
-        if (clean === "" || clean === "-" || clean === "—" || clean.toUpperCase() === "TBD") {
-          return "—";
-        }
+  if (
+    clean === "" ||
+    clean === "-" ||
+    clean === "—" ||
+    clean.toUpperCase() === "TBD"
+  ) {
+    return {
+      raw: "—",
+      number: null,
+      direction: "neutral",
+      displayValue: "—"
+    };
+  }
 
-        return clean;
-      }
+  const normalized = clean
+    .replace(/▲/g, "")
+    .replace(/▼/g, "")
+    .replace(/\+/g, "")
+    .trim();
 
-      function setImpact(id, value) {
-        const el = document.getElementById(id);
-        if (!el) return;
+  const numberValue = Number(normalized);
 
-        const clean = normalizeRankImpact(value);
-        el.textContent = clean;
+  if (!Number.isFinite(numberValue) || numberValue === 0) {
+    return {
+      raw: clean,
+      number: null,
+      direction: "neutral",
+      displayValue: clean
+    };
+  }
 
-        if (clean.startsWith("▲")) {
-          el.style.color = "#10b981";
-        } else if (clean.startsWith("▼")) {
-          el.style.color = "#e11d48";
-        } else {
-          el.style.color = "";
-        }
-      }
+  return {
+    raw: clean,
+    number: Math.abs(numberValue),
+    direction: numberValue > 0 ? "up" : "down",
+    displayValue: String(Math.abs(numberValue))
+  };
+}
+
+function setImpact(id, value) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const impact = normalizeRankImpact(value);
+
+  el.classList.remove(
+    "is-up",
+    "is-down",
+    "is-neutral"
+  );
+
+  if (impact.direction === "up") {
+    el.classList.add("is-up");
+    el.innerHTML = `
+      <span class="jhskm-impact is-up">
+        <span class="jhskm-impact-arrow">▲</span>
+        <span class="jhskm-impact-value">${impact.displayValue}</span>
+      </span>
+    `;
+    return;
+  }
+
+  if (impact.direction === "down") {
+    el.classList.add("is-down");
+    el.innerHTML = `
+      <span class="jhskm-impact is-down">
+        <span class="jhskm-impact-arrow">▼</span>
+        <span class="jhskm-impact-value">${impact.displayValue}</span>
+      </span>
+    `;
+    return;
+  }
+
+  el.classList.add("is-neutral");
+  el.textContent = impact.displayValue;
+}
 
       async function updateSophomoreKeyMetrics() {
         try {
