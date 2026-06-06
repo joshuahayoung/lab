@@ -7253,6 +7253,414 @@
     }
   }
 </style>
+
+<style id="jh-sophomore-season-spring-postseason-collapse">
+  #jh-sophomore-season-page .jh-ss-section.is-collapsible {
+    margin-bottom: 22px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle {
+    width: 100%;
+    appearance: none;
+    border: 1px solid rgba(153, 0, 0, 0.15) !important;
+    border-left: none !important;
+    border-radius: 18px;
+    padding: 15px 16px 15px 18px !important;
+    margin: 0 0 12px 0 !important;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(153, 0, 0, 0.055) 0%,
+        #ffffff 48%,
+        rgba(255, 204, 0, 0.14) 100%
+      ) !important;
+    box-shadow:
+      0 9px 24px rgba(12, 35, 64, 0.065),
+      0 2px 8px rgba(153, 0, 0, 0.035);
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background:
+      linear-gradient(
+        180deg,
+        #650000 0%,
+        #990000 58%,
+        #ffcc00 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 204, 0, 0.42) 0%,
+        rgba(153, 0, 0, 0.08) 52%,
+        rgba(255, 204, 0, 0.20) 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle:hover,
+  #jh-sophomore-season-page .jh-ss-section-toggle:focus {
+    border-color: rgba(153, 0, 0, 0.24) !important;
+    box-shadow:
+      0 12px 28px rgba(12, 35, 64, 0.085),
+      0 3px 10px rgba(153, 0, 0, 0.045);
+    outline: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle:focus-visible {
+    outline: 2px solid rgba(255, 204, 0, 0.75);
+    outline-offset: 3px;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-copy {
+    display: block;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-title {
+    display: block;
+    margin: 0;
+    color: #0c2340 !important;
+    font-size: 21px;
+    line-height: 1.16;
+    font-weight: 720 !important;
+    letter-spacing: 0.24px !important;
+    text-transform: uppercase;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-sub {
+    display: block;
+    margin: 5px 0 0;
+    color: #64748b !important;
+    font-size: 11.5px;
+    line-height: 1.38;
+    font-weight: 550 !important;
+    letter-spacing: 0.34px !important;
+    text-transform: uppercase;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-hint {
+    display: block;
+    margin: 7px 0 0;
+    color: #650000;
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: 0.12px;
+    text-transform: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+    background: rgba(255, 204, 0, 0.13) !important;
+    border: 1px solid rgba(153, 0, 0, 0.18) !important;
+    color: #650000 !important;
+    min-height: 28px;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-chevron {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 100%
+      );
+    border: 1px solid rgba(255, 204, 0, 0.42);
+    box-shadow: 0 6px 14px rgba(153, 0, 0, 0.16);
+    position: relative;
+    flex: 0 0 auto;
+    transition:
+      transform 0.22s ease,
+      background-color 0.22s ease;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-chevron::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    transform: translate(-50%, -60%) rotate(45deg);
+    transition: transform 0.22s ease;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-open
+  .jh-ss-section-chevron::before {
+    transform: translate(-50%, -35%) rotate(225deg);
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-content {
+    display: block;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-collapsed
+  .jh-ss-section-content {
+    display: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-postseason
+  .jh-ss-section-toggle {
+    background:
+      radial-gradient(
+        circle at 8% 0%,
+        rgba(255, 204, 0, 0.16),
+        transparent 30%
+      ),
+      linear-gradient(
+        135deg,
+        rgba(153, 0, 0, 0.070) 0%,
+        #ffffff 46%,
+        rgba(12, 35, 64, 0.055) 100%
+      ) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-empty {
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 1px dashed rgba(153, 0, 0, 0.18);
+    background: rgba(255, 204, 0, 0.055);
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    #jh-sophomore-season-page .jh-ss-section-toggle {
+      align-items: flex-start !important;
+      gap: 10px !important;
+      padding: 13px 12px 13px 15px !important;
+      border-radius: 15px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle::before {
+      width: 4px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle::after {
+      left: 4px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-title {
+      font-size: 15.2px;
+      line-height: 1.18;
+      letter-spacing: 0.16px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-sub {
+      font-size: 9.6px;
+      line-height: 1.28;
+      margin-top: 4px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-hint {
+      font-size: 10px;
+      line-height: 1.28;
+      margin-top: 6px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-actions {
+      gap: 7px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+      min-height: 25px;
+      padding: 5px 7px;
+      font-size: 8.8px !important;
+      letter-spacing: 0.35px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-chevron {
+      width: 29px;
+      height: 29px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-chevron::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-sophomore-season-page .jh-ss-section-toggle {
+      padding: 12px 10px 12px 13px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-title {
+      font-size: 14.2px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-sub {
+      font-size: 9.1px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-hint {
+      font-size: 9.6px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-chevron {
+      width: 27px;
+      height: 27px;
+    }
+  }
+</style>
+
+<style id="jh-sophomore-season-collapse-stability-fix">
+  #jh-sophomore-season-page .jh-ss-section-toggle {
+    font-family: inherit !important;
+    color: inherit !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    user-select: none;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-toggle::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-collapsible {
+    position: relative;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-collapsible
+  .jh-ss-section-head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-actions {
+    margin-left: auto;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-collapsed {
+    margin-bottom: 18px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-open {
+    margin-bottom: 28px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-open
+  .jh-ss-section-toggle {
+    margin-bottom: 13px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-collapsed
+  .jh-ss-section-toggle {
+    margin-bottom: 0 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section.is-open
+  .jh-ss-section-content {
+    animation: jhSsCollapseReveal 0.22s ease-out both;
+  }
+
+  @keyframes jhSsCollapseReveal {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #jh-sophomore-season-page .jh-ss-section.is-collapsible
+    .jh-ss-section-head {
+      align-items: flex-start !important;
+      gap: 10px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-actions {
+      flex: 0 0 auto;
+      gap: 6px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+      max-width: 74px;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-sophomore-season-page .jh-ss-section.is-collapsible
+    .jh-ss-section-head {
+      gap: 8px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-actions {
+      gap: 5px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+      max-width: 68px;
+      padding-left: 6px !important;
+      padding-right: 6px !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+      display: none !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-section-chevron {
+      width: 28px !important;
+      height: 28px !important;
+    }
+  }
+</style>
+  
   
   <main class="jh-ss-shell" aria-label="2026–27 USC sophomore season schedule and results">
     <div id="jhSophomoreSeasonApp"></div>
@@ -7500,28 +7908,198 @@
         return count === 1 ? "1 Event" : count + " Events";
       }
 
-      function buildSection(title, subtitle, events) {
-        const sorted = sortByDate(events);
+     function normalizeSearchText(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/\s+/g, " ");
+}
 
-        return `
-          <section class="jh-ss-section">
-            <div class="jh-ss-section-head">
-              <div>
-                <h2 class="jh-ss-section-title">${escapeHtml(title)}</h2>
-                <p class="jh-ss-section-sub">${escapeHtml(subtitle)}</p>
-              </div>
+function isPostseasonEvent(event) {
+  if (!event) return false;
 
-              <span class="jh-ss-count-pill">
-                ${escapeHtml(eventCountLabel(sorted.length))}
-              </span>
-            </div>
+  /*
+    Highest-priority manual flag.
+    If the JSON later includes postseason: true,
+    the event is treated as postseason without relying on text matching.
+  */
+  if (event.postseason === true) return true;
 
-            <div class="jh-ss-list">
-              ${sorted.map(buildEventCard).join("")}
-            </div>
-          </section>
-        `;
-      }
+  const phaseText = normalizeSearchText([
+    event.phase,
+    event.seasonPhase,
+    event.category,
+    event.eventType
+  ].filter(Boolean).join(" "));
+
+  const titleText = normalizeSearchText([
+    event.id,
+    event.tournament,
+    event.venue,
+    event.location
+  ].filter(Boolean).join(" "));
+
+  const combinedText = normalizeSearchText(
+    phaseText + " " + titleText
+  );
+
+  /*
+    Direct phase/category signals.
+  */
+  if (phaseText.includes("postseason")) return true;
+  if (phaseText.includes("conference championship")) return true;
+  if (phaseText.includes("ncaa regional")) return true;
+  if (phaseText.includes("ncaa championship")) return true;
+  if (phaseText.includes("national championship")) return true;
+
+  /*
+    Common USC / college golf postseason signals.
+  */
+  if (combinedText.includes("big ten championship")) return true;
+  if (combinedText.includes("conference championship")) return true;
+
+  if (
+    combinedText.includes("ncaa") &&
+    combinedText.includes("regional")
+  ) {
+    return true;
+  }
+
+  if (
+    combinedText.includes("ncaa") &&
+    combinedText.includes("championship")
+  ) {
+    return true;
+  }
+
+  if (
+    combinedText.includes("national championship") &&
+    combinedText.includes("ncaa")
+  ) {
+    return true;
+  }
+
+  /*
+    Safety rule:
+    Do not classify an event as postseason only because it contains
+    the word "championship." Some regular-season events can use
+    championship-style naming.
+  */
+  return false;
+}
+
+function splitSpringSchedule(events) {
+  const source = Array.isArray(events) ? events : [];
+
+  return source.reduce(function (groups, event) {
+    if (isPostseasonEvent(event)) {
+      groups.postseason.push(event);
+    } else {
+      groups.spring.push(event);
+    }
+
+    return groups;
+  }, {
+    spring: [],
+    postseason: []
+  });
+}
+
+    
+     function buildSection(title, subtitle, events, options) {
+  const config = options || {};
+  const sorted = sortByDate(events);
+  const collapsible = config.collapsible === true;
+  const defaultOpen = config.defaultOpen === true;
+  const isOpen = !collapsible || defaultOpen;
+  const sectionId = config.id || (
+    "jh-ss-section-" +
+    String(title || "section")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+  );
+  const contentId = sectionId + "-content";
+  const sectionClass = config.sectionClass || "";
+  const collapsedNote = config.collapsedNote || "Click to expand schedule details.";
+  const expandedNote = config.expandedNote || "Click to collapse schedule details.";
+  const hintText = isOpen ? expandedNote : collapsedNote;
+
+  const cardsHtml = sorted.length
+    ? sorted.map(buildEventCard).join("")
+    : '<div class="jh-ss-empty">Schedule details are pending official confirmation.</div>';
+
+  if (!collapsible) {
+    return `
+      <section class="jh-ss-section ${escapeHtml(sectionClass)}">
+        <div class="jh-ss-section-head">
+          <div>
+            <h2 class="jh-ss-section-title">${escapeHtml(title)}</h2>
+            <p class="jh-ss-section-sub">${escapeHtml(subtitle)}</p>
+          </div>
+
+          <span class="jh-ss-count-pill">
+            ${escapeHtml(eventCountLabel(sorted.length))}
+          </span>
+        </div>
+
+        <div class="jh-ss-list">
+          ${cardsHtml}
+        </div>
+      </section>
+    `;
+  }
+
+  return `
+    <section
+      class="jh-ss-section is-collapsible ${escapeHtml(sectionClass)} ${isOpen ? "is-open" : "is-collapsed"}"
+      data-jh-ss-collapsible="true"
+    >
+      <button
+        type="button"
+        class="jh-ss-section-head jh-ss-section-toggle"
+        aria-expanded="${isOpen ? "true" : "false"}"
+        aria-controls="${escapeHtml(contentId)}"
+      >
+        <span class="jh-ss-section-copy">
+          <span class="jh-ss-section-title" role="heading" aria-level="2">
+            ${escapeHtml(title)}
+          </span>
+
+          <span class="jh-ss-section-sub">
+            ${escapeHtml(subtitle)}
+          </span>
+
+          <span
+            class="jh-ss-section-hint"
+            data-collapsed-text="${escapeHtml(collapsedNote)}"
+            data-expanded-text="${escapeHtml(expandedNote)}"
+          >
+            ${escapeHtml(hintText)}
+          </span>
+        </span>
+
+        <span class="jh-ss-section-actions">
+          <span class="jh-ss-count-pill">
+            ${escapeHtml(eventCountLabel(sorted.length))}
+          </span>
+
+          <span class="jh-ss-section-chevron" aria-hidden="true"></span>
+        </span>
+      </button>
+
+      <div
+        id="${escapeHtml(contentId)}"
+        class="jh-ss-section-content"
+      >
+        <div class="jh-ss-list">
+          ${cardsHtml}
+        </div>
+      </div>
+    </section>
+  `;
+}
 
       function buildNotes(notes) {
         if (!notes || !Array.isArray(notes.items)) return "";
@@ -7549,69 +8127,128 @@
         `;
       }
 
-      function buildPage(data) {
-        const meta = data.seasonMeta || {};
+     function initSophomoreCollapsibleSections() {
+  const sections = root.querySelectorAll('[data-jh-ss-collapsible="true"]');
 
-        if (bannerPlaceholder) {
-          const bannerActive = data.banner && data.banner.active === true;
-          bannerPlaceholder.classList.toggle("is-visible", !bannerActive);
-        }
+  sections.forEach(function (section) {
+    const button = section.querySelector(".jh-ss-section-toggle");
+    const hint = section.querySelector(".jh-ss-section-hint");
 
-        return `
-          <section class="jh-ss-main-head">
-            <p class="jh-ss-kicker">
-              ${escapeHtml(meta.program || "USC Men's Golf")}
-            </p>
+    if (!button) return;
 
-           <h2 class="jh-ss-title">
-  ${escapeHtml(
-    meta.scheduleTitle ||
-    "2026–27 USC Sophomore Season Schedule"
-  )}
-</h2>
+    button.addEventListener("click", function () {
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+      const nextOpen = !isOpen;
 
-            <p class="jh-ss-meta">
-              ${escapeHtml(meta.dataStatus || "Pre-season schedule loaded. Results pending official tournament completion.")}
-            </p>
-          </section>
+      button.setAttribute("aria-expanded", nextOpen ? "true" : "false");
+      section.classList.toggle("is-open", nextOpen);
+      section.classList.toggle("is-collapsed", !nextOpen);
 
-          ${buildSection(
-            "2026 Fall Season",
-            "USC sophomore season schedule and results",
-            data.fallSchedule
-          )}
-
-          ${buildSection(
-            "2027 Spring Season & Postseason",
-            "Spring schedule, conference championship, NCAA regional and NCAA championship",
-            data.springSchedule
-          )}
-
-          ${buildNotes(data.scheduleNotes)}
-        `;
+      if (hint) {
+        hint.textContent = nextOpen
+          ? hint.getAttribute("data-expanded-text")
+          : hint.getAttribute("data-collapsed-text");
       }
+    });
+  });
+}
 
+    
+     function buildPage(data) {
+  const meta = data.seasonMeta || {};
+  const springGroups = splitSpringSchedule(data.springSchedule);
+
+  if (bannerPlaceholder) {
+    const bannerActive = data.banner && data.banner.active === true;
+    bannerPlaceholder.classList.toggle("is-visible", !bannerActive);
+  }
+
+  return `
+    <section class="jh-ss-main-head">
+      <p class="jh-ss-kicker">
+        ${escapeHtml(meta.program || "USC Men's Golf")}
+      </p>
+
+      <h2 class="jh-ss-title">
+        ${escapeHtml(
+          meta.scheduleTitle ||
+          "2026–27 USC Sophomore Season Schedule"
+        )}
+      </h2>
+
+      <p class="jh-ss-meta">
+        ${escapeHtml(
+          meta.dataStatus ||
+          "Pre-season schedule loaded. Results pending official tournament completion."
+        )}
+      </p>
+    </section>
+
+    ${buildSection(
+      "2026 Fall Season",
+      "USC sophomore season schedule and results",
+      data.fallSchedule
+    )}
+
+    ${buildSection(
+      "2027 Spring Season",
+      "Regular-season spring tournaments before championship play",
+      springGroups.spring,
+      {
+        id: "jh-ss-2027-spring-season",
+        sectionClass: "jh-ss-section-spring",
+        collapsible: true,
+        defaultOpen: false,
+        collapsedNote: "Click the arrow to expand the 2027 spring regular-season schedule.",
+        expandedNote: "Click the arrow to collapse the 2027 spring regular-season schedule."
+      }
+    )}
+
+    ${buildSection(
+      "2027 Postseason",
+      "Conference championship, NCAA regional and NCAA championship path",
+      springGroups.postseason,
+      {
+        id: "jh-ss-2027-postseason",
+        sectionClass: "jh-ss-section-postseason",
+        collapsible: true,
+        defaultOpen: false,
+        collapsedNote: "Click the arrow to expand the postseason championship schedule.",
+        expandedNote: "Click the arrow to collapse the postseason championship schedule."
+      }
+    )}
+
+    ${buildNotes(data.scheduleNotes)}
+  `;
+}
+    
       async function renderSophomoreSeason() {
-        try {
-          const res = await fetch("./sophomore-season-2026-27.json?v=" + Date.now());
+  try {
+    const res = await fetch(
+      "./sophomore-season-2026-27.json?v=" + Date.now()
+    );
 
-          if (!res.ok) {
-            throw new Error("sophomore-season-2026-27.json not found or not reachable");
-          }
+    if (!res.ok) {
+      throw new Error(
+        "sophomore-season-2026-27.json not found or not reachable"
+      );
+    }
 
-          const data = await res.json();
-          root.innerHTML = buildPage(data);
-        } catch (error) {
-          console.error("Sophomore season render error:", error);
+    const data = await res.json();
 
-          root.innerHTML = `
-            <div class="jh-ss-error">
-              Sophomore season schedule could not be loaded. Please confirm that
-              sophomore-season-2026-27.json exists in the same directory as ncaa-stats.html.
-            </div>
-          `;
-        }
-      }
+    root.innerHTML = buildPage(data);
+    initSophomoreCollapsibleSections();
+  } catch (error) {
+    console.error("Sophomore season render error:", error);
+
+    root.innerHTML = `
+      <div class="jh-ss-error">
+        Sophomore season schedule could not be loaded. Please confirm that
+        sophomore-season-2026-27.json exists in the same directory as ncaa-stats.html.
+      </div>
+    `;
+  }
+}
 
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", renderSophomoreSeason);
