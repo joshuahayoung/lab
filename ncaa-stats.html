@@ -463,11 +463,64 @@
       padding: 122px 0 0 0;
       box-sizing: border-box;
       scroll-margin-top: 140px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     #jh-ncaa-sophomore-hero,
     #jh-ncaa-sophomore-hero * {
       box-sizing: border-box;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+      width: 100%;
+      text-align: center;
+      margin: 0 0 24px 0;
+      padding: 0 12px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 3px;
+      margin: 15px auto 0;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          90deg,
+          #990000 0%,
+          #ffcc00 50%,
+          #650000 100%
+        );
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 34px;
+      line-height: 1.12;
+      font-weight: 750;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-accent {
+      color: #990000;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+      margin: 7px 0 0 0;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle span {
+      color: #650000;
+      font-weight: 650;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
@@ -509,6 +562,11 @@
         margin-bottom: 18px;
       }
 
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+        margin-bottom: 22px;
+        padding: 0 4px;
+      }
+
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
         border-radius: 18px;
       }
@@ -519,6 +577,29 @@
         padding: 138px 8px 0 8px;
         margin-bottom: 18px;
         scroll-margin-top: 150px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+        margin-bottom: 18px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
+        width: 62px;
+        height: 3px;
+        margin-top: 12px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+        font-size: 26px;
+        line-height: 1.16;
+        letter-spacing: -0.35px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 1.35;
+        letter-spacing: 0.75px;
       }
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
@@ -540,6 +621,15 @@
         margin-bottom: 16px;
       }
 
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+        font-size: 23px;
+        line-height: 1.15;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+        font-size: 11.5px;
+      }
+
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
         border-radius: 16px;
       }
@@ -555,12 +645,33 @@
         padding-top: 130px;
       }
 
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+        font-size: 21px;
+      }
+
+      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+        font-size: 11px;
+        letter-spacing: 0.65px;
+      }
+
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
         height: 188px;
         object-position: center center;
       }
     }
   </style>
+
+  <div class="jh-ncaa-hero-title-block">
+    <h1 class="jh-ncaa-hero-title">
+      NCAA Stats
+      <span class="jh-ncaa-hero-title-accent">|</span>
+      Sophomore 2026–27
+    </h1>
+
+    <p class="jh-ncaa-hero-subtitle">
+      <span>USC</span> Men&apos;s Golf
+    </p>
+  </div>
 
   <figure class="jh-ncaa-hero-frame">
     <img
@@ -576,7 +687,6 @@
     >
   </figure>
 </section>
-
 
 <section id="jh-season-archive-access" class="jh-season-archive-access" aria-label="Season archive navigation">
   <style>
