@@ -556,14 +556,123 @@
   }
 </style>
 	
-  <div style="text-align: center; margin-bottom: 35px;">
-    <h1 style="font-size: 34px; font-weight: 800; color: #0c2340; margin: 0; letter-spacing: -0.5px; text-transform: uppercase;">
-      NEWS & MEDIA
-    </h1>
-    <p style="font-size: 14px; color: #777; margin: 6px 0 0 0; font-weight: 500; letter-spacing: 0.8px;">
-      Official News and Records
-    </p>
-  </div>
+  <div class="jh-page-title-block jh-news-page-title-block">
+  <h1 class="jh-page-title">
+    NEWS &amp; MEDIA
+  </h1>
+
+  <p class="jh-page-subtitle">
+    Official News and Records
+  </p>
+</div>
+
+<style id="jh-news-media-page-title-standard">
+  #jh-news-media-page .jh-page-title-block,
+  #jh-news-media-page .jh-page-title-block * {
+    box-sizing: border-box;
+  }
+
+  #jh-news-media-page .jh-page-title-block {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 35px 0 !important;
+    padding: 0 12px;
+  }
+
+  #jh-news-media-page .jh-page-title-block::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 15px auto 0;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        90deg,
+        #990000 0%,
+        #ffcc00 50%,
+        #650000 100%
+      );
+  }
+
+  #jh-news-media-page .jh-page-title {
+    margin: 0 !important;
+    color: #0c2340 !important;
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    text-transform: uppercase !important;
+  }
+
+  #jh-news-media-page .jh-page-subtitle {
+    margin: 6px 0 0 0 !important;
+    color: #777777 !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.8px !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-news-media-page .jh-page-title-block {
+      margin-bottom: 32px !important;
+      padding: 0 6px;
+    }
+
+    #jh-news-media-page .jh-page-title {
+      font-size: 29px !important;
+      line-height: 1.14 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.45px !important;
+    }
+
+    #jh-news-media-page .jh-page-subtitle {
+      margin-top: 6px !important;
+      font-size: 12.5px !important;
+      letter-spacing: 0.7px !important;
+    }
+
+    #jh-news-media-page .jh-page-title-block::after {
+      width: 64px;
+      height: 3px;
+      margin-top: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-news-media-page .jh-page-title-block {
+      margin-bottom: 30px !important;
+      padding: 0 4px;
+    }
+
+    #jh-news-media-page .jh-page-title {
+      font-size: 27px !important;
+      line-height: 1.14 !important;
+    }
+
+    #jh-news-media-page .jh-page-subtitle {
+      font-size: 12px !important;
+      letter-spacing: 0.65px !important;
+    }
+
+    #jh-news-media-page .jh-page-title-block::after {
+      width: 60px;
+      height: 3px;
+      margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-news-media-page .jh-page-title {
+      font-size: 25px !important;
+    }
+
+    #jh-news-media-page .jh-page-subtitle {
+      font-size: 11.5px !important;
+    }
+  }
+</style>
 
   
 
