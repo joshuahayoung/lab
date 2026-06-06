@@ -3815,6 +3815,615 @@
       }
     }
   </style>
+
+
+<style id="jh-offseason-schedule-cardinal-polish">
+  #jh-offseason-schedule {
+    --jhos-cardinal: #990000;
+    --jhos-cardinal-dark: #650000;
+    --jhos-gold: #ffcc00;
+    --jhos-gold-soft: #fff5cc;
+    --jhos-navy: #0c2340;
+    --jhos-ink: #172033;
+    --jhos-muted: #64748b;
+    --jhos-border: rgba(153, 0, 0, 0.14);
+
+    margin: 22px 0 58px !important;
+    padding: 0 !important;
+  }
+
+  #jh-offseason-schedule .jhos-title-row {
+    position: relative;
+    align-items: center !important;
+    margin: 0 0 18px 0 !important;
+    padding: 13px 16px 13px 18px !important;
+    border-left: none !important;
+    border-radius: 16px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(153, 0, 0, 0.055) 0%,
+        #ffffff 48%,
+        rgba(255, 204, 0, 0.14) 100%
+      ) !important;
+    border: 1px solid rgba(153, 0, 0, 0.13);
+    box-shadow:
+      0 8px 22px rgba(12, 35, 64, 0.055),
+      0 2px 8px rgba(153, 0, 0, 0.035);
+    overflow: hidden;
+  }
+
+  #jh-offseason-schedule .jhos-title-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background:
+      linear-gradient(
+        180deg,
+        var(--jhos-cardinal-dark) 0%,
+        var(--jhos-cardinal) 56%,
+        var(--jhos-gold) 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-offseason-schedule .jhos-title {
+    position: relative;
+    z-index: 1;
+    color: var(--jhos-navy) !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.25px !important;
+    line-height: 1.28 !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar {
+    position: relative;
+    padding: 18px 22px !important;
+    border-radius: 18px 18px 0 0 !important;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jhos-cardinal-dark) 0%,
+        var(--jhos-cardinal) 44%,
+        var(--jhos-navy) 100%
+      ) !important;
+    border: 1px solid rgba(153, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 204, 0, 0.34);
+    box-shadow:
+      0 14px 30px rgba(12, 35, 64, 0.12),
+      0 3px 10px rgba(153, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  #jh-offseason-schedule .jhos-topbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background:
+      linear-gradient(
+        90deg,
+        var(--jhos-cardinal-dark) 0%,
+        var(--jhos-gold) 48%,
+        var(--jhos-cardinal) 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-offseason-schedule .jhos-topbar-title {
+    color: #ffffff !important;
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.85px !important;
+    line-height: 1.25 !important;
+    text-transform: uppercase;
+  }
+
+  #jh-offseason-schedule .jhos-topbar-badge {
+    background: var(--jhos-gold) !important;
+    color: var(--jhos-cardinal-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 999px !important;
+    padding: 5px 10px !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.55px !important;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+  }
+
+  #jh-offseason-schedule .jhos-table-wrap {
+    border: 1px solid rgba(153, 0, 0, 0.16) !important;
+    border-top: none !important;
+    border-radius: 0 0 18px 18px !important;
+    background: #ffffff !important;
+    box-shadow:
+      0 16px 34px rgba(12, 35, 64, 0.09),
+      0 3px 10px rgba(153, 0, 0, 0.045);
+    overflow: hidden !important;
+  }
+
+  #jh-offseason-schedule .jhos-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    table-layout: fixed !important;
+  }
+
+  #jh-offseason-schedule .jhos-col-date {
+    width: 22% !important;
+  }
+
+  #jh-offseason-schedule .jhos-col-event {
+    width: 54% !important;
+  }
+
+  #jh-offseason-schedule .jhos-col-status {
+    width: 24% !important;
+  }
+
+  #jh-offseason-schedule .jhos-table thead tr {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(153, 0, 0, 0.07) 0%,
+        rgba(255, 204, 0, 0.12) 48%,
+        rgba(12, 35, 64, 0.055) 100%
+      ) !important;
+    border-bottom: none !important;
+  }
+
+  #jh-offseason-schedule .jhos-table th {
+    position: relative;
+    padding: 14px 18px !important;
+    color: var(--jhos-cardinal-dark) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.48px !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(153, 0, 0, 0.18) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table th + th {
+    border-left: 1px solid rgba(153, 0, 0, 0.10);
+  }
+
+  #jh-offseason-schedule .jhos-table td {
+    border-bottom: 1px solid rgba(153, 0, 0, 0.09) !important;
+    vertical-align: middle !important;
+  }
+
+  #jh-offseason-schedule .jhos-table td + td {
+    border-left: 1px solid rgba(153, 0, 0, 0.075);
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr:last-child td {
+    border-bottom: none !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr td:nth-child(1) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.042) 0%,
+        #ffffff 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr td:nth-child(2) {
+    background: #ffffff !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr td:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 204, 0, 0.075) 0%,
+        rgba(153, 0, 0, 0.030) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr:nth-child(even) td:nth-child(1) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.060) 0%,
+        rgba(255, 255, 255, 0.96) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr:nth-child(even) td:nth-child(2) {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 204, 0, 0.040) 0%,
+        #ffffff 34%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table tbody tr:nth-child(even) td:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 204, 0, 0.105) 0%,
+        rgba(153, 0, 0, 0.040) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-muted td:nth-child(1) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12, 35, 64, 0.050) 0%,
+        rgba(255, 255, 255, 0.96) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-muted td:nth-child(2) {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(12, 35, 64, 0.035) 0%,
+        #ffffff 36%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-muted td:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(12, 35, 64, 0.045) 0%,
+        rgba(153, 0, 0, 0.030) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-cell {
+    padding: 18px 18px !important;
+  }
+
+  #jh-offseason-schedule .jhos-cell-date {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #jh-offseason-schedule .jhos-date {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 82px;
+    padding: 7px 9px;
+    border-radius: 999px;
+    background: rgba(153, 0, 0, 0.075);
+    border: 1px solid rgba(153, 0, 0, 0.16);
+    color: var(--jhos-cardinal-dark) !important;
+    font-size: 12.8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05px;
+    line-height: 1.1 !important;
+    white-space: nowrap;
+  }
+
+  #jh-offseason-schedule .jhos-event-name {
+    color: var(--jhos-navy) !important;
+    font-size: 15.5px !important;
+    font-weight: 720 !important;
+    letter-spacing: -0.14px !important;
+    line-height: 1.22 !important;
+  }
+
+  #jh-offseason-schedule .jhos-event-location {
+    margin-top: 5px !important;
+    color: #475569 !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.38 !important;
+  }
+
+  #jh-offseason-schedule .jhos-event-location span,
+  #jh-offseason-schedule .jhos-event-location span[style] {
+    color: var(--jhos-cardinal-dark) !important;
+    font-weight: 650 !important;
+  }
+
+  #jh-offseason-schedule .jhos-event-location[style] {
+    color: var(--jhos-navy) !important;
+    font-weight: 650 !important;
+  }
+
+  #jh-offseason-schedule a[title*="View"] {
+    color: var(--jhos-cardinal) !important;
+    border-radius: 999px;
+    background: rgba(153, 0, 0, 0.065);
+    border: 1px solid rgba(153, 0, 0, 0.16);
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #jh-offseason-schedule a[title*="View"]:hover,
+  #jh-offseason-schedule a[title*="View"]:focus {
+    color: var(--jhos-gold) !important;
+    background: var(--jhos-cardinal) !important;
+    border-color: rgba(255, 204, 0, 0.42);
+    transform: translateY(-1px);
+  }
+
+  #jh-offseason-schedule .jhos-status-wrap {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #jh-offseason-schedule .jhos-status {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px 4px;
+    max-width: 100%;
+    padding: 6px 9px !important;
+    border-radius: 999px;
+    font-size: 10.4px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18px !important;
+    line-height: 1.1 !important;
+    white-space: normal;
+    border: 1px solid transparent;
+  }
+
+  #jh-offseason-schedule .jhos-status-line {
+    display: inline !important;
+  }
+
+  #jh-offseason-schedule .jhos-status-line + .jhos-status-line::before {
+    content: " " !important;
+  }
+
+  #jh-offseason-schedule .jhos-status.is-gray {
+    color: var(--jhos-cardinal-dark) !important;
+    background: rgba(153, 0, 0, 0.075);
+    border-color: rgba(153, 0, 0, 0.16);
+  }
+
+  #jh-offseason-schedule .jhos-status.is-gold {
+    color: #6f4f00 !important;
+    background: rgba(255, 204, 0, 0.18);
+    border-color: rgba(255, 204, 0, 0.38);
+  }
+
+  #jh-offseason-schedule .jhos-status.is-navy {
+    color: var(--jhos-navy) !important;
+    background: rgba(12, 35, 64, 0.075);
+    border-color: rgba(12, 35, 64, 0.16);
+  }
+
+  @media (min-width: 701px) {
+    #jh-offseason-schedule .jhos-table tbody tr {
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background-color 0.18s ease;
+    }
+
+    #jh-offseason-schedule .jhos-table tbody tr:hover td:nth-child(1),
+    #jh-offseason-schedule .jhos-table tbody tr:hover td:nth-child(2),
+    #jh-offseason-schedule .jhos-table tbody tr:hover td:nth-child(3) {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(153, 0, 0, 0.060) 0%,
+          #ffffff 48%,
+          rgba(255, 204, 0, 0.115) 100%
+        ) !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    #jh-offseason-schedule {
+      --jhos-body-y: 12px;
+      --jhos-body-x: 6px;
+
+      margin: 18px 0 50px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    #jh-offseason-schedule .jhos-title-row {
+      margin-bottom: 15px !important;
+      padding: 12px 12px 12px 15px !important;
+      border-radius: 14px;
+    }
+
+    #jh-offseason-schedule .jhos-title-row::before {
+      width: 4px;
+    }
+
+    #jh-offseason-schedule .jhos-title {
+      font-size: 14.2px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.15px !important;
+      line-height: 1.26 !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar {
+      padding: 14px 13px !important;
+      border-radius: 15px 15px 0 0 !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-inner {
+      gap: 8px !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-title {
+      font-size: 12.4px !important;
+      letter-spacing: 0.48px !important;
+      line-height: 1.22 !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-badge {
+      padding: 4px 8px !important;
+      font-size: 9.2px !important;
+    }
+
+    #jh-offseason-schedule .jhos-table-wrap {
+      border-radius: 0 0 15px 15px !important;
+      box-shadow:
+        0 12px 24px rgba(12, 35, 64, 0.08),
+        0 2px 8px rgba(153, 0, 0, 0.04);
+    }
+
+    #jh-offseason-schedule .jhos-col-date {
+      width: 22% !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-event {
+      width: 52% !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-status {
+      width: 26% !important;
+    }
+
+    #jh-offseason-schedule .jhos-table th {
+      padding: 10px 4px !important;
+      font-size: 8.4px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.12px !important;
+      line-height: 1.12 !important;
+    }
+
+    #jh-offseason-schedule .jhos-table td + td {
+      border-left: 1px solid rgba(153, 0, 0, 0.070);
+    }
+
+    #jh-offseason-schedule .jhos-cell {
+      padding: 12px 5px !important;
+    }
+
+    #jh-offseason-schedule .jhos-cell-date {
+      justify-content: center;
+    }
+
+    #jh-offseason-schedule .jhos-date {
+      min-width: 0;
+      width: 100%;
+      padding: 5px 4px;
+      border-radius: 10px;
+      font-size: 9.7px !important;
+      font-weight: 700 !important;
+      line-height: 1.08 !important;
+      text-align: center !important;
+      white-space: normal;
+    }
+
+    #jh-offseason-schedule .jhos-event-name {
+      font-size: 13.1px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.12px !important;
+      line-height: 1.13 !important;
+    }
+
+    #jh-offseason-schedule .jhos-event-location {
+      margin-top: 4px !important;
+      font-size: 10.2px !important;
+      line-height: 1.22 !important;
+    }
+
+    #jh-offseason-schedule .jhos-status-wrap {
+      gap: 4px;
+    }
+
+    #jh-offseason-schedule .jhos-status {
+      width: auto;
+      max-width: 100%;
+      padding: 5px 5px !important;
+      border-radius: 9px;
+      font-size: 7.9px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.04px !important;
+      line-height: 1.08 !important;
+    }
+
+    #jh-offseason-schedule .jhos-status-line {
+      display: inline !important;
+    }
+
+    #jh-offseason-schedule .jhos-status-line + .jhos-status-line::before {
+      content: " " !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-offseason-schedule {
+      margin-bottom: 46px !important;
+    }
+
+    #jh-offseason-schedule .jhos-title {
+      font-size: 13.4px !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-title {
+      font-size: 11.6px !important;
+      letter-spacing: 0.32px !important;
+    }
+
+    #jh-offseason-schedule .jhos-topbar-badge {
+      font-size: 8.6px !important;
+      padding: 4px 7px !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-date {
+      width: 22.5% !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-event {
+      width: 51.5% !important;
+    }
+
+    #jh-offseason-schedule .jhos-col-status {
+      width: 26% !important;
+    }
+
+    #jh-offseason-schedule .jhos-table th {
+      font-size: 7.9px !important;
+      padding: 9px 3px !important;
+    }
+
+    #jh-offseason-schedule .jhos-cell {
+      padding: 11px 4px !important;
+    }
+
+    #jh-offseason-schedule .jhos-date {
+      font-size: 9.2px !important;
+      padding: 5px 3px;
+    }
+
+    #jh-offseason-schedule .jhos-event-name {
+      font-size: 12.5px !important;
+    }
+
+    #jh-offseason-schedule .jhos-event-location {
+      font-size: 9.7px !important;
+    }
+
+    #jh-offseason-schedule .jhos-status {
+      font-size: 7.4px !important;
+      padding: 5px 4px !important;
+    }
+  }
+</style>
   
 <div class="jhos-title-row">
   <h4 class="jhos-title">
@@ -4405,6 +5014,557 @@
     }
   </style>
 
+<style id="jh-summer-results-log-cardinal-polish">
+  #jh-summer-results-log-isolated {
+    --jh-srl-cardinal: #990000;
+    --jh-srl-cardinal-dark: #650000;
+    --jh-srl-gold: #ffcc00;
+    --jh-srl-gold-soft: #fff5cc;
+    --jh-srl-navy: #0c2340;
+    --jh-srl-ink: #172033;
+    --jh-srl-muted: #64748b;
+    --jh-srl-border: rgba(153, 0, 0, 0.14);
+
+    margin: 34px 0 58px !important;
+    color: var(--jh-srl-navy) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-wrap {
+    border-radius: 22px !important;
+    border: 1px solid rgba(153, 0, 0, 0.18) !important;
+    background: #ffffff !important;
+    box-shadow:
+      0 18px 38px rgba(12, 35, 64, 0.11),
+      0 4px 12px rgba(153, 0, 0, 0.045) !important;
+    overflow: hidden !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-head {
+    position: relative;
+    padding: 20px 22px 18px !important;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-srl-cardinal-dark) 0%,
+        var(--jh-srl-cardinal) 45%,
+        var(--jh-srl-navy) 100%
+      ) !important;
+    border-bottom: 2px solid rgba(255, 204, 0, 0.42) !important;
+    overflow: hidden;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-srl-cardinal-dark) 0%,
+        var(--jh-srl-gold) 52%,
+        var(--jh-srl-cardinal) 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-head::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 204, 0, 0.08);
+    pointer-events: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-kicker {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 7px !important;
+    color: var(--jh-srl-gold) !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.9px !important;
+    line-height: 1.15 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-title {
+    position: relative;
+    z-index: 1;
+    color: #ffffff !important;
+    font-size: 22px !important;
+    font-weight: 760 !important;
+    letter-spacing: -0.35px !important;
+    line-height: 1.16 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-subtitle {
+    position: relative;
+    z-index: 1;
+    max-width: 800px !important;
+    margin-top: 8px !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.48 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-list {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.035) 0%,
+        #ffffff 42%,
+        rgba(255, 204, 0, 0.055) 100%
+      ) !important;
+    padding: 12px !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.85fr);
+    grid-template-areas:
+      "main results"
+      "course results";
+    gap: 5px 16px;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 10px !important;
+    padding: 15px 16px 14px 18px !important;
+    border: 1px solid rgba(153, 0, 0, 0.13) !important;
+    border-radius: 16px;
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #ffffff 52%,
+        rgba(255, 204, 0, 0.070) 100%
+      ) !important;
+    box-shadow:
+      0 8px 18px rgba(12, 35, 64, 0.055),
+      0 2px 6px rgba(153, 0, 0, 0.030);
+    overflow: hidden;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-row:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background:
+      linear-gradient(
+        180deg,
+        var(--jh-srl-cardinal-dark) 0%,
+        var(--jh-srl-cardinal) 60%,
+        var(--jh-srl-gold) 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-row:nth-child(even) {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(153, 0, 0, 0.030) 0%,
+        #ffffff 48%,
+        rgba(255, 204, 0, 0.095) 100%
+      ) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-main {
+    grid-area: main;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    min-width: 0;
+    margin: 0 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-event {
+    min-width: 0;
+    color: var(--jh-srl-navy) !important;
+    font-size: 14.5px !important;
+    font-weight: 720 !important;
+    letter-spacing: -0.12px !important;
+    line-height: 1.24 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date {
+    flex: 0 0 auto;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(153, 0, 0, 0.075);
+    border: 1px solid rgba(153, 0, 0, 0.16);
+    color: var(--jh-srl-cardinal-dark) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-course {
+    grid-area: course;
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 11.6px !important;
+    font-weight: 500 !important;
+    line-height: 1.34 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-result-line {
+    grid-area: results;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 7px !important;
+    margin: 0 !important;
+    color: #334155 !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    font-weight: 600 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-sep {
+    display: none !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status,
+  #jh-summer-results-log-isolated .jh-srl-score-unit,
+  #jh-summer-results-log-isolated .jh-srl-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 30px;
+    padding: 6px 9px !important;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.05 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status {
+    font-size: 9.8px !important;
+    font-weight: 750 !important;
+    letter-spacing: 0.25px !important;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(12, 35, 64, 0.045);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-pending {
+    background: rgba(255, 204, 0, 0.18) !important;
+    border: 1px solid rgba(255, 204, 0, 0.40) !important;
+    color: #6f4f00 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-completed {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-srl-cardinal) 0%,
+        var(--jh-srl-cardinal-dark) 100%
+      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.42) !important;
+    color: var(--jh-srl-gold) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-score-unit {
+    gap: 4px !important;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(153, 0, 0, 0.12);
+    color: var(--jh-srl-navy);
+    box-shadow: 0 3px 8px rgba(12, 35, 64, 0.035);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-label {
+    color: rgba(101, 0, 0, 0.70) !important;
+    font-size: 9.2px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.28px !important;
+    line-height: 1 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-score {
+    font-weight: 750 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-under {
+    color: var(--jh-srl-cardinal) !important;
+    font-weight: 750 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-even {
+    color: #1e3a8a !important;
+    font-weight: 720 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-over {
+    color: var(--jh-srl-navy) !important;
+    font-weight: 720 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-muted {
+    color: #94a3b8 !important;
+    font-weight: 650 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-link {
+    color: var(--jh-srl-cardinal-dark) !important;
+    background: #ffffff;
+    border: 1px solid rgba(153, 0, 0, 0.24) !important;
+    text-decoration: none !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18px !important;
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-link:hover,
+  #jh-summer-results-log-isolated .jh-srl-link:focus {
+    color: var(--jh-srl-gold) !important;
+    background: var(--jh-srl-cardinal) !important;
+    border-color: rgba(255, 204, 0, 0.46) !important;
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 721px) {
+    #jh-summer-results-log-isolated .jh-srl-row {
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-row:hover {
+      transform: translateY(-1px);
+      border-color: rgba(153, 0, 0, 0.20) !important;
+      box-shadow:
+        0 12px 24px rgba(12, 35, 64, 0.08),
+        0 3px 8px rgba(153, 0, 0, 0.045);
+    }
+  }
+
+  @media (max-width: 720px) {
+    #jh-summer-results-log-isolated {
+      margin: 28px 0 50px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-wrap {
+      border-radius: 18px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-head {
+      padding: 17px 15px 15px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-kicker {
+      font-size: 9.8px !important;
+      letter-spacing: 0.75px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-title {
+      font-size: 18.2px !important;
+      font-weight: 740 !important;
+      line-height: 1.18 !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-subtitle {
+      font-size: 11.3px !important;
+      line-height: 1.42 !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-list {
+      padding: 10px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "main"
+        "course"
+        "results";
+      gap: 6px;
+      padding: 13px 12px 12px 14px !important;
+      border-radius: 15px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-row::before {
+      width: 4px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-main {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event {
+      font-size: 13.4px !important;
+      font-weight: 720 !important;
+      line-height: 1.20 !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date {
+      padding: 4px 7px;
+      font-size: 9.3px !important;
+      white-space: nowrap;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-course {
+      font-size: 11px !important;
+      line-height: 1.28 !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-result-line {
+      justify-content: flex-start !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px !important;
+      width: 100%;
+      margin-top: 2px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-status,
+    #jh-summer-results-log-isolated .jh-srl-score-unit,
+    #jh-summer-results-log-isolated .jh-srl-link {
+      width: 100%;
+      min-height: 30px;
+      padding: 6px 6px !important;
+      border-radius: 10px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-status {
+      font-size: 8.8px !important;
+      letter-spacing: 0.18px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-label {
+      font-size: 8.4px !important;
+      letter-spacing: 0.18px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-score-unit {
+      gap: 3px !important;
+      flex-wrap: wrap;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-link {
+      font-size: 9px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-summer-results-log-isolated {
+      margin: 26px 0 46px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-head {
+      padding: 16px 14px 14px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-title {
+      font-size: 17px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-subtitle {
+      font-size: 10.8px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-list {
+      padding: 9px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-row {
+      padding: 12px 10px 11px 13px !important;
+      border-radius: 14px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event {
+      font-size: 12.8px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date {
+      font-size: 8.7px !important;
+      padding: 4px 6px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-course {
+      font-size: 10.5px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-result-line {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-status,
+    #jh-summer-results-log-isolated .jh-srl-score-unit,
+    #jh-summer-results-log-isolated .jh-srl-link {
+      min-height: 29px;
+      padding: 6px 5px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-status {
+      font-size: 8.2px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-label {
+      font-size: 7.9px !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-summer-results-log-isolated .jh-srl-title {
+      font-size: 16.2px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event {
+      font-size: 12.2px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date {
+      font-size: 8.2px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-course {
+      font-size: 10px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-status {
+      font-size: 7.8px !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-label {
+      font-size: 7.5px !important;
+    }
+  }
+</style>
+
+  
   <div class="jh-srl-wrap">
     <header class="jh-srl-head">
       <p class="jh-srl-kicker">Results Log</p>
