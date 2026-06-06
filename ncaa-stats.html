@@ -505,7 +505,7 @@
 
     @media (max-width: 960px) {
       #jh-ncaa-sophomore-hero {
-        padding: 126px 16px 0 16px;
+        padding: 126px 14px 0 14px;
         margin-bottom: 18px;
       }
 
@@ -516,7 +516,7 @@
 
     @media (max-width: 768px) {
       #jh-ncaa-sophomore-hero {
-        padding: 138px 10px 0 10px;
+        padding: 138px 8px 0 8px;
         margin-bottom: 18px;
         scroll-margin-top: 150px;
       }
@@ -527,16 +527,16 @@
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
         width: 100%;
-        height: 255px;
+        height: clamp(185px, 50vw, 215px);
         aspect-ratio: auto;
         object-fit: cover;
-        object-position: left center;
+        object-position: center center;
       }
     }
 
     @media (max-width: 480px) {
       #jh-ncaa-sophomore-hero {
-        padding: 134px 8px 0 8px;
+        padding: 134px 6px 0 6px;
         margin-bottom: 16px;
       }
 
@@ -545,8 +545,8 @@
       }
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-        height: 240px;
-        object-position: left center;
+        height: clamp(180px, 49vw, 205px);
+        object-position: center center;
       }
     }
 
@@ -556,8 +556,8 @@
       }
 
       #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-        height: 228px;
-        object-position: left center;
+        height: 188px;
+        object-position: center center;
       }
     }
   </style>
