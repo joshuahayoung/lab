@@ -1,16 +1,16 @@
 {
   "seasonMeta": {
-    "pageType": "sophomore-season-operating-log",
-    "season": "2026–27",
-    "classYear": "Sophomore",
-    "program": "USC Men's Golf",
-    "pageTitle": "NCAA STATS",
-    "pageSubtitle": "2026–27 USC Sophomore Season Log",
-    "scheduleTitle": "2026–27 Championship Schedule",
-    "lastUpdated": "Jun 5, 2026",
-    "dataStatus": "Pre-season schedule loaded. Results pending official tournament completion.",
-    "sourceNote": "Schedule organized from USC Men's Golf 2026–27 Championship Schedule."
-  },
+  "pageType": "sophomore-season-operating-log",
+  "season": "2026–27",
+  "classYear": "Sophomore",
+  "program": "USC Men's Golf",
+  "pageTitle": "NCAA STATS",
+  "pageSubtitle": "2026–27 USC Sophomore Season Log",
+  "scheduleTitle": "2026–27 USC Sophomore Season Schedule",
+  "lastUpdated": "Jun 5, 2026",
+  "dataStatus": "Pre-season schedule loaded. Results pending official tournament completion.",
+  "sourceNote": "Schedule organized from USC Men's Golf 2026–27 season schedule."
+},
   "banner": {
     "active": false,
     "note": "Banner rotation inactive until USC season images are available.",
