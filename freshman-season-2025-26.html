@@ -460,7 +460,7 @@
     
 
 
-
+<section class="ncaa-hero-section jh-freshman-hero-section" aria-label="Freshman season archive hero">
 <div class="jh-page-title-block jh-freshman-page-title-block">
   <h1 class="jh-page-title">
     FRESHMAN SEASON ARCHIVE
@@ -472,9 +472,17 @@
 </div>
 
 <style id="jh-freshman-page-title-standard">
-  .ncaa-hero-section .jh-page-title-block,
-  .ncaa-hero-section .jh-page-title-block * {
+  .ncaa-hero-section,
+  .ncaa-hero-section * {
     box-sizing: border-box;
+  }
+
+  .ncaa-hero-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 140px 15px 0 15px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
   .ncaa-hero-section .jh-page-title-block {
@@ -520,7 +528,17 @@
     text-transform: uppercase;
   }
 
+  @media (max-width: 1024px) {
+    .ncaa-hero-section {
+      padding-top: 126px;
+    }
+  }
+
   @media (max-width: 768px) {
+    .ncaa-hero-section {
+      padding: 118px 15px 0 15px;
+    }
+
     .ncaa-hero-section .jh-page-title-block {
       margin-bottom: 32px;
       padding: 0 6px;
@@ -545,6 +563,10 @@
   }
 
   @media (max-width: 480px) {
+    .ncaa-hero-section {
+      padding: 112px 12px 0 12px;
+    }
+
     .ncaa-hero-section .jh-page-title-block {
       margin-bottom: 30px;
       padding: 0 4px;
@@ -567,6 +589,10 @@
   }
 
   @media (max-width: 390px) {
+    .ncaa-hero-section {
+      padding-top: 108px;
+    }
+
     .ncaa-hero-section .jh-page-title {
       font-size: 25px;
     }
@@ -576,6 +602,7 @@
     }
   }
 </style>
+  
   
 
 <div id="jh-rotating-ncaa-banner-isolated" style="display: block; width: 100%; max-width: 900px; margin: 0 auto 20px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both; contain: layout style paint;">
@@ -742,7 +769,7 @@
   })();
 </script>
 </div>
-</div>
+</section>
 
 <section id="jh-season-archive-access-freshman" class="jh-season-archive-access-freshman" aria-label="Season archive navigation">
   <style>
