@@ -2700,237 +2700,529 @@
 
   
 
-<style id="jh-reference-international-softening">
+<style id="jh-reference-international-section-upgrade">
   #jh-reference-international-section,
   #jh-reference-international-section * {
     box-sizing: border-box;
   }
 
   #jh-reference-international-section {
-    border-color: rgba(153, 0, 0, 0.12) !important;
-    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.055) !important;
+    --jhintl-cardinal: #990000;
+    --jhintl-cardinal-dark: #650000;
+    --jhintl-gold: #ffcc00;
+    --jhintl-gold-soft: #fff7d6;
+    --jhintl-navy: #0c2340;
+    --jhintl-muted: #64748b;
+    --jhintl-line: #e2e8f0;
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
-  #jh-reference-international-section > div:first-child {
+  #jh-reference-international-section .jh-intl-shell {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(153, 0, 0, 0.13);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.07);
+  }
+
+  #jh-reference-international-section .jh-intl-head {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    padding: 20px 22px;
     background:
+      radial-gradient(
+        circle at 6% 0%,
+        rgba(255, 204, 0, 0.20),
+        transparent 32%
+      ),
       linear-gradient(
         135deg,
-        #0c2340 0%,
-        #650000 100%
-      ) !important;
-    border-bottom-color: #ffcc00 !important;
-    font-weight: 700 !important;
+        var(--jhintl-navy) 0%,
+        var(--jhintl-cardinal-dark) 100%
+      );
+    border-bottom: 4px solid var(--jhintl-gold);
+    color: #ffffff;
   }
 
-  #jh-reference-international-section > div:first-child span {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.25px !important;
+  #jh-reference-international-section .jh-intl-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 204, 0, 0.13);
+    border: 1px solid rgba(255, 204, 0, 0.30);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 8px 18px rgba(0, 0, 0, 0.14);
   }
 
-  #jh-reference-international-section > div:first-child svg {
-    stroke: #ffcc00 !important;
+  #jh-reference-international-section .jh-intl-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--jhintl-gold);
   }
 
-  #jh-reference-international-section > div:first-child > div {
-    background: rgba(255, 204, 0, 0.12) !important;
-    border: 1px solid rgba(255, 204, 0, 0.22) !important;
+  #jh-reference-international-section .jh-intl-kicker {
+    display: block;
+    margin: 0 0 5px 0;
+    color: rgba(255, 204, 0, 0.88);
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 650;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
   }
 
-  #jh-reference-international-section > div:nth-child(2) {
+  #jh-reference-international-section .jh-intl-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.35px;
+  }
+
+  #jh-reference-international-section .jh-intl-subtitle {
+    margin: 6px 0 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  #jh-reference-international-section .jh-intl-body {
+    padding: 20px 22px 22px;
     background:
       linear-gradient(
         180deg,
         #ffffff 0%,
         #fffdf6 100%
-      ) !important;
+      );
   }
 
-  #jh-reference-international-section li {
-    border-bottom-color: rgba(153, 0, 0, 0.14) !important;
+  #jh-reference-international-section .jh-intl-list {
+    display: grid;
+    gap: 13px;
+    width: 100%;
   }
 
-  #jh-reference-international-section b {
-    color: #0c2340 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.1px !important;
+  #jh-reference-international-section .jh-intl-card {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 15px;
+    align-items: stretch;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid var(--jhintl-line);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
   }
 
-  #jh-reference-international-section a {
-    color: #0c2340 !important;
+  #jh-reference-international-section .jh-intl-country {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 12px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.055) 0%,
+        rgba(255, 255, 255, 0.96) 100%
+      );
+    border-right: 1px solid #edf2f7;
+  }
+
+  #jh-reference-international-section .jh-intl-flag-wrap {
+    display: grid;
+    gap: 6px;
+    justify-items: center;
+  }
+
+  #jh-reference-international-section .jh-intl-flag {
+    width: 34px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(12, 35, 64, 0.12);
+    box-shadow: 0 3px 8px rgba(12, 35, 64, 0.08);
+  }
+
+  #jh-reference-international-section .jh-intl-country-label {
+    color: #650000;
+    font-size: 9.5px;
+    line-height: 1.1;
+    font-weight: 650;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  #jh-reference-international-section .jh-intl-copy {
+    min-width: 0;
+    padding: 16px 16px 16px 0;
+  }
+
+  #jh-reference-international-section .jh-intl-event-title {
+    margin: 0;
+    color: var(--jhintl-navy);
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.12px;
+  }
+
+  #jh-reference-international-section .jh-intl-meta {
+    margin: 5px 0 0 0;
+    color: var(--jhintl-muted);
+    font-size: 11.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  #jh-reference-international-section .jh-intl-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+  }
+
+  #jh-reference-international-section .jh-intl-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(12, 35, 64, 0.14);
+    color: var(--jhintl-navy) !important;
     text-decoration: none !important;
-    border-bottom-color: rgba(153, 0, 0, 0.30) !important;
-    font-weight: 600 !important;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  #jh-reference-international-section a:hover {
-    color: #990000 !important;
-    border-bottom-color: #990000 !important;
-  }
-
-  #jh-reference-international-section [style*="font-weight: 900"] {
-    font-weight: 700 !important;
-  }
-
-  #jh-reference-international-section [style*="font-weight: 800"] {
-    font-weight: 650 !important;
-  }
-
-  #jh-reference-international-section [style*="font-weight: 700"] {
-    font-weight: 600 !important;
-  }
-
-  #jh-reference-international-section [style*="font-weight: bold"] {
-    font-weight: 650 !important;
-  }
-
-  #jh-reference-international-section [style*="color: #1565c0"],
-  #jh-reference-international-section [style*="color:#1565c0"] {
-    color: #0c2340 !important;
-    border-bottom-color: rgba(153, 0, 0, 0.30) !important;
-  }
-
-  #jh-reference-international-section [style*="color:#ccc"],
-  #jh-reference-international-section [style*="color: #ccc"] {
-    color: rgba(153, 0, 0, 0.22) !important;
-  }
-
-  #jh-reference-international-section img {
-    max-width: 100%;
+  #jh-reference-international-section .jh-intl-link:hover {
+    color: var(--jhintl-cardinal) !important;
+    border-color: rgba(153, 0, 0, 0.34);
   }
 
   @media (max-width: 768px) {
     #jh-reference-international-section {
-      margin-bottom: 28px !important;
+      margin-bottom: 28px;
     }
 
-    #jh-reference-international-section > div:first-child {
-      padding: 16px 15px !important;
-      font-size: 16px !important;
-      align-items: flex-start !important;
+    #jh-reference-international-section .jh-intl-head {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      padding: 17px 15px;
     }
 
-    #jh-reference-international-section > div:first-child > div {
-      width: 30px !important;
-      height: 30px !important;
-      min-width: 30px !important;
-      margin-right: 10px !important;
+    #jh-reference-international-section .jh-intl-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
     }
 
-    #jh-reference-international-section > div:first-child span {
-      font-size: 16px !important;
-      line-height: 1.35 !important;
-      font-weight: 650 !important;
+    #jh-reference-international-section .jh-intl-icon svg {
+      width: 20px;
+      height: 20px;
     }
 
-    #jh-reference-international-section > div:nth-child(2) {
-      padding: 20px 15px !important;
+    #jh-reference-international-section .jh-intl-title {
+      font-size: 17px;
+      line-height: 1.28;
+      font-weight: 650;
     }
 
-    #jh-reference-international-section li {
-      margin-bottom: 16px !important;
-      padding-bottom: 14px !important;
+    #jh-reference-international-section .jh-intl-subtitle {
+      font-size: 11.5px;
+      line-height: 1.45;
     }
 
-    #jh-reference-international-section b {
-      font-size: 15px !important;
-      line-height: 1.35 !important;
+    #jh-reference-international-section .jh-intl-body {
+      padding: 18px 14px 20px;
     }
 
-    #jh-reference-international-section a {
-      font-size: 12.5px !important;
-      line-height: 1.45 !important;
-      display: inline;
+    #jh-reference-international-section .jh-intl-card {
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-radius: 14px;
     }
 
-    #jh-reference-international-section [style*="padding-left: 42px"] {
-      padding-left: 40px !important;
+    #jh-reference-international-section .jh-intl-country {
+      justify-content: flex-start;
+      padding: 12px 13px 8px 13px;
+      border-right: none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(153, 0, 0, 0.08) 0%,
+          #ffffff 100%
+        );
+    }
+
+    #jh-reference-international-section .jh-intl-flag-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-items: start;
+    }
+
+    #jh-reference-international-section .jh-intl-flag {
+      width: 30px;
+      height: 21px;
+    }
+
+    #jh-reference-international-section .jh-intl-copy {
+      padding: 6px 13px 13px 13px;
+    }
+
+    #jh-reference-international-section .jh-intl-event-title {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    #jh-reference-international-section .jh-intl-meta {
+      font-size: 10.8px;
     }
   }
 
   @media (max-width: 480px) {
-    #jh-reference-international-section > div:first-child {
-      padding: 15px 13px !important;
+    #jh-reference-international-section .jh-intl-head {
+      padding: 16px 13px;
     }
 
-    #jh-reference-international-section > div:first-child span {
-      font-size: 15px !important;
+    #jh-reference-international-section .jh-intl-body {
+      padding: 16px 12px 18px;
     }
 
-    #jh-reference-international-section > div:nth-child(2) {
-      padding: 18px 12px !important;
+    #jh-reference-international-section .jh-intl-title {
+      font-size: 16px;
     }
 
-    #jh-reference-international-section [style*="padding-left: 42px"] {
-      padding-left: 0 !important;
-      margin-top: 8px !important;
+    #jh-reference-international-section .jh-intl-subtitle {
+      font-size: 11px;
     }
 
-    #jh-reference-international-section a {
-      font-size: 12px !important;
+    #jh-reference-international-section .jh-intl-link {
+      font-size: 9.5px;
+      padding-left: 8px;
+      padding-right: 8px;
     }
   }
 </style>
-	
- <div id="jh-reference-international-section" style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); max-width: 900px; width: 100%; margin-left: auto; margin-right: auto; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-  <div style="background-color: #0c2340; color: white; padding: 18px 20px; font-weight: 800; font-size: 18px; display: flex; align-items: center; border-bottom: 3px solid #806600;">
-    <div style="margin-right: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 8px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="2" y1="12" x2="22" y2="12"></line>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-      </svg>
+
+<section
+  id="jh-reference-international-section"
+  aria-label="International championships and national team representation"
+>
+  <div class="jh-intl-shell">
+    <header class="jh-intl-head">
+      <div class="jh-intl-icon" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </div>
+
+      <div>
+        <span class="jh-intl-kicker">
+          National Team Representation
+        </span>
+
+        <h2 class="jh-intl-title">
+          International Championships
+        </h2>
+
+        <p class="jh-intl-subtitle">
+          Official international team and major amateur championship source links.
+        </p>
+      </div>
+    </header>
+
+    <div class="jh-intl-body">
+      <div class="jh-intl-list">
+
+        <article class="jh-intl-card">
+          <div class="jh-intl-country">
+            <div class="jh-intl-flag-wrap">
+              <img
+                class="jh-intl-flag"
+                src="https://flagcdn.com/w40/jp.png"
+                alt="Japan flag"
+              >
+              <span class="jh-intl-country-label">
+                Japan
+              </span>
+            </div>
+          </div>
+
+          <div class="jh-intl-copy">
+            <h3 class="jh-intl-event-title">
+              Toyota Junior Golf World Cup 2025 (Japan)
+            </h3>
+
+            <p class="jh-intl-meta">
+              International junior championship source archive.
+            </p>
+
+            <div class="jh-intl-links">
+              <a
+                class="jh-intl-link"
+                href="https://wjgtc.org/english/team/boy.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Participants Roster
+              </a>
+
+              <a
+                class="jh-intl-link"
+                href="https://results.golfstat.com/public/leaderboards/gsnav.cfm?pg=player&tid=29433"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Golfstat Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-intl-card">
+          <div class="jh-intl-country">
+            <div class="jh-intl-flag-wrap">
+              <img
+                class="jh-intl-flag"
+                src="https://flagcdn.com/w40/us.png"
+                alt="United States flag"
+              >
+              <span class="jh-intl-country-label">
+                USA
+              </span>
+            </div>
+          </div>
+
+          <div class="jh-intl-copy">
+            <h3 class="jh-intl-event-title">
+              Junior Americas Cup 2025 &amp; 2024
+            </h3>
+
+            <p class="jh-intl-meta">
+              Team competition source archive.
+            </p>
+
+            <div class="jh-intl-links">
+              <a
+                class="jh-intl-link"
+                href="https://www.junioramericascup.com/wp-content/uploads/2025/07/Player-Roster_2025_Boys-Junior-Americas-Cup_-Final.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                2025 Player Roster (PDF)
+              </a>
+
+              <a
+                class="jh-intl-link"
+                href="https://www.golfgenius.com/pages/11588475233379596235"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                2025 Leaderboard
+              </a>
+
+              <a
+                class="jh-intl-link"
+                href="https://ujga.bluegolf.com/bluegolf/ujga24/event/ujga2463/contest/1/leaderboard.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                2024 Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-intl-card">
+          <div class="jh-intl-country">
+            <div class="jh-intl-flag-wrap">
+              <img
+                class="jh-intl-flag"
+                src="https://flagcdn.com/w40/ar.png"
+                alt="Argentina flag"
+              >
+              <span class="jh-intl-country-label">
+                Argentina
+              </span>
+            </div>
+          </div>
+
+          <div class="jh-intl-copy">
+            <h3 class="jh-intl-event-title">
+              South American Major Events (Argentina)
+            </h3>
+
+            <p class="jh-intl-meta">
+              South American amateur championship source archive.
+            </p>
+
+            <div class="jh-intl-links">
+              <a
+                class="jh-intl-link"
+                href="https://www.aagscoring.com/golf/MuestraResultados.php?TorneoID=2343&c=914"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Campeonato Nacional por Golpes 2024 (AAG)
+              </a>
+
+              <a
+                class="jh-intl-link"
+                href="https://copatailhade.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Copa Juan Carlos Tailhade Official
+              </a>
+
+              <a
+                class="jh-intl-link"
+                href="https://www.wagr.com/events/torneo-internacional-copa-juan-carlos-tailhade-236714"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WAGR Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
-    <span style="letter-spacing: -0.5px;">International Championships (National Team Representation)</span>
   </div>
-
-  <div style="padding: 25px; background-color: #fcfcfc;">
-    <ul style="list-style: none; padding: 0; margin: 0;">
-      
-      <li style="margin-bottom: 18px; padding-bottom: 15px; border-bottom: 1px dotted #ccc;">
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-          <div style="width: 30px; flex: 0 0 30px; display: flex; align-items: flex-start; justify-content: center;">
-            <img src="https://flagcdn.com/w40/jp.png" style="width: 28px; height: 20px; object-fit: cover; border: 1px solid #eee; border-radius: 2px; display: block;">
-          </div>
-          <b style="color: #0c2340; font-size: 16px; line-height: 1.35;">Toyota Junior Golf World Cup 2025 (Japan)</b>
-        </div>
-        <div style="padding-left: 42px;">
-          <a href="https://wjgtc.org/english/team/boy.html" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Official Participants Roster</a> <span style="color:#ccc; margin: 0 5px;">|</span>
-          <a href="https://results.golfstat.com/public/leaderboards/gsnav.cfm?pg=player&tid=29433" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Golfstat Official Leaderboard</a>
-        </div>
-      </li>
-
-      <li style="margin-bottom: 18px; padding-bottom: 15px; border-bottom: 1px dotted #ccc;">
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-          <div style="width: 30px; flex: 0 0 30px; display: flex; align-items: flex-start; justify-content: center;">
-            <img src="https://flagcdn.com/w40/us.png" style="width: 28px; height: 20px; object-fit: cover; border: 1px solid #eee; border-radius: 2px; display: block;">
-          </div>
-          <b style="color: #0c2340; font-size: 16px; line-height: 1.35;">Junior Americas Cup 2025 & 2024</b>
-        </div>
-        <div style="padding-left: 42px;">
-          <a href="https://www.junioramericascup.com/wp-content/uploads/2025/07/Player-Roster_2025_Boys-Junior-Americas-Cup_-Final.pdf" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2025 Player Roster (PDF)</a> <span style="color:#ccc; margin: 0 5px;">|</span>
-          <a href="https://www.golfgenius.com/pages/11588475233379596235" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2025 Leaderboard</a> <span style="color:#ccc; margin: 0 5px;">|</span>
-          <a href="https://ujga.bluegolf.com/bluegolf/ujga24/event/ujga2463/contest/1/leaderboard.htm" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">2024 Official Leaderboard</a>
-        </div>
-      </li>
-
-      <li style="margin-bottom: 5px; padding-bottom: 10px;">
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
-          <div style="width: 30px; flex: 0 0 30px; display: flex; align-items: flex-start; justify-content: center;">
-            <img src="https://flagcdn.com/w40/ar.png" style="width: 28px; height: 20px; object-fit: cover; border: 1px solid #eee; border-radius: 2px; display: block;">
-          </div>
-          <b style="color: #0c2340; font-size: 16px; line-height: 1.35;">South American Major Events (Argentina)</b>
-        </div>
-        <div style="padding-left: 42px;">
-          <a href="https://www.aagscoring.com/golf/MuestraResultados.php?TorneoID=2343&c=914" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Campeonato Nacional por Golpes 2024 (AAG)</a> <span style="color:#ccc; margin: 0 5px;">|</span>
-          <a href="https://copatailhade.com/" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">Copa Juan Carlos Tailhade Official</a> <span style="color:#ccc; margin: 0 5px;">|</span>
-          <a href="https://www.wagr.com/events/torneo-internacional-copa-juan-carlos-tailhade-236714" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(21, 101, 192, 0.3);">WAGR Leaderboard</a>
-        </div>
-      </li>
-
-    </ul>
-  </div>
-</div>
+</section>
   
 
 <style id="jh-reference-national-junior-softening">
