@@ -744,656 +744,279 @@
 </div>
 
 
-<style id="jh-reference-summer-amateur-section-style">
-  #jh-reference-summer-amateur-section,
-  #jh-reference-summer-amateur-section * {
+<style id="jh-reference-simple-source-system">
+  #jh-reference-links-page .jh-ref-source-section,
+  #jh-reference-links-page .jh-ref-source-section * {
     box-sizing: border-box;
   }
 
-  #jh-reference-summer-amateur-section {
-    --jhsum-cardinal: #990000;
-    --jhsum-cardinal-dark: #650000;
-    --jhsum-gold: #ffcc00;
-    --jhsum-gold-soft: #fff7d6;
-    --jhsum-navy: #0c2340;
-    --jhsum-ink: #172033;
-    --jhsum-muted: #64748b;
-    --jhsum-line: #e2e8f0;
-    --jhsum-soft: #f8fafc;
-
+  #jh-reference-links-page .jh-ref-source-section {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto 30px auto;
+    max-width: 100%;
+    margin: 0 auto 24px auto;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #172033;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-shell {
+  #jh-reference-links-page .jh-ref-source-box {
     width: 100%;
-    border-radius: 18px;
-    border: 1px solid rgba(153, 0, 0, 0.13);
-    background: #ffffff;
+    max-width: 100%;
+    border: 1px solid #dbe3ee;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.07);
+    background: #ffffff;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-head {
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 14px;
-    align-items: center;
-    padding: 20px 22px;
-    background:
-      radial-gradient(
-        circle at 6% 0%,
-        rgba(255, 204, 0, 0.22),
-        transparent 32%
-      ),
-      linear-gradient(
-        135deg,
-        var(--jhsum-cardinal-dark) 0%,
-        var(--jhsum-cardinal) 52%,
-        var(--jhsum-navy) 100%
-      );
-    border-bottom: 4px solid var(--jhsum-gold);
-    color: #ffffff;
+  #jh-reference-links-page .jh-ref-source-head {
+    width: 100%;
+    padding: 14px 18px 13px;
+    background: #0c2340;
+    border-bottom: 3px solid #ffcc00;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 204, 0, 0.13);
-    border: 1px solid rgba(255, 204, 0, 0.30);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.10),
-      0 8px 18px rgba(0, 0, 0, 0.14);
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--jhsum-gold);
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-kicker {
-    display: block;
-    margin: 0 0 5px 0;
-    color: rgba(255, 204, 0, 0.88);
-    font-size: 10px;
-    line-height: 1.2;
-    font-weight: 650;
-    letter-spacing: 1.05px;
-    text-transform: uppercase;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-title {
+  #jh-reference-links-page .jh-ref-source-title {
     margin: 0;
     color: #ffffff;
-    font-size: 21px;
-    line-height: 1.18;
+    font-size: 17px;
+    line-height: 1.25;
     font-weight: 700;
-    letter-spacing: -0.35px;
+    letter-spacing: -0.2px;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-subtitle {
-    margin: 6px 0 0 0;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 12.5px;
-    line-height: 1.45;
+  #jh-reference-links-page .jh-ref-source-subtitle {
+    margin: 4px 0 0 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    line-height: 1.35;
     font-weight: 500;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-body {
-    padding: 20px 22px 22px;
-    background:
-      linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fffdf6 100%
-      );
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-note {
-    margin: 0 0 16px 0;
-    padding: 12px 14px;
-    border-radius: 13px;
-    border: 1px solid rgba(153, 0, 0, 0.12);
-    background: #ffffff;
-    color: var(--jhsum-muted);
-    font-size: 12px;
-    line-height: 1.55;
-    font-weight: 500;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-table-wrap {
+  #jh-reference-links-page .jh-ref-source-body {
     width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-    border: 1px solid var(--jhsum-line);
+    min-height: 42px;
+    padding: 0;
     background: #ffffff;
-    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
   }
 
-  #jh-reference-summer-amateur-section .jhsum-table {
+  #jh-reference-links-page .jh-ref-table {
     width: 100%;
-    border-collapse: collapse;
     table-layout: fixed;
-    background: #ffffff;
+    border-collapse: collapse;
+    border-spacing: 0;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-table th {
-    padding: 13px 14px;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jhsum-navy) 0%,
-        var(--jhsum-cardinal-dark) 100%
-      );
-    color: #ffffff;
-    border-bottom: 2px solid var(--jhsum-gold);
+  #jh-reference-links-page .jh-ref-table th {
+    padding: 9px 11px;
+    background: #f8fafc;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
     font-size: 10px;
-    line-height: 1.2;
+    line-height: 1.25;
     font-weight: 650;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.55px;
     text-transform: uppercase;
     text-align: left;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-col-date {
-    width: 22%;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-col-event {
-    width: 52%;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-col-status {
-    width: 26%;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-table td {
-    padding: 15px 14px;
+  #jh-reference-links-page .jh-ref-table td {
+    padding: 10px 11px;
     border-bottom: 1px solid #edf2f7;
-    vertical-align: top;
+    color: #334155;
+    font-size: 12.5px;
+    line-height: 1.35;
+    font-weight: 500;
+    vertical-align: middle;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-table tr:last-child td {
+  #jh-reference-links-page .jh-ref-table tr:last-child td {
     border-bottom: none;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-date-cell {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(153, 0, 0, 0.055) 0%,
-        rgba(255, 255, 255, 0.92) 100%
-      );
+  #jh-reference-links-page .jh-ref-col-event {
+    width: 56%;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-event-cell {
-    background: #ffffff;
+  #jh-reference-links-page .jh-ref-col-result {
+    width: 24%;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-status-cell {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 204, 0, 0.13) 0%,
-        rgba(255, 255, 255, 0.96) 100%
-      );
+  #jh-reference-links-page .jh-ref-col-date {
+    width: 20%;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-date {
+  #jh-reference-links-page .jh-ref-event-name {
+    color: #0c2340;
+    font-weight: 650;
+  }
+
+  #jh-reference-links-page .jh-ref-label {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 28px;
-    padding: 6px 9px;
+    margin-left: 7px;
+    padding: 2px 6px;
     border-radius: 999px;
-    background: #ffffff;
-    border: 1px solid rgba(153, 0, 0, 0.16);
-    color: var(--jhsum-cardinal-dark);
-    font-size: 11px;
-    line-height: 1.15;
+    border: 1px solid rgba(153, 0, 0, 0.18);
+    background: rgba(153, 0, 0, 0.055);
+    color: #990000;
+    font-size: 9px;
+    line-height: 1.2;
     font-weight: 650;
     letter-spacing: 0.25px;
     white-space: nowrap;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-event-title {
-    margin: 0;
-    color: var(--jhsum-navy);
-    font-size: 14.5px;
-    line-height: 1.35;
-    font-weight: 700;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-event-meta {
-    margin: 5px 0 0 0;
-    color: var(--jhsum-muted);
-    font-size: 11.5px;
-    line-height: 1.45;
-    font-weight: 500;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-source-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 9px;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-link,
-  #jh-reference-summer-amateur-section .jhsum-link-placeholder {
+  #jh-reference-links-page .jh-ref-result-link {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-height: 27px;
-    padding: 6px 9px;
-    border-radius: 999px;
-    background: #ffffff;
-    border: 1px solid rgba(12, 35, 64, 0.14);
-    color: var(--jhsum-navy) !important;
+    gap: 4px;
+    color: #0c2340 !important;
     text-decoration: none !important;
-    font-size: 10px;
-    line-height: 1;
+    border-bottom: 1px solid rgba(153, 0, 0, 0.28);
+    font-size: 11.5px;
+    line-height: 1.25;
     font-weight: 650;
-    letter-spacing: 0.35px;
-    text-transform: uppercase;
     white-space: nowrap;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-link:hover {
-    color: var(--jhsum-cardinal) !important;
-    border-color: rgba(153, 0, 0, 0.34);
+  #jh-reference-links-page .jh-ref-result-link:hover {
+    color: #990000 !important;
+    border-bottom-color: #990000;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-link-placeholder {
-    color: #806600 !important;
-    border-color: rgba(128, 102, 0, 0.18);
-    background: var(--jhsum-gold-soft);
+  #jh-reference-links-page .jh-ref-result-link svg {
+    width: 11px;
+    height: 11px;
+    stroke: currentColor;
+    flex: 0 0 11px;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-status-stack {
-    display: grid;
-    gap: 8px;
-    justify-items: start;
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-status-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 27px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: var(--jhsum-navy);
-    color: #ffffff;
-    border: 1px solid rgba(12, 35, 64, 0.16);
-    font-size: 10px;
-    line-height: 1;
-    font-weight: 650;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
+  #jh-reference-links-page .jh-ref-pending {
+    color: #94a3b8;
+    font-size: 11.5px;
+    line-height: 1.25;
+    font-weight: 600;
     white-space: nowrap;
   }
 
-  #jh-reference-summer-amateur-section .jhsum-status-pill.is-gold {
-    background: var(--jhsum-gold-soft);
-    color: #806600;
-    border-color: rgba(128, 102, 0, 0.18);
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-status-pill.is-cardinal {
-    background: rgba(153, 0, 0, 0.08);
-    color: var(--jhsum-cardinal);
-    border-color: rgba(153, 0, 0, 0.18);
-  }
-
-  #jh-reference-summer-amateur-section .jhsum-status-note {
-    margin: 0;
-    color: var(--jhsum-muted);
-    font-size: 11px;
-    line-height: 1.45;
-    font-weight: 500;
+  #jh-reference-links-page .jh-ref-date {
+    color: #64748b;
+    font-size: 11.5px;
+    line-height: 1.25;
+    font-weight: 600;
+    white-space: nowrap;
   }
 
   @media (max-width: 768px) {
-    #jh-reference-summer-amateur-section {
-      margin-bottom: 28px;
+    #jh-reference-links-page .jh-ref-source-head {
+      padding: 13px 14px 12px;
     }
 
-    #jh-reference-summer-amateur-section .jhsum-head {
-      grid-template-columns: 38px minmax(0, 1fr);
-      gap: 12px;
-      padding: 17px 15px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-title {
-      font-size: 17px;
-      line-height: 1.28;
+    #jh-reference-links-page .jh-ref-source-title {
+      font-size: 15.5px;
+      line-height: 1.3;
       font-weight: 650;
     }
 
-    #jh-reference-summer-amateur-section .jhsum-subtitle {
-      font-size: 11.5px;
-      line-height: 1.45;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-body {
-      padding: 18px 14px 20px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table thead {
-      display: none;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table,
-    #jh-reference-summer-amateur-section .jhsum-table tbody,
-    #jh-reference-summer-amateur-section .jhsum-table tr,
-    #jh-reference-summer-amateur-section .jhsum-table td {
-      display: block;
-      width: 100%;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table {
-      border-collapse: separate;
-      border-spacing: 0;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table tbody {
-      display: grid;
-      gap: 12px;
-      padding: 12px;
-      background: #f8fafc;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table tr {
-      overflow: hidden;
-      border-radius: 14px;
-      border: 1px solid rgba(153, 0, 0, 0.12);
-      background: #ffffff;
-      box-shadow: 0 6px 14px rgba(12, 35, 64, 0.05);
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table td {
-      border-bottom: none;
-      padding: 12px 13px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-date-cell {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(153, 0, 0, 0.08) 0%,
-          #ffffff 100%
-        );
-      padding-bottom: 8px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-event-cell {
-      padding-top: 6px;
-      padding-bottom: 10px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-status-cell {
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255, 204, 0, 0.16) 0%,
-          #ffffff 100%
-        );
-      border-top: 1px solid #edf2f7;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-status-stack {
-      grid-template-columns: auto minmax(0, 1fr);
-      align-items: center;
-      gap: 8px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-status-note {
+    #jh-reference-links-page .jh-ref-source-subtitle {
       font-size: 10.5px;
+    }
+
+    #jh-reference-links-page .jh-ref-table th {
+      padding: 8px 7px;
+      font-size: 9px;
+      letter-spacing: 0.35px;
+    }
+
+    #jh-reference-links-page .jh-ref-table td {
+      padding: 9px 7px;
+      font-size: 11px;
+      line-height: 1.32;
+    }
+
+    #jh-reference-links-page .jh-ref-col-event {
+      width: 54%;
+    }
+
+    #jh-reference-links-page .jh-ref-col-result {
+      width: 27%;
+    }
+
+    #jh-reference-links-page .jh-ref-col-date {
+      width: 19%;
+    }
+
+    #jh-reference-links-page .jh-ref-label {
+      margin-left: 4px;
+      padding: 1px 5px;
+      font-size: 8px;
+    }
+
+    #jh-reference-links-page .jh-ref-result-link,
+    #jh-reference-links-page .jh-ref-pending,
+    #jh-reference-links-page .jh-ref-date {
+      font-size: 10px;
+      white-space: normal;
     }
   }
 
-  @media (max-width: 480px) {
-    #jh-reference-summer-amateur-section .jhsum-head {
-      padding: 16px 13px;
+  @media (max-width: 430px) {
+    #jh-reference-links-page .jh-ref-table th {
+      font-size: 8.5px;
+      padding-left: 6px;
+      padding-right: 6px;
     }
 
-    #jh-reference-summer-amateur-section .jhsum-body {
-      padding: 16px 12px 18px;
+    #jh-reference-links-page .jh-ref-table td {
+      font-size: 10.2px;
+      padding-left: 6px;
+      padding-right: 6px;
     }
 
-    #jh-reference-summer-amateur-section .jhsum-title {
-      font-size: 16px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-subtitle {
-      font-size: 11px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-table tbody {
-      padding: 10px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-event-title {
-      font-size: 14px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-source-row {
-      gap: 6px;
-    }
-
-    #jh-reference-summer-amateur-section .jhsum-link,
-    #jh-reference-summer-amateur-section .jhsum-link-placeholder {
-      font-size: 9.5px;
-      padding-left: 8px;
-      padding-right: 8px;
+    #jh-reference-links-page .jh-ref-result-link svg {
+      width: 10px;
+      height: 10px;
+      flex-basis: 10px;
     }
   }
 </style>
 
 <section
-  id="jh-reference-summer-amateur-section"
-  aria-label="2026 summer amateur events"
+  id="jh-reference-summer-results-section"
+  class="jh-ref-source-section"
+  aria-label="2026 summer amateur results"
 >
-  <div class="jhsum-shell">
-    <header class="jhsum-head">
-      <div class="jhsum-icon" aria-hidden="true">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M5 19c5.5-9 8.5-12 14-14"></path>
-          <path d="M7 14c1.2 0 2.2 1 2.2 2.2S8.2 18.4 7 18.4s-2.2-1-2.2-2.2S5.8 14 7 14Z"></path>
-        </svg>
-      </div>
-
-      <div>
-        <span class="jhsum-kicker">
-          Off-Season Amateur Competition
-        </span>
-
-        <h2 class="jhsum-title">
-          2026 Summer Amateur Events
-        </h2>
-
-        <p class="jhsum-subtitle">
-          Off-season amateur competition record between the UTSA freshman season
-          and USC sophomore season.
-        </p>
-      </div>
+  <div class="jh-ref-source-box">
+    <header class="jh-ref-source-head">
+      <h2 class="jh-ref-source-title">
+        2026 Summer Amateur Results
+      </h2>
+      <p class="jh-ref-source-subtitle">
+        Official results will be added only after completed tournament records are posted.
+      </p>
     </header>
 
-    <div class="jhsum-body">
-      <p class="jhsum-note">
-        Summer amateur events are tracked separately from NCAA team-season
-        results. Final scores, finishes, WAGR impact, and official source links
-        should be updated only after each event is completed or officially posted.
+    <div class="jh-ref-source-body">
+    </div>
+  </div>
+</section>
+
+<section
+  id="jh-reference-usc-fall-results-section"
+  class="jh-ref-source-section"
+  aria-label="2026-27 USC fall season results"
+>
+  <div class="jh-ref-source-box">
+    <header class="jh-ref-source-head">
+      <h2 class="jh-ref-source-title">
+        2026–27 Fall Season at USC
+      </h2>
+      <p class="jh-ref-source-subtitle">
+        Official USC season results will be added after completed tournament records are posted.
       </p>
+    </header>
 
-      <div class="jhsum-table-wrap">
-        <table class="jhsum-table" aria-label="2026 summer amateur events table">
-          <thead>
-            <tr>
-              <th class="jhsum-col-date">Date</th>
-              <th class="jhsum-col-event">Event / Venue</th>
-              <th class="jhsum-col-status">Status / Source</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td class="jhsum-date-cell">
-                <span class="jhsum-date">Jun 17–20, 2026</span>
-              </td>
-
-              <td class="jhsum-event-cell">
-                <p class="jhsum-event-title">
-                  The Dogwood Invitational
-                </p>
-                <p class="jhsum-event-meta">
-                  Druid Hills Golf Club · Atlanta, Georgia
-                </p>
-
-                <div class="jhsum-source-row">
-                  <span class="jhsum-link-placeholder">
-                    Official source pending
-                  </span>
-                </div>
-              </td>
-
-              <td class="jhsum-status-cell">
-                <div class="jhsum-status-stack">
-                  <span class="jhsum-status-pill is-cardinal">
-                    Registered
-                  </span>
-                  <p class="jhsum-status-note">
-                    Invitation-based summer amateur event.
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="jhsum-date-cell">
-                <span class="jhsum-date">Jul 16–19, 2026</span>
-              </td>
-
-              <td class="jhsum-event-cell">
-                <p class="jhsum-event-title">
-                  Mexican Amateur Championship
-                </p>
-                <p class="jhsum-event-meta">
-                  FMG / U.S. Amateur exemption event · Mexico City
-                </p>
-
-                <div class="jhsum-source-row">
-                  <span class="jhsum-link-placeholder">
-                    Official source pending
-                  </span>
-                </div>
-              </td>
-
-              <td class="jhsum-status-cell">
-                <div class="jhsum-status-stack">
-                  <span class="jhsum-status-pill is-cardinal">
-                    Registered
-                  </span>
-                  <p class="jhsum-status-note">
-                    Result link to be added after official posting.
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="jhsum-date-cell">
-                <span class="jhsum-date">Jul 27–Aug 1, 2026</span>
-              </td>
-
-              <td class="jhsum-event-cell">
-                <p class="jhsum-event-title">
-                  Western Amateur Championship
-                </p>
-                <p class="jhsum-event-meta">
-                  Elite Amateur Golf Series · Beverly Country Club · Chicago, Illinois
-                </p>
-
-                <div class="jhsum-source-row">
-                  <span class="jhsum-link-placeholder">
-                    Official source pending
-                  </span>
-                </div>
-              </td>
-
-              <td class="jhsum-status-cell">
-                <div class="jhsum-status-stack">
-                  <span class="jhsum-status-pill is-gold">
-                    Exemption Pending
-                  </span>
-                  <p class="jhsum-status-note">
-                    Keep pending status until official field confirmation.
-                  </p>
-                </div>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="jhsum-date-cell">
-                <span class="jhsum-date">Aug 10–16, 2026</span>
-              </td>
-
-              <td class="jhsum-event-cell">
-                <p class="jhsum-event-title">
-                  U.S. Amateur Championship Pathway
-                </p>
-                <p class="jhsum-event-meta">
-                  Final qualifying route toward the U.S. Amateur Championship.
-                </p>
-
-                <div class="jhsum-source-row">
-                  <span class="jhsum-link-placeholder">
-                    Qualifying source pending
-                  </span>
-                </div>
-              </td>
-
-              <td class="jhsum-status-cell">
-                <div class="jhsum-status-stack">
-                  <span class="jhsum-status-pill">
-                    Final Qualifying
-                  </span>
-                  <p class="jhsum-status-note">
-                    Update after final qualifying site and result are official.
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="jh-ref-source-body">
     </div>
   </div>
 </section>
