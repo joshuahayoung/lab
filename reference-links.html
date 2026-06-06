@@ -3225,409 +3225,682 @@
 </section>
   
 
-<style id="jh-reference-national-junior-softening">
+<style id="jh-reference-national-junior-section-upgrade">
   #jh-reference-national-junior-section,
   #jh-reference-national-junior-section * {
     box-sizing: border-box;
   }
 
   #jh-reference-national-junior-section {
-    border-color: rgba(153, 0, 0, 0.12) !important;
-    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.055) !important;
+    --jhnj-cardinal: #990000;
+    --jhnj-cardinal-dark: #650000;
+    --jhnj-gold: #ffcc00;
+    --jhnj-gold-soft: #fff7d6;
+    --jhnj-navy: #0c2340;
+    --jhnj-muted: #64748b;
+    --jhnj-line: #e2e8f0;
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
-  #jh-reference-national-junior-section > div:first-child {
+  #jh-reference-national-junior-section .jh-nj-shell {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(153, 0, 0, 0.13);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.07);
+  }
+
+  #jh-reference-national-junior-section .jh-nj-head {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    padding: 20px 22px;
     background:
+      radial-gradient(
+        circle at 6% 0%,
+        rgba(255, 204, 0, 0.22),
+        transparent 32%
+      ),
       linear-gradient(
         135deg,
-        #990000 0%,
-        #650000 100%
-      ) !important;
-    border-bottom-color: #ffcc00 !important;
-    font-weight: 700 !important;
+        var(--jhnj-cardinal) 0%,
+        var(--jhnj-cardinal-dark) 100%
+      );
+    border-bottom: 4px solid var(--jhnj-gold);
+    color: #ffffff;
   }
 
-  #jh-reference-national-junior-section > div:first-child span {
-    color: #ffcc00 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.25px !important;
+  #jh-reference-national-junior-section .jh-nj-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 204, 0, 0.13);
+    border: 1px solid rgba(255, 204, 0, 0.30);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 8px 18px rgba(0, 0, 0, 0.14);
   }
 
-  #jh-reference-national-junior-section > div:first-child svg {
-    stroke: #ffcc00 !important;
+  #jh-reference-national-junior-section .jh-nj-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--jhnj-gold);
   }
 
-  #jh-reference-national-junior-section > div:first-child > div {
-    background: rgba(255, 204, 0, 0.12) !important;
-    border: 1px solid rgba(255, 204, 0, 0.24) !important;
+  #jh-reference-national-junior-section .jh-nj-kicker {
+    display: block;
+    margin: 0 0 5px 0;
+    color: rgba(255, 204, 0, 0.88);
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 650;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
   }
 
-  #jh-reference-national-junior-section > div:nth-child(2) {
+  #jh-reference-national-junior-section .jh-nj-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.35px;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-subtitle {
+    margin: 6px 0 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 12.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-body {
+    padding: 20px 22px 22px;
     background:
       linear-gradient(
         180deg,
         #ffffff 0%,
         #fffdf6 100%
-      ) !important;
-    color: #334155 !important;
+      );
   }
 
-  #jh-reference-national-junior-section p {
-    color: #334155 !important;
-    font-weight: 500 !important;
-    line-height: 1.65 !important;
+  #jh-reference-national-junior-section .jh-nj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    width: 100%;
   }
 
-  #jh-reference-national-junior-section b {
-    color: #0c2340 !important;
-    font-weight: 650 !important;
+  #jh-reference-national-junior-section .jh-nj-card {
+    min-width: 0;
+    border-radius: 15px;
+    border: 1px solid var(--jhnj-line);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
   }
 
-  #jh-reference-national-junior-section a {
-    color: #0c2340 !important;
+  #jh-reference-national-junior-section .jh-nj-card-wide {
+    grid-column: 1 / -1;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 14px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(153, 0, 0, 0.08) 0%,
+        #ffffff 100%
+      );
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-event-title {
+    margin: 0;
+    color: var(--jhnj-navy);
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.08px;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-card-body {
+    padding: 13px 14px 14px;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  #jh-reference-national-junior-section .jh-nj-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(12, 35, 64, 0.14);
+    color: var(--jhnj-navy) !important;
     text-decoration: none !important;
-    border-bottom: 1px solid rgba(153, 0, 0, 0.28) !important;
-    font-weight: 600 !important;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  #jh-reference-national-junior-section a:hover {
-    color: #990000 !important;
-    border-bottom-color: #990000 !important;
+  #jh-reference-national-junior-section .jh-nj-link:hover {
+    color: var(--jhnj-cardinal) !important;
+    border-color: rgba(153, 0, 0, 0.34);
   }
 
-  #jh-reference-national-junior-section [style*="color: #1b5e20"],
-  #jh-reference-national-junior-section [style*="color:#1b5e20"] {
-    color: #990000 !important;
+  #jh-reference-national-junior-section .jh-nj-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--jhnj-gold-soft);
+    color: #806600;
+    border: 1px solid rgba(128, 102, 0, 0.18);
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  #jh-reference-national-junior-section [style*="color:#0f4c81"],
-  #jh-reference-national-junior-section [style*="color: #0f4c81"] {
-    color: #0c2340 !important;
+  #jh-reference-national-junior-section .jh-nj-badge.is-silver {
+    background: #f8fafc;
+    color: #64748b;
+    border-color: #dbe3ee;
   }
 
-  #jh-reference-national-junior-section [style*="color:#767676"],
-  #jh-reference-national-junior-section [style*="color: #767676"] {
-    color: #806600 !important;
+  #jh-reference-national-junior-section .jh-nj-badge.is-blue {
+    background: rgba(12, 35, 64, 0.08);
+    color: var(--jhnj-navy);
+    border-color: rgba(12, 35, 64, 0.18);
   }
 
-  #jh-reference-national-junior-section [style*="color: #1565c0"],
-  #jh-reference-national-junior-section [style*="color:#1565c0"] {
-    color: #0c2340 !important;
+  #jh-reference-national-junior-section .jh-nj-stage-list {
+    display: grid;
+    gap: 9px;
+    width: 100%;
   }
 
-  #jh-reference-national-junior-section [style*="font-weight: 900"] {
-    font-weight: 700 !important;
+  #jh-reference-national-junior-section .jh-nj-stage {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) auto;
+    gap: 9px;
+    align-items: center;
+    padding: 10px 11px;
+    border-radius: 12px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(153, 0, 0, 0.045) 0%,
+        #ffffff 100%
+      );
+    border: 1px solid #edf2f7;
   }
 
-  #jh-reference-national-junior-section [style*="font-weight: 800"] {
-    font-weight: 650 !important;
+  #jh-reference-national-junior-section .jh-nj-stage-name {
+    color: #650000;
+    font-size: 10.5px;
+    line-height: 1.2;
+    font-weight: 650;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
   }
 
-  #jh-reference-national-junior-section [style*="font-weight: 700"] {
-    font-weight: 600 !important;
-  }
-
-  #jh-reference-national-junior-section [style*="font-weight: bold"] {
-    font-weight: 650 !important;
-  }
-
-  #jh-reference-national-junior-section [style*="font-size: 18px"] {
-    font-weight: 700 !important;
-  }
-
-  #jh-reference-national-junior-section [style*="font-size: 13px"] {
-    font-weight: 500 !important;
-  }
-
-  #jh-reference-national-junior-section [style*="font-size: 11px"] {
-    font-weight: 650 !important;
-    letter-spacing: 0.02em !important;
-  }
-
-  #jh-reference-national-junior-section span[style*="display:inline-flex"] {
-    color: #806600 !important;
-    font-weight: 650 !important;
-    background: rgba(255, 204, 0, 0.12) !important;
-    border: 1px solid rgba(128, 102, 0, 0.16) !important;
-    border-radius: 999px !important;
-    padding: 2px 7px !important;
-    line-height: 1.35 !important;
-  }
-
-  #jh-reference-national-junior-section span[style*="display:inline-flex"] svg {
-    fill: currentColor !important;
-  }
-
-  #jh-reference-national-junior-section [style*="display: grid"] {
-    gap: 22px !important;
+  #jh-reference-national-junior-section .jh-nj-stage-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
   }
 
   @media (max-width: 768px) {
     #jh-reference-national-junior-section {
-      margin-bottom: 28px !important;
+      margin-bottom: 28px;
     }
 
-    #jh-reference-national-junior-section > div:first-child {
-      padding: 16px 15px !important;
-      font-size: 16px !important;
-      align-items: flex-start !important;
+    #jh-reference-national-junior-section .jh-nj-head {
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      padding: 17px 15px;
     }
 
-    #jh-reference-national-junior-section > div:first-child > div {
-      width: 30px !important;
-      height: 30px !important;
-      min-width: 30px !important;
-      margin-right: 10px !important;
+    #jh-reference-national-junior-section .jh-nj-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
     }
 
-    #jh-reference-national-junior-section > div:first-child span {
-      font-size: 16px !important;
-      line-height: 1.35 !important;
-      font-weight: 650 !important;
+    #jh-reference-national-junior-section .jh-nj-icon svg {
+      width: 20px;
+      height: 20px;
     }
 
-    #jh-reference-national-junior-section > div:nth-child(2) {
-      padding: 20px 15px !important;
-      font-size: 12.8px !important;
+    #jh-reference-national-junior-section .jh-nj-title {
+      font-size: 17px;
+      line-height: 1.28;
+      font-weight: 650;
     }
 
-    #jh-reference-national-junior-section [style*="display: grid"] {
-      grid-template-columns: 1fr !important;
-      gap: 14px !important;
+    #jh-reference-national-junior-section .jh-nj-subtitle {
+      font-size: 11.5px;
+      line-height: 1.45;
     }
 
-    #jh-reference-national-junior-section p {
-      margin-top: 0 !important;
-      margin-bottom: 13px !important;
-      line-height: 1.6 !important;
+    #jh-reference-national-junior-section .jh-nj-body {
+      padding: 18px 14px 20px;
     }
 
-    #jh-reference-national-junior-section b {
-      display: inline !important;
-      font-weight: 650 !important;
+    #jh-reference-national-junior-section .jh-nj-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
-    #jh-reference-national-junior-section a {
-      font-size: 12.5px !important;
-      line-height: 1.45 !important;
+    #jh-reference-national-junior-section .jh-nj-stage {
+      grid-template-columns: 1fr;
+      gap: 7px;
+      align-items: start;
     }
 
-    #jh-reference-national-junior-section span[style*="display:inline-flex"] {
-      margin-left: 5px !important;
-      font-size: 10.5px !important;
-      padding: 2px 6px !important;
+    #jh-reference-national-junior-section .jh-nj-stage-links {
+      width: 100%;
+    }
+
+    #jh-reference-national-junior-section .jh-nj-event-title {
+      font-size: 13.5px;
     }
   }
 
   @media (max-width: 480px) {
-    #jh-reference-national-junior-section > div:first-child {
-      padding: 15px 13px !important;
+    #jh-reference-national-junior-section .jh-nj-head {
+      padding: 16px 13px;
     }
 
-    #jh-reference-national-junior-section > div:first-child span {
-      font-size: 15px !important;
+    #jh-reference-national-junior-section .jh-nj-body {
+      padding: 16px 12px 18px;
     }
 
-    #jh-reference-national-junior-section > div:nth-child(2) {
-      padding: 18px 12px !important;
+    #jh-reference-national-junior-section .jh-nj-title {
+      font-size: 16px;
     }
 
-    #jh-reference-national-junior-section a {
-      font-size: 12px !important;
+    #jh-reference-national-junior-section .jh-nj-subtitle {
+      font-size: 11px;
     }
 
-    #jh-reference-national-junior-section span[style*="display:inline-flex"] {
-      display: inline-flex !important;
-      margin-top: 4px !important;
+    #jh-reference-national-junior-section .jh-nj-link {
+      font-size: 9.5px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    #jh-reference-national-junior-section .jh-nj-badge {
+      font-size: 8.8px;
     }
   }
 </style>
+
+<section
+  id="jh-reference-national-junior-section"
+  aria-label="National junior tournaments and WAGR listed events"
+>
+  <div class="jh-nj-shell">
+    <header class="jh-nj-head">
+      <div class="jh-nj-icon" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+          <path d="M4 22h16"></path>
+          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+        </svg>
+      </div>
+
+      <div>
+        <span class="jh-nj-kicker">
+          FMG / WAGR Listed Events
+        </span>
+
+        <h2 class="jh-nj-title">
+          National Junior Tournaments
+        </h2>
+
+        <p class="jh-nj-subtitle">
+          Official national junior, FMG, regional-tour and WAGR listed source archive.
+        </p>
+      </div>
+    </header>
+
+    <div class="jh-nj-body">
+      <div class="jh-nj-grid">
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">INTERZONAS 2025</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://fmg-lxivcampeonatonacionalinterzonaslor1.golfgenius.com/pages/5354531"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">Copa Sur 2025</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.wagr.com/events/ii-copa-sur-257142"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WAGR Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">Copa Centro 2024 (Record 62)</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.wagr.com/events/xiv-copa-zona-centro-236017"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WAGR
+              </a>
+              <a
+                class="jh-nj-link"
+                href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                News
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">Copa Pacífico 2024</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4746623/results"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">National GAR WAGR 2023</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.wagr.com/events/gar-wagr-occidente-etapa-1-251484"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WAGR Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">GIRA GADO Mazatlán</h3>
+            <span class="jh-nj-badge">1st</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4205246/results"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">Nacional CONADE Olympic</h3>
+            <span class="jh-nj-badge is-silver">Silver Medal</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://www.golfgenius.com/pages/4212110"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Leaderboard
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">USA (JGANC)</h3>
+            <span class="jh-nj-badge is-blue">1st · U.S.</span>
+          </div>
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-links">
+              <a
+                class="jh-nj-link"
+                href="https://jganc.bluegolf.com/bluegolf/jganc23/event/jganc2321/contest/5/leaderboard.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Official Leaderboard, Bumgardner Jr. Memorial (16-18)
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="jh-nj-card jh-nj-card-wide">
+          <div class="jh-nj-card-head">
+            <h3 class="jh-nj-event-title">Tour Zona Centro 2024-2025</h3>
+            <span class="jh-nj-badge">Season Stages</span>
+          </div>
+
+          <div class="jh-nj-card-body">
+            <div class="jh-nj-stage-list">
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">6th Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Official
+                  </a>
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.wagr.com/events/etapa-final-tour-zona-centro-263230"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WAGR Leaderboard
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">5th Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Official
+                  </a>
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.wagr.com/events/quinta-etapa-tour-zona-centro-263229"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WAGR Leaderboard
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">4th Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="http://www.zonacentro.org/assets/res324.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Result PDF (16-18)
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">3rd Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.wagr.com/events/third-stage-tour-zona-centro-254011"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WAGR Leaderboard
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">2nd Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="http://www.zonacentro.org/assets/res293.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Result PDF (16-18)
+                  </a>
+                  <a
+                    class="jh-nj-link"
+                    href="https://www.wagr.com/events/second-stage-tour-zona-centro-254012"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WAGR Leaderboard
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+              <div class="jh-nj-stage">
+                <span class="jh-nj-stage-name">1st Stage</span>
+                <div class="jh-nj-stage-links">
+                  <a
+                    class="jh-nj-link"
+                    href="http://www.zonacentro.org/assets/res287.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Result PDF (16-18)
+                  </a>
+                </div>
+                <span class="jh-nj-badge">1st</span>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
 	
-  <div id="jh-reference-national-junior-section" style="margin-bottom: 30px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-  <div style="background-color: #1b5e20; color: white; padding: 18px 20px; font-weight: 800; font-size: 18px; display: flex; align-items: center; border-radius: 12px 12px 0 0; border-bottom: 3px solid #806600;">
-    <div style="margin-right: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); width: 32px; height: 32px; border-radius: 8px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-        <path d="M4 22h16"></path>
-        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
-      </svg>
-    </div>
-    <span style="letter-spacing: -0.5px;">National Junior Tournaments (FMG / WAGR Listed Events)</span>
-  </div>
-
-  <div style="padding: 25px; background-color: #fcfcfc; font-size: 13px;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-
-      <div>
-        <p>
-          <b style="color: #1b5e20;">• INTERZONAS 2025:</b>
-          <a href="https://fmg-lxivcampeonatonacionalinterzonaslor1.golfgenius.com/pages/5354531" target="_blank" style="color: #1565c0; text-decoration: none;">Official Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• Copa Sur 2025:</b>
-          <a href="https://www.wagr.com/events/ii-copa-sur-257142" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• Copa Centro 2024 (Record 62):</b>
-          <a href="https://www.wagr.com/events/xiv-copa-zona-centro-236017" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR</a> |
-          <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="color: #1565c0; text-decoration: none;">News</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• Copa Pacífico 2024:</b>
-          <a href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4746623/results" target="_blank" style="color: #1565c0; text-decoration: none;">Official Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• National GAR WAGR 2023:</b>
-          <a href="https://www.wagr.com/events/gar-wagr-occidente-etapa-1-251484" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• GIRA GADO Mazatlán:</b>
-          <a href="https://www.golfbox.dk/livescoring/tour/?language=1034#/competition/4205246/results" target="_blank" style="color: #1565c0; text-decoration: none;">Official Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st
-          </span>
-        </p>
-
-        <p>
-          <b style="color: #1b5e20;">• Nacional CONADE Olympic:</b>
-          <a href="https://www.golfgenius.com/pages/4212110" target="_blank" style="color: #1565c0; text-decoration: none;">Official Leaderboard</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#767676; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2l2.3 4.66L19.5 7l-3.75 3.65.89 5.16L12 13.77l-4.64 2.44.89-5.16L4.5 7l5.2-.34L12 2z"/>
-            </svg>
-            Silver Medal
-          </span>
-        </p>
-      </div>
-
-      <div>
-        <p>
-          <b style="color: #1b5e20;">• Tour Zona Centro 2024-2025:</b><br>
-          <span style="display: block; margin-top: 5px;">
-            - 6th Stage:
-            <a href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/" target="_blank" style="color: #1565c0; text-decoration: none;">Official</a> |
-            <a href="https://www.wagr.com/events/etapa-final-tour-zona-centro-263230" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-
-          <span style="display: block; margin-top: 3px;">
-            - 5th Stage:
-            <a href="https://www.zonacentro.org/Bienvenidos/resultados-2024-2025/" target="_blank" style="color: #1565c0; text-decoration: none;">Official</a> |
-            <a href="https://www.wagr.com/events/quinta-etapa-tour-zona-centro-263229" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-
-          <span style="display: block; margin-top: 3px;">
-            - 4th Stage:
-            <a href="http://www.zonacentro.org/assets/res324.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF (16-18)</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-
-          <span style="display: block; margin-top: 3px;">
-            - 3rd Stage:
-            <a href="https://www.wagr.com/events/third-stage-tour-zona-centro-254011" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-
-          <span style="display: block; margin-top: 3px;">
-            - 2nd Stage:
-            <a href="http://www.zonacentro.org/assets/res293.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF (16-18)</a> |
-            <a href="https://www.wagr.com/events/second-stage-tour-zona-centro-254012" target="_blank" style="color: #1565c0; text-decoration: none;">WAGR Leaderboard</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-
-          <span style="display: block; margin-top: 3px;">
-            - 1st Stage:
-            <a href="http://www.zonacentro.org/assets/res287.pdf" target="_blank" style="color: #1565c0; text-decoration: none;">Result PDF (16-18)</a>
-            <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#1b5e20; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-              </svg>
-              1st
-            </span>
-          </span>
-        </p>
-
-        <p style="margin-top: 15px;">
-          <b style="color: #1b5e20;">• USA (JGANC):</b>
-          <a href="https://jganc.bluegolf.com/bluegolf/jganc23/event/jganc2321/contest/5/leaderboard.htm" target="_blank" style="color: #1565c0; text-decoration: none;">Official Leaderboard, Bumgardner Jr. Memorial (16-18)</a>
-          <span style="display:inline-flex; align-items:center; gap:4px; margin-left:8px; color:#0f4c81; font-size:11px; font-weight:700; letter-spacing:0.02em; vertical-align:middle;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17 3H7v4a5 5 0 0 0 10 0V3zm2 0h2a2 2 0 0 1-2 2V3zM5 3H3a2 2 0 0 0 2 2V3zM9 15h6v1.7c0 .4.2.7.6.9 1.2.4 1.9 1.5 1.9 2.9H6.5c0-1.4.7-2.5 1.9-2.9.4-.2.6-.5.6-.9V15z"/>
-            </svg>
-            1st · U.S.
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
   <style id="jh-reference-rankings-softening">
   #jh-reference-rankings-section,
