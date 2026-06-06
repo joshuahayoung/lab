@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/joshuahayoung/joshua-golf-official/main/images/joshua-hong-logo.png" sizes="32x32">
@@ -261,10 +262,131 @@
       }
     }
 </style>
+
+<style id="jh-usc-identity-header-theme">
+  .jh-usc-theme {
+    --jh-usc-cardinal: #990000;
+    --jh-usc-cardinal-dark: #650000;
+    --jh-usc-gold: #ffcc00;
+    --jh-usc-navy: #0c2340;
+    --jh-usc-ink: #172033;
+  }
+
+  .jh-usc-theme .sticky-top {
+    background: rgba(255, 255, 255, 0.985);
+    border-bottom: 1px solid rgba(153, 0, 0, 0.10);
+    box-shadow: 0 6px 18px rgba(12, 35, 64, 0.07);
+  }
+
+  .jh-usc-theme .sticky-top.scrolled {
+    background: rgba(255, 255, 255, 0.985);
+    border-bottom: 1px solid rgba(153, 0, 0, 0.13);
+    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.10);
+  }
+
+  .jh-usc-theme .top-bar {
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-usc-cardinal-dark) 0%,
+        var(--jh-usc-cardinal) 50%,
+        var(--jh-usc-cardinal-dark) 100%
+      ) !important;
+    color: var(--jh-usc-gold) !important;
+    border-bottom: 2px solid var(--jh-usc-gold);
+    font-weight: 500;
+  }
+
+  .jh-usc-theme .logo-area {
+    color: var(--jh-usc-ink);
+  }
+
+  .jh-usc-theme .logo-text {
+    color: var(--jh-usc-navy);
+    font-weight: 500;
+  }
+
+  .jh-usc-theme .nav-links a {
+    color: var(--jh-usc-navy);
+    font-weight: 500;
+  }
+
+  .jh-usc-theme .nav-links a:hover {
+    background-color: var(--jh-usc-cardinal) !important;
+    color: var(--jh-usc-gold) !important;
+    box-shadow: 0 6px 15px rgba(153, 0, 0, 0.14);
+  }
+
+  .jh-usc-theme .nav-links a.active {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-usc-cardinal) 0%,
+        var(--jh-usc-cardinal-dark) 100%
+      ) !important;
+    color: var(--jh-usc-gold) !important;
+    border: 1px solid rgba(255, 204, 0, 0.34) !important;
+    box-shadow: 0 7px 18px rgba(153, 0, 0, 0.16);
+    font-weight: 650;
+  }
+
+  .jh-usc-theme .menu-toggle {
+    color: var(--jh-usc-cardinal) !important;
+  }
+
+  .jh-usc-theme .close-menu {
+    color: var(--jh-usc-cardinal) !important;
+  }
+
+  .jh-usc-theme #fixedTopBtn {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-usc-cardinal) 0%,
+        var(--jh-usc-cardinal-dark) 100%
+      ) !important;
+    color: var(--jh-usc-gold) !important;
+    border: 1px solid rgba(255, 204, 0, 0.50) !important;
+    box-shadow: 0 8px 20px rgba(153, 0, 0, 0.24) !important;
+    font-weight: 750 !important;
+  }
+
+  .jh-usc-theme .footer-name {
+    color: var(--jh-usc-navy);
+    font-weight: 500;
+  }
+
+  .jh-usc-theme .footer-team {
+    color: var(--jh-usc-cardinal) !important;
+    font-weight: 650;
+    letter-spacing: 0.7px;
+  }
+
+  @media (max-width: 1024px) {
+    .jh-usc-theme .nav-links {
+      border-left: 4px solid var(--jh-usc-cardinal);
+      background: #ffffff !important;
+    }
+
+    .jh-usc-theme .nav-links a {
+      color: var(--jh-usc-navy);
+    }
+
+    .jh-usc-theme .nav-links a:hover,
+    .jh-usc-theme .nav-links a.active {
+      background-color: var(--jh-usc-cardinal) !important;
+      color: var(--jh-usc-gold) !important;
+    }
+
+    .jh-usc-theme .menu-footer {
+      border-top: 1px solid rgba(153, 0, 0, 0.16);
+    }
+  }
+</style>
   
 </head>
 
-<body>
+<body class="jh-usc-theme">
   <div class="sticky-top" id="mainHeader">
     <div class="top-bar">OFFICIAL WEBSITE OF JOSHUA HONG</div>
     <header class="header-wrapper">
@@ -292,7 +414,7 @@
 
         <div class="menu-footer">
             <span class="footer-name">JOSHUA HONG</span>
-            <span class="footer-team">2025–26 UTSA GOLF</span>
+            <span class="footer-team">COMMITTED TO USC MEN’S GOLF</span>
         </div>
       </nav>
     </header>
