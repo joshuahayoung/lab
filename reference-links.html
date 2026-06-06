@@ -1784,173 +1784,916 @@
 
     <div style="background-color: #fcfcfc; width: 100%; box-sizing: border-box;">
       
-      <div style="padding: 25px 25px 15px 25px;">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0;">
-          <div style="width: 4px; height: 16px; background-color: #1565c0; border-radius: 2px;"></div>
-          <span style="color: #0c2340; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase;">
- 			Winter Amateur Event (WAGR)
-			</span>
-        </div>
+      <style id="jh-reference-winter-amateur-card-style">
+  #jh-reference-ncaa-career-section .jh-fr-winter-event,
+  #jh-reference-ncaa-career-section .jh-fr-winter-event * {
+    box-sizing: border-box;
+  }
 
-<div style="margin-bottom: 10px; padding-bottom: 15px; font-family: 'Segoe UI', sans-serif;">
-  <div style="margin-bottom: 12px; padding-left: 5px; overflow: hidden;">
-    
-    <div style="float: right; margin-left: 24px; margin-bottom: 8px;">
-      <span style="color: #94a3b8; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; background: #f1f5f9; padding: 4px 10px; border-radius: 4px; white-space: nowrap; display: inline-block; vertical-align: middle;">DEC 29-31, 2025</span>
-    </div>
+  #jh-reference-ncaa-career-section .jh-fr-winter-event {
+    padding: 20px 22px 18px 22px;
+    background: #ffffff;
+  }
 
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-        <polyline points="20 6 9 17 4 12"></polyline>
-      </svg>
-      <span style="color: #0c2340; font-weight: 800; font-size: 16px; line-height: 1.2;">Patriot All-America Invitational</span>
-    </div>
+  #jh-reference-ncaa-career-section .jh-fr-winter-subhead {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 17px 0;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(153, 0, 0, 0.16);
+  }
 
+  #jh-reference-ncaa-career-section .jh-fr-winter-bar {
+    width: 4px;
+    height: 18px;
+    flex: 0 0 4px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        180deg,
+        #0c2340 0%,
+        #990000 100%
+      );
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-title {
+    color: #0c2340;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-card {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      );
+    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
+    overflow: hidden;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 14px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.075) 0%,
+        rgba(255, 255, 255, 0.96) 100%
+      );
+    border-right: 1px solid #edf2f7;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-date-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(153, 0, 0, 0.16);
+    color: #650000;
+    font-size: 11px;
+    line-height: 1.15;
+    font-weight: 650;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-copy {
+    padding: 17px 16px 17px 0;
+    min-width: 0;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-event-title {
+    margin: 0;
+    color: #0c2340;
+    font-size: 15.5px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.12px;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-meta {
+    margin: 5px 0 0 0;
+    color: #64748b;
+    font-size: 11.5px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(12, 35, 64, 0.14);
+    color: #0c2340 !important;
+    text-decoration: none !important;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-winter-link:hover {
+    color: #990000 !important;
+    border-color: rgba(153, 0, 0, 0.34);
+  }
+
+  @media (max-width: 768px) {
+    #jh-reference-ncaa-career-section .jh-fr-winter-event {
+      padding: 18px 14px 16px 14px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-subhead {
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-title {
+      font-size: 12.8px;
+      line-height: 1.4;
+      font-weight: 650;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-card {
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-radius: 14px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-date {
+      justify-content: flex-start;
+      padding: 12px 13px 8px 13px;
+      border-right: none;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(153, 0, 0, 0.08) 0%,
+          #ffffff 100%
+        );
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-copy {
+      padding: 6px 13px 13px 13px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-event-title {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-meta {
+      font-size: 10.8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-reference-ncaa-career-section .jh-fr-winter-event {
+      padding: 16px 12px 15px 12px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-winter-link {
+      font-size: 9.5px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+</style>
+
+<div class="jh-fr-winter-event">
+  <div class="jh-fr-winter-subhead">
+    <div class="jh-fr-winter-bar"></div>
+    <span class="jh-fr-winter-title">
+      Winter Amateur Event (WAGR)
+    </span>
   </div>
 
-  <div style="padding-left: 29px; display: flex; align-items: center; flex-wrap: wrap; gap: 0; clear: both;">
-    <a href="https://www.golfgenius.com/pages/5776911" target="_blank" style="color: #1565c0; font-size: 13px; font-weight: bold; text-decoration: none; border-bottom: 1px solid #1565c0; display: inline-flex; align-items: center;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-      Final Leaderboard
-    </a>
-    <span style="margin: 0 10px; color: #ccc;">|</span>
-    <a href="https://patriotallamerica.com/players/patriot_players-men/" target="_blank" style="color: #1565c0; font-size: 13px; text-decoration: none; border-bottom: 1px solid #1565c0; display: inline-flex; align-items: center;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-      Official Player Profile
-    </a>
+  <div class="jh-fr-winter-card">
+    <div class="jh-fr-winter-date">
+      <span class="jh-fr-winter-date-pill">
+        Dec 29-31, 2025
+      </span>
+    </div>
+
+    <div class="jh-fr-winter-copy">
+      <h3 class="jh-fr-winter-event-title">
+        Patriot All-America Invitational
+      </h3>
+
+      <p class="jh-fr-winter-meta">
+        Independent winter amateur / WAGR reference event preserved within
+        the freshman-season archive.
+      </p>
+
+      <div class="jh-fr-winter-links">
+        <a
+          class="jh-fr-winter-link"
+          href="https://www.golfgenius.com/pages/5776911"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Final Leaderboard
+        </a>
+
+        <a
+          class="jh-fr-winter-link"
+          href="https://patriotallamerica.com/players/patriot_players-men/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official Player Profile
+        </a>
+      </div>
+    </div>
   </div>
 </div>
         
       </div>
 
-      <div style="padding: 10px 25px 25px 25px; background-color: #f8fafc; border-top: 1px solid #eee;">
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; margin-top: 10px; padding-bottom: 10px; border-bottom: 2px solid #e0e0e0;">
-          <div style="width: 4px; height: 16px; background-color: #F15A22; border-radius: 2px;"></div>
-          <span style="color: #0c2340; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase;">
- 			 NCAA Official Freshman Season Results (Scoreboard by Clippd)
-		  </span>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 1px; padding-left: 2px;">
+     <style id="jh-reference-freshman-ncaa-results-table-style">
+  #jh-reference-ncaa-career-section .jh-fr-ncaa-results,
+  #jh-reference-ncaa-career-section .jh-fr-ncaa-results * {
+    box-sizing: border-box;
+  }
 
-        <a href="https://scoreboard.clippd.com/tournaments/239888/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; 
-          text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; 
-          this.style.boxShadow='none'">
-          <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">American Conference Championship</span>
-              <span style="margin-left: 10px; background-color: #c98a2e; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap;">Season Record</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; 
-                  flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Apr 27-29, 2026</span>
-        </a>
+  #jh-reference-ncaa-career-section .jh-fr-ncaa-results {
+    padding: 18px 22px 24px 22px;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      );
+    border-top: 1px solid rgba(153, 0, 0, 0.12);
+  }
 
-          
-         <a href="https://scoreboard.clippd.com/tournaments/239556/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; 
-            text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; 
-            this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Tiger Invitational</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; 
-                flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Apr 6-7, 2026</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-subhead {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 17px 0;
+    padding-bottom: 11px;
+    border-bottom: 1px solid rgba(153, 0, 0, 0.16);
+  }
 
-         <a href="https://scoreboard.clippd.com/tournaments/239256/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; 
-            text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; 
-            this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Bell Bank "Pay It Forward" Collegiate</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; 
-                flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Mar 23-24, 2026</span>
-          </a>
-          
-         <a href="https://scoreboard.clippd.com/tournaments/239371/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; 
-            text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; 
-            this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Arizona Thunderbirds Intercollegiate</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; 
-                flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Mar 16-17, 2026</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-subhead-bar {
+    width: 4px;
+    height: 18px;
+    flex: 0 0 4px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        180deg,
+        #990000 0%,
+        #650000 100%
+      );
+  }
 
-          <a href="https://scoreboard.clippd.com/tournaments/239284/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Golden Nugget Invitational (LAMAR)</span>
-              <span style="margin-left: 10px; background-color: #c98a2e; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap;">School Record</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Mar 2-3, 2026</span>
-          </a>
-          
-          <a href="https://scoreboard.clippd.com/tournaments/238654/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #0c2340; font-size: 14px; font-weight: 900;">Military City Collegiate (UTSA)</span>
-              <span style="margin-left: 10px; background-color: #F15A22; color: #ffcc00; font-size: 9px; font-weight: 650; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap;">First Collegiate Win</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Feb 23-24, 2026</span>
-          </a>
-          
-          <a href="https://scoreboard.clippd.com/tournaments/239018/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Compadres Collegiate (UTRGV)</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Feb 2-4, 2026</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-subhead-title {
+    color: #0c2340;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+  }
 
-          <a href="https://scoreboard.clippd.com/tournaments/239449/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Trinity Forest Invitational</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Oct 5-7, 2025</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-table-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
+  }
 
-          <a href="https://scoreboard.clippd.com/tournaments/236150/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Badger Invitational</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Sep 22-23, 2025</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+  }
 
-          <a href="https://scoreboard.clippd.com/tournaments/239590/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #334155; font-size: 14px; font-weight: 600;">Highlands Invitational</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Sep 15-16, 2025</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-table th {
+    padding: 13px 14px;
+    background:
+      linear-gradient(
+        135deg,
+        #0c2340 0%,
+        #650000 100%
+      );
+    color: #ffffff;
+    border-bottom: 2px solid #ffcc00;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 650;
+    letter-spacing: 0.8px;
+    text-align: left;
+    text-transform: uppercase;
+  }
 
-          <a href="https://scoreboard.clippd.com/tournaments/239222/scoring/player" target="_blank" style="display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 8px; padding: 10px 12px; text-decoration: none; border-radius: 6px; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.boxShadow='none'">
-            <div style="display: flex; align-items: center; flex: 1; min-width: 250px;">
-              <span style="color: #F15A22; margin-right: 12px; font-size: 14px; flex-shrink: 0;">•</span>
-              <span style="color: #0c2340; font-size: 14px; font-weight: 900;">Argent Financial Classic</span>
-              <span style="margin-left: 10px; background-color: #0c2340; color: white; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap;">College Debut</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; flex-shrink: 0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </div>
-            <span style="color: #94a3b8; font-family: 'Roboto Mono', monospace; font-size: 12px; padding-left: 26px;">Sep 7-9, 2025</span>
-          </a>
+  #jh-reference-ncaa-career-section .jh-fr-col-date {
+    width: 23%;
+  }
 
-        </div>
-      </div>
+  #jh-reference-ncaa-career-section .jh-fr-col-event {
+    width: 52%;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-col-note {
+    width: 25%;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-table td {
+    padding: 15px 14px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: top;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-date-cell {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(153, 0, 0, 0.055) 0%,
+        rgba(255, 255, 255, 0.94) 100%
+      );
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-event-cell {
+    background: #ffffff;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-note-cell {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 204, 0, 0.12) 0%,
+        rgba(255, 255, 255, 0.96) 100%
+      );
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-date-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(153, 0, 0, 0.16);
+    color: #650000;
+    font-size: 11px;
+    line-height: 1.15;
+    font-weight: 650;
+    letter-spacing: 0.22px;
+    white-space: nowrap;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-event-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-event-title {
+    color: #0c2340;
+    font-size: 14.5px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 22px;
+    padding: 4px 7px;
+    border-radius: 999px;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.38px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-badge.is-gold {
+    background: #fff7d6;
+    color: #806600;
+    border: 1px solid rgba(128, 102, 0, 0.18);
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-badge.is-cardinal {
+    background: rgba(153, 0, 0, 0.08);
+    color: #990000;
+    border: 1px solid rgba(153, 0, 0, 0.20);
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-badge.is-navy {
+    background: rgba(12, 35, 64, 0.08);
+    color: #0c2340;
+    border: 1px solid rgba(12, 35, 64, 0.18);
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-source-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 9px;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 27px;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(12, 35, 64, 0.14);
+    color: #0c2340 !important;
+    text-decoration: none !important;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 650;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-link:hover {
+    color: #990000 !important;
+    border-color: rgba(153, 0, 0, 0.34);
+  }
+
+  #jh-reference-ncaa-career-section .jh-fr-note {
+    margin: 0;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    #jh-reference-ncaa-career-section .jh-fr-ncaa-results {
+      padding: 16px 14px 20px 14px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-subhead {
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-subhead-title {
+      font-size: 12.8px;
+      line-height: 1.4;
+      font-weight: 650;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table thead {
+      display: none;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table,
+    #jh-reference-ncaa-career-section .jh-fr-table tbody,
+    #jh-reference-ncaa-career-section .jh-fr-table tr,
+    #jh-reference-ncaa-career-section .jh-fr-table td {
+      display: block;
+      width: 100%;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table tbody {
+      display: grid;
+      gap: 12px;
+      padding: 12px;
+      background: #f8fafc;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table tr {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(153, 0, 0, 0.12);
+      background: #ffffff;
+      box-shadow: 0 6px 14px rgba(12, 35, 64, 0.05);
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table td {
+      border-bottom: none;
+      padding: 12px 13px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-date-cell {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(153, 0, 0, 0.08) 0%,
+          #ffffff 100%
+        );
+      padding-bottom: 8px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-event-cell {
+      padding-top: 6px;
+      padding-bottom: 10px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-note-cell {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255, 204, 0, 0.16) 0%,
+          #ffffff 100%
+        );
+      border-top: 1px solid #edf2f7;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-event-title {
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-note {
+      font-size: 10.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-reference-ncaa-career-section .jh-fr-ncaa-results {
+      padding: 15px 12px 18px 12px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-table tbody {
+      padding: 10px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-link {
+      font-size: 9.5px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    #jh-reference-ncaa-career-section .jh-fr-badge {
+      font-size: 8.8px;
+    }
+  }
+</style>
+
+<div class="jh-fr-ncaa-results">
+  <div class="jh-fr-subhead">
+    <div class="jh-fr-subhead-bar"></div>
+    <span class="jh-fr-subhead-title">
+      NCAA Official Freshman Season Results (Scoreboard by Clippd)
+    </span>
+  </div>
+
+  <div class="jh-fr-table-wrap">
+    <table class="jh-fr-table" aria-label="2025-26 UTSA freshman season NCAA official results">
+      <thead>
+        <tr>
+          <th class="jh-fr-col-date">Date</th>
+          <th class="jh-fr-col-event">Event / Source</th>
+          <th class="jh-fr-col-note">Archive Note</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Apr 27-29, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">American Conference Championship</span>
+              <span class="jh-fr-badge is-gold">Season Record</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239888/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Final freshman-season NCAA event source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Apr 6-7, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Tiger Invitational</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239556/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Mar 23-24, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Bell Bank "Pay It Forward" Collegiate</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239256/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Mar 16-17, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Arizona Thunderbirds Intercollegiate</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239371/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Mar 2-3, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Golden Nugget Invitational (LAMAR)</span>
+              <span class="jh-fr-badge is-gold">School Record</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239284/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Feb 23-24, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Military City Collegiate (UTSA)</span>
+              <span class="jh-fr-badge is-cardinal">First Collegiate Win</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/238654/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              First collegiate individual win source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Feb 2-4, 2026</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Compadres Collegiate (UTRGV)</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239018/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Oct 5-7, 2025</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Trinity Forest Invitational</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239449/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Sep 22-23, 2025</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Badger Invitational</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/236150/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Sep 15-16, 2025</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Highlands Invitational</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239590/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Official NCAA tournament source.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="jh-fr-date-cell">
+            <span class="jh-fr-date-pill">Sep 7-9, 2025</span>
+          </td>
+          <td class="jh-fr-event-cell">
+            <p class="jh-fr-event-title-row">
+              <span class="jh-fr-event-title">Argent Financial Classic</span>
+              <span class="jh-fr-badge is-navy">College Debut</span>
+            </p>
+            <div class="jh-fr-source-row">
+              <a
+                class="jh-fr-link"
+                href="https://scoreboard.clippd.com/tournaments/239222/scoring/player"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Scoreboard by Clippd
+              </a>
+            </div>
+          </td>
+          <td class="jh-fr-note-cell">
+            <p class="jh-fr-note">
+              Freshman NCAA debut source.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+		
     </div>
   </div>
 </div>
