@@ -4418,7 +4418,426 @@
     }
   </style>
 
- 
+ <style id="jh-sophomore-season-card-compact-usc">
+  /*
+    NCAA sophomore schedule compact pass.
+    Scope: #jh-sophomore-season-page only.
+    Purpose:
+    - Reduce schedule card height.
+    - Hide bottom metrics text row while preserving a thin white space.
+    - Add subtle USC cardinal tone to date box and result band.
+    - Do not change source data, event titles, dates, links, or JSON.
+  */
+
+  #jh-sophomore-season-page .jh-ss-section {
+    margin: 0 0 28px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-head {
+    margin-bottom: 12px !important;
+    padding-left: 13px !important;
+    border-left-color: #990000 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-list {
+    gap: 12px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-card {
+    border-radius: 16px !important;
+    box-shadow:
+      0 9px 22px rgba(15, 23, 42, 0.055) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-card-head {
+    padding: 12px 16px 10px !important;
+    gap: 11px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status {
+    margin-bottom: 7px !important;
+    padding: 4px 8px !important;
+    font-size: 9.5px !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-event-title {
+    font-size: 16.5px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.12px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-event-meta {
+    margin-top: 4px !important;
+    font-size: 11.5px !important;
+    line-height: 1.32 !important;
+    font-weight: 500 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-box {
+    min-width: 94px !important;
+    padding: 8px 10px !important;
+    border-radius: 12px !important;
+    background:
+      linear-gradient(
+        135deg,
+        #0c2340 0%,
+        #111d34 54%,
+        #650000 100%
+      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.24) !important;
+    box-shadow:
+      inset 0 -2px 0 rgba(255, 204, 0, 0.15),
+      0 6px 14px rgba(12, 35, 64, 0.10) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-label {
+    margin-bottom: 3px !important;
+    color: rgba(255, 204, 0, 0.78) !important;
+    font-size: 8px !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.7px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-value {
+    font-size: 11.5px !important;
+    line-height: 1.15 !important;
+    font-weight: 650 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-result-band {
+    padding: 9px 13px !important;
+    background:
+      linear-gradient(
+        135deg,
+        #0c2340 0%,
+        #111d34 52%,
+        #650000 100%
+      ) !important;
+    border-top: 1px solid rgba(255, 204, 0, 0.14) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-cell {
+    padding: 3px 7px !important;
+    border-right-color: rgba(255, 255, 255, 0.09) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-label {
+    margin-bottom: 5px !important;
+    color: rgba(255, 204, 0, 0.68) !important;
+    font-size: 8.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.48px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-rounds {
+    gap: 5px !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-chip {
+    min-width: 38px !important;
+    padding: 5px 5px !important;
+    border-radius: 7px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-label {
+    margin-bottom: 3px !important;
+    color: rgba(255, 255, 255, 0.58) !important;
+    font-size: 7.5px !important;
+    font-weight: 600 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score {
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-total-value,
+  #jh-sophomore-season-page .jh-ss-par-value,
+  #jh-sophomore-season-page .jh-ss-finish-value {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+  }
+
+  /*
+    Hide bottom metrics text such as:
+    Rank Impact / SG / Weighted Pts / WAGR Pwr / Pts Earned.
+    Keep only a thin white strip under the navy-cardinal band.
+  */
+  #jh-sophomore-season-page .jh-ss-metrics {
+    display: block !important;
+    min-height: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    border-top: 1px solid rgba(153, 0, 0, 0.08) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metric {
+    display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-sophomore-season-page .jh-ss-section {
+      margin-bottom: 24px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-list {
+      gap: 11px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-card-head {
+      padding: 11px 13px 10px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-title {
+      font-size: 15px !important;
+      line-height: 1.18 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-meta {
+      font-size: 10.8px !important;
+      line-height: 1.26 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-box {
+      padding: 7px 9px !important;
+      border-radius: 10px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-value {
+      font-size: 10.8px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-metrics {
+      min-height: 9px !important;
+    }
+  }
+</style>
+
+<style id="jh-sophomore-season-mobile-desktop-table">
+  /*
+    Mobile horizontal schedule/result layout.
+    Scope: #jh-sophomore-season-page only.
+    Purpose:
+    - Keep the result band in desktop-style horizontal format on mobile.
+    - Prevent tall vertical stacking.
+    - Avoid horizontal scroll.
+    - Preserve data, text, links, and JSON structure.
+  */
+
+  @media (max-width: 768px) {
+    #jh-sophomore-season-page .jh-ss-card-head {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      padding: 11px 12px 9px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-card-left {
+      min-width: 0 !important;
+      flex: 1 1 auto !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-status {
+      margin-bottom: 6px !important;
+      padding: 4px 7px !important;
+      font-size: 8.8px !important;
+      line-height: 1 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-title {
+      font-size: 14.2px !important;
+      line-height: 1.18 !important;
+      letter-spacing: -0.15px !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-meta {
+      margin-top: 4px !important;
+      font-size: 9.8px !important;
+      line-height: 1.24 !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-box {
+      flex: 0 0 74px !important;
+      width: 74px !important;
+      min-width: 74px !important;
+      margin-top: 0 !important;
+      padding: 7px 5px !important;
+      border-radius: 10px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-label {
+      margin-bottom: 3px !important;
+      font-size: 7px !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-value {
+      font-size: 9.5px !important;
+      line-height: 1.15 !important;
+      white-space: normal !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-result-band {
+      display: grid !important;
+      grid-template-columns:
+        minmax(0, 1fr)
+        48px
+        42px
+        46px !important;
+      gap: 0 !important;
+      padding: 7px 5px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-cell {
+      min-width: 0 !important;
+      padding: 3px 3px !important;
+      text-align: center !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.09) !important;
+      border-bottom: none !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-cell:last-child {
+      border-right: none !important;
+      border-bottom: none !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-label {
+      margin-bottom: 4px !important;
+      font-size: 6.7px !important;
+      line-height: 1 !important;
+      letter-spacing: 0.32px !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-rounds {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: stretch !important;
+      gap: 2px !important;
+      flex-wrap: nowrap !important;
+      overflow-x: visible !important;
+      padding-bottom: 0 !important;
+      width: 100% !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-chip {
+      min-width: 0 !important;
+      flex: 1 1 0 !important;
+      padding: 4px 1px !important;
+      border-radius: 5px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-label {
+      margin-bottom: 3px !important;
+      font-size: 5.8px !important;
+      line-height: 1 !important;
+      letter-spacing: 0.18px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-score {
+      font-size: 11.2px !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-total-value,
+    #jh-sophomore-season-page .jh-ss-par-value,
+    #jh-sophomore-season-page .jh-ss-finish-value {
+      font-size: 13.2px !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-metrics {
+      min-height: 8px !important;
+      padding: 0 !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-sophomore-season-page .jh-ss-card-head {
+      gap: 7px !important;
+      padding: 10px 10px 8px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-title {
+      font-size: 13.3px !important;
+      line-height: 1.16 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-event-meta {
+      font-size: 9.2px !important;
+      line-height: 1.22 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-box {
+      flex-basis: 68px !important;
+      width: 68px !important;
+      min-width: 68px !important;
+      padding: 6px 4px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-value {
+      font-size: 8.8px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-result-band {
+      grid-template-columns:
+        minmax(0, 1fr)
+        44px
+        38px
+        41px !important;
+      padding: 6px 4px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-cell {
+      padding: 3px 2px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-label {
+      font-size: 6.1px !important;
+      letter-spacing: 0.22px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-rounds {
+      gap: 1.5px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-chip {
+      padding: 3px 1px !important;
+      border-radius: 4px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-label {
+      font-size: 5.3px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-score {
+      font-size: 10.2px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-total-value,
+    #jh-sophomore-season-page .jh-ss-par-value,
+    #jh-sophomore-season-page .jh-ss-finish-value {
+      font-size: 12.1px !important;
+    }
+  }
+</style>
 
   <main class="jh-ss-shell" aria-label="2026–27 USC sophomore season schedule and results">
     <div id="jhSophomoreSeasonApp"></div>
@@ -4729,9 +5148,12 @@
               ${escapeHtml(meta.program || "USC Men's Golf")}
             </p>
 
-            <h2 class="jh-ss-title">
-              ${escapeHtml(meta.scheduleTitle || "2026–27 Championship Schedule")}
-            </h2>
+           <h2 class="jh-ss-title">
+  ${escapeHtml(
+    meta.scheduleTitle ||
+    "2026–27 USC Sophomore Season Schedule"
+  )}
+</h2>
 
             <p class="jh-ss-meta">
               ${escapeHtml(meta.dataStatus || "Pre-season schedule loaded. Results pending official tournament completion.")}
