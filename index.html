@@ -263,7 +263,6 @@
     --jh-usc-cardinal: #990000;
     --jh-usc-cardinal-dark: #650000;
     --jh-usc-gold: #ffcc00;
-    --jh-usc-gold-soft: #f6d36f;
     --jh-usc-navy: #0c2340;
     --jh-usc-ink: #172033;
   }
@@ -287,10 +286,10 @@
         var(--jh-usc-cardinal-dark) 0%,
         var(--jh-usc-cardinal) 50%,
         var(--jh-usc-cardinal-dark) 100%
-      );
-    color: var(--jh-usc-gold);
+      ) !important;
+    color: var(--jh-usc-gold) !important;
     border-bottom: 2px solid var(--jh-usc-gold);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+    font-weight: 500;
   }
 
   .jh-usc-theme .logo-area {
@@ -299,10 +298,12 @@
 
   .jh-usc-theme .logo-text {
     color: var(--jh-usc-navy);
+    font-weight: 500;
   }
 
   .jh-usc-theme .nav-links a {
     color: var(--jh-usc-navy);
+    font-weight: 500;
   }
 
   .jh-usc-theme .nav-links a:hover {
@@ -319,16 +320,17 @@
         var(--jh-usc-cardinal-dark) 100%
       ) !important;
     color: var(--jh-usc-gold) !important;
-    border: 1px solid rgba(255, 204, 0, 0.38) !important;
-    box-shadow: 0 7px 18px rgba(153, 0, 0, 0.18);
+    border: 1px solid rgba(255, 204, 0, 0.34) !important;
+    box-shadow: 0 7px 18px rgba(153, 0, 0, 0.16);
+    font-weight: 650;
   }
 
   .jh-usc-theme .menu-toggle {
-    color: var(--jh-usc-cardinal);
+    color: var(--jh-usc-cardinal) !important;
   }
 
   .jh-usc-theme .close-menu {
-    color: var(--jh-usc-cardinal);
+    color: var(--jh-usc-cardinal) !important;
   }
 
   .jh-usc-theme #fixedTopBtn {
@@ -339,26 +341,19 @@
         var(--jh-usc-cardinal-dark) 100%
       ) !important;
     color: var(--jh-usc-gold) !important;
-    border: 1px solid rgba(255, 204, 0, 0.55) !important;
-    box-shadow: 0 8px 20px rgba(153, 0, 0, 0.26) !important;
-  }
-
-  .jh-usc-theme #fixedTopBtn:hover {
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-usc-cardinal-dark) 0%,
-        var(--jh-usc-cardinal) 100%
-      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.50) !important;
+    box-shadow: 0 8px 20px rgba(153, 0, 0, 0.24) !important;
+    font-weight: 750 !important;
   }
 
   .jh-usc-theme .footer-name {
     color: var(--jh-usc-navy);
+    font-weight: 500;
   }
 
   .jh-usc-theme .footer-team {
-    color: var(--jh-usc-cardinal);
-    font-weight: 700;
+    color: var(--jh-usc-cardinal) !important;
+    font-weight: 650;
     letter-spacing: 0.7px;
   }
 
