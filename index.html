@@ -181,7 +181,7 @@
       width: 50px !important; height: 50px !important;
       background-color: #F15A22 !important; color: #fff !important;
       border: none !important; border-radius: 50% !important;
-      font-weight: 900 !important; font-size: 12px !important;
+      font-weight: 650 !important; font-size: 12px !important;
       z-index: 9999 !important; cursor: pointer !important;
       display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
@@ -230,32 +230,6 @@
       .menu-footer { margin-top: 30px; }
     }
 
-    /* Transfer Snapshot menu highlight */
-    .nav-links a[href="transfer-snapshot.html"] {
-      background-color: #0C2340 !important;
-      color: #ffffff !important;
-      border-radius: 999px;
-      font-weight: 600;
-      box-shadow: 0 6px 16px rgba(12, 35, 64, 0.16);
-    }
-
-    .nav-links a[href="transfer-snapshot.html"]:hover {
-      background-color: #12335d !important;
-      color: #ffffff !important;
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 1024px) {
-      .nav-links a[href="transfer-snapshot.html"] {
-        border-radius: 14px;
-        width: 100%;
-      }
-
-      .nav-links a[href="transfer-snapshot.html"]:hover {
-        background-color: #12335d !important;
-        color: #ffffff !important;
-      }
-    }
 </style>
 
 <style id="jh-usc-identity-header-theme">
@@ -343,7 +317,7 @@
     color: var(--jh-usc-gold) !important;
     border: 1px solid rgba(255, 204, 0, 0.50) !important;
     box-shadow: 0 8px 20px rgba(153, 0, 0, 0.24) !important;
-    font-weight: 750 !important;
+    font-weight: 650 !important;
   }
 
   .jh-usc-theme .footer-name {
@@ -498,7 +472,7 @@
     color: #0c2340;
     font-size: 34px;
     line-height: 1.12;
-    font-weight: 800;
+    font-weight: 680;
     letter-spacing: -0.5px;
     text-transform: uppercase;
   }
@@ -645,6 +619,54 @@
   }
 </style>
 
+<div
+  id="jhHeroLastUpdatedWrap"
+  class="jh-hero-last-updated-wrap"
+  hidden
+>
+  <span
+    id="jhHeroLastUpdated"
+    class="jh-hero-last-updated-text"
+  ></span>
+</div>
+
+<style id="jh-hero-last-updated-style">
+  .jh-hero-last-updated-wrap,
+  .jh-hero-last-updated-wrap * {
+    box-sizing: border-box;
+  }
+
+  .jh-hero-last-updated-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: -4px auto 20px auto;
+    padding: 0 4px;
+    text-align: right;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .jh-hero-last-updated-text {
+    display: inline-block;
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.35;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
+
+  @media (max-width: 768px) {
+    .jh-hero-last-updated-wrap {
+      margin: -2px auto 18px auto;
+      padding: 0 2px;
+    }
+
+    .jh-hero-last-updated-text {
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+  }
+</style>
+	
 <script>
   (function () {
     const wrap = document.getElementById("jhHeroLastUpdatedWrap");
