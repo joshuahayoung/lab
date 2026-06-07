@@ -2544,452 +2544,283 @@
 </section>
 	
 
-  <style id="jh-reference-rankings-section-upgrade">
-  #jh-reference-rankings-section,
-  #jh-reference-rankings-section * {
-    box-sizing: border-box;
-  }
-
-  #jh-reference-rankings-section {
-    --jhrank-cardinal: #990000;
-    --jhrank-cardinal-dark: #650000;
-    --jhrank-gold: #ffcc00;
-    --jhrank-gold-soft: #fff7d6;
-    --jhrank-navy: #0c2340;
-    --jhrank-muted: #64748b;
-    --jhrank-line: #e2e8f0;
-
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    padding: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  #jh-reference-rankings-section .jh-rank-shell {
-    width: 100%;
-    border-radius: 18px;
-    border: 1px solid rgba(153, 0, 0, 0.13);
-    background: #ffffff;
-    overflow: hidden;
-    box-shadow: 0 12px 28px rgba(12, 35, 64, 0.07);
-  }
-
-  #jh-reference-rankings-section .jh-rank-head {
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
-    gap: 14px;
-    align-items: center;
-    padding: 20px 22px;
-    background:
-      radial-gradient(
-        circle at 6% 0%,
-        rgba(255, 204, 0, 0.20),
-        transparent 32%
-      ),
-      linear-gradient(
-        135deg,
-        var(--jhrank-navy) 0%,
-        var(--jhrank-cardinal-dark) 100%
-      );
-    border-bottom: 4px solid var(--jhrank-gold);
-    color: #ffffff;
-  }
-
-  #jh-reference-rankings-section .jh-rank-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 204, 0, 0.13);
-    border: 1px solid rgba(255, 204, 0, 0.30);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.10),
-      0 8px 18px rgba(0, 0, 0, 0.14);
-  }
-
-  #jh-reference-rankings-section .jh-rank-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--jhrank-gold);
-  }
-
-  #jh-reference-rankings-section .jh-rank-kicker {
-    display: block;
-    margin: 0 0 5px 0;
-    color: rgba(255, 204, 0, 0.88);
-    font-size: 10px;
-    line-height: 1.2;
-    font-weight: 650;
-    letter-spacing: 1.05px;
-    text-transform: uppercase;
-  }
-
-  #jh-reference-rankings-section .jh-rank-title {
-    margin: 0;
-    color: #ffffff;
-    font-size: 21px;
-    line-height: 1.18;
-    font-weight: 700;
-    letter-spacing: -0.35px;
-  }
-
-  #jh-reference-rankings-section .jh-rank-subtitle {
-    margin: 6px 0 0 0;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 12.5px;
-    line-height: 1.45;
-    font-weight: 500;
-  }
-
-  #jh-reference-rankings-section .jh-rank-body {
-    padding: 20px 22px 22px;
-    background:
-      linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fffdf6 100%
-      );
-  }
-
-  #jh-reference-rankings-section .jh-rank-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 13px;
-    width: 100%;
-  }
-
-  #jh-reference-rankings-section .jh-rank-card {
-    min-width: 0;
-    border-radius: 15px;
-    border: 1px solid var(--jhrank-line);
-    background: #ffffff;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
-  }
-
-  #jh-reference-rankings-section .jh-rank-card-wide {
-    grid-column: 1 / -1;
-  }
-
-  #jh-reference-rankings-section .jh-rank-card-head {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 13px 14px;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(153, 0, 0, 0.08) 0%,
-        #ffffff 100%
-      );
-    border-bottom: 1px solid #edf2f7;
-  }
-
-  #jh-reference-rankings-section .jh-rank-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 42px;
-    min-height: 24px;
-    padding: 5px 8px;
-    border-radius: 999px;
-    background: var(--jhrank-gold-soft);
-    color: #806600;
-    border: 1px solid rgba(128, 102, 0, 0.18);
-    font-size: 9px;
-    line-height: 1;
-    font-weight: 650;
-    letter-spacing: 0.45px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  #jh-reference-rankings-section .jh-rank-card-title {
-    margin: 0;
-    color: var(--jhrank-navy);
-    font-size: 14px;
-    line-height: 1.35;
-    font-weight: 700;
-    letter-spacing: -0.08px;
-  }
-
-  #jh-reference-rankings-section .jh-rank-card-body {
-    padding: 13px 14px 14px;
-  }
-
-  #jh-reference-rankings-section .jh-rank-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-
-  #jh-reference-rankings-section .jh-rank-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 28px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: #ffffff;
-    border: 1px solid rgba(12, 35, 64, 0.14);
-    color: var(--jhrank-navy) !important;
-    text-decoration: none !important;
-    font-size: 10px;
-    line-height: 1;
-    font-weight: 650;
-    letter-spacing: 0.35px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  #jh-reference-rankings-section .jh-rank-link:hover {
-    color: var(--jhrank-cardinal) !important;
-    border-color: rgba(153, 0, 0, 0.34);
-  }
-
-  #jh-reference-rankings-section .jh-rank-note {
-    margin: 0 0 10px 0;
-    color: var(--jhrank-muted);
-    font-size: 11.5px;
-    line-height: 1.5;
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    #jh-reference-rankings-section {
-      margin-bottom: 28px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-head {
-      grid-template-columns: 38px minmax(0, 1fr);
-      gap: 12px;
-      padding: 17px 15px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-title {
-      font-size: 17px;
-      line-height: 1.28;
-      font-weight: 650;
-    }
-
-    #jh-reference-rankings-section .jh-rank-subtitle {
-      font-size: 11.5px;
-      line-height: 1.45;
-    }
-
-    #jh-reference-rankings-section .jh-rank-body {
-      padding: 18px 14px 20px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-card-title {
-      font-size: 13.5px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-reference-rankings-section .jh-rank-head {
-      padding: 16px 13px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-body {
-      padding: 16px 12px 18px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-title {
-      font-size: 16px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-subtitle {
-      font-size: 11px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-link {
-      font-size: 9.5px;
-      padding-left: 8px;
-      padding-right: 8px;
-    }
-
-    #jh-reference-rankings-section .jh-rank-label {
-      font-size: 8.8px;
-    }
-  }
-</style>
-
 <section
-  id="jh-reference-rankings-section"
+  id="jh-reference-rankings-results-section"
+  class="jh-ref-source-section"
   aria-label="Official rankings and profile archive"
 >
-  <div class="jh-rank-shell">
-    <header class="jh-rank-head">
-      <div class="jh-rank-icon" aria-hidden="true">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-      </div>
+  <div class="jh-ref-source-box">
+    <header class="jh-ref-source-head">
+      <h2 class="jh-ref-source-title">
+        Official Rankings &amp; Profile Archive
+      </h2>
 
-      <div>
-        <span class="jh-rank-kicker">
-          Rankings / Profiles / Mentions
-        </span>
-
-        <h2 class="jh-rank-title">
-          Official Rankings &amp; Profile Archive
-        </h2>
-
-        <p class="jh-rank-subtitle">
-          Verified ranking profiles, federation references, media mentions,
-          and archived junior ranking source records.
-        </p>
-      </div>
+      <p class="jh-ref-source-subtitle">
+        Verified ranking profiles, federation references, and archived junior ranking sources.
+      </p>
     </header>
 
-    <div class="jh-rank-body">
-      <div class="jh-rank-grid">
+    <div class="jh-ref-source-body">
+      <table
+        class="jh-ref-table"
+        aria-label="Official rankings and profile archive"
+      >
+        <thead>
+          <tr>
+            <th class="jh-ref-col-event">
+              Record / Source
+            </th>
+            <th class="jh-ref-col-result">
+              Official Source
+            </th>
+            <th class="jh-ref-col-date">
+              Type
+            </th>
+          </tr>
+        </thead>
 
-        <article class="jh-rank-card">
-          <div class="jh-rank-card-head">
-            <span class="jh-rank-label">WAGR</span>
-            <h3 class="jh-rank-card-title">
-              World Amateur Golf Ranking
-            </h3>
-          </div>
+        <tbody>
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                World Amateur Golf Ranking
+              </span>
+              <span class="jh-ref-label">
+                WAGR
+              </span>
+            </td>
 
-          <div class="jh-rank-card-body">
-            <div class="jh-rank-links">
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="https://www.wagr.com/playerprofile/joshua-hong-40704"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Official Joshua Hong Profile
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
-            </div>
-          </div>
-        </article>
+            </td>
 
-        <article class="jh-rank-card">
-          <div class="jh-rank-card-head">
-            <span class="jh-rank-label">FMG</span>
-            <h3 class="jh-rank-card-title">
-              Federación Mexicana de Golf Ranking
-            </h3>
-          </div>
+            <td>
+              <span class="jh-ref-date">
+                Ranking Profile
+              </span>
+            </td>
+          </tr>
 
-          <div class="jh-rank-card-body">
-            <div class="jh-rank-links">
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                FMG Historical Ranking Page
+              </span>
+              <span class="jh-ref-label">
+                FMG
+              </span>
+            </td>
+
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="https://fmg.org.mx/ranking-cij-historicos/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Historical Ranking Page (18 y men var)
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
-            </div>
-          </div>
-        </article>
+            </td>
 
-        <article class="jh-rank-card jh-rank-card-wide">
-          <div class="jh-rank-card-head">
-            <span class="jh-rank-label">FMG</span>
-            <h3 class="jh-rank-card-title">
-              FMG Champion Mentions
-            </h3>
-          </div>
+            <td>
+              <span class="jh-ref-date">
+                Historical Ranking
+              </span>
+            </td>
+          </tr>
 
-          <div class="jh-rank-card-body">
-            <p class="jh-rank-note">
-              Federación Mexicana de Golf source mentions and national-team
-              reference articles.
-            </p>
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                2024–2025 Junior Champion Mention
+              </span>
+              <span class="jh-ref-label">
+                FMG
+              </span>
+            </td>
 
-            <div class="jh-rank-links">
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="https://fmg.org.mx/todo-listo-para-el-arranque-de-la-xv-copa-centro-en-san-luis-potosi/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                2024-2025 Junior Champion Mention
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
+            </td>
 
+            <td>
+              <span class="jh-ref-date">
+                Federation Mention
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                2023–2024 Junior Champion Mention
+              </span>
+              <span class="jh-ref-label">
+                FMG
+              </span>
+            </td>
+
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="https://fmg.org.mx/gran-nivel-de-golf-dejo-el-inicio-de-la-copa-centro/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                2023-2024 Junior Champion Mention
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
+            </td>
 
+            <td>
+              <span class="jh-ref-date">
+                Federation Mention
+              </span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                Mexican National Team — Junior Americas Cup
+              </span>
+              <span class="jh-ref-label">
+                FMG
+              </span>
+            </td>
+
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="https://fmg.org.mx/mexico-esta-listo-para-la-junior-americas-cup/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Mexican National Team (Junior Americas Cup)
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
-            </div>
-          </div>
-        </article>
+            </td>
 
-        <article class="jh-rank-card jh-rank-card-wide">
-          <div class="jh-rank-card-head">
-            <span class="jh-rank-label">JGS</span>
-            <h3 class="jh-rank-card-title">
-              Junior Golf Scoreboard
-            </h3>
-          </div>
+            <td>
+              <span class="jh-ref-date">
+                National Team
+              </span>
+            </td>
+          </tr>
 
-          <div class="jh-rank-card-body">
-            <p class="jh-rank-note">
-              Archived junior ranking snapshot preserved as a static source image.
-            </p>
+          <tr>
+            <td>
+              <span class="jh-ref-event-name">
+                Junior Golf Scoreboard Archived Record
+              </span>
+              <span class="jh-ref-label">
+                JGS
+              </span>
+            </td>
 
-            <div class="jh-rank-links">
+            <td>
               <a
-                class="jh-rank-link"
+                class="jh-ref-result-link"
                 href="./images/junior-year/24-Joshua-Hong-2025-Agust-Juniorscoreboard-final.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Archived Record (Aug 12, 2025 Snapshot)
+                Official Source
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M8 7h9v9"></path>
+                </svg>
               </a>
-            </div>
-          </div>
-        </article>
+            </td>
 
-      </div>
+            <td>
+              <span class="jh-ref-date">
+                Archived Snapshot
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
