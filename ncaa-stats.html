@@ -669,45 +669,37 @@
   </figure>
 </section>
 
-  <div
-  class="jh-ncaa-last-updated-wrap"
-  style="
-    width: 100%;
-    max-width: 900px;
-    margin: -6px auto 18px auto;
-    padding: 0 20px 0 4px;
-    box-sizing: border-box;
-    text-align: right;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  "
->
-  <span
-    id="jh-ncaa-last-updated"
-    style="
-      display: inline-block;
-      color: #94a3b8;
-      font-size: 11.5px;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      line-height: 1.4;
-      white-space: nowrap;
-    "
-  >
-    Last Updated: —
-  </span>
-</div>
+<style id="jh-ncaa-last-updated-position-fix">
+  .jh-ncaa-last-updated-wrap {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: -6px auto 18px auto !important;
+    padding: 0 20px 0 4px !important;
+    box-sizing: border-box !important;
+    text-align: right !important;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  }
 
-  <style id="jh-ncaa-last-updated-mobile-fix">
+  #jh-ncaa-last-updated {
+    display: inline-block !important;
+    color: #94a3b8 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.2px !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+  }
+
   @media (max-width: 768px) {
     .jh-ncaa-last-updated-wrap {
       margin: -2px auto 18px auto !important;
       padding: 0 20px 0 4px !important;
+      text-align: right !important;
     }
 
-    .jh-ncaa-last-updated-wrap #jh-ncaa-last-updated {
+    #jh-ncaa-last-updated {
       font-size: 10.5px !important;
       line-height: 1.35 !important;
-      font-weight: 500 !important;
     }
   }
 
@@ -717,11 +709,19 @@
       padding: 0 20px 0 4px !important;
     }
 
-    .jh-ncaa-last-updated-wrap #jh-ncaa-last-updated {
+    #jh-ncaa-last-updated {
       font-size: 10px !important;
     }
   }
 </style>
+
+<div class="jh-ncaa-last-updated-wrap">
+  <span id="jh-ncaa-last-updated">
+    Last Updated: —
+  </span>
+</div>
+
+ 
 
 <section id="jh-season-archive-access" class="jh-season-archive-access" aria-label="Season archive navigation">
   <style>
