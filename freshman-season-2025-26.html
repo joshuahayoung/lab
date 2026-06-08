@@ -771,9 +771,56 @@
 </div>
 </section>
 
-<span  id="jh-ncaa-last-updated"      class="jh-fsa-log-last-updated">
-      Archive Finalized: —
-</span>
+<style id="jh-fsa-last-updated-position-fix">
+  .jh-fsa-last-updated-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: -6px auto 18px auto;
+    padding: 0 20px 0 4px;
+    box-sizing: border-box;
+    text-align: right;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .jh-fsa-log-last-updated {
+    display: inline-block;
+    color: #94a3b8;
+    font-size: 11.5px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .jh-fsa-last-updated-wrap {
+      margin: -2px auto 18px auto;
+      padding: 0 20px 0 4px;
+    }
+
+    .jh-fsa-log-last-updated {
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .jh-fsa-last-updated-wrap {
+      margin: -2px auto 16px auto;
+      padding: 0 20px 0 4px;
+    }
+
+    .jh-fsa-log-last-updated {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<div class="jh-fsa-last-updated-wrap">
+  <span id="jh-ncaa-last-updated" class="jh-fsa-log-last-updated">
+    Archive Finalized: —
+  </span>
+</div>
 
 <section id="jh-season-archive-access-freshman" class="jh-season-archive-access-freshman" aria-label="Season archive navigation">
   <style>
