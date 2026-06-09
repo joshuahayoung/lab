@@ -2314,6 +2314,58 @@
         font-size: 12px;
       }
     }
+#jh-junior-final-rankings-section .jh-jfr-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 12px 0;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(12, 35, 64, 0.35);
+  border: 1px solid rgba(255, 204, 0, 0.40);
+  color: #ffffff;
+  font-size: 10.5px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+#jh-junior-final-rankings-section .jh-jfr-kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #ffcc00;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.18);
+}
+
+#jh-junior-final-rankings-section .jh-jfr-kicker::after {
+  display: none;
+}
+
+#jh-junior-final-rankings-section .jh-jfr-title {
+  color: #ffcc00;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+}
+
+#jh-junior-final-rankings-section .jh-jfr-subtitle {
+  display: inline-block;
+  margin: 12px auto 0 auto;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+}
+
+#jh-junior-final-rankings-section .jh-jfr-subtitle strong {
+  color: #ffcc00;
+  font-weight: 650;
+}
+	  
   </style>
 
   <div class="jh-jfr-shell">
@@ -2329,8 +2381,10 @@
         </h3>
 
         <p class="jh-jfr-subtitle">
-          As of <strong>August 2025</strong> · Upon Junior Graduation
-        </p>
+  <span>As of</span>
+  <strong>August 2025</strong>
+  <span class="jh-jfr-subtitle-note">· Upon Junior Graduation</span>
+</p>
       </div>
 
       <div id="rankings-grid" class="jh-jfr-grid">
