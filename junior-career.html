@@ -2033,34 +2033,339 @@
     </ul>
   </div>
 
-    <div id="jh-junior-final-rankings-section" style="border-top: 2px solid #eee; padding-top: 40px; margin-bottom: 40px;">
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h3 style="font-size: 22px; color: #0c2340; margin: 0;">Final Junior Rankings</h3>
-      <p style="font-size: 14px; color: #d32f2f; font-weight: bold; margin-top: 5px;">As of August 2025 (Upon Junior Graduation)</p>
-    </div>
-    <div id="rankings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-      
-      <div style="background: #f1f4f9; padding: 25px; border-radius: 15px; border: 1px solid #d1d9e6; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-        <div style="font-size: 13px; color: #7f8c8d; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">WAGR (Mexico Junior)</div>
-        <div style="font-size: 32px; font-weight: bold; color: #d32f2f; margin: 10px 0;">#1 RANK</div>
-        <div style="font-size: 12px; color: #555; line-height: 1.6;">
-          World Amateur: #450<br>
-          <span style="font-weight: bold; color: #0c2340;">Mexico Absolute: #7</span>
-        </div>
+ <div id="jh-junior-final-rankings-section" class="jh-junior-final-rankings-section">
+  <style>
+    #jh-junior-final-rankings-section,
+    #jh-junior-final-rankings-section * {
+      box-sizing: border-box;
+    }
+
+    #jh-junior-final-rankings-section {
+      width: 100%;
+      margin: 42px auto 44px;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-shell {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 204, 0, 0.28);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 204, 0, 0.16), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(255, 204, 0, 0.10), transparent 30%),
+        linear-gradient(
+          135deg,
+          #650000 0%,
+          #990000 48%,
+          #0c2340 100%
+        );
+      box-shadow: 0 18px 38px rgba(12, 35, 64, 0.16);
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-shell::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 5px;
+      background:
+        linear-gradient(
+          90deg,
+          #ffcc00 0%,
+          #ffffff 48%,
+          #ffcc00 100%
+        );
+      opacity: 0.95;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-inner {
+      padding: 34px 30px 32px;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-header {
+      text-align: center;
+      margin: 0 0 26px 0;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 10px 0;
+      color: #ffcc00;
+      font-size: 10.5px;
+      line-height: 1.2;
+      font-weight: 650;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-kicker::before,
+    #jh-junior-final-rankings-section .jh-jfr-kicker::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(255, 204, 0, 0.62);
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-title {
+      margin: 0;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.25px;
+      text-transform: uppercase;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-subtitle {
+      margin: 8px 0 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 500;
+      letter-spacing: 0.35px;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-subtitle strong {
+      color: #ffcc00;
+      font-weight: 650;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      width: 100%;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-card {
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+      padding: 24px 24px 22px;
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fffdf7 100%
+        );
+      border: 1px solid rgba(255, 204, 0, 0.34);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+      text-align: center;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background:
+        linear-gradient(
+          180deg,
+          #ffcc00 0%,
+          #990000 100%
+        );
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-source {
+      margin: 0;
+      color: #64748b;
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 650;
+      letter-spacing: 0.95px;
+      text-transform: uppercase;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-rank {
+      margin: 10px 0 9px;
+      color: #990000;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 750;
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-card.is-navy .jh-jfr-rank {
+      color: #0c2340;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-detail {
+      margin: 0;
+      color: #475569;
+      font-size: 12.5px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-detail strong {
+      color: #0c2340;
+      font-weight: 650;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-detail .jh-jfr-green {
+      color: #166534;
+      font-weight: 650;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      min-height: 27px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(153, 0, 0, 0.08);
+      border: 1px solid rgba(153, 0, 0, 0.16);
+      color: #650000;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 650;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-card.is-navy .jh-jfr-badge {
+      background: rgba(12, 35, 64, 0.08);
+      border-color: rgba(12, 35, 64, 0.16);
+      color: #0c2340;
+    }
+
+    @media (max-width: 768px) {
+      #jh-junior-final-rankings-section {
+        margin: 36px auto 38px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-inner {
+        padding: 30px 18px 24px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-header {
+        margin-bottom: 22px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-title {
+        font-size: 21px;
+        line-height: 1.22;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-subtitle {
+        font-size: 12.5px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-card {
+        padding: 22px 18px 20px;
+        border-radius: 16px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-rank {
+        font-size: 31px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #jh-junior-final-rankings-section .jh-jfr-inner {
+        padding: 28px 14px 22px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-title {
+        font-size: 20px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-kicker {
+        font-size: 10px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-card {
+        padding: 21px 15px 19px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-rank {
+        font-size: 29px;
+      }
+
+      #jh-junior-final-rankings-section .jh-jfr-detail {
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <div class="jh-jfr-shell">
+    <div class="jh-jfr-inner">
+
+      <div class="jh-jfr-header">
+        <p class="jh-jfr-kicker">
+          Junior Career Archive
+        </p>
+
+        <h3 class="jh-jfr-title">
+          Final Junior Rankings
+        </h3>
+
+        <p class="jh-jfr-subtitle">
+          As of <strong>August 2025</strong> · Upon Junior Graduation
+        </p>
       </div>
 
-      <div style="background: #f1f4f9; padding: 25px; border-radius: 15px; border: 1px solid #d1d9e6; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-        <div style="font-size: 13px; color: #7f8c8d; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">JGS (Mexico Overall)</div>
-        <div style="font-size: 32px; font-weight: bold; color: #0c2340; margin: 10px 0;">#1 RANK</div>
-        <div style="font-size: 12px; color: #555; line-height: 1.6;">
-          World JGS Ranking: #100<br>
-          <span style="font-weight: bold; color: #1b5e20;"> JGS Class of 2025: #42</span>
+      <div id="rankings-grid" class="jh-jfr-grid">
+
+        <div class="jh-jfr-card">
+          <p class="jh-jfr-source">
+            WAGR · Mexico Junior
+          </p>
+
+          <div class="jh-jfr-rank">
+            #1 Rank
+          </div>
+
+          <p class="jh-jfr-detail">
+            World Amateur: #450<br>
+            <strong>Mexico Absolute: #7</strong>
+          </p>
+
+          <div class="jh-jfr-badge">
+            Final Junior Standing
+          </div>
         </div>
+
+        <div class="jh-jfr-card is-navy">
+          <p class="jh-jfr-source">
+            JGS · Mexico Overall
+          </p>
+
+          <div class="jh-jfr-rank">
+            #1 Rank
+          </div>
+
+          <p class="jh-jfr-detail">
+            World JGS Ranking: #100<br>
+            <span class="jh-jfr-green">JGS Class of 2025: #42</span>
+          </p>
+
+          <div class="jh-jfr-badge">
+            Archived Ranking Snapshot
+          </div>
+        </div>
+
       </div>
 
     </div>
   </div>
-
+</div>
 <div style="background-color: #0c2340; color: white; padding: 20px; border-radius: 20px; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(12, 35, 64, 0.2);">
     <h3 style="font-size: 22px; color: #ff5a00; margin-top: 0; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 90, 0, 0.3); padding-bottom: 10px;">
       Major Honors & Recognition
