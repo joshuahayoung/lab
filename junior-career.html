@@ -2117,15 +2117,16 @@
       margin: 0 0 12px 0;
       padding: 7px 13px;
       border-radius: 999px;
-      background: rgba(12, 35, 64, 0.42);
-      border: 1px solid rgba(255, 204, 0, 0.46);
-      color: #ffffff;
+      background: rgba(7, 23, 44, 0.66);
+      border: 1px solid rgba(255, 204, 0, 0.50);
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
       font-size: 10.5px;
       line-height: 1.2;
       font-weight: 650;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
     #jh-junior-final-rankings-section .jh-jfr-kicker::before {
@@ -2138,15 +2139,21 @@
       flex: 0 0 auto;
     }
 
+    #jh-junior-final-rankings-section .jh-jfr-kicker::after {
+      content: none;
+      display: none;
+    }
+
     #jh-junior-final-rankings-section .jh-jfr-title {
       margin: 0;
-      color: #ffcc00;
+      color: #ffcc00 !important;
+      -webkit-text-fill-color: #ffcc00 !important;
       font-size: 24px;
       line-height: 1.18;
       font-weight: 700;
       letter-spacing: -0.25px;
       text-transform: uppercase;
-      text-shadow: 0 2px 9px rgba(0, 0, 0, 0.32);
+      text-shadow: 0 2px 9px rgba(0, 0, 0, 0.34);
     }
 
     #jh-junior-final-rankings-section .jh-jfr-subtitle {
@@ -2158,24 +2165,33 @@
       margin: 12px auto 0 auto;
       padding: 7px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(7, 23, 44, 0.44);
       border: 1px solid rgba(255, 255, 255, 0.24);
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255, 255, 255, 0.94) !important;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.94) !important;
       font-size: 13px;
       line-height: 1.35;
       font-weight: 500;
       letter-spacing: 0.25px;
       text-align: center;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.13);
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-subtitle span {
+      color: rgba(255, 255, 255, 0.94) !important;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.94) !important;
+      font-weight: 500;
     }
 
     #jh-junior-final-rankings-section .jh-jfr-subtitle strong {
-      color: #ffcc00;
+      color: #ffcc00 !important;
+      -webkit-text-fill-color: #ffcc00 !important;
       font-weight: 650;
     }
 
     #jh-junior-final-rankings-section .jh-jfr-subtitle-note {
-      color: rgba(255, 255, 255, 0.92);
+      color: rgba(255, 255, 255, 0.94) !important;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.94) !important;
       font-weight: 500;
     }
 
@@ -2261,38 +2277,44 @@
     }
 
     #jh-junior-final-rankings-section .jh-jfr-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 14px;
-  min-height: 27px;
-  padding: 6px 11px;
-  border-radius: 999px;
-  background: rgba(153, 0, 0, 0.08);
-  border: 1px solid rgba(153, 0, 0, 0.16);
-  color: #650000;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 650;
-  letter-spacing: 0.75px;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
-}
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      min-height: 27px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(153, 0, 0, 0.08);
+      border: 1px solid rgba(153, 0, 0, 0.16);
+      color: #650000;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 650;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
 
-#jh-junior-final-rankings-section .jh-jfr-badge:hover {
-  background: #990000;
-  color: #ffcc00;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(153, 0, 0, 0.16);
-}
+    #jh-junior-final-rankings-section .jh-jfr-badge:hover {
+      background: #990000;
+      color: #ffcc00;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(153, 0, 0, 0.16);
+    }
+
+    #jh-junior-final-rankings-section .jh-jfr-card.is-navy .jh-jfr-badge {
+      background: rgba(12, 35, 64, 0.08);
+      border-color: rgba(12, 35, 64, 0.16);
+      color: #0c2340;
+    }
 
     #jh-junior-final-rankings-section .jh-jfr-card.is-navy .jh-jfr-badge:hover {
-  background: #0c2340;
-  color: #ffcc00;
-  box-shadow: 0 6px 14px rgba(12, 35, 64, 0.16);
-}
+      background: #0c2340;
+      color: #ffcc00;
+      box-shadow: 0 6px 14px rgba(12, 35, 64, 0.16);
+    }
 
     @media (max-width: 768px) {
       #jh-junior-final-rankings-section {
@@ -2301,15 +2323,6 @@
 
       #jh-junior-final-rankings-section .jh-jfr-inner {
         padding: 30px 18px 24px;
-      }
-
-      #jh-junior-final-rankings-section .jh-jfr-header {
-        width: 100%;
-        text-align: center;
-        margin: 0 0 26px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
 
       #jh-junior-final-rankings-section .jh-jfr-kicker {
@@ -2329,7 +2342,6 @@
         padding: 7px 12px;
         font-size: 12.5px;
         line-height: 1.35;
-        text-align: center;
       }
 
       #jh-junior-final-rankings-section .jh-jfr-grid {
@@ -2415,16 +2427,15 @@
           </p>
 
           <a
-  class="jh-jfr-badge"
-  href="./images/junior-year/WAGR-Joshua-Hong-2025-Agust-junior-final.jpg"
-  target="_blank"
-  rel="noopener noreferrer"
-  title="View Joshua Hong WAGR 2025 Junior Final Ranking"
-  aria-label="View Joshua Hong WAGR 2025 Junior Final Ranking"
->
-  Final Junior Standing
-</a>
-			
+            class="jh-jfr-badge"
+            href="./images/junior-year/WAGR-Joshua-Hong-2025-Agust-junior-final.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Joshua Hong WAGR 2025 Junior Final Ranking"
+            aria-label="View Joshua Hong WAGR 2025 Junior Final Ranking"
+          >
+            Final Junior Standing
+          </a>
         </div>
 
         <div class="jh-jfr-card is-navy">
@@ -2442,15 +2453,15 @@
           </p>
 
           <a
-  class="jh-jfr-badge"
-  href="./images/junior-year/24-Joshua-Hong-2025-Agust-Juniorscoreboard-final.jpg"
-  target="_blank"
-  rel="noopener noreferrer"
-  title="View Joshua Hong Junior Golf Scoreboard 2025 Final Ranking"
-  aria-label="View Joshua Hong Junior Golf Scoreboard 2025 Final Ranking"
->
-  Archived Ranking Snapshot
-</a>
+            class="jh-jfr-badge"
+            href="./images/junior-year/24-Joshua-Hong-2025-Agust-Juniorscoreboard-final.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View Joshua Hong Junior Golf Scoreboard 2025 Final Ranking"
+            aria-label="View Joshua Hong Junior Golf Scoreboard 2025 Final Ranking"
+          >
+            Archived Ranking Snapshot
+          </a>
         </div>
 
       </div>
