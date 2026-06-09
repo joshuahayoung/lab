@@ -11008,909 +11008,904 @@ function setImpact(id, value) {
 </style> 
 
   
-<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: clamp(40px, 10vw, 80px); font-weight: 900; color: rgba(12, 35, 64, 0.04); white-space: nowrap; z-index: 1; pointer-events: none; letter-spacing: -2px;">
-</div>
-
-
-</div>
-
-
 <div id="joshua-unique-section" style="width: 100%; max-width: 900px; margin: 0 auto 70px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; clear: both;">
-  
-    
-      <div class="intro-section" style="width: 100%; margin-bottom: 18px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; background: #0c2340; 
-        padding: 18px 25px; border-radius: 12px; border: 1px solid #f15a22; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
-        <h2 style="font-size: 16px; color: #ffffff; margin: 0; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 12px;">
-          <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15a22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-            </svg>
-            <span class="pulse-dot" style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #d94d1a; border-radius: 50%; border: 2px solid #d94d1a;"></span>
-          </div>
-          Present Process &amp; Progress
-        </h2>
 
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="display: flex; flex-direction: column; align-items: flex-end;">
-            <span style="font-size: 10px; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; background: #d94d1a; padding: 2px 6px; border-radius: 4px; color: #ffffff; margin-bottom: 2px;">Insight Archive</span>
-          </div>
-        </div>
+  <style>
+    #joshua-unique-section,
+    #joshua-unique-section * {
+      box-sizing: border-box;
+    }
 
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #f15a22, transparent); opacity: 0.35;"></div>
-      </div>
-    
+    #joshua-unique-section {
+      --usc-cardinal: #990000;
+      --usc-cardinal-dark: #650000;
+      --usc-cardinal-deep: #3f0000;
+      --usc-gold: #ffcc00;
+      --usc-gold-soft: #ffe38a;
+      --usc-cream: #fff8dc;
+      --usc-navy: #0c2340;
+      --usc-white: #ffffff;
+      --usc-muted: rgba(255,255,255,0.72);
+      --usc-line: rgba(255,204,0,0.18);
 
-   <style>
-  #joshua-unique-section,
-  #joshua-unique-section * {
-    box-sizing: border-box;
-  }
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 70px;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      clear: both;
+    }
 
-  #joshua-unique-section {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 70px;
-  padding: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  clear: both;
-}
+    summary::-webkit-details-marker {
+      display: none;
+    }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
+    details[open] .arrow-icon {
+      transform: rotate(180deg);
+    }
 
-      details[open] .arrow-icon {
-        transform: rotate(180deg);
+    @keyframes soft-pulse-cardinal {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.22); opacity: 0.68; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #joshua-unique-section .pulse-dot {
+      animation: soft-pulse-cardinal 2s infinite ease-in-out;
+    }
+
+    /* ===== USC Cardinal Section Title Bar ===== */
+    #joshua-unique-section .intro-section {
+      width: 100%;
+      margin-bottom: 18px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 6% 10%, rgba(255,204,0,0.16), transparent 34%),
+        linear-gradient(135deg, var(--usc-cardinal) 0%, var(--usc-cardinal-dark) 52%, var(--usc-cardinal-deep) 100%) !important;
+      border: 1px solid rgba(255, 204, 0, 0.36) !important;
+      box-shadow:
+        0 10px 24px rgba(153, 0, 0, 0.20),
+        0 5px 16px rgba(12, 35, 64, 0.10) !important;
+      transition: all 0.3s ease;
+    }
+
+    #joshua-unique-section .intro-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.08), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent 48%);
+      opacity: 0.62;
+    }
+
+    #joshua-unique-section .intro-section h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 16px;
+      color: var(--usc-white);
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #joshua-unique-section .intro-icon-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #joshua-unique-section .intro-icon-wrap svg {
+      stroke: var(--usc-gold) !important;
+    }
+
+    #joshua-unique-section .pulse-dot {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 8px;
+      height: 8px;
+      background: var(--usc-gold);
+      border-radius: 50%;
+      border: 2px solid var(--usc-gold);
+      box-shadow: 0 0 0 4px rgba(255,204,0,0.12);
+    }
+
+    #joshua-unique-section .intro-badge-wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #joshua-unique-section .intro-badge-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    #joshua-unique-section .intro-badge {
+      font-size: 10px;
+      color: var(--usc-gold);
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: rgba(255, 204, 0, 0.12);
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 0, 0.28);
+      margin-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    #joshua-unique-section .intro-bottom-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--usc-gold),
+          transparent
+        );
+      opacity: 0.42;
+    }
+
+    #joshua-unique-section .progress-details:hover .intro-section,
+    #joshua-unique-section .intro-section:hover {
+      border-color: rgba(255, 204, 0, 0.48) !important;
+      box-shadow:
+        0 12px 28px rgba(153, 0, 0, 0.24),
+        0 6px 18px rgba(12, 35, 64, 0.13) !important;
+    }
+
+    /* ===== USC Cardinal Archive Shell ===== */
+    #joshua-unique-section .jpp-shell {
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255,204,0,0.13), transparent 34%),
+        radial-gradient(circle at 96% 100%, rgba(255,204,0,0.09), transparent 36%),
+        linear-gradient(135deg, var(--usc-cardinal-deep) 0%, var(--usc-cardinal-dark) 42%, var(--usc-cardinal) 100%) !important;
+      border: 1px solid rgba(255, 204, 0, 0.26) !important;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 20px 42px rgba(153, 0, 0, 0.22),
+        0 10px 26px rgba(12, 35, 64, 0.14) !important;
+    }
+
+    #joshua-unique-section .jpp-topbar {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 22px 18px;
+      border-bottom: 1px solid rgba(255, 204, 0, 0.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.085) 0%, rgba(255,255,255,0.025) 100%);
+    }
+
+    #joshua-unique-section .jpp-archive-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      width: 100%;
+    }
+
+    #joshua-unique-section .jpp-title-stack {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    #joshua-unique-section .jpp-eyebrow {
+      color: var(--usc-gold);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 7px;
+    }
+
+    #joshua-unique-section .jpp-current {
+      min-width: 0;
+      color: #fff7d7;
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: 0.1px;
+      line-height: 1.35;
+    }
+
+    #joshua-unique-section .jpp-counter {
+      min-width: 62px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 0, 0.34);
+      background: rgba(255, 204, 0, 0.12);
+      color: var(--usc-gold);
+      font-size: 12px;
+      font-weight: 750;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.5px;
+      flex: 0 0 auto;
+    }
+
+    #joshua-unique-section .jpp-controls {
+      display: grid;
+      grid-template-columns: 42px minmax(180px, 260px) 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    #joshua-unique-section .jpp-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 0, 0.36);
+      background: rgba(255,255,255,0.07);
+      color: var(--usc-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: none;
+      transition: all 0.22s ease;
+      flex: 0 0 auto;
+    }
+
+    #joshua-unique-section .jpp-btn svg {
+      stroke: currentColor !important;
+    }
+
+    #joshua-unique-section .jpp-btn:hover {
+      background: rgba(255,204,0,0.13);
+      border-color: rgba(255, 204, 0, 0.70);
+      transform: translateY(-1px);
+    }
+
+    #joshua-unique-section .jpp-btn:disabled {
+      opacity: 0.32;
+      cursor: default;
+      transform: none;
+    }
+
+    #joshua-unique-section .jpp-select-wrap {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      max-width: 260px;
+    }
+
+    #joshua-unique-section .jpp-select-wrap::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--usc-gold);
+      border-bottom: 2px solid var(--usc-gold);
+      transform: translateY(-62%) rotate(45deg);
+      pointer-events: none;
+    }
+
+    #joshua-unique-section .jpp-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 100%;
+      height: 42px;
+      padding: 0 42px 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 204, 0, 0.22);
+      background: rgba(255,255,255,0.08);
+      color: var(--usc-white);
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: 0.1px;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #joshua-unique-section .jpp-select:hover {
+      border-color: rgba(255, 204, 0, 0.55);
+      background: rgba(255,255,255,0.10);
+    }
+
+    #joshua-unique-section .jpp-select:focus {
+      border-color: rgba(255, 204, 0, 0.70);
+      box-shadow: 0 0 0 3px rgba(255,204,0,0.13);
+    }
+
+    #joshua-unique-section .jpp-select option {
+      background: var(--usc-cardinal-dark);
+      color: var(--usc-white);
+      font-weight: 500;
+    }
+
+    #joshua-unique-section .jpp-stage-wrap {
+      padding: 12px;
+      background: transparent;
+    }
+
+    #joshua-unique-section .jpp-stage {
+      position: relative;
+      min-height: 300px;
+    }
+
+    /* ===== USC Cardinal Insight Card ===== */
+    #joshua-unique-section .jpp-stage .insight-card-item {
+      display: none !important;
+      width: 100% !important;
+      min-width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+      scroll-snap-align: unset !important;
+      margin: 0 !important;
+      border-radius: 22px !important;
+      padding: 34px 30px !important;
+      color: #fff8dc !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.10),
+        0 14px 32px rgba(0,0,0,0.16) !important;
+      border: 1px solid rgba(255,204,0,0.24) !important;
+      position: relative !important;
+      overflow: hidden !important;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255,204,0,0.16), transparent 35%),
+        radial-gradient(circle at 96% 100%, rgba(255,204,0,0.10), transparent 36%),
+        linear-gradient(180deg, #7a0000 0%, #5b0000 54%, #3f0000 100%) !important;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.075), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.065), transparent 50%);
+      opacity: 0.72;
+      z-index: 0;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--usc-gold),
+          transparent
+        );
+      opacity: 0.58;
+      z-index: 1;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item.active {
+      display: flex !important;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item > div,
+    #joshua-unique-section .jpp-stage .insight-card-item > div + div {
+      position: relative;
+      z-index: 2;
+    }
+
+    #joshua-unique-section .bts-card-head {
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,204,0,0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    #joshua-unique-section .bts-icon-wrap {
+      background: rgba(255,204,0,0.13);
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      border: 1px solid rgba(255,204,0,0.34);
+      flex-shrink: 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+
+    #joshua-unique-section .bts-icon-wrap svg {
+      stroke: var(--usc-gold) !important;
+    }
+
+    #joshua-unique-section .bts-title-row {
+      display: flex;
+      align-items: center;
+    }
+
+    #joshua-unique-section .bts-title {
+      font-size: 20px;
+      color: var(--usc-gold);
+      margin: 0;
+      font-weight: 750;
+      letter-spacing: -0.15px;
+    }
+
+    #joshua-unique-section .bts-event-badge {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      box-shadow: none !important;
+      font-size: 10px;
+      font-weight: 800;
+      color: #3f0000;
+      background: var(--usc-gold);
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(255,255,255,0.20);
+    }
+
+    #joshua-unique-section .bts-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #fff8dc;
+      border-left: 4px solid var(--usc-gold);
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    #joshua-unique-section .bts-body p {
+      color: inherit;
+      font-weight: 500;
+    }
+
+    #joshua-unique-section .bts-body .bts-lead {
+      margin: 0 0 10px 0;
+      color: var(--usc-gold);
+      font-weight: 750;
+      font-size: 16px;
+    }
+
+    #joshua-unique-section .bts-body .bts-final {
+      color: #ffffff;
+      font-weight: 650;
+    }
+
+    #joshua-unique-section .bts-status-note {
+      text-align: right;
+      font-size: 11px;
+      color: rgba(255,248,220,0.64);
+      font-weight: 700;
+      margin-top: 20px;
+      line-height: 1.55;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item h3,
+    #joshua-unique-section .jpp-stage .insight-card-item h4,
+    #joshua-unique-section .jpp-stage .insight-card-item h5 {
+      font-weight: 700 !important;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item p {
+      font-weight: 500 !important;
+    }
+
+    #joshua-unique-section .jpp-stage .insight-card-item strong,
+    #joshua-unique-section .jpp-stage .insight-card-item b {
+      font-weight: 650 !important;
+    }
+
+    @media (max-width: 960px) {
+      #joshua-unique-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #joshua-unique-section {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        margin-bottom: 58px !important;
       }
 
-      .progress-details:hover .intro-section {
-        background: #122d52 !important;
-        border-color: #e5a545 !important;
+      #joshua-unique-section .intro-section {
+        padding: 16px 18px !important;
       }
 
-      @keyframes soft-pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.2); opacity: 0.7; }
-        100% { transform: scale(1); opacity: 1; }
+      #joshua-unique-section .intro-section h2 {
+        font-size: 14px !important;
+        letter-spacing: 0.95px !important;
+        font-weight: 700 !important;
       }
 
-      .pulse-dot {
-        animation: soft-pulse 2s infinite ease-in-out;
-      }
-
-      #joshua-unique-section .jpp-shell {
-        background: linear-gradient(180deg, #0c2340 0%, #0a1d35 100%);
-        border: 1px solid rgba(201,138,46,0.22);
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 18px 38px rgba(0,0,0,0.22);
+      #joshua-unique-section .intro-badge {
+        font-size: 9.5px;
       }
 
       #joshua-unique-section .jpp-topbar {
-        display: flex;
-        flex-direction: column;
+        padding: 18px 16px 16px;
         gap: 15px;
-        padding: 20px 22px 18px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        background: linear-gradient(180deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.018) 100%);
       }
 
       #joshua-unique-section .jpp-archive-head {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 18px;
-        width: 100%;
-      }
-
-      #joshua-unique-section .jpp-title-stack {
-        min-width: 0;
-        flex: 1 1 auto;
-      }
-
-      #joshua-unique-section .jpp-eyebrow {
-        color: #c98a2e;
-        font-size: 11px;
-        font-weight: 900;
-        letter-spacing: 1.6px;
-        text-transform: uppercase;
-        line-height: 1.2;
-        margin-bottom: 7px;
-      }
-
-      #joshua-unique-section .jpp-current {
-        min-width: 0;
-        color: #f4f7fb;
-        font-size: 15px;
-        font-weight: 800;
-        letter-spacing: 0.15px;
-        line-height: 1.35;
-      }
-
-      #joshua-unique-section .jpp-counter {
-        min-width: 62px;
-        height: 34px;
-        padding: 0 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(201,138,46,0.28);
-        background: rgba(201,138,46,0.11);
-        color: #f6f1e7;
-        font-size: 12px;
-        font-weight: 900;
-        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        letter-spacing: 0.5px;
-        flex: 0 0 auto;
-      }
-
-      #joshua-unique-section .jpp-controls {
-        display: grid;
-        grid-template-columns: 42px minmax(180px, 260px) 42px;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-      }
-
-      #joshua-unique-section .jpp-btn {
-        width: 42px;
-        height: 42px;
-        border-radius: 999px;
-        border: 1px solid rgba(201,138,46,0.45);
-        background: rgba(255,255,255,0.055);
-        color: #c98a2e;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: none;
-        transition: all 0.22s ease;
-        flex: 0 0 auto;
-      }
-
-      #joshua-unique-section .jpp-btn:hover {
-        background: rgba(201,138,46,0.13);
-        border-color: rgba(229,165,69,0.75);
-      }
-
-      #joshua-unique-section .jpp-btn:disabled {
-        opacity: 0.32;
-        cursor: default;
-        transform: none;
-      }
-
-      #joshua-unique-section .jpp-select-wrap {
-        position: relative;
-        width: 100%;
-        min-width: 0;
-        max-width: 260px;
-      }
-
-      #joshua-unique-section .jpp-select-wrap::after {
-        content: "";
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        width: 8px;
-        height: 8px;
-        border-right: 2px solid #c98a2e;
-        border-bottom: 2px solid #c98a2e;
-        transform: translateY(-62%) rotate(45deg);
-        pointer-events: none;
-      }
-
-      #joshua-unique-section .jpp-select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 100%;
-        height: 42px;
-        padding: 0 42px 0 16px;
-        border-radius: 999px;
-        border: 1px solid rgba(255,255,255,0.14);
-        background: rgba(255,255,255,0.07);
-        color: #fff;
-        font-size: 13px;
-        font-weight: 850;
-        letter-spacing: 0.15px;
-        outline: none;
-        box-shadow: none;
-        cursor: pointer;
+        gap: 9px;
         text-align: center;
       }
 
-      #joshua-unique-section .jpp-select:hover {
-        border-color: rgba(229,165,69,0.65);
-        background: rgba(255,255,255,0.09);
-      }
-
-      #joshua-unique-section .jpp-select:focus {
-        border-color: rgba(229,165,69,0.75);
-        box-shadow: 0 0 0 3px rgba(201,138,46,0.13);
-      }
-
-      #joshua-unique-section .jpp-select option {
-        background: #0c2340;
-        color: #fff;
-        font-weight: 700;
-      }
-
-      #joshua-unique-section .jpp-stage-wrap {
-        padding: 12px;
-        background: transparent;
-      }
-
-      #joshua-unique-section .jpp-stage {
-        position: relative;
-        min-height: 300px;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item {
-        display: none !important;
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
-        flex: 0 0 100% !important;
-        scroll-snap-align: unset !important;
-        margin: 0 !important;
-        background: linear-gradient(180deg, #102b4c 0%, #0d2543 100%) !important;
-        border-radius: 22px !important;
-        padding: 34px 30px !important;
-        box-shadow: none !important;
-        border: 1px solid rgba(255,255,255,0.09) !important;
-        color: #f4f7fb !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item.active {
-        display: flex !important;
-      }
-
-      #joshua-unique-section .bts-card-head {
-        gap: 14px;
-        padding-bottom: 14px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-
-      #joshua-unique-section .bts-event-badge {
-        flex: 0 0 auto;
-        white-space: nowrap;
-        box-shadow: none !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item > div > div[style*="border-left"] {
-        border-left-color: rgba(201,138,46,0.72) !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item p {
-        color: inherit;
-      }
-
-      @media (max-width: 768px) {
-#joshua-unique-section {
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-  margin-bottom: 58px !important;
-}
-     
-        #joshua-unique-section {
-  padding-left: 14px !important;
-  padding-right: 14px !important;
-}
-
-        #joshua-unique-section .intro-section {
-          padding: 16px 18px !important;
-        }
-
-        #joshua-unique-section .intro-section h2 {
-          font-size: 14px !important;
-          letter-spacing: 1.1px !important;
-        }
-
-        #joshua-unique-section .jpp-topbar {
-          padding: 18px 16px 16px;
-          gap: 15px;
-        }
-
-        #joshua-unique-section .jpp-archive-head {
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 9px;
-          text-align: center;
-        }
-
-        #joshua-unique-section .jpp-eyebrow {
-          margin-bottom: 6px;
-        }
-
-        #joshua-unique-section .jpp-current {
-          font-size: 13.5px;
-          line-height: 1.38;
-        }
-
-        #joshua-unique-section .jpp-counter {
-          height: 32px;
-          min-width: 58px;
-        }
-
-        #joshua-unique-section .jpp-controls {
-          grid-template-columns: 40px minmax(0, 1fr) 40px;
-          gap: 8px;
-        }
-
-        #joshua-unique-section .jpp-select-wrap {
-          max-width: none;
-        }
-
-        #joshua-unique-section .jpp-select {
-          height: 40px;
-          font-size: 12.5px;
-        }
-
-        #joshua-unique-section .jpp-btn {
-          width: 40px;
-          height: 40px;
-        }
-
-        #joshua-unique-section .jpp-stage-wrap {
-          padding: 10px;
-        }
-
-        #joshua-unique-section .jpp-stage .insight-card-item {
-          padding: 26px 20px !important;
-          border-radius: 18px !important;
-        }
-
-        #joshua-unique-section .bts-card-head {
-          flex-direction: column !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 11px !important;
-          text-align: center;
-          margin-bottom: 18px !important;
-        }
-
-        #joshua-unique-section .bts-card-head > div {
-          justify-content: center !important;
-        }
-
-        #joshua-unique-section .bts-event-badge {
-          align-self: center !important;
-        }
-      }
-
-      @media (max-width: 520px) {
-        #joshua-unique-section .intro-section {
-          gap: 12px !important;
-        }
-
-        #joshua-unique-section .intro-section > div:nth-child(2) {
-          gap: 8px !important;
-        }
-
-        #joshua-unique-section .intro-section h2 {
-          font-size: 13px !important;
-        }
-
-        #joshua-unique-section .jpp-topbar {
-          padding: 16px 14px 15px;
-        }
-
-        #joshua-unique-section .jpp-stage-wrap {
-          padding: 8px;
-        }
-
-        #joshua-unique-section .jpp-stage .insight-card-item {
-          padding: 24px 18px !important;
-        }
-
-        #joshua-unique-section .jpp-stage .insight-card-item h3 {
-          font-size: 19px !important;
-          line-height: 1.25 !important;
-        }
-      }
-
-     @media (max-width: 480px) {
-  #joshua-unique-section {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-}
-    </style>
-
-    <style id="joshua-unique-section-usc-softening">
-      #joshua-unique-section > .intro-section {
-        background:
-          linear-gradient(
-            135deg,
-            #0c2340 0%,
-            #650000 100%
-          ) !important;
-        border-color: rgba(255, 204, 0, 0.30) !important;
-        box-shadow: 0 8px 22px rgba(12, 35, 64, 0.12) !important;
-      }
-
-      #joshua-unique-section > .intro-section h2 {
-        font-weight: 700 !important;
-        letter-spacing: 1.05px !important;
-      }
-
-      #joshua-unique-section > .intro-section svg[stroke="#f15a22"] {
-        stroke: #ffcc00 !important;
-      }
-
-      #joshua-unique-section > .intro-section .pulse-dot {
-        background: #ffcc00 !important;
-        border-color: #ffcc00 !important;
-      }
-
-      #joshua-unique-section > .intro-section > div:nth-of-type(1) span {
-        background: rgba(255, 204, 0, 0.16) !important;
-        color: #ffcc00 !important;
-        border: 1px solid rgba(255, 204, 0, 0.26);
-        font-weight: 650 !important;
-        letter-spacing: 0.75px !important;
-      }
-
-      #joshua-unique-section > .intro-section > div:nth-of-type(2) {
-        background:
-          linear-gradient(
-            90deg,
-            transparent,
-            #ffcc00,
-            transparent
-          ) !important;
-        opacity: 0.34 !important;
-      }
-
-      #joshua-unique-section .progress-details:hover .intro-section {
-        background:
-          linear-gradient(
-            135deg,
-            #0c2340 0%,
-            #650000 100%
-          ) !important;
-        border-color: rgba(255, 204, 0, 0.40) !important;
-      }
-
-      #joshua-unique-section .jpp-shell {
-        border-color: rgba(255, 204, 0, 0.22) !important;
-        box-shadow: 0 14px 30px rgba(12, 35, 64, 0.18) !important;
-      }
-
       #joshua-unique-section .jpp-eyebrow {
-        color: #ffcc00 !important;
-        font-weight: 650 !important;
-        letter-spacing: 1.25px !important;
+        margin-bottom: 6px;
       }
 
       #joshua-unique-section .jpp-current {
-        font-weight: 600 !important;
-        letter-spacing: 0.1px !important;
+        font-size: 13.5px;
+        line-height: 1.38;
       }
 
       #joshua-unique-section .jpp-counter {
-        color: #ffcc00 !important;
-        border-color: rgba(255, 204, 0, 0.28) !important;
-        background: rgba(255, 204, 0, 0.10) !important;
-        font-weight: 650 !important;
+        height: 32px;
+        min-width: 58px;
       }
 
-      #joshua-unique-section .jpp-btn {
-        color: #ffcc00 !important;
-        border-color: rgba(255, 204, 0, 0.32) !important;
+      #joshua-unique-section .jpp-controls {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 8px;
       }
 
-      #joshua-unique-section .jpp-btn svg {
-        stroke: #ffcc00 !important;
-      }
-
-      #joshua-unique-section .jpp-select-wrap::after {
-        border-right-color: #ffcc00 !important;
-        border-bottom-color: #ffcc00 !important;
+      #joshua-unique-section .jpp-select-wrap {
+        max-width: none;
       }
 
       #joshua-unique-section .jpp-select {
-        font-weight: 600 !important;
-        letter-spacing: 0.1px !important;
+        height: 40px;
+        font-size: 12.5px;
       }
 
-      #joshua-unique-section .jpp-select option {
-        font-weight: 500 !important;
+      #joshua-unique-section .jpp-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      #joshua-unique-section .jpp-stage-wrap {
+        padding: 10px;
+      }
+
+      #joshua-unique-section .jpp-stage .insight-card-item {
+        padding: 26px 20px !important;
+        border-radius: 18px !important;
+      }
+
+      #joshua-unique-section .bts-card-head {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 11px !important;
+        text-align: center;
+        margin-bottom: 18px !important;
+      }
+
+      #joshua-unique-section .bts-title-row {
+        justify-content: center !important;
+      }
+
+      #joshua-unique-section .bts-event-badge {
+        align-self: center !important;
+      }
+
+      #joshua-unique-section .bts-icon-wrap {
+        margin-right: 12px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #joshua-unique-section .intro-section {
+        gap: 12px !important;
+      }
+
+      #joshua-unique-section .intro-section h2 {
+        font-size: 13px !important;
+      }
+
+      #joshua-unique-section .intro-badge-wrap {
+        display: none;
+      }
+
+      #joshua-unique-section .jpp-topbar {
+        padding: 16px 14px 15px;
+      }
+
+      #joshua-unique-section .jpp-stage-wrap {
+        padding: 8px;
+      }
+
+      #joshua-unique-section .jpp-stage .insight-card-item {
+        padding: 24px 18px !important;
       }
 
       #joshua-unique-section .jpp-stage .insight-card-item h3 {
-        font-weight: 700 !important;
-        letter-spacing: -0.2px !important;
+        font-size: 19px !important;
+        line-height: 1.25 !important;
       }
 
-      #joshua-unique-section .jpp-stage .insight-card-item h4,
-      #joshua-unique-section .jpp-stage .insight-card-item h5 {
-        font-weight: 650 !important;
+      #joshua-unique-section .bts-body {
+        padding-left: 16px;
       }
+    }
 
-      #joshua-unique-section .jpp-stage .insight-card-item p {
-        font-weight: 500 !important;
+    @media (max-width: 480px) {
+      #joshua-unique-section {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
       }
+    }
+  </style>
 
-      #joshua-unique-section .jpp-stage .insight-card-item strong,
-      #joshua-unique-section .jpp-stage .insight-card-item b {
-        font-weight: 650 !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item [style*="font-weight: 900"] {
-        font-weight: 700 !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item [style*="font-weight: 850"] {
-        font-weight: 650 !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item [style*="font-weight: 800"] {
-        font-weight: 650 !important;
-      }
-
-      #joshua-unique-section .jpp-stage .insight-card-item > div > div[style*="border-left"] {
-        border-left-color: rgba(153, 0, 0, 0.42) !important;
-      }
-
-      @media (max-width: 768px) {
-        #joshua-unique-section > .intro-section h2 {
-          font-weight: 650 !important;
-          letter-spacing: 0.9px !important;
-        }
-
-        #joshua-unique-section .jpp-eyebrow,
-        #joshua-unique-section .jpp-counter,
-        #joshua-unique-section .jpp-select {
-          font-weight: 600 !important;
-        }
-
-        #joshua-unique-section .jpp-stage .insight-card-item h3 {
-          font-weight: 700 !important;
-        }
-
-        #joshua-unique-section .jpp-stage .insight-card-item p {
-          font-weight: 500 !important;
-        }
-      }
-
-      @media (max-width: 960px) {
-  #joshua-unique-section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  #joshua-unique-section {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  #joshua-unique-section {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-    </style>
-
- <div class="jpp-shell">
-  <div class="jpp-topbar">
-    <div class="jpp-archive-head">
-      <div class="jpp-title-stack">
-        <div class="jpp-eyebrow">Insight Archive</div>
-        <div class="jpp-current" id="jpp-current-label">Update Pending</div>
+  <div class="intro-section">
+    <h2>
+      <div class="intro-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+          <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+        </svg>
+        <span class="pulse-dot"></span>
       </div>
+      Present Process &amp; Progress
+    </h2>
 
-      <div class="jpp-counter" id="jpp-counter">1 / 1</div>
+    <div class="intro-badge-wrap">
+      <div class="intro-badge-inner">
+        <span class="intro-badge">Insight Archive</span>
+      </div>
     </div>
 
-    <div class="jpp-controls">
-      <button type="button" class="jpp-btn" id="jpp-prev" aria-label="Previous insight card">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
-      <div class="jpp-select-wrap">
-        <select class="jpp-select" id="jpp-select" aria-label="Jump to insight card">
-          <option value="0">Update Pending</option>
-        </select>
-      </div>
-
-      <button type="button" class="jpp-btn" id="jpp-next" aria-label="Next insight card">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c98a2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-    </div>
+    <div class="intro-bottom-line"></div>
   </div>
 
-  <div class="jpp-stage-wrap">
-    <div class="jpp-stage" id="jpp-stage">
+  <div class="jpp-shell">
+    <div class="jpp-topbar">
+      <div class="jpp-archive-head">
+        <div class="jpp-title-stack">
+          <div class="jpp-eyebrow">Insight Archive</div>
+          <div class="jpp-current" id="jpp-current-label">Update Pending</div>
+        </div>
 
-      <div
-        class="insight-card-item"
-        data-card-id="0"
-        style="
-          flex: 0 0 85%;
-          min-width: 320px;
-          max-width: 500px;
-          scroll-snap-align: start;
-          background:
-            radial-gradient(circle at 8% 0%, rgba(201,138,46,0.16), transparent 34%),
-            radial-gradient(circle at 96% 100%, rgba(148,163,184,0.12), transparent 34%),
-            linear-gradient(180deg, #101010 0%, #080808 100%);
-          border-radius: 25px;
-          padding: 35px 30px;
-          color: white;
-          box-shadow:
-            0 18px 38px rgba(0,0,0,0.30),
-            inset 0 1px 0 rgba(255,255,255,0.06);
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          position: relative;
-          border: 1px solid rgba(201,138,46,0.30);
-        "
-      >
-        <div>
-          <div
-            class="bts-card-head"
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 15px;
-              gap: 12px;
-            "
-          >
-            <div style="display: flex; align-items: center;">
-              <div
-                style="
-                  background: rgba(201,138,46,0.15);
-                  width: 45px;
-                  height: 45px;
-                  border-radius: 12px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin-right: 15px;
-                  border: 1px solid rgba(201,138,46,0.4);
-                  flex-shrink: 0;
-                "
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#c98a2e"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
+        <div class="jpp-counter" id="jpp-counter">1 / 1</div>
+      </div>
+
+      <div class="jpp-controls">
+        <button type="button" class="jpp-btn" id="jpp-prev" aria-label="Previous insight card">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="jpp-select-wrap">
+          <select class="jpp-select" id="jpp-select" aria-label="Jump to insight card">
+            <option value="0">Update Pending</option>
+          </select>
+        </div>
+
+        <button type="button" class="jpp-btn" id="jpp-next" aria-label="Next insight card">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="jpp-stage-wrap">
+      <div class="jpp-stage" id="jpp-stage">
+
+        <div class="insight-card-item" data-card-id="0">
+          <div>
+            <div class="bts-card-head">
+              <div class="bts-title-row">
+                <div class="bts-icon-wrap">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+
+                <h3 class="bts-title">
+                  Beyond the Scorecard
+                </h3>
               </div>
 
-              <h3
-                style="
-                  font-size: 20px;
-                  color: #c98a2e;
-                  margin: 0;
-                  font-weight: 800;
-                "
-              >
-                Beyond the Scorecard
-              </h3>
+              <span class="bts-event-badge">
+                Pending
+              </span>
             </div>
 
-            <span
-              class="bts-event-badge"
-              style="
-                font-size: 10px;
-                font-weight: 900;
-                color: #ffffff;
-                background: #c98a2e;
-                padding: 5px 12px;
-                border-radius: 50px;
-                white-space: nowrap;
-                letter-spacing: 0.04em;
-              "
-            >
-              Pending
-            </span>
+            <div class="bts-body">
+              <p class="bts-lead">
+                Insight Archive Update Pending
+              </p>
+
+              <p style="margin: 0 0 10px 0;">
+                This section is currently being held for the next confirmed archive update.
+              </p>
+
+              <p style="margin: 0 0 10px 0;">
+                Previous insight notes have been temporarily removed while the next site update is prepared.
+              </p>
+
+              <p class="bts-final" style="margin: 0;">
+                New content may be posted after the next confirmed transition update or after the Dogwood Invitational review is completed.
+              </p>
+            </div>
           </div>
 
-          <div
-            style="
-              font-size: 14px;
-              line-height: 1.7;
-              color: #efefef;
-              border-left: 4px solid #c98a2e;
-              padding-left: 20px;
-              text-align: left;
-            "
-          >
-            <p
-              style="
-                margin: 0 0 10px 0;
-                color: #c98a2e;
-                font-weight: 800;
-                font-size: 16px;
-              "
-            >
-              Insight Archive Update Pending
-            </p>
-
-            <p style="margin-bottom: 10px;">
-              This section is currently being held for the next confirmed archive update.
-            </p>
-
-            <p style="margin-bottom: 10px;">
-              Previous insight notes have been temporarily removed while the next site update is prepared.
-            </p>
-
-            <p style="margin-bottom: 0; color: #ffffff; font-weight: 700;">
-              New content may be posted after the next confirmed transition update or after the Dogwood Invitational review is completed.
-            </p>
+          <div class="bts-status-note">
+            Status Note: Archive content pending · New update to be posted when confirmed
           </div>
         </div>
 
-        <div
-          style="
-            text-align: right;
-            font-size: 11px;
-            color: #777;
-            font-weight: 800;
-            margin-top: 20px;
-            line-height: 1.55;
-          "
-        >
-          Status Note: Archive content pending · New update to be posted when confirmed
-        </div>
       </div>
-
     </div>
   </div>
-</div>
 
-<script>
-(function() {
-  const stage = document.getElementById('jpp-stage');
-  const prevBtn = document.getElementById('jpp-prev');
-  const nextBtn = document.getElementById('jpp-next');
-  const select = document.getElementById('jpp-select');
-  const counter = document.getElementById('jpp-counter');
-  const currentLabel = document.getElementById('jpp-current-label');
+  <script>
+    (function() {
+      const stage = document.getElementById('jpp-stage');
+      const prevBtn = document.getElementById('jpp-prev');
+      const nextBtn = document.getElementById('jpp-next');
+      const select = document.getElementById('jpp-select');
+      const counter = document.getElementById('jpp-counter');
+      const currentLabel = document.getElementById('jpp-current-label');
 
-  if (!stage || !prevBtn || !nextBtn || !select || !counter || !currentLabel) return;
+      if (!stage || !prevBtn || !nextBtn || !select || !counter || !currentLabel) return;
 
-  const cards = Array.from(stage.querySelectorAll('.insight-card-item'));
-  const orderedIds = [0];
+      const cards = Array.from(stage.querySelectorAll('.insight-card-item'));
+      const orderedIds = [0];
 
-  const cardLabels = {
-    0: 'Insight Archive Update Pending'
-  };
+      const cardLabels = {
+        0: 'Insight Archive Update Pending'
+      };
 
-  const cardMap = {};
-  cards.forEach(card => {
-    cardMap[Number(card.getAttribute('data-card-id'))] = card;
-  });
+      const cardMap = {};
+      cards.forEach(card => {
+        cardMap[Number(card.getAttribute('data-card-id'))] = card;
+      });
 
-  let currentDisplayIndex = 0;
+      let currentDisplayIndex = 0;
 
-  function showCardByDisplayIndex(displayIndex) {
-    const safeDisplayIndex = Math.max(0, Math.min(displayIndex, orderedIds.length - 1));
-    currentDisplayIndex = safeDisplayIndex;
+      function showCardByDisplayIndex(displayIndex) {
+        const safeDisplayIndex = Math.max(0, Math.min(displayIndex, orderedIds.length - 1));
+        currentDisplayIndex = safeDisplayIndex;
 
-    const activeId = orderedIds[safeDisplayIndex];
+        const activeId = orderedIds[safeDisplayIndex];
 
-    cards.forEach(card => {
-      const cardId = Number(card.getAttribute('data-card-id'));
-      if (cardId === activeId) {
-        card.classList.add('active');
-      } else {
-        card.classList.remove('active');
+        cards.forEach(card => {
+          const cardId = Number(card.getAttribute('data-card-id'));
+          if (cardId === activeId) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+
+        select.value = String(activeId);
+        counter.textContent = (safeDisplayIndex + 1) + ' / ' + orderedIds.length;
+        currentLabel.textContent = cardLabels[activeId] || '';
+
+        prevBtn.disabled = safeDisplayIndex === 0;
+        nextBtn.disabled = safeDisplayIndex === orderedIds.length - 1;
       }
-    });
 
-    select.value = String(activeId);
-    counter.textContent = (safeDisplayIndex + 1) + ' / ' + orderedIds.length;
-    currentLabel.textContent = cardLabels[activeId] || '';
+      function showCardById(cardId) {
+        const displayIndex = orderedIds.indexOf(Number(cardId));
+        if (displayIndex !== -1) {
+          showCardByDisplayIndex(displayIndex);
+        }
+      }
 
-    prevBtn.disabled = safeDisplayIndex === 0;
-    nextBtn.disabled = safeDisplayIndex === orderedIds.length - 1;
-  }
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        showCardByDisplayIndex(currentDisplayIndex - 1);
+      });
 
-  function showCardById(cardId) {
-    const displayIndex = orderedIds.indexOf(Number(cardId));
-    if (displayIndex !== -1) {
-      showCardByDisplayIndex(displayIndex);
-    }
-  }
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        showCardByDisplayIndex(currentDisplayIndex + 1);
+      });
 
-  prevBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    showCardByDisplayIndex(currentDisplayIndex - 1);
-  });
+      select.addEventListener('change', function() {
+        showCardById(parseInt(select.value, 10));
+      });
 
-  nextBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    showCardByDisplayIndex(currentDisplayIndex + 1);
-  });
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
 
-  select.addEventListener('change', function() {
-    showCardById(parseInt(select.value, 10));
-  });
+      stage.addEventListener('touchstart', function(e) {
+        if (!e.touches || e.touches.length !== 1) return;
 
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
 
-  stage.addEventListener('touchstart', function(e) {
-    if (!e.touches || e.touches.length !== 1) return;
+      stage.addEventListener('touchend', function(e) {
+        if (!e.changedTouches || e.changedTouches.length !== 1) return;
 
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
 
-  stage.addEventListener('touchend', function(e) {
-    if (!e.changedTouches || e.changedTouches.length !== 1) return;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
 
-    touchEndX = e.changedTouches[0].clientX;
-    touchEndY = e.changedTouches[0].clientY;
+        const minSwipeDistance = 55;
+        const maxVerticalDrift = 45;
 
-    const diffX = touchEndX - touchStartX;
-    const diffY = touchEndY - touchStartY;
+        if (Math.abs(diffX) < minSwipeDistance) return;
+        if (Math.abs(diffY) > maxVerticalDrift) return;
 
-    const minSwipeDistance = 55;
-    const maxVerticalDrift = 45;
+        if (diffX < 0) {
+          showCardByDisplayIndex(currentDisplayIndex + 1);
+        } else {
+          showCardByDisplayIndex(currentDisplayIndex - 1);
+        }
+      }, { passive: true });
 
-    if (Math.abs(diffX) < minSwipeDistance) return;
-    if (Math.abs(diffY) > maxVerticalDrift) return;
+      document.addEventListener('keydown', function(e) {
+        const section = document.getElementById('joshua-unique-section');
+        if (!section) return;
 
-    if (diffX < 0) {
-      showCardByDisplayIndex(currentDisplayIndex + 1);
-    } else {
-      showCardByDisplayIndex(currentDisplayIndex - 1);
-    }
-  }, { passive: true });
+        const active = document.activeElement;
+        if (active && !section.contains(active) && active !== document.body) return;
 
-  document.addEventListener('keydown', function(e) {
-    const section = document.getElementById('joshua-unique-section');
-    if (!section) return;
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          showCardByDisplayIndex(currentDisplayIndex - 1);
+        }
 
-    const active = document.activeElement;
-    if (active && !section.contains(active) && active !== document.body) return;
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          showCardByDisplayIndex(currentDisplayIndex + 1);
+        }
+      });
 
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      showCardByDisplayIndex(currentDisplayIndex - 1);
-    }
+      showCardByDisplayIndex(0);
+    })();
+  </script>
 
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      showCardByDisplayIndex(currentDisplayIndex + 1);
-    }
-  });
-
-  showCardByDisplayIndex(0);
-})();
-</script>
-
-</div>  
+</div>
 
 
 <div class="witb-section">
