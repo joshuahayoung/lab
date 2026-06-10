@@ -6474,6 +6474,387 @@ document.head.appendChild(style);
   
 
   <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
+
+
+<!-- UTSA Official Player Bio & Staff References Memorial Section -->
+<section id="jh-utsa-official-bio-memorial" aria-label="UTSA official player bio and staff references">
+  <style>
+    #jh-utsa-official-bio-memorial,
+    #jh-utsa-official-bio-memorial * {
+      box-sizing: border-box;
+    }
+
+    #jh-utsa-official-bio-memorial {
+      width: 100%;
+      max-width: 900px;
+      margin: 18px auto 34px auto;
+      padding: 0 15px;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-card {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(12, 35, 64, 0.14);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
+      box-shadow:
+        0 12px 28px rgba(12, 35, 64, 0.07),
+        0 4px 14px rgba(201, 138, 46, 0.06);
+      position: relative;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-card::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 5px;
+      background:
+        linear-gradient(
+          90deg,
+          #0c2340 0%,
+          #f15a22 48%,
+          #c98a2e 100%
+        );
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-inner {
+      display: grid;
+      grid-template-columns: 138px minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+      padding: 22px 24px;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-photo-link {
+      display: block;
+      width: 138px;
+      text-decoration: none;
+      line-height: 0;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
+      width: 138px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      border: 1px solid rgba(12, 35, 64, 0.14);
+      box-shadow: 0 8px 18px rgba(12, 35, 64, 0.10);
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-content {
+      min-width: 0;
+      text-align: left;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-kicker-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 8px 0;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f15a22;
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-kicker img {
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-season {
+      color: #94a3b8;
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-desc {
+      margin: 9px 0 13px 0;
+      color: #475569;
+      font-size: 13.5px;
+      line-height: 1.62;
+      font-weight: 500;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-main-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #0c2340;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      box-shadow: 0 7px 16px rgba(12, 35, 64, 0.16);
+      margin: 0 0 13px 0;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-main-link span {
+      color: #f15a22;
+      margin-left: 7px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff {
+      border-top: 1px solid #edf2f7;
+      padding-top: 12px;
+      margin-top: 0;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-label {
+      margin: 0 0 8px 0;
+      color: #64748b;
+      font-size: 9.5px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #0c2340;
+      text-decoration: none;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link strong {
+      color: #990000;
+      font-weight: 950;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link span {
+      color: #f15a22;
+      font-weight: 950;
+    }
+
+    @media (max-width: 700px) {
+      #jh-utsa-official-bio-memorial {
+        margin: 16px auto 30px auto;
+        padding: 0 15px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-inner {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 15px;
+        padding: 18px 16px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-link,
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
+        width: 112px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-title {
+        font-size: 17px;
+        line-height: 1.28;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-desc {
+        font-size: 12.5px;
+        line-height: 1.58;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-main-link {
+        width: 100%;
+        min-height: 36px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
+        gap: 7px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-staff-link {
+        font-size: 10.5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #jh-utsa-official-bio-memorial .jh-ubm-inner {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 18px 16px 19px 16px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-link,
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
+        width: 118px;
+        margin: 0 auto;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-content {
+        text-align: center;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-kicker-row {
+        justify-content: center;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <div class="jh-ubm-card">
+    <div class="jh-ubm-inner">
+      <a
+        class="jh-ubm-photo-link"
+        href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View Joshua Hong official UTSA player bio"
+      >
+        <div class="jh-ubm-photo-frame">
+          <img
+            class="jh-ubm-photo"
+            src="./images/freshman-2025-2026/Joshua-Hong-bio-utsa-profile.jpg"
+            alt="Joshua Hong official UTSA roster bio profile photo"
+            title="Joshua Hong — Official UTSA Player Bio"
+            loading="lazy"
+          >
+        </div>
+      </a>
+
+      <div class="jh-ubm-content">
+        <div class="jh-ubm-kicker-row">
+          <div class="jh-ubm-kicker">
+            <img
+              src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com"
+              alt=""
+              aria-hidden="true"
+            >
+            UTSA Official Player Profile
+          </div>
+
+          <div class="jh-ubm-season">
+            2025–26 Freshman Season
+          </div>
+        </div>
+
+        <h3 class="jh-ubm-title">
+          <a
+            href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            UTSA Roster Bio: Joshua Hong
+          </a>
+        </h3>
+
+        <p class="jh-ubm-desc">
+          Official UTSA roster bio documenting Hong’s completed freshman season, including the 71.73 single-season scoring average record, Military City Collegiate title, Golden Nugget 64 / 134 school standards, and conference recognition.
+        </p>
+
+        <a
+          class="jh-ubm-main-link"
+          href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Official Player Bio
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <div class="jh-ubm-staff">
+          <p class="jh-ubm-staff-label">
+            Also referenced in official UTSA staff bios
+          </p>
+
+          <div class="jh-ubm-staff-links">
+            <a
+              class="jh-ubm-staff-link"
+              href="https://goutsa.com/sports/mens-golf/roster/season/2025-26/staff/matt-wernecke"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>HEAD COACH</strong>
+              Matt Wernecke
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              class="jh-ubm-staff-link"
+              href="https://goutsa.com/sports/mens-golf/roster/season/2025-26/staff/joey-ashley"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <strong>ASSISTANT COACH</strong>
+              Joey Ashley
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
   <p style="color: #cbd5e1; font-size: 10px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 8px;">
     멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
   </p>
