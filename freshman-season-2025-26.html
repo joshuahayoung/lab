@@ -6472,12 +6472,8 @@ document.head.appendChild(style);
 </script>
 
   
-
-  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
-
-
 <!-- UTSA Official Player Bio & Staff References Memorial Section -->
-<section id="jh-utsa-official-bio-memorial" aria-label="UTSA official player bio and staff references">
+<section id="jh-utsa-official-bio-memorial" aria-label="UTSA official player bio and coaching staff references">
   <style>
     #jh-utsa-official-bio-memorial,
     #jh-utsa-official-bio-memorial * {
@@ -6485,23 +6481,72 @@ document.head.appendChild(style);
     }
 
     #jh-utsa-official-bio-memorial {
-  width: 100%;
-  max-width: 900px;
-  margin: 18px auto 34px auto;
-  padding: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
+      width: 100%;
+      max-width: 900px;
+      margin: 26px auto 36px auto;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      text-align: left;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-section-head {
+      width: 100%;
+      margin: 0 0 16px 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-section-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 8px 0;
+      color: #c98a2e;
+      font-size: 10.5px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-section-kicker::before,
+    #jh-utsa-official-bio-memorial .jh-ubm-section-kicker::after {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: rgba(201, 138, 46, 0.55);
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-section-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-section-subtitle {
+      max-width: 680px;
+      margin: 8px auto 0 auto;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
 
     #jh-utsa-official-bio-memorial .jh-ubm-card {
       width: 100%;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: 22px;
       border: 1px solid rgba(12, 35, 64, 0.14);
       background:
         linear-gradient(180deg, #ffffff 0%, #fffdf8 100%);
       box-shadow:
-        0 12px 28px rgba(12, 35, 64, 0.07),
-        0 4px 14px rgba(201, 138, 46, 0.06);
+        0 14px 30px rgba(12, 35, 64, 0.075),
+        0 5px 16px rgba(201, 138, 46, 0.065);
       position: relative;
     }
 
@@ -6514,33 +6559,38 @@ document.head.appendChild(style);
         linear-gradient(
           90deg,
           #0c2340 0%,
-          #f15a22 48%,
+          #f15a22 50%,
           #c98a2e 100%
         );
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-inner {
       display: grid;
-      grid-template-columns: 138px minmax(0, 1fr);
-      gap: 20px;
+      grid-template-columns: 176px minmax(0, 1fr);
+      gap: 24px;
       align-items: center;
-      padding: 22px 24px;
+      width: 100%;
+      padding: 24px 28px 25px 28px;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-photo-link {
       display: block;
-      width: 138px;
+      width: 176px;
+      max-width: 100%;
       text-decoration: none;
       line-height: 0;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
-      width: 138px;
-      border-radius: 16px;
+      width: 176px;
+      max-width: 100%;
       overflow: hidden;
+      border-radius: 18px;
       background: #f8fafc;
       border: 1px solid rgba(12, 35, 64, 0.14);
-      box-shadow: 0 8px 18px rgba(12, 35, 64, 0.10);
+      box-shadow:
+        0 10px 22px rgba(12, 35, 64, 0.11),
+        inset 0 1px 0 rgba(255,255,255,0.55);
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-photo {
@@ -6562,7 +6612,7 @@ document.head.appendChild(style);
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      margin: 0 0 8px 0;
+      margin: 0 0 9px 0;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-kicker {
@@ -6572,7 +6622,7 @@ document.head.appendChild(style);
       color: #f15a22;
       font-size: 10.5px;
       line-height: 1;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
@@ -6589,7 +6639,7 @@ document.head.appendChild(style);
       color: #94a3b8;
       font-size: 10.5px;
       line-height: 1;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       white-space: nowrap;
@@ -6598,9 +6648,9 @@ document.head.appendChild(style);
     #jh-utsa-official-bio-memorial .jh-ubm-title {
       margin: 0;
       color: #0c2340;
-      font-size: 20px;
-      line-height: 1.25;
-      font-weight: 900;
+      font-size: 21px;
+      line-height: 1.24;
+      font-weight: 950;
       letter-spacing: -0.2px;
     }
 
@@ -6610,30 +6660,44 @@ document.head.appendChild(style);
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-desc {
-      margin: 9px 0 13px 0;
+      margin: 10px 0 14px 0;
       color: #475569;
-      font-size: 13.5px;
-      line-height: 1.62;
+      font-size: 13.7px;
+      line-height: 1.65;
       font-weight: 500;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-action-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 14px 0;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-main-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 34px;
-      padding: 0 14px;
+      min-height: 36px;
+      padding: 0 15px;
       border-radius: 999px;
       background: #0c2340;
       color: #ffffff;
       text-decoration: none;
       font-size: 11px;
       line-height: 1;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: 0.6px;
       text-transform: uppercase;
-      box-shadow: 0 7px 16px rgba(12, 35, 64, 0.16);
-      margin: 0 0 13px 0;
+      box-shadow: 0 7px 16px rgba(12, 35, 64, 0.17);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-main-link:hover,
+    #jh-utsa-official-bio-memorial .jh-ubm-main-link:focus {
+      background: #142f52;
+      transform: translateY(-1px);
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-main-link span {
@@ -6643,105 +6707,164 @@ document.head.appendChild(style);
       line-height: 1;
     }
 
+    #jh-utsa-official-bio-memorial .jh-ubm-record-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      background: rgba(201, 138, 46, 0.10);
+      border: 1px solid rgba(201, 138, 46, 0.22);
+      color: #8a5a12;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
     #jh-utsa-official-bio-memorial .jh-ubm-staff {
       border-top: 1px solid #edf2f7;
-      padding-top: 12px;
+      padding-top: 13px;
       margin-top: 0;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-staff-label {
-      margin: 0 0 8px 0;
+      margin: 0 0 9px 0;
       color: #64748b;
-      font-size: 9.5px;
-      line-height: 1;
+      font-size: 10px;
+      line-height: 1.35;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      width: 100%;
     }
 
     #jh-utsa-official-bio-memorial .jh-ubm-staff-link {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 6px;
-      min-height: 30px;
-      padding: 0 11px;
-      border-radius: 999px;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 42px;
+      padding: 10px 12px;
+      border-radius: 12px;
       border: 1px solid #e2e8f0;
       background: #f8fafc;
       color: #0c2340;
       text-decoration: none;
-      font-size: 11px;
-      line-height: 1;
-      font-weight: 850;
-      white-space: nowrap;
+      line-height: 1.2;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    #jh-utsa-official-bio-memorial .jh-ubm-staff-link strong {
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link:hover,
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link:focus {
+      background: #ffffff;
+      border-color: rgba(12, 35, 64, 0.28);
+      transform: translateY(-1px);
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link-text {
+      min-width: 0;
+      display: grid;
+      gap: 2px;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link-role {
+      display: block;
       color: #990000;
+      font-size: 9.5px;
+      line-height: 1;
       font-weight: 950;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
 
-    #jh-utsa-official-bio-memorial .jh-ubm-staff-link span {
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-link-name {
+      display: block;
+      color: #0c2340;
+      font-size: 12px;
+      line-height: 1.25;
+      font-weight: 900;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #jh-utsa-official-bio-memorial .jh-ubm-staff-arrow {
       color: #f15a22;
+      font-size: 14px;
+      line-height: 1;
       font-weight: 950;
+      flex: 0 0 auto;
     }
 
-    #jh-utsa-official-bio-memorial {
-  margin: 16px auto 30px auto;
-  padding: 0;
-}
+    @media (max-width: 768px) {
+      #jh-utsa-official-bio-memorial {
+        width: calc(100% - 30px);
+        max-width: 900px;
+        margin: 22px auto 32px auto;
+        padding: 0;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-section-title {
+        font-size: 19px;
+        line-height: 1.25;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-section-subtitle {
+        font-size: 12.5px;
+        line-height: 1.55;
+      }
 
       #jh-utsa-official-bio-memorial .jh-ubm-inner {
-        grid-template-columns: 112px minmax(0, 1fr);
-        gap: 15px;
-        padding: 18px 16px;
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 17px;
+        padding: 20px;
       }
 
       #jh-utsa-official-bio-memorial .jh-ubm-photo-link,
       #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
-        width: 112px;
+        width: 150px;
       }
 
       #jh-utsa-official-bio-memorial .jh-ubm-title {
-        font-size: 17px;
+        font-size: 18px;
         line-height: 1.28;
       }
 
       #jh-utsa-official-bio-memorial .jh-ubm-desc {
-        font-size: 12.5px;
-        line-height: 1.58;
-      }
-
-      #jh-utsa-official-bio-memorial .jh-ubm-main-link {
-        width: 100%;
-        min-height: 36px;
+        font-size: 12.8px;
+        line-height: 1.6;
       }
 
       #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
-        gap: 7px;
-      }
-
-      #jh-utsa-official-bio-memorial .jh-ubm-staff-link {
-        font-size: 10.5px;
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
+      #jh-utsa-official-bio-memorial {
+        width: calc(100% - 24px);
+        margin: 20px auto 30px auto;
+      }
+
       #jh-utsa-official-bio-memorial .jh-ubm-inner {
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 18px 16px 19px 16px;
+        gap: 17px;
+        padding: 19px 16px 20px 16px;
       }
 
       #jh-utsa-official-bio-memorial .jh-ubm-photo-link,
       #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
-        width: 118px;
+        width: min(190px, 68vw);
         margin: 0 auto;
       }
 
@@ -6751,13 +6874,70 @@ document.head.appendChild(style);
 
       #jh-utsa-official-bio-memorial .jh-ubm-kicker-row {
         justify-content: center;
+        gap: 8px 12px;
       }
 
-      #jh-utsa-official-bio-memorial .jh-ubm-staff-links {
+      #jh-utsa-official-bio-memorial .jh-ubm-title {
+        font-size: 18px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-desc {
+        font-size: 12.8px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-action-row {
         justify-content: center;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-main-link {
+        width: 100%;
+        min-height: 38px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-record-pill {
+        width: 100%;
+        min-height: 32px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-staff-label {
+        text-align: center;
+        line-height: 1.45;
+      }
+    }
+
+    @media (max-width: 390px) {
+      #jh-utsa-official-bio-memorial .jh-ubm-section-title {
+        font-size: 17px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-inner {
+        padding: 18px 14px 19px 14px;
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-link,
+      #jh-utsa-official-bio-memorial .jh-ubm-photo-frame {
+        width: min(178px, 70vw);
+      }
+
+      #jh-utsa-official-bio-memorial .jh-ubm-staff-link {
+        padding: 10px 11px;
       }
     }
   </style>
+
+  <div class="jh-ubm-section-head">
+    <div class="jh-ubm-section-kicker">
+      Official UTSA Archive
+    </div>
+
+    <h2 class="jh-ubm-section-title">
+      Official Freshman Season Recognition
+    </h2>
+
+    <p class="jh-ubm-section-subtitle">
+      A final archive marker linking Joshua Hong’s official UTSA player bio and the UTSA coaching staff bios where his 2025–26 freshman-season records are noted.
+    </p>
+  </div>
 
   <div class="jh-ubm-card">
     <div class="jh-ubm-inner">
@@ -6806,22 +6986,28 @@ document.head.appendChild(style);
         </h3>
 
         <p class="jh-ubm-desc">
-          Official UTSA roster bio documenting Hong’s completed freshman season, including the 71.73 single-season scoring average record, Military City Collegiate title, Golden Nugget 64 / 134 school standards, and conference recognition.
+          Official UTSA roster bio documenting Hong’s completed freshman season, including the 71.73 single-season scoring average record, Military City Collegiate title, Golden Nugget 64 / 134 school standards, and American Conference recognition.
         </p>
 
-        <a
-          class="jh-ubm-main-link"
-          href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Official Player Bio
-          <span aria-hidden="true">→</span>
-        </a>
+        <div class="jh-ubm-action-row">
+          <a
+            class="jh-ubm-main-link"
+            href="https://goutsa.com/sports/mens-golf/roster/player/joshua-hong"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Official Player Bio
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <span class="jh-ubm-record-pill">
+            71.73 UTSA Record
+          </span>
+        </div>
 
         <div class="jh-ubm-staff">
           <p class="jh-ubm-staff-label">
-            Hong’s freshman-season records are also noted in official UTSA coaching staff bios
+            Hong’s freshman-season records are also noted in official UTSA coaching staff bios.
           </p>
 
           <div class="jh-ubm-staff-links">
@@ -6831,9 +7017,11 @@ document.head.appendChild(style);
               target="_blank"
               rel="noopener noreferrer"
             >
-              <strong>HEAD COACH </strong>
-              Matt Wernecke Bio
-              <span aria-hidden="true">→</span>
+              <span class="jh-ubm-staff-link-text">
+                <span class="jh-ubm-staff-link-role">Head Coach Bio</span>
+                <span class="jh-ubm-staff-link-name">Matt Wernecke</span>
+              </span>
+              <span class="jh-ubm-staff-arrow" aria-hidden="true">→</span>
             </a>
 
             <a
@@ -6842,9 +7030,11 @@ document.head.appendChild(style);
               target="_blank"
               rel="noopener noreferrer"
             >
-              <strong>ASSISTANT COACH</strong>
-              Joey Ashley Bio
-              <span aria-hidden="true">→</span>
+              <span class="jh-ubm-staff-link-text">
+                <span class="jh-ubm-staff-link-role">Assistant Coach Bio</span>
+                <span class="jh-ubm-staff-link-name">Joey Ashley</span>
+              </span>
+              <span class="jh-ubm-staff-arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -6852,7 +7042,8 @@ document.head.appendChild(style);
     </div>
   </div>
 </section>
-
+  
+  <div style="text-align: center; border-top: 1px solid #eee; padding: 30px 20px 60px 20px;">
     
   <p style="color: #cbd5e1; font-size: 10px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 8px;">
     멕시코 한국인 골프 선수 자슈아 홍 (Joshua Hong Golf) 공식 기록 페이지
