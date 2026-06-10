@@ -676,98 +676,146 @@
       display: flex;
     }
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumbs-wrap {
-      display: none;
-      width: 100%;
-      padding: 12px 13px 13px 13px;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.98) 0%,
-          rgba(255, 253, 246, 0.98) 100%
-        );
-      border-top: 1px solid rgba(153, 0, 0, 0.12);
-    }
+   #jh-home-usc-hero-gallery .jh-hhg-thumbs-wrap {
+  display: none;
+  width: 100%;
+  padding: 7px 10px 8px 10px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 253, 246, 0.98) 100%
+    );
+  border-top: 1px solid rgba(153, 0, 0, 0.10);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-frame.has-multiple .jh-hhg-thumbs-wrap {
-      display: block;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-frame.has-multiple .jh-hhg-thumbs-wrap {
+  display: block;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumbs {
-      display: grid;
-      grid-template-columns: repeat(var(--jh-hhg-count, 2), minmax(0, 1fr));
-      gap: 10px;
-      width: 100%;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb {
-      min-width: 0;
-      border: 2px solid rgba(12, 35, 64, 0.12);
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 0;
-      overflow: hidden;
-      cursor: pointer;
-      position: relative;
-      box-shadow: 0 5px 12px rgba(12, 35, 64, 0.08);
-      transition:
-        transform 0.18s ease,
-        border-color 0.18s ease,
-        box-shadow 0.18s ease,
-        opacity 0.18s ease;
-      opacity: 0.78;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb {
+  flex: 0 0 72px;
+  width: 72px;
+  max-width: 72px;
+  min-width: 72px;
+  border: 1.5px solid rgba(12, 35, 64, 0.14);
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.76;
+  box-shadow: 0 3px 8px rgba(12, 35, 64, 0.08);
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb:hover,
-    #jh-home-usc-hero-gallery .jh-hhg-thumb:focus {
-      opacity: 1;
-      transform: translateY(-1px);
-      border-color: rgba(153, 0, 0, 0.45);
-      outline: none;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb:hover,
+#jh-home-usc-hero-gallery .jh-hhg-thumb:focus {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(153, 0, 0, 0.45);
+  outline: none;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb.is-active {
-      opacity: 1;
-      border-color: #ffcc00;
-      box-shadow:
-        0 0 0 2px rgba(153, 0, 0, 0.72),
-        0 8px 18px rgba(153, 0, 0, 0.18);
-      transform: translateY(-1px);
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb.is-active {
+  opacity: 1;
+  border-color: #ffcc00;
+  box-shadow:
+    0 0 0 1.5px rgba(153, 0, 0, 0.70),
+    0 5px 12px rgba(153, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb-img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      object-position: center center;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb-img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center center;
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb-label {
-      position: absolute;
-      left: 7px;
-      bottom: 7px;
-      max-width: calc(100% - 14px);
-      padding: 4px 7px;
-      border-radius: 999px;
-      background: rgba(12, 35, 64, 0.78);
-      color: #ffffff;
-      font-size: 9px;
-      line-height: 1;
-      font-weight: 850;
-      letter-spacing: 0.45px;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb-label {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  max-width: calc(100% - 8px);
+  padding: 2px 5px;
+  border-radius: 999px;
+  background: rgba(12, 35, 64, 0.78);
+  color: #ffffff;
+  font-size: 6.5px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 
-    #jh-home-usc-hero-gallery .jh-hhg-thumb.is-active .jh-hhg-thumb-label {
-      background: rgba(153, 0, 0, 0.88);
-      color: #ffcc00;
-    }
+#jh-home-usc-hero-gallery .jh-hhg-thumb.is-active .jh-hhg-thumb-label {
+  background: rgba(153, 0, 0, 0.88);
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  #jh-home-usc-hero-gallery .jh-hhg-thumbs-wrap {
+    padding: 6px 8px 7px 8px;
+  }
+
+  #jh-home-usc-hero-gallery .jh-hhg-thumbs {
+    gap: 5px;
+  }
+
+  #jh-home-usc-hero-gallery .jh-hhg-thumb {
+    flex: 0 0 62px;
+    width: 62px;
+    max-width: 62px;
+    min-width: 62px;
+    border-radius: 7px;
+  }
+
+  #jh-home-usc-hero-gallery .jh-hhg-thumb-label {
+    left: 3px;
+    bottom: 3px;
+    max-width: calc(100% - 6px);
+    padding: 2px 4px;
+    font-size: 5.8px;
+    letter-spacing: 0.15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #jh-home-usc-hero-gallery .jh-hhg-thumb {
+    flex-basis: 58px;
+    width: 58px;
+    max-width: 58px;
+    min-width: 58px;
+  }
+
+  #jh-home-usc-hero-gallery .jh-hhg-thumb-label {
+    font-size: 5.5px;
+  }
+}
 
     @media (max-width: 768px) {
       #jh-home-usc-hero-gallery {
@@ -799,29 +847,7 @@
         right: 11px;
       }
 
-      #jh-home-usc-hero-gallery .jh-hhg-thumbs-wrap {
-        padding: 10px 10px 11px 10px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      #jh-home-usc-hero-gallery .jh-hhg-thumbs {
-        display: flex;
-        gap: 9px;
-        min-width: 0;
-      }
-
-      #jh-home-usc-hero-gallery .jh-hhg-thumb {
-        flex: 0 0 116px;
-        border-radius: 10px;
-      }
-
-      #jh-home-usc-hero-gallery .jh-hhg-thumb-label {
-        font-size: 8px;
-        left: 6px;
-        bottom: 6px;
-        padding: 4px 6px;
-      }
+     
     }
 
     @media (max-width: 480px) {
@@ -834,9 +860,7 @@
         height: 38px;
       }
 
-      #jh-home-usc-hero-gallery .jh-hhg-thumb {
-        flex-basis: 108px;
-      }
+
     }
 
     @media (max-width: 390px) {
