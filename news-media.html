@@ -1896,145 +1896,515 @@
       </a>
     </div>
 
-<div id="jh-news-press-articles" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 850px; margin: auto; box-sizing: border-box; padding: 10px 0 0;">
 
-<style id="jh-news-press-articles-usc-softening">
+
+
+<div id="jh-news-press-articles" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 10px 0 0;">
+
+<style id="jh-news-press-articles-premium-usc-ui">
   #jh-news-press-articles,
   #jh-news-press-articles * {
     box-sizing: border-box;
   }
 
-  #jh-news-press-articles > div > div:first-child {
-    border-color: rgba(153, 0, 0, 0.12) !important;
-    box-shadow: 0 8px 22px rgba(12, 35, 64, 0.055) !important;
+  #jh-news-press-articles {
+    --jh-cardinal: #990000;
+    --jh-cardinal-dark: #650000;
+    --jh-gold: #ffcc00;
+    --jh-navy: #0c2340;
+    --jh-text: #334155;
+    --jh-muted: #64748b;
+    --jh-light: #f8fafc;
+    --jh-ivory: #fffdf6;
   }
 
-  #jh-news-press-articles h3 {
-    color: #0c2340 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.25px !important;
+  #jh-news-press-articles a {
+    color: inherit;
+    text-decoration: none;
   }
 
-  #jh-news-press-articles h3 svg {
-    stroke: #990000 !important;
+  #jh-news-press-articles .jh-press-shell {
+    width: 100%;
+    margin: 10px auto 50px auto;
+    padding: 0;
   }
 
-  #jh-news-press-articles a[href="#ncaa-career"] > div {
+  #jh-news-press-articles .jh-press-control-card {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background:
+      radial-gradient(circle at 5% 0%, rgba(153, 0, 0, 0.12), transparent 34%),
+      radial-gradient(circle at 94% 8%, rgba(255, 204, 0, 0.15), transparent 32%),
+      linear-gradient(180deg, #ffffff 0%, var(--jh-ivory) 100%);
+    border: 1px solid rgba(153, 0, 0, 0.14);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow:
+      0 14px 30px rgba(12, 35, 64, 0.075),
+      0 7px 18px rgba(153, 0, 0, 0.05);
+  }
+
+  #jh-news-press-articles .jh-press-control-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
     background:
       linear-gradient(
-        135deg,
-        #0c2340 0%,
-        #650000 100%
-      ) !important;
-    border-top-color: #ffcc00 !important;
-    box-shadow: 0 6px 16px rgba(12, 35, 64, 0.14) !important;
+        90deg,
+        var(--jh-cardinal-dark) 0%,
+        var(--jh-cardinal) 42%,
+        var(--jh-gold) 50%,
+        var(--jh-cardinal) 58%,
+        var(--jh-cardinal-dark) 100%
+      );
   }
 
-  #jh-news-press-articles a[href="#ncaa-career"] [style*="font-weight: 900"],
-  #jh-news-press-articles a[href="#ncaa-career"] [style*="font-weight: 800"] {
-    font-weight: 700 !important;
+  #jh-news-press-articles .jh-press-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 18px 0;
   }
 
-  #jh-news-press-articles a[href="#junior-period"] > div {
-    border-color: rgba(12, 35, 64, 0.12) !important;
-    border-top-color: rgba(153, 0, 0, 0.34) !important;
-    box-shadow: 0 4px 12px rgba(12, 35, 64, 0.04) !important;
+  #jh-news-press-articles .jh-press-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: var(--jh-navy);
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.25px;
   }
 
-  #jh-news-press-articles a[href="#junior-period"] [style*="font-weight: 900"],
-  #jh-news-press-articles a[href="#junior-period"] [style*="font-weight: 800"] {
-    font-weight: 700 !important;
+  #jh-news-press-articles .jh-press-title-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(135deg, var(--jh-cardinal) 0%, var(--jh-cardinal-dark) 100%);
+    color: var(--jh-gold);
+    box-shadow: 0 8px 18px rgba(153, 0, 0, 0.18);
   }
 
-  #jh-news-press-articles #ncaa-career h4 {
-    color: #0c2340 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.15px !important;
+  #jh-news-press-articles .jh-press-title-icon svg {
+    width: 21px;
+    height: 21px;
+    stroke: currentColor;
   }
 
-  #jh-news-press-articles #ncaa-career h4 span {
-    background: #990000 !important;
+  #jh-news-press-articles .jh-press-stage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
   }
 
-  #jh-news-press-articles #ncaa-career a > div {
-    border-color: rgba(153, 0, 0, 0.10) !important;
-    background: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(12, 35, 64, 0.035) !important;
+  #jh-news-press-articles .jh-press-stage-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    padding: 15px 14px;
     transition:
       transform 0.18s ease,
       box-shadow 0.18s ease,
-      border-color 0.18s ease !important;
+      border-color 0.18s ease,
+      background 0.18s ease;
   }
 
-  #jh-news-press-articles #ncaa-career a > div:hover {
+  #jh-news-press-articles .jh-press-stage-card:hover,
+  #jh-news-press-articles .jh-press-stage-card:focus {
     transform: translateY(-1px);
-    border-color: rgba(153, 0, 0, 0.18) !important;
-    box-shadow: 0 7px 16px rgba(12, 35, 64, 0.065) !important;
+    outline: none;
   }
 
-  #jh-news-press-articles #ncaa-career [style*="color: #ff5a00"],
-  #jh-news-press-articles #ncaa-career [style*="color:#ff5a00"] {
-    color: #990000 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-current {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-navy) 0%,
+        var(--jh-cardinal-dark) 58%,
+        var(--jh-cardinal) 100%
+      );
+    border: 1px solid rgba(255, 204, 0, 0.34);
+    box-shadow:
+      0 8px 20px rgba(12, 35, 64, 0.16),
+      0 5px 14px rgba(153, 0, 0, 0.12);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="color: #f97316"],
-  #jh-news-press-articles #ncaa-career [style*="color:#f97316"] {
-    color: #806600 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-current::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--jh-gold);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="background: #ff5a00"],
-  #jh-news-press-articles #ncaa-career [style*="background:#ff5a00"],
-  #jh-news-press-articles #ncaa-career [style*="background-color: #ff5a00"],
-  #jh-news-press-articles #ncaa-career [style*="background-color:#ff5a00"] {
-    background: #990000 !important;
-    background-color: #990000 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-archive {
+    background: #ffffff;
+    border: 1px solid rgba(12, 35, 64, 0.12);
+    box-shadow: 0 4px 12px rgba(12, 35, 64, 0.045);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="border-top: 4px solid #f97316"],
-  #jh-news-press-articles #ncaa-career [style*="border-top:4px solid #f97316"] {
-    border-top-color: #ffcc00 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-archive::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background:
+      linear-gradient(90deg, rgba(153, 0, 0, 0.44), rgba(255, 204, 0, 0.72));
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-weight: 900"] {
-    font-weight: 700 !important;
+  #jh-news-press-articles .jh-press-stage-kicker {
+    display: block;
+    margin: 0 0 4px 0;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-weight: 800"] {
-    font-weight: 650 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-current .jh-press-stage-kicker {
+    color: rgba(255, 255, 255, 0.72);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-weight: 700"] {
-    font-weight: 600 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-archive .jh-press-stage-kicker {
+    color: var(--jh-muted);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-weight: bold"] {
-    font-weight: 650 !important;
+  #jh-news-press-articles .jh-press-stage-label {
+    display: block;
+    font-size: 15px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    text-transform: uppercase;
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-size: 14px"] {
-    font-weight: 650 !important;
-    line-height: 1.42 !important;
+  #jh-news-press-articles .jh-press-stage-card.is-current .jh-press-stage-label {
+    color: #ffffff;
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-size: 11px"] {
-    font-weight: 500 !important;
-    color: #64748b !important;
+  #jh-news-press-articles .jh-press-stage-card.is-archive .jh-press-stage-label {
+    color: var(--jh-navy);
   }
 
-  #jh-news-press-articles #ncaa-career [style*="font-size: 10px"] {
-    font-weight: 600 !important;
-    letter-spacing: 0.35px !important;
+  #jh-news-press-articles .jh-press-section {
+    width: 100%;
+    margin: 0 auto 50px auto;
+    padding: 0;
+    scroll-margin-top: 120px;
   }
 
-  #jh-news-press-articles #ncaa-career details summary {
-    color: #64748b !important;
-    font-weight: 650 !important;
-    border-color: rgba(153, 0, 0, 0.14) !important;
-    background: linear-gradient(180deg, #ffffff 0%, #fffdf6 100%) !important;
+  #jh-news-press-articles .jh-press-section-title {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 15px 0;
+    padding: 0 10px;
+    color: var(--jh-navy);
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
   }
 
-  #jh-news-press-articles #ncaa-career details summary span {
-    color: #990000 !important;
+  #jh-news-press-articles .jh-press-section-title::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    margin-right: 10px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        180deg,
+        var(--jh-cardinal) 0%,
+        var(--jh-cardinal-dark) 62%,
+        var(--jh-gold) 100%
+      );
+    box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.09);
+  }
+
+  #jh-news-press-articles .jh-press-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #jh-news-press-articles .jh-press-row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(153, 0, 0, 0.11);
+    background:
+      linear-gradient(180deg, #ffffff 0%, #fffefe 100%);
+    box-shadow: 0 4px 12px rgba(12, 35, 64, 0.035);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease,
+      background 0.18s ease;
+  }
+
+  #jh-news-press-articles .jh-press-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 13px;
+    bottom: 13px;
+    width: 3px;
+    border-radius: 999px;
+    background: rgba(153, 0, 0, 0.0);
+    transition: background 0.18s ease;
+  }
+
+  #jh-news-press-articles a:hover .jh-press-row,
+  #jh-news-press-articles a:focus .jh-press-row {
+    transform: translateY(-1px);
+    border-color: rgba(153, 0, 0, 0.22);
+    background:
+      linear-gradient(180deg, #ffffff 0%, var(--jh-ivory) 100%);
+    box-shadow:
+      0 8px 18px rgba(12, 35, 64, 0.07),
+      0 4px 12px rgba(153, 0, 0, 0.045);
+    outline: none;
+  }
+
+  #jh-news-press-articles a:hover .jh-press-row::before,
+  #jh-news-press-articles a:focus .jh-press-row::before {
+    background: var(--jh-cardinal);
+  }
+
+  #jh-news-press-articles .jh-press-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, #ffffff 0%, var(--jh-light) 100%);
+    border: 1px solid rgba(153, 0, 0, 0.13);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  #jh-news-press-articles .jh-press-icon img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    border-radius: 4px;
+    object-fit: contain;
+  }
+
+  #jh-news-press-articles .jh-press-icon svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+    stroke: var(--jh-cardinal);
+  }
+
+  #jh-news-press-articles .jh-press-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  #jh-news-press-articles .jh-press-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 4px 0;
+  }
+
+  #jh-news-press-articles .jh-press-source-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  #jh-news-press-articles .jh-press-source {
+    color: var(--jh-cardinal);
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 650;
+    text-transform: uppercase;
+    letter-spacing: 0.45px;
+  }
+
+  #jh-news-press-articles .jh-press-source-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 18px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, var(--jh-cardinal) 0%, var(--jh-cardinal-dark) 100%);
+    color: #ffffff;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  #jh-news-press-articles .jh-press-source-badge.is-navy {
+    background: var(--jh-navy);
+  }
+
+  #jh-news-press-articles .jh-press-source-sub {
+    color: var(--jh-muted);
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  #jh-news-press-articles .jh-press-date {
+    color: #94a3b8;
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  #jh-news-press-articles .jh-press-item-title {
+    color: var(--jh-navy);
+    font-size: 14px;
+    line-height: 1.42;
+    font-weight: 650;
+    letter-spacing: -0.05px;
+  }
+
+  #jh-news-press-articles .jh-press-item-title .jh-gold-text {
+    color: #806600;
+  }
+
+  #jh-news-press-articles .jh-press-item-title .jh-cardinal-text {
+    color: var(--jh-cardinal);
+  }
+
+  #jh-news-press-articles .jh-press-item-title .jh-dark-cardinal-text {
+    color: var(--jh-cardinal-dark);
+  }
+
+  #jh-news-press-articles .jh-press-note {
+    margin-top: 5px;
+    color: var(--jh-muted);
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  #jh-news-press-articles .jh-press-arrow {
+    align-self: center;
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    transition:
+      color 0.18s ease,
+      background 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #jh-news-press-articles .jh-press-arrow svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    stroke: currentColor;
+  }
+
+  #jh-news-press-articles a:hover .jh-press-arrow,
+  #jh-news-press-articles a:focus .jh-press-arrow {
+    color: var(--jh-gold);
+    background: var(--jh-cardinal);
+    transform: translateX(1px);
+  }
+
+  #jh-news-press-articles details {
+    width: 100%;
+  }
+
+  #jh-news-press-articles details summary {
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 14px;
+    color: var(--jh-muted);
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 650;
+    border: 1px dashed rgba(153, 0, 0, 0.20);
+    border-radius: 14px;
+    margin-top: 5px;
+    background:
+      linear-gradient(180deg, #ffffff 0%, var(--jh-ivory) 100%);
+    transition:
+      border-color 0.18s ease,
+      box-shadow 0.18s ease,
+      color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #jh-news-press-articles details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #jh-news-press-articles details summary:hover,
+  #jh-news-press-articles details summary:focus {
+    color: var(--jh-navy);
+    border-color: rgba(153, 0, 0, 0.34);
+    box-shadow: 0 6px 14px rgba(12, 35, 64, 0.055);
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  #jh-news-press-articles details summary span {
+    color: var(--jh-cardinal);
+    font-size: 10px;
+    margin-left: 5px;
+  }
+
+  #jh-news-press-articles details[open] summary span {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+
+  #jh-news-press-articles .jh-press-more-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
   }
 
   @media (max-width: 768px) {
@@ -2042,994 +2412,963 @@
       padding-top: 8px !important;
     }
 
-    #jh-news-press-articles > div > div:first-child {
-      padding: 20px !important;
-      border-radius: 14px !important;
+    #jh-news-press-articles .jh-press-control-card {
+      padding: 21px 18px;
+      border-radius: 20px;
     }
 
-    #jh-news-press-articles h3 {
-      font-size: 17px !important;
-      font-weight: 650 !important;
+    #jh-news-press-articles .jh-press-title-row {
+      margin-bottom: 16px;
     }
 
-    #jh-news-press-articles > div > div:first-child > div[style*="display: grid"] {
-      grid-template-columns: 1fr !important;
-      gap: 10px !important;
+    #jh-news-press-articles .jh-press-title {
+      font-size: 17px;
+      line-height: 1.3;
+      gap: 10px;
     }
 
-    #jh-news-press-articles #ncaa-career h4 {
-      font-size: 15px !important;
-      font-weight: 650 !important;
-      margin-top: 26px !important;
+    #jh-news-press-articles .jh-press-title-icon {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      border-radius: 11px;
     }
 
-    #jh-news-press-articles #ncaa-career a > div {
-      padding: 12px 13px !important;
+    #jh-news-press-articles .jh-press-stage-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
     }
 
-    #jh-news-press-articles #ncaa-career [style*="font-size: 14px"] {
-      font-size: 13.5px !important;
-      font-weight: 650 !important;
+    #jh-news-press-articles .jh-press-stage-card {
+      min-height: 68px;
+      padding: 14px;
     }
 
-    #jh-news-press-articles #ncaa-career [style*="font-size: 11px"] {
-      font-size: 10.5px !important;
-      line-height: 1.35 !important;
+    #jh-news-press-articles .jh-press-section {
+      margin-bottom: 42px;
+    }
+
+    #jh-news-press-articles .jh-press-section-title {
+      font-size: 15px;
+      margin-top: 26px;
+      padding-left: 7px;
+    }
+
+    #jh-news-press-articles .jh-press-row {
+      padding: 13px;
+      gap: 12px;
+    }
+
+    #jh-news-press-articles .jh-press-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+    }
+
+    #jh-news-press-articles .jh-press-meta {
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    #jh-news-press-articles .jh-press-source-wrap {
+      gap: 5px;
+    }
+
+    #jh-news-press-articles .jh-press-source,
+    #jh-news-press-articles .jh-press-source-sub,
+    #jh-news-press-articles .jh-press-date {
+      font-size: 9.5px;
+    }
+
+    #jh-news-press-articles .jh-press-source-badge {
+      font-size: 8.8px;
+      padding: 2px 7px;
+    }
+
+    #jh-news-press-articles .jh-press-item-title {
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    #jh-news-press-articles .jh-press-note {
+      font-size: 10.5px;
+      line-height: 1.38;
     }
   }
 
   @media (max-width: 480px) {
-    #jh-news-press-articles > div > div:first-child {
-      padding: 18px 15px !important;
+    #jh-news-press-articles .jh-press-control-card {
+      padding: 19px 15px;
+      border-radius: 18px;
     }
 
-    #jh-news-press-articles #ncaa-career a > div {
-      padding: 11px 12px !important;
+    #jh-news-press-articles .jh-press-title {
+      font-size: 16px;
     }
 
-    #jh-news-press-articles #ncaa-career [style*="font-size: 10px"] {
-      font-size: 9.5px !important;
+    #jh-news-press-articles .jh-press-row {
+      padding: 12px;
+      gap: 10px;
+      border-radius: 13px;
     }
 
-    #jh-news-press-articles #ncaa-career [style*="font-size: 14px"] {
-      font-size: 13px !important;
+    #jh-news-press-articles .jh-press-icon {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      border-radius: 10px;
+    }
+
+    #jh-news-press-articles .jh-press-icon img {
+      width: 22px;
+      height: 22px;
+    }
+
+    #jh-news-press-articles .jh-press-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    #jh-news-press-articles .jh-press-meta {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #jh-news-press-articles .jh-press-date {
+      display: block;
+      margin-top: 3px;
+    }
+
+    #jh-news-press-articles .jh-press-source,
+    #jh-news-press-articles .jh-press-source-sub,
+    #jh-news-press-articles .jh-press-date {
+      font-size: 9px;
+    }
+
+    #jh-news-press-articles .jh-press-item-title {
+      font-size: 13px;
+    }
+
+    #jh-news-press-articles .jh-press-arrow {
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+    }
+
+    #jh-news-press-articles details summary {
+      font-size: 12.5px;
+      padding: 11px 12px;
     }
   }
 </style>
 
-  <div style="width: 100%; margin: 10px auto 20px auto; padding: 0;">
-    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-      
-      <h3 style="color: #0c2340; font-size: 18px; margin: 0 0 20px 0; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
-        <span style="margin-right: 12px; display: flex; align-items: center;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<div class="jh-press-shell">
+  <div class="jh-press-control-card">
+    <div class="jh-press-title-row">
+      <h3 class="jh-press-title">
+        <span class="jh-press-title-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
             <path d="M18 14h-8"></path>
             <path d="M15 18h-5"></path>
             <path d="M10 6h8v4h-8V6Z"></path>
           </svg>
         </span>
-        Official News & Press Articles
+        Official News &amp; Press Articles
       </h3>
+    </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
-        <a href="#ncaa-career" style="text-decoration: none;">
-          <div style="background: #0c2340; border-top: 4px solid #f97316; padding: 16px 14px; border-radius: 10px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">
-            <div style="font-size: 10px; color: rgba(255,255,255,0.7); font-weight: 800; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 1px;">Current Stage</div>
-            <div style="font-size: 15px; color: #ffffff; font-weight: 900; letter-spacing: -0.2px;">NCAA CAREER</div>
+    <div class="jh-press-stage-grid">
+      <a href="#ncaa-career" class="jh-press-stage-card is-current">
+        <span>
+          <span class="jh-press-stage-kicker">Current Stage</span>
+          <span class="jh-press-stage-label">NCAA CAREER</span>
+        </span>
+      </a>
+
+      <a href="#junior-period" class="jh-press-stage-card is-archive">
+        <span>
+          <span class="jh-press-stage-kicker">Archive</span>
+          <span class="jh-press-stage-label">JUNIOR YEARS</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="ncaa-career" class="jh-press-section">
+  <h4 class="jh-press-section-title">
+    NCAA CAREER
+  </h4>
+
+  <div class="jh-press-list">
+
+    <a href="https://goutsa.com/news/2026/05/7/utsa-athletics-celebrates-student-athletes-at-the-rowdys" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">May 7, 2026</div>
+          </div>
+          <div class="jh-press-item-title">UTSA Athletics celebrates student-athletes at The Rowdys</div>
+          <div class="jh-press-note">Strength &amp; Conditioning Awards, Male Newcomer of the Year – Nominees</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://goutsa.com/news/2026/04/29/roadrunners-move-up-leaderboard-on-final-day-of-american-conference-championship" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">Apr 29, 2026</div>
+          </div>
+          <div class="jh-press-item-title">Roadrunners move up leaderboard on final day of American Conference Championship</div>
+          <div class="jh-press-note">UTSA single-season scoring average record — 71.73 over 33 rounds.</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://goutsa.com/news/2026/04/26/utsa-mens-golfs-joshua-hong-blends-unique-experiences-to-create-success" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">Apr 26, 2026</div>
+          </div>
+          <div class="jh-press-item-title">UTSA Men’s Golf’s Joshua Hong Blends Unique Experiences to Create Success</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://goutsa.com/news/2026/04/26/utsa-in-sunshine-state-for-american-conference-championship" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">Apr 26, 2026</div>
+          </div>
+          <div class="jh-press-item-title">UTSA in Sunshine State for American Conference Championship</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://goutsa.com/news/2026/03/23/hong-in-eighth-utsa-ninth-after-day-one-of-bell-bank-pay-it-forward-collegiate" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">Mar 23, 2026</div>
+          </div>
+          <div class="jh-press-item-title">Hong in eighth, UTSA ninth after day one of Bell Bank “Pay It Forward” Collegiate</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://goutsa.com/news/2026/03/4/hong-collects-american-conference-weekly-honors" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">UTSA ATHLETICS</span>
+              <span class="jh-press-source-sub"> · Men’s Golf</span>
+            </div>
+            <div class="jh-press-date">Mar 4, 2026</div>
+          </div>
+          <div class="jh-press-item-title">Hong collects American Conference weekly honors</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <details>
+      <summary>
+        See more NCAA Career articles <span>▼</span>
+      </summary>
+
+      <div class="jh-press-more-list">
+
+        <a href="https://theamerican.org/news/2026/3/4/utsas-hong-earns-weekly-golf-honors.aspx" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5L10 95H25L32 78H68L75 95H90L50 5Z" fill="#002855" stroke="white" stroke-width="2"/>
+                <path d="M50 15L22 83H35L40 70H60L65 83H78L50 15Z" fill="#002855"/>
+                <path d="M50 25L55 42H72L58 52L63 69L50 58L37 69L42 52L28 42H45L50 25Z" fill="#D50032" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">American Athletic Conference POTW Honor</span>
+                </div>
+                <div class="jh-press-date">Mar 4, 2026</div>
+              </div>
+              <div class="jh-press-item-title">Men's Golf Player of the Week: Joshua Hong</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
         </a>
 
-        <a href="#junior-period" style="text-decoration: none;">
-          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #94a3b8; padding: 16px 14px; border-radius: 10px; text-align: center; transition: 0.2s;">
-            <div style="font-size: 10px; color: #64748b; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 1px;">Archive</div>
-            <div style="font-size: 15px; color: #0c2340; font-weight: 900; letter-spacing: -0.2px;">JUNIOR YEARS</div>
+        <a href="https://goutsa.com/news/2026/03/3/utsa-shatters-school-record-en-route-to-runner-up-finish-at-golden-nugget-invitational" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Mar 3, 2026</div>
+              </div>
+              <div class="jh-press-item-title">UTSA shatters school record en route to runner-up finish at Golden Nugget Invitational</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
         </a>
-      </div>
 
-    </div>
-  </div>
-
-  <div id="ncaa-career" style="width: 100%; margin: 0 auto 50px auto; padding: 0;">
-    
-    <h4 style="color: #0c2340; font-size: 16px; margin: 30px 0 15px 0; font-weight: 800; letter-spacing: -0.3px; display: flex; align-items: center;">
-      <span style="width: 4px; height: 16px; background: #ff5a00; display: inline-block; margin-right: 10px; border-radius: 2px;"></span>
-      NCAA CAREER
-    </h4>
-
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-
-
-
-<a href="https://goutsa.com/news/2026/05/7/utsa-athletics-celebrates-student-athletes-at-the-rowdys" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-          <span style="color: #64748b; font-weight: 700;"> · Men’s Golf</span>
-        </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">May 7, 2026</div>
-      </div>
-
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340; line-height: 1.35;">
-        UTSA Athletics celebrates student-athletes at The Rowdys
-      </div>
-
-      <div style="margin-top: 5px; font-size: 11px; color: #64748b; font-weight: 700; line-height: 1.4;">
-        Strength & Conditioning Awards, Male Newcomer of the Year – Nominees
-      </div>
-    </div>
-  </div>
-</a>
-      
-
-<a href="https://goutsa.com/news/2026/04/29/roadrunners-move-up-leaderboard-on-final-day-of-american-conference-championship" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-          <span style="color: #64748b; font-weight: 700;"> · Men’s Golf</span>
-        </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Apr 29, 2026</div>
-      </div>
-
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340; line-height: 1.35;">
-        Roadrunners move up leaderboard on final day of American Conference Championship
-      </div>
-
-      <div style="margin-top: 5px; font-size: 11px; color: #64748b; font-weight: 700; line-height: 1.4;">
-        UTSA single-season scoring average record — 71.73 over 33 rounds.
-      </div>
-    </div>
-  </div>
-</a>
-
-<a href="https://goutsa.com/news/2026/04/26/utsa-mens-golfs-joshua-hong-blends-unique-experiences-to-create-success" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Apr 26, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA Men’s Golf’s Joshua Hong Blends Unique Experiences to Create Success</div>
-    </div>
-  </div>
-</a>  
-
-<a href="https://goutsa.com/news/2026/04/26/utsa-in-sunshine-state-for-american-conference-championship" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Apr 26, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA in Sunshine State for American Conference Championship</div>
-    </div>
-  </div>
-</a>      
-
-<a href="https://goutsa.com/news/2026/03/23/hong-in-eighth-utsa-ninth-after-day-one-of-bell-bank-pay-it-forward-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Mar 23, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong in eighth, UTSA ninth after day one of Bell Bank “Pay It Forward” Collegiate</div>
-    </div>
-  </div>
-</a>    
-
-
-<a href="https://goutsa.com/news/2026/03/4/hong-collects-american-conference-weekly-honors" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Mar 4, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong collects American Conference weekly honors</div>
-    </div>
-  </div>
-</a>
-        
-
-
-<details style="width: 100%;">
-  <summary style="list-style: none; cursor: pointer; text-align: center; padding: 10px; color: #64748b; font-size: 13px; font-weight: 700; border: 1px dashed #e2e8f0; border-radius: 10px; margin-top: 5px;">
-    See more NCAA Career articles <span style="font-size: 10px; margin-left: 5px;">▼</span>
-  </summary>
-  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
-
-  <a href="https://theamerican.org/news/2026/3/4/utsas-hong-earns-weekly-golf-honors.aspx" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
-      <svg width="18" height="18" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-        <path d="M50 5L10 95H25L32 78H68L75 95H90L50 5Z" fill="#002855" stroke="white" stroke-width="2"/>
-        <path d="M50 15L22 83H35L40 70H60L65 83H78L50 15Z" fill="#002855"/>    
-        <path d="M50 25L55 42H72L58 52L63 69L50 58L37 69L42 52L28 42H45L50 25Z" fill="#D50032" stroke="white" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #002855; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">American Athletic Conference POTW Honor</div>
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Mar 4, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Men's Golf Player of the Week: Joshua Hong</div>
-    </div>
-  </div>
-</a>
-
-
-    <a href="https://goutsa.com/news/2026/03/3/utsa-shatters-school-record-en-route-to-runner-up-finish-at-golden-nugget-invitational" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Mar 3, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA shatters school record en route to runner-up finish at Golden Nugget Invitational</div>
-    </div>
-  </div>
-</a>
-
-<a href="https://goutsa.com/news/2026/03/2/hongs-record-tying-round-has-utsa-in-contention-at-golden-nugget-invitational" target="_blank" style="text-decoration: none; color: inherit;">
-  <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-    <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-      <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-    </div>
-    <div style="flex-grow: 1; min-width: 0;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-        <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-        <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-        <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Mar 2, 2026</div>
-      </div>
-      <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong matches two school records, UTSA in contention at Golden Nugget Invitational</div>
-            <div style="margin-top: 5px; font-size: 11px; color: #64748b; font-weight: 700; line-height: 1.4;">
-        8-under 64 (18-hole record) | 10-under 134 (36-hole record) | Solo 3rd Finish.
-      </div>
-    </div>
-  </div>
-</a>
-
-    <a href="https://goutsa.com/news/2026/02/24/roadrunners-rally-to-capture-military-city-collegiate-title" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Feb 24, 2026</div>
+        <a href="https://goutsa.com/news/2026/03/2/hongs-record-tying-round-has-utsa-in-contention-at-golden-nugget-invitational" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Mar 2, 2026</div>
+              </div>
+              <div class="jh-press-item-title">Hong matches two school records, UTSA in contention at Golden Nugget Invitational</div>
+              <div class="jh-press-note">8-under 64 (18-hole record) | 10-under 134 (36-hole record) | Solo 3rd Finish.</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Roadrunners rally to capture Military City Collegiate title</div>
-             <div style="margin-top: 5px; font-size: 11px; color: #64748b; font-weight: 700; line-height: 1.4;">
-        Joshua Hong: First collegiate title as the sole player under par in a 69-man field (215, -1).
-      </div>         
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2026/02/23/hong-in-second-place-utsa-fourth-after-day-one-of-military-city-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Feb 23, 2026</div>
+        <a href="https://goutsa.com/news/2026/02/24/roadrunners-rally-to-capture-military-city-collegiate-title" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Feb 24, 2026</div>
+              </div>
+              <div class="jh-press-item-title">Roadrunners rally to capture Military City Collegiate title</div>
+              <div class="jh-press-note">Joshua Hong: First collegiate title as the sole player under par in a 69-man field (215, -1).</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong in second place, UTSA fourth after day one of Military City Collegiate</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2026/02/22/utsa-to-host-military-city-collegiate-on-monday-tuesday-at-tpc-san-antonio" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Feb 22, 2026</div>
+        <a href="https://goutsa.com/news/2026/02/23/hong-in-second-place-utsa-fourth-after-day-one-of-military-city-collegiate" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Feb 23, 2026</div>
+              </div>
+              <div class="jh-press-item-title">Hong in second place, UTSA fourth after day one of Military City Collegiate</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA to host Military City Collegiate on Monday-Tuesday at TPC San Antonio</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2026/02/3/roadrunners-register-top-finish-of-season-at-compadres-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Feb 3, 2026</div>
+        <a href="https://goutsa.com/news/2026/02/22/utsa-to-host-military-city-collegiate-on-monday-tuesday-at-tpc-san-antonio" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Feb 22, 2026</div>
+              </div>
+              <div class="jh-press-item-title">UTSA to host Military City Collegiate on Monday-Tuesday at TPC San Antonio</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Roadrunners register top finish of season at Compadres Collegiate</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2026/02/1/utsa-seizes-day-one-lead-at-compadres-collegiate" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Feb 1, 2026</div>
+        <a href="https://goutsa.com/news/2026/02/3/roadrunners-register-top-finish-of-season-at-compadres-collegiate" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Feb 3, 2026</div>
+              </div>
+              <div class="jh-press-item-title">Roadrunners register top finish of season at Compadres Collegiate</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA seizes day-one lead at Compadres Collegiate</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2025/09/22/hong-zurn-lead-utsa-on-day-one-of-badger-invitational" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Sep 22, 2025</div>
+        <a href="https://goutsa.com/news/2026/02/1/utsa-seizes-day-one-lead-at-compadres-collegiate" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Feb 1, 2026</div>
+              </div>
+              <div class="jh-press-item-title">UTSA seizes day-one lead at Compadres Collegiate</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong leads UTSA on day one of Badger Invitational</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Sep 16, 2025</div>
+        <a href="https://goutsa.com/news/2025/09/22/hong-zurn-lead-utsa-on-day-one-of-badger-invitational" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Sep 22, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Hong leads UTSA on day one of Badger Invitational</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong guides UTSA to seventh at Highlands Invitational</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2025/09/9/bare-hong-lead-roadrunners-on-final-day-of-argent-financial-classic" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Sep 9, 2025</div>
+        <a href="https://goutsa.com/news/2025/09/16/hong-guides-utsa-to-seventh-at-highlands-invitational" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Sep 16, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Hong guides UTSA to seventh at Highlands Invitational</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Bare, Hong lead Roadrunners on final day of Argent Financial Classic</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2025/09/8/hong-posts-second-straight-70-at-argent-financial-classic" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Sep 8, 2025</div>
+        <a href="https://goutsa.com/news/2025/09/9/bare-hong-lead-roadrunners-on-final-day-of-argent-financial-classic" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Sep 9, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Bare, Hong lead Roadrunners on final day of Argent Financial Classic</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong posts second straight 70 at Argent Financial Classic</div>
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2025/09/7/hongs-70-paces-roadrunners-in-opening-round-of-argent-financial-classic" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA ATHLETICS
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Sep 7, 2025</div>
+        <a href="https://goutsa.com/news/2025/09/8/hong-posts-second-straight-70-at-argent-financial-classic" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Sep 8, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Hong posts second straight 70 at Argent Financial Classic</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">Hong’s 70 paces Roadrunners in opening round of Argent</div>
-       <div style="margin-top: 5px; font-size: 11px; color: #64748b; font-weight: 700; line-height: 1.4;">
-        Collegiate Debut | 2-under-par 70 | First Official NCAA Round
-      </div>      
-        </div>
-      </div>
-    </a>
+        </a>
 
-    <a href="https://goutsa.com/news/2024/11/14/utsa-inks-joshua-hong" target="_blank" style="text-decoration: none; color: inherit;">
-      <div style="display: flex; align-items: flex-start; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px 15px; background: #fdfdfd; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-        <div style="margin-right: 15px; width: 24px; min-width: 24px; max-width: 24px; height: 24px; min-height: 24px; max-height: 24px; flex-shrink: 0; overflow: hidden;">
-          <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" style="width: 100%; height: 100%; display: block; border-radius: 4px; object-fit: contain;">
-        </div>
-        <div style="flex-grow: 1; min-width: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="font-size: 10px; color: #ff5a00; font-weight: bold; text-transform: uppercase;">UTSA OFFICIAL ANNOUNCEMENT
-            <span style="color: #64748b; font-weight:"> · Men’s Golf</span> </div>
-            <div style="font-size: 10px; color: #94a3b8; font-weight: 700; white-space: nowrap;">Nov 14, 2024</div>
+        <a href="https://goutsa.com/news/2025/09/7/hongs-70-paces-roadrunners-in-opening-round-of-argent-financial-classic" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA ATHLETICS</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Sep 7, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Hong’s 70 paces Roadrunners in opening round of Argent</div>
+              <div class="jh-press-note">Collegiate Debut | 2-under-par 70 | First Official NCAA Round</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
           </div>
-          <div style="font-size: 14px; font-weight: bold; color: #0c2340;">UTSA Men's Golf inks Joshua Hong to 2025 Class</div>
-        </div>
+        </a>
+
+        <a href="https://goutsa.com/news/2024/11/14/utsa-inks-joshua-hong" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <img src="https://www.google.com/s2/favicons?sz=64&domain=goutsa.com" alt="" aria-hidden="true">
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source">UTSA OFFICIAL ANNOUNCEMENT</span>
+                  <span class="jh-press-source-sub"> · Men’s Golf</span>
+                </div>
+                <div class="jh-press-date">Nov 14, 2024</div>
+              </div>
+              <div class="jh-press-item-title">UTSA Men's Golf inks Joshua Hong to 2025 Class</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
       </div>
-    </a>
+    </details>
 
   </div>
-</details>
-
-</div>
 </div>
 
-</div>
+<div id="junior-period" class="jh-press-section">
+  <h4 class="jh-press-section-title">
+    JUNIOR GOLF YEARS
+  </h4>
 
+  <div class="jh-press-list">
 
-
-   
-
-<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 0 0 0px;">
-
-<div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 0 0 0px;">
-
-<style id="jh-news-junior-period-usc-softening">
-  #jh-news-media-page #junior-period,
-  #jh-news-media-page #junior-period * {
-    box-sizing: border-box;
-  }
-
-  #jh-news-media-page #junior-period h4 {
-    color: #0c2340 !important;
-    border-left-color: #990000 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.15px !important;
-  }
-
-  #jh-news-media-page #junior-period a > div {
-    border-color: rgba(153, 0, 0, 0.10) !important;
-    background: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(12, 35, 64, 0.035) !important;
-    transition:
-      transform 0.18s ease,
-      box-shadow 0.18s ease,
-      border-color 0.18s ease !important;
-  }
-
-  #jh-news-media-page #junior-period a > div:hover {
-    transform: translateY(-1px);
-    border-color: rgba(153, 0, 0, 0.18) !important;
-    box-shadow: 0 7px 16px rgba(12, 35, 64, 0.065) !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="background: #15803d"],
-  #jh-news-media-page #junior-period [style*="background:#15803d"],
-  #jh-news-media-page #junior-period [style*="background: #1b5e20"],
-  #jh-news-media-page #junior-period [style*="background:#1b5e20"],
-  #jh-news-media-page #junior-period [style*="background: #d32f2f"],
-  #jh-news-media-page #junior-period [style*="background:#d32f2f"] {
-    background: #990000 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="background: #0c2340"],
-  #jh-news-media-page #junior-period [style*="background:#0c2340"] {
-    background: #0c2340 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="background: #f0fdf4"],
-  #jh-news-media-page #junior-period [style*="background:#f0fdf4"],
-  #jh-news-media-page #junior-period [style*="background: #dcfce7"],
-  #jh-news-media-page #junior-period [style*="background:#dcfce7"],
-  #jh-news-media-page #junior-period [style*="background: #fff7ed"],
-  #jh-news-media-page #junior-period [style*="background:#fff7ed"],
-  #jh-news-media-page #junior-period [style*="background: #fee2e2"],
-  #jh-news-media-page #junior-period [style*="background:#fee2e2"],
-  #jh-news-media-page #junior-period [style*="background: #f0f9ff"],
-  #jh-news-media-page #junior-period [style*="background:#f0f9ff"] {
-    background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #fffdf6 100%
-    ) !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="border: 1px solid #dcfce7"],
-  #jh-news-media-page #junior-period [style*="border:1px solid #dcfce7"],
-  #jh-news-media-page #junior-period [style*="border: 1px solid #ffedd5"],
-  #jh-news-media-page #junior-period [style*="border:1px solid #ffedd5"],
-  #jh-news-media-page #junior-period [style*="border: 1px solid #fee2e2"],
-  #jh-news-media-page #junior-period [style*="border:1px solid #fee2e2"],
-  #jh-news-media-page #junior-period [style*="border: 1px solid #e0f2fe"],
-  #jh-news-media-page #junior-period [style*="border:1px solid #e0f2fe"] {
-    border-color: rgba(153, 0, 0, 0.12) !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="border-left: 5px solid #d32f2f"],
-  #jh-news-media-page #junior-period [style*="border-left:5px solid #d32f2f"] {
-    border-left-color: #990000 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="color: #15803d"],
-  #jh-news-media-page #junior-period [style*="color:#15803d"],
-  #jh-news-media-page #junior-period [style*="color: #1b5e20"],
-  #jh-news-media-page #junior-period [style*="color:#1b5e20"] {
-    color: #990000 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="color: #806600"],
-  #jh-news-media-page #junior-period [style*="color:#806600"] {
-    color: #806600 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="color: #0369a1"],
-  #jh-news-media-page #junior-period [style*="color:#0369a1"],
-  #jh-news-media-page #junior-period [style*="color: #ea580c"],
-  #jh-news-media-page #junior-period [style*="color:#ea580c"],
-  #jh-news-media-page #junior-period [style*="color: #d32f2f"],
-  #jh-news-media-page #junior-period [style*="color:#d32f2f"],
-  #jh-news-media-page #junior-period [style*="color: #b91c1c"],
-  #jh-news-media-page #junior-period [style*="color:#b91c1c"] {
-    color: #650000 !important;
-  }
-
-  #jh-news-media-page #junior-period svg[stroke="#15803d"],
-  #jh-news-media-page #junior-period svg[stroke="#1b5e20"],
-  #jh-news-media-page #junior-period svg[stroke="#0369a1"],
-  #jh-news-media-page #junior-period svg[stroke="#ea580c"],
-  #jh-news-media-page #junior-period svg[stroke="#d32f2f"] {
-    stroke: #990000 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-weight: 900"] {
-    font-weight: 700 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-weight: 800"] {
-    font-weight: 650 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-weight: 700"] {
-    font-weight: 600 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-weight: bold"] {
-    font-weight: 650 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-size: 14px"] {
-    font-weight: 650 !important;
-    line-height: 1.45 !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-size: 10px"] {
-    font-weight: 600 !important;
-    letter-spacing: 0.35px !important;
-  }
-
-  #jh-news-media-page #junior-period [style*="font-size: 9px"] {
-    font-weight: 650 !important;
-    letter-spacing: 0.45px !important;
-  }
-
-  #jh-news-media-page #junior-period details summary {
-    color: #64748b !important;
-    font-weight: 650 !important;
-    border-color: rgba(153, 0, 0, 0.14) !important;
-    background: linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #fffdf6 100%
-    ) !important;
-  }
-
-  #jh-news-media-page #junior-period details summary span {
-    color: #990000 !important;
-  }
-
-  @media (max-width: 768px) {
-    #jh-news-media-page #junior-period {
-      margin-bottom: 42px !important;
-    }
-
-    #jh-news-media-page #junior-period h4 {
-      font-size: 15px !important;
-      font-weight: 650 !important;
-      margin-top: 26px !important;
-    }
-
-    #jh-news-media-page #junior-period a > div {
-      padding: 13px !important;
-      align-items: flex-start !important;
-    }
-
-    #jh-news-media-page #junior-period a > div > div:first-child {
-      width: 36px !important;
-      height: 36px !important;
-      min-width: 36px !important;
-      margin-right: 12px !important;
-    }
-
-    #jh-news-media-page #junior-period [style*="font-size: 14px"] {
-      font-size: 13.5px !important;
-      font-weight: 650 !important;
-    }
-
-    #jh-news-media-page #junior-period [style*="font-size: 10px"] {
-      font-size: 9.5px !important;
-    }
-
-    #jh-news-media-page #junior-period [style*="font-size: 9px"] {
-      font-size: 8.8px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-news-media-page #junior-period a > div {
-      padding: 12px !important;
-    }
-
-    #jh-news-media-page #junior-period a > div > div:first-child {
-      width: 34px !important;
-      height: 34px !important;
-      min-width: 34px !important;
-      margin-right: 10px !important;
-    }
-
-    #jh-news-media-page #junior-period [style*="font-size: 14px"] {
-      font-size: 13px !important;
-    }
-
-    #jh-news-media-page #junior-period [style*="font-size: 10px"] {
-      font-size: 9px !important;
-    }
-  }
-</style>
-
-  <div id="junior-period" style="max-width: 100%; margin: 0 auto 50px auto; padding: 0;">
-
-  <div id="junior-period" style="max-width: 100%; margin: 0 auto 50px auto; padding: 0;">
-    
-    <h4 style="color: #0c2340; font-size: 16px; margin: 30px 0 15px 0; font-weight: 800; letter-spacing: -0.3px; display: flex; align-items: center; border-left: 5px solid #15803d; padding: 0 10px;">
-  JUNIOR GOLF YEARS
-</h4>
-
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-      
-      <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
-          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fffbeb; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #fef3c7;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#806600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-              <path d="M4 22h16"></path>
-              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-              <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
-            </svg>
-          </div>
-          <div style="flex-grow: 1;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">World Cup News</span>
-              </div>
-              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jun 25, 2025</span>
-            </div>
-            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-              Joshua Hong destaca en el <span style="color: #806600;">Toyota Junior Golf World Cup</span>
-            </div>
-          </div>
-          <div style="margin-left: 10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
-          </div>
+    <a href="https://fmg.org.mx/joshua-hong-destaca-y-mexico-escala-posiciones-en-el-toyota-junior-golf-world-cup/" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+          </svg>
         </div>
-      </a>
-
-      <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
-          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="6"></circle>
-              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
-            </svg>
-          </div>
-          <div style="flex-grow: 1;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Championship News</span>
-              </div>
-              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">May 25, 2025</span>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source-badge">FMG Official</span>
+              <span class="jh-press-source-sub">World Cup News</span>
             </div>
-            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-              Hong y Lavalle se <span style="color: #15803d;">coronan</span> en el Nacional de Parejas
-            </div>
+            <div class="jh-press-date">Jun 25, 2025</div>
           </div>
-          <div style="margin-left: 10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
-          </div>
+          <div class="jh-press-item-title">Joshua Hong destaca en el <span class="jh-gold-text">Toyota Junior Golf World Cup</span></div>
         </div>
-      </a>
-
-      <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.02); transition: all 0.2s;">
-          <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-            </svg>
-          </div>
-          <div style="flex-grow: 1;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
-                <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">World Cup Qualifier</span>
-              </div>
-              <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Apr 24, 2025</span>
-            </div>
-            <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-              México varonil <span style="color: #806600;">triunfa en calificación</span> del Toyota Junior Golf World Cup
-            </div>
-          </div>
-          <div style="margin-left: 10px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
-          </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
         </div>
-      </a>
+      </div>
+    </a>
 
-      <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0fdf4; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #dcfce7;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1b5e20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                  <path d="M4 22h16"></path>
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #1b5e20; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Victory</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 23, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  Joshua Hong <span style="color: #1b5e20;">gana</span> la Copa Sur de la FMG
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f8fafc; width: 40px; height: 40px; border-radius: 10px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-                  <div style="display: flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 10px; color: #15803d; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
-                    <span style="font-size: 10px; color: #64748b; font-weight: 600;">News Archive</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.4;">
-                  Joshua Hong y Regina Roldán triunfan en la II Copa Sur en Puebla
-                </div>
-              </div>
-            </div>
-          </a>
-
-      <details style="width: 100%;">
-        <summary style="list-style: none; cursor: pointer; text-align: center; padding: 12px; color: #64748b; font-size: 13px; font-weight: 700; border: 1px dashed #e2e8f0; border-radius: 12px; margin-top: 5px; background: #f8fafc;">
-          See more Junior Years articles <span style="font-size: 10px; margin-left: 5px;">▼</span>
-        </summary>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
-          
-          
-
-          <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLFSHOT.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Champion Spotlight</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Jan 20, 2025</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  Ellos son los <span style="color: #806600;">campeones</span> de la II Copa Sur en Puebla
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f0f9ff; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e0f2fe;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 6c.6.5 1.2 1 2.5 1C5.8 7 7 5.5 8.5 5.5c1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
-                  <path d="M2 12c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
-                  <path d="M2 18c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Victory</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Nov 3, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  Joshua Hong y Regina Roldán <span style="color: #0369a1;">triunfan</span> en la Copa Pacífico
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
-                  <path d="M18 14h-8"></path>
-                  <path d="M15 18h-5"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLF.COM.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Media Coverage</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 30, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  Copa Centro: <span style="color: #806600;">Gran nivel de golf</span> de Joshua Hong
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://golfshot.mx/2024/09/30/ellos-son-los-ganadores-de-la-copa-centro-del-mexico-junior-golf-tour/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-                  <line x1="4" y1="22" x2="4" y2="15"></line>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #0c2340; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">GOLFSHOT.MX</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Result</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 30, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  <span style="color: #806600;">Ganadores</span> de la Copa Centro del Mexico Junior Golf Tour
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://fmg.org.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; background: #ffffff;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fff7ed; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #ffedd5;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">FMG Official</span>
-                    <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Tournament Wrap-up</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 29, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  <span style="color: #ea580c;">Éxito rotundo</span> en el cierre de la Copa Centro
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://www.ajga.org/tournaments/2024/the-junior-players-championship-presented-by-rolex/coleman-becomes-first-time-invitational-champion-at-the-jrplayers" target="_blank" style="text-decoration: none; color: inherit;">
-            <div style="display: flex; align-items: center; border: 1px solid #fee2e2; border-left: 5px solid #d32f2f; border-radius: 12px; padding: 15px; background: #fffafb;">
-              <div style="margin-right: 15px; display: flex; align-items: center; justify-content: center; background: #fee2e2; width: 40px; height: 40px; border-radius: 10px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-              </div>
-              <div style="flex-grow: 1;">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 9px; color: #ffffff; background: #d32f2f; padding: 2px 8px; border-radius: 4px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">Special Award</span>
-                    <span style="font-size: 10px; color: #b91c1c; font-weight: 700;">AJGA</span>
-                  </div>
-                  <span style="font-size: 10px; color: #94a3b8; font-weight: 700;">Sep 1, 2024</span>
-                </div>
-                <div style="font-size: 14px; font-weight: 800; color: #0c2340; line-height: 1.5; letter-spacing: -0.2px;">
-                  Billy Dettlaff Sportsmanship Award: <span style="color: #d32f2f;">Honoring Integrity</span>
-                </div>
-              </div>
-            </div>
-          </a>
-
+    <a href="https://fmg.org.mx/hong-y-lavalle-se-coronan-en-el-nacional-de-parejas/" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"></circle>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+          </svg>
         </div>
-      </details>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source-badge">FMG Official</span>
+              <span class="jh-press-source-sub">Championship News</span>
+            </div>
+            <div class="jh-press-date">May 25, 2025</div>
+          </div>
+          <div class="jh-press-item-title">Hong y Lavalle se <span class="jh-cardinal-text">coronan</span> en el Nacional de Parejas</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
 
-    </div>
+    <a href="https://golf.com.mx/mexico-varonil-triunfa-en-la-calificacion-del-toyota-junior-golf-world-cup/" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source-badge is-navy">GOLF.COM.MX</span>
+              <span class="jh-press-source-sub">World Cup Qualifier</span>
+            </div>
+            <div class="jh-press-date">Apr 24, 2025</div>
+          </div>
+          <div class="jh-press-item-title">México varonil <span class="jh-gold-text">triunfa en calificación</span> del Toyota Junior Golf World Cup</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://golf.com.mx/joshua-hong-gana-la-copa-sur-de-la-fmg/" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+            <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+          </svg>
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source-badge is-navy">GOLF.COM.MX</span>
+              <span class="jh-press-source-sub">Tournament Victory</span>
+            </div>
+            <div class="jh-press-date">Jan 23, 2025</div>
+          </div>
+          <div class="jh-press-item-title">Joshua Hong <span class="jh-cardinal-text">gana</span> la Copa Sur de la FMG</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-ii-copa-sur-en-puebla/" target="_blank" rel="noopener noreferrer">
+      <div class="jh-press-row">
+        <div class="jh-press-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="jh-press-content">
+          <div class="jh-press-meta">
+            <div class="jh-press-source-wrap">
+              <span class="jh-press-source">FMG Official</span>
+              <span class="jh-press-source-sub">News Archive</span>
+            </div>
+            <div class="jh-press-date">Jan 20, 2025</div>
+          </div>
+          <div class="jh-press-item-title">Joshua Hong y Regina Roldán triunfan en la II Copa Sur en Puebla</div>
+        </div>
+        <div class="jh-press-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+        </div>
+      </div>
+    </a>
+
+    <details>
+      <summary>
+        See more Junior Years articles <span>▼</span>
+      </summary>
+
+      <div class="jh-press-more-list">
+
+        <a href="https://golfshot.mx/2025/01/20/ellos-son-los-campeones-de-la-ii-copa-sur-en-puebla/" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge is-navy">GOLFSHOT.MX</span>
+                  <span class="jh-press-source-sub">Champion Spotlight</span>
+                </div>
+                <div class="jh-press-date">Jan 20, 2025</div>
+              </div>
+              <div class="jh-press-item-title">Ellos son los <span class="jh-gold-text">campeones</span> de la II Copa Sur en Puebla</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://fmg.org.mx/joshua-hong-y-regina-roldan-triunfan-en-la-copa-pacifico/" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6c.6.5 1.2 1 2.5 1C5.8 7 7 5.5 8.5 5.5c1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+                <path d="M2 12c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+                <path d="M2 18c.6.5 1.2 1 2.5 1 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5 1.5 0 2.7 1.5 4 1.5 1.3 0 2.5-1.5 4-1.5"></path>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge">FMG Official</span>
+                  <span class="jh-press-source-sub">Tournament Victory</span>
+                </div>
+                <div class="jh-press-date">Nov 3, 2024</div>
+              </div>
+              <div class="jh-press-item-title">Joshua Hong y Regina Roldán <span class="jh-cardinal-text">triunfan</span> en la Copa Pacífico</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://golf.com.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                <path d="M18 14h-8"></path>
+                <path d="M15 18h-5"></path>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge is-navy">GOLF.COM.MX</span>
+                  <span class="jh-press-source-sub">Media Coverage</span>
+                </div>
+                <div class="jh-press-date">Sep 30, 2024</div>
+              </div>
+              <div class="jh-press-item-title">Copa Centro: <span class="jh-gold-text">Gran nivel de golf</span> de Joshua Hong</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://golfshot.mx/2024/09/30/ellos-son-los-ganadores-de-la-copa-centro-del-mexico-junior-golf-tour/" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                <line x1="4" y1="22" x2="4" y2="15"></line>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge is-navy">GOLFSHOT.MX</span>
+                  <span class="jh-press-source-sub">Tournament Result</span>
+                </div>
+                <div class="jh-press-date">Sep 30, 2024</div>
+              </div>
+              <div class="jh-press-item-title"><span class="jh-gold-text">Ganadores</span> de la Copa Centro del Mexico Junior Golf Tour</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://fmg.org.mx/exito-rotundo-en-el-cierre-de-la-copa-centro/" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge">FMG Official</span>
+                  <span class="jh-press-source-sub">Tournament Wrap-up</span>
+                </div>
+                <div class="jh-press-date">Sep 29, 2024</div>
+              </div>
+              <div class="jh-press-item-title"><span class="jh-cardinal-text">Éxito rotundo</span> en el cierre de la Copa Centro</div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.ajga.org/tournaments/2024/the-junior-players-championship-presented-by-rolex/coleman-becomes-first-time-invitational-champion-at-the-jrplayers" target="_blank" rel="noopener noreferrer">
+          <div class="jh-press-row">
+            <div class="jh-press-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div class="jh-press-content">
+              <div class="jh-press-meta">
+                <div class="jh-press-source-wrap">
+                  <span class="jh-press-source-badge">Special Award</span>
+                  <span class="jh-press-source-sub">AJGA</span>
+                </div>
+                <div class="jh-press-date">Sep 1, 2024</div>
+              </div>
+              <div class="jh-press-item-title">Billy Dettlaff Sportsmanship Award: <span class="jh-dark-cardinal-text">Honoring Integrity</span></div>
+            </div>
+            <div class="jh-press-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"></path></svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </details>
+
   </div>
+</div>
+
+<script>
+  (function () {
+    const root = document.getElementById("jh-news-press-articles");
+
+    if (!root) return;
+
+    const anchorLinks = root.querySelectorAll('a[href="#ncaa-career"], a[href="#junior-period"]');
+
+    anchorLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const targetId = link.getAttribute("href");
+        const target = targetId ? document.querySelector(targetId) : null;
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, "", targetId);
+        }
+      });
+    });
+  })();
+</script>
 
 </div>
-   
+
+
+	  
       
 
    
