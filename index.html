@@ -2044,7 +2044,7 @@ coordination, footwork, and competitive habits developed before his focus became
     
     
 
-<div class="jh-profile-card-section" style="max-width: 900px; margin: 30px auto 30px;  padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="jh-profile-card-section" style="max-width: 900px; margin: 30px auto 30px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
     .jh-profile-card-section .jhpcs-shell {
       background: #ffffff;
@@ -2058,27 +2058,30 @@ coordination, footwork, and competitive habits developed before his focus became
 
     .jh-profile-card-section .jhpcs-wrap {
       display: grid;
-      grid-template-columns: 280px minmax(0, 1fr);
+      grid-template-columns: 330px minmax(0, 1fr);
       gap: 30px;
-      align-items: stretch;
+      align-items: center;
     }
 
     .jh-profile-card-section .jhpcs-photo {
+      width: 100%;
+      aspect-ratio: 1148 / 1371;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       border: 1px solid #e1e8ed;
-      min-height: 400px;
-      height: 100%;
       box-sizing: border-box;
       background: #ffffff;
+      align-self: center;
     }
 
     .jh-profile-card-section .jhpcs-photo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center center;
       display: block;
+      background: #ffffff;
     }
 
     .jh-profile-card-section .jhpcs-summary {
@@ -2119,6 +2122,7 @@ coordination, footwork, and competitive habits developed before his focus became
       .jh-profile-card-section .jhpcs-wrap {
         grid-template-columns: 1fr;
         gap: 18px;
+        align-items: stretch;
       }
 
       .jh-profile-card-section .jhpcs-photo,
@@ -2130,6 +2134,11 @@ coordination, footwork, and competitive habits developed before his focus became
       .jh-profile-card-section .jhpcs-photo {
         max-width: 100%;
         aspect-ratio: 1148 / 1371;
+      }
+
+      .jh-profile-card-section .jhpcs-photo img {
+        object-fit: contain;
+        object-position: center center;
       }
 
       .jh-profile-card-section .jhpcs-summary {
@@ -2167,7 +2176,7 @@ coordination, footwork, and competitive habits developed before his focus became
     <div class="jhpcs-wrap">
       
       <div class="jhpcs-photo">
-        <img src="./images/sophomore-2026-27/Joshua-Hong-Profile-1.jpg" alt="Joshua Hong Profile" loading="lazy" decoding="asyn">
+        <img src="./images/sophomore-2026-27/Joshua-Hong-Profile-1.jpg" alt="Joshua Hong Profile" loading="lazy" decoding="async">
       </div>
 
       <div class="jhpcs-summary">
@@ -2199,14 +2208,13 @@ coordination, footwork, and competitive habits developed before his focus became
             <td style="padding: 12px 0; color: #2d3748;">Spanish, Korean, English</td>
           </tr>
           <tr style="border-bottom: 1px solid #e2e8f0;">
- 			 <td style="padding: 12px 0; color: #718096; font-weight: 600;">Current Status</td>
-			  <td style="padding: 12px 0; font-weight: 600; color: #990000;">Committed to USC Men’s Golf</td>
-		</tr>
-
-		<tr style="border-bottom: 1px solid #e2e8f0;">
-			  <td style="padding: 12px 0; color: #718096; font-weight: 600;">Freshman Season</td>
-			  <td style="padding: 12px 0; font-weight: 600; color: #0c2340;">UTSA, NCAA Division I</td>
-		</tr>
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Current Status</td>
+            <td style="padding: 12px 0; font-weight: 600; color: #990000;">Committed to USC Men’s Golf</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 12px 0; color: #718096; font-weight: 600;">Freshman Season</td>
+            <td style="padding: 12px 0; font-weight: 600; color: #0c2340;">UTSA, NCAA Division I</td>
+          </tr>
           <tr style="border-bottom: 1px solid #e2e8f0;">
             <td style="padding: 12px 0; color: #718096; font-weight: 600;">Height</td>
             <td style="padding: 12px 0; color: #2d3748;">5′10″ (1.78 m)</td>
