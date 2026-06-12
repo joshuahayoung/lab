@@ -426,7 +426,7 @@
   </script>
 
 
-<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 140px 15px 0 15px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="profile-container" style="width: 100%; max-width: 900px; margin: 0 auto; padding: 140px 0 0 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
 <div class="jh-page-title-block">
   <h1 class="jh-page-title">
@@ -487,60 +487,71 @@
     text-transform: uppercase;
   }
 
-  @media (max-width: 768px) {
-    .profile-container {
-      padding-top: 128px !important;
-    }
+ @media (max-width: 960px) {
+  .profile-container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
 
-    .jh-page-title-block {
-      margin-bottom: 32px;
-      padding: 0 6px;
-    }
-
-    .jh-page-title {
-      font-size: 29px;
-      line-height: 1.14;
-      letter-spacing: -0.45px;
-    }
-
-    .jh-page-subtitle {
-      margin-top: 6px;
-      font-size: 12.5px;
-      letter-spacing: 0.7px;
-    }
-
-    .jh-page-title-block::after {
-      width: 64px;
-      margin-top: 13px;
-    }
+@media (max-width: 768px) {
+  .profile-container {
+    padding-top: 128px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 
-  @media (max-width: 480px) {
-    .profile-container {
-      padding-top: 120px !important;
-    }
-
-    .jh-page-title-block {
-      margin-bottom: 30px;
-      padding: 0 4px;
-    }
-
-    .jh-page-title {
-      font-size: 27px;
-      line-height: 1.14;
-    }
-
-    .jh-page-subtitle {
-      font-size: 12px;
-      letter-spacing: 0.65px;
-    }
-
-    .jh-page-title-block::after {
-      width: 60px;
-      height: 3px;
-      margin-top: 12px;
-    }
+  .jh-page-title-block {
+    margin-bottom: 32px;
+    padding: 0 6px;
   }
+
+  .jh-page-title {
+    font-size: 29px;
+    line-height: 1.14;
+    letter-spacing: -0.45px;
+  }
+
+  .jh-page-subtitle {
+    margin-top: 6px;
+    font-size: 12.5px;
+    letter-spacing: 0.7px;
+  }
+
+  .jh-page-title-block::after {
+    width: 64px;
+    margin-top: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding-top: 120px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .jh-page-title-block {
+    margin-bottom: 30px;
+    padding: 0 4px;
+  }
+
+  .jh-page-title {
+    font-size: 27px;
+    line-height: 1.14;
+  }
+
+  .jh-page-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.65px;
+  }
+
+  .jh-page-title-block::after {
+    width: 60px;
+    height: 3px;
+    margin-top: 12px;
+  }
+}
 </style>
 
 <div class="jh-home-usc-hero-banner-frame" style="margin-bottom: 20px; border-radius: 20px; overflow: hidden; box-shadow: 0 18px 38px rgba(153,0,0,0.13), 0 10px 24px rgba(12,35,64,0.10); background: linear-gradient(135deg, #990000 0%, #0c2340 55%, #c98a2e 100%); border: 1px solid rgba(153,0,0,0.20); position: relative;">
