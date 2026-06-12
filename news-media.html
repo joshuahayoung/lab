@@ -3816,7 +3816,7 @@
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding: 0 !important;
+    padding: 0 10px !important;
     background: #ffffff !important;
     box-sizing: border-box !important;
   }
@@ -4009,6 +4009,19 @@
 
     body.jh-usc-theme #jh-news-media-source-summary > div > div:last-child > div p {
       font-size: 10.5px !important;
+    }
+  }
+</style>
+
+<style id="jh-news-media-width-match-reference-fix">
+  body.jh-usc-theme #jh-news-media-content-shell {
+    padding: 0 10px !important;
+  }
+
+  @media (max-width: 960px) {
+    body.jh-usc-theme #jh-news-media-content-shell {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 </style>
