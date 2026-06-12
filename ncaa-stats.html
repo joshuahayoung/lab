@@ -430,219 +430,220 @@
 
 <section id="jh-ncaa-sophomore-hero" class="jh-ncaa-sophomore-hero">
   <style>
-    #jh-ncaa-sophomore-hero {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto 18px auto;
-      padding: 140px 0 0 0;
-      box-sizing: border-box;
-      scroll-margin-top: 140px;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
+  #jh-ncaa-sophomore-hero {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 18px auto;
+    padding: 140px 0 0 0;
+    box-sizing: border-box;
+    scroll-margin-top: 140px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
 
-    #jh-ncaa-sophomore-hero,
-    #jh-ncaa-sophomore-hero * {
-      box-sizing: border-box;
+  #jh-ncaa-sophomore-hero,
+  #jh-ncaa-sophomore-hero * {
+    box-sizing: border-box;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 35px 0;
+    padding: 0 12px;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+    margin: 0 !important;
+    color: #0c2340 !important;
+    font-size: 34px !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    text-transform: uppercase !important;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-accent {
+    color: #990000 !important;
+    font-weight: 800 !important;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+    margin: 6px 0 0 0 !important;
+    color: #777777 !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 15px auto 0;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        90deg,
+        #990000 0%,
+        #ffcc00 50%,
+        #650000 100%
+      );
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+    width: 100%;
+    margin: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #080808;
+    box-shadow:
+      0 16px 34px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 138, 46, 0.22);
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1916 / 821;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 960px) {
+    #jh-ncaa-sophomore-hero {
+      padding: 140px 14px 0 14px;
+      margin-bottom: 18px;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
-      width: 100%;
-      text-align: center;
-      margin: 0 0 35px 0;
-      padding: 0 12px;
-    }
-
-    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
-      margin: 0;
-      color: #0c2340;
-      font-size: 31px;
-      line-height: 1.12;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-    }
-
-    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-accent {
-      color: #990000;
-      font-weight: 800;
-    }
-
-    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
-      margin: 6px 0 0 0;
-      color: #777777;
-      font-size: 14px;
-      line-height: 1.35;
-      font-weight: 500;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
-      content: "";
-      display: block;
-      width: 72px;
-      height: 3px;
-      margin: 15px auto 0;
-      border-radius: 999px;
-      background:
-        linear-gradient(
-          90deg,
-          #990000 0%,
-          #ffcc00 50%,
-          #650000 100%
-        );
+      margin-bottom: 32px;
+      padding: 0 4px;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
-      width: 100%;
-      margin: 0;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #080808;
-      box-shadow:
-        0 16px 34px rgba(0, 0, 0, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(201, 138, 46, 0.22);
+      border-radius: 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #jh-ncaa-sophomore-hero {
+      padding: 128px 14px 0 14px;
+      margin-bottom: 18px;
+      scroll-margin-top: 140px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+      margin-bottom: 32px;
+      padding: 0 6px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+      font-size: 29px !important;
+      line-height: 1.14 !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.45px !important;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+      margin-top: 6px !important;
+      font-size: 12.5px !important;
+      line-height: 1.35 !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.7px !important;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
+      width: 64px;
+      height: 3px;
+      margin-top: 13px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+      border-radius: 18px;
     }
 
     #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-      display: block;
       width: 100%;
-      height: auto;
-      aspect-ratio: 1916 / 821;
+      height: clamp(185px, 50vw, 215px);
+      aspect-ratio: auto;
       object-fit: cover;
       object-position: center center;
     }
+  }
 
-    #jh-ncaa-sophomore-hero .jh-ncaa-hero-sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+  @media (max-width: 480px) {
+    #jh-ncaa-sophomore-hero {
+      padding: 120px 12px 0 12px;
+      margin-bottom: 16px;
     }
 
-    @media (max-width: 960px) {
-      #jh-ncaa-sophomore-hero {
-        padding: 140px 14px 0 14px;
-        margin-bottom: 18px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
-        margin-bottom: 32px;
-        padding: 0 4px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
-        border-radius: 18px;
-      }
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
+      margin-bottom: 30px;
+      padding: 0 4px;
     }
 
-    @media (max-width: 768px) {
-      #jh-ncaa-sophomore-hero {
-        padding: 128px 14px 0 14px;
-        margin-bottom: 18px;
-        scroll-margin-top: 140px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
-        margin-bottom: 28px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
-        font-size: 27px;
-        line-height: 1.14;
-        font-weight: 800;
-        letter-spacing: -0.45px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
-        margin-top: 6px;
-        font-size: 12.5px;
-        line-height: 1.35;
-        font-weight: 500;
-        letter-spacing: 0.7px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
-        width: 64px;
-        height: 3px;
-        margin-top: 13px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
-        border-radius: 18px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-        width: 100%;
-        height: clamp(185px, 50vw, 215px);
-        aspect-ratio: auto;
-        object-fit: cover;
-        object-position: center center;
-      }
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+      font-size: 27px !important;
+      line-height: 1.14 !important;
     }
 
-    @media (max-width: 480px) {
-      #jh-ncaa-sophomore-hero {
-        padding: 120px 12px 0 12px;
-        margin-bottom: 16px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block {
-        margin-bottom: 26px;
-        padding: 0 4px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
-        font-size: 25px;
-        line-height: 1.14;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
-        font-size: 12px;
-        letter-spacing: 0.65px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
-        width: 60px;
-        height: 3px;
-        margin-top: 12px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
-        border-radius: 16px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-        height: clamp(180px, 49vw, 205px);
-        object-position: center center;
-      }
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+      font-size: 12px !important;
+      letter-spacing: 0.65px !important;
     }
 
-    @media (max-width: 390px) {
-      #jh-ncaa-sophomore-hero {
-        padding-top: 118px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
-        font-size: 23px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
-        font-size: 11.5px;
-      }
-
-      #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
-        height: 188px;
-        object-position: center center;
-      }
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title-block::after {
+      width: 60px;
+      height: 3px;
+      margin-top: 12px;
     }
-  </style>
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+      border-radius: 16px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      height: clamp(180px, 49vw, 205px);
+      object-position: center center;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-ncaa-sophomore-hero {
+      padding-top: 118px;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-title {
+      font-size: 25px !important;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-subtitle {
+      font-size: 11.5px !important;
+    }
+
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      height: 188px;
+      object-position: center center;
+    }
+  }
+</style>
 
   <div class="jh-ncaa-hero-title-block">
     <h1 class="jh-ncaa-hero-title">
