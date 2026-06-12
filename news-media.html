@@ -1845,7 +1845,7 @@
     }
   }
 </style>
-
+<div id="jh-news-media-video-archive-block">
     <h3 style="color: #0c2340; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; font-weight: 800; letter-spacing: -0.5px;">
       <span style="margin-right: 12px; display: flex; align-items: center;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0c2340" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1896,7 +1896,7 @@
       </a>
     </div>
 
-
+</div>
 
 
 <div id="jh-news-press-articles" style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; width: 100%; color: #2c3e50; line-height: 1.8; max-width: 900px; margin: auto; box-sizing: border-box; padding: 10px 0 0;">
@@ -4454,6 +4454,175 @@
     body.jh-usc-theme #jh-news-media-external-buttons {
       padding: 18px 14px !important;
       border-radius: 16px !important;
+    }
+  }
+</style>
+
+<style id="jh-news-media-heading-inside-block-fix">
+  body.jh-usc-theme #jh-news-media-carousel-usc {
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: 900px !important;
+    width: 100% !important;
+    margin: 0 auto 34px auto !important;
+    padding: 24px 22px 22px !important;
+    border-radius: 22px !important;
+    border: 1px solid rgba(153, 0, 0, 0.13) !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      ) !important;
+    box-shadow:
+      0 10px 24px rgba(12, 35, 64, 0.055),
+      0 5px 14px rgba(153, 0, 0, 0.035) !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-carousel-usc::before,
+  body.jh-usc-theme #jh-news-media-video-archive-block::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background:
+      linear-gradient(
+        90deg,
+        #650000 0%,
+        #990000 42%,
+        #ffcc00 50%,
+        #990000 58%,
+        #650000 100%
+      ) !important;
+    opacity: 0.95 !important;
+    z-index: 1 !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-heading {
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-heading-title {
+    color: #0c2340 !important;
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.12px !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-shell {
+    position: relative !important;
+    z-index: 2 !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(153, 0, 0, 0.11) !important;
+    background: #ffffff !important;
+    box-shadow: 0 7px 16px rgba(12, 35, 64, 0.045) !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-shell::before {
+    display: none !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block {
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: 900px !important;
+    width: 100% !important;
+    margin: 0 auto 34px auto !important;
+    padding: 24px 22px 22px !important;
+    border-radius: 22px !important;
+    border: 1px solid rgba(153, 0, 0, 0.13) !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      ) !important;
+    box-shadow:
+      0 10px 24px rgba(12, 35, 64, 0.055),
+      0 5px 14px rgba(153, 0, 0, 0.035) !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > h3 {
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    color: #0c2340 !important;
+    font-size: 17px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.12px !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > h3 svg {
+    stroke: #990000 !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > div {
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 18px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > div::before {
+    display: none !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > div > a > div {
+    background: #ffffff !important;
+    border: 1px solid rgba(153, 0, 0, 0.12) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 7px 16px rgba(12, 35, 64, 0.05) !important;
+  }
+
+  body.jh-usc-theme #jh-news-media-video-archive-block > div > a > div:hover {
+    transform: translateY(-1px) !important;
+    border-color: rgba(153, 0, 0, 0.22) !important;
+    box-shadow: 0 10px 20px rgba(12, 35, 64, 0.075) !important;
+  }
+
+  @media (max-width: 768px) {
+    body.jh-usc-theme #jh-news-media-carousel-usc,
+    body.jh-usc-theme #jh-news-media-video-archive-block {
+      padding: 21px 16px !important;
+      border-radius: 18px !important;
+      margin-bottom: 30px !important;
+    }
+
+    body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-heading-title,
+    body.jh-usc-theme #jh-news-media-video-archive-block > h3 {
+      font-size: 16px !important;
+      font-weight: 650 !important;
+    }
+
+    body.jh-usc-theme #jh-news-media-video-archive-block > div {
+      gap: 16px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body.jh-usc-theme #jh-news-media-carousel-usc,
+    body.jh-usc-theme #jh-news-media-video-archive-block {
+      padding: 19px 14px !important;
+      border-radius: 16px !important;
+    }
+
+    body.jh-usc-theme #jh-news-media-carousel-usc .jh-mcu-heading-title,
+    body.jh-usc-theme #jh-news-media-video-archive-block > h3 {
+      font-size: 15.5px !important;
     }
   }
 </style>
