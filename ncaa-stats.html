@@ -2785,6 +2785,92 @@
   }
 </style>
 
+<style id="jh-pga-table-shared-ongoing-cardinal-live-polish">
+  #jh-pga-table-shared .jtc-badge.ongoing {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jtc-cardinal) 0%,
+        var(--jtc-cardinal-dark) 100%
+      ) !important;
+    color: var(--jtc-gold) !important;
+    border: 1px solid rgba(255, 204, 0, 0.42) !important;
+    border-radius: 999px !important;
+    box-shadow:
+      0 7px 16px rgba(153, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #jh-pga-table-shared .jtc-dot.ongoing {
+    background-color: var(--jtc-gold) !important;
+    animation: jtc-live-pulse-gold 1.65s infinite ease-in-out !important;
+    box-shadow:
+      0 0 0 3px rgba(255, 204, 0, 0.22),
+      0 0 10px rgba(255, 204, 0, 0.24) !important;
+  }
+
+  @keyframes jtc-live-pulse-gold {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow:
+        0 0 0 3px rgba(255, 204, 0, 0.22),
+        0 0 10px rgba(255, 204, 0, 0.24);
+    }
+
+    50% {
+      opacity: 0.52;
+      transform: scale(0.88);
+      box-shadow:
+        0 0 0 6px rgba(255, 204, 0, 0.10),
+        0 0 14px rgba(255, 204, 0, 0.30);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow:
+        0 0 0 3px rgba(255, 204, 0, 0.22),
+        0 0 10px rgba(255, 204, 0, 0.24);
+    }
+  }
+
+  #jh-pga-table-shared .jtc-main-link-dot.ongoing {
+    background-color: var(--jtc-gold) !important;
+    animation: none !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 204, 0, 0.20) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.ongoing,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing {
+    background-color: var(--jtc-gold) !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 204, 0, 0.26),
+      0 0 8px rgba(255, 204, 0, 0.22) !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared .jtc-badge.ongoing {
+      box-shadow:
+        0 5px 12px rgba(153, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    }
+
+    #jh-pga-table-shared .jtc-dot.ongoing {
+      box-shadow:
+        0 0 0 2px rgba(255, 204, 0, 0.20),
+        0 0 8px rgba(255, 204, 0, 0.22) !important;
+    }
+
+    #jh-pga-table-shared .jtc-main-link-dot.ongoing {
+      box-shadow:
+        0 0 0 1.5px rgba(255, 204, 0, 0.20) !important;
+    }
+  }
+</style>
+
+  
 <style id="jh-performance-log-cardinal-identity">
   .performance-log-section {
     --jh-log-cardinal: #990000;
