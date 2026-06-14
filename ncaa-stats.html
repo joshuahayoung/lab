@@ -8668,10 +8668,18 @@ function splitSpringSchedule(events) {
     </section>
 
     ${buildSection(
-      "2026 Fall Season",
-      "USC sophomore season schedule and results",
-      data.fallSchedule
-    )}
+  "2026 Fall Season",
+  "USC sophomore season schedule and results",
+  data.fallSchedule,
+  {
+    id: "jh-ss-2026-fall-season",
+    sectionClass: "jh-ss-section-fall",
+    collapsible: true,
+    defaultOpen: false,
+    collapsedNote: "Click the arrow to expand the 2026 fall regular-season schedule.",
+    expandedNote: "Click the arrow to collapse the 2026 fall regular-season schedule."
+  }
+)}
 
     ${buildSection(
       "2027 Spring Season",
