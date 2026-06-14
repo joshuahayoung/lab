@@ -13746,5 +13746,630 @@ document.head.appendChild(style);
   }
 </style>
 
+ <style id="jh-usc-red-balance-final">
+  /*
+    JH USC Red Balance Final
+    Purpose:
+    - Keep USC Cardinal identity.
+    - Remove red fatigue from section titles, result bands, and metric rows.
+    - CSS only. No data, text, links, dates, scores, or JS are modified.
+  */
+
+  /* =========================================================
+     1. SHARED COLOR SYSTEM
+  ========================================================= */
+
+  #jh-pga-table-shared,
+  #jh-summer-offseason-results-accordion,
+  #jh-offseason-schedule,
+  #jh-summer-results-log-isolated,
+  #jh-sophomore-season-page {
+    --jh-balance-cardinal: #990000;
+    --jh-balance-cardinal-dark: #650000;
+    --jh-balance-gold: #ffcc00;
+    --jh-balance-amber: #c9892b;
+    --jh-balance-amber-soft: #fff4e2;
+    --jh-balance-ivory: #fffdf8;
+    --jh-balance-navy: #0c2340;
+    --jh-balance-navy-2: #102744;
+    --jh-balance-ink: #172033;
+    --jh-balance-slate: #64748b;
+    --jh-balance-line: rgba(12, 35, 64, 0.10);
+  }
+
+
+  /* =========================================================
+     2. MAIN LIVE / UPCOMING TOURNAMENT HEADER
+     Scope: #jh-pga-table-shared
+  ========================================================= */
+
+  #jh-pga-table-shared .jtc-header-row {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 62%,
+        rgba(201, 137, 43, 0.075) 100%
+      ) !important;
+    border: 1px solid var(--jh-balance-line) !important;
+    box-shadow:
+      0 7px 18px rgba(12, 35, 64, 0.045),
+      0 2px 7px rgba(153, 0, 0, 0.014) !important;
+  }
+
+  #jh-pga-table-shared .jtc-header-row::before {
+    background: var(--jh-balance-amber) !important;
+    opacity: 0.72 !important;
+  }
+
+  #jh-pga-table-shared .jtc-header-row::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(201, 137, 43, 0.22) 0%,
+        rgba(153, 0, 0, 0.035) 48%,
+        rgba(255, 204, 0, 0.12) 100%
+      ) !important;
+  }
+
+  #jh-pga-table-shared .jtc-header-row h3 {
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-pga-table-shared .jtc-header-row span {
+    background: rgba(248, 250, 252, 0.96) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-navy) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-pga-table-shared .jtc-card {
+    border-color: rgba(12, 35, 64, 0.12) !important;
+    border-top-color: rgba(201, 137, 43, 0.78) !important;
+    box-shadow:
+      0 13px 30px rgba(12, 35, 64, 0.085),
+      0 3px 9px rgba(153, 0, 0, 0.025) !important;
+  }
+
+  #jh-pga-table-shared .jtc-card::before {
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-balance-amber) 0%,
+        rgba(153, 0, 0, 0.72) 48%,
+        var(--jh-balance-navy) 100%
+      ) !important;
+  }
+
+  #jh-pga-table-shared .jtc-card-head {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 70%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border-bottom-color: rgba(12, 35, 64, 0.08) !important;
+  }
+
+  #jh-pga-table-shared .jtc-date {
+    background: rgba(12, 35, 64, 0.045) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-pga-table-shared .jtc-result-band {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 58%,
+        #111827 100%
+      ) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.24) !important;
+  }
+
+  #jh-pga-table-shared .jtc-summary-label {
+    color: rgba(214, 166, 66, 0.82) !important;
+  }
+
+  #jh-pga-table-shared .jtc-round-chip {
+    background: rgba(255, 255, 255, 0.055) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+
+  /* =========================================================
+     3. SUMMER ACCORDION TITLE
+     Scope: #jh-summer-offseason-results-accordion
+  ========================================================= */
+
+  #jh-summer-offseason-results-accordion .jhso-toggle {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 64%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border: 1px solid var(--jh-balance-line) !important;
+    box-shadow:
+      0 7px 18px rgba(12, 35, 64, 0.045),
+      0 2px 7px rgba(153, 0, 0, 0.014) !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-toggle::before {
+    background: var(--jh-balance-amber) !important;
+    opacity: 0.74 !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-title {
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-subtitle {
+    color: var(--jh-balance-slate) !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-note {
+    color: #7a4a14 !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-count {
+    background: rgba(12, 35, 64, 0.045) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-navy) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-arrow {
+    background: #ffffff !important;
+    color: var(--jh-balance-cardinal) !important;
+    border-color: rgba(153, 0, 0, 0.20) !important;
+    box-shadow: 0 4px 10px rgba(12, 35, 64, 0.075) !important;
+  }
+
+
+  /* =========================================================
+     4. SUMMER OFF-SEASON SCHEDULE
+     Scope: #jh-offseason-schedule
+  ========================================================= */
+
+  #jh-offseason-schedule .jhos-title-row {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 64%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border: 1px solid var(--jh-balance-line) !important;
+    box-shadow:
+      0 7px 18px rgba(12, 35, 64, 0.045),
+      0 2px 7px rgba(153, 0, 0, 0.014) !important;
+  }
+
+  #jh-offseason-schedule .jhos-title-row::before {
+    background: var(--jh-balance-amber) !important;
+    opacity: 0.74 !important;
+  }
+
+  #jh-offseason-schedule .jhos-title {
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 64%,
+        #111827 100%
+      ) !important;
+    border-color: rgba(12, 35, 64, 0.18) !important;
+    border-bottom-color: rgba(201, 137, 43, 0.34) !important;
+    box-shadow:
+      0 12px 26px rgba(12, 35, 64, 0.12),
+      0 2px 8px rgba(153, 0, 0, 0.02) !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(201, 137, 43, 0.20) 0%,
+        var(--jh-balance-amber) 50%,
+        rgba(153, 0, 0, 0.30) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar-badge {
+    background: var(--jh-balance-amber-soft) !important;
+    color: #7a4a14 !important;
+    border-color: rgba(201, 137, 43, 0.34) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-offseason-schedule .jhos-table-wrap {
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    box-shadow:
+      0 12px 28px rgba(12, 35, 64, 0.065),
+      0 2px 8px rgba(153, 0, 0, 0.018) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table thead tr {
+    background:
+      linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #ffffff 52%,
+        rgba(201, 137, 43, 0.07) 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-table th {
+    color: var(--jh-balance-navy) !important;
+    border-bottom-color: rgba(12, 35, 64, 0.12) !important;
+  }
+
+  #jh-offseason-schedule .jhos-status.is-gray {
+    color: #475569 !important;
+    background: rgba(248, 250, 252, 0.98) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+  }
+
+  #jh-offseason-schedule .jhos-status.is-gold {
+    color: #7a4a14 !important;
+    background: rgba(201, 137, 43, 0.12) !important;
+    border-color: rgba(201, 137, 43, 0.28) !important;
+  }
+
+  #jh-offseason-schedule .jhos-status.is-navy {
+    color: var(--jh-balance-navy) !important;
+    background: rgba(12, 35, 64, 0.065) !important;
+    border-color: rgba(12, 35, 64, 0.14) !important;
+  }
+
+
+  /* =========================================================
+     5. SUMMER RESULTS LOG
+     Scope: #jh-summer-results-log-isolated
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-main-head {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 62%,
+        rgba(201, 137, 43, 0.10) 100%
+      ) !important;
+    border: 1px solid var(--jh-balance-line) !important;
+    box-shadow:
+      0 8px 22px rgba(12, 35, 64, 0.055),
+      0 2px 8px rgba(153, 0, 0, 0.014) !important;
+    color: var(--jh-balance-ink) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-main-head::after {
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-balance-amber) 0%,
+        rgba(153, 0, 0, 0.56) 48%,
+        var(--jh-balance-navy) 100%
+      ) !important;
+    height: 3px !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-kicker {
+    color: #7a4a14 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-title {
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-subtitle {
+    color: var(--jh-balance-slate) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card {
+    border-color: rgba(12, 35, 64, 0.11) !important;
+    border-top-color: rgba(201, 137, 43, 0.78) !important;
+    box-shadow:
+      0 13px 30px rgba(12, 35, 64, 0.075),
+      0 3px 9px rgba(153, 0, 0, 0.018) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card::before {
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-balance-amber) 0%,
+        rgba(153, 0, 0, 0.62) 48%,
+        var(--jh-balance-navy) 100%
+      ) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card-head {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 70%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border-bottom-color: rgba(12, 35, 64, 0.08) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-box {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 100%
+      ) !important;
+    border-color: rgba(201, 137, 43, 0.34) !important;
+    box-shadow: 0 5px 12px rgba(12, 35, 64, 0.14) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-label {
+    color: rgba(255, 204, 0, 0.82) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-result-band {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 58%,
+        #111827 100%
+      ) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.24) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-cell {
+    border-right-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-label,
+  #jh-summer-results-log-isolated .jh-srl-round-label {
+    color: rgba(214, 166, 66, 0.84) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-round-chip {
+    background: rgba(255, 255, 255, 0.055) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-metrics {
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      ) !important;
+    border-top: 1px solid rgba(12, 35, 64, 0.08) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-metric {
+    background: rgba(248, 250, 252, 0.98) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-ink) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-metric-label {
+    color: var(--jh-balance-slate) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-results-link {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-cardinal) 0%,
+        var(--jh-balance-cardinal-dark) 100%
+      ) !important;
+    color: var(--jh-balance-gold) !important;
+    border-color: rgba(255, 204, 0, 0.34) !important;
+    box-shadow: 0 4px 10px rgba(153, 0, 0, 0.11) !important;
+  }
+
+
+  /* =========================================================
+     6. USC SOPHOMORE SEASON SECTION TITLES
+     Scope: #jh-sophomore-season-page
+  ========================================================= */
+
+  #jh-sophomore-season-page .jh-ss-section-head,
+  #jh-sophomore-season-page .jh-ss-section-toggle,
+  #jh-sophomore-season-page .jh-ss-section-postseason .jh-ss-section-toggle {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 62%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border: 1px solid var(--jh-balance-line) !important;
+    box-shadow:
+      0 7px 18px rgba(12, 35, 64, 0.045),
+      0 2px 7px rgba(153, 0, 0, 0.014) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-head::before,
+  #jh-sophomore-season-page .jh-ss-section-toggle::before {
+    background: var(--jh-balance-amber) !important;
+    opacity: 0.74 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-head::after,
+  #jh-sophomore-season-page .jh-ss-section-toggle::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(201, 137, 43, 0.22) 0%,
+        rgba(153, 0, 0, 0.035) 48%,
+        rgba(255, 204, 0, 0.12) 100%
+      ) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-title,
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-title {
+    color: var(--jh-balance-navy) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-sub,
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-section-sub {
+    color: var(--jh-balance-slate) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-hint {
+    color: #7a4a14 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-count-pill,
+  #jh-sophomore-season-page .jh-ss-section-toggle .jh-ss-count-pill {
+    background: rgba(12, 35, 64, 0.045) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-navy) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-chevron {
+    background: #ffffff !important;
+    border-color: rgba(153, 0, 0, 0.18) !important;
+    color: var(--jh-balance-cardinal) !important;
+    box-shadow: 0 4px 10px rgba(12, 35, 64, 0.075) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-section-chevron::before {
+    border-color: var(--jh-balance-cardinal) !important;
+    opacity: 0.72 !important;
+  }
+
+
+  /* =========================================================
+     7. USC SOPHOMORE EVENT CARDS / RESULT BANDS / METRICS
+     Scope: #jh-sophomore-season-page
+  ========================================================= */
+
+  #jh-sophomore-season-page .jh-ss-card {
+    border-color: rgba(12, 35, 64, 0.11) !important;
+    border-top-color: rgba(201, 137, 43, 0.78) !important;
+    box-shadow:
+      0 13px 30px rgba(12, 35, 64, 0.075),
+      0 3px 9px rgba(153, 0, 0, 0.018) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-card::before {
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-balance-amber) 0%,
+        rgba(153, 0, 0, 0.62) 48%,
+        var(--jh-balance-navy) 100%
+      ) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-card-head {
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jh-balance-ivory) 70%,
+        rgba(201, 137, 43, 0.08) 100%
+      ) !important;
+    border-bottom-color: rgba(12, 35, 64, 0.08) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-box {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 100%
+      ) !important;
+    border-color: rgba(201, 137, 43, 0.34) !important;
+    box-shadow: 0 5px 12px rgba(12, 35, 64, 0.14) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-label {
+    color: rgba(255, 204, 0, 0.82) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-result-band {
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-navy) 0%,
+        var(--jh-balance-navy-2) 58%,
+        #111827 100%
+      ) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.24) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-cell {
+    border-right-color: rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-label,
+  #jh-sophomore-season-page .jh-ss-round-label {
+    color: rgba(214, 166, 66, 0.84) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-chip {
+    background: rgba(255, 255, 255, 0.055) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metrics {
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      ) !important;
+    border-top: 1px solid rgba(12, 35, 64, 0.08) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metric {
+    background: rgba(248, 250, 252, 0.98) !important;
+    border-color: rgba(12, 35, 64, 0.10) !important;
+    color: var(--jh-balance-ink) !important;
+    box-shadow: none !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metric-label {
+    color: var(--jh-balance-slate) !important;
+  }
+
+
+  /* =========================================================
+     8. MOBILE TUNING
+  ========================================================= */
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared .jtc-result-band,
+    #jh-summer-results-log-isolated .jh-srl-result-band,
+    #jh-sophomore-season-page .jh-ss-result-band {
+      background:
+        linear-gradient(
+          135deg,
+          var(--jh-balance-navy) 0%,
+          var(--jh-balance-navy-2) 60%,
+          #111827 100%
+        ) !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-metrics,
+    #jh-sophomore-season-page .jh-ss-metrics {
+      background: #ffffff !important;
+      border-top-color: rgba(12, 35, 64, 0.08) !important;
+    }
+  }
+</style> 
+  
      </body>
         </html>
