@@ -4942,6 +4942,7 @@
 <!-- =========================================================
   JH ISOLATED SUMMER RESULTS SECTION
   Unified with 2026–27 USC Sophomore Season Schedule UI
+  Cardinal-first USC identity
 ========================================================= -->
 
 <section id="jh-summer-results-log-isolated" aria-label="2026 Summer Competition Results Log">
@@ -4954,6 +4955,7 @@
     #jh-summer-results-log-isolated {
       --jh-srl-cardinal: #990000;
       --jh-srl-cardinal-dark: #650000;
+      --jh-srl-cardinal-mid: #7a0000;
       --jh-srl-gold: #ffcc00;
       --jh-srl-gold-muted: #d6a642;
       --jh-srl-navy: #0c2340;
@@ -4981,9 +4983,19 @@
       padding: 22px 24px;
       border-radius: 22px;
       background:
-        radial-gradient(circle at 10% 0%, rgba(255,204,0,0.18), transparent 32%),
-        linear-gradient(135deg, #07172c 0%, #0c2340 48%, #650000 100%);
-      box-shadow: 0 18px 42px rgba(12,35,64,0.16);
+        radial-gradient(circle at 12% 0%, rgba(255, 204, 0, 0.20), transparent 34%),
+        radial-gradient(circle at 92% 8%, rgba(255, 204, 0, 0.08), transparent 32%),
+        linear-gradient(
+          135deg,
+          var(--jh-srl-cardinal-dark) 0%,
+          var(--jh-srl-cardinal) 52%,
+          var(--jh-srl-cardinal-mid) 76%,
+          var(--jh-srl-navy) 100%
+        );
+      border: 1px solid rgba(255, 204, 0, 0.26);
+      box-shadow:
+        0 18px 42px rgba(153, 0, 0, 0.18),
+        0 6px 16px rgba(12, 35, 64, 0.10);
       color: #ffffff;
       overflow: hidden;
       position: relative;
@@ -4999,15 +5011,15 @@
       background:
         linear-gradient(
           90deg,
-          var(--jh-srl-cardinal),
-          var(--jh-srl-gold),
-          var(--jh-srl-cardinal)
+          var(--jh-srl-cardinal-dark) 0%,
+          var(--jh-srl-gold) 48%,
+          var(--jh-srl-cardinal) 100%
         );
     }
 
     #jh-summer-results-log-isolated .jh-srl-kicker {
       margin: 0 0 8px;
-      color: rgba(255,255,255,0.68);
+      color: var(--jh-srl-gold);
       font-size: 11px;
       line-height: 1.2;
       font-weight: 650;
@@ -5028,7 +5040,7 @@
     #jh-summer-results-log-isolated .jh-srl-subtitle {
       margin: 8px 0 0;
       max-width: 760px;
-      color: rgba(255,255,255,0.76);
+      color: rgba(255, 255, 255, 0.80);
       font-size: 12.5px;
       line-height: 1.5;
       font-weight: 500;
@@ -5042,13 +5054,34 @@
 
     #jh-summer-results-log-isolated .jh-srl-card {
       width: 100%;
+      position: relative;
       border-radius: 20px;
-      border: 1px solid rgba(153, 0, 0, 0.14);
+      border: 1px solid rgba(153, 0, 0, 0.20);
+      border-top: 4px solid var(--jh-srl-cardinal);
       background: #ffffff;
       overflow: hidden;
       box-shadow:
-        0 12px 30px rgba(15, 23, 42, 0.065),
-        0 3px 10px rgba(153, 0, 0, 0.035);
+        0 14px 32px rgba(12, 35, 64, 0.08),
+        0 4px 12px rgba(153, 0, 0, 0.055);
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-card::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--jh-srl-cardinal-dark) 0%,
+          var(--jh-srl-cardinal) 42%,
+          var(--jh-srl-gold) 70%,
+          var(--jh-srl-cardinal-dark) 100%
+        );
+      pointer-events: none;
+      z-index: 2;
     }
 
     #jh-summer-results-log-isolated .jh-srl-card-head {
@@ -5060,11 +5093,11 @@
       background:
         linear-gradient(
           135deg,
-          rgba(153, 0, 0, 0.045) 0%,
+          rgba(153, 0, 0, 0.070) 0%,
           #ffffff 48%,
-          rgba(255, 204, 0, 0.13) 100%
+          rgba(255, 204, 0, 0.16) 100%
         );
-      border-bottom: 1px solid rgba(153, 0, 0, 0.11);
+      border-bottom: 1px solid rgba(153, 0, 0, 0.14);
     }
 
     #jh-summer-results-log-isolated .jh-srl-card-left {
@@ -5106,7 +5139,8 @@
       box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.20);
     }
 
-    #jh-summer-results-log-isolated .jh-srl-status.is-ongoing {
+    #jh-summer-results-log-isolated .jh-srl-status.is-ongoing,
+    #jh-summer-results-log-isolated .jh-srl-status.is-final {
       color: var(--jh-srl-gold);
       background:
         linear-gradient(
@@ -5123,17 +5157,6 @@
       box-shadow:
         0 0 0 3px rgba(255, 204, 0, 0.22),
         0 0 10px rgba(255, 204, 0, 0.24);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-final {
-      color: var(--jh-srl-gold);
-      background:
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal) 0%,
-          var(--jh-srl-cardinal-dark) 100%
-        );
-      border-color: rgba(255, 204, 0, 0.38);
     }
 
     #jh-summer-results-log-isolated .jh-srl-status.is-final .jh-srl-status-dot {
@@ -5169,7 +5192,7 @@
 
     #jh-summer-results-log-isolated .jh-srl-event-meta {
       margin: 6px 0 0;
-      color: var(--jh-srl-muted);
+      color: #475569;
       font-size: 12px;
       line-height: 1.45;
       font-weight: 500;
@@ -5183,18 +5206,21 @@
       background:
         linear-gradient(
           135deg,
-          var(--jh-srl-navy) 0%,
+          var(--jh-srl-cardinal) 0%,
           var(--jh-srl-cardinal-dark) 100%
         );
+      border: 1px solid rgba(255, 204, 0, 0.34);
       color: #ffffff;
       text-align: center;
-      box-shadow: inset 0 -2px 0 rgba(255,255,255,0.08);
+      box-shadow:
+        0 6px 14px rgba(153, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
     }
 
     #jh-summer-results-log-isolated .jh-srl-date-label {
       display: block;
       margin-bottom: 4px;
-      color: rgba(255, 204, 0, 0.72);
+      color: var(--jh-srl-gold);
       font-size: 8.5px;
       font-weight: 650;
       letter-spacing: 0.75px;
@@ -5217,20 +5243,21 @@
       background:
         linear-gradient(
           135deg,
-          var(--jh-srl-navy) 0%,
-          #102b4c 54%,
-          var(--jh-srl-cardinal-dark) 100%
+          var(--jh-srl-cardinal-dark) 0%,
+          var(--jh-srl-cardinal) 48%,
+          var(--jh-srl-cardinal-mid) 72%,
+          var(--jh-srl-navy) 100%
         );
       color: #ffffff;
       padding: 14px 16px;
-      border-top: 1px solid rgba(255, 204, 0, 0.18);
+      border-top: 1px solid rgba(255, 204, 0, 0.28);
     }
 
     #jh-summer-results-log-isolated .jh-srl-band-cell {
       min-width: 0;
       padding: 4px 8px;
       text-align: center;
-      border-right: 1px solid rgba(255, 204, 0, 0.12);
+      border-right: 1px solid rgba(255, 204, 0, 0.16);
     }
 
     #jh-summer-results-log-isolated .jh-srl-band-cell:last-child {
@@ -5240,7 +5267,7 @@
     #jh-summer-results-log-isolated .jh-srl-band-label {
       display: block;
       margin-bottom: 7px;
-      color: rgba(255, 204, 0, 0.72);
+      color: rgba(255, 204, 0, 0.78);
       font-size: 9px;
       line-height: 1;
       font-weight: 600;
@@ -5261,8 +5288,9 @@
       max-width: 74px;
       padding: 6px 6px 5px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255, 204, 0, 0.16);
+      background: rgba(255, 255, 255, 0.070);
+      border: 1px solid rgba(255, 204, 0, 0.20);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -5271,7 +5299,7 @@
     }
 
     #jh-summer-results-log-isolated .jh-srl-round-label {
-      color: rgba(255, 204, 0, 0.72);
+      color: rgba(255, 204, 0, 0.78);
       font-size: 8px;
       line-height: 1;
       font-weight: 600;
@@ -5295,6 +5323,7 @@
       line-height: 1;
       font-weight: 750;
       white-space: nowrap;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
     }
 
     #jh-summer-results-log-isolated .jh-srl-score-under {
@@ -5318,11 +5347,12 @@
       padding: 10px 16px 12px;
       background:
         linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #fffdf7 100%
+          135deg,
+          rgba(153, 0, 0, 0.045) 0%,
+          #ffffff 50%,
+          rgba(255, 204, 0, 0.13) 100%
         );
-      border-top: 1px solid rgba(153, 0, 0, 0.10);
+      border-top: 1px solid rgba(153, 0, 0, 0.13);
     }
 
     #jh-summer-results-log-isolated .jh-srl-metric {
@@ -5332,8 +5362,8 @@
       min-height: 28px;
       padding: 5px 9px;
       border-radius: 999px;
-      background: rgba(153, 0, 0, 0.055);
-      border: 1px solid rgba(153, 0, 0, 0.12);
+      background: rgba(153, 0, 0, 0.070);
+      border: 1px solid rgba(153, 0, 0, 0.15);
       color: var(--jh-srl-navy);
       font-size: 11px;
       line-height: 1.1;
@@ -5341,7 +5371,7 @@
     }
 
     #jh-summer-results-log-isolated .jh-srl-metric-label {
-      color: rgba(101, 0, 0, 0.72);
+      color: var(--jh-srl-cardinal-dark);
       font-size: 9.5px;
       font-weight: 650;
       letter-spacing: 0.28px;
@@ -5355,9 +5385,15 @@
       min-height: 28px;
       padding: 5px 11px;
       border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid rgba(153, 0, 0, 0.24);
-      color: var(--jh-srl-cardinal-dark);
+      color: var(--jh-srl-gold);
+      background:
+        linear-gradient(
+          135deg,
+          var(--jh-srl-cardinal) 0%,
+          var(--jh-srl-cardinal-dark) 100%
+        );
+      border: 1px solid rgba(255, 204, 0, 0.40);
+      box-shadow: 0 5px 12px rgba(153, 0, 0, 0.14);
       text-decoration: none;
       font-size: 10px;
       line-height: 1;
@@ -5373,9 +5409,15 @@
 
     #jh-summer-results-log-isolated .jh-srl-results-link:hover,
     #jh-summer-results-log-isolated .jh-srl-results-link:focus {
-      color: var(--jh-srl-gold);
-      background: var(--jh-srl-cardinal);
-      border-color: rgba(255, 204, 0, 0.46);
+      color: var(--jh-srl-cardinal-dark);
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fffaf0 100%
+        );
+      border-color: rgba(153, 0, 0, 0.28);
+      box-shadow: 0 5px 12px rgba(12, 35, 64, 0.10);
       transform: translateY(-1px);
     }
 
@@ -5387,7 +5429,10 @@
       #jh-summer-results-log-isolated .jh-srl-main-head {
         margin-bottom: 14px;
         padding: 18px 18px;
-        border-radius: 18px;
+        border-radius: 17px;
+        box-shadow:
+          0 13px 28px rgba(153, 0, 0, 0.16),
+          0 4px 12px rgba(12, 35, 64, 0.08);
       }
 
       #jh-summer-results-log-isolated .jh-srl-kicker {
@@ -5411,6 +5456,15 @@
 
       #jh-summer-results-log-isolated .jh-srl-card {
         border-radius: 16px;
+        border-top-width: 3px;
+        box-shadow:
+          0 11px 24px rgba(12, 35, 64, 0.08),
+          0 3px 9px rgba(153, 0, 0, 0.045);
+      }
+
+      #jh-summer-results-log-isolated .jh-srl-card::before {
+        top: -3px;
+        height: 3px;
       }
 
       #jh-summer-results-log-isolated .jh-srl-card-head {
@@ -5446,6 +5500,9 @@
         min-width: 88px;
         padding: 8px 8px;
         border-radius: 12px;
+        box-shadow:
+          0 4px 10px rgba(153, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
       }
 
       #jh-summer-results-log-isolated .jh-srl-date-label {
@@ -5461,6 +5518,7 @@
       #jh-summer-results-log-isolated .jh-srl-result-band {
         grid-template-columns: minmax(0, 1fr) 78px 62px 64px;
         padding: 10px 8px;
+        border-top: 1px solid rgba(255, 204, 0, 0.24);
       }
 
       #jh-summer-results-log-isolated .jh-srl-band-cell {
@@ -5682,15 +5740,6 @@
       const list = section.querySelector('#jh-summer-results-log-list');
       if (!list) return;
 
-      /*
-        UPDATE RULE
-        1. Keep the latest / later-scheduled event at the TOP.
-        2. Keep the earliest summer event at the BOTTOM.
-        3. Use numbers only after official results are available.
-        4. Use '-' or 'TBD' for pending results.
-        5. Rounds can be 1, 2, 3, or 4 depending on the event format.
-      */
-
       const results = [
         {
           date: 'Jun 17 - 20',
@@ -5711,32 +5760,6 @@
             { label: 'Results', url: 'https://thedogwood.com/leaderboard' }
           ]
         }
-
-        /*
-        DOGWOOD COMPLETED EXAMPLE
-
-        Replace the Dogwood object above with this after the result is official:
-
-        {
-          date: 'Jun 17 - 20',
-          tournament: 'The Dogwood Invitational',
-          course: 'Druid Hills Golf Club - Atlanta, GA',
-          status: 'Completed',
-          statusType: 'completed',
-          par: 72,
-          rounds: [69, 72, 73, 65],
-          total: 279,
-          toPar: -9,
-          finish: 'T3',
-          metrics: [
-            { label: 'WAGR Pwr', value: '380.8745' },
-            { label: 'Earned Pts', value: '9.8874' }
-          ],
-          links: [
-            { label: 'Results', url: 'https://thedogwood.com/leaderboard' }
-          ]
-        }
-        */
       ];
 
       function escapeHtml(value) {
@@ -5756,12 +5779,6 @@
         if (value === null || value === undefined) return false;
         const cleaned = String(value).trim();
         return cleaned !== '' && cleaned !== '—';
-      }
-
-      function isResultValue(value) {
-        if (value === null || value === undefined) return false;
-        const cleaned = String(value).trim();
-        return cleaned !== '' && cleaned !== '-' && cleaned !== '—' && cleaned.toUpperCase() !== 'TBD';
       }
 
       function normalizeStatusType(event) {
@@ -5809,14 +5826,10 @@
 
       function normalizeRound(round, index, eventPar) {
         if (round && typeof round === 'object') {
-          const score = round.score;
-          const label = roundShortLabel(round, index);
-          const roundPar = round.par;
-
           return {
-            label: label,
-            score: isDisplayText(score) ? score : '—',
-            par: isDisplayText(roundPar) ? roundPar : null
+            label: roundShortLabel(round, index),
+            score: isDisplayText(round.score) ? round.score : '—',
+            par: isDisplayText(round.par) ? round.par : null
           };
         }
 
@@ -6000,190 +6013,7 @@
   </script>
 </section>
 
-<style id="jh-summer-results-strong-usc-cardinal-identity">
-  #jh-summer-results-log-isolated .jh-srl-main-head {
-    background:
-      radial-gradient(circle at 12% 0%, rgba(255, 204, 0, 0.20), transparent 34%),
-      linear-gradient(
-        135deg,
-        var(--jh-srl-cardinal-dark) 0%,
-        var(--jh-srl-cardinal) 52%,
-        #7a0000 76%,
-        var(--jh-srl-navy) 100%
-      ) !important;
-    border: 1px solid rgba(255, 204, 0, 0.24) !important;
-    box-shadow:
-      0 18px 42px rgba(153, 0, 0, 0.18),
-      0 6px 16px rgba(12, 35, 64, 0.10) !important;
-  }
 
-  #jh-summer-results-log-isolated .jh-srl-main-head::after {
-    background:
-      linear-gradient(
-        90deg,
-        var(--jh-srl-cardinal-dark) 0%,
-        var(--jh-srl-gold) 48%,
-        var(--jh-srl-cardinal) 100%
-      ) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-kicker {
-    color: var(--jh-srl-gold) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-subtitle {
-    color: rgba(255, 255, 255, 0.80) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-card {
-    position: relative;
-    border: 1px solid rgba(153, 0, 0, 0.20) !important;
-    border-top: 4px solid var(--jh-srl-cardinal) !important;
-    box-shadow:
-      0 14px 32px rgba(12, 35, 64, 0.08),
-      0 4px 12px rgba(153, 0, 0, 0.055) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-card::before {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background:
-      linear-gradient(
-        90deg,
-        var(--jh-srl-cardinal-dark) 0%,
-        var(--jh-srl-cardinal) 42%,
-        var(--jh-srl-gold) 70%,
-        var(--jh-srl-cardinal-dark) 100%
-      );
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-card-head {
-    background:
-      linear-gradient(
-        135deg,
-        rgba(153, 0, 0, 0.070) 0%,
-        #ffffff 48%,
-        rgba(255, 204, 0, 0.16) 100%
-      ) !important;
-    border-bottom: 1px solid rgba(153, 0, 0, 0.14) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-date-box {
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-srl-cardinal) 0%,
-        var(--jh-srl-cardinal-dark) 100%
-      ) !important;
-    border: 1px solid rgba(255, 204, 0, 0.34) !important;
-    box-shadow:
-      0 6px 14px rgba(153, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-date-label {
-    color: var(--jh-srl-gold) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-result-band {
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-srl-cardinal-dark) 0%,
-        var(--jh-srl-cardinal) 48%,
-        #7a0000 72%,
-        var(--jh-srl-navy) 100%
-      ) !important;
-    border-top: 1px solid rgba(255, 204, 0, 0.28) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-band-cell {
-    border-right: 1px solid rgba(255, 204, 0, 0.16) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-band-label,
-  #jh-summer-results-log-isolated .jh-srl-round-label {
-    color: rgba(255, 204, 0, 0.78) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-round-chip {
-    background: rgba(255, 255, 255, 0.070) !important;
-    border: 1px solid rgba(255, 204, 0, 0.20) !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-metrics {
-    background:
-      linear-gradient(
-        135deg,
-        rgba(153, 0, 0, 0.045) 0%,
-        #ffffff 50%,
-        rgba(255, 204, 0, 0.13) 100%
-      ) !important;
-    border-top: 1px solid rgba(153, 0, 0, 0.13) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-metric {
-    background: rgba(153, 0, 0, 0.070) !important;
-    border: 1px solid rgba(153, 0, 0, 0.15) !important;
-    color: var(--jh-srl-navy) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-metric-label {
-    color: var(--jh-srl-cardinal-dark) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-results-link {
-    color: var(--jh-srl-gold) !important;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-srl-cardinal) 0%,
-        var(--jh-srl-cardinal-dark) 100%
-      ) !important;
-    border: 1px solid rgba(255, 204, 0, 0.40) !important;
-    box-shadow: 0 5px 12px rgba(153, 0, 0, 0.14);
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-results-link:hover,
-  #jh-summer-results-log-isolated .jh-srl-results-link:focus {
-    color: var(--jh-srl-cardinal-dark) !important;
-    background:
-      linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fffaf0 100%
-      ) !important;
-    border-color: rgba(153, 0, 0, 0.28) !important;
-    box-shadow: 0 5px 12px rgba(12, 35, 64, 0.10);
-  }
-
-  @media (max-width: 768px) {
-    #jh-summer-results-log-isolated .jh-srl-card {
-      border-top-width: 3px !important;
-      box-shadow:
-        0 11px 24px rgba(12, 35, 64, 0.08),
-        0 3px 9px rgba(153, 0, 0, 0.045) !important;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-card::before {
-      top: -3px;
-      height: 3px;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-main-head {
-      box-shadow:
-        0 13px 28px rgba(153, 0, 0, 0.16),
-        0 4px 12px rgba(12, 35, 64, 0.08) !important;
-    }
-  }
-</style>
 
 
 
