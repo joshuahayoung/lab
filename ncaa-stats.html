@@ -9613,21 +9613,13 @@ function splitSpringSchedule(events) {
   #jh-sophomore-key-metrics .jhskm-head {
     position: relative;
     padding: 20px 24px 17px;
-    background:
-      radial-gradient(circle at 9% 0%, rgba(200, 138, 46, 0.22), transparent 31%),
-      radial-gradient(circle at 94% 10%, rgba(153, 0, 0, 0.10), transparent 34%),
-      linear-gradient(
-        135deg,
-        #ffffff 0%,
-        var(--jhskm-ivory) 48%,
-        var(--jhskm-ivory-deep) 100%
-      );
+    background: #ffc72c;
     color: var(--jhskm-cardinal-dark);
     border-bottom: 4px solid var(--jhskm-cardinal);
     overflow: hidden;
   }
 
-  #jh-sophomore-key-metrics .jhskm-head::before {
+  #jh-sophomore-key-metrics .jhskm-head::before,
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
@@ -9642,21 +9634,9 @@ function splitSpringSchedule(events) {
       );
   }
 
-  #jh-sophomore-key-metrics .jhskm-head::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 38px;
-    height: 100%;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(153, 0, 0, 0.96) 0%,
-        rgba(101, 0, 0, 0.96) 100%
-      );
-    opacity: 0.92;
-  }
+ #jh-sophomore-key-metrics .jhskm-head::after {
+  display: none;
+}
 
   #jh-sophomore-key-metrics .jhskm-title-row {
     position: relative;
