@@ -7161,60 +7161,61 @@
 
 <style id="jh-sophomore-season-usc-color-polish">
   /*
-    USC color polish pass.
+    USC sophomore season cardinal-first color polish.
     Scope: #jh-sophomore-season-page only.
     Purpose:
-    - Keep navy as the main base.
-    - Add controlled cardinal accents.
-    - Add restrained gold highlights.
-    - Avoid heavy red saturation.
+    - Match Summer Results cardinal-first identity.
+    - Keep the existing compact card structure and data untouched.
+    - Use cardinal as the primary base, gold as the accent, navy as support.
   */
 
   #jh-sophomore-season-page .jh-ss-main-head {
     background:
       radial-gradient(
-        circle at 10% 0%,
-        rgba(255, 204, 0, 0.18),
-        transparent 32%
+        circle at 12% 0%,
+        rgba(255, 204, 0, 0.20),
+        transparent 34%
       ),
       radial-gradient(
         circle at 92% 8%,
-        rgba(153, 0, 0, 0.30),
-        transparent 34%
+        rgba(255, 204, 0, 0.08),
+        transparent 32%
       ),
       linear-gradient(
         135deg,
-        #07172c 0%,
-        #0c2340 48%,
-        #650000 100%
+        #650000 0%,
+        #990000 52%,
+        #7a0000 76%,
+        #0c2340 100%
       ) !important;
-    border: 1px solid rgba(255, 204, 0, 0.18) !important;
+    border: 1px solid rgba(255, 204, 0, 0.26) !important;
     box-shadow:
-      0 16px 36px rgba(12, 35, 64, 0.16),
-      0 8px 22px rgba(153, 0, 0, 0.10) !important;
+      0 18px 42px rgba(153, 0, 0, 0.18),
+      0 6px 16px rgba(12, 35, 64, 0.10) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-main-head::after {
     background:
       linear-gradient(
         90deg,
-        #990000 0%,
+        #650000 0%,
         #ffcc00 48%,
-        #650000 100%
+        #990000 100%
       ) !important;
     height: 4px !important;
   }
 
   #jh-sophomore-season-page .jh-ss-kicker {
-    color: rgba(255, 204, 0, 0.72) !important;
+    color: #ffcc00 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-title {
     color: #ffffff !important;
   }
 
-  #jh-sophomore-season-page .jh-ss-meta {
-    color: rgba(255, 255, 255, 0.76) !important;
+  #jh-sophomore-season-page .jh-ss-meta,
+  #jh-sophomore-season-page .jh-ss-updated {
+    color: rgba(255, 255, 255, 0.80) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-section-head {
@@ -7230,94 +7231,236 @@
   }
 
   #jh-sophomore-season-page .jh-ss-count-pill {
-    background: rgba(255, 204, 0, 0.10) !important;
-    border: 1px solid rgba(153, 0, 0, 0.18) !important;
+    background: rgba(255, 204, 0, 0.14) !important;
+    border: 1px solid rgba(153, 0, 0, 0.20) !important;
     color: #650000 !important;
     font-weight: 650 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-card {
-    border-color: rgba(153, 0, 0, 0.12) !important;
+    position: relative;
+    border: 1px solid rgba(153, 0, 0, 0.20) !important;
+    border-top: 4px solid #990000 !important;
+    box-shadow:
+      0 14px 32px rgba(12, 35, 64, 0.08),
+      0 4px 12px rgba(153, 0, 0, 0.055) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-card::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background:
+      linear-gradient(
+        90deg,
+        #650000 0%,
+        #990000 42%,
+        #ffcc00 70%,
+        #650000 100%
+      );
+    pointer-events: none;
+    z-index: 2;
   }
 
   #jh-sophomore-season-page .jh-ss-card-head {
     background:
       linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fffdf6 100%
+        135deg,
+        rgba(153, 0, 0, 0.070) 0%,
+        #ffffff 48%,
+        rgba(255, 204, 0, 0.16) 100%
       ) !important;
-    border-bottom: 1px solid rgba(153, 0, 0, 0.10) !important;
+    border-bottom: 1px solid rgba(153, 0, 0, 0.14) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-status.is-scheduled {
-    color: #650000 !important;
-    background: rgba(153, 0, 0, 0.06) !important;
-    border: 1px solid rgba(153, 0, 0, 0.14) !important;
+    color: #6f4f00 !important;
+    background: rgba(255, 204, 0, 0.18) !important;
+    border: 1px solid rgba(255, 204, 0, 0.36) !important;
   }
 
-  #jh-sophomore-season-page
-  .jh-ss-status.is-scheduled
-  .jh-ss-status-dot {
-    background: #990000 !important;
-    box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.10) !important;
+  #jh-sophomore-season-page .jh-ss-status.is-scheduled .jh-ss-status-dot {
+    background: #ffcc00 !important;
+    box-shadow:
+      0 0 0 3px rgba(255, 204, 0, 0.20) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status.is-ongoing {
+    color: #ffcc00 !important;
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 100%
+      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.42) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status.is-ongoing .jh-ss-status-dot {
+    background: #ffcc00 !important;
+    animation: jhSsGoldPulse 1.65s infinite ease-in-out !important;
+    box-shadow:
+      0 0 0 3px rgba(255, 204, 0, 0.22),
+      0 0 10px rgba(255, 204, 0, 0.24) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status.is-final {
+    color: #ffcc00 !important;
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 100%
+      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.38) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-status.is-final .jh-ss-status-dot {
+    background: #ffcc00 !important;
+    box-shadow:
+      0 0 0 3px rgba(255, 204, 0, 0.20) !important;
+  }
+
+  @keyframes jhSsGoldPulse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.52;
+      transform: scale(0.88);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   #jh-sophomore-season-page .jh-ss-event-title {
-    color: #172033 !important;
+    color: #0c2340 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-event-meta {
-    color: #64748b !important;
+    color: #475569 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-date-box {
     background:
       linear-gradient(
         135deg,
-        #0c2340 0%,
-        #111d34 50%,
+        #990000 0%,
         #650000 100%
       ) !important;
-    border: 1px solid rgba(255, 204, 0, 0.28) !important;
+    border: 1px solid rgba(255, 204, 0, 0.34) !important;
+    box-shadow:
+      0 6px 14px rgba(153, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-date-label {
-    color: rgba(255, 204, 0, 0.78) !important;
+    color: #ffcc00 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-date-value {
+    color: #ffffff !important;
   }
 
   #jh-sophomore-season-page .jh-ss-result-band {
     background:
       linear-gradient(
         135deg,
-        #0c2340 0%,
-        #101d33 50%,
-        #650000 100%
+        #650000 0%,
+        #990000 48%,
+        #7a0000 72%,
+        #0c2340 100%
       ) !important;
-    border-top: 1px solid rgba(255, 204, 0, 0.16) !important;
+    border-top: 1px solid rgba(255, 204, 0, 0.28) !important;
   }
 
-  #jh-sophomore-season-page .jh-ss-band-label {
-    color: rgba(255, 204, 0, 0.70) !important;
+  #jh-sophomore-season-page .jh-ss-band-cell {
+    border-right: 1px solid rgba(255, 204, 0, 0.16) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-cell:last-child {
+    border-right: none !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-band-label,
+  #jh-sophomore-season-page .jh-ss-round-label {
+    color: rgba(255, 204, 0, 0.78) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-round-chip {
-    background: rgba(255, 255, 255, 0.055) !important;
-    border-color: rgba(255, 204, 0, 0.12) !important;
+    background: rgba(255, 255, 255, 0.070) !important;
+    border: 1px solid rgba(255, 204, 0, 0.20) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score,
+  #jh-sophomore-season-page .jh-ss-total-value,
+  #jh-sophomore-season-page .jh-ss-par-value,
+  #jh-sophomore-season-page .jh-ss-finish-value {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score.red,
+  #jh-sophomore-season-page .jh-ss-total-value.red,
+  #jh-sophomore-season-page .jh-ss-par-value.red,
+  #jh-sophomore-season-page .jh-ss-finish-value.red {
+    color: #ffcc00 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score.blue,
+  #jh-sophomore-season-page .jh-ss-total-value.blue,
+  #jh-sophomore-season-page .jh-ss-par-value.blue,
+  #jh-sophomore-season-page .jh-ss-finish-value.blue {
+    color: #ffffff !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score.navy,
+  #jh-sophomore-season-page .jh-ss-total-value.navy,
+  #jh-sophomore-season-page .jh-ss-par-value.navy,
+  #jh-sophomore-season-page .jh-ss-finish-value.navy {
+    color: #bfdbfe !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-round-score.white,
+  #jh-sophomore-season-page .jh-ss-total-value.white,
+  #jh-sophomore-season-page .jh-ss-par-value.white,
+  #jh-sophomore-season-page .jh-ss-finish-value.white {
+    color: rgba(255, 255, 255, 0.88) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-metrics {
     background:
       linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fffdf6 100%
+        135deg,
+        rgba(153, 0, 0, 0.045) 0%,
+        #ffffff 50%,
+        rgba(255, 204, 0, 0.13) 100%
       ) !important;
-    border-top: 1px solid rgba(153, 0, 0, 0.08) !important;
+    border-top: 1px solid rgba(153, 0, 0, 0.13) !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metric {
+    background: rgba(153, 0, 0, 0.070) !important;
+    border: 1px solid rgba(153, 0, 0, 0.15) !important;
+    color: #0c2340 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metric-label {
+    color: #650000 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-notes {
-    border-color: rgba(153, 0, 0, 0.14) !important;
+    border-color: rgba(153, 0, 0, 0.18) !important;
     background:
       linear-gradient(
         180deg,
@@ -7330,9 +7473,9 @@
     background:
       linear-gradient(
         135deg,
-        #0c2340 0%,
-        #111d34 52%,
-        #650000 100%
+        #650000 0%,
+        #990000 52%,
+        #0c2340 100%
       ) !important;
     color: #ffffff !important;
     border-bottom: 3px solid #ffcc00 !important;
@@ -7345,14 +7488,38 @@
   @media (max-width: 768px) {
     #jh-sophomore-season-page .jh-ss-main-head {
       border-radius: 17px !important;
+      box-shadow:
+        0 13px 28px rgba(153, 0, 0, 0.16),
+        0 4px 12px rgba(12, 35, 64, 0.08) !important;
     }
 
-    #jh-sophomore-season-page .jh-ss-count-pill {
-      font-size: 9.5px !important;
+    #jh-sophomore-season-page .jh-ss-card {
+      border-top-width: 3px !important;
+      box-shadow:
+        0 11px 24px rgba(12, 35, 64, 0.08),
+        0 3px 9px rgba(153, 0, 0, 0.045) !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-card::before {
+      top: -3px;
+      height: 3px;
+    }
+
+    #jh-sophomore-season-page .jh-ss-date-box {
+      box-shadow:
+        0 4px 10px rgba(153, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-result-band {
+      border-top: 1px solid rgba(255, 204, 0, 0.24) !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-band-cell {
+      border-bottom-color: rgba(255, 204, 0, 0.14) !important;
     }
 
     #jh-sophomore-season-page .jh-ss-notes-head {
-      font-size: 13.5px !important;
       font-weight: 650 !important;
     }
   }
