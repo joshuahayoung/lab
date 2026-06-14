@@ -2870,6 +2870,60 @@
   }
 </style>
 
+
+<style id="jh-pga-table-shared-ongoing-link-reverse-hover">
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing) {
+    color: var(--jtc-gold) !important;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jtc-cardinal) 0%,
+        var(--jtc-cardinal-dark) 100%
+      ) !important;
+    border: 1px solid rgba(255, 204, 0, 0.44) !important;
+    box-shadow:
+      0 7px 16px rgba(153, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing) .jtc-main-link-arrow svg {
+    stroke: var(--jtc-gold) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):hover,
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):focus {
+    color: var(--jtc-cardinal-dark) !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffaf0 100%
+      ) !important;
+    border-color: rgba(153, 0, 0, 0.34) !important;
+    box-shadow:
+      0 5px 12px rgba(12, 35, 64, 0.10) !important;
+    transform: translateY(-1px);
+  }
+
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):hover .jtc-main-link-dot.ongoing,
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):focus .jtc-main-link-dot.ongoing {
+    background-color: var(--jtc-cardinal) !important;
+    box-shadow:
+      0 0 0 2px rgba(153, 0, 0, 0.18) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):hover .jtc-main-link-arrow svg,
+  #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing):focus .jtc-main-link-arrow svg {
+    stroke: var(--jtc-cardinal-dark) !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared .jtc-main-link:has(.jtc-main-link-dot.ongoing) {
+      box-shadow: none !important;
+    }
+  }
+</style>
+  
   
 <style id="jh-performance-log-cardinal-identity">
   .performance-log-section {
