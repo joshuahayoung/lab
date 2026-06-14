@@ -9573,12 +9573,11 @@ function splitSpringSchedule(events) {
     --jhskm-cardinal-dark: #650000;
     --jhskm-cardinal-mid: #7a0000;
 
-    --jhskm-gold: #ffc400;
---jhskm-gold-deep: #f5a400;
---jhskm-gold-dark: #d98500;
---jhskm-gold-hot: #ffb000;
---jhskm-gold-soft: #fff0b8;
---jhskm-gold-ivory: #fff8e6;
+    --jhskm-gold: #c88a2e;
+    --jhskm-gold-deep: #a9671e;
+    --jhskm-gold-soft: #f4dcc0;
+    --jhskm-ivory: #fff8ee;
+    --jhskm-ivory-deep: #fff1df;
 
     --jhskm-navy: #0c2340;
     --jhskm-text: #172033;
@@ -9596,40 +9595,51 @@ function splitSpringSchedule(events) {
   #jh-sophomore-key-metrics .jhskm-shell {
     width: 100%;
     border-radius: 20px;
-    border: 1px solid rgba(153, 0, 0, 0.15);
+    border: 1px solid rgba(153, 0, 0, 0.14);
     background: #ffffff;
     overflow: hidden;
     box-shadow:
-      0 14px 34px rgba(15, 23, 42, 0.065),
-      0 4px 12px rgba(153, 0, 0, 0.035);
+      0 16px 36px rgba(15, 23, 42, 0.065),
+      0 5px 14px rgba(153, 0, 0, 0.035);
   }
 
   /*
-    Header:
-    - USC Gold major surface
-    - Cardinal text
-    - PRE-SEASON preserved
+    Premium metrics header:
+    - Ivory / warm report-card surface
+    - Cardinal Rojo typography
+    - muted gold foil accent
     - Cardinal bottom rule
-    - Cardinal right accent blade
   */
   #jh-sophomore-key-metrics .jhskm-head {
     position: relative;
-    padding: 18px 22px 16px;
+    padding: 20px 24px 17px;
     background:
-  radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.16), transparent 25%),
-  radial-gradient(circle at 88% 0%, rgba(101, 0, 0, 0.22), transparent 30%),
-  linear-gradient(
-    135deg,
-    #f29a00 0%,
-    #df8500 28%,
-    #c66d00 55%,
-    #a94c00 78%,
-    #7f2f00 100%
-  );
+      radial-gradient(circle at 9% 0%, rgba(200, 138, 46, 0.22), transparent 31%),
+      radial-gradient(circle at 94% 10%, rgba(153, 0, 0, 0.10), transparent 34%),
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        var(--jhskm-ivory) 48%,
+        var(--jhskm-ivory-deep) 100%
+      );
     color: var(--jhskm-cardinal-dark);
     border-bottom: 4px solid var(--jhskm-cardinal);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
     overflow: hidden;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-head::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background:
+      linear-gradient(
+        90deg,
+        var(--jhskm-cardinal-dark) 0%,
+        var(--jhskm-cardinal) 38%,
+        var(--jhskm-gold) 72%,
+        var(--jhskm-cardinal-dark) 100%
+      );
   }
 
   #jh-sophomore-key-metrics .jhskm-head::after {
@@ -9637,31 +9647,15 @@ function splitSpringSchedule(events) {
     position: absolute;
     top: 0;
     right: 0;
-    width: 34px;
+    width: 38px;
     height: 100%;
     background:
       linear-gradient(
         180deg,
-        var(--jhskm-cardinal) 0%,
-        var(--jhskm-cardinal-dark) 100%
+        rgba(153, 0, 0, 0.96) 0%,
+        rgba(101, 0, 0, 0.96) 100%
       );
-    opacity: 0.96;
-  }
-
-  #jh-sophomore-key-metrics .jhskm-head::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 34px;
-    width: 14px;
-    height: 100%;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(153, 0, 0, 0.20) 0%,
-        rgba(101, 0, 0, 0.34) 100%
-      );
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    opacity: 0.92;
   }
 
   #jh-sophomore-key-metrics .jhskm-title-row {
@@ -9677,31 +9671,35 @@ function splitSpringSchedule(events) {
   #jh-sophomore-key-metrics .jhskm-title {
     margin: 0;
     color: var(--jhskm-cardinal-dark);
-    font-size: 20px;
+    font-size: 21px;
     line-height: 1.2;
-    font-weight: 750;
-    letter-spacing: 0.35px;
+    font-weight: 760;
+    letter-spacing: 0.18px;
     text-transform: uppercase;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.10);
   }
 
   /*
-    PRE-SEASON pill preserved as requested.
+    PRE-SEASON remains a status badge, not part of the gold-card treatment.
   */
   #jh-sophomore-key-metrics .jhskm-status-pill {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     min-height: 26px;
     padding: 5px 10px;
     border-radius: 999px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.18);
-    color: #ffffff;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jhskm-cardinal) 0%,
+        var(--jhskm-cardinal-dark) 100%
+      );
+    border: 1px solid rgba(200, 138, 46, 0.42);
+    color: #f4dcc0;
     font-size: 10px;
     line-height: 1;
-    font-weight: 900;
+    font-weight: 750;
     letter-spacing: 0.7px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -9713,12 +9711,12 @@ function splitSpringSchedule(events) {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 8px;
-    color: rgba(101, 0, 0, 0.82);
+    margin-top: 9px;
+    color: rgba(101, 0, 0, 0.68);
     font-size: 11px;
     line-height: 1.45;
     font-weight: 550;
-    letter-spacing: 0.45px;
+    letter-spacing: 0.42px;
     text-transform: uppercase;
   }
 
@@ -9728,16 +9726,18 @@ function splitSpringSchedule(events) {
       linear-gradient(
         180deg,
         #ffffff 0%,
-        #fffaf4 100%
+        #fffaf5 100%
       );
   }
 
   #jh-sophomore-key-metrics .jhskm-section-title {
     margin: 0 0 14px;
+    padding-left: 13px;
+    border-left: 5px solid var(--jhskm-cardinal);
     color: var(--jhskm-cardinal-dark);
     font-size: 15px;
     line-height: 1.25;
-    font-weight: 700;
+    font-weight: 720;
     letter-spacing: 0.4px;
     text-transform: uppercase;
   }
@@ -9759,7 +9759,7 @@ function splitSpringSchedule(events) {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    border-radius: 14px;
+    border-radius: 15px;
     border: 1px solid rgba(153, 0, 0, 0.12);
     background:
       linear-gradient(
@@ -9768,8 +9768,8 @@ function splitSpringSchedule(events) {
         #fffdf9 100%
       );
     box-shadow:
-      0 6px 16px rgba(15, 23, 42, 0.035),
-      0 2px 7px rgba(153, 0, 0, 0.025);
+      0 7px 18px rgba(15, 23, 42, 0.035),
+      0 2px 8px rgba(153, 0, 0, 0.025);
     position: relative;
     overflow: hidden;
   }
@@ -9783,17 +9783,18 @@ function splitSpringSchedule(events) {
       linear-gradient(
         90deg,
         var(--jhskm-cardinal-dark) 0%,
-        var(--jhskm-cardinal) 58%,
+        var(--jhskm-cardinal) 54%,
         var(--jhskm-gold) 100%
       );
   }
 
   /*
-    Clippd Adj. Avg card remains light with accent treatment.
+    Clippd Adj. Avg card remains a light premium card.
   */
   #jh-sophomore-key-metrics .jhskm-card.is-gold-line {
     border-bottom: 4px solid var(--jhskm-gold);
     background:
+      radial-gradient(circle at 92% 0%, rgba(200, 138, 46, 0.09), transparent 30%),
       linear-gradient(
         180deg,
         #ffffff 0%,
@@ -9802,46 +9803,47 @@ function splitSpringSchedule(events) {
   }
 
   /*
-    Target cards only:
+    Target cards:
     - Scoring Summary
     - Counting Score Record
     - Clippd NCAA Ranking
-    These are the current .is-dark cards.
-    Gold major surface + Cardinal text.
+
+    Replaces the cheap large orange surface with a premium ivory stat card.
   */
- #jh-sophomore-key-metrics .jhskm-card.is-dark {
-  background:
-    radial-gradient(circle at 88% 0%, rgba(255, 255, 255, 0.14), transparent 28%),
-    radial-gradient(circle at 8% 100%, rgba(101, 0, 0, 0.18), transparent 34%),
-    linear-gradient(
-      135deg,
-      #f19600 0%,
-      #df8500 30%,
-      #c66d00 58%,
-      #a94c00 82%,
-      #7f2f00 100%
-    );
-    border: 1px solid rgba(153, 0, 0, 0.18);
+  #jh-sophomore-key-metrics .jhskm-card.is-dark {
+    background:
+      radial-gradient(circle at 92% 0%, rgba(200, 138, 46, 0.13), transparent 31%),
+      radial-gradient(circle at 0% 100%, rgba(153, 0, 0, 0.055), transparent 36%),
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        var(--jhskm-ivory) 100%
+      );
+    border: 1px solid rgba(153, 0, 0, 0.15);
     color: var(--jhskm-cardinal-dark);
     box-shadow:
-   0 13px 28px rgba(127, 47, 0, 0.24),
-  0 5px 14px rgba(153, 0, 0, 0.08);
+      0 9px 22px rgba(15, 23, 42, 0.048),
+      0 3px 10px rgba(153, 0, 0, 0.032);
   }
 
   #jh-sophomore-key-metrics .jhskm-card.is-dark::before {
+    height: 5px;
     background:
       linear-gradient(
         90deg,
         var(--jhskm-cardinal-dark) 0%,
-        var(--jhskm-cardinal) 100%
+        var(--jhskm-cardinal) 48%,
+        var(--jhskm-gold) 76%,
+        var(--jhskm-cardinal-dark) 100%
       );
   }
 
   /*
-    Performance Profile stays Cardinal Rojo.
+    Performance Profile remains the one Cardinal Rojo anchor card.
   */
   #jh-sophomore-key-metrics .jhskm-card.is-cardinal {
     background:
+      radial-gradient(circle at 90% 0%, rgba(200, 138, 46, 0.18), transparent 31%),
       linear-gradient(
         135deg,
         var(--jhskm-cardinal) 0%,
@@ -9850,7 +9852,7 @@ function splitSpringSchedule(events) {
     border-color: rgba(153, 0, 0, 0.24);
     color: #ffffff;
     box-shadow:
-      0 8px 20px rgba(153, 0, 0, 0.16),
+      0 8px 20px rgba(153, 0, 0, 0.15),
       0 3px 8px rgba(101, 0, 0, 0.10);
   }
 
@@ -9859,7 +9861,7 @@ function splitSpringSchedule(events) {
       linear-gradient(
         90deg,
         var(--jhskm-cardinal-dark) 0%,
-        var(--jhskm-cardinal) 56%,
+        var(--jhskm-cardinal) 55%,
         var(--jhskm-gold) 100%
       );
   }
@@ -9877,8 +9879,9 @@ function splitSpringSchedule(events) {
     z-index: 1;
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-label {
-    color: rgba(101, 0, 0, 0.86);
+  #jh-sophomore-key-metrics .is-dark .jhskm-label,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-label {
+    color: rgba(101, 0, 0, 0.66);
   }
 
   #jh-sophomore-key-metrics .is-cardinal .jhskm-label {
@@ -9889,15 +9892,15 @@ function splitSpringSchedule(events) {
     color: var(--jhskm-navy);
     font-size: 28px;
     line-height: 1.05;
-    font-weight: 750;
-    letter-spacing: -0.4px;
+    font-weight: 760;
+    letter-spacing: -0.35px;
     position: relative;
     z-index: 1;
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-value {
+  #jh-sophomore-key-metrics .is-dark .jhskm-value,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-value {
     color: var(--jhskm-cardinal-dark);
-    text-shadow: 0 1px 0 rgba(255,255,255,0.08);
   }
 
   #jh-sophomore-key-metrics .is-cardinal .jhskm-value {
@@ -9916,9 +9919,10 @@ function splitSpringSchedule(events) {
     z-index: 1;
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-sub {
-  border-top-color: rgba(101, 0, 0, 0.22);
-  color: rgba(101, 0, 0, 0.86);
+  #jh-sophomore-key-metrics .is-dark .jhskm-sub,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-sub {
+    border-top-color: rgba(153, 0, 0, 0.12);
+    color: rgba(101, 0, 0, 0.64);
   }
 
   #jh-sophomore-key-metrics .is-cardinal .jhskm-sub {
@@ -9954,15 +9958,18 @@ function splitSpringSchedule(events) {
     font-weight: 700;
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-mini-grid {
-    border-top-color: rgba(101, 0, 0, 0.16);
+  #jh-sophomore-key-metrics .is-dark .jhskm-mini-grid,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-mini-grid {
+    border-top-color: rgba(153, 0, 0, 0.12);
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-mini-k {
-  color: rgba(101, 0, 0, 0.78);
+  #jh-sophomore-key-metrics .is-dark .jhskm-mini-k,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-mini-k {
+    color: rgba(101, 0, 0, 0.58);
   }
 
-  #jh-sophomore-key-metrics .is-dark .jhskm-mini-v {
+  #jh-sophomore-key-metrics .is-dark .jhskm-mini-v,
+  #jh-sophomore-key-metrics .is-gold-line .jhskm-mini-v {
     color: var(--jhskm-cardinal-dark);
   }
 
@@ -9984,6 +9991,8 @@ function splitSpringSchedule(events) {
     gap: 8px;
     margin-top: auto;
     padding-top: 14px;
+    position: relative;
+    z-index: 1;
   }
 
   #jh-sophomore-key-metrics .jhskm-meta-pill {
@@ -9991,13 +10000,24 @@ function splitSpringSchedule(events) {
     align-items: center;
     padding: 5px 8px;
     border-radius: 999px;
-    background: var(--jhskm-soft);
-    border: 1px solid var(--jhskm-line);
-    color: #334155;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffaf2 100%
+      );
+    border: 1px solid rgba(153, 0, 0, 0.13);
+    color: var(--jhskm-cardinal-dark);
     font-size: 10px;
     font-weight: 600;
     line-height: 1;
     white-space: nowrap;
+  }
+
+  #jh-sophomore-key-metrics .is-cardinal .jhskm-meta-pill {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.88);
   }
 
   #jh-sophomore-key-metrics .jhskm-footnote {
@@ -10010,7 +10030,7 @@ function splitSpringSchedule(events) {
         #ffffff 0%,
         #fffaf6 100%
       );
-    border: 1px dashed rgba(153, 0, 0, 0.20);
+    border: 1px dashed rgba(153, 0, 0, 0.18);
     color: #64748b;
     font-size: 11px;
     line-height: 1.55;
@@ -10027,20 +10047,16 @@ function splitSpringSchedule(events) {
     }
 
     #jh-sophomore-key-metrics .jhskm-head {
-      padding: 17px 16px 15px;
+      padding: 18px 16px 15px;
     }
 
     #jh-sophomore-key-metrics .jhskm-head::after {
       width: 24px;
     }
 
-    #jh-sophomore-key-metrics .jhskm-head::before {
-      right: 24px;
-      width: 10px;
-    }
-
     #jh-sophomore-key-metrics .jhskm-title {
       font-size: 17px;
+      max-width: calc(100% - 30px);
     }
 
     #jh-sophomore-key-metrics .jhskm-card {
