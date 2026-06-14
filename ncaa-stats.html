@@ -13778,7 +13778,7 @@ document.head.appendChild(style);
   }
 
 
-   /* =========================================================
+  /* =========================================================
      2. MAIN LIVE / UPCOMING TOURNAMENT HEADER
      Scope: #jh-pga-table-shared
   ========================================================= */
@@ -13860,41 +13860,75 @@ document.head.appendChild(style);
 
   #jh-pga-table-shared .jtc-result-band {
     background:
+      radial-gradient(circle at 10% 0%, rgba(201, 137, 43, 0.16), transparent 30%),
       linear-gradient(
         180deg,
-        #ffffff 0%,
-        #fffdf8 100%
+        #fffaf2 0%,
+        #f8f4ec 100%
       ) !important;
     color: var(--jh-balance-ink) !important;
-    border-top: 1px solid rgba(201, 137, 43, 0.26) !important;
-    box-shadow: inset 0 3px 0 rgba(201, 137, 43, 0.10) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.28) !important;
+    box-shadow:
+      inset 0 3px 0 rgba(201, 137, 43, 0.16),
+      inset 0 -1px 0 rgba(12, 35, 64, 0.06) !important;
+    gap: 10px !important;
+    padding: 14px !important;
   }
 
   #jh-pga-table-shared .jtc-link-summary,
   #jh-pga-table-shared .jtc-rounds-summary,
   #jh-pga-table-shared .jtc-total-summary,
   #jh-pga-table-shared .jtc-pos-summary {
-    border-left: 1px solid rgba(12, 35, 64, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+    border-left: none !important;
+    border-radius: 13px !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      ) !important;
+    border: 1px solid rgba(12, 35, 64, 0.105) !important;
+    box-shadow:
+      0 6px 14px rgba(12, 35, 64, 0.055),
+      inset 0 3px 0 rgba(201, 137, 43, 0.20) !important;
   }
 
-  #jh-pga-table-shared .jtc-link-summary {
-    border-left: none !important;
+  #jh-pga-table-shared .jtc-link-summary::after,
+  #jh-pga-table-shared .jtc-rounds-summary::after,
+  #jh-pga-table-shared .jtc-total-summary::after,
+  #jh-pga-table-shared .jtc-pos-summary::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(153, 0, 0, 0.22) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
   }
 
   #jh-pga-table-shared .jtc-summary-label {
     color: #7a4a14 !important;
-    font-weight: 650 !important;
+    font-weight: 700 !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip {
     background:
       linear-gradient(
         180deg,
-        #f8fafc 0%,
+        #fffdf8 0%,
         #ffffff 100%
       ) !important;
-    border: 1px solid rgba(12, 35, 64, 0.10) !important;
-    box-shadow: none !important;
+    border: 1px solid rgba(12, 35, 64, 0.11) !important;
+    box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.12) !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip-label {
@@ -13921,7 +13955,7 @@ document.head.appendChild(style);
   #jh-pga-table-shared .jtc-total-par-wrap .delta.navy,
   #jh-pga-table-shared .jtc-total-par-wrap .delta.white {
     color: var(--jh-balance-navy) !important;
-  }
+  } 
 
 
   /* =========================================================
@@ -14087,7 +14121,7 @@ document.head.appendChild(style);
   }
 
 
-   /* =========================================================
+  /* =========================================================
      5. SUMMER RESULTS LOG
      Scope: #jh-summer-results-log-isolated
   ========================================================= */
@@ -14176,39 +14210,70 @@ document.head.appendChild(style);
 
   #jh-summer-results-log-isolated .jh-srl-result-band {
     background:
+      radial-gradient(circle at 10% 0%, rgba(201, 137, 43, 0.16), transparent 30%),
       linear-gradient(
         180deg,
-        #ffffff 0%,
-        #fffdf8 100%
+        #fffaf2 0%,
+        #f8f4ec 100%
       ) !important;
     color: var(--jh-balance-ink) !important;
-    border-top: 1px solid rgba(201, 137, 43, 0.26) !important;
-    box-shadow: inset 0 3px 0 rgba(201, 137, 43, 0.10) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.28) !important;
+    box-shadow:
+      inset 0 3px 0 rgba(201, 137, 43, 0.16),
+      inset 0 -1px 0 rgba(12, 35, 64, 0.06) !important;
+    gap: 10px !important;
+    padding: 14px !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-band-cell {
-    border-right: 1px solid rgba(12, 35, 64, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+    border-right: none !important;
+    border-radius: 13px !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      ) !important;
+    border: 1px solid rgba(12, 35, 64, 0.105) !important;
+    box-shadow:
+      0 6px 14px rgba(12, 35, 64, 0.055),
+      inset 0 3px 0 rgba(201, 137, 43, 0.20) !important;
   }
 
-  #jh-summer-results-log-isolated .jh-srl-band-cell:last-child {
-    border-right: none !important;
+  #jh-summer-results-log-isolated .jh-srl-band-cell::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(153, 0, 0, 0.22) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
   }
 
   #jh-summer-results-log-isolated .jh-srl-band-label,
   #jh-summer-results-log-isolated .jh-srl-round-label {
     color: #7a4a14 !important;
-    font-weight: 650 !important;
+    font-weight: 700 !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-round-chip {
     background:
       linear-gradient(
         180deg,
-        #f8fafc 0%,
+        #fffdf8 0%,
         #ffffff 100%
       ) !important;
-    border: 1px solid rgba(12, 35, 64, 0.10) !important;
-    box-shadow: none !important;
+    border: 1px solid rgba(12, 35, 64, 0.11) !important;
+    box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.12) !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-round-score,
@@ -14263,7 +14328,6 @@ document.head.appendChild(style);
     border-color: rgba(255, 204, 0, 0.34) !important;
     box-shadow: 0 4px 10px rgba(153, 0, 0, 0.11) !important;
   }
-
 
   /* =========================================================
      6. USC SOPHOMORE SEASON SECTION TITLES
@@ -14349,7 +14413,7 @@ document.head.appendChild(style);
 }
 
 
-   /* =========================================================
+  /* =========================================================
      7. USC SOPHOMORE EVENT CARDS / RESULT BANDS / METRICS
      Scope: #jh-sophomore-season-page
   ========================================================= */
@@ -14400,39 +14464,70 @@ document.head.appendChild(style);
 
   #jh-sophomore-season-page .jh-ss-result-band {
     background:
+      radial-gradient(circle at 10% 0%, rgba(201, 137, 43, 0.16), transparent 30%),
       linear-gradient(
         180deg,
-        #ffffff 0%,
-        #fffdf8 100%
+        #fffaf2 0%,
+        #f8f4ec 100%
       ) !important;
     color: var(--jh-balance-ink) !important;
-    border-top: 1px solid rgba(201, 137, 43, 0.26) !important;
-    box-shadow: inset 0 3px 0 rgba(201, 137, 43, 0.10) !important;
+    border-top: 1px solid rgba(201, 137, 43, 0.28) !important;
+    box-shadow:
+      inset 0 3px 0 rgba(201, 137, 43, 0.16),
+      inset 0 -1px 0 rgba(12, 35, 64, 0.06) !important;
+    gap: 10px !important;
+    padding: 14px !important;
   }
 
   #jh-sophomore-season-page .jh-ss-band-cell {
-    border-right: 1px solid rgba(12, 35, 64, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+    border-right: none !important;
+    border-radius: 13px !important;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      ) !important;
+    border: 1px solid rgba(12, 35, 64, 0.105) !important;
+    box-shadow:
+      0 6px 14px rgba(12, 35, 64, 0.055),
+      inset 0 3px 0 rgba(201, 137, 43, 0.20) !important;
   }
 
-  #jh-sophomore-season-page .jh-ss-band-cell:last-child {
-    border-right: none !important;
+  #jh-sophomore-season-page .jh-ss-band-cell::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(153, 0, 0, 0.22) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
   }
 
   #jh-sophomore-season-page .jh-ss-band-label,
   #jh-sophomore-season-page .jh-ss-round-label {
     color: #7a4a14 !important;
-    font-weight: 650 !important;
+    font-weight: 700 !important;
   }
 
   #jh-sophomore-season-page .jh-ss-round-chip {
     background:
       linear-gradient(
         180deg,
-        #f8fafc 0%,
+        #fffdf8 0%,
         #ffffff 100%
       ) !important;
-    border: 1px solid rgba(12, 35, 64, 0.10) !important;
-    box-shadow: none !important;
+    border: 1px solid rgba(12, 35, 64, 0.11) !important;
+    box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.12) !important;
   }
 
   #jh-sophomore-season-page .jh-ss-round-score,
@@ -14487,8 +14582,8 @@ document.head.appendChild(style);
   #jh-sophomore-season-page .jh-ss-metric-label {
     color: var(--jh-balance-slate) !important;
   }
-
-   /* =========================================================
+ 
+  /* =========================================================
      8. MOBILE TUNING
   ========================================================= */
 
@@ -14499,18 +14594,42 @@ document.head.appendChild(style);
       background:
         linear-gradient(
           180deg,
-          #ffffff 0%,
-          #fffdf8 100%
+          #fffaf2 0%,
+          #f8f4ec 100%
         ) !important;
       border-top: 1px solid rgba(201, 137, 43, 0.24) !important;
-      box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.10) !important;
+      box-shadow:
+        inset 0 2px 0 rgba(201, 137, 43, 0.12),
+        inset 0 -1px 0 rgba(12, 35, 64, 0.05) !important;
+      gap: 8px !important;
+      padding: 10px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary,
+    #jh-summer-results-log-isolated .jh-srl-band-cell,
+    #jh-sophomore-season-page .jh-ss-band-cell {
+      border-radius: 10px !important;
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f8fafc 100%
+        ) !important;
+      border: 1px solid rgba(12, 35, 64, 0.10) !important;
+      box-shadow:
+        0 4px 10px rgba(12, 35, 64, 0.045),
+        inset 0 2px 0 rgba(201, 137, 43, 0.18) !important;
     }
 
     #jh-pga-table-shared .jtc-round-chip,
     #jh-summer-results-log-isolated .jh-srl-round-chip,
     #jh-sophomore-season-page .jh-ss-round-chip {
-      background: #f8fafc !important;
+      background: #fffdf8 !important;
       border-color: rgba(12, 35, 64, 0.10) !important;
+      box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.10) !important;
     }
 
     #jh-pga-table-shared .jtc-summary-label,
@@ -14519,6 +14638,7 @@ document.head.appendChild(style);
     #jh-sophomore-season-page .jh-ss-band-label,
     #jh-sophomore-season-page .jh-ss-round-label {
       color: #7a4a14 !important;
+      font-weight: 700 !important;
     }
 
     #jh-pga-table-shared .jtc-round-chip-value,
