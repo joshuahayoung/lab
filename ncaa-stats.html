@@ -1466,11 +1466,14 @@
   }
 
   #jh-pga-table-shared .jtc-date {
-    color: #64748b;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.2;
-    white-space: nowrap;
+    background: #ffc72c !important;
+    border: 1px solid rgba(153, 0, 0, 0.28) !important;
+    border-bottom: 3px solid var(--jh-balance-cardinal) !important;
+    color: var(--jh-balance-cardinal-dark) !important;
+    font-weight: 750 !important;
+    box-shadow:
+      0 4px 10px rgba(153, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
   }
 
   #jh-pga-table-shared .jtc-meta {
@@ -3713,13 +3716,14 @@
     }
 
     #jh-offseason-schedule .jhos-topbar {
-      background: #000000;
-      border-radius: 8px 8px 0 0;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    background: #ffc72c !important;
+    border: 1px solid rgba(153, 0, 0, 0.22) !important;
+    border-bottom: 4px solid var(--jh-balance-cardinal) !important;
+    box-shadow:
+      0 10px 22px rgba(12, 35, 64, 0.055),
+      0 3px 10px rgba(153, 0, 0, 0.055),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+  }
 
     #jh-offseason-schedule .jhos-topbar-inner {
       display: flex;
@@ -4287,41 +4291,31 @@
   }
 
   #jh-offseason-schedule .jhos-topbar::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
     background:
       linear-gradient(
         90deg,
-        var(--jhos-cardinal-dark) 0%,
-        var(--jhos-gold) 48%,
-        var(--jhos-cardinal) 100%
-      );
-    pointer-events: none;
+        var(--jh-balance-cardinal-dark) 0%,
+        var(--jh-balance-cardinal) 48%,
+        rgba(153, 0, 0, 0.38) 100%
+      ) !important;
   }
 
-  #jh-offseason-schedule .jhos-topbar-title {
-    color: #ffffff !important;
-    font-size: 15.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.85px !important;
-    line-height: 1.25 !important;
-    text-transform: uppercase;
+   #jh-offseason-schedule .jhos-topbar-title {
+    color: var(--jh-balance-cardinal-dark) !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
   }
 
   #jh-offseason-schedule .jhos-topbar-badge {
-    background: var(--jhos-gold) !important;
-    color: var(--jhos-cardinal-dark) !important;
-    border: 1px solid rgba(255, 255, 255, 0.38);
-    border-radius: 999px !important;
-    padding: 5px 10px !important;
-    font-size: 10.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.55px !important;
-    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.14);
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-balance-cardinal) 0%,
+        var(--jh-balance-cardinal-dark) 100%
+      ) !important;
+    color: #ffc72c !important;
+    border: 1px solid rgba(255, 199, 44, 0.46) !important;
+    box-shadow: 0 5px 12px rgba(153, 0, 0, 0.16) !important;
   }
 
   #jh-offseason-schedule .jhos-table-wrap {
@@ -5132,771 +5126,852 @@
 
 <section id="jh-summer-results-log-isolated" aria-label="2026 Summer Competition Results Log">
   <style>
-    #jh-summer-results-log-isolated,
-    #jh-summer-results-log-isolated * {
-      box-sizing: border-box;
+  #jh-summer-results-log-isolated,
+  #jh-summer-results-log-isolated * {
+    box-sizing: border-box;
+  }
+
+  #jh-summer-results-log-isolated {
+    --jh-srl-cardinal: #990000;
+    --jh-srl-cardinal-dark: #650000;
+    --jh-srl-cardinal-mid: #7a0000;
+    --jh-srl-gold: #ffc72c;
+    --jh-srl-gold-soft: #fff3c4;
+    --jh-srl-amber: #c9892b;
+    --jh-srl-amber-dark: #7a4a14;
+    --jh-srl-navy: #0c2340;
+    --jh-srl-ink: #172033;
+    --jh-srl-muted: #64748b;
+    --jh-srl-line: rgba(12, 35, 64, 0.10);
+    --jh-srl-soft: #f8fafc;
+    --jh-srl-ivory: #fffaf2;
+    --jh-srl-paper: #f8f4ec;
+
+    width: 100%;
+    max-width: none;
+    margin: 30px 0 46px;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--jh-srl-ink);
+    clear: both;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-wrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+     SECTION TITLE
+     Gold surface + Cardinal text, inspired by Sophomore Key Metrics
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-main-head {
+    margin: 0 0 18px;
+    padding: 21px 24px 20px;
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.34), transparent 34%),
+      linear-gradient(
+        135deg,
+        #ffc72c 0%,
+        #f7bc22 58%,
+        #e5a914 100%
+      );
+    border: 1px solid rgba(153, 0, 0, 0.22);
+    border-bottom: 4px solid var(--jh-srl-cardinal);
+    box-shadow:
+      0 12px 26px rgba(12, 35, 64, 0.070),
+      0 4px 12px rgba(153, 0, 0, 0.075),
+      inset 0 1px 0 rgba(255, 255, 255, 0.42);
+    color: var(--jh-srl-cardinal-dark);
+    overflow: hidden;
+    position: relative;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-main-head::after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 8px;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(153, 0, 0, 0.34) 48%,
+        transparent 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-kicker {
+    margin: 0 0 8px;
+    color: var(--jh-srl-cardinal-dark);
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+    opacity: 0.86;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-title {
+    margin: 0;
+    color: var(--jh-srl-cardinal-dark);
+    font-size: 23px;
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.35px;
+    text-transform: uppercase;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-subtitle {
+    margin: 8px 0 0;
+    max-width: 760px;
+    color: rgba(101, 0, 0, 0.78);
+    font-size: 12.5px;
+    line-height: 1.5;
+    font-weight: 550;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-list {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* =========================================================
+     EVENT CARD
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-card {
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(12, 35, 64, 0.11);
+    border-top: 4px solid rgba(201, 137, 43, 0.78);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow:
+      0 13px 30px rgba(12, 35, 64, 0.075),
+      0 3px 9px rgba(153, 0, 0, 0.018);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background:
+      linear-gradient(
+        90deg,
+        var(--jh-srl-amber) 0%,
+        rgba(153, 0, 0, 0.62) 48%,
+        var(--jh-srl-navy) 100%
+      );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 17px 19px 14px;
+    background:
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fffdf8 70%,
+        rgba(201, 137, 43, 0.08) 100%
+      );
+    border-bottom: 1px solid rgba(12, 35, 64, 0.08);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-card-left {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  /* =========================================================
+     STATUS
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 9px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 1px solid transparent;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-scheduled {
+    color: var(--jh-srl-cardinal-dark);
+    background: rgba(255, 199, 44, 0.22);
+    border-color: rgba(153, 0, 0, 0.18);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-scheduled .jh-srl-status-dot {
+    background: var(--jh-srl-cardinal);
+    box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.12);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-ongoing,
+  #jh-summer-results-log-isolated .jh-srl-status.is-final {
+    color: #ffc72c;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-srl-cardinal) 0%,
+        var(--jh-srl-cardinal-dark) 100%
+      );
+    border-color: rgba(255, 199, 44, 0.42);
+    box-shadow: 0 5px 12px rgba(153, 0, 0, 0.14);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-ongoing .jh-srl-status-dot {
+    background: #ffc72c;
+    animation: jhSrlGoldPulse 1.65s infinite ease-in-out;
+    box-shadow:
+      0 0 0 3px rgba(255, 199, 44, 0.22),
+      0 0 10px rgba(255, 199, 44, 0.24);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-status.is-final .jh-srl-status-dot {
+    background: #ffc72c;
+    box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.20);
+  }
+
+  @keyframes jhSrlGoldPulse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
     }
 
+    50% {
+      opacity: 0.52;
+      transform: scale(0.88);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-event-title {
+    margin: 0;
+    color: var(--jh-srl-navy);
+    font-size: 18px;
+    line-height: 1.24;
+    font-weight: 720;
+    letter-spacing: -0.15px;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-event-meta {
+    margin: 6px 0 0;
+    color: #475569;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  /* =========================================================
+     DATE BOX
+     Gold surface + Cardinal text
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-date-box {
+    flex: 0 0 auto;
+    min-width: 104px;
+    padding: 10px 11px;
+    border-radius: 14px;
+    background: #ffc72c;
+    border: 1px solid rgba(153, 0, 0, 0.26);
+    border-bottom: 3px solid var(--jh-srl-cardinal);
+    color: var(--jh-srl-cardinal-dark);
+    text-align: center;
+    box-shadow:
+      0 5px 12px rgba(153, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--jh-srl-cardinal-dark);
+    font-size: 8.5px;
+    font-weight: 750;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    line-height: 1;
+    opacity: 0.82;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-value {
+    display: block;
+    color: var(--jh-srl-cardinal-dark);
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  /* =========================================================
+     PREMIUM SCORECARD TRAY
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-result-band {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px 90px 92px;
+    gap: 10px;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(201, 137, 43, 0.16), transparent 30%),
+      linear-gradient(
+        180deg,
+        #fffaf2 0%,
+        #f8f4ec 100%
+      );
+    color: var(--jh-srl-ink);
+    padding: 14px;
+    border-top: 1px solid rgba(201, 137, 43, 0.28);
+    box-shadow:
+      inset 0 3px 0 rgba(201, 137, 43, 0.16),
+      inset 0 -1px 0 rgba(12, 35, 64, 0.06);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-cell {
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 8px 9px;
+    text-align: center;
+    border-right: none;
+    border-radius: 13px;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      );
+    border: 1px solid rgba(12, 35, 64, 0.105);
+    box-shadow:
+      0 6px 14px rgba(12, 35, 64, 0.055),
+      inset 0 3px 0 rgba(201, 137, 43, 0.20);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-cell::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 0;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(153, 0, 0, 0.22) 50%,
+        transparent 100%
+      );
+    pointer-events: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-cell:last-child {
+    border-right: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-band-label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--jh-srl-amber-dark);
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-rounds {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-round-chip {
+    min-width: 0;
+    flex: 1 1 0;
+    max-width: 74px;
+    padding: 6px 6px 5px;
+    border-radius: 8px;
+    background:
+      linear-gradient(
+        180deg,
+        #fffdf8 0%,
+        #ffffff 100%
+      );
+    border: 1px solid rgba(12, 35, 64, 0.11);
+    box-shadow: inset 0 2px 0 rgba(201, 137, 43, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-round-label {
+    color: var(--jh-srl-amber-dark);
+    font-size: 8px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.45px;
+    text-transform: uppercase;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-round-score {
+    color: var(--jh-srl-navy);
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 750;
+    white-space: nowrap;
+    text-shadow: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-total-value,
+  #jh-summer-results-log-isolated .jh-srl-par-value,
+  #jh-summer-results-log-isolated .jh-srl-finish-value {
+    color: var(--jh-srl-navy);
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 780;
+    white-space: nowrap;
+    text-shadow: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-score-under {
+    color: var(--jh-srl-cardinal) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-score-even {
+    color: var(--jh-srl-navy) !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-score-over {
+    color: #475569 !important;
+  }
+
+  /* =========================================================
+     METRICS ROW
+  ========================================================= */
+
+  #jh-summer-results-log-isolated .jh-srl-metrics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px 16px 12px;
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fafc 100%
+      );
+    border-top: 1px solid rgba(12, 35, 64, 0.08);
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 28px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(248, 250, 252, 0.98);
+    border: 1px solid rgba(12, 35, 64, 0.10);
+    color: var(--jh-srl-ink);
+    font-size: 11px;
+    line-height: 1.1;
+    font-weight: 600;
+    box-shadow: none;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-metric-label {
+    color: var(--jh-srl-muted);
+    font-size: 9.5px;
+    font-weight: 650;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-results-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    color: #ffc72c;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jh-srl-cardinal) 0%,
+        var(--jh-srl-cardinal-dark) 100%
+      );
+    border: 1px solid rgba(255, 199, 44, 0.40);
+    box-shadow: 0 5px 12px rgba(153, 0, 0, 0.14);
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.22px;
+    text-transform: uppercase;
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-results-link:hover,
+  #jh-summer-results-log-isolated .jh-srl-results-link:focus {
+    color: var(--jh-srl-cardinal-dark);
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffaf0 100%
+      );
+    border-color: rgba(153, 0, 0, 0.28);
+    box-shadow: 0 5px 12px rgba(12, 35, 64, 0.10);
+    transform: translateY(-1px);
+  }
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+
+  @media (max-width: 768px) {
     #jh-summer-results-log-isolated {
-      --jh-srl-cardinal: #990000;
-      --jh-srl-cardinal-dark: #650000;
-      --jh-srl-cardinal-mid: #7a0000;
-      --jh-srl-gold: #ffcc00;
-      --jh-srl-gold-muted: #d6a642;
-      --jh-srl-navy: #0c2340;
-      --jh-srl-ink: #172033;
-      --jh-srl-muted: #64748b;
-      --jh-srl-line: #e2e8f0;
-      --jh-srl-soft: #f8fafc;
-
-      width: 100%;
-      max-width: none;
-      margin: 30px 0 46px;
-      padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: var(--jh-srl-ink);
-      clear: both;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-wrap {
-      width: 100%;
-      margin: 0 auto;
+      margin: 24px 0 42px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-main-head {
-      margin: 0 0 18px;
-      padding: 22px 24px;
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 12% 0%, rgba(255, 204, 0, 0.20), transparent 34%),
-        radial-gradient(circle at 92% 8%, rgba(255, 204, 0, 0.08), transparent 32%),
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal-dark) 0%,
-          var(--jh-srl-cardinal) 52%,
-          var(--jh-srl-cardinal-mid) 76%,
-          var(--jh-srl-navy) 100%
-        );
-      border: 1px solid rgba(255, 204, 0, 0.26);
+      margin-bottom: 14px;
+      padding: 18px 18px;
+      border-radius: 17px;
       box-shadow:
-        0 18px 42px rgba(153, 0, 0, 0.18),
-        0 6px 16px rgba(12, 35, 64, 0.10);
-      color: #ffffff;
-      overflow: hidden;
-      position: relative;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-main-head::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 4px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--jh-srl-cardinal-dark) 0%,
-          var(--jh-srl-gold) 48%,
-          var(--jh-srl-cardinal) 100%
-        );
+        0 10px 22px rgba(12, 35, 64, 0.060),
+        0 3px 10px rgba(153, 0, 0, 0.060),
+        inset 0 1px 0 rgba(255, 255, 255, 0.36);
     }
 
     #jh-summer-results-log-isolated .jh-srl-kicker {
-      margin: 0 0 8px;
-      color: var(--jh-srl-gold);
-      font-size: 11px;
-      line-height: 1.2;
-      font-weight: 650;
-      letter-spacing: 1.15px;
-      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.95px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-title {
-      margin: 0;
-      color: #ffffff;
-      font-size: 23px;
+      font-size: 19px;
       line-height: 1.18;
-      font-weight: 720;
-      letter-spacing: -0.35px;
-      text-transform: uppercase;
     }
 
     #jh-summer-results-log-isolated .jh-srl-subtitle {
-      margin: 8px 0 0;
-      max-width: 760px;
-      color: rgba(255, 255, 255, 0.80);
-      font-size: 12.5px;
-      line-height: 1.5;
-      font-weight: 500;
+      font-size: 11.5px;
+      line-height: 1.42;
     }
 
     #jh-summer-results-log-isolated .jh-srl-list {
-      display: grid;
-      gap: 12px;
-      width: 100%;
+      gap: 11px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-card {
-      width: 100%;
-      position: relative;
-      border-radius: 20px;
-      border: 1px solid rgba(153, 0, 0, 0.20);
-      border-top: 4px solid var(--jh-srl-cardinal);
-      background: #ffffff;
-      overflow: hidden;
+      border-radius: 16px;
+      border-top-width: 3px;
       box-shadow:
-        0 14px 32px rgba(12, 35, 64, 0.08),
-        0 4px 12px rgba(153, 0, 0, 0.055);
+        0 11px 24px rgba(12, 35, 64, 0.08),
+        0 3px 9px rgba(153, 0, 0, 0.035);
     }
 
     #jh-summer-results-log-isolated .jh-srl-card::before {
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--jh-srl-cardinal-dark) 0%,
-          var(--jh-srl-cardinal) 42%,
-          var(--jh-srl-gold) 70%,
-          var(--jh-srl-cardinal-dark) 100%
-        );
-      pointer-events: none;
-      z-index: 2;
+      top: -3px;
+      height: 3px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 17px 19px 14px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(153, 0, 0, 0.070) 0%,
-          #ffffff 48%,
-          rgba(255, 204, 0, 0.16) 100%
-        );
-      border-bottom: 1px solid rgba(153, 0, 0, 0.14);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-card-left {
-      min-width: 0;
-      flex: 1 1 auto;
+      padding: 14px 13px 12px;
+      gap: 10px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin: 0 0 9px;
-      padding: 5px 9px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.55px;
-      text-transform: uppercase;
-      line-height: 1;
-      border: 1px solid transparent;
+      margin-bottom: 8px;
+      padding: 4px 8px;
+      font-size: 8.8px;
+      letter-spacing: 0.45px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-scheduled {
-      color: #6f4f00;
-      background: rgba(255, 204, 0, 0.18);
-      border-color: rgba(255, 204, 0, 0.36);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-scheduled .jh-srl-status-dot {
-      background: var(--jh-srl-gold);
-      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.20);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-ongoing,
-    #jh-summer-results-log-isolated .jh-srl-status.is-final {
-      color: var(--jh-srl-gold);
-      background:
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal) 0%,
-          var(--jh-srl-cardinal-dark) 100%
-        );
-      border-color: rgba(255, 204, 0, 0.42);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-ongoing .jh-srl-status-dot {
-      background: var(--jh-srl-gold);
-      animation: jhSrlGoldPulse 1.65s infinite ease-in-out;
-      box-shadow:
-        0 0 0 3px rgba(255, 204, 0, 0.22),
-        0 0 10px rgba(255, 204, 0, 0.24);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-status.is-final .jh-srl-status-dot {
-      background: var(--jh-srl-gold);
-      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.20);
-    }
-
-    @keyframes jhSrlGoldPulse {
-      0% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.52;
-        transform: scale(0.88);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+      width: 6px;
+      height: 6px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-event-title {
-      margin: 0;
-      color: var(--jh-srl-navy);
-      font-size: 18px;
-      line-height: 1.24;
-      font-weight: 720;
-      letter-spacing: -0.15px;
+      font-size: 15px;
+      line-height: 1.18;
+      font-weight: 700;
     }
 
     #jh-summer-results-log-isolated .jh-srl-event-meta {
-      margin: 6px 0 0;
-      color: #475569;
-      font-size: 12px;
-      line-height: 1.45;
-      font-weight: 500;
+      margin-top: 5px;
+      font-size: 10.5px;
+      line-height: 1.32;
     }
 
     #jh-summer-results-log-isolated .jh-srl-date-box {
-      flex: 0 0 auto;
-      min-width: 104px;
-      padding: 10px 11px;
-      border-radius: 14px;
-      background:
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal) 0%,
-          var(--jh-srl-cardinal-dark) 100%
-        );
-      border: 1px solid rgba(255, 204, 0, 0.34);
-      color: #ffffff;
-      text-align: center;
+      min-width: 88px;
+      padding: 8px 8px;
+      border-radius: 12px;
       box-shadow:
-        0 6px 14px rgba(153, 0, 0, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        0 4px 10px rgba(153, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.34);
     }
 
     #jh-summer-results-log-isolated .jh-srl-date-label {
-      display: block;
+      font-size: 7.6px;
       margin-bottom: 4px;
-      color: var(--jh-srl-gold);
-      font-size: 8.5px;
-      font-weight: 650;
-      letter-spacing: 0.75px;
-      text-transform: uppercase;
-      line-height: 1;
     }
 
     #jh-summer-results-log-isolated .jh-srl-date-value {
-      display: block;
-      color: #ffffff;
-      font-size: 12px;
-      line-height: 1.2;
-      font-weight: 650;
+      font-size: 10.4px;
+      line-height: 1.18;
     }
 
     #jh-summer-results-log-isolated .jh-srl-result-band {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 120px 90px 92px;
-      gap: 0;
-      background:
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal-dark) 0%,
-          var(--jh-srl-cardinal) 48%,
-          var(--jh-srl-cardinal-mid) 72%,
-          var(--jh-srl-navy) 100%
-        );
-      color: #ffffff;
-      padding: 14px 16px;
-      border-top: 1px solid rgba(255, 204, 0, 0.28);
+      grid-template-columns: minmax(0, 1fr) 78px 62px 64px;
+      gap: 8px;
+      padding: 10px;
+      border-top: 1px solid rgba(201, 137, 43, 0.24);
+      box-shadow:
+        inset 0 2px 0 rgba(201, 137, 43, 0.12),
+        inset 0 -1px 0 rgba(12, 35, 64, 0.05);
     }
 
     #jh-summer-results-log-isolated .jh-srl-band-cell {
-      min-width: 0;
-      padding: 4px 8px;
-      text-align: center;
-      border-right: 1px solid rgba(255, 204, 0, 0.16);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-band-cell:last-child {
-      border-right: none;
+      padding: 6px 5px;
+      border-radius: 10px;
+      box-shadow:
+        0 4px 10px rgba(12, 35, 64, 0.045),
+        inset 0 2px 0 rgba(201, 137, 43, 0.18);
     }
 
     #jh-summer-results-log-isolated .jh-srl-band-label {
-      display: block;
-      margin-bottom: 7px;
-      color: rgba(255, 204, 0, 0.78);
-      font-size: 9px;
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: 0.55px;
-      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-size: 7.2px;
+      letter-spacing: 0.42px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-rounds {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: nowrap;
+      gap: 3px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-round-chip {
-      min-width: 0;
-      flex: 1 1 0;
-      max-width: 74px;
-      padding: 6px 6px 5px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.070);
-      border: 1px solid rgba(255, 204, 0, 0.20);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
+      max-width: none;
+      padding: 5px 3px 4px;
+      border-radius: 6px;
+      gap: 3px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-round-label {
-      color: rgba(255, 204, 0, 0.78);
-      font-size: 8px;
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: 0.45px;
-      text-transform: uppercase;
+      font-size: 6.5px;
+      letter-spacing: 0.35px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-round-score {
-      color: #ffffff;
-      font-size: 17px;
-      line-height: 1;
-      font-weight: 700;
-      white-space: nowrap;
+      font-size: 12.5px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-total-value,
     #jh-summer-results-log-isolated .jh-srl-par-value,
     #jh-summer-results-log-isolated .jh-srl-finish-value {
-      color: #ffffff;
-      font-size: 22px;
-      line-height: 1;
-      font-weight: 750;
-      white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-score-under {
-      color: var(--jh-srl-gold) !important;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-score-even {
-      color: #ffffff !important;
-    }
-
-    #jh-summer-results-log-isolated .jh-srl-score-over {
-      color: #bfdbfe !important;
+      font-size: 15px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-metrics {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 10px 16px 12px;
-      background:
-        linear-gradient(
-          135deg,
-          rgba(153, 0, 0, 0.045) 0%,
-          #ffffff 50%,
-          rgba(255, 204, 0, 0.13) 100%
-        );
-      border-top: 1px solid rgba(153, 0, 0, 0.13);
+      padding: 8px 10px 10px;
+      gap: 6px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-metric {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      min-height: 28px;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(153, 0, 0, 0.070);
-      border: 1px solid rgba(153, 0, 0, 0.15);
-      color: var(--jh-srl-navy);
-      font-size: 11px;
-      line-height: 1.1;
-      font-weight: 600;
+      min-height: 26px;
+      padding: 5px 8px;
+      font-size: 10px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-metric-label {
-      color: var(--jh-srl-cardinal-dark);
-      font-size: 9.5px;
-      font-weight: 650;
-      letter-spacing: 0.28px;
-      text-transform: uppercase;
+      font-size: 8px;
     }
 
     #jh-summer-results-log-isolated .jh-srl-results-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 28px;
-      padding: 5px 11px;
-      border-radius: 999px;
-      color: var(--jh-srl-gold);
-      background:
-        linear-gradient(
-          135deg,
-          var(--jh-srl-cardinal) 0%,
-          var(--jh-srl-cardinal-dark) 100%
-        );
-      border: 1px solid rgba(255, 204, 0, 0.40);
-      box-shadow: 0 5px 12px rgba(153, 0, 0, 0.14);
-      text-decoration: none;
-      font-size: 10px;
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: 0.22px;
-      text-transform: uppercase;
-      transition:
-        background-color 0.18s ease,
-        color 0.18s ease,
-        border-color 0.18s ease,
-        transform 0.18s ease;
+      min-height: 26px;
+      padding: 5px 10px;
+      font-size: 9px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-summer-results-log-isolated {
+      margin: 22px 0 38px;
     }
 
-    #jh-summer-results-log-isolated .jh-srl-results-link:hover,
-    #jh-summer-results-log-isolated .jh-srl-results-link:focus {
-      color: var(--jh-srl-cardinal-dark);
-      background:
-        linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #fffaf0 100%
-        );
-      border-color: rgba(153, 0, 0, 0.28);
-      box-shadow: 0 5px 12px rgba(12, 35, 64, 0.10);
-      transform: translateY(-1px);
+    #jh-summer-results-log-isolated .jh-srl-main-head {
+      padding: 16px 15px;
+      border-radius: 16px;
     }
 
-    @media (max-width: 768px) {
-      #jh-summer-results-log-isolated {
-        margin: 24px 0 42px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-main-head {
-        margin-bottom: 14px;
-        padding: 18px 18px;
-        border-radius: 17px;
-        box-shadow:
-          0 13px 28px rgba(153, 0, 0, 0.16),
-          0 4px 12px rgba(12, 35, 64, 0.08);
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-kicker {
-        font-size: 10px;
-        letter-spacing: 0.95px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-title {
-        font-size: 19px;
-        line-height: 1.18;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-subtitle {
-        font-size: 11.5px;
-        line-height: 1.42;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-list {
-        gap: 11px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-card {
-        border-radius: 16px;
-        border-top-width: 3px;
-        box-shadow:
-          0 11px 24px rgba(12, 35, 64, 0.08),
-          0 3px 9px rgba(153, 0, 0, 0.045);
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-card::before {
-        top: -3px;
-        height: 3px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-card-head {
-        padding: 14px 13px 12px;
-        gap: 10px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-status {
-        margin-bottom: 8px;
-        padding: 4px 8px;
-        font-size: 8.8px;
-        letter-spacing: 0.45px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-status-dot {
-        width: 6px;
-        height: 6px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-title {
-        font-size: 15px;
-        line-height: 1.18;
-        font-weight: 700;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-meta {
-        margin-top: 5px;
-        font-size: 10.5px;
-        line-height: 1.32;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-box {
-        min-width: 88px;
-        padding: 8px 8px;
-        border-radius: 12px;
-        box-shadow:
-          0 4px 10px rgba(153, 0, 0, 0.15),
-          inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-label {
-        font-size: 7.6px;
-        margin-bottom: 4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-value {
-        font-size: 10.4px;
-        line-height: 1.18;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-result-band {
-        grid-template-columns: minmax(0, 1fr) 78px 62px 64px;
-        padding: 10px 8px;
-        border-top: 1px solid rgba(255, 204, 0, 0.24);
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-band-cell {
-        padding: 3px 4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-band-label {
-        margin-bottom: 5px;
-        font-size: 7.2px;
-        letter-spacing: 0.42px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-rounds {
-        gap: 3px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-chip {
-        max-width: none;
-        padding: 5px 3px 4px;
-        border-radius: 6px;
-        gap: 3px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-label {
-        font-size: 6.5px;
-        letter-spacing: 0.35px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-score {
-        font-size: 12.5px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-total-value,
-      #jh-summer-results-log-isolated .jh-srl-par-value,
-      #jh-summer-results-log-isolated .jh-srl-finish-value {
-        font-size: 15px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metrics {
-        padding: 8px 10px 10px;
-        gap: 6px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metric {
-        min-height: 26px;
-        padding: 5px 8px;
-        font-size: 10px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metric-label {
-        font-size: 8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-results-link {
-        min-height: 26px;
-        padding: 5px 10px;
-        font-size: 9px;
-      }
+    #jh-summer-results-log-isolated .jh-srl-title {
+      font-size: 17.5px;
     }
 
-    @media (max-width: 480px) {
-      #jh-summer-results-log-isolated {
-        margin: 22px 0 38px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-main-head {
-        padding: 16px 15px;
-        border-radius: 16px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-title {
-        font-size: 17.5px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-subtitle {
-        font-size: 10.8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-card-head {
-        padding: 13px 11px 11px;
-        align-items: flex-start;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-title {
-        font-size: 14.2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-meta {
-        font-size: 9.8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-box {
-        min-width: 76px;
-        padding: 7px 6px;
-        border-radius: 10px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-label {
-        font-size: 7px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-value {
-        font-size: 9.4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-result-band {
-        grid-template-columns: minmax(0, 1fr) 58px 50px 54px;
-        padding: 9px 6px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-band-cell {
-        padding: 3px 3px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-band-label {
-        font-size: 6.5px;
-        margin-bottom: 4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-rounds {
-        gap: 2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-chip {
-        padding: 4px 2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-label {
-        font-size: 5.9px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-score {
-        font-size: 11.2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-total-value,
-      #jh-summer-results-log-isolated .jh-srl-par-value,
-      #jh-summer-results-log-isolated .jh-srl-finish-value {
-        font-size: 13.2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metrics {
-        padding: 8px 9px 9px;
-        justify-content: flex-start;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metric,
-      #jh-summer-results-log-isolated .jh-srl-results-link {
-        min-height: 25px;
-        font-size: 8.8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-metric-label {
-        font-size: 7.4px;
-      }
+    #jh-summer-results-log-isolated .jh-srl-subtitle {
+      font-size: 10.8px;
     }
 
-    @media (max-width: 390px) {
-      #jh-summer-results-log-isolated .jh-srl-card-head {
-        gap: 8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-title {
-        font-size: 13.4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-event-meta {
-        font-size: 9.2px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-box {
-        min-width: 70px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-date-value {
-        font-size: 8.8px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-result-band {
-        grid-template-columns: minmax(0, 1fr) 54px 46px 50px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-round-score {
-        font-size: 10.4px;
-      }
-
-      #jh-summer-results-log-isolated .jh-srl-total-value,
-      #jh-summer-results-log-isolated .jh-srl-par-value,
-      #jh-summer-results-log-isolated .jh-srl-finish-value {
-        font-size: 12.4px;
-      }
+    #jh-summer-results-log-isolated .jh-srl-card-head {
+      padding: 13px 11px 11px;
+      align-items: flex-start;
     }
-  </style>
+
+    #jh-summer-results-log-isolated .jh-srl-event-title {
+      font-size: 14.2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event-meta {
+      font-size: 9.8px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date-box {
+      min-width: 76px;
+      padding: 7px 6px;
+      border-radius: 10px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date-label {
+      font-size: 7px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date-value {
+      font-size: 9.4px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-result-band {
+      grid-template-columns: minmax(0, 1fr) 58px 50px 54px;
+      padding: 9px 6px;
+      gap: 6px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-band-cell {
+      padding: 5px 3px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-band-label {
+      font-size: 6.5px;
+      margin-bottom: 4px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-rounds {
+      gap: 2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-chip {
+      padding: 4px 2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-label {
+      font-size: 5.9px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-score {
+      font-size: 11.2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-total-value,
+    #jh-summer-results-log-isolated .jh-srl-par-value,
+    #jh-summer-results-log-isolated .jh-srl-finish-value {
+      font-size: 13.2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-metrics {
+      padding: 8px 9px 9px;
+      justify-content: flex-start;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-metric,
+    #jh-summer-results-log-isolated .jh-srl-results-link {
+      min-height: 25px;
+      font-size: 8.8px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-metric-label {
+      font-size: 7.4px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-summer-results-log-isolated .jh-srl-card-head {
+      gap: 8px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event-title {
+      font-size: 13.4px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-event-meta {
+      font-size: 9.2px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date-box {
+      min-width: 70px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-date-value {
+      font-size: 8.8px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-result-band {
+      grid-template-columns: minmax(0, 1fr) 54px 46px 50px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-score {
+      font-size: 10.4px;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-total-value,
+    #jh-summer-results-log-isolated .jh-srl-par-value,
+    #jh-summer-results-log-isolated .jh-srl-finish-value {
+      font-size: 12.4px;
+    }
+  }
+</style>
 
   <div class="jh-srl-wrap">
     <section class="jh-srl-main-head">
