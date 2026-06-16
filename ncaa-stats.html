@@ -14272,57 +14272,38 @@ document.head.appendChild(style);
   /* =========================================================
      5. SUMMER RESULTS LOG
      Scope: #jh-summer-results-log-isolated
+     Final: Solid USC Gold header + clear text hierarchy + fixed Date badge
   ========================================================= */
 
-   #jh-summer-results-log-isolated .jh-srl-main-head {
+  #jh-summer-results-log-isolated .jh-srl-main-head {
     position: relative !important;
     overflow: hidden !important;
     padding: 21px 24px 20px !important;
     border-radius: 20px !important;
-    background:
-      radial-gradient(
-        circle at 12% 0%,
-        rgba(255, 255, 255, 0.34),
-        transparent 34%
-      ),
-      linear-gradient(
-        135deg,
-        #ffc72c 0%,
-        #f7bc22 58%,
-        #e5a914 100%
-      ) !important;
+    background: #ffc72c !important;
     border: 1px solid rgba(153, 0, 0, 0.22) !important;
     border-bottom: 4px solid var(--jh-balance-cardinal) !important;
     box-shadow:
       0 10px 22px rgba(12, 35, 64, 0.055),
       0 3px 10px rgba(153, 0, 0, 0.055),
-      inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
     color: var(--jh-balance-cardinal-dark) !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-main-head::after {
-    content: "" !important;
-    position: absolute !important;
-    left: 22px !important;
-    right: 22px !important;
-    bottom: 8px !important;
-    height: 1px !important;
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(153, 0, 0, 0.34) 48%,
-        transparent 100%
-      ) !important;
-    pointer-events: none !important;
+    display: none !important;
+    content: none !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-kicker {
     position: relative !important;
     z-index: 1 !important;
-    color: var(--jh-balance-cardinal-dark) !important;
+    color: #8b5a15 !important;
+    font-size: 11px !important;
     font-weight: 750 !important;
-    opacity: 0.86 !important;
+    letter-spacing: 1.1px !important;
+    text-transform: uppercase !important;
+    opacity: 0.95 !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-title {
@@ -14336,8 +14317,8 @@ document.head.appendChild(style);
   #jh-summer-results-log-isolated .jh-srl-subtitle {
     position: relative !important;
     z-index: 1 !important;
-    color: rgba(101, 0, 0, 0.78) !important;
-    font-weight: 550 !important;
+    color: rgba(101, 0, 0, 0.72) !important;
+    font-weight: 540 !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-card {
@@ -14370,18 +14351,25 @@ document.head.appendChild(style);
   }
 
   #jh-summer-results-log-isolated .jh-srl-date-box {
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-balance-navy) 0%,
-        var(--jh-balance-navy-2) 100%
-      ) !important;
-    border-color: rgba(201, 137, 43, 0.34) !important;
-    box-shadow: 0 5px 12px rgba(12, 35, 64, 0.14) !important;
+    background: #ffc72c !important;
+    border: 1px solid rgba(153, 0, 0, 0.26) !important;
+    border-bottom: 3px solid var(--jh-balance-cardinal) !important;
+    color: var(--jh-balance-cardinal-dark) !important;
+    box-shadow:
+      0 5px 12px rgba(153, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-date-label {
-    color: rgba(255, 204, 0, 0.82) !important;
+    color: #8b5a15 !important;
+    opacity: 1 !important;
+    font-weight: 750 !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-value {
+    color: var(--jh-balance-cardinal-dark) !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-result-band {
