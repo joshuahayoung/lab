@@ -14325,42 +14325,70 @@ document.head.appendChild(style);
      Scope: #jh-summer-results-log-isolated
   ========================================================= */
 
-  #jh-summer-results-log-isolated .jh-srl-main-head {
+   #jh-summer-results-log-isolated .jh-srl-main-head {
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 21px 24px 20px !important;
+    border-radius: 20px !important;
     background:
+      radial-gradient(
+        circle at 12% 0%,
+        rgba(255, 255, 255, 0.34),
+        transparent 34%
+      ),
       linear-gradient(
         135deg,
-        #ffffff 0%,
-        var(--jh-balance-ivory) 62%,
-        rgba(201, 137, 43, 0.10) 100%
+        #ffc72c 0%,
+        #f7bc22 58%,
+        #e5a914 100%
       ) !important;
-    border: 1px solid var(--jh-balance-line) !important;
+    border: 1px solid rgba(153, 0, 0, 0.22) !important;
+    border-bottom: 4px solid var(--jh-balance-cardinal) !important;
     box-shadow:
-      0 8px 22px rgba(12, 35, 64, 0.055),
-      0 2px 8px rgba(153, 0, 0, 0.014) !important;
-    color: var(--jh-balance-ink) !important;
+      0 10px 22px rgba(12, 35, 64, 0.055),
+      0 3px 10px rgba(153, 0, 0, 0.055),
+      inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+    color: var(--jh-balance-cardinal-dark) !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-main-head::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 22px !important;
+    right: 22px !important;
+    bottom: 8px !important;
+    height: 1px !important;
     background:
       linear-gradient(
         90deg,
-        var(--jh-balance-amber) 0%,
-        rgba(153, 0, 0, 0.56) 48%,
-        var(--jh-balance-navy) 100%
+        transparent 0%,
+        rgba(153, 0, 0, 0.34) 48%,
+        transparent 100%
       ) !important;
-    height: 3px !important;
+    pointer-events: none !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-kicker {
-    color: #7a4a14 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    color: var(--jh-balance-cardinal-dark) !important;
+    font-weight: 750 !important;
+    opacity: 0.86 !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-title {
-    color: var(--jh-balance-navy) !important;
+    position: relative !important;
+    z-index: 1 !important;
+    color: var(--jh-balance-cardinal-dark) !important;
+    font-weight: 800 !important;
+    text-shadow: none !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-subtitle {
-    color: var(--jh-balance-slate) !important;
+    position: relative !important;
+    z-index: 1 !important;
+    color: rgba(101, 0, 0, 0.78) !important;
+    font-weight: 550 !important;
   }
 
   #jh-summer-results-log-isolated .jh-srl-card {
