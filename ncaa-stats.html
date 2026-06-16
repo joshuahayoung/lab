@@ -1530,109 +1530,104 @@
     justify-content: center;
   }
 
-  #jh-pga-table-shared .jtc-main-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #0c2340;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 0.55px;
-    text-transform: uppercase;
-    border: 1.5px solid #0c2340;
-    padding: 7px 8px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    background: #ffffff;
-    width: 100%;
-    max-width: 134px;
-    min-height: 42px;
+    #jh-pga-table-shared .jtc-main-link {
+    color: var(--jtc-live-gold-soft) !important;
+    background:
+      linear-gradient(
+        135deg,
+        var(--jtc-live-cardinal) 0%,
+        var(--jtc-live-cardinal-dark) 100%
+      ) !important;
+    border: 1px solid rgba(255, 199, 44, 0.46) !important;
+    box-shadow:
+      0 6px 14px rgba(153, 0, 0, 0.16),
+      0 2px 6px rgba(12, 35, 64, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    transition:
+      transform 0.18s ease,
+      background 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease,
+      color 0.18s ease !important;
   }
 
-  #jh-pga-table-shared .jtc-main-link-content {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 12px minmax(0, 1fr) 14px;
-    grid-template-rows: auto auto;
-    align-items: center;
-    justify-items: center;
-    column-gap: 5px;
-    row-gap: 2px;
+  #jh-pga-table-shared .jtc-main-link:hover,
+  #jh-pga-table-shared .jtc-main-link:focus {
+    color: #650000 !important;
+    background:
+      radial-gradient(
+        circle at 20% 0%,
+        rgba(255, 255, 255, 0.42) 0%,
+        transparent 34%
+      ),
+      linear-gradient(
+        135deg,
+        #ffcc00 0%,
+        #ffc72c 46%,
+        #f15a22 100%
+      ) !important;
+    border-color: rgba(101, 0, 0, 0.72) !important;
+    box-shadow:
+      0 10px 22px rgba(241, 90, 34, 0.26),
+      0 3px 10px rgba(101, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+    transform: translateY(-1px) !important;
   }
 
-  #jh-pga-table-shared .jtc-main-link-top-row,
-  #jh-pga-table-shared .jtc-main-link-bottom-row {
-    display: contents;
+  #jh-pga-table-shared .jtc-main-link-live,
+  #jh-pga-table-shared .jtc-main-link-board {
+    color: inherit !important;
+    text-shadow: none !important;
   }
 
-  #jh-pga-table-shared .jtc-main-link-dot {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    display: inline-block;
-    justify-self: center;
-    align-self: center;
-    flex-shrink: 0;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.upnext {
-    background-color: #94a3b8;
+  #jh-pga-table-shared .jtc-main-link-dot.upnext,
+  #jh-pga-table-shared .jtc-main-link-dot.final {
+    background-color: var(--jtc-live-gold) !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 199, 44, 0.22),
+      0 0 8px rgba(255, 199, 44, 0.18) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot.ongoing {
-    background-color: #22c55e;
-    animation: jtc-link-pulse-green 1.5s infinite;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.final {
-    background-color: #e74c3c;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.cancelled {
-    background-color: #7f1d1d;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-live {
-    grid-column: 2;
-    grid-row: 1;
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 1;
-    white-space: nowrap;
-    min-width: 0;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-board {
-    grid-column: 2;
-    grid-row: 2;
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 1;
-    white-space: nowrap;
-    min-width: 0;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-arrow {
-    grid-column: 3;
-    grid-row: 1 / 3;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
-    align-self: center;
-    flex: 0 0 auto;
-    line-height: 1;
+    background-color: var(--jtc-live-gold) !important;
+    animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 199, 44, 0.22),
+      0 0 8px rgba(255, 199, 44, 0.18) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-arrow svg {
-    display: block;
-    width: 12px;
-    height: 12px;
+    stroke: var(--jtc-live-gold-soft) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-live,
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-board,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-live,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-board {
+    color: #650000 !important;
+    text-shadow: none !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.upnext,
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.final,
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.ongoing,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.upnext,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.final,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing {
+    background-color: #650000 !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.58),
+      0 0 0 4px rgba(101, 0, 0, 0.20),
+      0 3px 8px rgba(101, 0, 0, 0.22) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-arrow svg,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-arrow svg {
+    stroke: #650000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   @keyframes jtc-link-pulse-green {
