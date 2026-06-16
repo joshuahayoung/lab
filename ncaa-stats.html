@@ -2761,39 +2761,27 @@
   }
 
   #jh-pga-table-shared .jtc-header-row::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background:
-      linear-gradient(
-        180deg,
-        #650000 0%,
-        #990000 52%,
-        #ffcc00 100%
-      );
-    pointer-events: none;
-  }
+  display: none !important;
+  content: none !important;
+}
 
-  #jh-pga-table-shared .jtc-header-row::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    right: 0;
-    top: 0;
-    height: 1px;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(255, 204, 0, 0.42) 0%,
-        rgba(153, 0, 0, 0.08) 48%,
-        rgba(255, 204, 0, 0.20) 100%
-      );
-    pointer-events: none;
-  }
-
+ #jh-pga-table-shared .jtc-header-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 204, 0, 0.42) 0%,
+      rgba(153, 0, 0, 0.08) 48%,
+      rgba(255, 204, 0, 0.20) 100%
+    );
+  pointer-events: none;
+}
+ 
   #jh-pga-table-shared .jtc-header-row h3 {
     position: relative;
     z-index: 1;
