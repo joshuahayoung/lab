@@ -1290,17 +1290,28 @@
     width: 100%;
   }
 
-  #jh-pga-table-shared .jtc-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 15px;
-    flex-wrap: wrap;
-    border-left: 5px solid #1e3a8a;
-  }
+ #jh-pga-table-shared .jtc-header-row {
+  position: relative;
+  overflow: hidden;
+  align-items: center !important;
+  padding: 14px 16px 13px 18px !important;
+  margin-bottom: 16px !important;
+  border-left: none !important;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(153, 0, 0, 0.16) 0%, transparent 34%),
+    linear-gradient(
+      135deg,
+      rgba(153, 0, 0, 0.13) 0%,
+      rgba(255, 255, 255, 0.96) 45%,
+      rgba(255, 204, 0, 0.30) 100%
+    ) !important;
+  border: 1px solid rgba(153, 0, 0, 0.18);
+  box-shadow:
+    0 8px 22px rgba(12, 35, 64, 0.055),
+    0 2px 8px rgba(153, 0, 0, 0.035);
+}
+
 
   #jh-pga-table-shared .jtc-header-row.upnext {
     border-left-color: #1e3a8a;
@@ -2879,7 +2890,8 @@
 }
 
 #jh-pga-table-shared .jtc-header-row::after {
-  left: 0;
+  display: none !important;
+  content: none !important;
 }
 
     #jh-pga-table-shared .jtc-header-row h3 {
@@ -13992,34 +14004,30 @@ document.head.appendChild(style);
      Scope: #jh-pga-table-shared
   ========================================================= */
 
-  #jh-pga-table-shared .jtc-header-row {
-    background:
-      linear-gradient(
-        135deg,
-        #ffffff 0%,
-        var(--jh-balance-ivory) 62%,
-        rgba(201, 137, 43, 0.075) 100%
-      ) !important;
-    border: 1px solid var(--jh-balance-line) !important;
-    box-shadow:
-      0 7px 18px rgba(12, 35, 64, 0.045),
-      0 2px 7px rgba(153, 0, 0, 0.014) !important;
-  }
+ #jh-pga-table-shared .jtc-header-row {
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(153, 0, 0, 0.18) 0%,
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(153, 0, 0, 0.14) 0%,
+      #ffffff 42%,
+      rgba(255, 204, 0, 0.32) 100%
+    ) !important;
+  border: 1px solid rgba(153, 0, 0, 0.18) !important;
+  box-shadow:
+    0 8px 22px rgba(12, 35, 64, 0.055),
+    0 2px 8px rgba(153, 0, 0, 0.040) !important;
+}
 
-  #jh-pga-table-shared .jtc-header-row::before {
-    background: var(--jh-balance-amber) !important;
-    opacity: 0.72 !important;
-  }
-
-  #jh-pga-table-shared .jtc-header-row::after {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(201, 137, 43, 0.22) 0%,
-        rgba(153, 0, 0, 0.035) 48%,
-        rgba(255, 204, 0, 0.12) 100%
-      ) !important;
-  }
+#jh-pga-table-shared .jtc-header-row::before,
+#jh-pga-table-shared .jtc-header-row::after {
+  display: none !important;
+  content: none !important;
+}
 
   #jh-pga-table-shared .jtc-header-row h3 {
     color: var(--jh-balance-navy) !important;
