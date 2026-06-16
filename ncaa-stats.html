@@ -2295,50 +2295,46 @@
     color: #ffffff !important;
   }
 
-  /*
-    Main link default:
-    Ivory/cream surface, Cardinal text, amber edge.
-    This keeps it readable without turning the whole button yellow.
+   /*
+    Main link CTA:
+    Unified Cardinal action button for UP NEXT / ONGOING / FINAL.
+    Ongoing dot animation is preserved.
   */
   #jh-pga-table-shared .jtc-main-link {
-    color: var(--jtc-cardinal-dark) !important;
-    background:
-      linear-gradient(
-        180deg,
-        #ffffff 0%,
-        var(--jtc-ivory) 100%
-      ) !important;
-    border: 1px solid rgba(143, 79, 22, 0.34) !important;
+    color: #fff3c4 !important;
+    background: var(--jtc-cardinal) !important;
+    border: 1px solid rgba(255, 199, 44, 0.46) !important;
     box-shadow:
-      0 5px 12px rgba(12, 35, 64, 0.10),
-      inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+      0 6px 14px rgba(153, 0, 0, 0.16),
+      0 2px 6px rgba(12, 35, 64, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link:hover,
   #jh-pga-table-shared .jtc-main-link:focus {
-    color: #f7d08a !important;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jtc-cardinal) 0%,
-        var(--jtc-cardinal-dark) 100%
-      ) !important;
-    border-color: rgba(201, 137, 43, 0.52) !important;
+    color: #fff3c4 !important;
+    background: var(--jtc-cardinal-dark) !important;
+    border-color: rgba(255, 199, 44, 0.58) !important;
     box-shadow:
       0 8px 18px rgba(153, 0, 0, 0.22),
-      0 3px 10px rgba(12, 35, 64, 0.10) !important;
+      0 3px 10px rgba(12, 35, 64, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot.upnext,
   #jh-pga-table-shared .jtc-main-link-dot.final {
-    background-color: var(--jtc-cardinal) !important;
-    box-shadow: 0 0 0 2px rgba(153, 0, 0, 0.16) !important;
+    background-color: #ffc72c !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 199, 44, 0.22),
+      0 0 8px rgba(255, 199, 44, 0.18) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot.ongoing {
-    background-color: var(--jtc-cardinal) !important;
+    background-color: #ffc72c !important;
     animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
-    box-shadow: 0 0 0 2px rgba(153, 0, 0, 0.16) !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 199, 44, 0.22),
+      0 0 8px rgba(255, 199, 44, 0.18) !important;
   }
 
   @keyframes jtc-link-pulse-cardinal {
@@ -2359,24 +2355,31 @@
   }
 
   #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.ongoing,
   #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.final,
   #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing,
   #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.final {
-    background-color: #f0b35a !important;
+    background-color: #ffc72c !important;
     box-shadow:
-      0 0 0 2px rgba(201, 137, 43, 0.24),
-      0 0 10px rgba(201, 137, 43, 0.20) !important;
+      0 0 0 2px rgba(255, 199, 44, 0.28),
+      0 0 10px rgba(255, 199, 44, 0.24) !important;
+  }
+
+  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.ongoing,
+  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing {
+    background-color: #ffc72c !important;
+    animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
+    box-shadow:
+      0 0 0 2px rgba(255, 199, 44, 0.28),
+      0 0 10px rgba(255, 199, 44, 0.24) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-arrow svg {
-    stroke: var(--jtc-cardinal-dark) !important;
+    stroke: #fff3c4 !important;
   }
 
   #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-arrow svg,
   #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-arrow svg {
-    stroke: #f7d08a !important;
+    stroke: #fff3c4 !important;
   }
 
   @media (max-width: 768px) {
