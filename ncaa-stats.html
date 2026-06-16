@@ -13997,38 +13997,59 @@ document.head.appendChild(style);
   }
 
 
-  /* =========================================================
+    /* =========================================================
      2. MAIN LIVE / UPCOMING TOURNAMENT HEADER
      Scope: #jh-pga-table-shared
   ========================================================= */
 
   #jh-pga-table-shared .jtc-header-row {
+    position: relative;
+    overflow: hidden;
+    align-items: center !important;
+    padding: 14px 16px 13px 18px !important;
+    margin-bottom: 16px !important;
+    border-radius: 16px;
+
     background:
       linear-gradient(
-        135deg,
+        180deg,
         #ffffff 0%,
-        var(--jh-balance-ivory) 62%,
-        rgba(201, 137, 43, 0.075) 100%
+        #fffdf7 100%
       ) !important;
-    border: 1px solid var(--jh-balance-line) !important;
+
+    border: 1px solid rgba(153, 0, 0, 0.14) !important;
+    border-left: 0 !important;
+
     box-shadow:
-      0 7px 18px rgba(12, 35, 64, 0.045),
-      0 2px 7px rgba(153, 0, 0, 0.014) !important;
+      0 10px 24px rgba(12, 35, 64, 0.07),
+      0 2px 8px rgba(153, 0, 0, 0.025) !important;
   }
 
   #jh-pga-table-shared .jtc-header-row::before {
-    background: var(--jh-balance-amber) !important;
-    opacity: 0.72 !important;
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 5px !important;
+    height: auto !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        var(--jh-balance-cardinal) 0%,
+        var(--jh-balance-gold) 100%
+      ) !important;
+
+    opacity: 1 !important;
+    pointer-events: none !important;
   }
 
   #jh-pga-table-shared .jtc-header-row::after {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(201, 137, 43, 0.22) 0%,
-        rgba(153, 0, 0, 0.035) 48%,
-        rgba(255, 204, 0, 0.12) 100%
-      ) !important;
+    display: none !important;
+    content: none !important;
+    background: none !important;
   }
 
   #jh-pga-table-shared .jtc-header-row h3 {
@@ -14041,6 +14062,13 @@ document.head.appendChild(style);
     color: var(--jh-balance-navy) !important;
     box-shadow: none !important;
   }
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared .jtc-header-row::before {
+      width: 4px !important;
+    }
+  }
+ 
 
   #jh-pga-table-shared .jtc-card {
     border-color: rgba(12, 35, 64, 0.12) !important;
