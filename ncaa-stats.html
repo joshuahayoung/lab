@@ -3548,29 +3548,29 @@
     }
 
     #jh-summer-offseason-results-accordion .jhso-toggle {
-      width: 100%;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto auto;
-      align-items: center;
-      gap: 14px;
-      padding: 18px 16px 17px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(153, 0, 0, 0.16);
-      background:
-        linear-gradient(
-          135deg,
-          rgba(153, 0, 0, 0.055) 0%,
-          #ffffff 47%,
-          rgba(255, 204, 0, 0.14) 100%
-        );
-      box-shadow:
-        0 8px 22px rgba(12, 35, 64, 0.055),
-        0 2px 8px rgba(153, 0, 0, 0.035);
-      cursor: pointer;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px 17px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(153, 0, 0, 0.16);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(153, 0, 0, 0.055) 0%,
+      #ffffff 47%,
+      rgba(255, 204, 0, 0.14) 100%
+    );
+  box-shadow:
+    0 8px 22px rgba(12, 35, 64, 0.055),
+    0 2px 8px rgba(153, 0, 0, 0.035);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
 
     #jh-summer-offseason-results-accordion .jhso-toggle::before {
       content: "";
@@ -3626,24 +3626,27 @@
       line-height: 1.3;
     }
 
-    #jh-summer-offseason-results-accordion .jhso-count {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 30px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid rgba(153, 0, 0, 0.16);
-      color: var(--jhso-cardinal-dark);
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.35px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+   #jh-summer-offseason-results-accordion .jhso-count {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 10px;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(153, 0, 0, 0.16);
+  color: var(--jhso-cardinal-dark);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
     #jh-summer-offseason-results-accordion .jhso-arrow {
       position: relative;
@@ -3695,27 +3698,28 @@
       }
 
       #jh-summer-offseason-results-accordion .jhso-toggle {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 10px;
-        padding: 16px 13px 15px 15px;
-        border-radius: 15px;
-      }
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 13px 15px 15px;
+  border-radius: 15px;
+}
 
-      #jh-summer-offseason-results-accordion .jhso-count {
-        grid-column: 1 / 2;
-        justify-self: start;
-        margin-top: 2px;
-        min-height: 27px;
-        padding: 5px 10px;
-        font-size: 9.5px;
-      }
+#jh-summer-offseason-results-accordion .jhso-count {
+  margin-top: 9px;
+  min-height: 27px;
+  padding: 5px 10px;
+  font-size: 9.5px;
+}
 
-      #jh-summer-offseason-results-accordion .jhso-arrow {
-        grid-column: 2 / 3;
-        grid-row: 1 / 3;
-        width: 32px;
-        height: 32px;
-      }
+#jh-summer-offseason-results-accordion .jhso-arrow {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: start;
+  margin-top: 2px;
+  width: 32px;
+  height: 32px;
+}
 
       #jh-summer-offseason-results-accordion .jhso-title {
         font-size: 16.5px;
@@ -3755,29 +3759,29 @@
     }
   </style>
 
-  <button
-  type="button"
-  class="jhso-toggle"
-  id="jh-summer-offseason-results-toggle"
-  aria-expanded="true"
-  aria-controls="jh-summer-offseason-results-panel"
->
+   <button
+    type="button"
+    class="jhso-toggle"
+    id="jh-summer-offseason-results-toggle"
+    aria-expanded="true"
+    aria-controls="jh-summer-offseason-results-panel"
+  >
     <span class="jhso-title-block">
       <span class="jhso-title">
         2026 Summer Off-Season
       </span>
 
       <span class="jhso-subtitle">
-        Invitational, EAGS, USGA &amp; FMG Events / Results Log
+        Summer Amateur Schedule, Qualifying Pathways &amp; Results Log
+      </span>
+
+      <span class="jhso-count">
+        Schedule &amp; Results
       </span>
 
       <span class="jhso-note">
-        Click the arrow to expand the summer schedule and competition results.
+        Summer schedule and results are shown below. Use the arrow to collapse or expand this section.
       </span>
-    </span>
-
-    <span class="jhso-count">
-      Schedule + Results
     </span>
 
     <span class="jhso-arrow" aria-hidden="true">
@@ -4935,8 +4939,8 @@
 <div class="jhos-topbar">
   <div class="jhos-topbar-inner">
     <span class="jhos-topbar-title">
-      Invitational · EAGS · USGA · FMG Events
-    </span>
+  Tournament Calendar &amp; Entry Status
+</span>
 
     <span class="jhos-topbar-badge">
       ACTIVE
