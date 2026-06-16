@@ -4271,52 +4271,74 @@
     line-height: 1.28 !important;
   }
 
-  #jh-offseason-schedule .jhos-topbar {
-    position: relative;
-    padding: 18px 22px !important;
-    border-radius: 18px 18px 0 0 !important;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jhos-cardinal-dark) 0%,
-        var(--jhos-cardinal) 44%,
-        var(--jhos-navy) 100%
-      ) !important;
-    border: 1px solid rgba(153, 0, 0, 0.25);
-    border-bottom: 1px solid rgba(255, 204, 0, 0.34);
-    box-shadow:
-      0 14px 30px rgba(12, 35, 64, 0.12),
-      0 3px 10px rgba(153, 0, 0, 0.08);
-    overflow: hidden;
-  }
+ #jh-offseason-schedule .jhos-topbar {
+  position: relative;
+  padding: 18px 22px !important;
+  border-radius: 18px 18px 0 0 !important;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.34), transparent 34%),
+    linear-gradient(
+      135deg,
+      #ffc72c 0%,
+      #f7bc22 58%,
+      #e5a914 100%
+    ) !important;
+  border: 1px solid rgba(153, 0, 0, 0.22) !important;
+  border-bottom: 4px solid #990000 !important;
+  box-shadow:
+    0 10px 22px rgba(12, 35, 64, 0.055),
+    0 3px 10px rgba(153, 0, 0, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+  overflow: hidden;
+}
 
-  #jh-offseason-schedule .jhos-topbar::after {
-    background:
-      linear-gradient(
-        90deg,
-        var(--jh-balance-cardinal-dark) 0%,
-        var(--jh-balance-cardinal) 48%,
-        rgba(153, 0, 0, 0.38) 100%
-      ) !important;
-  }
+#jh-offseason-schedule .jhos-topbar::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 8px;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(153, 0, 0, 0.34) 48%,
+      transparent 100%
+    ) !important;
+  pointer-events: none;
+}
 
-   #jh-offseason-schedule .jhos-topbar-title {
-    color: var(--jh-balance-cardinal-dark) !important;
-    font-weight: 800 !important;
-    text-shadow: none !important;
-  }
+#jh-offseason-schedule .jhos-topbar-title {
+  position: relative;
+  z-index: 1;
+  color: #650000 !important;
+  font-size: 15.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.85px !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
+  text-shadow: none !important;
+}
 
-  #jh-offseason-schedule .jhos-topbar-badge {
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-balance-cardinal) 0%,
-        var(--jh-balance-cardinal-dark) 100%
-      ) !important;
-    color: #ffc72c !important;
-    border: 1px solid rgba(255, 199, 44, 0.46) !important;
-    box-shadow: 0 5px 12px rgba(153, 0, 0, 0.16) !important;
-  }
+#jh-offseason-schedule .jhos-topbar-badge {
+  position: relative;
+  z-index: 1;
+  background:
+    linear-gradient(
+      135deg,
+      #990000 0%,
+      #650000 100%
+    ) !important;
+  color: #ffc72c !important;
+  border: 1px solid rgba(255, 199, 44, 0.46) !important;
+  border-radius: 999px !important;
+  padding: 5px 10px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.55px !important;
+  box-shadow: 0 5px 12px rgba(153, 0, 0, 0.16) !important;
+}
 
   #jh-offseason-schedule .jhos-table-wrap {
     border: 1px solid rgba(153, 0, 0, 0.16) !important;
