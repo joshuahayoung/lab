@@ -15301,6 +15301,216 @@ document.head.appendChild(style);
       min-height: 42px !important;
     }
   }
+
+  /* =========================================================
+     10. SHARED USC GRADIENT ACCENT FINAL LOCK
+     Scope:
+     - Shared title-bar left accents
+     - Gold title-bar bottom rules
+     - Gold date-badge bottom rules
+
+     Purpose:
+     - Match the Season Archive left gradient language.
+     - Replace flat red/amber solid lines with restrained USC gradient.
+     - CSS only. No data, text, links, dates, scores, or JS are modified.
+  ========================================================= */
+
+  #jh-season-archive-access,
+  #jh-summer-offseason-results-accordion,
+  #jh-offseason-schedule,
+  #jh-summer-results-log-isolated,
+  #jh-sophomore-season-page,
+  #jh-sophomore-key-metrics,
+  #jh-pga-table-shared {
+    --jh-shared-usc-left-gradient:
+      linear-gradient(
+        180deg,
+        #650000 0%,
+        #990000 56%,
+        #ffcc00 100%
+      );
+
+    --jh-shared-usc-bottom-gradient:
+      linear-gradient(
+        90deg,
+        #650000 0%,
+        #990000 38%,
+        #ffcc00 72%,
+        #650000 100%
+      );
+  }
+
+  /* ---------------------------------------------------------
+     A. LEFT VERTICAL ACCENT LOCK
+     Match Season Archive left gradient across all major section bars.
+  --------------------------------------------------------- */
+
+  #jh-season-archive-access .jhsa-shell::before,
+  #jh-summer-offseason-results-accordion .jhso-toggle::before,
+  #jh-offseason-schedule .jhos-title-row::before,
+  #jh-sophomore-season-page .jh-ss-section-head::before,
+  #jh-sophomore-season-page .jh-ss-section-toggle::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 5px !important;
+    height: 100% !important;
+    background: var(--jh-shared-usc-left-gradient) !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  #jh-season-archive-access .jhsa-shell::before {
+    bottom: 0 !important;
+    height: auto !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-toggle,
+  #jh-offseason-schedule .jhos-title-row,
+  #jh-sophomore-season-page .jh-ss-section-head,
+  #jh-sophomore-season-page .jh-ss-section-toggle {
+    position: relative !important;
+    overflow: hidden !important;
+    border-left: none !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-title-block,
+  #jh-summer-offseason-results-accordion .jhso-count,
+  #jh-summer-offseason-results-accordion .jhso-arrow,
+  #jh-offseason-schedule .jhos-title,
+  #jh-sophomore-season-page .jh-ss-section-copy,
+  #jh-sophomore-season-page .jh-ss-section-title,
+  #jh-sophomore-season-page .jh-ss-section-sub,
+  #jh-sophomore-season-page .jh-ss-section-hint,
+  #jh-sophomore-season-page .jh-ss-section-actions,
+  #jh-sophomore-season-page .jh-ss-count-pill,
+  #jh-sophomore-season-page .jh-ss-section-chevron {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-season-archive-access .jhsa-shell::before,
+    #jh-summer-offseason-results-accordion .jhso-toggle::before,
+    #jh-offseason-schedule .jhos-title-row::before,
+    #jh-sophomore-season-page .jh-ss-section-head::before,
+    #jh-sophomore-season-page .jh-ss-section-toggle::before {
+      width: 4px !important;
+    }
+  }
+
+
+  /* ---------------------------------------------------------
+     B. GOLD TITLE-BAR BOTTOM GRADIENT LOCK
+     Replace flat cardinal bottom borders with USC gradient rules.
+  --------------------------------------------------------- */
+
+  #jh-offseason-schedule .jhos-topbar,
+  #jh-summer-results-log-isolated .jh-srl-main-head,
+  #jh-sophomore-key-metrics .jhskm-head {
+    position: relative !important;
+    overflow: hidden !important;
+    border-bottom: none !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar::after,
+  #jh-summer-results-log-isolated .jh-srl-main-head::after,
+  #jh-sophomore-key-metrics .jhskm-head::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: auto !important;
+    height: 4px !important;
+    background: var(--jh-shared-usc-bottom-gradient) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  #jh-offseason-schedule .jhos-topbar-inner,
+  #jh-offseason-schedule .jhos-topbar-title,
+  #jh-offseason-schedule .jhos-topbar-badge,
+  #jh-summer-results-log-isolated .jh-srl-kicker,
+  #jh-summer-results-log-isolated .jh-srl-title,
+  #jh-summer-results-log-isolated .jh-srl-subtitle,
+  #jh-sophomore-key-metrics .jhskm-title-row,
+  #jh-sophomore-key-metrics .jhskm-title,
+  #jh-sophomore-key-metrics .jhskm-status-pill,
+  #jh-sophomore-key-metrics .jhskm-subhead {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /*
+    Fix and lock Sophomore Key Metrics top accent.
+    The earlier .jhskm-head::before declaration is structurally fragile,
+    so this valid final block safely restores the intended top gradient.
+  */
+  #jh-sophomore-key-metrics .jhskm-head::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 5px !important;
+    background: var(--jh-shared-usc-bottom-gradient) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     C. DATE BADGE BOTTOM GRADIENT LOCK
+     Replace flat red bottom borders on yellow date badges.
+  --------------------------------------------------------- */
+
+  #jh-pga-table-shared .jtc-date,
+  #jh-summer-results-log-isolated .jh-srl-date-box,
+  #jh-sophomore-season-page .jh-ss-date-box {
+    position: relative !important;
+    overflow: hidden !important;
+    background: #ffc72c !important;
+    border: 1px solid rgba(153, 0, 0, 0.26) !important;
+    border-bottom: none !important;
+    color: #650000 !important;
+    box-shadow:
+      0 5px 12px rgba(153, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+  }
+
+  #jh-pga-table-shared .jtc-date::after,
+  #jh-summer-results-log-isolated .jh-srl-date-box::after,
+  #jh-sophomore-season-page .jh-ss-date-box::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 3px !important;
+    background: var(--jh-shared-usc-bottom-gradient) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  #jh-pga-table-shared .jtc-date,
+  #jh-summer-results-log-isolated .jh-srl-date-label,
+  #jh-summer-results-log-isolated .jh-srl-date-value,
+  #jh-sophomore-season-page .jh-ss-date-label,
+  #jh-sophomore-season-page .jh-ss-date-value {
+    color: #650000 !important;
+    text-shadow: none !important;
+  }
+
+  #jh-summer-results-log-isolated .jh-srl-date-label,
+  #jh-sophomore-season-page .jh-ss-date-label {
+    opacity: 0.84 !important;
+  }
    
 </style> 
   
