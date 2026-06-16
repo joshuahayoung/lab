@@ -2232,58 +2232,133 @@
     color: #475569 !important;
   }
 
-  /*
-    Replace navy band with Cardinal Rojo band.
-    Amber is only accent, not wide yellow surface.
+   /*
+    Live Scoreboard Tray:
+    Deep Cardinal game-state surface for R1/R2/R3/R4, Total, and Pos.
+    This makes the PGA table read as a live scoring board instead of a plain data table.
   */
   #jh-pga-table-shared .jtc-result-band {
+    position: relative;
     background:
+      radial-gradient(circle at 14% 0%, rgba(255, 199, 44, 0.16), transparent 28%),
+      radial-gradient(circle at 88% 20%, rgba(255, 255, 255, 0.070), transparent 24%),
       linear-gradient(
         135deg,
-        var(--jtc-cardinal-dark) 0%,
-        var(--jtc-cardinal) 52%,
-        var(--jtc-cardinal-mid) 78%,
-        #3f1414 100%
+        #250606 0%,
+        var(--jtc-cardinal-dark) 34%,
+        #7a0000 68%,
+        #2a0707 100%
       ) !important;
-    border-top: 1px solid rgba(201, 137, 43, 0.34) !important;
+    border-top: 1px solid rgba(255, 199, 44, 0.34) !important;
+    box-shadow:
+      inset 0 3px 0 rgba(255, 199, 44, 0.16),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+      0 10px 24px rgba(42, 7, 7, 0.18) !important;
+  }
+
+  #jh-pga-table-shared .jtc-result-band::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    top: 8px;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 199, 44, 0.42) 48%,
+        transparent 100%
+      );
+    pointer-events: none;
   }
 
   #jh-pga-table-shared .jtc-link-summary,
   #jh-pga-table-shared .jtc-rounds-summary,
   #jh-pga-table-shared .jtc-total-summary,
   #jh-pga-table-shared .jtc-pos-summary {
-    border-left: 1px solid rgba(201, 137, 43, 0.16) !important;
+    position: relative;
+    z-index: 1;
+    border-left: none !important;
+    border: 1px solid rgba(255, 199, 44, 0.18) !important;
+    border-radius: 13px !important;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.072) 0%,
+        rgba(255, 255, 255, 0.034) 100%
+      ) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.095),
+      0 5px 14px rgba(0, 0, 0, 0.12) !important;
   }
 
-  #jh-pga-table-shared .jtc-link-summary {
-    border-left: none !important;
+  #jh-pga-table-shared .jtc-total-summary,
+  #jh-pga-table-shared .jtc-pos-summary {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255, 199, 44, 0.16), transparent 42%),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.092) 0%,
+        rgba(255, 255, 255, 0.040) 100%
+      ) !important;
+    border-color: rgba(255, 199, 44, 0.30) !important;
+    box-shadow:
+      inset 0 2px 0 rgba(255, 199, 44, 0.13),
+      0 7px 16px rgba(0, 0, 0, 0.16) !important;
   }
 
   #jh-pga-table-shared .jtc-summary-label {
-    color: rgba(247, 208, 138, 0.82) !important;
+    color: rgba(255, 199, 44, 0.82) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28) !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip {
-    background: rgba(255, 255, 255, 0.060) !important;
-    border: 1px solid rgba(201, 137, 43, 0.24) !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.105) 0%,
+        rgba(255, 255, 255, 0.044) 100%
+      ) !important;
+    border: 1px solid rgba(255, 199, 44, 0.24) !important;
+    border-radius: 9px !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+      0 4px 10px rgba(0, 0, 0, 0.12) !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip-label {
-    color: rgba(247, 208, 138, 0.82) !important;
+    color: rgba(255, 199, 44, 0.82) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.26) !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip-value,
   #jh-pga-table-shared .jtc-total-score,
   #jh-pga-table-shared .jtc-total-par-wrap,
   #jh-pga-table-shared .jtc-pos-value {
+    color: #fffdf7 !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.38),
+      0 0 12px rgba(255, 255, 255, 0.06) !important;
+  }
+
+  #jh-pga-table-shared .jtc-total-score,
+  #jh-pga-table-shared .jtc-pos-value {
     color: #ffffff !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+    letter-spacing: -0.35px !important;
+  }
+
+  #jh-pga-table-shared .jtc-total-par-wrap {
+    color: #fff3c4 !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip-value.red,
   #jh-pga-table-shared .jtc-total-par-wrap .delta.red {
-    color: #f7d08a !important;
+    color: #ffc72c !important;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.34),
+      0 0 10px rgba(255, 199, 44, 0.16) !important;
   }
 
   #jh-pga-table-shared .jtc-round-chip-value.blue,
@@ -2292,7 +2367,7 @@
   #jh-pga-table-shared .jtc-total-par-wrap .delta.blue,
   #jh-pga-table-shared .jtc-total-par-wrap .delta.navy,
   #jh-pga-table-shared .jtc-total-par-wrap .delta.white {
-    color: #ffffff !important;
+    color: #fffdf7 !important;
   }
 
    /*
@@ -2450,18 +2525,41 @@
       grid-area: pos;
     }
 
-    #jh-pga-table-shared .jtc-link-summary,
+      #jh-pga-table-shared .jtc-link-summary,
     #jh-pga-table-shared .jtc-rounds-summary,
     #jh-pga-table-shared .jtc-total-summary,
     #jh-pga-table-shared .jtc-pos-summary {
       min-width: 0 !important;
       padding: 7px 6px !important;
       border-left: none !important;
-      border: 1px solid rgba(255, 204, 0, 0.12) !important;
-      border-radius: 9px !important;
-      background: rgba(255, 255, 255, 0.035) !important;
+      border: 1px solid rgba(255, 199, 44, 0.18) !important;
+      border-radius: 10px !important;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.078) 0%,
+          rgba(255, 255, 255, 0.036) 100%
+        ) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.09),
+        0 4px 10px rgba(0, 0, 0, 0.12) !important;
     }
 
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      border-color: rgba(255, 199, 44, 0.28) !important;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 199, 44, 0.15), transparent 44%),
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.095) 0%,
+          rgba(255, 255, 255, 0.040) 100%
+        ) !important;
+      box-shadow:
+        inset 0 2px 0 rgba(255, 199, 44, 0.12),
+        0 5px 12px rgba(0, 0, 0, 0.14) !important;
+    }
+    
     #jh-pga-table-shared .jtc-summary-label {
       font-size: 7.4px !important;
       line-height: 1 !important;
@@ -2529,12 +2627,12 @@
       padding: 10px 9px !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary,
+      #jh-pga-table-shared .jtc-link-summary,
     #jh-pga-table-shared .jtc-rounds-summary,
     #jh-pga-table-shared .jtc-total-summary,
     #jh-pga-table-shared .jtc-pos-summary {
       padding: 7px 6px !important;
-      border-radius: 9px !important;
+      border-radius: 10px !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-band-body {
