@@ -14123,48 +14123,25 @@ document.head.appendChild(style);
     color: var(--jh-balance-navy) !important;
   }
 
-  #jh-offseason-schedule .jhos-topbar {
+   #jh-offseason-schedule .jhos-topbar {
     position: relative !important;
     display: flex !important;
     align-items: center !important;
     padding: 18px 22px !important;
     border-radius: 18px 18px 0 0 !important;
-    background:
-      radial-gradient(
-        circle at 12% 0%,
-        rgba(255, 255, 255, 0.34),
-        transparent 34%
-      ),
-      linear-gradient(
-        135deg,
-        #ffc72c 0%,
-        #f7bc22 58%,
-        #e5a914 100%
-      ) !important;
+    background: #ffc72c !important;
     border: 1px solid rgba(153, 0, 0, 0.22) !important;
     border-bottom: 4px solid var(--jh-balance-cardinal) !important;
     box-shadow:
       0 10px 22px rgba(12, 35, 64, 0.055),
       0 3px 10px rgba(153, 0, 0, 0.055),
-      inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
     overflow: hidden !important;
   }
 
   #jh-offseason-schedule .jhos-topbar::after {
-    content: "" !important;
-    position: absolute !important;
-    left: 22px !important;
-    right: 22px !important;
-    bottom: 8px !important;
-    height: 1px !important;
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(153, 0, 0, 0.34) 48%,
-        transparent 100%
-      ) !important;
-    pointer-events: none !important;
+    display: none !important;
+    content: none !important;
   }
 
   #jh-offseason-schedule .jhos-topbar-inner {
@@ -14196,12 +14173,7 @@ document.head.appendChild(style);
     z-index: 1 !important;
     flex: 0 0 auto !important;
     margin-left: 0 !important;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jh-balance-cardinal) 0%,
-        var(--jh-balance-cardinal-dark) 100%
-      ) !important;
+    background: var(--jh-balance-cardinal) !important;
     color: #fff3c4 !important;
     border: 1px solid rgba(255, 199, 44, 0.48) !important;
     border-radius: 999px !important;
