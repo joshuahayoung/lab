@@ -15372,7 +15372,6 @@ document.head.appendChild(style);
   --------------------------------------------------------- */
 
   #jh-season-archive-access .jhsa-shell::before,
-  #jh-summer-offseason-results-accordion .jhso-toggle::before,
   #jh-offseason-schedule .jhos-title-row::before,
   #jh-sophomore-season-page .jh-ss-section-head::before,
   #jh-sophomore-season-page .jh-ss-section-toggle::before {
@@ -15419,7 +15418,6 @@ document.head.appendChild(style);
 
   @media (max-width: 768px) {
     #jh-season-archive-access .jhsa-shell::before,
-    #jh-summer-offseason-results-accordion .jhso-toggle::before,
     #jh-offseason-schedule .jhos-title-row::before,
     #jh-sophomore-season-page .jh-ss-section-head::before,
     #jh-sophomore-season-page .jh-ss-section-toggle::before {
@@ -15662,7 +15660,44 @@ document.head.appendChild(style);
     }
   }
 
-   
+    /* =========================================================
+     FINAL FORCE FIX — Summer Off-Season left accent only
+     Do not use .jhso-toggle::before for this section.
+  ========================================================= */
+
+  #jh-summer-offseason-results-accordion .jhso-toggle::before {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-left-accent {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 5px !important;
+    height: 100% !important;
+    display: block !important;
+    background: linear-gradient(
+      180deg,
+      #990000 0%,
+      #ffcc00 100%
+    ) !important;
+    border: none !important;
+    box-shadow: none !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+  }
+
+  @media (max-width: 768px) {
+    #jh-summer-offseason-results-accordion .jhso-left-accent {
+      width: 4px !important;
+    }
+  } 
 </style> 
   
      </body>
