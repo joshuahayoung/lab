@@ -3572,6 +3572,36 @@
   overflow: hidden;
 }
 
+#jh-summer-offseason-results-accordion .jhso-left-accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      height: 100%;
+      display: block;
+      background:
+        linear-gradient(
+          180deg,
+          #650000 0%,
+          #990000 56%,
+          #ffcc00 100%
+        );
+      border: none;
+      box-shadow: none;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    #jh-summer-offseason-results-accordion .jhso-toggle::before {
+      display: none !important;
+      content: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      background: none !important;
+      opacity: 0 !important;
+    }
+   
     #jh-summer-offseason-results-accordion .jhso-toggle::before {
       content: "";
       position: absolute;
@@ -3697,6 +3727,10 @@
         margin: 18px 0 50px;
       }
 
+    #jh-summer-offseason-results-accordion .jhso-left-accent {
+        width: 4px;
+      }
+   
       #jh-summer-offseason-results-accordion .jhso-toggle {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: flex-start;
@@ -3766,6 +3800,7 @@
     aria-expanded="true"
     aria-controls="jh-summer-offseason-results-panel"
   >
+    <span class="jhso-left-accent" aria-hidden="true"></span>
     <span class="jhso-title-block">
       <span class="jhso-title">
         2026 Summer Off-Season
@@ -4939,7 +4974,7 @@
 <div class="jhos-topbar">
   <div class="jhos-topbar-inner">
     <span class="jhos-topbar-title">
-  Tournament Calendar &amp; Entry Status
+  Invitational · EAGS · USGA · FMG Events
 </span>
 
     <span class="jhos-topbar-badge">
@@ -15552,63 +15587,7 @@ document.head.appendChild(style);
   }
 
 
-   /* ---------------------------------------------------------
-     A. 2026 SUMMER OFF-SEASON LEFT ACCENT
-     Final fix:
-     - Do not rely on ::before.
-     - Paint the left USC gradient directly into the toggle background.
-     - Remove the leftover left border/edge line.
-  --------------------------------------------------------- */
-
-  #jh-summer-offseason-results-accordion .jhso-toggle {
-    position: relative !important;
-    overflow: hidden !important;
-    border-left: 0 !important;
-    background:
-      linear-gradient(
-        180deg,
-        #650000 0%,
-        #990000 56%,
-        #ffcc00 100%
-      ) left top / 5px 100% no-repeat,
-      #fff1e8 !important;
-    padding-left: 23px !important;
-  }
-
-  #jh-summer-offseason-results-accordion .jhso-toggle::before {
-    display: none !important;
-    content: none !important;
-    background: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    opacity: 0 !important;
-  }
-
-  #jh-summer-offseason-results-accordion .jhso-toggle::after {
-    display: none !important;
-    content: none !important;
-  }
-
-  #jh-summer-offseason-results-accordion .jhso-title-block,
-  #jh-summer-offseason-results-accordion .jhso-count,
-  #jh-summer-offseason-results-accordion .jhso-arrow {
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  @media (max-width: 768px) {
-    #jh-summer-offseason-results-accordion .jhso-toggle {
-      background:
-        linear-gradient(
-          180deg,
-          #650000 0%,
-          #990000 56%,
-          #ffcc00 100%
-        ) left top / 4px 100% no-repeat,
-        #fff1e8 !important;
-      padding-left: 19px !important;
-    }
-  }
+ 
 
   /* ---------------------------------------------------------
      B. PGA TABLE TOP ACCENT
