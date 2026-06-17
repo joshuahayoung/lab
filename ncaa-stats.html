@@ -15157,7 +15157,7 @@ document.head.appendChild(style);
     color: #fffdf7 !important;
   }
 
-  #jh-pga-table-shared .jtc-main-link {
+   #jh-pga-table-shared .jtc-main-link {
     color: var(--jtc-live-gold-soft) !important;
     background:
       linear-gradient(
@@ -15165,11 +15165,18 @@ document.head.appendChild(style);
         var(--jtc-live-cardinal) 0%,
         var(--jtc-live-cardinal-dark) 100%
       ) !important;
-    border: 1px solid rgba(255, 199, 44, 0.46) !important;
+    border: 1px solid rgba(255, 199, 44, 0.50) !important;
     box-shadow:
-      0 6px 14px rgba(153, 0, 0, 0.16),
+      0 6px 14px rgba(153, 0, 0, 0.18),
       0 2px 6px rgba(12, 35, 64, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+    text-decoration: none !important;
+    transition:
+      transform 0.18s ease,
+      background 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease !important;
   }
 
   #jh-pga-table-shared .jtc-main-link:hover,
@@ -15178,7 +15185,7 @@ document.head.appendChild(style);
     background:
       radial-gradient(
         circle at 18% 0%,
-        rgba(255, 255, 255, 0.42) 0%,
+        rgba(255, 255, 255, 0.44) 0%,
         transparent 34%
       ),
       linear-gradient(
@@ -15187,12 +15194,13 @@ document.head.appendChild(style);
         #ffc72c 48%,
         #f15a22 100%
       ) !important;
-    border-color: rgba(101, 0, 0, 0.72) !important;
+    border-color: rgba(101, 0, 0, 0.74) !important;
     box-shadow:
-      0 10px 22px rgba(241, 90, 34, 0.26),
+      0 10px 22px rgba(241, 90, 34, 0.28),
       0 3px 10px rgba(101, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.36) !important;
     transform: translateY(-1px) !important;
+    text-decoration: none !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-live,
@@ -15215,16 +15223,16 @@ document.head.appendChild(style);
   #jh-pga-table-shared .jtc-main-link-dot.final {
     background-color: var(--jtc-live-gold) !important;
     box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.22),
-      0 0 8px rgba(255, 199, 44, 0.18) !important;
+      0 0 0 2px rgba(255, 199, 44, 0.24),
+      0 0 8px rgba(255, 199, 44, 0.20) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link-dot.ongoing {
     background-color: var(--jtc-live-gold) !important;
     animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
     box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.22),
-      0 0 8px rgba(255, 199, 44, 0.18) !important;
+      0 0 0 2px rgba(255, 199, 44, 0.24),
+      0 0 8px rgba(255, 199, 44, 0.20) !important;
   }
 
   #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.upnext,
@@ -15235,7 +15243,7 @@ document.head.appendChild(style);
   #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing {
     background-color: #650000 !important;
     box-shadow:
-      0 0 0 2px rgba(255, 255, 255, 0.60),
+      0 0 0 2px rgba(255, 255, 255, 0.62),
       0 0 0 4px rgba(101, 0, 0, 0.22),
       0 3px 8px rgba(101, 0, 0, 0.22) !important;
   }
