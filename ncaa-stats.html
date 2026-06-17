@@ -16430,6 +16430,108 @@ document.head.appendChild(style);
     }
   }
 
+  /* =========================================================
+     7-A. LIVE LEADERBOARD CTA DESKTOP TRUE 3-COLUMN / 2-ROW GRID
+     Scope: #jh-pga-table-shared only
+
+     Purpose:
+     - Desktop only.
+     - Keep mobile one-line CTA unchanged.
+     - One dot only: column 1, spanning row 1 and row 2.
+     - One arrow only: column 3, spanning row 1 and row 2.
+     - LIVE and LEADERBOARD centered in column 2.
+     - Do not change colors.
+  ========================================================= */
+
+  @media (min-width: 769px) {
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
+      display: grid !important;
+      grid-template-columns: 28px minmax(0, 1fr) 28px !important;
+      grid-template-rows: 1fr 1fr !important;
+      align-items: center !important;
+      justify-items: center !important;
+      column-gap: 6px !important;
+      row-gap: 4px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-top-row,
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-bottom-row {
+      display: contents !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot {
+      grid-column: 1 !important;
+      grid-row: 1 / 3 !important;
+      align-self: center !important;
+      justify-self: center !important;
+      width: 9px !important;
+      height: 9px !important;
+      flex: 0 0 9px !important;
+      margin: 0 !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      align-self: center !important;
+      justify-self: center !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      text-align: center !important;
+      font-size: 12px !important;
+      font-weight: 750 !important;
+      letter-spacing: 0.48px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
+      grid-column: 2 !important;
+      grid-row: 2 !important;
+      align-self: center !important;
+      justify-self: center !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      text-align: center !important;
+      font-size: 11.5px !important;
+      font-weight: 750 !important;
+      letter-spacing: 0.34px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow {
+      grid-column: 3 !important;
+      grid-row: 1 / 3 !important;
+      align-self: center !important;
+      justify-self: center !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 28px !important;
+      min-width: 28px !important;
+      height: 100% !important;
+      flex: 0 0 28px !important;
+      line-height: 1 !important;
+      margin: 0 !important;
+    }
+
+    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
+      display: block !important;
+      width: 18px !important;
+      height: 18px !important;
+      margin: 0 !important;
+    }
+  }
+  
   
   /* =========================================================
      10. SHARED USC GRADIENT ACCENT FINAL LOCK
