@@ -16430,18 +16430,18 @@ document.head.appendChild(style);
     }
   }
 
-  /* =========================================================
-     7-A. LIVE LEADERBOARD CTA DESKTOP 2-COLUMN / 2-ROW GRID
+    /* =========================================================
+     7-A. LIVE LEADERBOARD CTA DESKTOP TOP-ROW ICONS LOCK
      Scope: #jh-pga-table-shared only
 
      Purpose:
      - Desktop only.
      - Keep mobile one-line CTA unchanged.
      - Desktop layout:
-       Row 1: dot + LIVE
-       Row 2: LEADERBOARD + arrow
-     - Every grid cell is centered.
-     - Do not change mobile behavior.
+       Row 1: dot + LIVE + arrow
+       Row 2: LEADERBOARD centered across all columns
+     - Every element is center-aligned.
+     - Do not change CTA colors.
   ========================================================= */
 
   @media (min-width: 769px) {
@@ -16452,13 +16452,14 @@ document.head.appendChild(style);
 
     #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
       display: grid !important;
-      grid-template-columns: minmax(84px, 1fr) 32px !important;
-      grid-template-rows: 1fr 1fr !important;
+      grid-template-columns: 22px max-content 22px !important;
+      grid-template-rows: auto auto !important;
       align-items: center !important;
       justify-items: center !important;
-      place-items: center !important;
-      column-gap: 6px !important;
-      row-gap: 5px !important;
+      justify-content: center !important;
+      align-content: center !important;
+      column-gap: 7px !important;
+      row-gap: 6px !important;
       width: 100% !important;
       max-width: 100% !important;
       min-width: 0 !important;
@@ -16475,7 +16476,6 @@ document.head.appendChild(style);
       grid-row: 1 !important;
       align-self: center !important;
       justify-self: center !important;
-      place-self: center !important;
 
       width: 9px !important;
       height: 9px !important;
@@ -16488,27 +16488,25 @@ document.head.appendChild(style);
       grid-row: 1 !important;
       align-self: center !important;
       justify-self: center !important;
-      place-self: center !important;
 
       display: block !important;
-      width: 100% !important;
-      max-width: 100% !important;
+      width: auto !important;
+      max-width: none !important;
       min-width: 0 !important;
 
       text-align: center !important;
-      font-size: 11.5px !important;
+      font-size: 11.8px !important;
       font-weight: 750 !important;
-      letter-spacing: 0.34px !important;
+      letter-spacing: 0.36px !important;
       line-height: 1 !important;
       white-space: nowrap !important;
     }
 
     #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-      grid-column: 1 !important;
+      grid-column: 1 / 4 !important;
       grid-row: 2 !important;
       align-self: center !important;
       justify-self: center !important;
-      place-self: center !important;
 
       display: block !important;
       width: 100% !important;
@@ -16524,28 +16522,27 @@ document.head.appendChild(style);
     }
 
     #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow {
-      grid-column: 2 !important;
-      grid-row: 2 !important;
+      grid-column: 3 !important;
+      grid-row: 1 !important;
       align-self: center !important;
       justify-self: center !important;
-      place-self: center !important;
 
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      width: 32px !important;
-      min-width: 32px !important;
-      height: 100% !important;
-      flex: 0 0 32px !important;
+      width: 22px !important;
+      min-width: 22px !important;
+      height: 22px !important;
+      flex: 0 0 22px !important;
       line-height: 1 !important;
       margin: 0 !important;
     }
 
     #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
       display: block !important;
-      width: 18px !important;
-      height: 18px !important;
-      margin: 0 auto !important;
+      width: 17px !important;
+      height: 17px !important;
+      margin: 0 !important;
     }
   }
   
