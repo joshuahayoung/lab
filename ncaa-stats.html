@@ -1982,6 +1982,59 @@
   }
 </style>
 
+<style id="jh-pga-table-anchor-landing-fix">
+  #jh-pga-table-shared {
+    scroll-margin-top: 132px !important;
+  }
+
+  #jh-pga-table-shared.jh-anchor-arrived .jtc-card {
+    animation: jhPgaAnchorArrival 1.35s ease-out 1;
+  }
+
+  @keyframes jhPgaAnchorArrival {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(255, 199, 44, 0.00),
+        0 15px 34px rgba(12, 35, 64, 0.10),
+        0 4px 12px rgba(153, 0, 0, 0.055);
+      transform: translateY(0);
+    }
+
+    24% {
+      box-shadow:
+        0 0 0 5px rgba(255, 199, 44, 0.34),
+        0 18px 42px rgba(153, 0, 0, 0.18),
+        0 6px 18px rgba(12, 35, 64, 0.10);
+      transform: translateY(-1px);
+    }
+
+    100% {
+      box-shadow:
+        0 15px 34px rgba(12, 35, 64, 0.10),
+        0 4px 12px rgba(153, 0, 0, 0.055);
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared {
+      scroll-margin-top: 118px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-pga-table-shared {
+      scroll-margin-top: 108px !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #jh-pga-table-shared.jh-anchor-arrived .jtc-card {
+      animation: none !important;
+    }
+  }
+</style>
+ 
 <style id="jh-pga-table-shared-font-softening">
   #jh-pga-table-shared .jtc-header-row h3 {
     font-weight: 650 !important;
@@ -3517,7 +3570,61 @@
   })();
 </script>
 
+<script id="jh-pga-table-anchor-landing-script">
+  (function () {
+    const targetId = "jh-pga-table-shared";
 
+    function hasPgaHash() {
+      return window.location.hash === "#" + targetId;
+    }
+
+    function highlightTarget(target) {
+      if (!target) return;
+
+      target.classList.remove("jh-anchor-arrived");
+
+      window.requestAnimationFrame(function () {
+        target.classList.add("jh-anchor-arrived");
+      });
+
+      window.setTimeout(function () {
+        target.classList.remove("jh-anchor-arrived");
+      }, 1600);
+    }
+
+    function scrollToPgaTable() {
+      if (!hasPgaHash()) return;
+
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      window.setTimeout(function () {
+        highlightTarget(target);
+      }, 360);
+    }
+
+    function scheduleLandingCorrection() {
+      if (!hasPgaHash()) return;
+
+      window.setTimeout(scrollToPgaTable, 180);
+      window.setTimeout(scrollToPgaTable, 650);
+      window.setTimeout(scrollToPgaTable, 1150);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", scheduleLandingCorrection);
+    } else {
+      scheduleLandingCorrection();
+    }
+
+    window.addEventListener("hashchange", scheduleLandingCorrection);
+  })();
+</script>
   
 
 
