@@ -1018,7 +1018,6 @@
 
     if (!signal) return;
 
-    const dot = signal.querySelector(".jhits-dot");
     const statusEl = signal.querySelector(".jhits-status");
     const titleEl = signal.querySelector(".jhits-title");
     const detailEl = signal.querySelector(".jhits-detail");
@@ -1037,19 +1036,37 @@
     function normalizeStatus(status) {
       const value = String(status || "").trim().toLowerCase();
 
-      if (value === "upnext" || value === "up-next" || value === "scheduled") {
+      if (
+        value === "upnext" ||
+        value === "up-next" ||
+        value === "scheduled" ||
+        value === "preseason" ||
+        value === "pre-season"
+      ) {
         return "upnext";
       }
 
-      if (value === "ongoing" || value === "live" || value === "in-progress" || value === "in_progress") {
+      if (
+        value === "ongoing" ||
+        value === "live" ||
+        value === "in-progress" ||
+        value === "in_progress"
+      ) {
         return "ongoing";
       }
 
-      if (value === "final" || value === "completed" || value === "complete") {
+      if (
+        value === "final" ||
+        value === "completed" ||
+        value === "complete"
+      ) {
         return "final";
       }
 
-      if (value === "cancelled" || value === "canceled") {
+      if (
+        value === "cancelled" ||
+        value === "canceled"
+      ) {
         return "cancelled";
       }
 
@@ -1072,12 +1089,34 @@
 
       if (!clean) return "Tournament";
 
-      return clean
-        .replace(/^The\s+/i, "The ")
-        .replace(/\s+Invitational$/i, " Invitational");
+      return clean;
     }
 
-    function buildScoreDetail(data, status) {
+    function getTodayDateOnly() {
+      const now = new Date();
+
+      return new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate()
+      );
+    }
+
+    function parseDateOnly(value) {
+      if (!isUsableValue(value)) return null;
+
+      const parsed = new Date(String(value).trim() + "T00:00:00");
+
+      if (Number.isNaN(parsed.getTime())) return null;
+
+      return new Date(
+        parsed.getFullYear(),
+        parsed.getMonth(),
+        parsed.getDate()
+      );
+    }
+
+    function buildPgaDetail(data, status) {
       const summary = data && data.summary ? data.summary : {};
       const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
       const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
@@ -1101,56 +1140,193 @@
     function hasRenderablePgaData(data) {
       if (!data || typeof data !== "object") return false;
 
+      if (data.active === false) return false;
+
       return isUsableValue(data.status) ||
         isUsableValue(data.title) ||
         isUsableValue(data.date) ||
         Boolean(data.summary);
     }
 
-    function renderSignal(data) {
-      if (!hasRenderablePgaData(data)) {
+    function mapPgaDataToSignal(data) {
+      const status = normalizeStatus(data.status);
+
+      return {
+        status,
+        label: statusLabel(status),
+        title: shortTitle(data.title),
+        detail: buildPgaDetail(data, status),
+        href: "./ncaa-stats.html#jh-pga-table-shared",
+        source: "pgaTableShared"
+      };
+    }
+
+    function normalizeSeasonEventStatus(event) {
+      if (!event || typeof event !== "object") return "upnext";
+
+      return normalizeStatus(event.status || event.statusLabel);
+    }
+
+    function buildSeasonEventDetail(event, status) {
+      const summary = event && event.summary ? event.summary : {};
+      const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
+      const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
+      const finish = isUsableValue(summary.finish) ? String(summary.finish).trim() : "";
+      const date = isUsableValue(event.date) ? String(event.date).trim() : "";
+
+      if (status === "ongoing" || status === "final") {
+        if (finish && total && par) return `${finish} · ${total} (${par})`;
+        if (finish && par) return `${finish} · ${par}`;
+        if (total && par) return `${total} (${par})`;
+        if (finish) return finish;
+      }
+
+      if (date) return date;
+
+      return "View NCAA Stats";
+    }
+
+    function collectSeasonEvents(seasonData) {
+      const events = [];
+
+      if (seasonData && Array.isArray(seasonData.fallSchedule)) {
+        events.push(...seasonData.fallSchedule);
+      }
+
+      if (seasonData && Array.isArray(seasonData.springSchedule)) {
+        events.push(...seasonData.springSchedule);
+      }
+
+      return events.filter(event =>
+        event &&
+        typeof event === "object" &&
+        (
+          isUsableValue(event.tournament) ||
+          isUsableValue(event.status) ||
+          isUsableValue(event.startDate)
+        )
+      );
+    }
+
+    function chooseSeasonFallbackEvent(seasonData) {
+      const events = collectSeasonEvents(seasonData);
+
+      if (!events.length) return null;
+
+      const today = getTodayDateOnly();
+
+      const withDates = events.map(event => {
+        const start = parseDateOnly(event.startDate);
+        const end = parseDateOnly(event.endDate) || start;
+        const status = normalizeSeasonEventStatus(event);
+
+        return {
+          event,
+          start,
+          end,
+          status
+        };
+      });
+
+      const explicitOngoing = withDates.find(item => item.status === "ongoing");
+      if (explicitOngoing) return explicitOngoing.event;
+
+      const inDateWindow = withDates.find(item => {
+        if (!item.start || !item.end) return false;
+        return item.start <= today && today <= item.end;
+      });
+
+      if (inDateWindow) return inDateWindow.event;
+
+      const upcoming = withDates
+        .filter(item => item.start && item.start >= today)
+        .sort((a, b) => a.start - b.start)[0];
+
+      if (upcoming) return upcoming.event;
+
+      const latestFinal = withDates
+        .filter(item => item.status === "final" && item.start)
+        .sort((a, b) => b.start - a.start)[0];
+
+      if (latestFinal) return latestFinal.event;
+
+      return null;
+    }
+
+    function mapSeasonEventToSignal(event) {
+      const rawStatus = normalizeSeasonEventStatus(event);
+
+      const status = rawStatus === "scheduled" ? "upnext" : rawStatus;
+      const label = statusLabel(status);
+      const title = shortTitle(event.tournament || "USC Season Event");
+      const detail = buildSeasonEventDetail(event, status);
+
+      return {
+        status,
+        label,
+        title,
+        detail,
+        href: "./ncaa-stats.html#jh-sophomore-season-page",
+        source: "sophomoreSeason"
+      };
+    }
+
+    function renderSignal(model) {
+      if (!model) {
         signal.hidden = true;
         return;
       }
 
-      const status = normalizeStatus(data.status);
-      const label = statusLabel(status);
-      const title = shortTitle(data.title);
-      const detail = buildScoreDetail(data, status);
-
       signal.classList.remove("is-upnext", "is-ongoing", "is-final", "is-cancelled");
-      signal.classList.add(`is-${status}`);
+      signal.classList.add(`is-${model.status}`);
 
-      if (statusEl) statusEl.textContent = label;
-      if (titleEl) titleEl.textContent = title;
-      if (detailEl) detailEl.textContent = detail;
+      if (statusEl) statusEl.textContent = model.label;
+      if (titleEl) titleEl.textContent = model.title;
+      if (detailEl) detailEl.textContent = model.detail;
 
-      signal.href = "./ncaa-stats.html#jh-pga-table-shared";
+      signal.href = model.href || "./ncaa-stats.html";
       signal.setAttribute(
         "aria-label",
-        `${label}: ${title}. ${detail}. View NCAA Stats tournament section.`
+        `${model.label}: ${model.title}. ${model.detail}. View NCAA Stats.`
       );
       signal.setAttribute(
         "title",
-        `${label} · ${title} · ${detail}`
+        `${model.label} · ${model.title} · ${model.detail}`
       );
 
       signal.hidden = false;
     }
 
+    async function fetchJson(url) {
+      const response = await fetch(url + "?v=" + Date.now());
+
+      if (!response.ok) return null;
+
+      return response.json();
+    }
+
     async function loadTournamentSignal() {
       try {
-        const response = await fetch("./data2.json?v=" + Date.now());
+        const data2 = await fetchJson("./data2.json");
 
-        if (!response.ok) {
-          signal.hidden = true;
+        const pgaData = data2 && data2.pgaTableShared
+          ? data2.pgaTableShared
+          : null;
+
+        if (hasRenderablePgaData(pgaData)) {
+          renderSignal(mapPgaDataToSignal(pgaData));
           return;
         }
 
-        const data = await response.json();
-        const pgaData = data && data.pgaTableShared ? data.pgaTableShared : null;
+        const seasonData = await fetchJson("./sophomore-season-2026-27.json");
+        const fallbackEvent = chooseSeasonFallbackEvent(seasonData);
 
-        renderSignal(pgaData);
+        if (fallbackEvent) {
+          renderSignal(mapSeasonEventToSignal(fallbackEvent));
+          return;
+        }
+
+        signal.hidden = true;
       } catch (error) {
         console.error("Index tournament signal render error:", error);
         signal.hidden = true;
@@ -1164,6 +1340,8 @@
     }
   })();
 </script>
+
+
 
 <section class="usc-commit-section" aria-labelledby="uscCommitTitle">
   <style>
