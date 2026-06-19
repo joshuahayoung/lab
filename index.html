@@ -1208,26 +1208,31 @@
     }
 
     function buildPgaDetail(data, status) {
-      const summary = data && data.summary ? data.summary : {};
-      const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
-      const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
-      const pos = isUsableValue(summary.pos) ? String(summary.pos).trim() : "";
-      const date = isUsableValue(data.date) ? String(data.date).trim() : "";
+  const summary = data && data.summary ? data.summary : {};
+  const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
+  const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
+  const pos = isUsableValue(summary.pos) ? String(summary.pos).trim() : "";
+  const date = isUsableValue(data.date) ? String(data.date).trim() : "";
 
-      if (status === "ongoing" || status === "final") {
-        if (pos && total && par) return `${pos} · ${total} (${par})`;
-        if (pos && par) return `${pos} · ${par}`;
-        if (total && par) return `${total} (${par})`;
-        if (pos) return pos;
-      }
+  const score = total && par
+    ? `${total} (${par})`
+    : total || par;
 
-      if (date) return date;
+  if (status === "ongoing" || status === "final") {
+    if (score && pos) return `${score} · ${pos}`;
+    if (score) return score;
+    if (pos) return pos;
+  }
 
-      if (pos && par) return `${pos} · ${par}`;
+  if (date) return date;
 
-      return "View NCAA Stats";
-    }
+  if (score && pos) return `${score} · ${pos}`;
+  if (score) return score;
+  if (pos) return pos;
 
+  return "View NCAA Stats";
+}
+	  
     function hasRenderablePgaData(data) {
       if (!data || typeof data !== "object") return false;
 
