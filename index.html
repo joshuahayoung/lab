@@ -580,7 +580,12 @@
     <span class="jhits-title">Tournament</span>
     <span class="jhits-sep jhits-detail-sep" aria-hidden="true">·</span>
     <span class="jhits-detail">Details</span>
-    <span class="jhits-arrow" aria-hidden="true">↗</span>
+    <span class="jhits-arrow" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none">
+    <line x1="7" y1="17" x2="17" y2="7"></line>
+    <polyline points="7 7 17 7 17 17"></polyline>
+  </svg>
+</span>
   </a>
 </div>
 
@@ -750,12 +755,29 @@
   .jh-index-tournament-signal .jhits-detail,
   .jh-index-tournament-signal .jhits-sep,
   .jh-index-tournament-signal .jhits-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    line-height: 1;
-  }
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1px;
+  color: currentColor;
+}
+
+.jh-index-tournament-signal .jhits-arrow svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.jh-index-tournament-signal .jhits-arrow svg line,
+.jh-index-tournament-signal .jhits-arrow svg polyline {
+  stroke: currentColor;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
   .jh-index-tournament-signal .jhits-title,
   .jh-index-tournament-signal .jhits-detail {
@@ -863,35 +885,57 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .jh-index-tournament-signal-row {
-      margin: -12px auto 16px auto;
-      padding: 0 10px;
-    }
+ @media (max-width: 768px) {
+.jh-index-tournament-signal-row {
+margin: -12px auto 16px auto;
+padding: 0 10px;
+}
 
-    .jh-index-tournament-signal {
-      max-width: 100%;
-      min-height: 32px;
-      padding: 7px 11px;
-      gap: 6px;
-      font-size: 10px;
-      letter-spacing: 0.32px;
-    }
+.jh-index-tournament-signal {
+max-width: 100%;
+min-height: 32px;
+padding: 7px 11px;
+gap: 6px;
+font-size: 10px;
+letter-spacing: 0.32px;
+}
 
-    .jh-index-tournament-signal .jhits-title {
-      max-width: 170px;
-    }
+.jh-index-tournament-signal .jhits-title {
+max-width: 170px;
+}
 
-    .jh-index-tournament-signal .jhits-dot {
-      width: 7px;
-      height: 7px;
-      flex-basis: 7px;
-    }
+.jh-index-tournament-signal .jhits-dot {
+width: 7px;
+height: 7px;
+flex: 0 0 7px;
+}
 
-    .jh-index-tournament-signal .jhits-arrow {
-      font-size: 12px;
-    }
-  }
+.jh-index-tournament-signal .jhits-arrow {
+width: 15px;
+height: 15px;
+flex: 0 0 15px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+margin-left: 1px;
+color: currentColor;
+}
+
+.jh-index-tournament-signal .jhits-arrow svg {
+display: block;
+width: 14px;
+height: 14px;
+}
+
+.jh-index-tournament-signal .jhits-arrow svg line,
+.jh-index-tournament-signal .jhits-arrow svg polyline {
+stroke: currentColor;
+stroke-width: 3.2;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+}
+
 
   @media (max-width: 520px) {
     .jh-index-tournament-signal {
