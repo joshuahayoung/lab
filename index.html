@@ -566,28 +566,7 @@
   }
 </style>
 
-<div class="jh-index-tournament-signal-row">
-  <a
-    id="jhIndexTournamentSignal"
-    class="jh-index-tournament-signal"
-    href="./ncaa-stats.html#jh-pga-table-shared"
-    aria-label="View current tournament status on NCAA Stats page"
-    hidden
-  >
-    <span class="jhits-dot" aria-hidden="true"></span>
-    <span class="jhits-status">STATUS</span>
-    <span class="jhits-sep" aria-hidden="true">·</span>
-    <span class="jhits-title">Tournament</span>
-    <span class="jhits-sep jhits-detail-sep" aria-hidden="true">·</span>
-    <span class="jhits-detail">Details</span>
-    <span class="jhits-arrow" aria-hidden="true">
-  <svg viewBox="0 0 24 24" fill="none">
-    <line x1="7" y1="17" x2="17" y2="7"></line>
-    <polyline points="7 7 17 7 17 17"></polyline>
-  </svg>
-</span>
-  </a>
-</div>
+
 
 <div class="jh-home-usc-hero-banner-frame" style="margin-bottom: 20px; border-radius: 20px; overflow: hidden; box-shadow: 0 18px 38px rgba(153,0,0,0.13), 0 10px 24px rgba(12,35,64,0.10); background: linear-gradient(135deg, #990000 0%, #0c2340 55%, #c98a2e 100%); border: 1px solid rgba(153,0,0,0.20); position: relative;">
   <a href="./images/sophomore-2026-27/home-usc-commited-banner-01.jpg" target="_blank" style="display:block; text-decoration: none;">
@@ -666,25 +645,70 @@
   }
 </style>
 
-<style id="jh-index-tournament-signal-style">
-  .jh-index-tournament-signal-row,
-  .jh-index-tournament-signal-row * {
+
+
+<div class="jh-hero-utility-row" aria-label="Current tournament status and update timestamp">
+  <a
+    id="jhIndexTournamentSignal"
+    class="jh-index-tournament-signal"
+    href="./ncaa-stats.html#jh-pga-table-shared"
+    aria-label="View current tournament status on NCAA Stats page"
+    hidden
+  >
+    <span class="jhits-dot" aria-hidden="true"></span>
+    <span class="jhits-status">STATUS</span>
+    <span class="jhits-sep" aria-hidden="true">·</span>
+    <span class="jhits-title">Tournament</span>
+    <span class="jhits-sep jhits-detail-sep" aria-hidden="true">·</span>
+    <span class="jhits-detail">Details</span>
+    <span class="jhits-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </span>
+  </a>
+
+<span
+id="jhHeroLastUpdatedWrap"
+class="jh-hero-last-updated-wrap"
+hidden
+
+>
+
+```
+<span
+```
+
+```
+  id="jhHeroLastUpdated"
+  class="jh-hero-last-updated-text"
+></span>
+```
+
+  </span>
+</div>
+	
+
+
+<style id="jh-hero-utility-row-style">
+  .jh-hero-utility-row,
+  .jh-hero-utility-row * {
     box-sizing: border-box;
   }
 
-  .jh-index-tournament-signal-row {
+  .jh-hero-utility-row {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 900px;
+    margin: -4px auto 20px auto;
+    padding: 0 20px 0 4px;
 
-    /*
-      Pulls the badge into the space between the title underline
-      and the hero banner without touching the hero image itself.
-    */
-    margin: -14px auto 18px auto;
-    padding: 0 12px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   }
 
   .jh-index-tournament-signal,
@@ -693,18 +717,17 @@
   }
 
   .jh-index-tournament-signal {
-    position: relative;
-    z-index: 3;
+    justify-self: start;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 6px;
 
     width: fit-content;
     max-width: 100%;
-    min-height: 34px;
-    padding: 8px 13px;
+    min-height: 27px;
+    padding: 5px 9px;
 
     border-radius: 999px;
     text-decoration: none;
@@ -712,23 +735,22 @@
     overflow: hidden;
 
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10.8px;
+    font-size: 9.7px;
     line-height: 1;
-    font-weight: 750;
-    letter-spacing: 0.42px;
+    font-weight: 650;
+    letter-spacing: 0.28px;
     text-transform: uppercase;
 
     box-shadow:
-      0 8px 18px rgba(12, 35, 64, 0.12),
-      0 3px 8px rgba(153, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.20);
+      0 4px 10px rgba(12, 35, 64, 0.055),
+      0 2px 5px rgba(153, 0, 0, 0.035);
 
     transition:
       transform 0.18s ease,
-      box-shadow 0.18s ease,
       background-color 0.18s ease,
       border-color 0.18s ease,
-      color 0.18s ease;
+      color 0.18s ease,
+      box-shadow 0.18s ease;
   }
 
   .jh-index-tournament-signal[hidden] {
@@ -743,9 +765,9 @@
   }
 
   .jh-index-tournament-signal .jhits-dot {
-    width: 8px;
-    height: 8px;
-    flex: 0 0 8px;
+    width: 6px;
+    height: 6px;
+    flex: 0 0 6px;
     border-radius: 50%;
     display: inline-block;
   }
@@ -755,117 +777,118 @@
   .jh-index-tournament-signal .jhits-detail,
   .jh-index-tournament-signal .jhits-sep,
   .jh-index-tournament-signal .jhits-arrow {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1px;
-  color: currentColor;
-}
-
-.jh-index-tournament-signal .jhits-arrow svg {
-  display: block;
-  width: 15px;
-  height: 15px;
-}
-
-.jh-index-tournament-signal .jhits-arrow svg line,
-.jh-index-tournament-signal .jhits-arrow svg polyline {
-  stroke: currentColor;
-  stroke-width: 3.2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    line-height: 1;
+  }
 
   .jh-index-tournament-signal .jhits-title,
+  .jh-index-tournament-signal .jhits-title + .jhits-detail-sep {
+    display: none !important;
+  }
+
   .jh-index-tournament-signal .jhits-detail {
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .jh-index-tournament-signal .jhits-title {
-    max-width: 260px;
+    max-width: 190px;
   }
 
   .jh-index-tournament-signal .jhits-arrow {
-    font-size: 13px;
-    font-weight: 750;
+    width: 13px;
+    height: 13px;
+    flex: 0 0 13px;
+    color: currentColor;
     margin-left: 1px;
+  }
+
+  .jh-index-tournament-signal .jhits-arrow svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+  }
+
+  .jh-index-tournament-signal .jhits-arrow svg line,
+  .jh-index-tournament-signal .jhits-arrow svg polyline {
+    stroke: currentColor;
+    stroke-width: 3.1;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .jh-index-tournament-signal.is-upnext {
     color: #650000;
     background: #fffdf7;
-    border: 1px solid rgba(153, 0, 0, 0.24);
+    border: 1px solid rgba(153, 0, 0, 0.18);
   }
 
   .jh-index-tournament-signal.is-upnext .jhits-dot {
     background: #ffc72c;
     box-shadow:
-      0 0 0 3px rgba(255, 199, 44, 0.20),
-      0 0 10px rgba(153, 0, 0, 0.10);
+      0 0 0 3px rgba(255, 199, 44, 0.16),
+      0 0 8px rgba(153, 0, 0, 0.08);
   }
 
   .jh-index-tournament-signal.is-ongoing {
-    color: #ffc72c;
-    background: #990000;
-    border: 1px solid rgba(255, 199, 44, 0.54);
+    color: #650000;
+    background: #fffdf7;
+    border: 1px solid rgba(153, 0, 0, 0.22);
   }
 
   .jh-index-tournament-signal.is-ongoing .jhits-dot {
     background: #ffc72c;
     animation: jh-index-live-pulse 1.45s infinite ease-in-out;
     box-shadow:
-      0 0 0 4px rgba(255, 199, 44, 0.22),
-      0 0 12px rgba(255, 199, 44, 0.22);
+      0 0 0 3px rgba(255, 199, 44, 0.20),
+      0 0 9px rgba(153, 0, 0, 0.10);
   }
 
   .jh-index-tournament-signal.is-final {
     color: #650000;
-    background: #ffc72c;
-    border: 1px solid rgba(101, 0, 0, 0.46);
+    background: #fff8d8;
+    border: 1px solid rgba(101, 0, 0, 0.22);
   }
 
   .jh-index-tournament-signal.is-final .jhits-dot {
     background: #650000;
     box-shadow:
-      0 0 0 3px rgba(101, 0, 0, 0.14),
-      0 0 10px rgba(101, 0, 0, 0.12);
+      0 0 0 3px rgba(101, 0, 0, 0.10),
+      0 0 8px rgba(101, 0, 0, 0.08);
   }
 
   .jh-index-tournament-signal.is-cancelled {
-    color: #fff3c4;
-    background: #7f1d1d;
-    border: 1px solid rgba(255, 199, 44, 0.30);
-    opacity: 0.88;
+    color: #7f1d1d;
+    background: #fff7f7;
+    border: 1px solid rgba(127, 29, 29, 0.18);
+    opacity: 0.84;
   }
 
   .jh-index-tournament-signal.is-cancelled .jhits-dot {
-    background: #fff3c4;
-    box-shadow: 0 0 0 3px rgba(255, 243, 196, 0.16);
+    background: #7f1d1d;
+    box-shadow: 0 0 0 3px rgba(127, 29, 29, 0.10);
   }
 
   .jh-index-tournament-signal.is-upnext:hover,
-  .jh-index-tournament-signal.is-upnext:focus {
-    background: #ffc72c;
-    color: #650000;
-    border-color: rgba(101, 0, 0, 0.46);
-  }
-
+  .jh-index-tournament-signal.is-upnext:focus,
   .jh-index-tournament-signal.is-ongoing:hover,
   .jh-index-tournament-signal.is-ongoing:focus {
-    background: #650000;
-    color: #ffcc00;
-    border-color: rgba(255, 204, 0, 0.68);
+    background: #ffc72c;
+    color: #650000;
+    border-color: rgba(101, 0, 0, 0.34);
+    box-shadow:
+      0 6px 14px rgba(153, 0, 0, 0.10),
+      0 3px 8px rgba(12, 35, 64, 0.06);
   }
 
   .jh-index-tournament-signal.is-final:hover,
   .jh-index-tournament-signal.is-final:focus {
     background: #990000;
     color: #ffc72c;
-    border-color: rgba(255, 199, 44, 0.62);
+    border-color: rgba(255, 199, 44, 0.46);
+    box-shadow:
+      0 6px 14px rgba(153, 0, 0, 0.14),
+      0 3px 8px rgba(12, 35, 64, 0.06);
   }
 
   @keyframes jh-index-live-pulse {
@@ -875,8 +898,8 @@
     }
 
     50% {
-      opacity: 0.45;
-      transform: scale(1.18);
+      opacity: 0.42;
+      transform: scale(1.16);
     }
 
     100% {
@@ -885,119 +908,22 @@
     }
   }
 
- @media (max-width: 768px) {
-.jh-index-tournament-signal-row {
-margin: -12px auto 16px auto;
-padding: 0 10px;
-}
-
-.jh-index-tournament-signal {
-max-width: 100%;
-min-height: 32px;
-padding: 7px 11px;
-gap: 6px;
-font-size: 10px;
-letter-spacing: 0.32px;
-}
-
-.jh-index-tournament-signal .jhits-title {
-max-width: 170px;
-}
-
-.jh-index-tournament-signal .jhits-dot {
-width: 7px;
-height: 7px;
-flex: 0 0 7px;
-}
-
-.jh-index-tournament-signal .jhits-arrow {
-width: 15px;
-height: 15px;
-flex: 0 0 15px;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-margin-left: 1px;
-color: currentColor;
-}
-
-.jh-index-tournament-signal .jhits-arrow svg {
-display: block;
-width: 14px;
-height: 14px;
-}
-
-.jh-index-tournament-signal .jhits-arrow svg line,
-.jh-index-tournament-signal .jhits-arrow svg polyline {
-stroke: currentColor;
-stroke-width: 3.2;
-stroke-linecap: round;
-stroke-linejoin: round;
-}
-}
-
-
-  @media (max-width: 520px) {
-    .jh-index-tournament-signal {
-      justify-content: center;
-      width: auto;
-      max-width: 100%;
-    }
-
-    .jh-index-tournament-signal .jhits-title,
-    .jh-index-tournament-signal .jhits-title + .jhits-detail-sep {
-      display: none !important;
-    }
-
-    .jh-index-tournament-signal .jhits-detail {
-      max-width: 160px;
-    }
-  }
-
-  @media (max-width: 390px) {
-    .jh-index-tournament-signal-row {
-      margin: -10px auto 14px auto;
-    }
-
-    .jh-index-tournament-signal {
-      min-height: 31px;
-      padding: 7px 10px;
-      gap: 5px;
-      font-size: 9.4px;
-      letter-spacing: 0.24px;
-    }
-
-    .jh-index-tournament-signal .jhits-detail {
-      max-width: 135px;
-    }
-  }
-</style>
-
-	
-<div
-  id="jhHeroLastUpdatedWrap"
-  class="jh-hero-last-updated-wrap"
-  hidden
->
-  <span
-    id="jhHeroLastUpdated"
-    class="jh-hero-last-updated-text"
-  ></span>
-</div>
-
-<style id="jh-hero-last-updated-style">
   .jh-hero-last-updated-wrap,
   .jh-hero-last-updated-wrap * {
     box-sizing: border-box;
   }
 
   .jh-hero-last-updated-wrap {
-    width: 100%;
-    max-width: 900px;
-    margin: -4px auto 20px auto;
-    padding: 0 20px 0 4px;
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 0;
     text-align: right;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  .jh-hero-last-updated-wrap[hidden] {
+    display: none !important;
   }
 
   .jh-hero-last-updated-text {
@@ -1007,12 +933,44 @@ stroke-linejoin: round;
     line-height: 1.35;
     font-weight: 500;
     letter-spacing: 0.2px;
+    white-space: nowrap;
   }
 
   @media (max-width: 768px) {
-    .jh-hero-last-updated-wrap {
+    .jh-hero-utility-row {
       margin: -2px auto 18px auto;
       padding: 0 20px 0 4px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+    }
+
+    .jh-index-tournament-signal {
+      min-height: 26px;
+      padding: 5px 8px;
+      gap: 5px;
+      font-size: 9.2px;
+      letter-spacing: 0.22px;
+    }
+
+    .jh-index-tournament-signal .jhits-dot {
+      width: 6px;
+      height: 6px;
+      flex-basis: 6px;
+    }
+
+    .jh-index-tournament-signal .jhits-detail {
+      max-width: 145px;
+    }
+
+    .jh-index-tournament-signal .jhits-arrow {
+      width: 12px;
+      height: 12px;
+      flex-basis: 12px;
+    }
+
+    .jh-index-tournament-signal .jhits-arrow svg {
+      width: 11px;
+      height: 11px;
     }
 
     .jh-hero-last-updated-text {
@@ -1020,7 +978,61 @@ stroke-linejoin: round;
       line-height: 1.35;
     }
   }
+
+  @media (max-width: 480px) {
+    .jh-hero-utility-row {
+      margin: -2px auto 16px auto;
+      padding: 0 18px 0 4px;
+      gap: 8px;
+    }
+
+    .jh-index-tournament-signal {
+      min-height: 25px;
+      padding: 5px 7px;
+      gap: 4px;
+      font-size: 8.7px;
+      letter-spacing: 0.16px;
+    }
+
+    .jh-index-tournament-signal .jhits-detail {
+      max-width: 112px;
+    }
+
+    .jh-hero-last-updated-text {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    .jh-hero-utility-row {
+      padding-right: 16px;
+      gap: 6px;
+    }
+
+    .jh-index-tournament-signal {
+      font-size: 8.3px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    .jh-index-tournament-signal .jhits-detail {
+      max-width: 92px;
+    }
+
+    .jh-hero-last-updated-text {
+      font-size: 9.5px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jh-index-tournament-signal,
+    .jh-index-tournament-signal .jhits-dot {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
 </style>
+
 	
 <script>
   (function () {
