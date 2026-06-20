@@ -5056,7 +5056,71 @@
     }
   }
 </style>
-  
+
+<style id="jh-offseason-schedule-completed-event-style">
+  #jh-offseason-schedule .jhos-row-completed td:nth-child(1),
+  #jh-offseason-schedule .jhos-row-completed td:nth-child(2),
+  #jh-offseason-schedule .jhos-row-completed td:nth-child(3) {
+    background:
+      linear-gradient(
+        180deg,
+        #f8fafc 0%,
+        #f1f5f9 100%
+      ) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed td {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.18) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed .jhos-date {
+    background: #e2e8f0 !important;
+    border-color: rgba(100, 116, 139, 0.24) !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed .jhos-event-name {
+    color: #475569 !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed .jhos-event-location {
+    color: #94a3b8 !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed a[title*="View"] {
+    color: #64748b !important;
+    background: rgba(100, 116, 139, 0.08) !important;
+    border-color: rgba(100, 116, 139, 0.22) !important;
+  }
+
+  #jh-offseason-schedule .jhos-row-completed a[title*="View"]:hover,
+  #jh-offseason-schedule .jhos-row-completed a[title*="View"]:focus {
+    color: #ffffff !important;
+    background: #64748b !important;
+    border-color: #64748b !important;
+  }
+
+  #jh-offseason-schedule .jhos-status.is-final-muted {
+    color: #475569 !important;
+    background: #e2e8f0 !important;
+    border-color: rgba(100, 116, 139, 0.28) !important;
+  }
+
+  @media (min-width: 701px) {
+    #jh-offseason-schedule .jhos-table tbody tr.jhos-row-completed:hover td:nth-child(1),
+    #jh-offseason-schedule .jhos-table tbody tr.jhos-row-completed:hover td:nth-child(2),
+    #jh-offseason-schedule .jhos-table tbody tr.jhos-row-completed:hover td:nth-child(3) {
+      background:
+        linear-gradient(
+          180deg,
+          #f8fafc 0%,
+          #f1f5f9 100%
+        ) !important;
+    }
+  }
+</style>
+ 
 <div class="jhos-title-row">
   <h4 class="jhos-title">
     2026 Summer Amateur Schedule & Results
@@ -5092,75 +5156,7 @@
     </thead>
 
     <tbody>
-      <tr>
-        <td>
-          <div class="jhos-cell jhos-cell-date">
-            <div class="jhos-date">
-              Jun 17–20
-            </div>
-          </div>
-        </td>
-
-        <td>
-          <div class="jhos-cell jhos-cell-event">
-            <div class="jhos-event-block">
-              <div class="jhos-event-name">
-                The Dogwood Invitational
-                <a
-                  href="https://thedogwood.com/leaderboard"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View The Dogwood Invitational players page"
-                  title="View The Dogwood Invitational players page"
-                  style="
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 17px;
-                    height: 17px;
-                    margin-left: 5px;
-                    vertical-align: -2px;
-                    color: #c98a2e;
-                    text-decoration: none;
-                  "
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="17"
-                    height="17"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path d="M14 4h6v6"></path>
-                    <path d="M10 14 20 4"></path>
-                    <path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"></path>
-                  </svg>
-                </a>
-              </div>
-
-              <div class="jhos-event-location">
-                Druid Hills GC, Atlanta, GA
-              </div>
-            </div>
-          </div>
-        </td>
-
-        <td>
-          <div class="jhos-cell jhos-cell-status">
-            <div class="jhos-status-wrap">
-              <span class="jhos-status is-gray">
-                <span class="jhos-status-line">INVITED |</span>
-                <span class="jhos-status-line">FINAL</span>
-              </span>
-            </div>
-          </div>
-        </td>
-      </tr>
+      
 
       <tr>
         <td>
@@ -5362,6 +5358,77 @@
           </div>
         </td>
       </tr>
+
+
+<tr class="jhos-row-completed">
+  <td>
+    <div class="jhos-cell jhos-cell-date">
+      <div class="jhos-date">
+        Jun 17–20
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="jhos-cell jhos-cell-event">
+      <div class="jhos-event-block">
+        <div class="jhos-event-name">
+          The Dogwood Invitational
+          <a
+            href="https://thedogwood.com/leaderboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View The Dogwood Invitational final results"
+            title="View The Dogwood Invitational final results"
+            style="
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 17px;
+              height: 17px;
+              margin-left: 5px;
+              vertical-align: -2px;
+              color: #64748b;
+              text-decoration: none;
+            "
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M14 4h6v6"></path>
+              <path d="M10 14 20 4"></path>
+              <path d="M20 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h5"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="jhos-event-location">
+          Druid Hills GC, Atlanta, GA
+        </div>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="jhos-cell jhos-cell-status">
+      <div class="jhos-status-wrap">
+        <span class="jhos-status is-final-muted">
+          <span class="jhos-status-line">FINAL</span>
+        </span>
+      </div>
+    </div>
+  </td>
+</tr>
+     
     </tbody>
   </table>
 </div>
