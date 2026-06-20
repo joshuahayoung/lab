@@ -13401,6 +13401,60 @@ function setImpact(id, value) {
     .thumb-img { width: 100%; aspect-ratio: 1 / 1.1; object-fit: cover; object-position: center 15%; border-radius: 16px; cursor: pointer; border: 1px solid #f1f1f1; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: all 0.3s ease; display: block; }
     .thumb-img:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
     .pos-center { object-position: center center !important; }
+   .thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 16px;
+  border: 1px dashed rgba(153, 0, 0, 0.18);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(153, 0, 0, 0.035) 0%,
+      #ffffff 48%,
+      rgba(255, 204, 0, 0.10) 100%
+    );
+  box-shadow: 0 8px 18px rgba(12, 35, 64, 0.045);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
+.thumb-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+}
+
+.thumb-placeholder-kicker {
+  color: #990000;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.thumb-placeholder-text {
+  color: #0c2340;
+  font-size: 11px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.thumb-placeholder-sub {
+  color: #94a3b8;
+  font-size: 9px;
+  line-height: 1.25;
+  font-weight: 500;
+}
     .scroll-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; background: #ffffff; border: 1px solid #0c2340; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; color: #0c2340; }
     .scroll-nav:hover { background: #0c2340; color: #fff; }
     .scroll-nav.prev { left: 10px; }
@@ -13566,11 +13620,108 @@ function setImpact(id, value) {
     <div class="scroll-viewport">
       <div id="thumbScroll">
         <div class="thumb-page">
-                    
-         <img src="./images/sophomore-2026-27/the-dogwood-invitational-thanks-to-the-brock-family.jpeg" onclick="popupGallery(this)" class="thumb-img" alt="The Dogwood Invitational thank-you graphic featuring Joshua Hong with the Brock Family at Druid Hills Golf Club" title="The Dogwood Invitational — Special Thanks to The Brock Family="lazy" decoding="async"> 
-         <img src="./images/sophomore-2026-27/USC-Sophomore-Joshua-Hong-Commited-1.jpg" onclick="popupGallery(this)" class="thumb-img" alt="Joshua Hong USC Men’s Golf commitment photo for the 2026–27 sophomore season" title="Joshua Hong — USC Men’s Golf Commitment" loading="lazy" decoding="async">
-    
-          </div>
+
+  <img 
+    src="./images/sophomore-2026-27/the-dogwood-invitational-thanks-to-the-brock-family.jpeg" 
+    onclick="popupGallery(this)" 
+    class="thumb-img" 
+    alt="The Dogwood Invitational thank-you graphic featuring Joshua Hong with the Brock Family at Druid Hills Golf Club" 
+    title="The Dogwood Invitational — Special Thanks to The Brock Family" 
+    loading="lazy" 
+    decoding="async"
+  >
+
+  <img 
+    src="./images/sophomore-2026-27/USC-Sophomore-Joshua-Hong-Commited-1.jpg" 
+    onclick="popupGallery(this)" 
+    class="thumb-img" 
+    alt="Joshua Hong USC Men’s Golf commitment photo for the 2026–27 sophomore season" 
+    title="Joshua Hong — USC Men’s Golf Commitment" 
+    loading="lazy" 
+    decoding="async"
+  >
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+  <div class="thumb-placeholder" aria-hidden="true">
+    <div class="thumb-placeholder-inner">
+      <span class="thumb-placeholder-kicker">Photo Archive</span>
+      <span class="thumb-placeholder-text">Coming Soon</span>
+      <span class="thumb-placeholder-sub">2026 Summer</span>
+    </div>
+  </div>
+
+</div>
 
 
 
