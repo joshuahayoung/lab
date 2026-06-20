@@ -18,8 +18,8 @@
       "label": "Live Leaderboard"
     },
     "summary": {
-      "total": "209",
-      "par": "-7",
+      "total": "279",
+      "par": "-9",
       "pos": "T16"
     },
     "rounds": [
@@ -37,7 +37,7 @@
       },
             {
         "round": "Round 4",
-        "score": "-"
+        "score": "70"
       }
     ]
   }
