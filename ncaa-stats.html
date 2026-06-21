@@ -3281,6 +3281,85 @@
   }
 </style>
 
+
+<style id="jhskm-rank-impact-direction-lock">
+  /*
+    WAGR / CLIPPD ranking direction color lock.
+    Scope is limited to Sophomore Season Key Metrics only.
+    This does not affect any other metric card, table, photo, schedule, or page section.
+  */
+
+  #jh-sophomore-key-metrics #jhskm-wagrRank,
+  #jh-sophomore-key-metrics #jhskm-clippdRank,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact {
+    transition: color 0.18s ease;
+  }
+
+  #jh-sophomore-key-metrics #jhskm-wagrImpact,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact {
+    display: inline-flex;
+    align-items: baseline;
+    margin-left: 4px;
+    line-height: 1;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 3px;
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 1;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact-arrow {
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  #jh-sophomore-key-metrics .jhskm-impact-value {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* 상승: 등수 + 삼각형 + change number 모두 green */
+  #jh-sophomore-key-metrics #jhskm-wagrRank.is-up,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up .jhskm-impact,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up .jhskm-impact-arrow,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up .jhskm-impact-value,
+  #jh-sophomore-key-metrics #jhskm-clippdRank.is-up,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-up,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-up .jhskm-impact,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-up .jhskm-impact-arrow,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-up .jhskm-impact-value {
+    color: #16a34a !important;
+  }
+
+  /* 하강: 등수 + 삼각형 + change number 모두 red */
+  #jh-sophomore-key-metrics #jhskm-wagrRank.is-down,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down .jhskm-impact,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down .jhskm-impact-arrow,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down .jhskm-impact-value,
+  #jh-sophomore-key-metrics #jhskm-clippdRank.is-down,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-down,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-down .jhskm-impact,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-down .jhskm-impact-arrow,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-down .jhskm-impact-value {
+    color: #dc2626 !important;
+  }
+
+  /* neutral은 원래 카드 색상 유지 */
+  #jh-sophomore-key-metrics #jhskm-wagrRank.is-neutral,
+  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-neutral,
+  #jh-sophomore-key-metrics #jhskm-clippdRank.is-neutral,
+  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-neutral {
+    color: inherit !important;
+  }
+</style>
+ 
   
 <script>
   (function () {
@@ -10947,7 +11026,7 @@ function splitSpringSchedule(events) {
         return clean.includes("%") ? clean : clean + "%";
       }
 
-      function normalizeRankImpact(value) {
+     function normalizeRankImpact(value) {
   if (value === null || value === undefined) {
     return {
       raw: "—",
@@ -10973,15 +11052,37 @@ function splitSpringSchedule(events) {
     };
   }
 
+  const hasUpArrow = clean.includes("▲");
+  const hasDownArrow = clean.includes("▼");
+
   const normalized = clean
     .replace(/▲/g, "")
     .replace(/▼/g, "")
     .replace(/\+/g, "")
+    .replace(/,/g, "")
     .trim();
 
   const numberValue = Number(normalized);
 
-  if (!Number.isFinite(numberValue) || numberValue === 0) {
+  if (hasUpArrow) {
+    return {
+      raw: clean,
+      number: Number.isFinite(numberValue) ? Math.abs(numberValue) : null,
+      direction: "up",
+      displayValue: Number.isFinite(numberValue) ? String(Math.abs(numberValue)) : (normalized || "—")
+    };
+  }
+
+  if (hasDownArrow) {
+    return {
+      raw: clean,
+      number: Number.isFinite(numberValue) ? Math.abs(numberValue) : null,
+      direction: "down",
+      displayValue: Number.isFinite(numberValue) ? String(Math.abs(numberValue)) : (normalized || "—")
+    };
+  }
+
+  if (!Number.isFinite(numberValue)) {
     return {
       raw: clean,
       number: null,
@@ -10990,28 +11091,47 @@ function splitSpringSchedule(events) {
     };
   }
 
+  if (numberValue > 0) {
+    return {
+      raw: clean,
+      number: Math.abs(numberValue),
+      direction: "up",
+      displayValue: String(Math.abs(numberValue))
+    };
+  }
+
+  if (numberValue < 0) {
+    return {
+      raw: clean,
+      number: Math.abs(numberValue),
+      direction: "down",
+      displayValue: String(Math.abs(numberValue))
+    };
+  }
+
   return {
     raw: clean,
-    number: Math.abs(numberValue),
-    direction: numberValue > 0 ? "up" : "down",
-    displayValue: String(Math.abs(numberValue))
+    number: 0,
+    direction: "neutral",
+    displayValue: "0"
   };
 }
 
-function setImpact(id, value) {
+function setImpact(id, value, rankId) {
   const el = document.getElementById(id);
   if (!el) return;
 
+  const rankEl = rankId ? document.getElementById(rankId) : null;
   const impact = normalizeRankImpact(value);
 
-  el.classList.remove(
-    "is-up",
-    "is-down",
-    "is-neutral"
-  );
+  const targets = [el, rankEl].filter(Boolean);
+
+  targets.forEach(function (target) {
+    target.classList.remove("is-up", "is-down", "is-neutral");
+    target.classList.add("is-" + impact.direction);
+  });
 
   if (impact.direction === "up") {
-    el.classList.add("is-up");
     el.innerHTML = `
       <span class="jhskm-impact is-up">
         <span class="jhskm-impact-arrow">▲</span>
@@ -11022,7 +11142,6 @@ function setImpact(id, value) {
   }
 
   if (impact.direction === "down") {
-    el.classList.add("is-down");
     el.innerHTML = `
       <span class="jhskm-impact is-down">
         <span class="jhskm-impact-arrow">▼</span>
@@ -11032,7 +11151,6 @@ function setImpact(id, value) {
     return;
   }
 
-  el.classList.add("is-neutral");
   el.textContent = impact.displayValue;
 }
 
@@ -11072,11 +11190,11 @@ function setImpact(id, value) {
           setText("jhskm-teamTotal", team.teamTotal, "—");
 
           setText("jhskm-wagrRank", rank.wagrRank, "—");
-          setImpact("jhskm-wagrImpact", rank.wagrImpact);
+          setImpact("jhskm-wagrImpact", rank.wagrImpact, "jhskm-wagrRank");
           setText("jhskm-wagrDate", rank.wagrDate, "—");
 
           setText("jhskm-clippdRank", rank.clippdRank, "—");
-          setImpact("jhskm-clippdImpact", rank.clippdImpact);
+          setImpact("jhskm-clippdImpact", rank.clippdImpact, "jhskm-clippdRank");
           setText("jhskm-clippdDate", rank.clippdDate, "—");
 
           setText("jhskm-wins", rank.wins, "0");
