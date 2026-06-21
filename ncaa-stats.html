@@ -3323,7 +3323,7 @@
     line-height: 1;
   }
 
-  /* 상승: 등수 + 삼각형 + change number 모두 green */
+ 
   #jh-sophomore-key-metrics #jhskm-wagrRank.is-up,
   #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up,
   #jh-sophomore-key-metrics #jhskm-wagrImpact.is-up .jhskm-impact,
@@ -3337,7 +3337,7 @@
     color: #16a34a !important;
   }
 
-  /* 하강: 등수 + 삼각형 + change number 모두 red */
+  
   #jh-sophomore-key-metrics #jhskm-wagrRank.is-down,
   #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down,
   #jh-sophomore-key-metrics #jhskm-wagrImpact.is-down .jhskm-impact,
@@ -3351,13 +3351,16 @@
     color: #dc2626 !important;
   }
 
-  /* neutral은 원래 카드 색상 유지 */
-  #jh-sophomore-key-metrics #jhskm-wagrRank.is-neutral,
-  #jh-sophomore-key-metrics #jhskm-wagrImpact.is-neutral,
-  #jh-sophomore-key-metrics #jhskm-clippdRank.is-neutral,
-  #jh-sophomore-key-metrics #jhskm-clippdImpact.is-neutral {
-    color: inherit !important;
-  }
+  
+ #jh-sophomore-key-metrics #jhskm-wagrRank.is-neutral,
+ #jh-sophomore-key-metrics #jhskm-clippdRank.is-neutral {
+  color: inherit !important;
+}
+
+#jh-sophomore-key-metrics #jhskm-wagrImpact.is-neutral,
+#jh-sophomore-key-metrics #jhskm-clippdImpact.is-neutral {
+  color: #94a3b8 !important;
+}
 </style>
  
   
@@ -11113,7 +11116,7 @@ function splitSpringSchedule(events) {
     raw: clean,
     number: 0,
     direction: "neutral",
-    displayValue: "0"
+    displayValue: "—"
   };
 }
 
