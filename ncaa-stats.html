@@ -6321,9 +6321,28 @@
     }
 
     #jh-summer-results-log-isolated .jh-srl-metrics {
-      padding: 8px 9px 9px;
-      justify-content: flex-start;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 6px;
+  padding: 8px 9px 9px;
+}
+
+#jh-summer-results-log-isolated .jh-srl-metrics > * {
+  min-width: 0;
+}
+
+#jh-summer-results-log-isolated .jh-srl-metrics > :nth-child(1) {
+  justify-self: start;
+}
+
+#jh-summer-results-log-isolated .jh-srl-metrics > :nth-child(2) {
+  justify-self: center;
+}
+
+#jh-summer-results-log-isolated .jh-srl-metrics > :nth-child(3) {
+  justify-self: end;
+}
 
     #jh-summer-results-log-isolated .jh-srl-metric,
     #jh-summer-results-log-isolated .jh-srl-results-link {
