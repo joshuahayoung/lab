@@ -430,6 +430,70 @@
 
 
 <section id="jh-ncaa-sophomore-hero" class="jh-ncaa-sophomore-hero">
+<style id="jh-ncaa-hero-breathing-room-fix-v1">
+  /*
+    NCAA hero breathing-room adjustment.
+    Purpose:
+    - Keep the banner frame size unchanged.
+    - Keep the current desktop/mobile hero height behavior.
+    - Slightly scale down only the image content so the left text
+      and right USC golf bag do not sit too close to the frame edges.
+  */
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-frame {
+    position: relative !important;
+    overflow: hidden !important;
+    background:
+      radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 204, 0, 0.10),
+        transparent 44%
+      ),
+      linear-gradient(
+        135deg,
+        #160303 0%,
+        #0c2340 52%,
+        #050505 100%
+      ) !important;
+  }
+
+  #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+    position: relative !important;
+    z-index: 1 !important;
+    transform: scale(0.955);
+    transform-origin: center center;
+    object-position: 45% center;
+    will-change: transform;
+  }
+
+  @media (max-width: 768px) {
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      height: auto !important;
+      aspect-ratio: 16 / 9 !important;
+      transform: scale(0.94);
+      object-position: 45% center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      height: auto !important;
+      aspect-ratio: 16 / 9 !important;
+      transform: scale(0.935);
+      object-position: 45% center;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-ncaa-sophomore-hero .jh-ncaa-hero-img {
+      height: auto !important;
+      aspect-ratio: 16 / 9 !important;
+      transform: scale(0.93);
+      object-position: 45% center;
+    }
+  }
+</style>
+  
   <style>
   #jh-ncaa-sophomore-hero {
     width: 100%;
