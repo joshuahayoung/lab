@@ -1054,6 +1054,59 @@
       animation: none !important;
     }
   }
+/* =========================================================
+   INDEX HERO TOURNAMENT SIGNAL COLOR LOCK
+   Default: Cardinal Rojo
+   Hover: Cardinal Yellow
+   Scope: Hero utility row only
+========================================================= */
+
+.jh-index-tournament-signal.is-upnext,
+.jh-index-tournament-signal.is-ongoing,
+.jh-index-tournament-signal.is-final {
+  background: #990000 !important;
+  color: #ffcc00 !important;
+  border: 1px solid rgba(255, 204, 0, 0.54) !important;
+  box-shadow:
+    0 10px 24px rgba(153, 0, 0, 0.18),
+    0 4px 10px rgba(12, 35, 64, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+.jh-index-tournament-signal.is-upnext .jhits-dot,
+.jh-index-tournament-signal.is-ongoing .jhits-dot,
+.jh-index-tournament-signal.is-final .jhits-dot {
+  background: #ffcc00 !important;
+  box-shadow:
+    0 0 0 3px rgba(255, 204, 0, 0.20),
+    0 0 10px rgba(255, 204, 0, 0.22) !important;
+}
+
+.jh-index-tournament-signal.is-upnext:hover,
+.jh-index-tournament-signal.is-upnext:focus,
+.jh-index-tournament-signal.is-ongoing:hover,
+.jh-index-tournament-signal.is-ongoing:focus,
+.jh-index-tournament-signal.is-final:hover,
+.jh-index-tournament-signal.is-final:focus {
+  background: #ffcc00 !important;
+  color: #650000 !important;
+  border-color: rgba(101, 0, 0, 0.46) !important;
+  box-shadow:
+    0 12px 26px rgba(153, 0, 0, 0.18),
+    0 4px 12px rgba(12, 35, 64, 0.10) !important;
+}
+
+.jh-index-tournament-signal.is-upnext:hover .jhits-dot,
+.jh-index-tournament-signal.is-upnext:focus .jhits-dot,
+.jh-index-tournament-signal.is-ongoing:hover .jhits-dot,
+.jh-index-tournament-signal.is-ongoing:focus .jhits-dot,
+.jh-index-tournament-signal.is-final:hover .jhits-dot,
+.jh-index-tournament-signal.is-final:focus .jhits-dot {
+  background: #650000 !important;
+  box-shadow:
+    0 0 0 3px rgba(101, 0, 0, 0.14),
+    0 0 10px rgba(101, 0, 0, 0.12) !important;
+}
 </style>
 
 
