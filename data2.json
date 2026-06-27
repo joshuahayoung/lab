@@ -1,44 +1,33 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "June 24, 2026",
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "Invitation-Based Major Amateur Event",
+    "lastUpdated": "July 13, 2026",
+    "sectionTitle": "UP NEXT",
+    "eventNo": "U.S. Amateur Final Qualifying",
     "eventLabel": "Summer Amateur",
-    "status": "final",
-    "title": "The Dogwood Invitational",
-    "date": "Jun 17-20",
-    "venue": "Druid Hills Golf Club",
-    "location": "Georgia, Atlanta",
+    "status": "upnext",
+    "title": "U.S. Amateur Final Qualifying",
+    "date": "July 13",
+    "venue": "Ruby Hill Golf Club",
+    "location": "Pleasanton, CA",
     "par": 72,
-    "yards": "6,947",
-    "rating": 73.7,
-    "slope": 142,
+    "yards": "7,183",
+    "rating": 75.0,
+    "slope": 137,
     "mainLink": {
-      "url": "https://thedogwood.com/leaderboard",
-      "label": "Final Results"
+      "url": " ",
+      "label": "LIVE LEADERBOARD"
     },
     "summary": {
-      "total": "279",
-      "par": "-9",
-      "pos": "T18"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
     "rounds": [
       {
         "round": "Round 1",
-        "score": "69"
-      },
-      {
-        "round": "Round 2",
-        "score": "71"
-      },
-      {
-        "round": "Round 3",
-        "score": "69"
-      },
-            {
-        "round": "Round 4",
-        "score": "70"
+        "score": "-"
       }
+      
     ]
   }
 }
