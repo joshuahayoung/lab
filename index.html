@@ -1113,7 +1113,7 @@
 
 
 	
-<script>
+<script id="jh-hero-last-updated-data2-only">
   (function () {
     const wrap = document.getElementById("jhHeroLastUpdatedWrap");
     const target = document.getElementById("jhHeroLastUpdated");
@@ -1122,7 +1122,9 @@
 
     function isUsableValue(value) {
       if (value === null || value === undefined) return false;
+
       const cleaned = String(value).trim();
+
       return cleaned !== "" &&
         cleaned !== "-" &&
         cleaned !== "—" &&
@@ -1132,19 +1134,34 @@
     async function renderHeroLastUpdated() {
       try {
         const res = await fetch("./data2.json?v=" + Date.now());
-        if (!res.ok) return;
+
+        if (!res.ok) {
+          target.textContent = "";
+          wrap.hidden = true;
+          return;
+        }
 
         const data = await res.json();
-        const lastUpdated = data && data.pgaTableShared
-          ? data.pgaTableShared.lastUpdated
-          : "";
 
-        if (!isUsableValue(lastUpdated)) return;
+        const lastUpdated =
+          data &&
+          data.pgaTableShared &&
+          data.pgaTableShared.lastUpdated
+            ? data.pgaTableShared.lastUpdated
+            : "";
+
+        if (!isUsableValue(lastUpdated)) {
+          target.textContent = "";
+          wrap.hidden = true;
+          return;
+        }
 
         target.textContent = "Last Updated: " + String(lastUpdated).trim();
         wrap.hidden = false;
       } catch (error) {
         console.error("HERO last updated render error:", error);
+        target.textContent = "";
+        wrap.hidden = true;
       }
     }
 
@@ -1467,13 +1484,25 @@
           return;
         }
 
-        const seasonData = await fetchJson("./sophomore-season-2026-27.json");
-        const fallbackEvent = chooseSeasonFallbackEvent(seasonData);
+        async function loadTournamentSignal() {
+  try {
+    const data2 = await fetchJson("./data2.json");
 
-        if (fallbackEvent) {
-          renderSignal(mapSeasonEventToSignal(fallbackEvent));
-          return;
-        }
+    const pgaData = data2 && data2.pgaTableShared
+      ? data2.pgaTableShared
+      : null;
+
+    if (hasRenderablePgaData(pgaData)) {
+      renderSignal(mapPgaDataToSignal(pgaData));
+      return;
+    }
+
+    signal.hidden = true;
+  } catch (error) {
+    console.error("Index tournament signal render error:", error);
+    signal.hidden = true;
+  }
+}
 
         signal.hidden = true;
       } catch (error) {
