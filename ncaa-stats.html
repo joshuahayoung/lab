@@ -15498,10 +15498,14 @@ document.head.appendChild(style);
       font-weight: 700 !important;
     }
 
-    #jh-pga-table-shared .jtc-round-chip-value,
+        #jh-pga-table-shared .jtc-round-chip-value,
     #jh-pga-table-shared .jtc-total-score,
     #jh-pga-table-shared .jtc-total-par-wrap,
-    #jh-pga-table-shared .jtc-pos-value,
+    #jh-pga-table-shared .jtc-pos-value {
+      color: var(--jh-balance-navy) !important;
+      text-shadow: none !important;
+    }
+
     #jh-summer-results-log-isolated .jh-srl-round-score,
     #jh-summer-results-log-isolated .jh-srl-total-value,
     #jh-summer-results-log-isolated .jh-srl-par-value,
@@ -15512,6 +15516,48 @@ document.head.appendChild(style);
     #jh-sophomore-season-page .jh-ss-finish-value {
       color: var(--jh-balance-navy) !important;
       text-shadow: none !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-score.jh-srl-score-under,
+    #jh-summer-results-log-isolated .jh-srl-total-value.jh-srl-score-under,
+    #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-under,
+    #jh-summer-results-log-isolated .jh-srl-finish-value.jh-srl-score-under {
+      color: var(--jh-balance-cardinal) !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-score.jh-srl-score-even,
+    #jh-summer-results-log-isolated .jh-srl-total-value.jh-srl-score-even,
+    #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-even,
+    #jh-summer-results-log-isolated .jh-srl-finish-value.jh-srl-score-even {
+      color: var(--jh-balance-navy) !important;
+    }
+
+    #jh-summer-results-log-isolated .jh-srl-round-score.jh-srl-score-over,
+    #jh-summer-results-log-isolated .jh-srl-total-value.jh-srl-score-over,
+    #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-over,
+    #jh-summer-results-log-isolated .jh-srl-finish-value.jh-srl-score-over {
+      color: #475569 !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-score.jh-ss-score-under,
+    #jh-sophomore-season-page .jh-ss-total-value.jh-ss-score-under,
+    #jh-sophomore-season-page .jh-ss-par-value.jh-ss-score-under,
+    #jh-sophomore-season-page .jh-ss-finish-value.jh-ss-score-under {
+      color: var(--jh-balance-cardinal) !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-score.jh-ss-score-even,
+    #jh-sophomore-season-page .jh-ss-total-value.jh-ss-score-even,
+    #jh-sophomore-season-page .jh-ss-par-value.jh-ss-score-even,
+    #jh-sophomore-season-page .jh-ss-finish-value.jh-ss-score-even {
+      color: var(--jh-balance-navy) !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-round-score.jh-ss-score-over,
+    #jh-sophomore-season-page .jh-ss-total-value.jh-ss-score-over,
+    #jh-sophomore-season-page .jh-ss-par-value.jh-ss-score-over,
+    #jh-sophomore-season-page .jh-ss-finish-value.jh-ss-score-over {
+      color: #475569 !important;
     }
   }
 
@@ -17442,25 +17488,7 @@ document.head.appendChild(style);
   } 
 </style> 
 
-<style id="jh-summer-results-log-par-color-final-lock">
-  /*
-    Final color lock for Summer Amateur Event Results PAR value.
-    Keeps under-par / even / over-par color correct on desktop and mobile.
-    Scope: Results Log only.
-  */
 
-  #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-under {
-    color: var(--jh-balance-cardinal, #990000) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-even {
-    color: var(--jh-balance-navy, #0c2340) !important;
-  }
-
-  #jh-summer-results-log-isolated .jh-srl-par-value.jh-srl-score-over {
-    color: #475569 !important;
-  }
-</style>
  
  <div class="jh-ncaa-legal-footer">
     
