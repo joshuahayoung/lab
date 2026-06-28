@@ -1226,31 +1226,31 @@
     }
 
     function buildPgaDetail(data, status) {
-  const summary = data && data.summary ? data.summary : {};
-  const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
-  const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
-  const pos = isUsableValue(summary.pos) ? String(summary.pos).trim() : "";
-  const date = isUsableValue(data.date) ? String(data.date).trim() : "";
+      const summary = data && data.summary ? data.summary : {};
+      const total = isUsableValue(summary.total) ? String(summary.total).trim() : "";
+      const par = isUsableValue(summary.par) ? String(summary.par).trim() : "";
+      const pos = isUsableValue(summary.pos) ? String(summary.pos).trim() : "";
+      const date = isUsableValue(data.date) ? String(data.date).trim() : "";
 
-  const score = total && par
-    ? `${total} (${par})`
-    : total || par;
+      const score = total && par
+        ? `${total} (${par})`
+        : total || par;
 
-  if (status === "ongoing" || status === "final") {
-    if (score && pos) return `${score} · ${pos}`;
-    if (score) return score;
-    if (pos) return pos;
-  }
+      if (status === "ongoing" || status === "final") {
+        if (score && pos) return `${score} · ${pos}`;
+        if (score) return score;
+        if (pos) return pos;
+      }
 
-  if (date) return date;
+      if (date) return date;
 
-  if (score && pos) return `${score} · ${pos}`;
-  if (score) return score;
-  if (pos) return pos;
+      if (score && pos) return `${score} · ${pos}`;
+      if (score) return score;
+      if (pos) return pos;
 
-  return "View NCAA Stats";
-}
-	  
+      return "View NCAA Stats";
+    }
+
     function hasRenderablePgaData(data) {
       if (!data || typeof data !== "object") return false;
 
@@ -1432,33 +1432,20 @@
           return;
         }
 
-       async function loadTournamentSignal() {
-  try {
-    const data2 = await fetchJson("./data2.json");
+        const seasonData = await fetchJson("./sophomore-season-2026-27.json");
+        const fallbackEvent = chooseSeasonFallbackEvent(seasonData);
 
-    const pgaData = data2 && data2.pgaTableShared
-      ? data2.pgaTableShared
-      : null;
+        if (fallbackEvent) {
+          renderSignal(mapSeasonEventToSignal(fallbackEvent));
+          return;
+        }
 
-    if (hasRenderablePgaData(pgaData)) {
-      renderSignal(mapPgaDataToSignal(pgaData));
-      return;
+        signal.hidden = true;
+      } catch (error) {
+        console.error("Index tournament signal render error:", error);
+        signal.hidden = true;
+      }
     }
-
-    const seasonData = await fetchJson("./sophomore-season-2026-27.json");
-    const fallbackEvent = chooseSeasonFallbackEvent(seasonData);
-
-    if (fallbackEvent) {
-      renderSignal(mapSeasonEventToSignal(fallbackEvent));
-      return;
-    }
-
-    signal.hidden = true;
-  } catch (error) {
-    console.error("Index tournament signal render error:", error);
-    signal.hidden = true;
-  }
-}
 
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", loadTournamentSignal);
