@@ -6429,9 +6429,28 @@
           .replace(/'/g, '&#039;');
       }
 
-      function isNumberValue(value) {
-        return typeof value === 'number' && Number.isFinite(value);
-      }
+     function isNumberValue(value) {
+  if (typeof value === 'number') {
+    return Number.isFinite(value);
+  }
+
+  if (typeof value === 'string') {
+    const cleaned = value.trim();
+
+    if (
+      cleaned === '' ||
+      cleaned === '-' ||
+      cleaned === '—' ||
+      cleaned.toUpperCase() === 'TBD'
+    ) {
+      return false;
+    }
+
+    return Number.isFinite(Number(cleaned));
+  }
+
+  return false;
+}
 
       function isDisplayText(value) {
         if (value === null || value === undefined) return false;
@@ -6641,7 +6660,7 @@
 
               '<div class="jh-srl-band-cell">' +
                 '<span class="jh-srl-band-label">Total</span>' +
-                '<div class="jh-srl-total-value">' +
+                '<div class="jh-srl-total-value ' + parClass + '">' +
                   escapeHtml(totalText) +
                 '</div>' +
               '</div>' +
