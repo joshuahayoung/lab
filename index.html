@@ -1609,7 +1609,372 @@
 </div>
 
 </div>
-    
+
+<!-- USC Signing Release / Head Coach Comment -->
+<div class="jh-usc-signing-release-section" style="max-width: 900px; margin: 26px auto 10px; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box;">
+
+  <style>
+    .jh-usc-signing-release-section,
+    .jh-usc-signing-release-section * {
+      box-sizing: border-box;
+    }
+
+    .jh-usc-signing-release-card {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(153, 0, 0, 0.16);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
+      box-shadow:
+        0 10px 24px rgba(12, 35, 64, 0.055),
+        0 6px 18px rgba(153, 0, 0, 0.045);
+    }
+
+    .jh-usc-signing-release-card::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 6px;
+      background:
+        linear-gradient(
+          90deg,
+          #650000 0%,
+          #990000 45%,
+          #ffcc00 100%
+        );
+    }
+
+    .jh-usc-signing-release-inner {
+      padding: 24px 28px 24px;
+    }
+
+    .jh-usc-signing-release-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .jh-usc-signing-release-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px 0;
+      color: #990000;
+      font-size: 10px;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .jh-usc-signing-release-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ffcc00;
+      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.18);
+      flex: 0 0 auto;
+    }
+
+    .jh-usc-signing-release-title {
+      margin: 0;
+      color: #0c2340;
+      font-size: 19px;
+      line-height: 1.28;
+      font-weight: 850;
+      letter-spacing: -0.2px;
+      text-transform: uppercase;
+    }
+
+    .jh-usc-signing-release-meta {
+      margin: 7px 0 0 0;
+      color: #806600;
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 750;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+    }
+
+    .jh-usc-signing-release-badge {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          135deg,
+          #990000 0%,
+          #650000 100%
+        );
+      color: #ffcc00;
+      border: 1px solid rgba(255, 204, 0, 0.36);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(153, 0, 0, 0.15);
+    }
+
+    .jh-usc-signing-release-summary {
+      margin: 0 0 16px 0;
+      color: #3f4a5a;
+      font-size: 15.5px;
+      line-height: 1.78;
+      font-weight: 500;
+      text-align: justify;
+      word-break: keep-all;
+    }
+
+    .jh-usc-signing-release-quote {
+      position: relative;
+      margin: 18px 0 18px 0;
+      padding: 18px 20px 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 204, 0, 0.075);
+      border: 1px solid rgba(153, 0, 0, 0.13);
+      border-left: 5px solid #990000;
+    }
+
+    .jh-usc-signing-release-quote p {
+      margin: 0;
+      color: #0c2340;
+      font-size: 15px;
+      line-height: 1.72;
+      font-weight: 650;
+      text-align: justify;
+      word-break: keep-all;
+    }
+
+    .jh-usc-signing-release-quote cite {
+      display: block;
+      margin-top: 10px;
+      color: #650000;
+      font-size: 11px;
+      line-height: 1.4;
+      font-style: normal;
+      font-weight: 850;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .jh-usc-signing-release-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(153, 0, 0, 0.11);
+    }
+
+    .jh-usc-signing-release-note {
+      margin: 0;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .jh-usc-signing-release-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          135deg,
+          #0c2340 0%,
+          #650000 100%
+        );
+      color: #ffcc00 !important;
+      border: 1px solid rgba(255, 204, 0, 0.34);
+      text-decoration: none !important;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 850;
+      letter-spacing: 0.65px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(12, 35, 64, 0.14);
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.18s ease;
+    }
+
+    .jh-usc-signing-release-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.94;
+      box-shadow: 0 10px 22px rgba(153, 0, 0, 0.18);
+    }
+
+    .jh-usc-signing-release-arrow {
+      display: inline-block;
+      margin-left: 7px;
+      color: #ffcc00;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .jh-usc-signing-release-section {
+        margin: 24px auto 10px !important;
+      }
+
+      .jh-usc-signing-release-card {
+        border-radius: 20px;
+      }
+
+      .jh-usc-signing-release-inner {
+        padding: 22px 20px 21px;
+      }
+
+      .jh-usc-signing-release-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .jh-usc-signing-release-badge {
+        width: fit-content;
+        min-height: 32px;
+        padding: 8px 11px;
+        font-size: 9.5px;
+      }
+
+      .jh-usc-signing-release-title {
+        font-size: 17px;
+        line-height: 1.32;
+      }
+
+      .jh-usc-signing-release-summary {
+        font-size: 14.5px;
+        line-height: 1.72;
+        text-align: left;
+      }
+
+      .jh-usc-signing-release-quote {
+        padding: 17px 17px;
+        border-radius: 16px;
+      }
+
+      .jh-usc-signing-release-quote p {
+        font-size: 14.2px;
+        line-height: 1.68;
+        text-align: left;
+      }
+
+      .jh-usc-signing-release-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+
+      .jh-usc-signing-release-note {
+        text-align: center;
+        font-size: 11.5px;
+      }
+
+      .jh-usc-signing-release-btn {
+        width: 100%;
+        max-width: 270px;
+        margin: 0 auto;
+        min-height: 42px;
+        font-size: 10.8px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .jh-usc-signing-release-inner {
+        padding: 21px 17px 20px;
+      }
+
+      .jh-usc-signing-release-title {
+        font-size: 16px;
+      }
+
+      .jh-usc-signing-release-summary {
+        font-size: 14px;
+      }
+
+      .jh-usc-signing-release-quote p {
+        font-size: 13.8px;
+      }
+    }
+  </style>
+
+  <div class="jh-usc-signing-release-card">
+    <div class="jh-usc-signing-release-inner">
+
+      <div class="jh-usc-signing-release-header">
+        <div>
+          <p class="jh-usc-signing-release-kicker">
+            USC Athletics Release
+          </p>
+
+          <h2 class="jh-usc-signing-release-title">
+            Joshua Hong Signs with USC Men’s Golf
+          </h2>
+
+          <p class="jh-usc-signing-release-meta">
+            June 23, 2026 · Men’s Golf
+          </p>
+        </div>
+
+        <div class="jh-usc-signing-release-badge">
+          Official Signing
+        </div>
+      </div>
+
+      <p class="jh-usc-signing-release-summary">
+        USC Men’s Golf announced Joshua Hong’s addition to its 2026–27 roster following his freshman season at UTSA, where he set the program’s single-season scoring average record.
+      </p>
+
+      <div class="jh-usc-signing-release-quote">
+        <p>
+          “He’s passionate about golf and he has a tremendous work ethic and upside. He’s a very consistent player who will thrive in our program at USC.”
+        </p>
+
+        <cite>
+          Mark Hankins · Head Coach, USC Men’s Golf
+        </cite>
+      </div>
+
+      <div class="jh-usc-signing-release-footer">
+        <p class="jh-usc-signing-release-note">
+          Official USC signing announcement preserved in the media archive.
+        </p>
+
+        <a
+          class="jh-usc-signing-release-btn"
+          href="news-media.html#usc-signing-release"
+          title="View USC signing release in News & Media"
+          aria-label="View USC signing release in News and Media"
+        >
+          View Signing Release
+          <span class="jh-usc-signing-release-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 <div class="jh-ncaa-cta-block" style="max-width: 900px; margin: 30px auto 10px; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; box-sizing: border-box;">
 
