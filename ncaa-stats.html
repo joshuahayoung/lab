@@ -5817,6 +5817,16 @@
     font-weight: 500;
   }
 
+  #jh-summer-results-log-isolated .jh-srl-course-meta {
+  color: var(--jh-srl-muted);
+  font-weight: 650;
+}
+
+#jh-summer-results-log-isolated .jh-srl-course-sep {
+  color: rgba(71, 85, 105, 0.58);
+  font-weight: 500;
+}
+
   /* =========================================================
      DATE BOX
      Gold surface + Cardinal text
@@ -6290,6 +6300,15 @@
       font-size: 9.8px;
     }
 
+    #jh-summer-results-log-isolated .jh-srl-course-meta {
+  display: block;
+  margin-top: 2px;
+}
+
+#jh-summer-results-log-isolated .jh-srl-course-sep {
+  display: none;
+}
+
     #jh-summer-results-log-isolated .jh-srl-date-box {
       min-width: 76px;
       padding: 7px 6px;
@@ -6445,6 +6464,7 @@
           date: 'Jun 17 - 20',
           tournament: 'The Dogwood Invitational',
           course: 'Druid Hills Golf Club - Atlanta, GA',
+          courseMeta: 'Par 72 | 7,399 Yards | Rating: 75.8 | Slope: 137',
           status: 'Final Results',
           statusType: 'FINAL',
           par: 72,
@@ -6682,8 +6702,13 @@
                 '</h3>' +
 
                 '<p class="jh-srl-event-meta">' +
-                  escapeHtml(event.course || '') +
-                '</p>' +
+  escapeHtml(event.course || '') +
+  (
+    isDisplayText(event.courseMeta)
+      ? '<span class="jh-srl-course-meta"><span class="jh-srl-course-sep"> | </span>' + escapeHtml(event.courseMeta) + '</span>'
+      : ''
+  ) +
+'</p>' +
               '</div>' +
 
               '<div class="jh-srl-date-box">' +
