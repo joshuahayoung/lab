@@ -12597,9 +12597,10 @@ function setImpact(id, value, rankId) {
 }
 
 #joshua-unique-section .jpp-custom-select-option.is-active {
-  background: var(--usc-gold);
-  color: #650000;
+  background: #7a0000;
+  color: var(--usc-gold);
   font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(255, 204, 0, 0.65);
 }
 
     /* Dropdown option color control */
@@ -13045,7 +13046,7 @@ function setImpact(id, value, rankId) {
       -->
 
       <!-- CARD: USC COMMITMENT AND SIGNING | Posted On: June 22, 2026 | Latest cards stay above older cards -->
-      <div class="insight-card-item" data-card-id="usc-commitment-signing-2026-06-22" data-card-title="June 2026 Transfer Process — USC Commitment and Signing" data-option-label="USC Commitment and Signing" data-posted-date="2026-06-22" style="flex-direction: column; justify-content: space-between; gap: 18px;">
+      <div class="insight-card-item" data-card-id="usc-commitment-signing-2026-06-22" data-archive-no="2" data-card-title="June 2026 Transfer Process — USC Commitment and Signing" data-option-label="USC Commitment and Signing" data-posted-date="2026-06-22" style="flex-direction: column; justify-content: space-between; gap: 18px;">
         <div>
           <div class="bts-card-head" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; width: 100%; margin: 0 0 18px 0;">
             <div class="bts-title-row" style="display: flex; align-items: center; gap: 10px; min-width: 0;">
@@ -13111,7 +13112,7 @@ function setImpact(id, value, rankId) {
       </div>
 
       <!-- CARD: DOGWOOD INVITATIONAL | Posted On: June 20, 2026 | Older card stays below newer cards -->
-      <div class="insight-card-item" data-card-id="dogwood-invitational-2026-06-20" data-card-title="Dogwood Invitational — Four Under-Par Rounds" data-option-label="Dogwood Invitational" data-posted-date="2026-06-20" style="flex-direction: column; justify-content: space-between; gap: 18px;">
+     <div class="insight-card-item" data-card-id="dogwood-invitational-2026-06-20" data-archive-no="1" data-card-title="Dogwood Invitational — Four Under-Par Rounds" data-option-label="Dogwood Invitational" data-posted-date="2026-06-20" style="flex-direction: column; justify-content: space-between; gap: 18px;">
         <div>
           <div class="bts-card-head" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; width: 100%; margin: 0 0 18px 0;">
             <div class="bts-title-row" style="display: flex; align-items: center; gap: 10px; min-width: 0;">
@@ -13254,20 +13255,20 @@ function setImpact(id, value, rankId) {
       return 'Insight ' + (index + 1);
     }
 
-    function getCounterText(index, total) {
-      if (total <= 0) return '0 Insights';
+    function getCounterText(index, total, card) {
+  if (total <= 0) return '0 Insights';
 
-      if (total === 1) {
-        return 'Latest';
-      }
+  const archiveNo = card && card.getAttribute('data-archive-no')
+    ? card.getAttribute('data-archive-no')
+    : String(total - index);
 
-      if (index === 0) {
-        return 'Latest · ' + total + ' Insights';
-      }
+  if (index === 0) {
+    return 'Latest · Archive ' + archiveNo;
+  }
 
-      return 'Archive · ' + (index + 1) + ' of ' + total;
-    }
-
+  return 'Archive ' + archiveNo + ' · ' + (index + 1) + ' of ' + total;
+}
+    
     function closeDropdown() {
       dropdownWrap.classList.remove('is-open');
       dropdownTrigger.setAttribute('aria-expanded', 'false');
@@ -13350,7 +13351,7 @@ function setImpact(id, value, rankId) {
 
       currentLabel.textContent = getCardTitle(activeCard, safeDisplayIndex);
       dropdownLabel.textContent = getOptionLabel(activeCard, safeDisplayIndex);
-      counter.textContent = getCounterText(safeDisplayIndex, cards.length);
+      counter.textContent = getCounterText(safeDisplayIndex, cards.length, activeCard);
 
       prevBtn.disabled = safeDisplayIndex === 0;
       nextBtn.disabled = safeDisplayIndex === cards.length - 1;
