@@ -12516,6 +12516,25 @@ function setImpact(id, value, rankId) {
       font-weight: 500;
     }
 
+    /* Dropdown option color control */
+#joshua-unique-section .jpp-select option {
+  background-color: #650000 !important;
+  color: #ffcc00 !important;
+}
+
+/* Selected option */
+#joshua-unique-section .jpp-select option:checked {
+  background-color: #ffcc00 !important;
+  color: #650000 !important;
+  font-weight: 700 !important;
+}
+
+/* Some browsers respect this, some do not */
+#joshua-unique-section .jpp-select option:hover {
+  background-color: #ffcc00 !important;
+  color: #650000 !important;
+}
+
     #joshua-unique-section .jpp-stage-wrap {
       padding: 12px;
       background: transparent;
@@ -12930,7 +12949,7 @@ function setImpact(id, value, rankId) {
             </div>
 
             <span class="bts-event-badge" style="flex: 0 0 auto; margin-left: auto; white-space: nowrap;">
-              USC Commitment
+              USC Commitment and Signing
             </span>
           </div>
 
