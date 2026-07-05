@@ -13036,10 +13036,15 @@ function setImpact(id, value, rankId) {
         CARD OPERATING RULE:
         1. Add every new Insight card directly under this comment, above older cards.
         2. Do not edit old cards.
-        3. Do not edit the select, counter, or JavaScript.
+        3. Do not edit the dropdown, counter, or JavaScript.
         4. The script reads the HTML order automatically: top card = newest = first display.
-        5. For each new card, set only:
+        5. Archive numbers follow posting order, not display order:
+           - Dogwood Jun 20 = Archive 1
+           - USC Signing Jun 22 = Archive 2
+           - Next new Insight = Archive 3
+        6. For each new card, set only:
            - data-card-id
+           - data-archive-no
            - data-card-title
            - data-option-label
            - data-posted-date
@@ -13107,8 +13112,14 @@ function setImpact(id, value, rankId) {
         </div>
 
         <div class="bts-status-note" style="width: 100%; margin: 0; padding-top: 14px; border-top: 1px solid rgba(255, 204, 0, 0.22); align-self: stretch;">
-          Status Note: NCAA Transfer Portal entry active June 4, 2026 · USC Men’s Golf commitment confirmed June 4, 2026 · USC signing completed June 22, 2026 · Posted On: June 22, 2026
-        </div>
+  <div style="margin: 0 0 5px 0;">
+    Status Note: USC Men’s Golf commitment confirmed June 4, 2026 · Signing completed June 22, 2026
+  </div>
+
+  <div style="margin: 0; color: rgba(255, 248, 220, 0.78); font-weight: 750;">
+    Posted On: June 23, 2026
+  </div>
+</div>
       </div>
 
       <!-- CARD: DOGWOOD INVITATIONAL | Posted On: June 20, 2026 | Older card stays below newer cards -->
