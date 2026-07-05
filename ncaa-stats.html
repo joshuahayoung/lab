@@ -6469,7 +6469,7 @@
   status: 'Up Next',
   statusType: 'SCHEDULED',
   par: 72,
-  rounds: [],
+  rounds: [-],
   total: '—',
   toPar: null,
   finish: '—',
@@ -6618,15 +6618,14 @@
       }
 
       function buildRoundBandLabel(event) {
-        const rounds = Array.isArray(event.rounds) ? event.rounds : [];
+  const rounds = Array.isArray(event.rounds) ? event.rounds : [];
 
-        if (!rounds.length) return 'Round';
-        if (rounds.length === 1) return 'Round';
+  if (!rounds.length) return 'Round';
 
-        return rounds.map(function(round, index) {
-          return normalizeRound(round, index, event.par).label;
-        }).join('-');
-      }
+  return rounds.map(function(round, index) {
+    return normalizeRound(round, index, event.par).label;
+  }).join('-');
+}
 
       function buildRoundChips(event) {
         const rounds = Array.isArray(event.rounds) ? event.rounds : [];
