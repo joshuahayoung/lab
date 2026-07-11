@@ -2451,10 +2451,10 @@ signal.classList.add(`is-${model.status}`);
     }
 
     .jh-profile-card-section .jhpcs-wrap {
-      display: grid;
-      grid-template-columns: 330px minmax(0, 1fr);
-      gap: 30px;
-      align-items: center;
+  display: grid;
+  grid-template-columns: 350px minmax(0, 1fr);
+  gap: 30px;
+  align-items: center;
     }
 
     .jh-profile-card-section .jhpcs-photo {
@@ -2478,17 +2478,17 @@ signal.classList.add(`is-${model.status}`);
       background: #ffffff;
     }
 
-    .jh-profile-card-section .jhpcs-summary {
-      background: #f4f7f9;
-      padding: 30px;
-      border-radius: 25px;
-      border: 1px solid #e1e8ed;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 400px;
+   .jh-profile-card-section .jhpcs-summary {
+  background: #f4f7f9;
+  padding: 24px 28px;
+  border-radius: 25px;
+  border: 1px solid #e1e8ed;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
     }
 
     .jh-profile-card-section .jhpcs-table {
@@ -2507,6 +2507,16 @@ signal.classList.add(`is-${model.status}`);
       word-break: break-word;
     }
 
+	@media (min-width: 769px) {
+  .jh-profile-card-section .jhpcs-summary h3 {
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .jh-profile-card-section .jhpcs-table td {
+    padding: 8px 0 !important;
+  }
+}
     @media (max-width: 768px) {
       .jh-profile-card-section .jhpcs-shell {
         padding: 20px 20px 22px;
