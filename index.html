@@ -825,6 +825,30 @@
       0 0 10px rgba(153, 0, 0, 0.10);
   }
 
+.jh-index-tournament-signal.is-startingsoon {
+  color: #ffc72c;
+  background: #990000;
+  border: 1px solid rgba(255, 199, 44, 0.54);
+}
+
+.jh-index-tournament-signal.is-startingsoon .jhits-dot {
+  background: #ffc72c;
+  animation: jh-index-live-pulse 1.45s infinite ease-in-out;
+  box-shadow:
+    0 0 0 4px rgba(255, 199, 44, 0.22),
+    0 0 12px rgba(255, 199, 44, 0.22);
+}
+
+.jh-index-tournament-signal.is-startingsoon:hover,
+.jh-index-tournament-signal.is-startingsoon:focus {
+  background: #650000;
+  color: #ffcc00;
+  border-color: rgba(255, 204, 0, 0.68);
+  box-shadow:
+    0 13px 28px rgba(153, 0, 0, 0.24),
+    0 5px 14px rgba(12, 35, 64, 0.12);
+}
+	
   .jh-index-tournament-signal.is-ongoing {
     color: #ffc72c;
     background: #990000;
@@ -1143,26 +1167,35 @@
     }
 
     function normalizeStatus(status) {
-      const value = String(status || "").trim().toLowerCase();
+  const value = String(status || "").trim().toLowerCase();
 
-      if (
-        value === "upnext" ||
-        value === "up-next" ||
-        value === "scheduled" ||
-        value === "preseason" ||
-        value === "pre-season"
-      ) {
-        return "upnext";
-      }
+  if (
+    value === "startingsoon" ||
+    value === "starting-soon" ||
+    value === "starting_soon" ||
+    value === "soon"
+  ) {
+    return "startingsoon";
+  }
 
-      if (
-        value === "ongoing" ||
-        value === "live" ||
-        value === "in-progress" ||
-        value === "in_progress"
-      ) {
-        return "ongoing";
-      }
+  if (
+    value === "upnext" ||
+    value === "up-next" ||
+    value === "scheduled" ||
+    value === "preseason" ||
+    value === "pre-season"
+  ) {
+    return "upnext";
+  }
+
+  if (
+    value === "ongoing" ||
+    value === "live" ||
+    value === "in-progress" ||
+    value === "in_progress"
+  ) {
+    return "ongoing";
+  }
 
       if (
         value === "final" ||
@@ -1183,15 +1216,16 @@
     }
 
     function statusLabel(status) {
-      const map = {
-        upnext: "UP NEXT",
-        ongoing: "ONGOING",
-        final: "FINAL RESULTS",
-        cancelled: "CANCELLED"
-      };
+  const map = {
+    upnext: "UP NEXT",
+    startingsoon: "STARTING SOON",
+    ongoing: "ONGOING",
+    final: "FINAL RESULTS",
+    cancelled: "CANCELLED"
+  };
 
-      return map[status] || "UP NEXT";
-    }
+  return map[status] || "UP NEXT";
+}
 
     function shortTitle(title) {
       const clean = String(title || "").trim();
@@ -1391,8 +1425,8 @@
         return;
       }
 
-      signal.classList.remove("is-upnext", "is-ongoing", "is-final", "is-cancelled");
-      signal.classList.add(`is-${model.status}`);
+      signal.classList.remove("is-upnext", "is-startingsoon", "is-ongoing", "is-final", "is-cancelled");
+signal.classList.add(`is-${model.status}`);
 
       if (statusEl) statusEl.textContent = model.label;
       if (titleEl) titleEl.textContent = model.title;
