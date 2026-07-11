@@ -2236,6 +2236,51 @@
       0 0 12px rgba(255, 199, 44, 0.24) !important;
   }
 
+#jh-pga-table-shared .jtc-header-row.startingsoon {
+  border-left-color: var(--jtc-cardinal) !important;
+}
+
+#jh-pga-table-shared .jtc-badge.startingsoon {
+  background:
+    linear-gradient(
+      135deg,
+      var(--jtc-cardinal) 0%,
+      var(--jtc-cardinal-dark) 100%
+    ) !important;
+  color: var(--jtc-gold-soft) !important;
+  border: 1px solid rgba(255, 199, 44, 0.46) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 6px 14px rgba(153, 0, 0, 0.16) !important;
+}
+
+#jh-pga-table-shared .jtc-dot.startingsoon {
+  background-color: var(--jtc-gold) !important;
+  animation: jtc-live-pulse-amber 1.6s infinite ease-in-out !important;
+  box-shadow:
+    0 0 0 3px rgba(255, 199, 44, 0.22),
+    0 0 12px rgba(255, 199, 44, 0.24) !important;
+}
+
+#jh-pga-table-shared .jtc-main-link-dot.startingsoon {
+  background-color: var(--jtc-gold) !important;
+  animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
+  box-shadow:
+    0 0 0 2px rgba(255, 199, 44, 0.22),
+    0 0 8px rgba(255, 199, 44, 0.18) !important;
+}
+
+#jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.startingsoon,
+#jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.startingsoon {
+  background-color: #fff3c4 !important;
+  animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
+  box-shadow:
+    0 0 0 2px #650000,
+    0 0 0 4px rgba(255, 243, 196, 0.34),
+    0 0 10px rgba(101, 0, 0, 0.22) !important;
+}
+
+
+  
   @keyframes jtc-live-pulse-amber {
     0% {
       opacity: 1;
@@ -3381,14 +3426,38 @@
     }
 
     function badgeMap(status) {
-      const map = {
-        upnext: { label: "UP NEXT", className: "upnext" },
-        ongoing: { label: "ONGOING", className: "ongoing" },
-        final: { label: "FINAL", className: "final" },
-        cancelled: { label: "CANCELLED", className: "cancelled" }
-      };
-      return map[status] || map.final;
-    }
+  const clean = String(status || "upnext").trim().toLowerCase();
+
+  const normalized =
+    clean === "startingsoon" ||
+    clean === "starting-soon" ||
+    clean === "starting_soon" ||
+    clean === "soon"
+      ? "startingsoon"
+      : clean === "ongoing" ||
+        clean === "live" ||
+        clean === "in-progress" ||
+        clean === "in_progress"
+          ? "ongoing"
+          : clean === "final" ||
+            clean === "completed" ||
+            clean === "complete"
+              ? "final"
+              : clean === "cancelled" ||
+                clean === "canceled"
+                  ? "cancelled"
+                  : "upnext";
+
+  const map = {
+    upnext: { label: "UP NEXT", className: "upnext" },
+    startingsoon: { label: "STARTING SOON", className: "startingsoon" },
+    ongoing: { label: "ONGOING", className: "ongoing" },
+    final: { label: "FINAL", className: "final" },
+    cancelled: { label: "CANCELLED", className: "cancelled" }
+  };
+
+  return map[normalized] || map.upnext;
+}
 
     function splitMainLinkLabel(label) {
       const clean = (label || "").trim();
