@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "July 12, 2026",
-    "sectionTitle": "ONGOING TOURNAMENT",
+    "lastUpdated": "July 13, 2026",
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "U.S. Amateur Final Qualifying",
     "eventLabel": "Summer Amateur",
-    "status": "ongoing",
+    "status": "final",
     "title": "U.S. Amateur Final Qualifying",
     "date": "July 13",
     "venue": "Ruby Hill Golf Club",
@@ -15,17 +15,17 @@
     "slope": 137,
     "mainLink": {
       "url": "https://ncga.bluegolf.com/bluegolf/ncga26/event/ncga26137/contest/1/leaderboard.htm",
-      "label": "LIVE LEADERBOARD"
+      "label": "Final Results"
     },
     "summary": {
-      "total": "-",
-      "par": "-",
-      "pos": "-"
+      "total": "71",
+      "par": "-1",
+      "pos": "T21"
     },
     "rounds": [
       {
         "round": "Round 1",
-        "score": "-"
+        "score": "71"
       }
       
     ]
