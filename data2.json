@@ -19,21 +19,26 @@
     },
     "summary": {
       "total": "-",
-      "par": "null",
+      "par": "-",
       "pos": "-"
     },
     "rounds": [
-      {
-        "round": "Round 1",
-        "score": "-"
-        "round": "Round 2",
-        "score": "-"
-        "round": "Round 3",
-        "score": "-"
-        "round": "Round 4",
-        "score": "-"
-      }
-      
-    ]
+  {
+    "round": "Round 1",
+    "score": "-"
+  },
+  {
+    "round": "Round 2",
+    "score": "-"
+  },
+  {
+    "round": "Round 3",
+    "score": "-"
+  },
+  {
+    "round": "Round 4",
+    "score": "-"
+  }
+]
   }
 }
