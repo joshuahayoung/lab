@@ -1,31 +1,37 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "July 13, 2026",
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "U.S. Amateur Final Qualifying",
-    "eventLabel": "Summer Amateur",
-    "status": "final",
-    "title": "U.S. Amateur Final Qualifying",
-    "date": "July 13",
-    "venue": "Ruby Hill Golf Club",
-    "location": "Pleasanton, CA",
+    "lastUpdated": "July 14, 2026",
+    "sectionTitle": "Up Next",
+    "eventNo": "Mexican Amateur Championship",
+    "eventLabel": "FMG | USGA Exemption Event",
+    "status": "upnext",
+    "title": "Mexican Amateur Championship",
+    "date": "July 16-19",
+    "venue": "Club Campestre de Ciudad de México",
+    "location": "CDMX, CDMX",
     "par": 72,
-    "yards": "7,399",
-    "rating": 75.8,
-    "slope": 137,
+    "yards": "7,267",
+    "rating": 73.6,
+    "slope": 128,
     "mainLink": {
-      "url": "https://ncga.bluegolf.com/bluegolf/ncga26/event/ncga26137/contest/1/leaderboard.htm",
-      "label": "Final Results"
+      "url": "https://www.golfgenius.com/pages/5885002",
+      "label": "Live Leaderboard"
     },
     "summary": {
-      "total": "71",
-      "par": "-1",
-      "pos": "T21"
+      "total": "-",
+      "par": "null",
+      "pos": "-"
     },
     "rounds": [
       {
         "round": "Round 1",
-        "score": "71"
+        "score": "-"
+        "round": "Round 2",
+        "score": "-"
+        "round": "Round 3",
+        "score": "-"
+        "round": "Round 4",
+        "score": "-"
       }
       
     ]
