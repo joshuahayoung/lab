@@ -9,7 +9,7 @@
     "date": "July 16-19",
     "venue": "Club Campestre de Ciudad de México",
     "location": "CDMX",
-    "par": 72,
+    "par": 71,
     "yards": "7,267",
     "rating": 73.6,
     "slope": 128,
@@ -18,14 +18,14 @@
       "label": "Live Leaderboard"
     },
     "summary": {
-      "total": "-",
-      "par": "-",
-      "pos": "-"
+      "total": "77",
+      "par": "+6",
+      "pos": "T78"
     },
     "rounds": [
   {
     "round": "Round 1",
-    "score": "-"
+    "score": "77"
   },
   {
     "round": "Round 2",
