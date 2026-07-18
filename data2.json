@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
     "lastUpdated": "July 17, 2026",
-    "sectionTitle": "ONGOING TOURNAMENT",
+    "sectionTitle": "FINAL RESULT",
     "eventNo": "U.S. Amateur Exemption | U.S. Open Final Qualifying Exemption",
     "eventLabel": "FMG | USGA",
-    "status": "ongoing",
+    "status": "Final",
     "title": "Mexican Amateur Championship",
     "date": "July 16-19",
     "venue": "Club Campestre de Ciudad de México",
@@ -15,12 +15,12 @@
     "slope": 128,
     "mainLink": {
       "url": "https://www.golfgenius.com/pages/5884992",
-      "label": "Live Leaderboard"
+      "label": "Final Results"
     },
     "summary": {
-      "total": "77",
-      "par": "+6",
-      "pos": "T68"
+      "total": "150",
+      "par": "+8",
+      "pos": "MC"
     },
     "rounds": [
   {
@@ -29,15 +29,7 @@
   },
   {
     "round": "Round 2",
-    "score": "-"
-  },
-  {
-    "round": "Round 3",
-    "score": "-"
-  },
-  {
-    "round": "Round 4",
-    "score": "-"
+    "score": "73"
   }
 ]
   }
