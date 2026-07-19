@@ -1,35 +1,43 @@
 {
   "pgaTableShared": {
     "lastUpdated": "July 19, 2026",
-    "sectionTitle": "FINAL RESULT",
-    "eventNo": "U.S. Amateur Exemption | U.S. Open Final Qualifying Exemption",
-    "eventLabel": "FMG | USGA",
-    "status": "Final",
-    "title": "Mexican Amateur Championship",
-    "date": "July 16-19",
-    "venue": "Club Campestre de Ciudad de México",
-    "location": "CDMX",
+    "sectionTitle": "UPCOMING TOURNAMENT",
+    "eventNo": "BRAZILIAN AMATEUR CHAMPIONSHIP",
+    "eventLabel": "CBGolfe",
+    "status": "upcoming",
+    "title": "95º CAMPEONATO AMADOR DE GOLFE DO BRASIL",
+    "date": "Jul 30- Aug 2",
+    "venue": "Alphaville Graciosa Clube",
+    "location": "Alphaville, Pinhais - PR",
     "par": 71,
-    "yards": "7,267",
-    "rating": 73.6,
-    "slope": 128,
+    "yards": "6,493",
+    "rating": 71.3,
+    "slope": 134,
     "mainLink": {
-      "url": "https://www.golfgenius.com/pages/5884992",
-      "label": "Final Results"
+      "url": "https://cbgolfe.com.br/torneio-interna/?cod_torneio=612",
+      "label": "Tournament Info"
     },
     "summary": {
-      "total": "150",
-      "par": "+8",
-      "pos": "MC"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
     "rounds": [
   {
-    "round": "Round 1",
-    "score": "77"
+    "round": "-",
+    "score": "-"
   },
   {
-    "round": "Round 2",
-    "score": "73"
+    "round": "-",
+    "score": "-"
+  },
+  {
+    "round": "-",
+    "score": "-"
+  },
+  {
+    "round": "-",
+    "score": "-"
   }
 ]
   }
