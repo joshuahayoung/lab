@@ -13461,262 +13461,316 @@ function setImpact(id, value, rankId) {
 </div>
 
   
-  <script>
-  (function() {
-    const section = document.getElementById('joshua-unique-section');
-    const stage = document.getElementById('jpp-stage');
-    const prevBtn = document.getElementById('jpp-prev');
-    const nextBtn = document.getElementById('jpp-next');
-    const counter = document.getElementById('jpp-counter');
-    const currentLabel = document.getElementById('jpp-current-label');
+<script>
+(function() {
+  const section = document.getElementById('joshua-unique-section');
+  const stage = document.getElementById('jpp-stage');
+  const prevBtn = document.getElementById('jpp-prev');
+  const nextBtn = document.getElementById('jpp-next');
+  const counter = document.getElementById('jpp-counter');
+  const currentLabel = document.getElementById('jpp-current-label');
 
-    const dropdownWrap = document.querySelector('#joshua-unique-section .jpp-custom-select-wrap');
-    const dropdownTrigger = document.getElementById('jpp-custom-select-trigger');
-    const dropdownLabel = document.getElementById('jpp-custom-select-label');
-    const dropdownMenu = document.getElementById('jpp-custom-select-menu');
+  const dropdownWrap = document.querySelector(
+    '#joshua-unique-section .jpp-custom-select-wrap'
+  );
+  const dropdownTrigger = document.getElementById('jpp-custom-select-trigger');
+  const dropdownLabel = document.getElementById('jpp-custom-select-label');
+  const dropdownMenu = document.getElementById('jpp-custom-select-menu');
 
-    if (
-      !section ||
-      !stage ||
-      !prevBtn ||
-      !nextBtn ||
-      !counter ||
-      !currentLabel ||
-      !dropdownWrap ||
-      !dropdownTrigger ||
-      !dropdownLabel ||
-      !dropdownMenu
-    ) return;
+  if (
+    !section ||
+    !stage ||
+    !prevBtn ||
+    !nextBtn ||
+    !counter ||
+    !currentLabel ||
+    !dropdownWrap ||
+    !dropdownTrigger ||
+    !dropdownLabel ||
+    !dropdownMenu
+  ) return;
 
-    /*
-      EASY INSIGHT ARCHIVE OPERATION:
+  /*
+    INSIGHT ARCHIVE OPERATION
 
-      1. The card order is controlled only by the HTML order inside #jpp-stage.
-      2. The top .insight-card-item is treated as the newest Insight and appears first.
-      3. Older cards stay below.
-      4. When adding a new Insight, paste the new .insight-card-item above the current top card.
-      5. Do not update this script.
-      6. Do not manually add dropdown items.
-      7. Do not manually change the counter.
-    */
+    1. 새 Insight 카드는 #jpp-stage 내부의 가장 위에 추가합니다.
+    2. HTML에서는 최신 카드가 가장 위에 위치합니다.
+    3. Archive 번호는 오래된 기록부터 자동 계산됩니다.
+    4. 따라서 최초 기록인 DOGWOOD는 항상 Archive 1입니다.
+    5. 카드가 4개이면 DOGWOOD는 1/4입니다.
+    6. 새 카드가 추가되면 DOGWOOD는 자동으로 1/5, 1/6이 됩니다.
+    7. 드롭다운과 카운터는 수동으로 수정하지 않습니다.
+  */
 
-    const cards = Array.from(stage.querySelectorAll('.insight-card-item'));
+  const cards = Array.from(
+    stage.querySelectorAll('.insight-card-item')
+  );
 
-    let currentDisplayIndex = 0;
+  let currentDisplayIndex = 0;
 
-    function getCardTitle(card, index) {
-      if (!card) return '';
+  function getCardTitle(card, index) {
+    if (!card) return '';
 
-      const explicitTitle = card.getAttribute('data-card-title');
-      if (explicitTitle) return explicitTitle;
+    const explicitTitle = card.getAttribute('data-card-title');
+    if (explicitTitle) return explicitTitle;
 
-      const lead = card.querySelector('.bts-lead');
-      if (lead && lead.textContent.trim()) return lead.textContent.trim();
-
-      const badge = card.querySelector('.bts-event-badge');
-      if (badge && badge.textContent.trim()) return badge.textContent.trim();
-
-      return 'Insight ' + (index + 1);
+    const lead = card.querySelector('.bts-lead');
+    if (lead && lead.textContent.trim()) {
+      return lead.textContent.trim();
     }
 
-    function getOptionLabel(card, index) {
-      if (!card) return 'Insight ' + (index + 1);
-
-      const explicitOptionLabel = card.getAttribute('data-option-label');
-      if (explicitOptionLabel) return explicitOptionLabel;
-
-      const explicitTitle = card.getAttribute('data-card-title');
-      if (explicitTitle) return explicitTitle;
-
-      const badge = card.querySelector('.bts-event-badge');
-      if (badge && badge.textContent.trim()) return badge.textContent.trim();
-
-      return 'Insight ' + (index + 1);
+    const badge = card.querySelector('.bts-event-badge');
+    if (badge && badge.textContent.trim()) {
+      return badge.textContent.trim();
     }
 
-    function getCounterText(index, total, card) {
-  if (total <= 0) return '0 Insights';
-
-  const archiveNo = card && card.getAttribute('data-archive-no')
-    ? card.getAttribute('data-archive-no')
-    : String(total - index);
-
-  if (index === 0) {
-    return 'Latest · Archive ' + archiveNo;
+    return 'Insight ' + (index + 1);
   }
 
-  return 'Archive ' + archiveNo + ' · ' + (index + 1) + ' of ' + total;
-}
-    
-    function closeDropdown() {
-      dropdownWrap.classList.remove('is-open');
-      dropdownTrigger.setAttribute('aria-expanded', 'false');
+  function getOptionLabel(card, index) {
+    if (!card) return 'Insight ' + (index + 1);
+
+    const explicitOptionLabel = card.getAttribute('data-option-label');
+    if (explicitOptionLabel) return explicitOptionLabel;
+
+    const explicitTitle = card.getAttribute('data-card-title');
+    if (explicitTitle) return explicitTitle;
+
+    const badge = card.querySelector('.bts-event-badge');
+    if (badge && badge.textContent.trim()) {
+      return badge.textContent.trim();
     }
 
-    function openDropdown() {
-      dropdownWrap.classList.add('is-open');
-      dropdownTrigger.setAttribute('aria-expanded', 'true');
-    }
+    return 'Insight ' + (index + 1);
+  }
 
-    function toggleDropdown() {
-      if (dropdownWrap.classList.contains('is-open')) {
+  /*
+    HTML 순서는 최신 → 과거이므로
+    실제 Archive 번호는 total - index로 계산합니다.
+
+    카드 4개:
+    index 0 = 4/4
+    index 1 = 3/4
+    index 2 = 2/4
+    index 3 = 1/4 (DOGWOOD)
+  */
+  function getCounterText(index, total) {
+    if (total <= 0) return '0/0';
+
+    const archiveNumber = total - index;
+
+    return archiveNumber + '/' + total;
+  }
+
+  function closeDropdown() {
+    dropdownWrap.classList.remove('is-open');
+    dropdownTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openDropdown() {
+    dropdownWrap.classList.add('is-open');
+    dropdownTrigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function toggleDropdown() {
+    if (dropdownWrap.classList.contains('is-open')) {
+      closeDropdown();
+    } else {
+      openDropdown();
+    }
+  }
+
+  function buildDropdown() {
+    dropdownMenu.innerHTML = '';
+
+    cards.forEach(function(card, index) {
+      const optionButton = document.createElement('button');
+
+      optionButton.type = 'button';
+      optionButton.className = 'jpp-custom-select-option';
+      optionButton.setAttribute('role', 'option');
+      optionButton.setAttribute('aria-selected', 'false');
+      optionButton.setAttribute(
+        'data-display-index',
+        String(index)
+      );
+
+      optionButton.textContent = getOptionLabel(card, index);
+
+      optionButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        showCardByDisplayIndex(index);
         closeDropdown();
+      });
+
+      dropdownMenu.appendChild(optionButton);
+    });
+  }
+
+  function updateDropdownActiveState(activeIndex) {
+    const options = Array.from(
+      dropdownMenu.querySelectorAll(
+        '.jpp-custom-select-option'
+      )
+    );
+
+    options.forEach(function(option, index) {
+      if (index === activeIndex) {
+        option.classList.add('is-active');
+        option.setAttribute('aria-selected', 'true');
       } else {
-        openDropdown();
+        option.classList.remove('is-active');
+        option.setAttribute('aria-selected', 'false');
       }
-    }
+    });
+  }
 
-    function buildDropdown() {
+  function showCardByDisplayIndex(displayIndex) {
+    if (!cards.length) {
+      currentLabel.textContent = '';
+      dropdownLabel.textContent = 'No Insights';
+      counter.textContent = '0/0';
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
       dropdownMenu.innerHTML = '';
-
-      cards.forEach(function(card, index) {
-        const optionButton = document.createElement('button');
-
-        optionButton.type = 'button';
-        optionButton.className = 'jpp-custom-select-option';
-        optionButton.setAttribute('role', 'option');
-        optionButton.setAttribute('aria-selected', 'false');
-        optionButton.setAttribute('data-display-index', String(index));
-        optionButton.textContent = getOptionLabel(card, index);
-
-        optionButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          showCardByDisplayIndex(index);
-          closeDropdown();
-        });
-
-        dropdownMenu.appendChild(optionButton);
-      });
+      return;
     }
 
-    function updateDropdownActiveState(activeIndex) {
-      const options = Array.from(dropdownMenu.querySelectorAll('.jpp-custom-select-option'));
+    const safeDisplayIndex = Math.max(
+      0,
+      Math.min(displayIndex, cards.length - 1)
+    );
 
-      options.forEach(function(option, index) {
-        if (index === activeIndex) {
-          option.classList.add('is-active');
-          option.setAttribute('aria-selected', 'true');
-        } else {
-          option.classList.remove('is-active');
-          option.setAttribute('aria-selected', 'false');
-        }
-      });
-    }
+    currentDisplayIndex = safeDisplayIndex;
 
-    function showCardByDisplayIndex(displayIndex) {
-      if (!cards.length) {
-        currentLabel.textContent = '';
-        dropdownLabel.textContent = 'No Insights';
-        counter.textContent = '0 Insights';
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-        dropdownMenu.innerHTML = '';
-        return;
+    cards.forEach(function(card, index) {
+      if (index === safeDisplayIndex) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
       }
-
-      const safeDisplayIndex = Math.max(0, Math.min(displayIndex, cards.length - 1));
-      currentDisplayIndex = safeDisplayIndex;
-
-      cards.forEach(function(card, index) {
-        if (index === safeDisplayIndex) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
-        }
-      });
-
-      const activeCard = cards[safeDisplayIndex];
-
-      currentLabel.textContent = getCardTitle(activeCard, safeDisplayIndex);
-      dropdownLabel.textContent = getOptionLabel(activeCard, safeDisplayIndex);
-      counter.textContent = getCounterText(safeDisplayIndex, cards.length, activeCard);
-
-      prevBtn.disabled = safeDisplayIndex === 0;
-      nextBtn.disabled = safeDisplayIndex === cards.length - 1;
-
-      updateDropdownActiveState(safeDisplayIndex);
-    }
-
-    dropdownTrigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleDropdown();
     });
 
-    prevBtn.addEventListener('click', function(e) {
+    const activeCard = cards[safeDisplayIndex];
+
+    currentLabel.textContent = getCardTitle(
+      activeCard,
+      safeDisplayIndex
+    );
+
+    dropdownLabel.textContent = getOptionLabel(
+      activeCard,
+      safeDisplayIndex
+    );
+
+    counter.textContent = getCounterText(
+      safeDisplayIndex,
+      cards.length
+    );
+
+    prevBtn.disabled = safeDisplayIndex === 0;
+    nextBtn.disabled =
+      safeDisplayIndex === cards.length - 1;
+
+    updateDropdownActiveState(safeDisplayIndex);
+  }
+
+  dropdownTrigger.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleDropdown();
+  });
+
+  prevBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    showCardByDisplayIndex(currentDisplayIndex - 1);
+    closeDropdown();
+  });
+
+  nextBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    showCardByDisplayIndex(currentDisplayIndex + 1);
+    closeDropdown();
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!dropdownWrap.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    const active = document.activeElement;
+
+    if (e.key === 'Escape') {
+      closeDropdown();
+      dropdownTrigger.blur();
+      return;
+    }
+
+    if (
+      active &&
+      !section.contains(active) &&
+      active !== document.body
+    ) return;
+
+    if (e.key === 'ArrowLeft') {
       e.preventDefault();
-      e.stopPropagation();
       showCardByDisplayIndex(currentDisplayIndex - 1);
       closeDropdown();
-    });
+    }
 
-    nextBtn.addEventListener('click', function(e) {
+    if (e.key === 'ArrowRight') {
       e.preventDefault();
-      e.stopPropagation();
       showCardByDisplayIndex(currentDisplayIndex + 1);
       closeDropdown();
-    });
+    }
 
-    document.addEventListener('click', function(e) {
-      if (!dropdownWrap.contains(e.target)) {
-        closeDropdown();
-      }
-    });
+    if (
+      dropdownWrap.classList.contains('is-open') &&
+      (e.key === 'ArrowDown' || e.key === 'ArrowUp')
+    ) {
+      e.preventDefault();
 
-    document.addEventListener('keydown', function(e) {
-      const active = document.activeElement;
-
-      if (e.key === 'Escape') {
-        closeDropdown();
-        dropdownTrigger.blur();
-        return;
-      }
-
-      if (active && !section.contains(active) && active !== document.body) return;
-
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        showCardByDisplayIndex(currentDisplayIndex - 1);
-        closeDropdown();
-      }
-
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
+      if (e.key === 'ArrowDown') {
         showCardByDisplayIndex(currentDisplayIndex + 1);
-        closeDropdown();
       }
 
-      if (
-        dropdownWrap.classList.contains('is-open') &&
-        (e.key === 'ArrowDown' || e.key === 'ArrowUp')
-      ) {
-        e.preventDefault();
-
-        if (e.key === 'ArrowDown') {
-          showCardByDisplayIndex(currentDisplayIndex + 1);
-        }
-
-        if (e.key === 'ArrowUp') {
-          showCardByDisplayIndex(currentDisplayIndex - 1);
-        }
+      if (e.key === 'ArrowUp') {
+        showCardByDisplayIndex(currentDisplayIndex - 1);
       }
-    });
+    }
+  });
 
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
 
-    stage.addEventListener('touchstart', function(e) {
+  stage.addEventListener(
+    'touchstart',
+    function(e) {
       if (!e.touches || e.touches.length !== 1) return;
 
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
-    }, { passive: true });
+    },
+    { passive: true }
+  );
 
-    stage.addEventListener('touchend', function(e) {
-      if (!e.changedTouches || e.changedTouches.length !== 1) return;
+  stage.addEventListener(
+    'touchend',
+    function(e) {
+      if (
+        !e.changedTouches ||
+        e.changedTouches.length !== 1
+      ) return;
 
       touchEndX = e.changedTouches[0].clientX;
       touchEndY = e.changedTouches[0].clientY;
@@ -13737,11 +13791,13 @@ function setImpact(id, value, rankId) {
       }
 
       closeDropdown();
-    }, { passive: true });
+    },
+    { passive: true }
+  );
 
-    buildDropdown();
-    showCardByDisplayIndex(0);
-  })();
+  buildDropdown();
+  showCardByDisplayIndex(0);
+})();
 </script>
 
 </div>
