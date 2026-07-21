@@ -2649,6 +2649,889 @@ signal.classList.add(`is-${model.status}`);
 </div>
     
 
+<!-- =========================================================
+  JH INDEX · CAREER SCORING PROGRESSION
+  Independent section · USC cardinal identity · mobile-safe
+========================================================= -->
+
+<section
+  id="jh-career-scoring-progression-section"
+  class="jh-career-scoring-progression-section"
+  aria-labelledby="jhcsp-title"
+>
+  <style>
+    #jh-career-scoring-progression-section,
+    #jh-career-scoring-progression-section * {
+      box-sizing: border-box;
+    }
+
+    #jh-career-scoring-progression-section {
+      --jhcsp-cardinal: #990000;
+      --jhcsp-cardinal-dark: #650000;
+      --jhcsp-gold: #ffcc00;
+      --jhcsp-navy: #0c2340;
+      --jhcsp-ink: #172033;
+      --jhcsp-text: #3f4a5a;
+      --jhcsp-muted: #64748b;
+      --jhcsp-line: rgba(153, 0, 0, 0.13);
+      --jhcsp-soft: #fffdf6;
+
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto 20px;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-card {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 28px;
+      border: 1px solid var(--jhcsp-line);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(153, 0, 0, 0.075), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(255, 204, 0, 0.12), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, var(--jhcsp-soft) 100%);
+      box-shadow:
+        0 15px 35px rgba(12, 35, 64, 0.055),
+        0 8px 22px rgba(153, 0, 0, 0.045);
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background:
+        linear-gradient(
+          90deg,
+          var(--jhcsp-cardinal-dark) 0%,
+          var(--jhcsp-cardinal) 42%,
+          var(--jhcsp-gold) 72%,
+          var(--jhcsp-navy) 100%
+        );
+      opacity: 0.98;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-inner {
+      position: relative;
+      z-index: 1;
+      padding: 26px 28px 24px;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin: 0 0 9px 0;
+      color: var(--jhcsp-cardinal);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--jhcsp-gold);
+      box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
+      flex: 0 0 auto;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-title {
+      margin: 0;
+      color: var(--jhcsp-navy);
+      font-size: 25px;
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -0.45px;
+      text-transform: uppercase;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-subtitle {
+      margin: 8px 0 0 0;
+      color: var(--jhcsp-muted);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--jhcsp-cardinal) 0%,
+          var(--jhcsp-cardinal-dark) 100%
+        );
+      color: var(--jhcsp-gold);
+      border: 1px solid rgba(255, 204, 0, 0.42);
+      box-shadow: 0 8px 18px rgba(153, 0, 0, 0.16);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-note-box {
+      margin: 0 0 18px 0;
+      padding: 15px 17px;
+      border-radius: 18px;
+      border: 1px solid rgba(153, 0, 0, 0.12);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74);
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-note-box p {
+      margin: 0;
+      color: var(--jhcsp-text);
+      font-size: 14.8px;
+      line-height: 1.72;
+      font-weight: 520;
+      text-align: justify;
+      word-break: keep-all;
+    }
+
+	#jh-career-scoring-progression-section .jhcsp-origin-marker {
+  width: 100%;
+  margin: 0 0 18px 0;
+  border-radius: 20px;
+  border: 1px solid rgba(153, 0, 0, 0.14);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 204, 0, 0.16), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #fffdf6 100%);
+  box-shadow:
+    0 10px 24px rgba(12, 35, 64, 0.045),
+    0 6px 16px rgba(153, 0, 0, 0.035);
+  overflow: hidden;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-inner {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  width: 100%;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      var(--jhcsp-cardinal) 0%,
+      var(--jhcsp-cardinal-dark) 72%,
+      var(--jhcsp-navy) 100%
+    );
+  color: #ffffff;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-score-label {
+  display: block;
+  margin: 0 0 7px 0;
+  color: rgba(255, 204, 0, 0.92);
+  font-size: 9.5px;
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-score-number {
+  display: block;
+  color: var(--jhcsp-gold);
+  font-size: 42px;
+  line-height: 0.95;
+  font-weight: 950;
+  letter-spacing: -1px;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-score-note {
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-copy {
+  padding: 18px 20px 18px 0;
+  min-width: 0;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 7px 0;
+  color: var(--jhcsp-cardinal);
+  font-size: 9.8px;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--jhcsp-gold);
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
+  flex: 0 0 auto;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-title {
+  margin: 0;
+  color: var(--jhcsp-navy);
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: -0.15px;
+  text-transform: uppercase;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-text {
+  margin: 8px 0 0 0;
+  color: var(--jhcsp-text);
+  font-size: 14.2px;
+  line-height: 1.65;
+  font-weight: 520;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+#jh-career-scoring-progression-section .jhcsp-origin-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 204, 0, 0.10);
+  border: 1px solid rgba(153, 0, 0, 0.13);
+  color: var(--jhcsp-cardinal-dark);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  #jh-career-scoring-progression-section .jhcsp-origin-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-score {
+    padding: 17px 14px;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-score-number {
+    font-size: 38px;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-copy {
+    padding: 17px 16px 18px;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-title {
+    font-size: 15.8px;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-text {
+    font-size: 13.8px;
+    line-height: 1.62;
+    text-align: left;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-meta {
+    gap: 6px;
+  }
+
+  #jh-career-scoring-progression-section .jhcsp-origin-pill {
+    font-size: 9.4px;
+    padding: 6px 9px;
+  }
+}  
+
+    #jh-career-scoring-progression-section .jhcsp-table-shell {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(12, 35, 64, 0.12);
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(12, 35, 64, 0.06);
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table thead tr {
+      background:
+        linear-gradient(
+          135deg,
+          var(--jhcsp-navy) 0%,
+          #07172c 100%
+        );
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th {
+      padding: 14px 12px;
+      color: #ffffff;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th:last-child {
+      border-right: none;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table td {
+      padding: 14px 12px;
+      color: var(--jhcsp-ink);
+      font-size: 13.2px;
+      line-height: 1.4;
+      font-weight: 560;
+      vertical-align: middle;
+      border-top: 1px solid rgba(12, 35, 64, 0.08);
+      text-align: center;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table td:first-child {
+      text-align: left;
+      font-weight: 720;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table tbody tr.is-current {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(153, 0, 0, 0.075) 0%,
+          rgba(255, 204, 0, 0.085) 100%
+        );
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table tbody tr.is-current td:first-child {
+      color: var(--jhcsp-navy);
+      font-weight: 850;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th:nth-child(1),
+    #jh-career-scoring-progression-section .jhcsp-table td:nth-child(1) {
+      width: 43%;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th:nth-child(2),
+    #jh-career-scoring-progression-section .jhcsp-table td:nth-child(2) {
+      width: 14%;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th:nth-child(3),
+    #jh-career-scoring-progression-section .jhcsp-table td:nth-child(3) {
+      width: 21.5%;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table th:nth-child(4),
+    #jh-career-scoring-progression-section .jhcsp-table td:nth-child(4) {
+      width: 21.5%;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-value-primary {
+      color: var(--jhcsp-cardinal);
+      font-weight: 900;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-value-strong {
+      color: #b53300;
+      font-weight: 850;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-value-muted {
+      color: #7a8798;
+      font-weight: 620;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-metric-note {
+      display: inline-block;
+      margin-left: 4px;
+      color: var(--jhcsp-muted);
+      font-size: 10.5px;
+      line-height: 1.1;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-footer-note {
+      margin: 15px 0 0 0;
+      padding-top: 13px;
+      border-top: 1px solid rgba(153, 0, 0, 0.12);
+      color: var(--jhcsp-muted);
+      font-size: 11.5px;
+      line-height: 1.6;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-footer-note strong {
+      color: var(--jhcsp-cardinal-dark);
+      font-weight: 900;
+    }
+
+    @media (max-width: 768px) {
+      #jh-career-scoring-progression-section {
+        margin: 26px auto 18px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-card {
+        border-radius: 24px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-inner {
+        padding: 23px 18px 21px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-badge {
+        width: fit-content;
+        min-height: 31px;
+        padding: 7px 11px;
+        font-size: 9px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-title {
+        font-size: 21px;
+        line-height: 1.16;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-subtitle {
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-note-box {
+        padding: 14px 15px;
+        border-radius: 16px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-note-box p {
+        font-size: 14px;
+        line-height: 1.68;
+        text-align: left;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table-shell {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        overflow: visible;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table,
+      #jh-career-scoring-progression-section .jhcsp-table thead,
+      #jh-career-scoring-progression-section .jhcsp-table tbody,
+      #jh-career-scoring-progression-section .jhcsp-table th,
+      #jh-career-scoring-progression-section .jhcsp-table td,
+      #jh-career-scoring-progression-section .jhcsp-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table thead {
+        display: none;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table tbody {
+        display: grid;
+        gap: 10px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table tr {
+        overflow: hidden;
+        border-radius: 17px;
+        border: 1px solid rgba(153, 0, 0, 0.12);
+        background:
+          linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
+        box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table tr.is-current {
+        border-color: rgba(153, 0, 0, 0.22);
+        background:
+          linear-gradient(180deg, rgba(255, 204, 0, 0.10) 0%, #ffffff 100%);
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        padding: 10px 13px;
+        border-top: 1px solid rgba(12, 35, 64, 0.07);
+        text-align: right;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td::before {
+        content: attr(data-label);
+        color: var(--jhcsp-muted);
+        font-size: 9.5px;
+        line-height: 1.15;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: left;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage {
+        display: block;
+        padding: 13px 13px 12px;
+        background:
+          linear-gradient(
+            135deg,
+            var(--jhcsp-navy) 0%,
+            var(--jhcsp-cardinal-dark) 100%
+          );
+        color: #ffffff !important;
+        border-top: none;
+        text-align: left;
+        font-size: 13.3px;
+        line-height: 1.35;
+        font-weight: 850;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage::before {
+        display: none;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table tr.is-current td.jhcsp-stage {
+        background:
+          linear-gradient(
+            135deg,
+            var(--jhcsp-cardinal) 0%,
+            var(--jhcsp-cardinal-dark) 72%,
+            var(--jhcsp-navy) 100%
+          );
+        color: var(--jhcsp-gold) !important;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-metric-note {
+        display: block;
+        margin: 3px 0 0 0;
+        font-size: 9.6px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-footer-note {
+        font-size: 11px;
+        line-height: 1.55;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #jh-career-scoring-progression-section .jhcsp-inner {
+        padding: 22px 15px 20px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-title {
+        font-size: 19.5px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-note-box p {
+        font-size: 13.5px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 9px;
+        padding: 10px 11px;
+        font-size: 12.5px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td::before {
+        font-size: 9px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage {
+        font-size: 12.8px;
+      }
+    }
+  </style>
+
+  <div class="jhcsp-card">
+    <div class="jhcsp-inner">
+
+      <div class="jhcsp-header">
+        <div>
+          <p class="jhcsp-kicker">
+            Annual Development Record
+          </p>
+
+          <h2 class="jhcsp-title" id="jhcsp-title">
+            Career Scoring Progression
+          </h2>
+
+          <p class="jhcsp-subtitle">
+            Completed-season scoring development from junior golf through NCAA competition
+          </p>
+        </div>
+
+        <span class="jhcsp-badge">
+          Updated by Season
+        </span>
+      </div>
+
+      <div class="jhcsp-note-box">
+        <p>
+          This progression tracks Joshua’s scoring development from the beginning of his golf career through each completed competitive season. New season data can be added after each year is completed, preserving a year-by-year record of scoring average and low-round capability.
+        </p>
+      </div>
+
+<div class="jhcsp-origin-marker" aria-label="Joshua Hong first competitive golf reference">
+  <div class="jhcsp-origin-inner">
+
+    <div class="jhcsp-origin-score">
+     <span class="jhcsp-origin-score-label">
+  First Round
+</span>
+
+<span class="jhcsp-origin-score-number">
+  104
+</span>
+
+<span class="jhcsp-origin-score-note">
+  One-Round Event · Summer 2019
+</span>
+    </div>
+
+    <div class="jhcsp-origin-copy">
+      <p class="jhcsp-origin-kicker">
+        Starting Reference
+      </p>
+
+      <h3 class="jhcsp-origin-title">
+        First Competitive Round · Las Cañadas Country Club
+      </h3>
+
+<p class="jhcsp-origin-text">
+  Joshua began golf in February 2019 and entered his first tournament later that summer at Las Cañadas Country Club. He recorded 104 in the one-round event, a result preserved here as the starting point of his competitive scoring record before the year-by-year progression shown below.
+</p>
+
+      <div class="jhcsp-origin-meta" aria-label="First competitive round details">
+        <span class="jhcsp-origin-pill">
+          Began Golf · February 2019
+        </span>
+
+        <span class="jhcsp-origin-pill">
+          First Event · Summer 2019
+        </span>
+
+        <span class="jhcsp-origin-pill">
+          Las Cañadas CC
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+		
+      <div class="jhcsp-table-shell">
+        <table class="jhcsp-table" aria-label="Joshua Hong career scoring progression by completed season">
+          <thead>
+            <tr>
+              <th>Stage / Season</th>
+              <th>Rounds</th>
+              <th>Scoring Avg</th>
+              <th>Low Round</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!--
+              Annual update rule:
+              Add each new completed season as a new top row.
+              Keep only the latest completed season marked with class="is-current".
+            -->
+
+            <tr class="is-current">
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2025–26 NCAA Freshman Season · UTSA (18)
+              </td>
+              <td data-label="Rounds">
+                33
+              </td>
+              <td data-label="Scoring Avg">
+                <span class="jhcsp-value-primary">71.30</span>
+                <span class="jhcsp-metric-note">Clippd Adj.</span>
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-primary">64 (-8)</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2024–25 Junior Golf Season (17)
+              </td>
+              <td data-label="Rounds">
+                52
+              </td>
+              <td data-label="Scoring Avg">
+                <span class="jhcsp-value-strong">71.37</span>
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-strong">62 (-10)</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2023–24 Junior Golf Season (16)
+              </td>
+              <td data-label="Rounds">
+                47
+              </td>
+              <td data-label="Scoring Avg">
+                72.60
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-strong">64 (-8)</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2022–23 Junior Golf Season (15)
+              </td>
+              <td data-label="Rounds">
+                45
+              </td>
+              <td data-label="Scoring Avg">
+                74.04
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-strong">66 (-5)</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2021–22 Junior Golf Season (14)
+              </td>
+              <td data-label="Rounds">
+                34
+              </td>
+              <td data-label="Scoring Avg">
+                77.88
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-strong">70 (-2)</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2020–21 Junior Golf Season (13)
+              </td>
+              <td data-label="Rounds">
+                18
+              </td>
+              <td data-label="Scoring Avg">
+                <span class="jhcsp-value-muted">79.39</span>
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-muted">74</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="jhcsp-stage" data-label="Stage / Season">
+                2019–20 Junior Golf Season (12)
+              </td>
+              <td data-label="Rounds">
+                17
+              </td>
+              <td data-label="Scoring Avg">
+                <span class="jhcsp-value-muted">86.88</span>
+              </td>
+              <td data-label="Low Round">
+                <span class="jhcsp-value-muted">75</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="jhcsp-footer-note">
+        <strong>Update note:</strong>
+        Add one new top row after each completed season. NCAA season averages may use adjusted scoring where noted; junior seasons reflect recorded season scoring averages.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+	
 
 <div class="Billy-dettlaff-section" style="max-width: 900px; margin: 0 auto 20px; padding: 0px; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 
