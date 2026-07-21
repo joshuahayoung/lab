@@ -3784,6 +3784,43 @@
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
+#jh-summer-offseason-results-accordion .jhso-actions {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+#jh-summer-offseason-results-accordion .jhso-count {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--jhso-cardinal) 0%,
+      var(--jhso-cardinal-dark) 100%
+    );
+  border: 1px solid rgba(255, 204, 0, 0.42);
+  color: var(--jhso-gold);
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(153, 0, 0, 0.16);
+}
+    
     #jh-summer-offseason-results-accordion .jhso-toggle {
   width: 100%;
   display: grid;
@@ -3944,10 +3981,25 @@
       margin-bottom: 0 !important;
     }
 
-    @media (max-width: 700px) {
-      #jh-summer-offseason-results-accordion {
-        margin: 18px 0 50px;
-      }
+   @media (max-width: 700px) {
+  #jh-summer-offseason-results-accordion .jhso-actions {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: start;
+    gap: 6px;
+    margin-top: 0;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-count {
+    min-height: 27px;
+    padding: 5px 9px;
+    font-size: 9.2px;
+  }
+
+  #jh-summer-offseason-results-accordion .jhso-arrow {
+    margin-top: 0;
+  }
+}
 
     #jh-summer-offseason-results-accordion .jhso-left-accent {
         width: 4px;
@@ -3961,12 +4013,7 @@
   border-radius: 15px;
 }
 
-#jh-summer-offseason-results-accordion .jhso-count {
-  margin-top: 9px;
-  min-height: 27px;
-  padding: 5px 10px;
-  font-size: 9.5px;
-}
+
 
 #jh-summer-offseason-results-accordion .jhso-arrow {
   grid-column: 2 / 3;
@@ -4023,29 +4070,31 @@
     aria-controls="jh-summer-offseason-results-panel"
   >
     <span class="jhso-left-accent" aria-hidden="true"></span>
-    <span class="jhso-title-block">
-      <span class="jhso-title">
-        2026 Summer Off-Season
-      </span>
+   <span class="jhso-title-block">
+  <span class="jhso-title">
+    2026 Summer Off-Season
+  </span>
 
-      <span class="jhso-subtitle">
-        Summer Amateur Schedule, Qualifying Pathways &amp; Results Log
-      </span>
+  <span class="jhso-subtitle">
+    Summer Amateur Schedule, Qualifying Pathways &amp; Results Log
+  </span>
 
-      <span class="jhso-count">
-        Schedule &amp; Results
-      </span>
+  <span class="jhso-note">
+    Summer schedule and results are shown below. Use the arrow to collapse or expand this section.
+  </span>
+</span>
 
-      <span class="jhso-note">
-        Summer schedule and results are shown below. Use the arrow to collapse or expand this section.
-      </span>
-    </span>
+<span class="jhso-actions">
+  <span class="jhso-count">
+    4 Events
+  </span>
 
-    <span class="jhso-arrow" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </span>
+  <span class="jhso-arrow" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </span>
+</span>
   </button>
 
   <div
