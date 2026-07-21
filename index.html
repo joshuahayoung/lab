@@ -2652,6 +2652,7 @@ signal.classList.add(`is-${model.status}`);
 <!-- =========================================================
   JH INDEX · CAREER SCORING PROGRESSION
   Independent section · USC cardinal identity · mobile-safe
+  Replace the previous jh-career-scoring-progression-section block with this full block.
 ========================================================= -->
 
 <section
@@ -2669,6 +2670,7 @@ signal.classList.add(`is-${model.status}`);
       --jhcsp-cardinal: #990000;
       --jhcsp-cardinal-dark: #650000;
       --jhcsp-gold: #ffcc00;
+      --jhcsp-gold-soft: #fff3c4;
       --jhcsp-navy: #0c2340;
       --jhcsp-ink: #172033;
       --jhcsp-text: #3f4a5a;
@@ -2707,9 +2709,9 @@ signal.classList.add(`is-${model.status}`);
         linear-gradient(
           90deg,
           var(--jhcsp-cardinal-dark) 0%,
-          var(--jhcsp-cardinal) 42%,
+          var(--jhcsp-cardinal) 48%,
           var(--jhcsp-gold) 72%,
-          var(--jhcsp-navy) 100%
+          var(--jhcsp-cardinal-dark) 100%
         );
       opacity: 0.98;
     }
@@ -2816,193 +2818,180 @@ signal.classList.add(`is-${model.status}`);
       word-break: keep-all;
     }
 
-	#jh-career-scoring-progression-section .jhcsp-origin-marker {
-  width: 100%;
-  margin: 0 0 18px 0;
-  border-radius: 20px;
-  border: 1px solid rgba(153, 0, 0, 0.14);
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255, 204, 0, 0.16), transparent 28%),
-    linear-gradient(135deg, #ffffff 0%, #fffdf6 100%);
-  box-shadow:
-    0 10px 24px rgba(12, 35, 64, 0.045),
-    0 6px 16px rgba(153, 0, 0, 0.035);
-  overflow: hidden;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-marker {
+      position: relative;
+      width: 100%;
+      margin: 0 0 18px 0;
+      border-radius: 20px;
+      border: 1px solid rgba(153, 0, 0, 0.14);
+      background:
+        radial-gradient(circle at 92% 12%, rgba(255, 204, 0, 0.13), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
+      box-shadow:
+        0 10px 24px rgba(12, 35, 64, 0.045),
+        0 6px 16px rgba(153, 0, 0, 0.035);
+      overflow: hidden;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-inner {
-  display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  gap: 18px;
-  align-items: stretch;
-  width: 100%;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-marker::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background:
+        linear-gradient(
+          180deg,
+          var(--jhcsp-cardinal-dark) 0%,
+          var(--jhcsp-cardinal) 58%,
+          var(--jhcsp-gold) 100%
+        );
+      z-index: 1;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-score {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:
-    linear-gradient(
-      135deg,
-      var(--jhcsp-cardinal) 0%,
-      var(--jhcsp-cardinal-dark) 72%,
-      var(--jhcsp-navy) 100%
-    );
-  color: #ffffff;
-  padding: 20px 16px;
-  text-align: center;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 164px;
+      gap: 18px;
+      align-items: center;
+      width: 100%;
+      padding: 18px 20px 18px 22px;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-score-label {
-  display: block;
-  margin: 0 0 7px 0;
-  color: rgba(255, 204, 0, 0.92);
-  font-size: 9.5px;
-  line-height: 1.15;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-copy {
+      min-width: 0;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-score-number {
-  display: block;
-  color: var(--jhcsp-gold);
-  font-size: 42px;
-  line-height: 0.95;
-  font-weight: 950;
-  letter-spacing: -1px;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0 0 7px 0;
+      color: var(--jhcsp-cardinal);
+      font-size: 9.8px;
+      line-height: 1.2;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-score-note {
-  display: block;
-  margin-top: 7px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 10px;
-  line-height: 1.25;
-  font-weight: 650;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--jhcsp-gold);
+      box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
+      flex: 0 0 auto;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-copy {
-  padding: 18px 20px 18px 0;
-  min-width: 0;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-title {
+      margin: 0;
+      color: var(--jhcsp-navy);
+      font-size: 17px;
+      line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: -0.15px;
+      text-transform: uppercase;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0 0 7px 0;
-  color: var(--jhcsp-cardinal);
-  font-size: 9.8px;
-  line-height: 1.2;
-  font-weight: 850;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-text {
+      margin: 8px 0 0 0;
+      color: var(--jhcsp-text);
+      font-size: 14.2px;
+      line-height: 1.65;
+      font-weight: 520;
+      text-align: justify;
+      word-break: keep-all;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-kicker::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--jhcsp-gold);
-  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.18);
-  flex: 0 0 auto;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-title {
-  margin: 0;
-  color: var(--jhcsp-navy);
-  font-size: 17px;
-  line-height: 1.3;
-  font-weight: 900;
-  letter-spacing: -0.15px;
-  text-transform: uppercase;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 26px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 204, 0, 0.10);
+      border: 1px solid rgba(153, 0, 0, 0.13);
+      color: var(--jhcsp-cardinal-dark);
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-text {
-  margin: 8px 0 0 0;
-  color: var(--jhcsp-text);
-  font-size: 14.2px;
-  line-height: 1.65;
-  font-weight: 520;
-  text-align: justify;
-  word-break: keep-all;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-score {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      align-items: center;
+      justify-items: center;
+      align-self: stretch;
+      min-height: 126px;
+      padding: 15px 13px;
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(153, 0, 0, 0.96) 0%,
+          rgba(101, 0, 0, 0.98) 76%,
+          rgba(153, 0, 0, 0.94) 100%
+        );
+      border: 1px solid rgba(255, 204, 0, 0.34);
+      box-shadow:
+        0 8px 18px rgba(153, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      text-align: center;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 12px;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-score-label {
+      display: block;
+      color: rgba(255, 204, 0, 0.92);
+      font-size: 9px;
+      line-height: 1.15;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
 
-#jh-career-scoring-progression-section .jhcsp-origin-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 26px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(255, 204, 0, 0.10);
-  border: 1px solid rgba(153, 0, 0, 0.13);
-  color: var(--jhcsp-cardinal-dark);
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
+    #jh-career-scoring-progression-section .jhcsp-origin-score-number {
+      display: block;
+      color: var(--jhcsp-gold);
+      font-size: 35px;
+      line-height: 0.95;
+      font-weight: 950;
+      letter-spacing: -0.8px;
+    }
 
-@media (max-width: 768px) {
-  #jh-career-scoring-progression-section .jhcsp-origin-inner {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-score {
-    padding: 17px 14px;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-score-number {
-    font-size: 38px;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-copy {
-    padding: 17px 16px 18px;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-title {
-    font-size: 15.8px;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-text {
-    font-size: 13.8px;
-    line-height: 1.62;
-    text-align: left;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-meta {
-    gap: 6px;
-  }
-
-  #jh-career-scoring-progression-section .jhcsp-origin-pill {
-    font-size: 9.4px;
-    padding: 6px 9px;
-  }
-}  
+    #jh-career-scoring-progression-section .jhcsp-origin-score-note {
+      display: block;
+      color: rgba(255, 255, 255, 0.80);
+      font-size: 9px;
+      line-height: 1.3;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
 
     #jh-career-scoring-progression-section .jhcsp-table-shell {
       width: 100%;
       overflow: hidden;
       border-radius: 18px;
-      border: 1px solid rgba(12, 35, 64, 0.12);
+      border: 1px solid rgba(153, 0, 0, 0.15);
       background: #ffffff;
-      box-shadow: 0 10px 24px rgba(12, 35, 64, 0.06);
+      box-shadow: 0 10px 24px rgba(153, 0, 0, 0.055);
     }
 
     #jh-career-scoring-progression-section .jhcsp-table {
@@ -3015,21 +3004,23 @@ signal.classList.add(`is-${model.status}`);
       background:
         linear-gradient(
           135deg,
-          var(--jhcsp-navy) 0%,
-          #07172c 100%
+          var(--jhcsp-cardinal) 0%,
+          var(--jhcsp-cardinal-dark) 72%,
+          #4d0000 100%
         );
     }
 
     #jh-career-scoring-progression-section .jhcsp-table th {
       padding: 14px 12px;
-      color: #ffffff;
+      color: var(--jhcsp-gold);
       font-size: 11px;
       line-height: 1.2;
       font-weight: 850;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-align: center;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      border-right: 1px solid rgba(255, 204, 0, 0.16);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
     }
 
     #jh-career-scoring-progression-section .jhcsp-table th:last-child {
@@ -3043,7 +3034,7 @@ signal.classList.add(`is-${model.status}`);
       line-height: 1.4;
       font-weight: 560;
       vertical-align: middle;
-      border-top: 1px solid rgba(12, 35, 64, 0.08);
+      border-top: 1px solid rgba(153, 0, 0, 0.09);
       text-align: center;
     }
 
@@ -3053,7 +3044,7 @@ signal.classList.add(`is-${model.status}`);
     }
 
     #jh-career-scoring-progression-section .jhcsp-table tbody tr:nth-child(even) {
-      background: #f8fafc;
+      background: #fffdf6;
     }
 
     #jh-career-scoring-progression-section .jhcsp-table tbody tr.is-current {
@@ -3061,7 +3052,7 @@ signal.classList.add(`is-${model.status}`);
         linear-gradient(
           90deg,
           rgba(153, 0, 0, 0.075) 0%,
-          rgba(255, 204, 0, 0.085) 100%
+          rgba(255, 204, 0, 0.095) 100%
         );
     }
 
@@ -3178,6 +3169,61 @@ signal.classList.add(`is-${model.status}`);
         text-align: left;
       }
 
+      #jh-career-scoring-progression-section .jhcsp-origin-inner {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        padding: 17px 16px 18px 18px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-title {
+        font-size: 15.8px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-text {
+        font-size: 13.8px;
+        line-height: 1.62;
+        text-align: left;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-meta {
+        gap: 6px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-pill {
+        font-size: 9.4px;
+        padding: 6px 9px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+          "label number"
+          "note note";
+        justify-content: center;
+        align-items: center;
+        column-gap: 12px;
+        row-gap: 5px;
+        min-height: auto;
+        padding: 13px 14px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score-label {
+        grid-area: label;
+        font-size: 8.8px;
+        text-align: right;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score-number {
+        grid-area: number;
+        font-size: 31px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score-note {
+        grid-area: note;
+        font-size: 8.8px;
+      }
+
       #jh-career-scoring-progression-section .jhcsp-table-shell {
         border: none;
         border-radius: 0;
@@ -3211,7 +3257,7 @@ signal.classList.add(`is-${model.status}`);
         border: 1px solid rgba(153, 0, 0, 0.12);
         background:
           linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
-        box-shadow: 0 8px 20px rgba(12, 35, 64, 0.045);
+        box-shadow: 0 8px 20px rgba(153, 0, 0, 0.045);
       }
 
       #jh-career-scoring-progression-section .jhcsp-table tr.is-current {
@@ -3226,7 +3272,7 @@ signal.classList.add(`is-${model.status}`);
         gap: 12px;
         align-items: center;
         padding: 10px 13px;
-        border-top: 1px solid rgba(12, 35, 64, 0.07);
+        border-top: 1px solid rgba(153, 0, 0, 0.08);
         text-align: right;
         font-size: 13px;
         line-height: 1.35;
@@ -3249,10 +3295,11 @@ signal.classList.add(`is-${model.status}`);
         background:
           linear-gradient(
             135deg,
-            var(--jhcsp-navy) 0%,
-            var(--jhcsp-cardinal-dark) 100%
+            var(--jhcsp-cardinal) 0%,
+            var(--jhcsp-cardinal-dark) 78%,
+            #4d0000 100%
           );
-        color: #ffffff !important;
+        color: var(--jhcsp-gold) !important;
         border-top: none;
         text-align: left;
         font-size: 13.3px;
@@ -3269,8 +3316,8 @@ signal.classList.add(`is-${model.status}`);
           linear-gradient(
             135deg,
             var(--jhcsp-cardinal) 0%,
-            var(--jhcsp-cardinal-dark) 72%,
-            var(--jhcsp-navy) 100%
+            var(--jhcsp-cardinal-dark) 68%,
+            var(--jhcsp-cardinal) 100%
           );
         color: var(--jhcsp-gold) !important;
       }
@@ -3300,6 +3347,27 @@ signal.classList.add(`is-${model.status}`);
         font-size: 13.5px;
       }
 
+      #jh-career-scoring-progression-section .jhcsp-origin-inner {
+        padding: 16px 13px 17px 16px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-title {
+        font-size: 15.1px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-text {
+        font-size: 13.4px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score {
+        column-gap: 10px;
+        padding: 12px 12px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-origin-score-number {
+        font-size: 29px;
+      }
+
       #jh-career-scoring-progression-section .jhcsp-table td {
         grid-template-columns: 96px minmax(0, 1fr);
         gap: 9px;
@@ -3323,7 +3391,7 @@ signal.classList.add(`is-${model.status}`);
       <div class="jhcsp-header">
         <div>
           <p class="jhcsp-kicker">
-            Annual Development Record
+            Scoring Development Record
           </p>
 
           <h2 class="jhcsp-title" id="jhcsp-title">
@@ -3331,7 +3399,7 @@ signal.classList.add(`is-${model.status}`);
           </h2>
 
           <p class="jhcsp-subtitle">
-            Completed-season scoring development from junior golf through NCAA competition
+            Completed-season scoring development from first competitive reference through NCAA competition
           </p>
         </div>
 
@@ -3342,59 +3410,58 @@ signal.classList.add(`is-${model.status}`);
 
       <div class="jhcsp-note-box">
         <p>
-          This progression tracks Joshua’s scoring development from the beginning of his golf career through each completed competitive season. New season data can be added after each year is completed, preserving a year-by-year record of scoring average and low-round capability.
+          This section preserves Joshua’s scoring development by completed season, beginning with his first competitive reference point and continuing through junior golf and NCAA competition.
         </p>
       </div>
 
-<div class="jhcsp-origin-marker" aria-label="Joshua Hong first competitive golf reference">
-  <div class="jhcsp-origin-inner">
+      <div class="jhcsp-origin-marker" aria-label="Joshua Hong first competitive golf reference">
+        <div class="jhcsp-origin-inner">
 
-    <div class="jhcsp-origin-score">
-     <span class="jhcsp-origin-score-label">
-  First Round
-</span>
+          <div class="jhcsp-origin-copy">
+            <p class="jhcsp-origin-kicker">
+              Starting Baseline
+            </p>
 
-<span class="jhcsp-origin-score-number">
-  104
-</span>
+            <h3 class="jhcsp-origin-title">
+              First Competitive Round · Las Cañadas Country Club
+            </h3>
 
-<span class="jhcsp-origin-score-note">
-  One-Round Event · Summer 2019
-</span>
-    </div>
+            <p class="jhcsp-origin-text">
+              Joshua began golf in February 2019. Later that summer, he played his first competitive round at Las Cañadas Country Club and recorded 104 in a one-round event. The score is preserved here only as an origin marker for the year-by-year scoring progression below.
+            </p>
 
-    <div class="jhcsp-origin-copy">
-      <p class="jhcsp-origin-kicker">
-        Starting Reference
-      </p>
+            <div class="jhcsp-origin-meta" aria-label="First competitive round details">
+              <span class="jhcsp-origin-pill">
+                Began Golf · February 2019
+              </span>
 
-      <h3 class="jhcsp-origin-title">
-        First Competitive Round · Las Cañadas Country Club
-      </h3>
+              <span class="jhcsp-origin-pill">
+                First Event · Summer 2019
+              </span>
 
-<p class="jhcsp-origin-text">
-  Joshua began golf in February 2019 and entered his first tournament later that summer at Las Cañadas Country Club. He recorded 104 in the one-round event, a result preserved here as the starting point of his competitive scoring record before the year-by-year progression shown below.
-</p>
+              <span class="jhcsp-origin-pill">
+                Las Cañadas CC
+              </span>
+            </div>
+          </div>
 
-      <div class="jhcsp-origin-meta" aria-label="First competitive round details">
-        <span class="jhcsp-origin-pill">
-          Began Golf · February 2019
-        </span>
+          <div class="jhcsp-origin-score">
+            <span class="jhcsp-origin-score-label">
+              Starting Score
+            </span>
 
-        <span class="jhcsp-origin-pill">
-          First Event · Summer 2019
-        </span>
+            <span class="jhcsp-origin-score-number">
+              104
+            </span>
 
-        <span class="jhcsp-origin-pill">
-          Las Cañadas CC
-        </span>
+            <span class="jhcsp-origin-score-note">
+              One-Round Event · Summer 2019
+            </span>
+          </div>
+
+        </div>
       </div>
-    </div>
 
-  </div>
-</div>
-
-		
       <div class="jhcsp-table-shell">
         <table class="jhcsp-table" aria-label="Joshua Hong career scoring progression by completed season">
           <thead>
@@ -3411,6 +3478,7 @@ signal.classList.add(`is-${model.status}`);
               Annual update rule:
               Add each new completed season as a new top row.
               Keep only the latest completed season marked with class="is-current".
+              Original season data below is preserved unchanged.
             -->
 
             <tr class="is-current">
