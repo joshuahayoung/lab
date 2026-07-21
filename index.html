@@ -2652,7 +2652,7 @@ signal.classList.add(`is-${model.status}`);
 <!-- =========================================================
   JH INDEX · CAREER SCORING PROGRESSION
   Independent section · USC cardinal identity · mobile-safe
-  Replace the previous jh-career-scoring-progression-section block with this full block.
+  Final cleaned version · no duplicate CSS
 ========================================================= -->
 
 <section
@@ -2669,6 +2669,7 @@ signal.classList.add(`is-${model.status}`);
     #jh-career-scoring-progression-section {
       --jhcsp-cardinal: #990000;
       --jhcsp-cardinal-dark: #650000;
+      --jhcsp-cardinal-deep: #4d0000;
       --jhcsp-gold: #ffcc00;
       --jhcsp-gold-soft: #fff3c4;
       --jhcsp-navy: #0c2340;
@@ -2767,11 +2768,12 @@ signal.classList.add(`is-${model.status}`);
     #jh-career-scoring-progression-section .jhcsp-subtitle {
       margin: 8px 0 0 0;
       color: var(--jhcsp-muted);
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 10.7px;
+      line-height: 1.35;
       font-weight: 750;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.025em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     #jh-career-scoring-progression-section .jhcsp-badge {
@@ -2978,10 +2980,10 @@ signal.classList.add(`is-${model.status}`);
     #jh-career-scoring-progression-section .jhcsp-origin-score-note {
       display: block;
       color: rgba(255, 255, 255, 0.80);
-      font-size: 9px;
+      font-size: 8.5px;
       line-height: 1.3;
       font-weight: 650;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.035em;
       text-transform: uppercase;
     }
 
@@ -3006,7 +3008,7 @@ signal.classList.add(`is-${model.status}`);
           135deg,
           var(--jhcsp-cardinal) 0%,
           var(--jhcsp-cardinal-dark) 72%,
-          #4d0000 100%
+          var(--jhcsp-cardinal-deep) 100%
         );
     }
 
@@ -3154,8 +3156,10 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-subtitle {
-        font-size: 9.5px;
-        line-height: 1.25;
+        font-size: 10.3px;
+        line-height: 1.42;
+        letter-spacing: 0.035em;
+        white-space: normal;
       }
 
       #jh-career-scoring-progression-section .jhcsp-note-box {
@@ -3221,7 +3225,7 @@ signal.classList.add(`is-${model.status}`);
 
       #jh-career-scoring-progression-section .jhcsp-origin-score-note {
         grid-area: note;
-        font-size: 8.8px;
+        font-size: 8.4px;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table-shell {
@@ -3238,16 +3242,16 @@ signal.classList.add(`is-${model.status}`);
       #jh-career-scoring-progression-section .jhcsp-table th,
       #jh-career-scoring-progression-section .jhcsp-table td,
       #jh-career-scoring-progression-section .jhcsp-table tr {
-        display: block;
-        width: 100%;
+        display: block !important;
+        width: 100% !important;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table thead {
-        display: none;
+        display: none !important;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table tbody {
-        display: grid;
+        display: grid !important;
         gap: 10px;
       }
 
@@ -3267,7 +3271,7 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-table td {
-        display: grid;
+        display: grid !important;
         grid-template-columns: 112px minmax(0, 1fr);
         gap: 12px;
         align-items: center;
@@ -3290,14 +3294,15 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage {
-        display: block;
+        display: block !important;
+        width: 100% !important;
         padding: 13px 13px 12px;
         background:
           linear-gradient(
             135deg,
             var(--jhcsp-cardinal) 0%,
             var(--jhcsp-cardinal-dark) 78%,
-            #4d0000 100%
+            var(--jhcsp-cardinal-deep) 100%
           );
         color: var(--jhcsp-gold) !important;
         border-top: none;
@@ -3308,7 +3313,7 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage::before {
-        display: none;
+        display: none !important;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table tr.is-current td.jhcsp-stage {
@@ -3408,6 +3413,11 @@ signal.classList.add(`is-${model.status}`);
         </span>
       </div>
 
+      <div class="jhcsp-note-box">
+        <p>
+          This section preserves Joshua’s scoring development by completed season, beginning with his first competitive reference point and continuing through junior golf and NCAA competition.
+        </p>
+      </div>
 
       <div class="jhcsp-origin-marker" aria-label="Joshua Hong first competitive golf reference">
         <div class="jhcsp-origin-inner">
@@ -3442,7 +3452,7 @@ signal.classList.add(`is-${model.status}`);
 
           <div class="jhcsp-origin-score">
             <span class="jhcsp-origin-score-label">
-              Starting Score
+              Origin Marker
             </span>
 
             <span class="jhcsp-origin-score-number">
@@ -3586,8 +3596,8 @@ signal.classList.add(`is-${model.status}`);
       </div>
 
       <p class="jhcsp-footer-note">
-        <strong>Update note:</strong>
-        Add one new top row after each completed season. NCAA season averages may use adjusted scoring where noted; junior seasons reflect recorded season scoring averages.
+        <strong>Record note:</strong>
+        New completed-season data is added at the top of the table after each season. NCAA season averages may use adjusted scoring where noted; junior seasons reflect recorded season scoring averages.
       </p>
 
     </div>
