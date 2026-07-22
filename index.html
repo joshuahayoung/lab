@@ -2652,7 +2652,7 @@ signal.classList.add(`is-${model.status}`);
 <!-- =========================================================
   JH INDEX · CAREER SCORING PROGRESSION
   Independent section · USC cardinal identity · mobile-safe
-  Final cleaned version · no duplicate CSS
+  Final table-preserved mobile version · no card conversion
 ========================================================= -->
 
 <section
@@ -3002,6 +3002,18 @@ signal.classList.add(`is-${model.status}`);
       table-layout: fixed;
     }
 
+    #jh-career-scoring-progression-section .jhcsp-table thead {
+      display: table-header-group;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table tbody {
+      display: table-row-group;
+    }
+
+    #jh-career-scoring-progression-section .jhcsp-table tr {
+      display: table-row;
+    }
+
     #jh-career-scoring-progression-section .jhcsp-table thead tr {
       background:
         linear-gradient(
@@ -3013,6 +3025,7 @@ signal.classList.add(`is-${model.status}`);
     }
 
     #jh-career-scoring-progression-section .jhcsp-table th {
+      display: table-cell;
       padding: 14px 12px;
       color: var(--jhcsp-gold);
       font-size: 11px;
@@ -3021,6 +3034,7 @@ signal.classList.add(`is-${model.status}`);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-align: center;
+      vertical-align: middle;
       border-right: 1px solid rgba(255, 204, 0, 0.16);
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
     }
@@ -3030,6 +3044,7 @@ signal.classList.add(`is-${model.status}`);
     }
 
     #jh-career-scoring-progression-section .jhcsp-table td {
+      display: table-cell;
       padding: 14px 12px;
       color: var(--jhcsp-ink);
       font-size: 13.2px;
@@ -3134,7 +3149,7 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-inner {
-        padding: 23px 18px 21px;
+        padding: 22px 12px 20px;
       }
 
       #jh-career-scoring-progression-section .jhcsp-header {
@@ -3229,119 +3244,96 @@ signal.classList.add(`is-${model.status}`);
       }
 
       #jh-career-scoring-progression-section .jhcsp-table-shell {
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        background: transparent;
-        overflow: visible;
+        overflow: hidden;
+        border-radius: 15px;
+        border: 1px solid rgba(153, 0, 0, 0.15);
+        background: #ffffff;
+        box-shadow: 0 8px 18px rgba(153, 0, 0, 0.045);
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table,
-      #jh-career-scoring-progression-section .jhcsp-table thead,
-      #jh-career-scoring-progression-section .jhcsp-table tbody,
-      #jh-career-scoring-progression-section .jhcsp-table th,
-      #jh-career-scoring-progression-section .jhcsp-table td,
-      #jh-career-scoring-progression-section .jhcsp-table tr {
-        display: block !important;
-        width: 100% !important;
+      #jh-career-scoring-progression-section .jhcsp-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+        border-collapse: collapse;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table thead {
-        display: none !important;
+        display: table-header-group;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table tbody {
-        display: grid !important;
-        gap: 10px;
+        display: table-row-group;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table tr {
-        overflow: hidden;
-        border-radius: 17px;
-        border: 1px solid rgba(153, 0, 0, 0.12);
-        background:
-          linear-gradient(180deg, #ffffff 0%, #fffdf6 100%);
-        box-shadow: 0 8px 20px rgba(153, 0, 0, 0.045);
+        display: table-row;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table tr.is-current {
-        border-color: rgba(153, 0, 0, 0.22);
-        background:
-          linear-gradient(180deg, rgba(255, 204, 0, 0.10) 0%, #ffffff 100%);
+      #jh-career-scoring-progression-section .jhcsp-table th,
+      #jh-career-scoring-progression-section .jhcsp-table td {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table th {
+        padding: 9px 4px;
+        font-size: 8.2px;
+        line-height: 1.15;
+        letter-spacing: 0.035em;
       }
 
       #jh-career-scoring-progression-section .jhcsp-table td {
-        display: grid !important;
-        grid-template-columns: 112px minmax(0, 1fr);
-        gap: 12px;
-        align-items: center;
-        padding: 10px 13px;
-        border-top: 1px solid rgba(153, 0, 0, 0.08);
-        text-align: right;
-        font-size: 13px;
-        line-height: 1.35;
+        padding: 10px 4px;
+        font-size: 10.5px;
+        line-height: 1.28;
+        border-top: 1px solid rgba(153, 0, 0, 0.085);
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table td::before {
-        content: attr(data-label);
-        color: var(--jhcsp-muted);
-        font-size: 9.5px;
-        line-height: 1.15;
-        font-weight: 850;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-align: left;
+      #jh-career-scoring-progression-section .jhcsp-table td:first-child {
+        font-size: 10.2px;
+        line-height: 1.24;
+        font-weight: 760;
+        overflow-wrap: normal;
+        word-break: normal;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage {
-        display: block !important;
-        width: 100% !important;
-        padding: 13px 13px 12px;
-        background:
-          linear-gradient(
-            135deg,
-            var(--jhcsp-cardinal) 0%,
-            var(--jhcsp-cardinal-dark) 78%,
-            var(--jhcsp-cardinal-deep) 100%
-          );
-        color: var(--jhcsp-gold) !important;
-        border-top: none;
-        text-align: left;
-        font-size: 13.3px;
-        line-height: 1.35;
-        font-weight: 850;
+      #jh-career-scoring-progression-section .jhcsp-table th:nth-child(1),
+      #jh-career-scoring-progression-section .jhcsp-table td:nth-child(1) {
+        width: 42%;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage::before {
-        display: none !important;
+      #jh-career-scoring-progression-section .jhcsp-table th:nth-child(2),
+      #jh-career-scoring-progression-section .jhcsp-table td:nth-child(2) {
+        width: 13%;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table tr.is-current td.jhcsp-stage {
-        background:
-          linear-gradient(
-            135deg,
-            var(--jhcsp-cardinal) 0%,
-            var(--jhcsp-cardinal-dark) 68%,
-            var(--jhcsp-cardinal) 100%
-          );
-        color: var(--jhcsp-gold) !important;
+      #jh-career-scoring-progression-section .jhcsp-table th:nth-child(3),
+      #jh-career-scoring-progression-section .jhcsp-table td:nth-child(3) {
+        width: 22%;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table th:nth-child(4),
+      #jh-career-scoring-progression-section .jhcsp-table td:nth-child(4) {
+        width: 23%;
       }
 
       #jh-career-scoring-progression-section .jhcsp-metric-note {
         display: block;
-        margin: 3px 0 0 0;
-        font-size: 9.6px;
+        margin: 2px 0 0 0;
+        font-size: 7.6px;
+        line-height: 1.1;
       }
 
       #jh-career-scoring-progression-section .jhcsp-footer-note {
-        font-size: 11px;
+        font-size: 10.5px;
         line-height: 1.55;
       }
     }
 
     @media (max-width: 420px) {
       #jh-career-scoring-progression-section .jhcsp-inner {
-        padding: 22px 15px 20px;
+        padding: 21px 9px 19px;
       }
 
       #jh-career-scoring-progression-section .jhcsp-title {
@@ -3373,19 +3365,55 @@ signal.classList.add(`is-${model.status}`);
         font-size: 29px;
       }
 
+      #jh-career-scoring-progression-section .jhcsp-table th {
+        padding: 8px 3px;
+        font-size: 7.2px;
+        letter-spacing: 0.02em;
+      }
+
       #jh-career-scoring-progression-section .jhcsp-table td {
-        grid-template-columns: 96px minmax(0, 1fr);
-        gap: 9px;
-        padding: 10px 11px;
-        font-size: 12.5px;
+        padding: 9px 3px;
+        font-size: 9.6px;
+        line-height: 1.24;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table td::before {
-        font-size: 9px;
+      #jh-career-scoring-progression-section .jhcsp-table td:first-child {
+        font-size: 9.2px;
+        line-height: 1.22;
       }
 
-      #jh-career-scoring-progression-section .jhcsp-table td.jhcsp-stage {
-        font-size: 12.8px;
+      #jh-career-scoring-progression-section .jhcsp-metric-note {
+        font-size: 6.8px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-footer-note {
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      #jh-career-scoring-progression-section .jhcsp-inner {
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table th {
+        padding: 8px 2px;
+        font-size: 6.7px;
+        letter-spacing: 0.01em;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td {
+        padding: 8px 2px;
+        font-size: 8.9px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-table td:first-child {
+        font-size: 8.6px;
+      }
+
+      #jh-career-scoring-progression-section .jhcsp-metric-note {
+        font-size: 6.4px;
       }
     }
   </style>
@@ -3432,8 +3460,8 @@ signal.classList.add(`is-${model.status}`);
             </h3>
 
             <p class="jhcsp-origin-text">
-  Joshua began golf in February 2019. Later that summer, he recorded 104 in his first competitive event, a one-round tournament at Las Cañadas Country Club.
-</p>
+              Joshua began golf in February 2019. Later that summer, he recorded 104 in his first competitive event, a one-round tournament at Las Cañadas Country Club.
+            </p>
 
             <div class="jhcsp-origin-meta" aria-label="First competitive round details">
               <span class="jhcsp-origin-pill">
@@ -3487,7 +3515,7 @@ signal.classList.add(`is-${model.status}`);
             -->
 
             <tr class="is-current">
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2025–26 NCAA Freshman Season · UTSA (18)
               </td>
               <td data-label="Rounds">
@@ -3503,7 +3531,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2024–25 Junior Golf Season (17)
               </td>
               <td data-label="Rounds">
@@ -3518,7 +3546,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2023–24 Junior Golf Season (16)
               </td>
               <td data-label="Rounds">
@@ -3533,7 +3561,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2022–23 Junior Golf Season (15)
               </td>
               <td data-label="Rounds">
@@ -3548,7 +3576,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2021–22 Junior Golf Season (14)
               </td>
               <td data-label="Rounds">
@@ -3563,7 +3591,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2020–21 Junior Golf Season (13)
               </td>
               <td data-label="Rounds">
@@ -3578,7 +3606,7 @@ signal.classList.add(`is-${model.status}`);
             </tr>
 
             <tr>
-              <td class="jhcsp-stage" data-label="Stage / Season">
+              <td class="jhcsp-stage" data-label="Stage / Season (Age)">
                 2019–20 Junior Golf Season (12)
               </td>
               <td data-label="Rounds">
