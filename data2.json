@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "July 28, 2026",
+    "lastUpdated": "July 29, 2026",
     "sectionTitle": "UPCOMING TOURNAMENT",
     "eventNo": "BRAZILIAN AMATEUR CHAMPIONSHIP",
     "eventLabel": "CBGolfe",
-    "status": "upcoming",
+    "status": "startingsoon",
     "title": "CAMPEONATO AMADOR DE GOLFE DO BRASIL",
     "date": "Jul 30- Aug 2",
     "venue": "Alphaville Graciosa Clube",
@@ -14,8 +14,8 @@
     "rating": 71.3,
     "slope": 134,
     "mainLink": {
-      "url": "https://cbgolfe.com.br/torneio-interna/?cod_torneio=612",
-      "label": "EVENT INFO"
+      "url": "https://cbgolfe.com.br/torneio-interna/?tab=cards&cod_torneio=612",
+      "label": "LIVE LEADERBOARD"
     },
     "summary": {
       "total": "-",
