@@ -16833,22 +16833,32 @@ document.head.appendChild(style);
   } 
 </style> 
 
-  <style id="jh-pga-table-mobile-live-link-bottom-final-lock">
+<style id="jh-pga-table-mobile-desktop-row-final-lock">
   /*
-    FINAL MOBILE LOCK
+    FINAL MOBILE DESKTOP-ROW LOCK
     Desktop is untouched.
-    Data, scores, rounds, total, position, title, and link URL are untouched.
-    This only moves LIVE LEADERBOARD to the bottom on mobile.
+    Data, scores, rounds, total, position, title, and live leaderboard URL are untouched.
+    Mobile only: keeps LIVE LEADERBOARD | ROUNDS | TOTAL | POS in one row without horizontal scroll.
   */
 
   @media (max-width: 768px) {
     #jh-pga-table-shared .jtc-result-band {
       display: grid !important;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+      grid-template-columns:
+        minmax(0, 0.78fr)
+        minmax(0, 1.85fr)
+        minmax(0, 0.92fr)
+        minmax(0, 0.52fr) !important;
       grid-template-areas:
-        "rounds rounds"
-        "total pos"
-        "link link" !important;
+        "link rounds total pos" !important;
+      gap: 6px !important;
+      padding: 9px 7px !important;
+      align-items: stretch !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary {
+      grid-area: link !important;
     }
 
     #jh-pga-table-shared .jtc-rounds-summary {
@@ -16863,18 +16873,286 @@ document.head.appendChild(style);
       grid-area: pos !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary {
-      grid-area: link !important;
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      min-width: 0 !important;
+      padding: 6px 4px !important;
+      border-radius: 9px !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label {
+      font-size: 6.5px !important;
+      line-height: 1 !important;
+      margin-bottom: 4px !important;
+      min-height: 7px !important;
+      letter-spacing: 0.22px !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-band-body {
+      min-height: 34px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-band-body {
+      min-height: 34px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary a.jtc-main-link {
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      min-height: 34px !important;
+      height: 100% !important;
+      padding: 4px 3px !important;
+      border-radius: 7px !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-content {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 2px !important;
+      flex-wrap: nowrap !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-top-row,
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-bottom-row {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 3px !important;
+      line-height: 1 !important;
+      overflow: hidden !important;
+      flex-shrink: 1 !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-dot {
+      width: 4px !important;
+      height: 4px !important;
+      flex: 0 0 4px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
+      width: auto !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 6.2px !important;
+      line-height: 1 !important;
+      letter-spacing: 0.03px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: clip !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow svg {
+      width: 7px !important;
+      height: 7px !important;
+    }
+
+    #jh-pga-table-shared .jtc-rounds-summary .jtc-band-body {
+      min-height: 34px !important;
+    }
+
+    #jh-pga-table-shared .jtc-rounds-grid {
+      width: 100% !important;
+      min-width: 0 !important;
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      gap: 3px !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip {
+      min-width: 0 !important;
+      flex: 1 1 0 !important;
+      padding: 4px 2px !important;
+      border-radius: 6px !important;
+      gap: 3px !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-label {
+      font-size: 5.7px !important;
+      line-height: 1 !important;
+      letter-spacing: 0.24px !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value {
+      font-size: 11.2px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-score {
+      font-size: 15px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap {
+      font-size: 13px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+    }
+
+    #jh-pga-table-shared .jtc-pos-value {
+      font-size: 18px !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
     }
   }
 
   @media (max-width: 480px) {
     #jh-pga-table-shared .jtc-result-band {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+      grid-template-columns:
+        minmax(0, 0.72fr)
+        minmax(0, 1.78fr)
+        minmax(0, 0.86fr)
+        minmax(0, 0.46fr) !important;
       grid-template-areas:
-        "rounds rounds"
-        "total pos"
-        "link link" !important;
+        "link rounds total pos" !important;
+      gap: 5px !important;
+      padding: 8px 6px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      padding: 5px 3px !important;
+      border-radius: 8px !important;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label {
+      font-size: 6px !important;
+      margin-bottom: 3px !important;
+      letter-spacing: 0.15px !important;
+    }
+
+    #jh-pga-table-shared .jtc-band-body {
+      min-height: 31px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary a.jtc-main-link {
+      min-height: 31px !important;
+      padding: 3px 2px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
+      font-size: 5.5px !important;
+      letter-spacing: 0 !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-dot {
+      width: 3.5px !important;
+      height: 3.5px !important;
+      flex-basis: 3.5px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow svg {
+      width: 6px !important;
+      height: 6px !important;
+    }
+
+    #jh-pga-table-shared .jtc-rounds-grid {
+      gap: 2px !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip {
+      padding: 4px 1px !important;
+      border-radius: 5px !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-label {
+      font-size: 5.2px !important;
+      letter-spacing: 0.18px !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value {
+      font-size: 10.5px !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-score {
+      font-size: 13.8px !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap {
+      font-size: 12px !important;
+    }
+
+    #jh-pga-table-shared .jtc-pos-value {
+      font-size: 16.5px !important;
+    }
+  }
+
+  @media (max-width: 390px) {
+    #jh-pga-table-shared .jtc-result-band {
+      grid-template-columns:
+        minmax(0, 0.68fr)
+        minmax(0, 1.74fr)
+        minmax(0, 0.84fr)
+        minmax(0, 0.44fr) !important;
+      gap: 4px !important;
+      padding: 7px 5px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary,
+    #jh-pga-table-shared .jtc-rounds-summary,
+    #jh-pga-table-shared .jtc-total-summary,
+    #jh-pga-table-shared .jtc-pos-summary {
+      padding: 5px 2px !important;
+    }
+
+    #jh-pga-table-shared .jtc-summary-label {
+      font-size: 5.5px !important;
+      letter-spacing: 0.08px !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
+      font-size: 5px !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-label {
+      font-size: 4.9px !important;
+      letter-spacing: 0.12px !important;
+    }
+
+    #jh-pga-table-shared .jtc-round-chip-value {
+      font-size: 9.8px !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-score {
+      font-size: 12.8px !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-par-wrap {
+      font-size: 11px !important;
+    }
+
+    #jh-pga-table-shared .jtc-pos-value {
+      font-size: 15.2px !important;
     }
   }
 </style>
