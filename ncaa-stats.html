@@ -15323,7 +15323,8 @@ document.head.appendChild(style);
     }
   }
 
-   /* =========================================================
+ @media (min-width: 769px) {
+  /* =========================================================
      2. LIVE LEADERBOARD CTA DESKTOP CONTENT SCALE LOCK
      Scope: #jh-pga-table-shared only
 
@@ -15416,6 +15417,7 @@ document.head.appendChild(style);
     opacity: 1 !important;
     visibility: visible !important;
   }
+ }
 
 
   /* =========================================================
@@ -15498,1014 +15500,159 @@ document.head.appendChild(style);
     }
   }
 
-    /* =========================================================
-     4. LIVE LEADERBOARD CTA MOBILE ONE-LINE LOCK
+  
+
+  /* =========================================================
+     4. LIVE LEADERBOARD CTA MOBILE TWO-LINE LOCK
      Scope: #jh-pga-table-shared only
 
-     Purpose:
-     - Force mobile CTA into one line:
-       dot + LIVE + LEADERBOARD + SVG.
-     - Override old mobile column layout.
-     - Keep button touch-friendly but not too tall.
-     - Do not change default/hover colors yet.
+     Mobile layout:
+     Row 1: dot + LIVE + arrow
+     Row 2: LEADERBOARD
   ========================================================= */
 
   @media (max-width: 768px) {
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-content {
-      width: 100% !important;
-      min-width: 0 !important;
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link {
       display: flex !important;
-      flex-direction: row !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 5px !important;
-      flex-wrap: nowrap !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      min-height: 37px !important;
+      padding: 4px 3px !important;
+      border-radius: 8px !important;
+      white-space: normal !important;
+      overflow: hidden !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-content {
+      display: grid !important;
+      grid-template-columns: 8px minmax(0, 1fr) 9px !important;
+      grid-template-rows: auto auto !important;
+      align-items: center !important;
+      justify-items: center !important;
+      justify-content: center !important;
+      align-content: center !important;
+      column-gap: 3px !important;
+      row-gap: 3px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      overflow: visible !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-top-row,
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-bottom-row {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
-      min-width: 0 !important;
-      gap: 4px !important;
-      line-height: 1 !important;
-      flex: 0 0 auto !important;
-      text-align: center !important;
+      display: contents !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-dot {
-      grid-column: auto !important;
-      grid-row: auto !important;
+      grid-column: 1 !important;
+      grid-row: 1 !important;
       width: 5px !important;
       height: 5px !important;
       flex: 0 0 5px !important;
-      display: inline-block !important;
       align-self: center !important;
-      justify-self: auto !important;
+      justify-self: center !important;
       margin: 0 !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
-      grid-column: auto !important;
-      grid-row: auto !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live {
+      grid-column: 2 !important;
+      grid-row: 1 !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
       min-width: 0 !important;
+      text-align: center !important;
+      font-size: 7.1px !important;
+      font-weight: 750 !important;
+      letter-spacing: 0.12px !important;
       line-height: 1 !important;
       white-space: nowrap !important;
-      text-align: center !important;
-      text-decoration: none !important;
-      text-shadow: none !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live {
-      font-size: 8.8px !important;
-      font-weight: 750 !important;
-      letter-spacing: 0.18px !important;
+      overflow: visible !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
-      font-size: 8.8px !important;
+      grid-column: 1 / 4 !important;
+      grid-row: 2 !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      text-align: center !important;
+      font-size: 5.9px !important;
       font-weight: 750 !important;
-      letter-spacing: 0.08px !important;
+      letter-spacing: 0 !important;
+      line-height: 1 !important;
+      white-space: nowrap !important;
+      overflow: visible !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow {
-      grid-column: auto !important;
-      grid-row: auto !important;
+      grid-column: 3 !important;
+      grid-row: 1 !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      justify-self: auto !important;
-      align-self: center !important;
-      width: auto !important;
-      flex: 0 0 auto !important;
+      width: 9px !important;
+      min-width: 9px !important;
+      height: 9px !important;
+      flex: 0 0 9px !important;
       line-height: 1 !important;
       margin: 0 !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow svg {
       display: block !important;
-      width: 10px !important;
-      height: 10px !important;
-      opacity: 1 !important;
-      visibility: visible !important;
+      width: 8px !important;
+      height: 8px !important;
+      margin: 0 !important;
     }
   }
 
   @media (max-width: 480px) {
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link {
+      min-height: 35px !important;
+      padding: 3px 2px !important;
+    }
+
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-content {
-      gap: 6px !important;
+      grid-template-columns: 7px minmax(0, 1fr) 8px !important;
+      column-gap: 2px !important;
+      row-gap: 3px !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-top-row,
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-bottom-row {
-      gap: 4px !important;
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live {
+      font-size: 6.4px !important;
+      letter-spacing: 0.05px !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
-      font-size: 9.4px !important;
+      font-size: 5.25px !important;
     }
 
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-dot {
-      width: 5px !important;
-      height: 5px !important;
-      flex-basis: 5px !important;
+      width: 4.5px !important;
+      height: 4.5px !important;
+      flex-basis: 4.5px !important;
     }
 
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow,
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow svg {
-      width: 11px !important;
-      height: 11px !important;
+      width: 7px !important;
+      height: 7px !important;
     }
   }
 
   @media (max-width: 390px) {
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-content {
-      gap: 5px !important;
+    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live {
+      font-size: 5.9px !important;
     }
 
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-live,
     #jh-pga-table-shared .jtc-link-summary .jtc-main-link-board {
-      font-size: 8.6px !important;
-      letter-spacing: 0.04px !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary .jtc-main-link-arrow svg {
-      width: 10px !important;
-      height: 10px !important;
-    }
-  }
-
-    /* =========================================================
-     5. LIVE LEADERBOARD CTA DUPLICATE LIMIT OVERRIDE LOCK
-     Scope: #jh-pga-table-shared only
-
-     Purpose:
-     - Neutralize old desktop/mobile max-width limits.
-     - Prevent old mobile-balance rules from shrinking the CTA again.
-     - Preserve one-line CTA structure.
-     - Do not change default/hover colors yet.
-  ========================================================= */
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary {
-    min-width: 0 !important;
-    overflow: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    overflow: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    height: 100% !important;
-    min-height: 58px !important;
-    flex: 1 1 auto !important;
-    overflow: hidden !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-    max-width: 100% !important;
-    min-width: 0 !important;
-    flex-wrap: nowrap !important;
-    overflow: hidden !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-top-row,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-bottom-row {
-    max-width: none !important;
-    min-width: 0 !important;
-    flex-shrink: 0 !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-    max-width: none !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow {
-    flex-shrink: 0 !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-    flex-shrink: 0 !important;
-  }
-
-  @media (max-width: 768px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary {
-      min-width: 0 !important;
-      overflow: visible !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      width: 100% !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      min-height: 46px !important;
-      overflow: visible !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      width: 100% !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      min-height: 46px !important;
-      flex: 1 1 auto !important;
-      overflow: hidden !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex-wrap: nowrap !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      overflow: hidden !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-top-row,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-bottom-row {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      flex: 0 0 auto !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow {
-      width: auto !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      grid-column: auto !important;
-      grid-row: auto !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      min-height: 44px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      max-width: none !important;
-      min-height: 44px !important;
-      width: 100% !important;
-    }
-  }
-
-  @media (max-width: 390px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      min-height: 42px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      max-width: none !important;
-      min-height: 42px !important;
-      width: 100% !important;
-    }
-  }
-
-    /* =========================================================
-     6. LIVE LEADERBOARD CTA COLOR FINAL LOCK
-     Scope: #jh-pga-table-shared only
-
-     Final color direction:
-     - Default: solid Gold/Orange surface, Dark Cardinal text/dot/svg.
-     - Hover: solid Cardinal surface, Gold/Orange text/dot/svg.
-     - No gradient on button background in either state.
-  ========================================================= */
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-    color: #650000 !important;
-    background: #ffc72c !important;
-    background-image: none !important;
-    border: 1px solid rgba(101, 0, 0, 0.62) !important;
-
-    box-shadow:
-      0 8px 17px rgba(153, 0, 0, 0.16),
-      0 3px 8px rgba(12, 35, 64, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.38),
-      inset 0 -3px 0 rgba(241, 90, 34, 0.42) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus {
-    color: #ffc72c !important;
-    background: #990000 !important;
-    background-image: none !important;
-    border-color: rgba(255, 199, 44, 0.66) !important;
-
-    box-shadow:
-      0 10px 22px rgba(153, 0, 0, 0.28),
-      0 4px 11px rgba(101, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      inset 0 -3px 0 rgba(101, 0, 0, 0.36) !important;
-
-    transform: translateY(-1px) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-    color: #650000 !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-board,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-board {
-    color: #ffc72c !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot.final,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot.ongoing {
-    background-color: #650000 !important;
-    box-shadow:
-      0 0 0 2px rgba(101, 0, 0, 0.18),
-      0 0 8px rgba(101, 0, 0, 0.18) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot.ongoing {
-    animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-dot.final,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-dot.ongoing,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-dot.final,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-dot.ongoing {
-    background-color: #ffc72c !important;
-    box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.24),
-      0 0 8px rgba(255, 199, 44, 0.22) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-    stroke: #650000 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-arrow svg,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-arrow svg {
-    stroke: #ffc72c !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  
-  
-   #jh-pga-table-shared .jtc-main-link {
-    color: var(--jtc-live-gold-soft) !important;
-    background:
-      linear-gradient(
-        135deg,
-        var(--jtc-live-cardinal) 0%,
-        var(--jtc-live-cardinal-dark) 100%
-      ) !important;
-    border: 1px solid rgba(255, 199, 44, 0.50) !important;
-    box-shadow:
-      0 6px 14px rgba(153, 0, 0, 0.18),
-      0 2px 6px rgba(12, 35, 64, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
-    text-decoration: none !important;
-    transition:
-      transform 0.18s ease,
-      background 0.18s ease,
-      color 0.18s ease,
-      border-color 0.18s ease,
-      box-shadow 0.18s ease !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link:hover,
-  #jh-pga-table-shared .jtc-main-link:focus {
-    color: #650000 !important;
-    background:
-      radial-gradient(
-        circle at 18% 0%,
-        rgba(255, 255, 255, 0.44) 0%,
-        transparent 34%
-      ),
-      linear-gradient(
-        135deg,
-        #ffcc00 0%,
-        #ffc72c 48%,
-        #f15a22 100%
-      ) !important;
-    border-color: rgba(101, 0, 0, 0.74) !important;
-    box-shadow:
-      0 10px 22px rgba(241, 90, 34, 0.28),
-      0 3px 10px rgba(101, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.36) !important;
-    transform: translateY(-1px) !important;
-    text-decoration: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-main-link-board {
-    color: inherit !important;
-    text-shadow: none !important;
-    text-decoration: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-board,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-board {
-    color: #650000 !important;
-    text-shadow: none !important;
-    text-decoration: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-main-link-dot.final {
-    background-color: var(--jtc-live-gold) !important;
-    box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.24),
-      0 0 8px rgba(255, 199, 44, 0.20) !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-dot.ongoing {
-    background-color: var(--jtc-live-gold) !important;
-    animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
-    box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.24),
-      0 0 8px rgba(255, 199, 44, 0.20) !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.final,
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-dot.ongoing,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.upnext,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.final,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-dot.ongoing {
-    background-color: #650000 !important;
-    box-shadow:
-      0 0 0 2px rgba(255, 255, 255, 0.62),
-      0 0 0 4px rgba(101, 0, 0, 0.22),
-      0 3px 8px rgba(101, 0, 0, 0.22) !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link-arrow svg {
-    stroke: var(--jtc-live-gold-soft) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-main-link:hover .jtc-main-link-arrow svg,
-  #jh-pga-table-shared .jtc-main-link:focus .jtc-main-link-arrow svg {
-    stroke: #650000 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  @media (max-width: 768px) {
-    #jh-pga-table-shared .jtc-result-band {
-      display: grid !important;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr) !important;
-      grid-template-areas:
-        "link rounds"
-        "total pos" !important;
-      gap: 8px !important;
-      padding: 10px !important;
-      align-items: stretch !important;
-      background:
-        radial-gradient(circle at 14% 0%, rgba(255, 199, 44, 0.15), transparent 30%),
-        radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.070), transparent 25%),
-        linear-gradient(
-          135deg,
-          var(--jtc-live-dark) 0%,
-          var(--jtc-live-cardinal-dark) 36%,
-          var(--jtc-live-cardinal-mid) 70%,
-          var(--jtc-live-dark-2) 100%
-        ) !important;
-      border-top: 1px solid rgba(255, 199, 44, 0.30) !important;
-      box-shadow:
-        inset 0 2px 0 rgba(255, 199, 44, 0.14),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.22) !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band::before {
-      left: 10px !important;
-      right: 10px !important;
-      top: 6px !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary {
-      grid-area: link !important;
-    }
-
-    #jh-pga-table-shared .jtc-rounds-summary {
-      grid-area: rounds !important;
-    }
-
-    #jh-pga-table-shared .jtc-total-summary {
-      grid-area: total !important;
-    }
-
-    #jh-pga-table-shared .jtc-pos-summary {
-      grid-area: pos !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary,
-    #jh-pga-table-shared .jtc-rounds-summary,
-    #jh-pga-table-shared .jtc-total-summary,
-    #jh-pga-table-shared .jtc-pos-summary {
-      min-width: 0 !important;
-      padding: 7px 6px !important;
-      border-left: none !important;
-      border: 1px solid rgba(255, 199, 44, 0.18) !important;
-      border-radius: 10px !important;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.078) 0%,
-          rgba(255, 255, 255, 0.036) 100%
-        ) !important;
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.09),
-        0 4px 10px rgba(0, 0, 0, 0.12) !important;
-    }
-
-    #jh-pga-table-shared .jtc-total-summary,
-    #jh-pga-table-shared .jtc-pos-summary {
-      border-color: rgba(255, 199, 44, 0.28) !important;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255, 199, 44, 0.15), transparent 44%),
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.095) 0%,
-          rgba(255, 255, 255, 0.040) 100%
-        ) !important;
-      box-shadow:
-        inset 0 2px 0 rgba(255, 199, 44, 0.12),
-        0 5px 12px rgba(0, 0, 0, 0.14) !important;
-    }
-
-    #jh-pga-table-shared .jtc-summary-label {
-      color: rgba(255, 199, 44, 0.84) !important;
-      font-size: 7.4px !important;
-      line-height: 1 !important;
-      margin-bottom: 5px !important;
-      min-height: 8px !important;
-      letter-spacing: 0.42px !important;
-    }
-
-    #jh-pga-table-shared .jtc-band-body {
-      min-height: 39px !important;
-    }
-
-    #jh-pga-table-shared .jtc-round-chip {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.105) 0%,
-          rgba(255, 255, 255, 0.044) 100%
-        ) !important;
-      border-color: rgba(255, 199, 44, 0.24) !important;
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.10),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.18),
-        0 4px 10px rgba(0, 0, 0, 0.12) !important;
-    }
-
-    #jh-pga-table-shared .jtc-round-chip-label {
-      color: rgba(255, 199, 44, 0.84) !important;
-    }
-
-    #jh-pga-table-shared .jtc-round-chip-value,
-    #jh-pga-table-shared .jtc-total-score,
-    #jh-pga-table-shared .jtc-total-par-wrap,
-    #jh-pga-table-shared .jtc-pos-value {
-      color: #fffdf7 !important;
-      text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.40),
-        0 0 10px rgba(255, 255, 255, 0.06) !important;
-    }
-
-    #jh-pga-table-shared .jtc-round-chip-value.red,
-    #jh-pga-table-shared .jtc-total-par-wrap .delta.red {
-      color: var(--jtc-live-gold) !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-pga-table-shared .jtc-result-band {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-      grid-template-areas:
-        "link link"
-        "rounds rounds"
-        "total pos" !important;
-      gap: 8px !important;
-      padding: 10px 9px !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary,
-    #jh-pga-table-shared .jtc-rounds-summary,
-    #jh-pga-table-shared .jtc-total-summary,
-    #jh-pga-table-shared .jtc-pos-summary {
-      padding: 7px 6px !important;
-      border-radius: 10px !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary .jtc-band-body {
-      min-height: 38px !important;
-    }
-
-    #jh-pga-table-shared .jtc-rounds-summary .jtc-band-body {
-      min-height: 42px !important;
-    }
-  }
-
-  /* =========================================================
-     7. LIVE LEADERBOARD CTA ABSOLUTE FINAL GUARD
-     Scope: #jh-pga-table-shared only
-
-     Purpose:
-     - Final override against all duplicate CTA rules above.
-     - Preserve large left-cell CTA.
-     - Preserve one-line mobile layout.
-     - Preserve final color direction:
-       DEFAULT = solid Gold/Orange background + Dark Cardinal text/dot/svg.
-       HOVER = solid Cardinal background + Gold/Orange text/dot/svg.
-     - No gradient on CTA background.
-  ========================================================= */
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary {
-    justify-content: center !important;
-    align-items: stretch !important;
-    padding: 8px !important;
-    min-width: 0 !important;
-    overflow: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-label-ghost {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    height: 100% !important;
-    min-height: 60px !important;
-    display: flex !important;
-    align-items: stretch !important;
-    justify-content: center !important;
-    overflow: visible !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    height: 100% !important;
-    min-height: 58px !important;
-    flex: 1 1 auto !important;
-
-    padding: 0 15px !important;
-    border-radius: 11px !important;
-
-    color: #650000 !important;
-    background: #ffc72c !important;
-    background-image: none !important;
-    border: 1px solid rgba(101, 0, 0, 0.62) !important;
-
-    text-decoration: none !important;
-    text-transform: uppercase !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-
-    box-shadow:
-      0 8px 17px rgba(153, 0, 0, 0.16),
-      0 3px 8px rgba(12, 35, 64, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.38),
-      inset 0 -3px 0 rgba(241, 90, 34, 0.42) !important;
-
-    transition:
-      transform 0.18s ease,
-      background-color 0.18s ease,
-      color 0.18s ease,
-      border-color 0.18s ease,
-      box-shadow 0.18s ease !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus {
-    color: #ffc72c !important;
-    background: #990000 !important;
-    background-image: none !important;
-    border-color: rgba(255, 199, 44, 0.66) !important;
-
-    box-shadow:
-      0 10px 22px rgba(153, 0, 0, 0.28),
-      0 4px 11px rgba(101, 0, 0, 0.18),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12),
-      inset 0 -3px 0 rgba(101, 0, 0, 0.36) !important;
-
-    transform: translateY(-1px) !important;
-    text-decoration: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    gap: 7px !important;
-    flex-wrap: nowrap !important;
-    overflow: hidden !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-top-row,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-bottom-row {
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: auto !important;
-    max-width: none !important;
-    min-width: 0 !important;
-
-    gap: 6px !important;
-    line-height: 1 !important;
-    flex: 0 0 auto !important;
-    text-align: center !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot {
-    grid-column: auto !important;
-    grid-row: auto !important;
-
-    width: 7px !important;
-    height: 7px !important;
-    flex: 0 0 7px !important;
-
-    display: inline-block !important;
-    border-radius: 50% !important;
-    align-self: center !important;
-    justify-self: auto !important;
-    margin: 0 !important;
-
-    background-color: #650000 !important;
-    box-shadow:
-      0 0 0 2px rgba(101, 0, 0, 0.18),
-      0 0 8px rgba(101, 0, 0, 0.18) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot.ongoing {
-    animation: jtc-link-pulse-cardinal 1.5s infinite ease-in-out !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-dot,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-dot {
-    background-color: #ffc72c !important;
-    box-shadow:
-      0 0 0 2px rgba(255, 199, 44, 0.24),
-      0 0 8px rgba(255, 199, 44, 0.22) !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-    grid-column: auto !important;
-    grid-row: auto !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    width: auto !important;
-    max-width: none !important;
-    min-width: 0 !important;
-
-    color: #650000 !important;
-    text-align: center !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live {
-    font-size: 11px !important;
-    font-weight: 750 !important;
-    letter-spacing: 0.44px !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-    font-size: 11px !important;
-    font-weight: 750 !important;
-    letter-spacing: 0.36px !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-board,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-live,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-board {
-    color: #ffc72c !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow {
-    grid-column: auto !important;
-    grid-row: auto !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    justify-self: auto !important;
-    align-self: center !important;
-
-    width: auto !important;
-    flex: 0 0 auto !important;
-    flex-shrink: 0 !important;
-    line-height: 1 !important;
-    margin: 0 !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-    display: block !important;
-    width: 15px !important;
-    height: 15px !important;
-
-    stroke: #650000 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    flex-shrink: 0 !important;
-  }
-
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:hover .jtc-main-link-arrow svg,
-  #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link:focus .jtc-main-link-arrow svg {
-    stroke: #ffc72c !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  @media (max-width: 768px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary {
-      padding: 7px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      min-height: 46px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      width: 100% !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      min-height: 46px !important;
-      padding: 0 10px !important;
-      border-radius: 9px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-      flex-direction: row !important;
-      justify-content: center !important;
-      align-items: center !important;
-      gap: 5px !important;
-      flex-wrap: nowrap !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-top-row,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-bottom-row {
-      display: inline-flex !important;
-      flex-direction: row !important;
-      width: auto !important;
-      gap: 4px !important;
-      flex: 0 0 auto !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-dot {
-      width: 5px !important;
-      height: 5px !important;
-      flex: 0 0 5px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-      width: auto !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      line-height: 1 !important;
-      white-space: nowrap !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live {
-      font-size: 8.8px !important;
-      font-weight: 750 !important;
-      letter-spacing: 0.18px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-      font-size: 8.8px !important;
-      font-weight: 750 !important;
-      letter-spacing: 0.08px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-      width: 10px !important;
-      height: 10px !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      min-height: 44px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      max-width: none !important;
-      min-height: 44px !important;
-      padding: 0 12px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-      gap: 6px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-      font-size: 9.4px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-      width: 11px !important;
-      height: 11px !important;
-    }
-  }
-
-  @media (max-width: 390px) {
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary .jtc-band-body {
-      min-height: 42px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link {
-      max-width: none !important;
-      min-height: 42px !important;
-      padding: 0 9px !important;
-      border-radius: 8px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-content {
-      gap: 5px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-live,
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-board {
-      font-size: 8.6px !important;
-      letter-spacing: 0.04px !important;
-    }
-
-    #jh-pga-table-shared .jtc-result-band .jtc-link-summary a.jtc-main-link .jtc-main-link-arrow svg {
-      width: 10px !important;
-      height: 10px !important;
+      font-size: 4.85px !important;
     }
   }
 
