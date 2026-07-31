@@ -2821,49 +2821,7 @@
   }
 </style>
 
-<style id="jh-pga-table-mobile-live-link-bottom">
-  /*
-    Mobile-only placement override.
-    Desktop layout is untouched.
-    Moves LIVE LEADERBOARD action to the bottom of the mobile scoreboard tray.
-  */
 
-  @media (max-width: 768px) {
-    #jh-pga-table-shared .jtc-result-band {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr) !important;
-      grid-template-areas:
-        "rounds rounds"
-        "total pos"
-        "link link" !important;
-    }
-
-    #jh-pga-table-shared .jtc-rounds-summary {
-      grid-area: rounds !important;
-    }
-
-    #jh-pga-table-shared .jtc-total-summary {
-      grid-area: total !important;
-    }
-
-    #jh-pga-table-shared .jtc-pos-summary {
-      grid-area: pos !important;
-    }
-
-    #jh-pga-table-shared .jtc-link-summary {
-      grid-area: link !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #jh-pga-table-shared .jtc-result-band {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-      grid-template-areas:
-        "rounds rounds"
-        "total pos"
-        "link link" !important;
-    }
-  }
-</style>
 
 
 <style id="jh-pga-table-shared-header-polish">
@@ -16875,6 +16833,51 @@ document.head.appendChild(style);
   } 
 </style> 
 
+  <style id="jh-pga-table-mobile-live-link-bottom-final-lock">
+  /*
+    FINAL MOBILE LOCK
+    Desktop is untouched.
+    Data, scores, rounds, total, position, title, and link URL are untouched.
+    This only moves LIVE LEADERBOARD to the bottom on mobile.
+  */
+
+  @media (max-width: 768px) {
+    #jh-pga-table-shared .jtc-result-band {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+      grid-template-areas:
+        "rounds rounds"
+        "total pos"
+        "link link" !important;
+    }
+
+    #jh-pga-table-shared .jtc-rounds-summary {
+      grid-area: rounds !important;
+    }
+
+    #jh-pga-table-shared .jtc-total-summary {
+      grid-area: total !important;
+    }
+
+    #jh-pga-table-shared .jtc-pos-summary {
+      grid-area: pos !important;
+    }
+
+    #jh-pga-table-shared .jtc-link-summary {
+      grid-area: link !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-pga-table-shared .jtc-result-band {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+      grid-template-areas:
+        "rounds rounds"
+        "total pos"
+        "link link" !important;
+    }
+  }
+</style>
 
  
  <div class="jh-ncaa-legal-footer">
