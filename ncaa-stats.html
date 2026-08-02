@@ -7453,15 +7453,16 @@
         return "";
       }
 
-      function buildMeta(event) {
-        const parts = [];
+     function buildMeta(event) {
+  const parts = [];
 
-        if (isDisplayText(event.venue)) parts.push(event.venue);
-        if (isDisplayText(event.location)) parts.push(event.location);
-        if (isDisplayText(event.estimatedWagr)) parts.push("Est. WAGR " + event.estimatedWagr);
+  if (isDisplayText(event.venue)) parts.push(event.venue);
+  if (isDisplayText(event.location)) parts.push(event.location);
+  if (isDisplayText(event.courseMeta)) parts.push(event.courseMeta);
+  if (isDisplayText(event.estimatedWagr)) parts.push("Est. WAGR " + event.estimatedWagr);
 
-        return parts.join(" | ");
-      }
+  return parts.join(" | ");
+}
 
       function buildRoundLabel(event) {
         const rounds = Array.isArray(event.rounds) ? event.rounds : [];
@@ -7517,35 +7518,58 @@
       }
 
       function metric(label, value) {
-        if (!isDisplayText(value)) return "";
+  const displayValue = isDisplayText(value) ? value : "—";
 
-        return `
-          <span class="jh-ss-metric">
-            <span class="jh-ss-metric-label">${escapeHtml(label)}</span>
-            <span>${escapeHtml(value)}</span>
-          </span>
-        `;
-      }
+  return `
+    <span class="jh-ss-metric">
+      <span class="jh-ss-metric-label">${escapeHtml(label)}</span>
+      <span>${escapeHtml(displayValue)}</span>
+    </span>
+  `;
+}
 
-      function buildMetrics(event) {
-        const metrics = event.metrics || {};
+function resultItem(event) {
+  const links = event.links || {};
 
-        const items = [
-          metric("Rank Impact", metrics.rankImpact),
-          metric("SG", metrics.strokesGained),
-          metric("Weighted Pts", metrics.weightedPts),
-          metric("WAGR Pwr", metrics.wagrPower || event.estimatedWagr),
-          metric("Pts Earned", metrics.pointsEarned)
-        ].filter(Boolean);
+  if (isDisplayText(links.results)) {
+    return `
+      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(links.results)}" target="_blank" rel="noopener noreferrer">
+        Final Results
+      </a>
+    `;
+  }
 
-        if (!items.length) return "";
+  if (isDisplayText(links.leaderboard)) {
+    return `
+      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(links.leaderboard)}" target="_blank" rel="noopener noreferrer">
+        Leaderboard
+      </a>
+    `;
+  }
 
-        return `
-          <div class="jh-ss-metrics">
-            ${items.join("")}
-          </div>
-        `;
-      }
+  return `
+    <span class="jh-ss-metric">
+      <span class="jh-ss-metric-label">Results</span>
+      <span>Pending</span>
+    </span>
+  `;
+}
+
+function buildMetrics(event) {
+  const metrics = event.metrics || {};
+
+  const items = [
+    metric("WAGR Pwr", metrics.wagrPower || event.estimatedWagr),
+    metric("Earned Pts", metrics.pointsEarned),
+    resultItem(event)
+  ].filter(Boolean);
+
+  return `
+    <div class="jh-ss-metrics">
+      ${items.join("")}
+    </div>
+  `;
+}
 
       function buildEventCard(event) {
         const status = normalizeStatus(event.status);
