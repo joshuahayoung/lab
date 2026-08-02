@@ -7537,8 +7537,7 @@
   if (isDisplayText(event.venue)) parts.push(event.venue);
   if (isDisplayText(event.location)) parts.push(event.location);
   if (isDisplayText(event.courseMeta)) parts.push(event.courseMeta);
-  if (isDisplayText(event.estimatedWagr)) parts.push("Est. WAGR " + event.estimatedWagr);
-
+ 
   return parts.join(" | ");
 }
 
