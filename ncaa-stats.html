@@ -6369,21 +6369,52 @@
   }
 
   /*
-    Hide bottom metrics text such as:
-    Rank Impact / SG / Weighted Pts / WAGR Pwr / Pts Earned.
-    Keep only a thin white strip under the navy-cardinal band.
+    Bottom metrics row restored.
+    Scope: Sophomore Season schedule cards only.
+    Shows WAGR Pwr / Earned Pts / Results without changing event data,
+    result band, round chips, totals, dates, or other sections.
   */
   #jh-sophomore-season-page .jh-ss-metrics {
-    display: block !important;
-    min-height: 10px !important;
-    padding: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+    padding: 10px 14px 12px !important;
     margin: 0 !important;
     background: #ffffff !important;
     border-top: 1px solid rgba(153, 0, 0, 0.08) !important;
   }
 
+  #jh-sophomore-season-page .jh-ss-metrics > * {
+    min-width: 0 !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metrics > :nth-child(1) {
+    justify-self: start !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metrics > :nth-child(2) {
+    justify-self: center !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-metrics > :nth-child(3) {
+    justify-self: end !important;
+  }
+
   #jh-sophomore-season-page .jh-ss-metric {
-    display: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    min-height: 28px !important;
+    padding: 5px 9px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+  }
+
+  #jh-sophomore-season-page .jh-ss-results-link {
+    text-decoration: none !important;
   }
 
   @media (max-width: 768px) {
@@ -6418,8 +6449,25 @@
       font-size: 10.8px !important;
     }
 
-    #jh-sophomore-season-page .jh-ss-metrics {
-      min-height: 9px !important;
+   #jh-sophomore-season-page .jh-ss-metrics {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      align-items: center !important;
+      gap: 6px !important;
+      min-height: 0 !important;
+      padding: 8px 9px 9px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-metric,
+    #jh-sophomore-season-page .jh-ss-results-link {
+      width: auto !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      font-size: 8.8px !important;
+    }
+
+    #jh-sophomore-season-page .jh-ss-metric-label {
+      font-size: 7.4px !important;
     }
   }
 </style>
