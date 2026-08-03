@@ -1,6 +1,6 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "August 2, 2026",
+    "lastUpdated": "August 3, 2026",
     "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "BRAZILIAN AMATEUR CHAMPIONSHIP",
     "eventLabel": "CBGolfe",
@@ -14,7 +14,7 @@
     "rating": 71.3,
     "slope": 134,
     "mainLink": {
-      "url": "https://scoring.datagolf.pt/live-br/Home/ls_classif.aspx",
+      "url": "https://cbgolfe.com.br/torneio-interna/?tab=cards&cod_torneio=612",
       "label": "FINAL RESULTS"
     },
     "summary": {
