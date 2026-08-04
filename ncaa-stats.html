@@ -4647,7 +4647,7 @@
     text-transform: uppercase;
   }
 
- #jh-summer-results-log-isolated .jh-srl-results-link {
+#jh-summer-results-log-isolated .jh-srl-results-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -7842,19 +7842,46 @@ function resultItem(event) {
 
 
 function buildMetrics(event) {
-  const metrics = event.metrics || {};
+  const metrics = Array.isArray(event.metrics) ? event.metrics : [];
+  const links = Array.isArray(event.links) ? event.links : [];
 
-  const items = [
-    metric("WAGR Pwr", metrics.wagrPower || event.estimatedWagr),
-    metric("Earned Pts", metrics.pointsEarned),
-    resultItem(event)
-  ].filter(Boolean);
+  const metricHtml = metrics.map(function(metric) {
+    return (
+      '<span class="jh-srl-metric">' +
+        '<span class="jh-srl-metric-label">' + escapeHtml(metric.label) + '</span>' +
+        '<span>' + escapeHtml(metric.value || '—') + '</span>' +
+      '</span>'
+    );
+  }).join('');
 
-  return `
-    <div class="jh-ss-metrics">
-      ${items.join("")}
-    </div>
-  `;
+  const linkHtml = links
+    .filter(function(link) {
+      return link && link.url && link.url !== '#';
+    })
+    .map(function(link) {
+      const label = link.label || 'Results';
+
+      return (
+        '<a class="jh-srl-results-link" href="' + escapeHtml(link.url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + escapeHtml(label) + '">' +
+          '<span class="jh-srl-link-text">' + escapeHtml(label) + '</span>' +
+          '<span class="jh-srl-link-icon" aria-hidden="true">' +
+            '<svg viewBox="0 0 24 24" fill="none" focusable="false">' +
+              '<path d="M5 12h14"></path>' +
+              '<path d="M13 6l6 6-6 6"></path>' +
+            '</svg>' +
+          '</span>' +
+        '</a>'
+      );
+    }).join('');
+
+  if (!metricHtml && !linkHtml) return '';
+
+  return (
+    '<div class="jh-srl-metrics">' +
+      metricHtml +
+      linkHtml +
+    '</div>'
+  );
 }
 
       function buildEventCard(event) {
