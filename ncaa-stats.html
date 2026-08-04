@@ -5937,8 +5937,142 @@
 }
 
 #jh-sophomore-season-page .jh-ss-results-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 6px 9px 6px 12px;
+  border-radius: 999px;
   text-decoration: none;
   white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.34px;
+  font-weight: 750 !important;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+#jh-sophomore-season-page .jh-ss-results-link.is-tournament-info,
+#jh-sophomore-season-page .jh-ss-results-link.is-result {
+  background:
+    linear-gradient(
+      135deg,
+      var(--jh-usc-cardinal) 0%,
+      var(--jh-usc-cardinal-dark) 100%
+    ) !important;
+  color: var(--jh-usc-gold) !important;
+  border: 1px solid rgba(255, 204, 0, 0.42) !important;
+  box-shadow:
+    0 5px 12px rgba(153, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+#jh-sophomore-season-page .jh-ss-results-link.is-leaderboard {
+  background: #0c2340 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(12, 35, 64, 0.18) !important;
+  box-shadow:
+    0 5px 12px rgba(12, 35, 64, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10) !important;
+}
+
+#jh-sophomore-season-page .jh-ss-link-text {
+  display: inline-block;
+  line-height: 1;
+}
+
+#jh-sophomore-season-page .jh-ss-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 999px;
+  color: currentColor;
+  background: rgba(255, 204, 0, 0.14);
+  border: 1px solid rgba(255, 204, 0, 0.32);
+  flex: 0 0 auto;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+#jh-sophomore-season-page .jh-ss-link-icon svg {
+  display: block;
+  width: 11px;
+  height: 11px;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#jh-sophomore-season-page .jh-ss-results-link:hover,
+#jh-sophomore-season-page .jh-ss-results-link:focus {
+  transform: translateY(-1px);
+}
+
+#jh-sophomore-season-page .jh-ss-results-link.is-tournament-info:hover,
+#jh-sophomore-season-page .jh-ss-results-link.is-tournament-info:focus,
+#jh-sophomore-season-page .jh-ss-results-link.is-result:hover,
+#jh-sophomore-season-page .jh-ss-results-link.is-result:focus {
+  background:
+    linear-gradient(
+      135deg,
+      #7a0000 0%,
+      #990000 52%,
+      #650000 100%
+    ) !important;
+  color: #fff3c4 !important;
+  border-color: rgba(255, 204, 0, 0.62) !important;
+  box-shadow:
+    0 8px 18px rgba(153, 0, 0, 0.22),
+    0 2px 7px rgba(12, 35, 64, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+#jh-sophomore-season-page .jh-ss-results-link.is-leaderboard:hover,
+#jh-sophomore-season-page .jh-ss-results-link.is-leaderboard:focus {
+  background: var(--jh-usc-cardinal) !important;
+  color: var(--jh-usc-gold) !important;
+  border-color: rgba(255, 204, 0, 0.42) !important;
+  box-shadow:
+    0 8px 18px rgba(153, 0, 0, 0.18),
+    0 2px 7px rgba(12, 35, 64, 0.10) !important;
+}
+
+#jh-sophomore-season-page .jh-ss-results-link:hover .jh-ss-link-icon,
+#jh-sophomore-season-page .jh-ss-results-link:focus .jh-ss-link-icon {
+  transform: translateX(2px);
+  background: rgba(255, 204, 0, 0.22);
+  border-color: rgba(255, 204, 0, 0.56);
+}
+
+@media (max-width: 480px) {
+  #jh-sophomore-season-page .jh-ss-results-link {
+    gap: 5px;
+    min-height: 28px;
+    padding: 6px 8px 6px 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.22px;
+  }
+
+  #jh-sophomore-season-page .jh-ss-link-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  #jh-sophomore-season-page .jh-ss-link-icon svg {
+    width: 9.5px;
+    height: 9.5px;
+  }
 }
 
     #jh-sophomore-season-page .jh-ss-notes {
@@ -7621,28 +7755,30 @@ function resultItem(event) {
     ? links.leaderboard
     : "";
 
-  if (isDisplayText(resultUrl)) {
+  function linkButton(url, label, className) {
     return `
-      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(resultUrl)}" target="_blank" rel="noopener noreferrer">
-        Result
+      <a class="jh-ss-metric jh-ss-results-link ${className}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}">
+        <span class="jh-ss-link-text">${escapeHtml(label)}</span>
+        <span class="jh-ss-link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path d="M5 12h14"></path>
+            <path d="M13 6l6 6-6 6"></path>
+          </svg>
+        </span>
       </a>
     `;
+  }
+
+  if (isDisplayText(resultUrl)) {
+    return linkButton(resultUrl, "Result", "is-result");
   }
 
   if (isDisplayText(tournamentInfoUrl)) {
-    return `
-      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(tournamentInfoUrl)}" target="_blank" rel="noopener noreferrer">
-        Tournament Info
-      </a>
-    `;
+    return linkButton(tournamentInfoUrl, "Tournament Info", "is-tournament-info");
   }
 
   if (isDisplayText(leaderboardUrl)) {
-    return `
-      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(leaderboardUrl)}" target="_blank" rel="noopener noreferrer">
-        Leaderboard
-      </a>
-    `;
+    return linkButton(leaderboardUrl, "Leaderboard", "is-leaderboard");
   }
 
   return `
