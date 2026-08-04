@@ -124,7 +124,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "fall-02-rancho-santa-fe",
@@ -174,7 +173,6 @@
       "links": {
   "leaderboard": "",
   "Tournament Info": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants"
-}
     },
     {
       "id": "fall-03-trinity-forest",
@@ -224,7 +222,6 @@
      "links": {
   "leaderboard": "",
   "Tournament Info": "https://scoreboard.clippd.com/tournaments/245341/scoring/participants"
-}
     },
     {
       "id": "fall-04-golf-club-of-georgia",
@@ -274,7 +271,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     }
   ],
   "springSchedule": [
@@ -326,7 +322,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-02-genesis-showcase",
@@ -366,7 +361,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-03-unlv-dual-match",
@@ -400,7 +394,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-04-tpc-summerlin",
@@ -450,7 +443,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-05-desimone",
@@ -500,7 +492,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-06-valspar",
@@ -550,7 +541,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-07-golfweek",
@@ -600,7 +590,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "spring-08-western-intercollegiate",
@@ -650,7 +639,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "postseason-01-big-ten",
@@ -700,7 +688,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "postseason-02-ncaa-regional",
@@ -750,7 +737,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     },
     {
       "id": "postseason-03-ncaa-championship",
@@ -805,7 +791,6 @@
       "links": {
   "tournamentInfo": "",
   "results": ""
-}
     }
   ],
   "scheduleNotes": {
