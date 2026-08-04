@@ -122,9 +122,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "fall-02-rancho-santa-fe",
@@ -172,9 +172,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "Tournament Info": "https://scoreboard.clippd.com/tournaments/245341/scoring/participants"
-      }
+  "leaderboard": "",
+  "Tournament Info": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants"
+}
     },
     {
       "id": "fall-03-trinity-forest",
@@ -221,10 +221,10 @@
         "wagrPower": "400+",
         "pointsEarned": "—"
       },
-      "links": {
-        "leaderboard": "",
-        "Tournament Info": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants"
-      }
+     "links": {
+  "leaderboard": "",
+  "Tournament Info": "https://scoreboard.clippd.com/tournaments/245341/scoring/participants"
+}
     },
     {
       "id": "fall-04-golf-club-of-georgia",
@@ -272,9 +272,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     }
   ],
   "springSchedule": [
@@ -324,9 +324,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-02-genesis-showcase",
@@ -364,9 +364,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-03-unlv-dual-match",
@@ -398,9 +398,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-04-tpc-summerlin",
@@ -448,9 +448,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-05-desimone",
@@ -498,9 +498,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-06-valspar",
@@ -548,9 +548,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-07-golfweek",
@@ -598,9 +598,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "spring-08-western-intercollegiate",
@@ -648,9 +648,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "postseason-01-big-ten",
@@ -698,9 +698,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "postseason-02-ncaa-regional",
@@ -748,9 +748,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     },
     {
       "id": "postseason-03-ncaa-championship",
@@ -803,9 +803,9 @@
         "pointsEarned": "—"
       },
       "links": {
-        "leaderboard": "",
-        "results": ""
-      }
+  "tournamentInfo": "",
+  "results": ""
+}
     }
   ],
   "scheduleNotes": {
