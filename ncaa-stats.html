@@ -7607,21 +7607,51 @@
 function resultItem(event) {
   const links = event.links || {};
 
-  if (isDisplayText(links.results)) {
+  const resultUrl = isDisplayText(links.results)
+    ? links.results
+    : "";
+
+  const tournamentInfoUrl = isDisplayText(links.tournamentInfo)
+    ? links.tournamentInfo
+    : isDisplayText(links["Tournament Info"])
+      ? links["Tournament Info"]
+      : "";
+
+  const leaderboardUrl = isDisplayText(links.leaderboard)
+    ? links.leaderboard
+    : "";
+
+  if (isDisplayText(resultUrl)) {
     return `
-      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(links.results)}" target="_blank" rel="noopener noreferrer">
-        Final Results
+      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(resultUrl)}" target="_blank" rel="noopener noreferrer">
+        Result
       </a>
     `;
   }
 
-  if (isDisplayText(links.leaderboard)) {
+  if (isDisplayText(tournamentInfoUrl)) {
     return `
-      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(links.leaderboard)}" target="_blank" rel="noopener noreferrer">
+      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(tournamentInfoUrl)}" target="_blank" rel="noopener noreferrer">
+        Tournament Info
+      </a>
+    `;
+  }
+
+  if (isDisplayText(leaderboardUrl)) {
+    return `
+      <a class="jh-ss-metric jh-ss-results-link" href="${escapeHtml(leaderboardUrl)}" target="_blank" rel="noopener noreferrer">
         Leaderboard
       </a>
     `;
   }
+
+  return `
+    <span class="jh-ss-metric">
+      <span class="jh-ss-metric-label">Results</span>
+      <span>Pending</span>
+    </span>
+  `;
+}
 
   return `
     <span class="jh-ss-metric">
