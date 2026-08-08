@@ -1,43 +1,39 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "August 7, 2026",
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "BRAZILIAN AMATEUR CHAMPIONSHIP",
-    "eventLabel": "CBGolfe",
-    "status": "final",
+    "lastUpdated": "August 8, 2026",
+    "sectionTitle": "UPCOMING TOURNAMENT",
+    "eventNo": "Bombs Darts Birds Collegiate",
+    "eventLabel": "USC Men's Golf",
+    "status": "upnext",
     "title": "CAMPEONATO AMADOR DE GOLFE DO BRASIL",
-    "date": "Jul 30- Aug 2",
-    "venue": "Alphaville Graciosa Clube",
-    "location": "Alphaville, Pinhais - PR",
-    "par": 71,
-    "yards": "6,493",
-    "rating": 71.3,
-    "slope": 134,
+    "date": "Sep 7- 8",
+    "venue": "Whirlwind GC",
+    "location": "Chandler, AZ",
+    "par": 72,
+    "yards": "7,306",
+    "rating": 71.50,
+    "slope": 131,
     "mainLink": {
-      "url": "https://cbgolfe.com.br/torneio-interna/?tab=cards&cod_torneio=612",
-      "label": "FINAL RESULTS"
+      "url": " ",
+      "label": "EVENT INFO"
     },
     "summary": {
-      "total": "276",
-      "par": "-8",
-      "pos": "4"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
     "rounds": [
   {
     "round": "1",
-    "score": "65"
+    "score": "-"
   },
   {
     "round": "2",
-    "score": "67"
+    "score": "-"
   },
   {
     "round": "3",
-    "score": "74"
-  },
-  {
-    "round": "4",
-    "score": "70"
+    "score": "-"
   }
 ]
   }
