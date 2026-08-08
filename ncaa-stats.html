@@ -3962,9 +3962,13 @@
       stroke: currentColor;
     }
 
-    #jh-summer-offseason-results-accordion.is-open .jhso-arrow {
-      transform: rotate(180deg);
-    }
+#jh-summer-offseason-results-accordion .jhso-toggle[aria-expanded="false"] .jhso-arrow {
+  transform: rotate(0deg);
+}
+
+#jh-summer-offseason-results-accordion .jhso-toggle[aria-expanded="true"] .jhso-arrow {
+  transform: rotate(180deg);
+}
 
     #jh-summer-offseason-results-accordion .jhso-panel {
       margin-top: 18px;
