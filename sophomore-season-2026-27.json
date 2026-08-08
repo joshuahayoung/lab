@@ -89,8 +89,8 @@
       "courseMeta": "Par 72 | 7,306 Yards | Rating: 71.50 | Slopes: 131",
       "estimatedWagr": "400+",
       "eventType": "regular-season",
-      "status": "scheduled",
-      "statusLabel": "Scheduled",
+      "status": "upnext",
+      "statusLabel": "Up Next",
       "plannedRounds": 3,
       "rounds": [
         {
