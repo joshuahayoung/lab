@@ -787,9 +787,12 @@
 
 <style id="jh-fsa-last-updated-position-fix">
   .jh-fsa-archive-date-wrap {
-    width: 100%;
-    max-width: none;
-    margin: -6px 0 18px 0;
+    --jh-fsa-archive-date-max-width: 870px;
+    --jh-fsa-archive-date-side-gap: 30px;
+
+    width: calc(100% - var(--jh-fsa-archive-date-side-gap));
+    max-width: var(--jh-fsa-archive-date-max-width);
+    margin: -6px auto 18px auto;
     padding: 0;
     box-sizing: border-box;
     display: flex;
@@ -806,13 +809,16 @@
     font-weight: 500;
     letter-spacing: 0.2px;
     white-space: nowrap;
+    text-align: right;
   }
 
   @media (max-width: 768px) {
     .jh-fsa-archive-date-wrap {
-      width: 100%;
-      max-width: none;
-      margin: -2px 0 18px 0;
+      --jh-fsa-archive-date-side-gap: 30px;
+
+      width: calc(100% - var(--jh-fsa-archive-date-side-gap));
+      max-width: var(--jh-fsa-archive-date-max-width);
+      margin: -2px auto 18px auto;
       padding: 0;
     }
 
@@ -824,8 +830,11 @@
 
   @media (max-width: 480px) {
     .jh-fsa-archive-date-wrap {
-      width: 100%;
-      margin: -2px 0 16px 0;
+      --jh-fsa-archive-date-side-gap: 24px;
+
+      width: calc(100% - var(--jh-fsa-archive-date-side-gap));
+      max-width: var(--jh-fsa-archive-date-max-width);
+      margin: -2px auto 16px auto;
       padding: 0;
     }
 
@@ -834,6 +843,12 @@
     }
   }
 </style>
+
+<div class="jh-fsa-archive-date-wrap">
+  <span id="jh-ncaa-last-updated" class="jh-fsa-archive-date-text">
+    Archive Finalized: —
+  </span>
+</div>
 
 <div class="jh-fsa-archive-date-wrap">
   <span id="jh-ncaa-last-updated" class="jh-fsa-archive-date-text">
