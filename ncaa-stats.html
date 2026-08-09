@@ -3773,46 +3773,11 @@
 </script>
 </div>
 
-  
-  <script>
-    (function () {
-      const accordion = document.getElementById("jh-summer-offseason-results-accordion");
-      const toggle = document.getElementById("jh-summer-offseason-results-toggle");
-      const panel = document.getElementById("jh-summer-offseason-results-panel");
-
-      if (!accordion || !toggle || !panel) return;
-
-    toggle.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  const isOpen = toggle.getAttribute("aria-expanded") === "true";
-  const nextOpen = !isOpen;
-
-  toggle.setAttribute("aria-expanded", String(nextOpen));
-  accordion.classList.toggle("is-open", nextOpen);
-
-  if (nextOpen) {
-    panel.removeAttribute("hidden");
-  } else {
-    panel.setAttribute("hidden", "");
-  }
-});
-    })();
-  </script>
-</section>
-
-
-
-
-
-  
-</div>
-  
-
 <div
   id="jh-sophomore-season-page"
   class="jh-sophomore-season-page"
 >
+  
   <style>
     #jh-sophomore-season-page,
     #jh-sophomore-season-page * {
@@ -8300,10 +8265,45 @@ function buildMetrics(event) {
     })();
    </script>
 </section>
-
-  
   </div>
 
+  <script id="jh-summer-offseason-results-accordion-script">
+    (function () {
+      function initSummerOffseasonAccordion() {
+        const accordion = document.getElementById("jh-summer-offseason-results-accordion");
+        const toggle = document.getElementById("jh-summer-offseason-results-toggle");
+        const panel = document.getElementById("jh-summer-offseason-results-panel");
+
+        if (!accordion || !toggle || !panel) return;
+        if (accordion.dataset.jhsoAccordionReady === "true") return;
+
+        accordion.dataset.jhsoAccordionReady = "true";
+
+        toggle.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const isOpen = toggle.getAttribute("aria-expanded") === "true";
+          const nextOpen = !isOpen;
+
+          toggle.setAttribute("aria-expanded", String(nextOpen));
+          accordion.classList.toggle("is-open", nextOpen);
+
+          if (nextOpen) {
+            panel.removeAttribute("hidden");
+          } else {
+            panel.setAttribute("hidden", "");
+          }
+        });
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initSummerOffseasonAccordion);
+      } else {
+        initSummerOffseasonAccordion();
+      }
+    })();
+  </script>
+</section>
 
 <section
   id="jh-sophomore-finish-trend"
