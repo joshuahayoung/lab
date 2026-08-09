@@ -3782,19 +3782,21 @@
 
       if (!accordion || !toggle || !panel) return;
 
-      toggle.addEventListener("click", function () {
-        const isOpen = toggle.getAttribute("aria-expanded") === "true";
-        const nextOpen = !isOpen;
+    toggle.addEventListener("click", function (event) {
+  event.preventDefault();
 
-        toggle.setAttribute("aria-expanded", String(nextOpen));
-        accordion.classList.toggle("is-open", nextOpen);
+  const isOpen = toggle.getAttribute("aria-expanded") === "true";
+  const nextOpen = !isOpen;
 
-        if (nextOpen) {
-          panel.hidden = false;
-        } else {
-          panel.hidden = true;
-        }
-      });
+  toggle.setAttribute("aria-expanded", String(nextOpen));
+  accordion.classList.toggle("is-open", nextOpen);
+
+  if (nextOpen) {
+    panel.removeAttribute("hidden");
+  } else {
+    panel.setAttribute("hidden", "");
+  }
+});
     })();
   </script>
 </section>
@@ -6585,7 +6587,7 @@ function splitSpringSchedule(events) {
 
 <section
   id="jh-summer-offseason-results-accordion"
-  class="jh-summer-offseason-results-accordion is-open"
+  class="jh-summer-offseason-results-accordion"
   aria-label="2026 summer off-season competition schedule and results"
 >
   
@@ -6903,7 +6905,7 @@ function splitSpringSchedule(events) {
   </button>
 
   <div
-  class="jhso-results-panel"
+  class="jhso-panel"
   id="jh-summer-offseason-results-panel"
   hidden
 >
