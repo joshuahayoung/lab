@@ -1020,7 +1020,7 @@
 
   
     
-<div class="performance-log-section" style="width: 100%; max-width: 900px; margin: 0 auto 60px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<div class="performance-log-section" style="width: 100%; max-width: 900px; margin: 0 auto 30px; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <style>
     .performance-log-section,
     .performance-log-section *,
@@ -3771,7 +3771,34 @@
     window.addEventListener("hashchange", scheduleLandingCorrection);
   })();
 </script>
+</div>
+
   
+  <script>
+    (function () {
+      const accordion = document.getElementById("jh-summer-offseason-results-accordion");
+      const toggle = document.getElementById("jh-summer-offseason-results-toggle");
+      const panel = document.getElementById("jh-summer-offseason-results-panel");
+
+      if (!accordion || !toggle || !panel) return;
+
+      toggle.addEventListener("click", function () {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        const nextOpen = !isOpen;
+
+        toggle.setAttribute("aria-expanded", String(nextOpen));
+        accordion.classList.toggle("is-open", nextOpen);
+
+        if (nextOpen) {
+          panel.hidden = false;
+        } else {
+          panel.hidden = true;
+        }
+      });
+    })();
+  </script>
+</section>
+
 
 
 
@@ -6555,9 +6582,6 @@ function splitSpringSchedule(events) {
       }
     })();
   </script>  
-  </div>
-
-  
 
 <section
   id="jh-summer-offseason-results-accordion"
@@ -8275,34 +8299,8 @@ function buildMetrics(event) {
    </script>
 </section>
 
+  
   </div>
-
-  <script>
-    (function () {
-      const accordion = document.getElementById("jh-summer-offseason-results-accordion");
-      const toggle = document.getElementById("jh-summer-offseason-results-toggle");
-      const panel = document.getElementById("jh-summer-offseason-results-panel");
-
-      if (!accordion || !toggle || !panel) return;
-
-      toggle.addEventListener("click", function () {
-        const isOpen = toggle.getAttribute("aria-expanded") === "true";
-        const nextOpen = !isOpen;
-
-        toggle.setAttribute("aria-expanded", String(nextOpen));
-        accordion.classList.toggle("is-open", nextOpen);
-
-        if (nextOpen) {
-          panel.hidden = false;
-        } else {
-          panel.hidden = true;
-        }
-      });
-    })();
-  </script>
-</section>
-
-
 
 
 <section
