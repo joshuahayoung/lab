@@ -8879,14 +8879,14 @@ function buildMetrics(event) {
         </div>
 
         <div class="jhft-summary-item">
-  <div class="jhft-summary-k">Clippd Adj.</div>
-  <div class="jhft-summary-v" id="jhft-clippd-adj-avg">—</div>
-</div>
+          <div class="jhft-summary-k">Best Finish</div>
+          <div class="jhft-summary-v" id="jhft-best-finish">—</div>
+        </div>
 
-<div class="jhft-summary-item">
-  <div class="jhft-summary-k">Raw Avg.</div>
-  <div class="jhft-summary-v" id="jhft-raw-avg">—</div>
-</div>
+        <div class="jhft-summary-item">
+          <div class="jhft-summary-k">Low Event Avg.</div>
+          <div class="jhft-summary-v" id="jhft-low-avg">—</div>
+        </div>
       </div>
     </div>
   </div>
@@ -9372,9 +9372,9 @@ function buildMetrics(event) {
           : "—";
 
         setText("jhft-events-recorded", String(trendEvents.length), "0");
-setText("jhft-rounds-recorded", String(roundsCount), "0");
-setText("jhft-clippd-adj-avg", clippdAdjAvg, "—");
-setText("jhft-raw-avg", rawAvgFromJson, "—");
+        setText("jhft-rounds-recorded", String(roundsCount), "0");
+        setText("jhft-best-finish", findBestFinish(trendEvents), "—");
+        setText("jhft-low-avg", lowAvg, "—");
       }
 
       async function renderSophomoreFinishTrend() {
