@@ -89,8 +89,8 @@
       "courseMeta": "Par 72 | 7,090 Yards | Radting: 75.2 | Slope: 140",
       "estimatedWagr": "800+",
       "eventType": "regular-season",
-      "status": "scheduled",
-      "statusLabel": "Scheduled",
+      "status": "upnext",
+      "statusLabel": "Up Next",
       "plannedRounds": 3,
       "rounds": [
         {
