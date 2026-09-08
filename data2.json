@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "September 7, 2026",
-    "sectionTitle": "ONGOING TOURNAMENT",
+    "lastUpdated": "September 8, 2026",
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "Fall Opener",
     "eventLabel": "USC Men's Golf",
-    "status": "ongoing",
+    "status": "final",
     "title": "Bombs Darts Birds Collegiate",
     "date": "Sep 7- 8",
     "venue": "Whirlwind GC",
@@ -15,11 +15,11 @@
     "slope": 131,
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/246292/scoring/player",
-      "label": "LIVE LEADERBOARD"
+      "label": "FINAL RESULTS"
     },
     "summary": {
-      "total": "139",
-      "par": "-5",
+      "total": "209",
+      "par": "-7",
       "pos": "T29"
     },
     "rounds": [
@@ -33,7 +33,7 @@
   },
   {
     "round": "3",
-    "score": "-"
+    "score": "70"
   }
 ]
   }
