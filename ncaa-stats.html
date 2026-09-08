@@ -6199,17 +6199,36 @@ function buildMetrics(event) {
       }
 
       function sortByDate(list) {
-        return [...(Array.isArray(list) ? list : [])].sort(function (a, b) {
-          const aDate = Date.parse(a.startDate || "");
-          const bDate = Date.parse(b.startDate || "");
+  return [...(Array.isArray(list) ? list : [])].sort(function (a, b) {
+    function isFinished(event) {
+      const status = String(event.status || "").trim().toLowerCase();
+      return status === "final" || status === "completed";
+    }
 
-          if (Number.isNaN(aDate) && Number.isNaN(bDate)) return 0;
-          if (Number.isNaN(aDate)) return 1;
-          if (Number.isNaN(bDate)) return -1;
+    const aFinished = isFinished(a);
+    const bFinished = isFinished(b);
 
-          return aDate - bDate;
-        });
-      }
+
+    if (aFinished !== bFinished) {
+      return aFinished ? 1 : -1;
+    }
+
+    const aDate = Date.parse(a.startDate || "");
+    const bDate = Date.parse(b.startDate || "");
+
+    if (Number.isNaN(aDate) && Number.isNaN(bDate)) return 0;
+    if (Number.isNaN(aDate)) return 1;
+    if (Number.isNaN(bDate)) return -1;
+
+
+    if (!aFinished && !bFinished) {
+      return aDate - bDate;
+    }
+
+
+    return bDate - aDate;
+  });
+}
 
       function eventCountLabel(count) {
         return count === 1 ? "1 Event" : count + " Events";
@@ -6316,7 +6335,9 @@ function splitSpringSchedule(events) {
     
      function buildSection(title, subtitle, events, options) {
   const config = options || {};
-  const sorted = sortByDate(events);
+  const sorted = config.preserveManualOrder === true
+  ? [...(Array.isArray(events) ? events : [])]
+  : sortByDate(events);
   const collapsible = config.collapsible === true;
   const defaultOpen = config.defaultOpen === true;
   const isOpen = !collapsible || defaultOpen;
@@ -6500,6 +6521,7 @@ function splitSpringSchedule(events) {
     sectionClass: "jh-ss-section-fall",
     collapsible: true,
     defaultOpen: true,
+    preserveManualOrder: true,
     collapsedNote: "Click the arrow to expand the 2026 fall regular-season schedule.",
     expandedNote: "Click the arrow to collapse the 2026 fall regular-season schedule."
   }
