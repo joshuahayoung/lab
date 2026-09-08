@@ -77,56 +77,6 @@
   },
   "fallSchedule": [
     {
-      "id": "fall-01-bombs-darts-birds",
-      "seasonSegment": "fall",
-      "eventNo": "01",
-      "date": "Sept. 7–8",
-      "startDate": "2026-09-07",
-      "endDate": "2026-09-08",
-      "tournament": "Bombs Darts Birds Collegiate",
-      "venue": "Whirlwind GC",
-      "location": "Chandler, AZ",
-      "courseMeta": "Par 72 | 7,306 Yards | Rating: 71.50 | Slopes: 131",
-      "estimatedWagr": "400+",
-      "eventType": "regular-season",
-      "status": "final",
-      "statusLabel": "FINAL RESULTS",
-      "plannedRounds": 3,
-      "rounds": [
-        {
-          "round": "R1",
-          "score": "71",
-          "par": "-1"
-        },
-        {
-          "round": "R2",
-          "score": "68",
-          "par": "-4"
-        },
-        {
-          "round": "R3",
-          "score": "70",
-          "par": "-2"
-        }
-      ],
-      "summary": {
-        "total": "209",
-        "par": "-7",
-        "finish": "T29"
-      },
-      "metrics": {
-        "rankImpact": "—",
-        "strokesGained": "—",
-        "weightedPts": "—",
-        "wagrPower": "400+",
-        "pointsEarned": "—"
-      },
-      "links": {
-  "tournamentInfo": "",
-  "results": "https://scoreboard.clippd.com/tournaments/246292/scoring/player"
-        }
-    },
-    {
       "id": "fall-02-rancho-santa-fe",
       "seasonSegment": "fall",
       "eventNo": "02",
@@ -275,7 +225,57 @@
   "tournamentInfo": "https://scoreboard.clippd.com/tournaments/246637/scoring/participants",
   "results": ""
     }
-      }
+      },
+   {
+      "id": "fall-01-bombs-darts-birds",
+      "seasonSegment": "fall",
+      "eventNo": "01",
+      "date": "Sept. 7–8",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-08",
+      "tournament": "Bombs Darts Birds Collegiate",
+      "venue": "Whirlwind GC",
+      "location": "Chandler, AZ",
+      "courseMeta": "Par 72 | 7,306 Yards | Rating: 71.50 | Slopes: 131",
+      "estimatedWagr": "400+",
+      "eventType": "regular-season",
+      "status": "final",
+      "statusLabel": "FINAL RESULTS",
+      "plannedRounds": 3,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "71",
+          "par": "-1"
+        },
+        {
+          "round": "R2",
+          "score": "68",
+          "par": "-4"
+        },
+        {
+          "round": "R3",
+          "score": "70",
+          "par": "-2"
+        }
+      ],
+      "summary": {
+        "total": "209",
+        "par": "-7",
+        "finish": "T29"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "400+",
+        "pointsEarned": "—"
+      },
+      "links": {
+  "tournamentInfo": "",
+  "results": "https://scoreboard.clippd.com/tournaments/246292/scoring/player"
+        }
+    }
   ],
   "springSchedule": [
     {
