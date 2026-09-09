@@ -8879,12 +8879,12 @@ function buildMetrics(event) {
         </div>
 
         <div class="jhft-summary-item">
-          <div class="jhft-summary-k">Best Finish</div>
+          <div class="jhft-summary-k">Clippd Adj.</div>
           <div class="jhft-summary-v" id="jhft-best-finish">—</div>
         </div>
 
         <div class="jhft-summary-item">
-          <div class="jhft-summary-k">Low Event Avg.</div>
+          <div class="jhft-summary-k">Raw Avg.</div>
           <div class="jhft-summary-v" id="jhft-low-avg">—</div>
         </div>
       </div>
@@ -9360,22 +9360,31 @@ function buildMetrics(event) {
         });
       }
 
-      function updateSummary(trendEvents) {
-        const roundsCount = trendEvents.reduce(function (sum, event) {
-          return sum + event.rounds.length;
-        }, 0);
+      function updateSummary(trendEvents, data) {
+  const roundsCount = trendEvents.reduce(function (sum, event) {
+    return sum + event.rounds.length;
+  }, 0);
 
-        const lowAvg = trendEvents.length
-          ? Math.min.apply(null, trendEvents.map(function (event) {
-              return event.eventAverage;
-            })).toFixed(2)
-          : "—";
+  const rawAvg = trendEvents.length
+    ? (
+        trendEvents.reduce(function (sum, event) {
+          return sum + event.eventAverage;
+        }, 0) / trendEvents.length
+      ).toFixed(2)
+    : "—";
 
-        setText("jhft-events-recorded", String(trendEvents.length), "0");
-        setText("jhft-rounds-recorded", String(roundsCount), "0");
-        setText("jhft-best-finish", findBestFinish(trendEvents), "—");
-        setText("jhft-low-avg", lowAvg, "—");
-      }
+  const seasonSummary = data && data.seasonSummary ? data.seasonSummary : {};
+  const individual = seasonSummary.individual || {};
+
+  const clippdAdj = isUsableValue(individual.adjustedAvg)
+    ? individual.adjustedAvg
+    : "—";
+
+  setText("jhft-events-recorded", String(trendEvents.length), "0");
+  setText("jhft-rounds-recorded", String(roundsCount), "0");
+  setText("jhft-clippd-adj", clippdAdj, "—");
+  setText("jhft-raw-avg", rawAvg, "—");
+}
 
       async function renderSophomoreFinishTrend() {
         try {
@@ -9392,7 +9401,7 @@ function buildMetrics(event) {
           setText("jhft-title", trendConfig.title, "Seasonal Finish Trend");
           setText("jhft-subtitle", trendConfig.subtitle, "2026–27 USC Sophomore Season");
 
-          updateSummary(trendEvents);
+          uupdateSummary(trendEvents, data);
 
           if (!trendEvents.length) {
             showEmpty(
@@ -9407,7 +9416,7 @@ function buildMetrics(event) {
           renderChart(trendEvents);
         } catch (error) {
           console.error("Sophomore finish trend render error:", error);
-          updateSummary([]);
+          updateSummary([], {});
           showEmpty(
             "Seasonal finish trend could not be loaded. Please confirm the JSON file and event data."
           );
