@@ -8880,7 +8880,7 @@ function buildMetrics(event) {
 
         <div class="jhft-summary-item">
           <div class="jhft-summary-k">Clippd Adj.</div>
-          <div class="jhft-summary-v" id="jhft-best-finish">—</div>
+          div class="jhft-summary-v" id="jhft-clippd-adj">—</div>
         </div>
 
         <div class="jhft-summary-item">
@@ -9401,7 +9401,7 @@ function buildMetrics(event) {
           setText("jhft-title", trendConfig.title, "Seasonal Finish Trend");
           setText("jhft-subtitle", trendConfig.subtitle, "2026–27 USC Sophomore Season");
 
-          uupdateSummary(trendEvents, data);
+          updateSummary(trendEvents);
 
           if (!trendEvents.length) {
             showEmpty(
@@ -9416,7 +9416,7 @@ function buildMetrics(event) {
           renderChart(trendEvents);
         } catch (error) {
           console.error("Sophomore finish trend render error:", error);
-          updateSummary([], {});
+          updateSummary([]);
           showEmpty(
             "Seasonal finish trend could not be loaded. Please confirm the JSON file and event data."
           );
