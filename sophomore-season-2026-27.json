@@ -19,8 +19,8 @@
     "active": true,
     "label": "Sophomore Season Key Metrics",
     "dataLabel": "Auto-Synced from sophomore-season-2026-27.json",
-    "status": "SCHEDULED",
-    "statusText": "2026–27 USC season / Results pending",
+    "status": "ACTIVE",
+    "statusText": "2026–27 USC season / Results in progress",
     "scope": "3",
     "individual": {
       "scoringAvg": "—",
@@ -58,9 +58,9 @@
     "active": true,
     "title": "Seasonal Finish Trend",
     "subtitle": "2026–27 USC Sophomore Season",
-    "status": "pending",
+    "status": "active",
     "source": "Use final events from fallSchedule and springSchedule.",
-    "emptyState": "Results pending. Chart will populate after official tournament results are recorded.",
+    "emptyState": "Results in progress. Chart will populate after official tournament results are recorded.",
     "chartConfig": {
       "displayMetric": "eventScoringAverage",
       "yMin": "auto",
