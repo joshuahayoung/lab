@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "September 13, 2026",
-    "sectionTitle": "STARTING SOON",
+    "lastUpdated": "September 14, 2026",
+    "sectionTitle": "TOURNAMENT WEEK",
     "eventNo": "Fall Event No. 2",
     "eventLabel": "USC Men's Golf",
-    "status": "startingsoon",
+    "status": "ongoing",
     "title": "Vuori Invitational",
     "date": "Sep 14- 15",
     "venue": "Rancho Santa Fe GC",
@@ -15,7 +15,7 @@
     "slope": 140,
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/245341/scoring/participants",
-      "label": "EVENT INFO"
+      "label": "LIVE LEADERBOARD"
     },
     "summary": {
       "total": "-",
