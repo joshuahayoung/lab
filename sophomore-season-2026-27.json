@@ -237,7 +237,7 @@
       "venue": "Whirlwind GC",
       "location": "Chandler, AZ",
       "courseMeta": "Par 72 | 7,306 Yards | Rating: 71.50 | Slopes: 131",
-      "estimatedWagr": "400+",
+      "estimatedWagr": "461.5757",
       "eventType": "regular-season",
       "status": "final",
       "statusLabel": "FINAL RESULTS",
@@ -268,8 +268,8 @@
         "rankImpact": "—",
         "strokesGained": "—",
         "weightedPts": "—",
-        "wagrPower": "400+",
-        "pointsEarned": "—"
+        "wagrPower": "461.5757",
+        "pointsEarned": "4.9250"
       },
       "links": {
   "tournamentInfo": "",
