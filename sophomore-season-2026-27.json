@@ -24,19 +24,19 @@
     "scope": "3",
     "individual": {
       "scoringAvg": "—",
-      "rawAvg": "69.67",
+      "rawAvg": "71.17",
       "adjustedAvg": "—",
       "underPar": "3",
-      "parOrBetterCount": "3",
+      "parOrBetterCount": "4",
       "parOrBetterPct": "100",
       "lowRound": "68",
       "gpa": "— GPA"
     },
     "teamMetrics": {
-      "winRate": "60.00",
-      "headToHead": "48-28-4",
-      "countingScore": "—",
-      "recordedRounds": "0 / 0",
+      "winRate": "64.94",
+      "headToHead": "100-48-6",
+      "countingScore": "3",
+      "recordedRounds": "3 / 3",
       "pointsShare": "—",
       "pointsValue": "—",
       "teamTotal": "—"
@@ -50,8 +50,8 @@
       "clippdDate": "-",
       "wins": "0",
       "top10": "0",
-      "top20": "0",
-      "totalTournaments": "1"
+      "top25": "1",
+      "totalTournaments": "2"
     }
   },
   "finishTrend": {
