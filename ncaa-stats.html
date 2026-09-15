@@ -10330,8 +10330,8 @@ function setImpact(id, value, rankId) {
           setText("jhskm-clippdDate", rank.clippdDate, "—");
 
           setText("jhskm-wins", rank.wins, "0");
-          setText("jhskm-top3", rank.top3, "0");
-          setText("jhskm-top10", rank.top10, "0");
+          setText("jhskm-top10", rank.top25, "0");
+          setText("jhskm-top3", rank.top10, "0");
           setText("jhskm-totalTournaments", rank.totalTournaments, "0");
         } catch (error) {
           console.error("Sophomore key metrics sync error:", error);
