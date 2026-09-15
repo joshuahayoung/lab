@@ -192,8 +192,8 @@
       "courseMeta": "Par 71 | 7,003 Yards | Rating: 75.2 | Slope: 140",
       "estimatedWagr": "800+",
       "eventType": "regular-season",
-      "status": "ongoing",
-      "statusLabel": "ON GOING",
+      "status": "final",
+      "statusLabel": "Final Results",
       "plannedRounds": 3,
       "rounds": [
         {
