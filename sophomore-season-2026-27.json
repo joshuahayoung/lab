@@ -21,7 +21,7 @@
     "dataLabel": "Auto-Synced from sophomore-season-2026-27.json",
     "status": "ACTIVE",
     "statusText": "2026–27 USC season / Results in progress",
-    "scope": "3",
+    "scope": "6",
     "individual": {
       "scoringAvg": "—",
       "rawAvg": "71.17",
@@ -35,7 +35,7 @@
     "teamMetrics": {
       "winRate": "64.94",
       "headToHead": "100-48-6",
-      "countingScore": "3",
+      "countingScore": "100",
       "recordedRounds": "3 / 3",
       "pointsShare": "—",
       "pointsValue": "—",
