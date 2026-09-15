@@ -76,56 +76,8 @@
     "images": []
   },
   "fallSchedule": [
-    {
-      "id": "fall-02-rancho-santa-fe",
-      "seasonSegment": "fall",
-      "eventNo": "02",
-      "date": "Sept. 14–15",
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-15",
-      "tournament": "Vuori Invitational",
-      "venue": "Rancho Santa Fe GC",
-      "location": "San Diego, CA",
-      "courseMeta": "Par 71 | 7,003 Yards | Rating: 75.2 | Slope: 140",
-      "estimatedWagr": "800+",
-      "eventType": "regular-season",
-      "status": "ongoing",
-      "statusLabel": "ON GOING",
-      "plannedRounds": 3,
-      "rounds": [
-        {
-          "round": "R1",
-          "score": "—",
-          "par": "—"
-        },
-        {
-          "round": "R2",
-          "score": "—",
-          "par": "—"
-        },
-        {
-          "round": "R3",
-          "score": "—",
-          "par": "—"
-        }
-      ],
-      "summary": {
-        "total": "—",
-        "par": "—",
-        "finish": "—"
-      },
-      "metrics": {
-        "rankImpact": "—",
-        "strokesGained": "—",
-        "weightedPts": "—",
-        "wagrPower": "800+",
-        "pointsEarned": "—"
-      },
-      "links": {
-  "leaderboard": "",
-  "Tournament Info": "https://scoreboard.clippd.com/tournaments/245341/scoring/participants"
-        }
-    },
+
+    
     {
       "id": "fall-03-trinity-forest",
       "seasonSegment": "fall",
@@ -226,6 +178,60 @@
   "results": ""
     }
       },
+
+    {
+      "id": "fall-02-rancho-santa-fe",
+      "seasonSegment": "fall",
+      "eventNo": "02",
+      "date": "Sept. 14–15",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-15",
+      "tournament": "Vuori Invitational",
+      "venue": "Rancho Santa Fe GC",
+      "location": "San Diego, CA",
+      "courseMeta": "Par 71 | 7,003 Yards | Rating: 75.2 | Slope: 140",
+      "estimatedWagr": "800+",
+      "eventType": "regular-season",
+      "status": "ongoing",
+      "statusLabel": "ON GOING",
+      "plannedRounds": 3,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "75",
+          "par": "+4"
+        },
+        {
+          "round": "R2",
+          "score": "71",
+          "par": "E"
+        },
+        {
+          "round": "R3",
+          "score": "72",
+          "par": "+1"
+        }
+      ],
+      "summary": {
+        "total": "218",
+        "par": "+5",
+        "finish": "T21"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "800+",
+        "pointsEarned": "—"
+      },
+      "links": {
+  "leaderboard": "",
+  "Tournament Info": "",
+  "results": "https://scoreboard.clippd.com/tournaments/245341/scoring/player"
+        }
+    },
+
+    
    {
       "id": "fall-01-bombs-darts-birds",
       "seasonSegment": "fall",
