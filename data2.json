@@ -1,39 +1,39 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "September 23, 2026",
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "Fall Event No. 2",
+    "lastUpdated": "September 28, 2026",
+    "sectionTitle": "TOURNAMENT WEEK",
+    "eventNo": "Fall Event No. 3",
     "eventLabel": "USC Men's Golf",
-    "status": "final",
-    "title": "Vuori Invitational",
-    "date": "Sep 14- 15",
-    "venue": "Rancho Santa Fe GC",
-    "location": "San Diego, CA",
-    "par": 71,
-    "yards": "7,003",
-    "rating": 75.20,
-    "slope": 140,
+    "status": "upnext",
+    "title": "Trinity Forest Invitational",
+    "date": "Oct 4 - 6",
+    "venue": "Trinity Forest Golf Club",
+    "location": "Dallas, TX",
+    "par": 72,
+    "yards": "7,450",
+    "rating": 76.00,
+    "slope": 134,
     "mainLink": {
-      "url": "https://scoreboard.clippd.com/tournaments/245341/scoring/team",
-      "label": "FINAL RESULTS"
+      "url": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants",
+      "label": "EVENT INFO"
     },
     "summary": {
-      "total": "218",
-      "par": "+5",
-      "pos": "T20"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
     "rounds": [
   {
-    "round": "1",
-    "score": "75"
+    "round": "-",
+    "score": "-"
   },
   {
-    "round": "2",
-    "score": "71"
+    "round": "-",
+    "score": "-"
   },
   {
-    "round": "3",
-    "score": "72"
+    "round": "-",
+    "score": "-"
   }
 ]
   }
