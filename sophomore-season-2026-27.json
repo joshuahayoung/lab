@@ -91,8 +91,8 @@
       "courseMeta": "Par 72 | 7,450 Yards | Rating: 76.0 | Slope: 134",
       "estimatedWagr": "400+",
       "eventType": "regular-season",
-      "status": "startingsoon",
-      "statusLabel": "STARTING SOON",
+      "status": "ongoing",
+      "statusLabel": "ONGOING TOURNAMENT",
       "plannedRounds": 3,
       "rounds": [
         {
@@ -124,8 +124,8 @@
         "pointsEarned": "—"
       },
      "links": {
-  "leaderboard": "",
-  "Tournament Info": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants"
+  "leaderboard": "https://scoreboard.clippd.com/tournaments/245222/scoring/team",
+  "Tournament Info": ""
        }
     },
     {
