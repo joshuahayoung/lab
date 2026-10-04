@@ -1,21 +1,21 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "October 3, 2026",
+    "lastUpdated": "October 4, 2026",
     "sectionTitle": "TOURNAMENT WEEK",
     "eventNo": "Fall Event No. 3",
     "eventLabel": "USC Men's Golf",
-    "status": "startingsoon",
+    "status": "ongoing",
     "title": "Trinity Forest Invitational",
     "date": "Oct 4 - 6",
     "venue": "Trinity Forest Golf Club",
     "location": "Dallas, TX",
     "par": 72,
-    "yards": "7,450",
+    "yards": "7,617",
     "rating": 76.00,
     "slope": 134,
     "mainLink": {
-      "url": "https://scoreboard.clippd.com/tournaments/245222/scoring/participants",
-      "label": "EVENT INFO"
+      "url": "https://scoreboard.clippd.com/tournaments/245222/scoring/team",
+      "label": "LIVE LEADERBOARD"
     },
     "summary": {
       "total": "-",
