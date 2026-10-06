@@ -77,57 +77,8 @@
   },
   "fallSchedule": [
 
+ 
     
-    {
-      "id": "fall-03-trinity-forest",
-      "seasonSegment": "fall",
-      "eventNo": "03",
-      "date": "Oct. 4–6",
-      "startDate": "2026-10-04",
-      "endDate": "2026-10-06",
-      "tournament": "Trinity Forest Invitational",
-      "venue": "Trinity Forest Golf Club",
-      "location": "Dallas, TX",
-      "courseMeta": "Par 72 | 7,617 Yards | Rating: 76.0 | Slope: 134",
-      "estimatedWagr": "400+",
-      "eventType": "regular-season",
-      "status": "ongoing",
-      "statusLabel": "ONGOING TOURNAMENT",
-      "plannedRounds": 3,
-      "rounds": [
-        {
-          "round": "R1",
-          "score": "—",
-          "par": "—"
-        },
-        {
-          "round": "R2",
-          "score": "—",
-          "par": "—"
-        },
-        {
-          "round": "R3",
-          "score": "—",
-          "par": "—"
-        }
-      ],
-      "summary": {
-        "total": "—",
-        "par": "—",
-        "finish": "—"
-      },
-      "metrics": {
-        "rankImpact": "—",
-        "strokesGained": "—",
-        "weightedPts": "—",
-        "wagrPower": "400+",
-        "pointsEarned": "—"
-      },
-     "links": {
-  "leaderboard": "https://scoreboard.clippd.com/tournaments/245222/scoring/team",
-  "Tournament Info": ""
-       }
-    },
     {
       "id": "fall-04-golf-club-of-georgia",
       "seasonSegment": "fall",
@@ -141,8 +92,8 @@
       "courseMeta": "Par 72 | 6,993 Yards | Rating: 73.5 | Slope: 146",
       "estimatedWagr": "820+",
       "eventType": "regular-season",
-      "status": "scheduled",
-      "statusLabel": "Scheduled",
+      "status": "upnext",
+      "statusLabel": "Up Next",
       "plannedRounds": 3,
       "rounds": [
         {
@@ -178,7 +129,59 @@
   "results": ""
     }
       },
-
+    
+{
+      "id": "fall-03-trinity-forest",
+      "seasonSegment": "fall",
+      "eventNo": "03",
+      "date": "Oct. 4–6",
+      "startDate": "2026-10-04",
+      "endDate": "2026-10-06",
+      "tournament": "Trinity Forest Invitational",
+      "venue": "Trinity Forest Golf Club",
+      "location": "Dallas, TX",
+      "courseMeta": "Par 72 | 7,617 Yards | Rating: 76.0 | Slope: 134",
+      "estimatedWagr": "400+",
+      "eventType": "regular-season",
+      "status": "final",
+      "statusLabel": "FINAL RESULTS",
+      "plannedRounds": 3,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "73",
+          "par": "+1"
+        },
+        {
+          "round": "R2",
+          "score": "70",
+          "par": "-2"
+        },
+        {
+          "round": "R3",
+          "score": "70",
+          "par": "-2"
+        }
+      ],
+      "summary": {
+        "total": "213",
+        "par": "-3",
+        "finish": "T21"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "400+",
+        "pointsEarned": "—"
+      },
+     "links": {
+  "leaderboard": "",
+  "Tournament Info": ""
+  "results": "https://scoreboard.clippd.com/tournaments/245222/scoring/player"
+       }
+    },
+    
     {
       "id": "fall-02-rancho-santa-fe",
       "seasonSegment": "fall",
