@@ -21,22 +21,22 @@
     "dataLabel": "Auto-Synced from sophomore-season-2026-27.json",
     "status": "ACTIVE",
     "statusText": "2026–27 USC season / Results in progress",
-    "scope": "6",
+    "scope": "9",
     "individual": {
       "scoringAvg": "—",
-      "rawAvg": "71.17",
+      "rawAvg": "71.11",
       "adjustedAvg": "—",
-      "underPar": "3",
-      "parOrBetterCount": "4",
+      "underPar": "5",
+      "parOrBetterCount": "6",
       "parOrBetterPct": "66.67",
       "lowRound": "68",
       "gpa": "— GPA"
     },
     "teamMetrics": {
-      "winRate": "66.23",
-      "headToHead": "102-47-5",
+      "winRate": "68.31",
+      "headToHead": "166-67-10",
       "countingScore": "100",
-      "recordedRounds": "3 / 3",
+      "recordedRounds": "6 / 6",
       "pointsShare": "—",
       "pointsValue": "—",
       "teamTotal": "—"
@@ -50,8 +50,8 @@
       "clippdDate": "-",
       "wins": "0",
       "top10": "0",
-      "top25": "1",
-      "totalTournaments": "2"
+      "top25": "2",
+      "totalTournaments": "3"
     }
   },
   "finishTrend": {
