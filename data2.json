@@ -1,10 +1,10 @@
 {
   "pgaTableShared": {
     "lastUpdated": "October 6, 2026",
-    "sectionTitle": "TOURNAMENT WEEK",
+    "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "Fall Event No. 3",
     "eventLabel": "USC Men's Golf",
-    "status": "ongoing",
+    "status": "final",
     "title": "Trinity Forest Invitational",
     "date": "Oct 4 - 6",
     "venue": "Trinity Forest Golf Club",
@@ -15,11 +15,11 @@
     "slope": 134,
     "mainLink": {
       "url": "https://scoreboard.clippd.com/tournaments/245222/scoring/team",
-      "label": "LIVE LEADERBOARD"
+      "label": "FINAL RESULTS"
     },
     "summary": {
-      "total": "143",
-      "par": "-1",
+      "total": "213",
+      "par": "-3",
       "pos": "T21"
     },
     "rounds": [
@@ -32,8 +32,8 @@
     "score": "70"
   },
   {
-    "round": "-",
-    "score": "-"
+    "round": "3",
+    "score": "70"
   }
 ]
   }
