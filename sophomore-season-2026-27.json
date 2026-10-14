@@ -58,7 +58,7 @@
     "active": true,
     "title": "Seasonal Finish Trend",
     "subtitle": "2026–27 USC Sophomore Season",
-    "status": "active",
+    "status": "Fall Season in Progress",
     "source": "Use final events from fallSchedule and springSchedule.",
     "emptyState": "Results in progress. Chart will populate after official tournament results are recorded.",
     "chartConfig": {
