@@ -18,9 +18,9 @@
       "label": "LIVE LEADERBOARD"
     },
     "summary": {
-      "total": "70",
-      "par": "-2",
-      "pos": "T16"
+      "total": "140",
+      "par": "-4",
+      "pos": "T10"
     },
     "rounds": [
   {
@@ -29,7 +29,7 @@
   },
   {
     "round": "2",
-    "score": "-"
+    "score": "70"
   },
   {
     "round": "3",
