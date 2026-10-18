@@ -94,30 +94,30 @@
       "courseMeta": "Par 72 | 7,017 Yards | Rating: 74.8 | Slope: 146",
       "estimatedWagr": "820+",
       "eventType": "regular-season",
-      "status": "ongoing",
-      "statusLabel": "ONGOING TOURNAMENT",
+      "status": "final",
+      "statusLabel": "FINAL RESULTS",
       "plannedRounds": 3,
       "rounds": [
         {
           "round": "R1",
-          "score": "—",
-          "par": "—"
+          "score": "70",
+          "par": "-2"
         },
         {
           "round": "R2",
-          "score": "—",
-          "par": "—"
+          "score": "70",
+          "par": "-2"
         },
         {
           "round": "R3",
-          "score": "—",
-          "par": "—"
+          "score": "78",
+          "par": "+6"
         }
       ],
       "summary": {
-        "total": "—",
-        "par": "—",
-        "finish": "—"
+        "total": "218",
+        "par": "+2",
+        "finish": "T27"
       },
       "metrics": {
         "rankImpact": "—",
@@ -127,8 +127,8 @@
         "pointsEarned": "—"
       },
       "links": {
-  "tournamentInfo": "https://scoreboard.clippd.com/tournaments/246637/scoring/participants",
-  "results": ""
+  "tournamentInfo": "",
+  "results": "https://scoreboard.clippd.com/tournaments/246637/scoring/player"
     }
       },
     
