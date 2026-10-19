@@ -50,7 +50,7 @@
       "clippdDate": "Oct 14, 2026",
       "wins": "0",
       "top10": "0",
-      "top25": "2",
+      "top30": "4",
       "totalTournaments": "4"
     }
   },
@@ -92,7 +92,7 @@
       "venue": "The Golf Club of Georgia-Lakeside",
       "location": "Alpharetta, GA",
       "courseMeta": "Par 72 | 7,017 Yards | Rating: 74.8 | Slope: 146",
-      "estimatedWagr": "820+",
+      "estimatedWagr": "716.1801",
       "eventType": "regular-season",
       "status": "final",
       "statusLabel": "FINAL RESULTS",
@@ -123,8 +123,8 @@
         "rankImpact": "—",
         "strokesGained": "—",
         "weightedPts": "—",
-        "wagrPower": "820+",
-        "pointsEarned": "—"
+        "wagrPower": "716.1801",
+        "pointsEarned": "6.1086"
       },
       "links": {
   "tournamentInfo": "",
