@@ -23,9 +23,9 @@
     "statusText": "2026–27 USC season / Results in progress",
     "scope": "12",
     "individual": {
-      "scoringAvg": "70.94",
+      "scoringAvg": "70.98",
       "rawAvg": "71.50",
-      "adjustedAvg": "70.94",
+      "adjustedAvg": "70.98",
       "underPar": "7",
       "parOrBetterCount": "8",
       "parOrBetterPct": "72.73",
@@ -37,17 +37,17 @@
       "headToHead": "204-93-23",
       "countingScore": "88.88",
       "recordedRounds": "8 / 9",
-      "pointsShare": "13.64%",
-      "pointsValue": "74.31",
-      "teamTotal": "544.62"
+      "pointsShare": "14.23%",
+      "pointsValue": "110.77",
+      "teamTotal": "778.69"
     },
     "officialRank": {
-      "wagrRank": "532",
-      "wagrImpact": "▼14",
-      "wagrDate": "Oct 14, 2026",
-      "clippdRank": "392",
-      "clippdImpact": "-",
-      "clippdDate": "Oct 14, 2026",
+      "wagrRank": "516",
+      "wagrImpact": "▲16",
+      "wagrDate": "Oct 21, 2026",
+      "clippdRank": "373",
+      "clippdImpact": "▲19",
+      "clippdDate": "Oct 21, 2026",
       "wins": "0",
       "top10": "0",
       "top25": "4",
@@ -120,9 +120,9 @@
         "finish": "T27"
       },
       "metrics": {
-        "rankImpact": "—",
-        "strokesGained": "—",
-        "weightedPts": "—",
+        "rankImpact": "▲7",
+        "strokesGained": "-1.23",
+        "weightedPts": "36.46",
         "wagrPower": "716.1801",
         "pointsEarned": "6.1086"
       },
