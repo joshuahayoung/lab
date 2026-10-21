@@ -10561,6 +10561,546 @@ function setImpact(id, value, rankId) {
   
 </div>
 
+<!-- NCAA External References -->
+<section
+  id="jh-ncaa-external-references"
+  aria-label="Joshua Hong external references"
+>
+
+<style id="jh-ncaa-external-references-style">
+  #jh-ncaa-external-references,
+  #jh-ncaa-external-references * {
+    box-sizing: border-box;
+  }
+
+  #jh-ncaa-external-references {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  #jh-ncaa-external-references .jhnref-shell {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    padding: 30px 10px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      );
+
+    border-radius: 25px;
+    border: 1px solid rgba(153, 0, 0, 0.13);
+
+    box-shadow:
+      0 10px 30px rgba(12, 35, 64, 0.045),
+      0 6px 18px rgba(153, 0, 0, 0.04);
+  }
+
+  #jh-ncaa-external-references .jhnref-shell::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background:
+      linear-gradient(
+        90deg,
+        #990000 0%,
+        #ffcc00 48%,
+        #650000 100%
+      );
+  }
+
+  #jh-ncaa-external-references .jhnref-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #jh-ncaa-external-references .jhnref-heading-icon {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 14px;
+
+    border-radius: 50%;
+
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 100%
+      );
+
+    color: #ffcc00;
+
+    box-shadow:
+      0 6px 14px rgba(153, 0, 0, 0.20);
+  }
+
+  #jh-ncaa-external-references .jhnref-heading-title {
+    margin: 0;
+
+    color: #0c2340;
+
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  #jh-ncaa-external-references .jhnref-description {
+    padding: 25px 15px;
+
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fffdf6 100%
+      );
+
+    border-left: 5px solid #990000;
+    border-top: 1px solid rgba(153, 0, 0, 0.10);
+    border-right: 1px solid rgba(153, 0, 0, 0.10);
+    border-bottom: 1px solid rgba(153, 0, 0, 0.10);
+
+    border-radius: 0 15px 15px 0;
+
+    color: #3c4043;
+
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+
+    text-align: justify;
+    word-break: keep-all;
+  }
+
+  #jh-ncaa-external-references .jhnref-description-inner {
+    max-width: 820px;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-button {
+    min-height: 56px;
+    width: 100%;
+
+    padding: 15px 12px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255, 204, 0, 0.30);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    overflow: hidden;
+
+    color: #ffcc00 !important;
+
+    font-size: 14px !important;
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: 0.45px;
+
+    text-align: center;
+    text-decoration: none !important;
+
+    transition:
+      transform 0.22s ease,
+      box-shadow 0.22s ease,
+      opacity 0.22s ease;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-button:hover,
+  #jh-ncaa-external-references .jh-ext-ref-button:focus {
+    transform: translateY(-1px);
+    opacity: 0.94;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-button-wagr {
+    background:
+      linear-gradient(
+        135deg,
+        #0c2340 0%,
+        #650000 100%
+      ) !important;
+
+    box-shadow:
+      0 8px 18px rgba(12, 35, 64, 0.14);
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-button-clippd {
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 100%
+      ) !important;
+
+    box-shadow:
+      0 8px 18px rgba(153, 0, 0, 0.16);
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-button-usc {
+    background:
+      linear-gradient(
+        135deg,
+        #990000 0%,
+        #650000 58%,
+        #0c2340 100%
+      ) !important;
+
+    box-shadow:
+      0 8px 18px rgba(153, 0, 0, 0.16),
+      0 4px 12px rgba(12, 35, 64, 0.08);
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffcc00;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-icon svg {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    stroke: currentColor;
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-usc-logo-frame {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 204, 0, 0.22);
+
+    background: rgba(255, 204, 0, 0.08);
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 3px 8px rgba(0, 0, 0, 0.16);
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-usc-logo-frame img {
+    display: block;
+
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+    object-position: center center;
+
+    filter:
+      drop-shadow(
+        0 1px 3px rgba(0, 0, 0, 0.28)
+      );
+  }
+
+  #jh-ncaa-external-references .jh-ext-ref-text {
+    display: inline-block;
+
+    min-width: 0;
+
+    color: inherit !important;
+
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-weight: inherit !important;
+    letter-spacing: inherit !important;
+
+    white-space: nowrap;
+  }
+
+  @media (max-width: 960px) {
+    #jh-ncaa-external-references {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #jh-ncaa-external-references {
+      padding-left: 14px;
+      padding-right: 14px;
+      margin-bottom: 28px;
+    }
+
+    #jh-ncaa-external-references .jhnref-shell {
+      padding: 26px 14px;
+      border-radius: 22px;
+    }
+
+    #jh-ncaa-external-references .jhnref-heading-title {
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    #jh-ncaa-external-references .jhnref-description {
+      padding: 20px 14px;
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-button {
+      min-height: 48px;
+
+      padding: 12px 9px;
+
+      border-radius: 11px;
+
+      font-size: 12.5px !important;
+
+      gap: 7px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-icon {
+      width: 22px;
+      height: 22px;
+      flex-basis: 22px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-usc-logo-frame {
+      width: 24px;
+      height: 24px;
+      flex-basis: 24px;
+
+      border-radius: 7px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-usc-logo-frame img {
+      width: 21px;
+      height: 21px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #jh-ncaa-external-references {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    #jh-ncaa-external-references .jh-ext-ref-button {
+      padding-left: 7px;
+      padding-right: 7px;
+
+      font-size: 12px !important;
+
+      gap: 6px;
+    }
+
+    #jh-ncaa-external-references .jh-ext-ref-text {
+      letter-spacing: 0.25px !important;
+    }
+  }
+</style>
+
+
+<div class="jhnref-shell">
+
+  <div class="jhnref-heading">
+
+    <div class="jhnref-heading-icon" aria-hidden="true">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+        <circle cx="12" cy="5" r="2"></circle>
+        <path d="M12 7v4"></path>
+        <line x1="8" y1="16" x2="8" y2="16"></line>
+        <line x1="16" y1="16" x2="16" y2="16"></line>
+      </svg>
+    </div>
+
+    <h3 class="jhnref-heading-title">
+      External References
+    </h3>
+
+  </div>
+
+
+  <div class="jhnref-description">
+    <div class="jhnref-description-inner">
+      Official and external pages related to Joshua’s current USC roster and season, recognized ranking platforms, and verified career records. The 2025–26 UTSA freshman-season references remain preserved in the full Reference &amp; Links archive.
+    </div>
+  </div>
+
+
+  <div class="jh-ext-ref-grid">
+
+    <a
+      class="jh-ext-ref-button jh-ext-ref-button-wagr"
+      href="https://www.wagr.com/playerprofile/joshua-hong-40704"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Joshua Hong WAGR Ranking"
+      title="View Joshua Hong WAGR Ranking"
+    >
+      <span class="jh-ext-ref-icon" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </span>
+
+      <span class="jh-ext-ref-text">
+        WAGR Ranking
+      </span>
+    </a>
+
+
+    <a
+      class="jh-ext-ref-button jh-ext-ref-button-clippd"
+      href="https://scoreboard.clippd.com/players/38903"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Joshua Hong CLIPPD Profile"
+      title="View Joshua Hong CLIPPD Profile"
+    >
+      <span class="jh-ext-ref-icon" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </span>
+
+      <span class="jh-ext-ref-text">
+        CLIPPD Profile
+      </span>
+    </a>
+
+
+    <a
+      class="jh-ext-ref-button jh-ext-ref-button-usc"
+      href="https://usctrojans.com/sports/mens-golf/roster/joshua-hong/18639"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View Joshua Hong USC Roster"
+      title="View Joshua Hong USC Roster"
+    >
+      <span class="jh-ext-ref-usc-logo-frame" aria-hidden="true">
+        <img
+          src="images/USC-mensgolf-logo.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+
+      <span class="jh-ext-ref-text">
+        USC Roster
+      </span>
+    </a>
+
+
+    <a
+      class="jh-ext-ref-button jh-ext-ref-button-usc"
+      href="https://usctrojans.com/documents/2026/10/19/2026-27_USC_Men_s_Golf_Season_Stats__FALL_SEASON_UPDATE_.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View USC Men’s Golf 2026–27 Season Stats PDF"
+      title="View USC Men’s Golf 2026–27 Season Stats PDF"
+    >
+      <span class="jh-ext-ref-usc-logo-frame" aria-hidden="true">
+        <img
+          src="images/USC-mensgolf-logo.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+
+      <span class="jh-ext-ref-text">
+        USC Stats
+      </span>
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+<!-- /NCAA External References -->
+
 <div id="jh-current-focus-block" style="width:100%; max-width:900px; margin:0 auto; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <a id="current-focus"></a>
 
