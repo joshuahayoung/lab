@@ -3712,41 +3712,65 @@
     }
 
     async function renderSharedPgaTable() {
-      try {
-        const res = await fetch("./data2.json?v=" + Date.now());
-        if (!res.ok) throw new Error("Failed to load data2.json");
-
-       const data = await res.json();
-const pgaData = data.pgaTableShared;
-
-if (!pgaData) {
   const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
-  if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
-  container.innerHTML = "";
-  return;
-}
 
-const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+  try {
+    const res = await fetch("./data2.json?v=" + Date.now());
 
-if (topLastUpdated) {
-  topLastUpdated.textContent = pgaData.lastUpdated
-    ? `Last Updated: ${pgaData.lastUpdated}`
-    : "Last Updated: —";
-}
-
-if (pgaData.showCard === false) {
-  container.innerHTML = "";
-  return;
-}
-
-container.innerHTML = buildCardHtml(pgaData);
-      } catch (error) {
-        console.error("PGA TABLE render error:", error);
-        const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
-        if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
-        container.innerHTML = "";
+    if (!res.ok) {
+      if (topLastUpdated) {
+        topLastUpdated.textContent = "Last Updated: —";
       }
+
+      container.innerHTML = "";
+      return;
     }
+
+    const data = await res.json();
+
+    const pgaData =
+      data && data.pgaTableShared
+        ? data.pgaTableShared
+        : null;
+
+    if (!pgaData) {
+      if (topLastUpdated) {
+        topLastUpdated.textContent = "Last Updated: —";
+      }
+
+      container.innerHTML = "";
+      return;
+    }
+
+    /* Last Updated is independent from tournament-card visibility */
+    if (topLastUpdated) {
+      const lastUpdated = pgaData.lastUpdated
+        ? String(pgaData.lastUpdated).trim()
+        : "";
+
+      topLastUpdated.textContent = lastUpdated
+        ? `Last Updated: ${lastUpdated}`
+        : "Last Updated: —";
+    }
+
+    /* Tournament card ON / OFF switch */
+    if (pgaData.showCard === false) {
+      container.innerHTML = "";
+      return;
+    }
+
+    container.innerHTML = buildCardHtml(pgaData);
+
+  } catch (error) {
+    console.error("PGA TABLE render error:", error);
+
+    if (topLastUpdated) {
+      topLastUpdated.textContent = "Last Updated: —";
+    }
+
+    container.innerHTML = "";
+  }
+}
 
     document.addEventListener("DOMContentLoaded", renderSharedPgaTable);
   })();
