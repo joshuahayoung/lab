@@ -9,10 +9,10 @@
     "date": " ",
     "venue": " ",
     "location": " ",
-    "par": ,
+    "par": null,
     "yards": "",
-    "rating": ,
-    "slope": ,
+    "rating": null,
+    "slope": null,
     "mainLink": {
       "url": "",
       "label": ""
