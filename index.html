@@ -1516,10 +1516,15 @@ signal.classList.add(`is-${model.status}`);
         const data2 = await fetchJson("./data2.json");
 
         const pgaData = data2 && data2.pgaTableShared
-          ? data2.pgaTableShared
-          : null;
+  ? data2.pgaTableShared
+  : null;
 
-        if (hasRenderablePgaData(pgaData)) {
+if (pgaData && pgaData.showCard === false) {
+  signal.hidden = true;
+  return;
+}
+
+if (hasRenderablePgaData(pgaData)) {
           renderSignal(mapPgaDataToSignal(pgaData));
           return;
         }
