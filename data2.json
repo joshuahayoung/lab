@@ -1,39 +1,39 @@
 {
   "pgaTableShared": {
-    "lastUpdated": "October 21, 2026",
-    "sectionTitle": "LATEST TOURNAMENT RESULTS",
-    "eventNo": "Fall Event No. 4",
+    "lastUpdated": "October 26, 2026",
+    "sectionTitle": "FALL SEASON COMPLETE",
+    "eventNo": "2026 Fall Season · Complete",
     "eventLabel": "USC Men's Golf",
     "status": "final",
-    "title": "Golf Club of Georgia Collegiate Invitational",
-    "date": "Oct 16 - 18",
-    "venue": "The Golf Club of Georgia-Lakeside",
-    "location": "Alpharetta, GA",
-    "par": 72,
-    "yards": "7,017",
-    "rating": 74.80,
-    "slope": 146,
+    "title": "TBD",
+    "date": "TBD",
+    "venue": "TBD",
+    "location": "-,-",
+    "par": -,
+    "yards": "-",
+    "rating": -,
+    "slope": -,
     "mainLink": {
-      "url": "https://scoreboard.clippd.com/tournaments/246637/scoring/player",
-      "label": "FINAL RESULTS"
+      "url": "-",
+      "label": "-"
     },
     "summary": {
-      "total": "218",
-      "par": "+2",
-      "pos": "T27"
+      "total": "-",
+      "par": "-",
+      "pos": "-"
     },
     "rounds": [
   {
     "round": "1",
-    "score": "70"
+    "score": "-"
   },
   {
     "round": "2",
-    "score": "70"
+    "score": "-"
   },
   {
     "round": "3",
-    "score": "78"
+    "score": "-"
   }
 ]
   }
