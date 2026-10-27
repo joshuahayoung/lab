@@ -727,13 +727,14 @@
     </span>
   </a>
 
-  <div
-    id="jhHeroLastUpdatedWrap"
-    class="jh-hero-last-updated-wrap"
-    hidden
-  >
-    <span id="jhHeroLastUpdated" class="jh-hero-last-updated-text"></span>
-  </div>
+ <div
+  id="jhHeroLastUpdatedWrap"
+  class="jh-hero-last-updated-wrap"
+>
+  <span id="jhHeroLastUpdated" class="jh-hero-last-updated-text">
+    Last Updated: —
+  </span>
+</div>
 </div>
 
 	
@@ -1145,29 +1146,16 @@
 	
 <script id="jh-hero-last-updated-data2-only">
   (function () {
-    const wrap = document.getElementById("jhHeroLastUpdatedWrap");
     const target = document.getElementById("jhHeroLastUpdated");
 
-    if (!wrap || !target) return;
-
-    function isUsableValue(value) {
-      if (value === null || value === undefined) return false;
-
-      const cleaned = String(value).trim();
-
-      return cleaned !== "" &&
-        cleaned !== "-" &&
-        cleaned !== "—" &&
-        cleaned.toUpperCase() !== "TBD";
-    }
+    if (!target) return;
 
     async function renderHeroLastUpdated() {
       try {
         const res = await fetch("./data2.json?v=" + Date.now());
 
         if (!res.ok) {
-          target.textContent = "";
-          wrap.hidden = true;
+          target.textContent = "Last Updated: —";
           return;
         }
 
@@ -1177,21 +1165,16 @@
           data &&
           data.pgaTableShared &&
           data.pgaTableShared.lastUpdated
-            ? data.pgaTableShared.lastUpdated
+            ? String(data.pgaTableShared.lastUpdated).trim()
             : "";
 
-        if (!isUsableValue(lastUpdated)) {
-          target.textContent = "";
-          wrap.hidden = true;
-          return;
-        }
+        target.textContent = lastUpdated
+          ? "Last Updated: " + lastUpdated
+          : "Last Updated: —";
 
-        target.textContent = "Last Updated: " + String(lastUpdated).trim();
-        wrap.hidden = false;
       } catch (error) {
         console.error("HERO last updated render error:", error);
-        target.textContent = "";
-        wrap.hidden = true;
+        target.textContent = "Last Updated: —";
       }
     }
 
