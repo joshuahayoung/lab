@@ -1,11 +1,7 @@
 {
   "pgaTableShared": {
     "showCard": false,
-    "lastUpdated": "October 26, 2026",
-
-{
-  "pgaTableShared": {
-    "lastUpdated": "October 21, 2026",
+    "lastUpdated": "October 27, 2026",
     "sectionTitle": "LATEST TOURNAMENT RESULTS",
     "eventNo": "Fall Event No. 4",
     "eventLabel": "USC Men's Golf",
@@ -28,19 +24,18 @@
       "pos": "T27"
     },
     "rounds": [
-  {
-    "round": "1",
-    "score": "70"
-  },
-  {
-    "round": "2",
-    "score": "70"
-  },
-  {
-    "round": "3",
-    "score": "78"
-  }
-]
+      {
+        "round": "1",
+        "score": "70"
+      },
+      {
+        "round": "2",
+        "score": "70"
+      },
+      {
+        "round": "3",
+        "score": "78"
+      }
+    ]
   }
 }
-
