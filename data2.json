@@ -8,14 +8,14 @@
     "title": "TBD",
     "date": "TBD",
     "venue": "TBD",
-    "location": "-,-",
-    "par": -,
-    "yards": "-",
-    "rating": -,
-    "slope": -,
+    "location": "",
+    "par": ,
+    "yards": "",
+    "rating": ,
+    "slope": ,
     "mainLink": {
-      "url": "-",
-      "label": "-"
+      "url": "",
+      "label": ""
     },
     "summary": {
       "total": "-",
