@@ -3716,17 +3716,30 @@
         const res = await fetch("./data2.json?v=" + Date.now());
         if (!res.ok) throw new Error("Failed to load data2.json");
 
-        const data = await res.json();
-        const pgaData = data.pgaTableShared;
+       const data = await res.json();
+const pgaData = data.pgaTableShared;
 
-        if (!pgaData) {
-          const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
-          if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
-          container.innerHTML = "";
-          return;
-        }
+if (!pgaData) {
+  const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+  if (topLastUpdated) topLastUpdated.textContent = "Last Updated: —";
+  container.innerHTML = "";
+  return;
+}
 
-        container.innerHTML = buildCardHtml(pgaData);
+const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
+
+if (topLastUpdated) {
+  topLastUpdated.textContent = pgaData.lastUpdated
+    ? `Last Updated: ${pgaData.lastUpdated}`
+    : "Last Updated: —";
+}
+
+if (pgaData.showCard === false) {
+  container.innerHTML = "";
+  return;
+}
+
+container.innerHTML = buildCardHtml(pgaData);
       } catch (error) {
         console.error("PGA TABLE render error:", error);
         const topLastUpdated = document.getElementById("jh-ncaa-last-updated");
