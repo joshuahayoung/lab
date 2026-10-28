@@ -23,7 +23,7 @@
     "statusText": "2026–27 USC season / Results in progress",
     "scope": "12",
     "individual": {
-      "scoringAvg": "70.98",
+      "scoringAvg": "71.03",
       "rawAvg": "71.50",
       "adjustedAvg": "70.98",
       "underPar": "7",
@@ -42,12 +42,12 @@
       "teamTotal": "778.69"
     },
     "officialRank": {
-      "wagrRank": "516",
-      "wagrImpact": "▲16",
-      "wagrDate": "Oct 21, 2026",
-      "clippdRank": "373",
-      "clippdImpact": "▲19",
-      "clippdDate": "Oct 21, 2026",
+      "wagrRank": "520",
+      "wagrImpact": "▼4",
+      "wagrDate": "Oct 28, 2026",
+      "clippdRank": "377",
+      "clippdImpact": "▼4",
+      "clippdDate": "Oct 28, 2026",
       "wins": "0",
       "top10": "0",
       "top25": "4",
