@@ -7,8 +7,8 @@
   "pageTitle": "NCAA STATS",
   "pageSubtitle": "2026–27 USC Sophomore Season Log",
   "scheduleTitle": "2026–27 USC Sophomore Season Schedule",
-  "dataStatus": "Official USC schedule and tournament results are tracked throughout the 2026–27 season. Results are added after each event is completed.",
-  "sourceNote": "Schedule organized from USC Men's Golf 2026–27 season schedule."
+  "dataStatus": "Official USC schedule and tournament results are tracked throughout the 2026–27 season. Winter amateur competition is listed separately and does not count as USC team competition.",
+  "sourceNote": "USC schedule plus official tournament and federation sources for winter amateur competition."
 },
   "banner": {
     "active": false,
@@ -287,7 +287,122 @@
   "results": "https://scoreboard.clippd.com/tournaments/246292/scoring/player"
         }
     }
+      ],
+
+  "winterSchedule": [
+    {
+      "id": "winter-01-international-amateur",
+      "seasonSegment": "winter",
+      "eventNo": "W01",
+      "date": "Dec. 19–22",
+      "startDate": "2026-12-19",
+      "endDate": "2026-12-22",
+      "tournament": "The International Amateur",
+      "venue": "Innisbrook Resort",
+      "location": "Palm Harbor, FL",
+      "courseMeta": "Copperhead & Island Courses | Practice Dec. 17–18 | R1–R2: Copperhead / Island | R3–R4: Copperhead",
+      "estimatedWagr": "",
+      "eventType": "offseason-amateur",
+      "status": "scheduled",
+      "statusLabel": "Confirmed",
+      "plannedRounds": 4,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R4",
+          "score": "—",
+          "par": "—"
+        }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "—",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "tournamentInfo": "https://www.theinternationalamateur.com/Tournament/TournamentDetails?TID=33824#schedule",
+        "results": ""
+      }
+    },
+
+    {
+      "id": "winter-02-abierto-sudamericano-amateur-2027",
+      "seasonSegment": "winter",
+      "eventNo": "W02",
+      "date": "Jan. 7–10",
+      "startDate": "2027-01-07",
+      "endDate": "2027-01-10",
+      "tournament": "Abierto Sudamericano Amateur 2027",
+      "venue": "Porto Alegre Country Club",
+      "location": "Porto Alegre, Brazil",
+      "courseMeta": "XXI Edition | Representing Mexico | 72-Hole Stroke Play | Practice Jan. 5–6",
+      "estimatedWagr": "",
+      "eventType": "national-team-amateur",
+      "status": "scheduled",
+      "statusLabel": "Confirmed",
+      "plannedRounds": 4,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R4",
+          "score": "—",
+          "par": "—"
+        }
+      ],
+      "summary": {
+        "total": "—",
+        "par": "—",
+        "finish": "—"
+      },
+      "metrics": {
+        "rankImpact": "—",
+        "strokesGained": "—",
+        "weightedPts": "—",
+        "wagrPower": "—",
+        "pointsEarned": "—"
+      },
+      "links": {
+        "tournamentInfo": "https://fesgolf.org/el-abierto-sudamericano-amateur-2027-se-jugara-en-porto-alegre/",
+        "results": ""
+      }
+    }
   ],
+
   "springSchedule": [
     {
       "id": "spring-01-southwestern",
@@ -822,7 +937,8 @@
   "scheduleNotes": {
     "title": "Schedule Profile",
     "items": [
-      "2026–27 USC schedule organized by fall season, spring season, and postseason events.",
+      "2026–27 competition log includes USC fall, spring and postseason events, plus separately tracked winter amateur competition.",
+      "Winter amateur events do not count as USC team starts or USC season scoring metrics.",
       "Several events are expected to provide high-strength WAGR and PGA TOUR University value.",
       "400+ WAGR events remain useful for schedule balance and NCAA .500 considerations.",
       "Results, ranking impact, scoring average, and trend data will remain pending until official tournament completion."
