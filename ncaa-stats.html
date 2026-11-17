@@ -6544,25 +6544,25 @@ function splitSpringSchedule(events) {
       <p class="jh-ss-meta">
         ${escapeHtml(
           meta.dataStatus ||
-          "Official USC schedule and tournament results are tracked throughout the 2026–27 season. Results are added after each event is completed."
+          "Official USC schedule and tournament results are tracked throughout the 2026–27 season."
         )}
       </p>
     </section>
 
     ${buildSection(
-  "2026 Fall Season",
-  "REGULAR-SEASON FALL TOURNAMENTS AND RESULTS",
-  data.fallSchedule,
-  {
-    id: "jh-ss-2026-fall-season",
-    sectionClass: "jh-ss-section-fall",
-    collapsible: true,
-    defaultOpen: true,
-    preserveManualOrder: true,
-    collapsedNote: "Click the arrow to expand the 2026 fall regular-season schedule.",
-    expandedNote: "Click the arrow to collapse the 2026 fall regular-season schedule."
-  }
-)}
+      "2026–27 Winter Amateur Competition",
+      "ELITE OFF-SEASON & MEXICO REPRESENTATIVE EVENTS",
+      data.winterSchedule,
+      {
+        id: "jh-ss-2026-27-winter-competition",
+        sectionClass: "jh-ss-section-winter",
+        collapsible: true,
+        defaultOpen: true,
+        preserveManualOrder: true,
+        collapsedNote: "Click the arrow to expand the 2026–27 winter amateur schedule.",
+        expandedNote: "Click the arrow to collapse the 2026–27 winter amateur schedule."
+      }
+    )}
 
     ${buildSection(
       "2027 Spring Season",
@@ -6593,6 +6593,21 @@ function splitSpringSchedule(events) {
     )}
 
     ${buildNotes(data.scheduleNotes)}
+
+    ${buildSection(
+      "2026 Fall Season",
+      "REGULAR-SEASON FALL TOURNAMENTS AND RESULTS",
+      data.fallSchedule,
+      {
+        id: "jh-ss-2026-fall-season",
+        sectionClass: "jh-ss-section-fall",
+        collapsible: true,
+        defaultOpen: false,
+        preserveManualOrder: true,
+        collapsedNote: "Click the arrow to expand the completed 2026 fall regular-season schedule.",
+        expandedNote: "Click the arrow to collapse the completed 2026 fall regular-season schedule."
+      }
+    )}
   `;
 }
     
