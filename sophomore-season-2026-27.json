@@ -401,6 +401,116 @@
         "results": ""
       }
     }
+   ],
+
+  "winterSchedule": [
+    {
+      "id": "winter-01-international-amateur",
+      "date": "Dec. 19–22",
+      "startDate": "2026-12-19",
+      "endDate": "2026-12-22",
+      "tournament": "The International Amateur",
+      "course": "Innisbrook Resort | Palm Harbor, FL",
+      "courseMeta": "Copperhead: Par 71 | 7,209 Yards · Island: Par 72 | 7,194 Yards | Practice Dec. 17–18 | R1–R2: Copperhead / Island | R3–R4: Copperhead",
+      "status": "CONFIRMED",
+      "statusType": "scheduled",
+      "par": null,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R4",
+          "score": "—",
+          "par": "—"
+        }
+      ],
+      "total": "—",
+      "toPar": "—",
+      "finish": "—",
+      "metrics": [
+        {
+          "label": "WAGR Pwr",
+          "value": "—"
+        },
+        {
+          "label": "Earned Pts",
+          "value": "—"
+        }
+      ],
+      "links": [
+        {
+          "label": "TOURNAMENT INFO",
+          "url": "https://www.theinternationalamateur.com/Tournament/TournamentDetails?TID=33824#schedule"
+        }
+      ]
+    },
+
+    {
+      "id": "winter-02-sudamericano-amateur-2027",
+      "date": "Jan. 7–10",
+      "startDate": "2027-01-07",
+      "endDate": "2027-01-10",
+      "tournament": "Abierto Sudamericano Amateur 2027",
+      "course": "Porto Alegre Country Club | Porto Alegre, Brazil",
+      "courseMeta": "Par 70 | 6,029 Yards | Rating: 69.7 | Slope: 132 | XXI Edition | Representing Mexico | Practice Jan. 5–6",
+      "status": "CONFIRMED",
+      "statusType": "scheduled",
+      "par": 70,
+      "rounds": [
+        {
+          "round": "R1",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R2",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R3",
+          "score": "—",
+          "par": "—"
+        },
+        {
+          "round": "R4",
+          "score": "—",
+          "par": "—"
+        }
+      ],
+      "total": "—",
+      "toPar": "—",
+      "finish": "—",
+      "metrics": [
+        {
+          "label": "WAGR Pwr",
+          "value": "—"
+        },
+        {
+          "label": "Earned Pts",
+          "value": "—"
+        }
+      ],
+      "links": [
+        {
+          "label": "TOURNAMENT INFO",
+          "url": "https://fesgolf.org/el-abierto-sudamericano-amateur-2027-se-jugara-en-porto-alegre/"
+        }
+      ]
+    }
   ],
 
   "springSchedule": [
